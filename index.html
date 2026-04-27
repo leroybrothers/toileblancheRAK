@@ -2,11 +2,14 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Toile Blanche — Marrakech</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap');
-  :root{--sand:#F5F0E6;--pise:#111008;--pise-mid:#6B5D4F;--cedar:#C4A882;--sky:#FDFAF5;--pise-light:#E8E0D0;}
+  :root{--sand:#F5F0E6;--pise:#111008;--pise-mid:#4F4336;--cedar:#A78661;--sky:#FDFAF5;--pise-light:#D8CCB8;}
   *{margin:0;padding:0;box-sizing:border-box;}
   body{background:var(--sand);color:var(--pise);font-family:'Montserrat',sans-serif;font-weight:300;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;}
 
@@ -29,24 +32,27 @@
   #site{display:none;width:100%;min-height:100vh;flex-direction:column;}
 
   /* NAV */
-  nav{width:100%;background:var(--sand);border-bottom:1px solid var(--pise-light);padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100;}
+  nav{width:100%;background:var(--sand);border-bottom:1px solid var(--pise-light);padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:18px;position:sticky;top:0;z-index:100;}
   .nav-brand{font-family:'Cormorant Garamond',serif;font-size:16px;letter-spacing:0.3em;text-transform:uppercase;color:var(--pise);}
   .nav-brand span{color:var(--cedar);}
-  .nav-links{display:flex;gap:32px;align-items:center;}
-  .nav-link{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--pise-mid);cursor:pointer;padding:4px 0;border-bottom:1px solid transparent;transition:all 0.15s;background:none;border-top:none;border-left:none;border-right:none;font-family:'Montserrat',sans-serif;font-weight:300;}
-  .nav-link:hover,.nav-link.active{color:var(--cedar);border-bottom-color:var(--cedar);}
-  .nav-logout{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--pise-light);cursor:pointer;background:none;border:none;font-family:'Montserrat',sans-serif;}
+  .nav-links{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;flex:1;}
+  .nav-link{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--pise-mid);cursor:pointer;padding:7px 12px;border:1px solid transparent;transition:all 0.15s;background:none;font-family:'Montserrat',sans-serif;font-weight:300;white-space:nowrap;}
+  .nav-link:not(:last-child){position:relative;}
+  .nav-link:not(:last-child)::after{content:'';position:absolute;right:-5px;top:50%;transform:translateY(-50%);width:1px;height:12px;background:var(--pise-light);}
+  .nav-link:hover{color:var(--pise);}
+  .nav-link.active{color:var(--pise);border-color:var(--cedar);background:rgba(167,134,97,0.06);}
+  .nav-logout{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--pise-mid);cursor:pointer;background:none;border:none;font-family:'Montserrat',sans-serif;}
   .nav-logout:hover{color:var(--pise-mid);}
 
   /* HERO */
   .hero{width:100%;min-height:80vh;background:var(--pise);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:64px;position:relative;overflow:hidden;}
-  .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;}
-  .hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,18,8,0.88) 0%,rgba(28,18,8,0.2) 60%,transparent 100%);}
+  .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.5;}
+  .hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,18,8,0.92) 0%,rgba(28,18,8,0.35) 60%,transparent 100%);}
   .hero-content{position:relative;z-index:2;text-align:center;max-width:680px;}
   .hero-eyebrow{font-size:11px;letter-spacing:0.4em;text-transform:uppercase;color:var(--cedar);margin-bottom:20px;}
   .hero-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:56px;line-height:1.05;color:var(--sky);margin-bottom:12px;}
-  .hero-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:rgba(253,250,245,0.65);margin-bottom:48px;}
-  .hero-declaration{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(253,250,245,0.5);border-left:1px solid var(--cedar);padding-left:20px;text-align:left;line-height:1.9;}
+  .hero-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:rgba(253,250,245,0.82);margin-bottom:48px;}
+  .hero-declaration{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(253,250,245,0.74);border-left:1px solid var(--cedar);padding-left:20px;text-align:left;line-height:1.9;}
 
   /* CONTENT AREA */
   .content{width:100%;flex:1;}
@@ -57,7 +63,7 @@
   .doc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--pise-light);max-width:900px;}
   .doc-card{background:var(--sky);padding:32px 28px;cursor:pointer;transition:background 0.15s;display:flex;flex-direction:column;justify-content:space-between;min-height:180px;}
   .doc-card:hover{background:var(--sand);}
-  .doc-card-num{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;color:var(--pise-light);line-height:1;margin-bottom:12px;}
+  .doc-card-num{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;color:#B8A890;line-height:1;margin-bottom:12px;}
   .doc-card-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--pise);margin-bottom:6px;line-height:1.3;}
   .doc-card-sub{font-size:11px;color:var(--pise-mid);line-height:1.6;margin-bottom:16px;}
   .doc-card-tag{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cedar);}
@@ -96,7 +102,7 @@
   .reading-nav{width:100%;background:var(--sky);border-top:1px solid var(--pise-light);padding:16px 48px;display:flex;align-items:center;justify-content:center;gap:0;position:sticky;bottom:0;z-index:50;}
   .rnav-btn{font-family:'Montserrat',sans-serif;font-weight:300;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise-mid);background:none;border:none;cursor:pointer;padding:8px 20px;transition:color 0.15s;min-width:240px;white-space:nowrap;}
   .rnav-btn:hover:not(:disabled){color:var(--cedar);}
-  .rnav-btn:disabled{opacity:0.2;cursor:default;}
+  .rnav-btn:disabled{opacity:0.35;cursor:default;}
   .rnav-btn.left{text-align:right;}
   .rnav-btn.right{text-align:left;}
   .rnav-center{text-align:center;min-width:180px;padding:0 20px;}
@@ -132,9 +138,7 @@
 
   <nav>
     <div class="nav-brand" onclick="showHome()" style="cursor:pointer;">Toile Blanche <span>Marrakech</span></div>
-    <div class="nav-links">
-      <button class="nav-link active" id="nav-home" onclick="showHome()">Accueil</button>
-    </div>
+    <div class="nav-links" id="nav-links"></div>
     <button class="nav-logout" onclick="logout()">Quitter</button>
   </nav>
 
@@ -277,18 +281,51 @@
   const PASSWORD = 'toileblanche2026';
 
   const DOCS = [
-    { file: 'tbm_proposition_part1_v2.html',                      title: 'Proposition — 1 / 4',  label: 'Le concept et la déclaration' },
-    { file: 'tbm_proposition_part2_clusters_budget.html',         title: 'Proposition — 2 / 4',  label: 'Les clusters et le budget' },
-    { file: 'tbm_proposition_part3_finance_previsionnel_v2.html', title: 'Proposition — 3 / 4',  label: 'Financement et prévisionnel' },
-    { file: 'tbm_proposition_part4_vie_conditions.html',          title: 'Proposition — 4 / 4',  label: 'La vie ici et les conditions' },
-    { file: 'tbm_brief_archi_part1.html',                         title: 'Brief Archi — 1 / 3',  label: 'Déclaration et site' },
-    { file: 'tbm_brief_archi_part2.html',                         title: 'Brief Archi — 2 / 3',  label: 'Clusters, riads, studio' },
-    { file: 'tbm_brief_archi_part3.html',                         title: 'Brief Archi — 3 / 3',  label: 'Infrastructure et matériaux' },
-    { file: 'tbm_termsheet.html',                                 title: 'Term Sheet',            label: 'Term Sheet et Pacte LBO' },
+    { file: 'tbm_proposition_part1_v2.html',                      title: 'Proposition — 1 / 4',  label: 'Le concept et la déclaration', nav: 'Proposition 1' },
+    { file: 'tbm_proposition_part2_clusters_budget.html',         title: 'Proposition — 2 / 4',  label: 'Les clusters et le budget', nav: 'Proposition 2' },
+    { file: 'tbm_proposition_part3_finance_previsionnel_v2.html', title: 'Proposition — 3 / 4',  label: 'Financement et prévisionnel', nav: 'Proposition 3' },
+    { file: 'tbm_proposition_part4_vie_conditions.html',          title: 'Proposition — 4 / 4',  label: 'La vie ici et les conditions', nav: 'Proposition 4' },
+    { file: 'tbm_brief_archi_part1.html',                         title: 'Brief Archi — 1 / 3',  label: 'Déclaration et site', nav: 'Brief 1' },
+    { file: 'tbm_brief_archi_part2.html',                         title: 'Brief Archi — 2 / 3',  label: 'Clusters, riads, studio', nav: 'Brief 2' },
+    { file: 'tbm_brief_archi_part3.html',                         title: 'Brief Archi — 3 / 3',  label: 'Infrastructure et matériaux', nav: 'Brief 3' },
+    { file: 'tbm_termsheet.html',                                 title: 'Term Sheet',            label: 'Term Sheet et Pacte LBO', nav: 'Term Sheet' },
 
   ];
 
   let currentDocIndex = -1;
+
+  function renderNavLinks() {
+    const nav = document.getElementById('nav-links');
+    if (!nav) return;
+    nav.innerHTML = '';
+
+    const homeBtn = document.createElement('button');
+    homeBtn.className = 'nav-link';
+    homeBtn.id = 'nav-home';
+    homeBtn.textContent = 'Accueil';
+    homeBtn.addEventListener('click', showHome);
+    nav.appendChild(homeBtn);
+
+    DOCS.forEach((doc, idx) => {
+      const btn = document.createElement('button');
+      btn.className = 'nav-link';
+      btn.id = `nav-doc-${idx}`;
+      btn.textContent = doc.nav;
+      btn.addEventListener('click', () => openDoc(doc.file, doc.title));
+      nav.appendChild(btn);
+    });
+  }
+
+  function setActiveNavLink() {
+    document.querySelectorAll('.nav-link').forEach(btn => btn.classList.remove('active'));
+    if (currentDocIndex < 0) {
+      const homeBtn = document.getElementById('nav-home');
+      if (homeBtn) homeBtn.classList.add('active');
+      return;
+    }
+    const docBtn = document.getElementById(`nav-doc-${currentDocIndex}`);
+    if (docBtn) docBtn.classList.add('active');
+  }
 
   function checkPassword() {
     const input = document.getElementById('pwd').value;
@@ -308,6 +345,8 @@
   document.getElementById('pwd').addEventListener('keydown', function(e) {
     if (e.key === 'Enter') checkPassword();
   });
+  renderNavLinks();
+  setActiveNavLink();
 
   function openDoc(file, title) {
     const idx = DOCS.findIndex(d => d.file === file);
@@ -318,7 +357,6 @@
     fv.style.flexDirection = 'column';
     document.getElementById('frame-title').textContent = title;
     document.getElementById('doc-frame').src = file;
-    document.getElementById('nav-home').classList.remove('active');
     updateNavPos();
   }
 
@@ -332,7 +370,6 @@
     const fv = document.getElementById('frame-view');
     fv.style.display = 'flex';
     fv.style.flexDirection = 'column';
-    document.getElementById('nav-home').classList.remove('active');
     document.getElementById('frame-title').textContent = doc.title;
     document.getElementById('doc-frame').src = doc.file;
     updateNavPos();
@@ -340,6 +377,7 @@
 
   function updateNavPos() {
     const idx = currentDocIndex;
+    setActiveNavLink();
     const rPrev = document.getElementById('rnav-prev');
     const rNext = document.getElementById('rnav-next');
     const rPos  = document.getElementById('rnav-pos');
@@ -367,7 +405,6 @@
   function showHome() {
     document.getElementById('frame-view').style.display = 'none';
     document.getElementById('home-view').style.display = 'block';
-    document.getElementById('nav-home').classList.add('active');
     document.getElementById('doc-frame').src = '';
     currentDocIndex = -1;
     updateNavPos();
