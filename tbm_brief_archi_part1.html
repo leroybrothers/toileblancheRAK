@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap');
+  :root{--sand:#F5F0E6;--pise:#111008;--pise-mid:#6B5D4F;--cedar:#C4A882;--sky:#FDFAF5;--pise-light:#E8E0D0;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--sand);color:var(--pise);font-family:'Montserrat',sans-serif;font-weight:300;font-size:17px;line-height:1.75;max-width:960px;margin:0 auto;}
+
+  /* COVER */
+  .cover{width:100%;min-height:620px;background:var(--sand);display:flex;flex-direction:column;justify-content:space-between;padding:56px 52px;}
+  .cover-top{display:flex;justify-content:space-between;align-items:flex-start;}
+  .cover-brand{font-size:12px;letter-spacing:0.38em;color:var(--cedar);text-transform:uppercase;}
+  .cover-conf{font-size:9.5px;letter-spacing:0.18em;color:var(--pise-mid);text-transform:uppercase;}
+  .cover-mid{padding:48px 0 32px;}
+  .cover-rule{width:40px;height:1px;background:var(--cedar);margin-bottom:28px;}
+  .ct{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:64px;line-height:1.02;color:var(--pise);margin-bottom:8px;}
+  .cs{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--pise-mid);margin-bottom:32px;}
+  .cd{font-size:14px;line-height:1.85;color:var(--pise-mid);max-width:460px;border-left:1px solid var(--cedar);padding-left:18px;}
+  .cover-bottom{border-top:1px solid var(--cedar);padding-top:20px;}
+  .cover-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+  .cm-item{padding-right:20px;border-right:1px solid var(--pise-light);}
+  .cm-item:last-child{border-right:none;padding-left:20px;padding-right:0;}
+  .cm-item:not(:first-child){padding-left:20px;}
+  .cm-label{font-size:8.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cedar);margin-bottom:4px;}
+  .cm-value{font-size:14px;color:var(--pise);line-height:1.5;}
+
+  /* PAGES */
+  .page{padding:56px 52px;border-bottom:1px solid var(--pise-light);}
+  .ph{display:flex;justify-content:space-between;margin-bottom:40px;padding-bottom:10px;border-bottom:1px solid var(--cedar);}
+  .ph span{font-size:15px;letter-spacing:0.2em;color:var(--cedar);text-transform:uppercase;}
+  .ph span:last-child{color:var(--pise-mid);}
+  .sl{font-size:10.5px;letter-spacing:0.24em;color:var(--cedar);text-transform:uppercase;margin-bottom:10px;}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:44px;line-height:1.12;margin-bottom:22px;}
+  h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:21px;line-height:1.3;margin-bottom:10px;margin-top:28px;}
+  h3{font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--pise-mid);margin-bottom:10px;margin-top:20px;font-weight:400;}
+  p{font-size:16.5px;line-height:1.9;margin-bottom:12px;}
+  .bs{font-size:15px;line-height:1.8;color:var(--pise-mid);margin-bottom:7px;}
+  .two{display:grid;grid-template-columns:1.15fr 0.85fr;gap:44px;margin:20px 0;}
+  .two-eq{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:20px 0;}
+  .ul{list-style:none;margin:0 0 14px;padding:0;}
+  .ul li{font-size:16.5px;line-height:1.75;padding-left:14px;position:relative;margin-bottom:4px;}
+  .ul li::before{content:'·';position:absolute;left:0;color:var(--cedar);font-size:18px;line-height:1.3;}
+  .pf{margin-top:40px;padding-top:12px;border-top:1px solid var(--pise-light);display:flex;justify-content:space-between;}
+  .pf span{font-size:9.5px;letter-spacing:0.14em;color:var(--pise-mid);text-transform:uppercase;}
+  .div-f{width:100%;height:1px;background:var(--pise-light);margin:28px 0;}
+  .img-anc{width:100%;height:360px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9.5px;text-align:center;padding:28px;font-style:italic;margin:24px 0;}
+  .img-h{width:100%;height:200px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9.5px;text-align:center;padding:16px;font-style:italic;}
+
+  /* PREAMBLE BLOCK */
+  .preamble{border-left:3px solid var(--cedar);padding:24px 32px;background:var(--sky);margin:28px 0;}
+  .preamble h2{margin-top:0;font-size:25px;}
+  .preamble p{font-size:14.5px;line-height:1.9;}
+  .preamble .rule-line{width:100%;height:1px;background:var(--pise-light);margin:16px 0;}
+  .preamble .absolue{font-size:14px;font-weight:400;color:var(--pise);line-height:1.8;margin-top:12px;}
+
+  /* DATA TABLE */
+  table.data{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;}
+  table.data tbody tr{border-bottom:1px solid var(--pise-light);}
+  table.data tbody td{padding:7px 8px;line-height:1.5;vertical-align:top;}
+  table.data tbody td:first-child{color:var(--pise-mid);width:38%;font-size:10.5px;letter-spacing:0.05em;}
+  table.data tbody td:last-child{color:var(--pise);font-weight:400;}
+
+  /* CLIMATE TABLE */
+  table.climat{width:100%;border-collapse:collapse;margin:16px 0;font-size:10.5px;}
+  table.climat thead th{padding:6px 8px;font-size:8.5px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;text-align:left;border-bottom:1px solid var(--cedar);}
+  table.climat tbody tr{border-bottom:1px solid var(--pise-light);}
+  table.climat tbody td{padding:6px 8px;line-height:1.5;vertical-align:top;}
+  table.climat tbody td:first-child{color:var(--cedar);font-weight:400;white-space:nowrap;}
+
+  .ph{display:none!important;}
+  .pf{display:none!important;}
+
+  /* FULL-BLEED IMAGES — break out of max-width constraint */
+  img[src^="data:image"] {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    display: block !important;
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+  }
+  .two img[src^="data:image"],
+  .two-eq img[src^="data:image"] {
+    width: calc(100% + 104px) !important;
+    margin-left: -52px !important;
+    max-width: none !important;
+  }
+
+  /* HIDE PAGE HEADERS AND FOOTERS ON SCREEN */
+  .ph { display: none !important; }
+  .pf { display: none !important; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-top">
+    <div class="cover-brand">Toile Blanche, Marrakech, Brief Architectural, Avril 2026</div>
+  </div>
+  <div class="cover-mid">
+    <div class="cover-rule"></div>
+    <div class="ct">Brief<br>Architectural</div>
+    <div class="cs">Route de Fès, Version 2.0</div>
+    <div class="cd">Ce document constitue le brief architectural de référence pour la conception et la réalisation de Toile Blanche Marrakech. Il est destiné à l'architecte marocain chargé de la maîtrise d'œuvre technique. La direction artistique est assurée en interne par les Leroy Brothers, ce brief en est l'expression écrite et contraignante. Il remplace tout autre document antérieur, notamment le dossier AD Architectes / Draa Natfrante (2018).</div>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-meta">
+      <div class="cm-item">
+        <div class="cm-label">Terrain</div>
+        <div class="cm-value">5 ha, Titre Foncier, Route de Fès</div>
+      </div>
+      <div class="cm-item">
+        <div class="cm-label">Programme Phase 1</div>
+        <div class="cm-value">3 clusters, 12 mini-riads 1BR</div>
+      </div>
+      <div class="cm-item">
+        <div class="cm-label">Programme complet</div>
+        <div class="cm-value">5 clusters, 20 unités, plafond définitif</div>
+      </div>
+      <div class="cm-item">
+        <div class="cm-label">Direction artistique</div>
+        <div class="cm-value">Leroy Brothers, interne, veto absolu</div>
+      </div>
+    </div>
+  
+    <div style="display:flex;justify-content:space-between;margin-top:20px;padding-top:16px;border-top:1px solid var(--pise-light);">
+      <span class="cover-conf">Avril 2026</span>
+      <span class="cover-conf">Confidentiel, Usage exclusif associés pressentis</span>
+    </div>
+  </div>
+</div><!-- PAGE 2, L'IMAGE DE RÉFÉRENCE -->
+<div class="page">
+  <div class="ph"><span>Toile Blanche, Marrakech</span><span>Brief Architectural v2.0, Avril 2026</span></div>
+
+  <div class="preamble">
+    <div class="sl">Préambule, à lire avant tout</div>
+    <h2>L'image de référence</h2>
+    <p>L'image de référence est reproduite ci-dessous. Tout ce qui n'y existerait pas n'existe pas sur ce territoire.</p>
+    
+    <div class="rule-line"></div>
+    
+    <div class="absolue">Pas de fleurs ornementales. Pas de textiles colorés visibles depuis l'extérieur. Pas de plantes décoratives. Pas d'éclairage projeté vers les arbres. Pas de technologie visible. Pas de signalétique. Rien qui performe.<br><br>Le pisé est brut. Le cèdre est naturel. Ce n'est pas une préférence esthétique. C'est la définition de ce que ce lieu est.</div>
+  </div>
+
+  <img src="images/img_150229b3053debc7.png" alt="" style="width:100%;display:block;margin:32px 0;">
+
+  <div class="pf"><span>Leroy Brothers, Toile Blanche Group</span><span>2</span><span>Usage interne</span></div>
+</div>
+
+<!-- PAGE 3, DÉCLARATION ET INTENTION -->
+<div class="page">
+  <div class="ph"><span>Toile Blanche, Marrakech</span><span>Brief Architectural v2.0, Avril 2026</span></div>
+  <div class="sl">1. Déclaration et intention</div>
+  <h1>Ce que ce projet est.<br>Ce qu'il n'est pas.</h1>
+
+  <div class="two">
+    <div>
+      <p>La déclaration est posée. Ce document en est l'expression architecturale et contraignante.</p>
+      
+      <p>Cette distinction n'est pas rhétorique. Elle détermine chaque décision architecturale. Un hôtel boutique optimise l'expérience client. Une œuvre qui fonctionne comme hôtel crée les conditions d'une expérience que le client ne peut pas anticiper et que l'architecte ne peut pas sur-designer.</p>
+      <p>Ce que l'architecture doit faire ici : créer les conditions du silence, de la lumière juste, de l'espace qui laisse respirer. Ce qu'elle ne doit pas faire : signifier, expliquer, rassurer, décorer. La beauté n'est pas une addition, c'est le résultat d'une précision matérielle.</p>
+
+      <h3>Ce que ce projet est</h3>
+      <p>Un territoire fermé sur l'extérieur, ouvert sur lui-même. Cinq clusters de mini-riads en pisé, chacun presque aveugle sur l'extérieur, fermé sur une cour intérieure privée avec piscine. Un bâtiment principal rénové qui accueille la vie collective, restaurant, galerie, bar, terrasse. Un Studio Leroy Brothers, lieu de travail effectif. Un jardin de 5 hectares autour d'une oliveraie existante. La Route de Fès, le Haouz, l'Atlas à l'horizon.</p>
+    </div>
+    <div>
+      <h3>Ce que ce projet n'est pas</h3>
+      <ul class="ul">
+        <li>Pas un resort, aucun espace commun de type resort (pas de piscine commune, pas de bar de piscine, pas de spa, pas de fitness)</li>
+        <li>Pas un éco-lodge, les matériaux sont nobles, pas rustiques. La finition est au niveau d'un Aman, pas d'un camp de glamping</li>
+        <li>Pas un riad de médina, le principe est celui du riad (dedans/dehors), pas son vocabulaire ornemental (pas de zelliges multicolores, pas de moucharabiehs sculptés, pas de plâtre ouvragé)</li>
+        <li>Pas une villa contemporaine, pas de grandes baies vitrées, pas de toit plat nu, pas d'acier apparent en façade</li>
+        <li>Pas le projet Draa Natfrante (2018), ce projet était 3,5× plus grand, avec spa, bibliothèque, salle de conférence, observatoire. Ces éléments ne figurent pas dans le présent programme</li>
+        <li>Pas un monastère, le confort est total. Le lit est un Tréca. Le linge est du lin épais. La climatisation est invisible mais présente. La sobriété est architecturale, pas ascétique</li>
+      </ul>
+
+      <h3>Ce que l'architecte reçoit</h3>
+      <ul class="ul">
+        <li>Une direction artistique forte et présente, les Leroy Brothers décident de tout ce qui touche à l'esthétique</li>
+        <li>Un programme précis, chaque mètre carré est défini</li>
+        <li>Une palette matériaux fermée, 6 matériaux, aucune exception sans accord écrit</li>
+        <li>Une présence sur site, Gilles Leroy minimum une semaine par mois pendant le chantier</li>
+        <li>Un budget sérieux, pas un projet d'amateur</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pf"><span>Leroy Brothers, Toile Blanche Group</span><span>3</span><span>Usage interne</span></div>
+</div>
+
+<!-- PAGE 4, LE SITE -->
+<div class="page">
+  <div class="ph"><span>Toile Blanche, Marrakech</span><span>Brief Architectural v2.0, Avril 2026</span></div>
+  <div class="sl">2. Le site, Route de Fès, Haouz, Province de Marrakech-Safi</div>
+  <h1>5 hectares.<br>Le Haouz. L'Atlas.</h1>
+
+  <div class="two">
+    <div>
+      <h3>Données foncières</h3>
+      <table class="data">
+        <tr><td>Coordonnées</td><td>31.680678°N / 7.795167°W</td></tr>
+        <tr><td>Surface totale</td><td>50&#8239;000m² (5 ha)</td></tr>
+        <tr><td>Titre Foncier</td><td>Confirmé, aucun risque VNA</td></tr>
+        <tr><td>Localisation</td><td>Route de Fès, avant Farasha Farmhouse</td></tr>
+        <tr><td>Distance Marrakech</td><td>25-30 min (route droite, bien goudronnée)</td></tr>
+        <tr><td>Distance aéroport</td><td>40 min (Ménara)</td></tr>
+        <tr><td>Altitude</td><td>~500m (plaine du Haouz)</td></tr>
+        <tr><td>Mur de clôture</td><td>1,6 km, à réfectionner</td></tr>
+        <tr><td>Eau</td><td>Puits profond + réservoir d'irrigation</td></tr>
+        <tr><td>Énergie</td><td>Hors réseau. Raccordement disponible en secours.</td></tr>
+      </table>
+
+      <h3>Bâtiment existant</h3>
+      <p>Ferme marocaine d'environ 1&#8239;200m² d'emprise. Cour centrale double hauteur. Murs en pisé existants, à conserver et renforcer. Le bâtiment principal ne sera pas démoli, il sera rénové dans la continuité de son identité : pisé, enduits chaux, bois, interventions contemporaines assumées.</p>
+
+      <h3>Végétation existante</h3>
+      <p>Oliveraie adulte dans la partie sud de la parcelle. Potager muré. Quelques arbres autour du bâtiment principal. La bande nord est nue, à planter progressivement sur 5-7 ans (oliviers, grenadiers, caroubiers). Aucun palmier.</p>
+    </div>
+    <div>
+      <h3>Climat et contraintes</h3>
+      <table class="climat">
+        <thead><tr><th>Période</th><th>Conditions</th></tr></thead>
+        <tbody>
+          <tr><td>Été (juin-sept)</td><td>38-44°C jour. Chergui possible, vent de sable sec, moins de 15% humidité. Nuits ~22°C.</td></tr>
+          <tr><td>Hiver (déc-fév)</td><td>18-22°C jour. Nuits 2-6°C. Gelées possibles. Vent nord-ouest (Alizé) sur plaine ouverte.</td></tr>
+          <tr><td>Printemps</td><td>Épisodes Chergui dès mars. 35-40°C possibles en avril.</td></tr>
+          <tr><td>Pluies</td><td>250-280mm/an. Concentrées oct-avril. Orages intenses rares.</td></tr>
+          <tr><td>Ensoleillement</td><td>9-11h/jour en été. 7h en hiver.</td></tr>
+        </tbody>
+      </table>
+
+      <p class="bs" style="margin-top:12px;">Le pisé à 50cm d'épaisseur offre une inertie thermique de 8-12°C, la différence entre l'extérieur à 42°C et l'intérieur à 30°C en été. La cour intérieure fermée crée un microclimat protégé du Chergui. Ces deux dispositifs rendent les mini-riads habitables et commercialisables 12 mois sur 12.</p>
+
+      <h3>Orientation et vues</h3>
+      <p>La propriété est sur une plaine ouverte entre le Haut Atlas (sud) et les Jbilet (nord). La vue sur l'Atlas enneigé (novembre-avril) depuis la terrasse du bâtiment principal et le rooftop restaurant est la vue principale. Elle doit être dégagée et protégée pour toujours, aucune construction Phase 2 ou 3 ne peut obstruer cette ligne de vue.</p>
+
+      <h3>Géométrie du terrain</h3>
+      <p>La parcelle comporte deux sections distinctes : une section principale plus large autour du bâtiment existant, où seront implantés les 3 clusters Phase 1, et une bande longue et étroite remontant vers le nord (environ 45m de large, 350m de long), pipeline de croissance pour les clusters 4 et 5.</p>
+    </div>
+  </div>
+
+  <img src="images/img_f1885b8c76850029.png" alt="" style="width:100%;display:block;margin:32px 0;">
+
+  <div class="pf"><span>Leroy Brothers, Toile Blanche Group</span><span>4</span><span>Usage interne</span></div>
+</div>
+
+</body>
+</html>

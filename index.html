@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toile Blanche — Marrakech</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap');
+  :root{--sand:#F5F0E6;--pise:#111008;--pise-mid:#6B5D4F;--cedar:#C4A882;--sky:#FDFAF5;--pise-light:#E8E0D0;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--sand);color:var(--pise);font-family:'Montserrat',sans-serif;font-weight:300;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+
+  /* LOGIN */
+  #login-screen{width:100%;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;}
+  .login-logo{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:0.5em;text-transform:uppercase;color:var(--pise);margin-bottom:8px;text-align:center;}
+  .login-sub{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--cedar);margin-bottom:60px;text-align:center;}
+  .login-box{width:100%;max-width:360px;}
+  .login-rule{width:32px;height:1px;background:var(--cedar);margin:0 auto 40px;}
+  .login-label{font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--pise-mid);display:block;margin-bottom:10px;text-align:center;}
+  .login-input{width:100%;background:var(--sky);border:1px solid var(--pise-light);border-radius:0;padding:14px 20px;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:300;color:var(--pise);text-align:center;letter-spacing:0.15em;outline:none;transition:border-color 0.2s;}
+  .login-input:focus{border-color:var(--cedar);}
+  .login-btn{width:100%;margin-top:12px;background:var(--pise);color:var(--sky);border:none;padding:14px 20px;font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
+  .login-btn:hover{background:var(--cedar);}
+  .login-error{font-size:11px;letter-spacing:0.15em;color:var(--cedar);text-align:center;margin-top:12px;opacity:0;transition:opacity 0.2s;}
+  .login-error.show{opacity:1;}
+  .login-confidential{font-size:10px;letter-spacing:0.15em;color:var(--pise-mid);text-align:center;margin-top:48px;text-transform:uppercase;}
+
+  /* SITE */
+  #site{display:none;width:100%;min-height:100vh;flex-direction:column;}
+
+  /* NAV */
+  nav{width:100%;background:var(--sand);border-bottom:1px solid var(--pise-light);padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100;}
+  .nav-brand{font-family:'Cormorant Garamond',serif;font-size:16px;letter-spacing:0.3em;text-transform:uppercase;color:var(--pise);}
+  .nav-brand span{color:var(--cedar);}
+  .nav-links{display:flex;gap:32px;align-items:center;}
+  .nav-link{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--pise-mid);cursor:pointer;padding:4px 0;border-bottom:1px solid transparent;transition:all 0.15s;background:none;border-top:none;border-left:none;border-right:none;font-family:'Montserrat',sans-serif;font-weight:300;}
+  .nav-link:hover,.nav-link.active{color:var(--cedar);border-bottom-color:var(--cedar);}
+  .nav-logout{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--pise-light);cursor:pointer;background:none;border:none;font-family:'Montserrat',sans-serif;}
+  .nav-logout:hover{color:var(--pise-mid);}
+
+  /* HERO */
+  .hero{width:100%;min-height:80vh;background:var(--pise);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:64px;position:relative;overflow:hidden;}
+  .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;}
+  .hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,18,8,0.88) 0%,rgba(28,18,8,0.2) 60%,transparent 100%);}
+  .hero-content{position:relative;z-index:2;text-align:center;max-width:680px;}
+  .hero-eyebrow{font-size:11px;letter-spacing:0.4em;text-transform:uppercase;color:var(--cedar);margin-bottom:20px;}
+  .hero-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:56px;line-height:1.05;color:var(--sky);margin-bottom:12px;}
+  .hero-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:rgba(253,250,245,0.65);margin-bottom:48px;}
+  .hero-declaration{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(253,250,245,0.5);border-left:1px solid var(--cedar);padding-left:20px;text-align:left;line-height:1.9;}
+
+  /* CONTENT AREA */
+  .content{width:100%;flex:1;}
+
+  /* DOCUMENT GRID */
+  .doc-section{padding:64px 48px;display:flex;flex-direction:column;align-items:center;}
+  .doc-section-title{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--cedar);margin-bottom:32px;padding-bottom:12px;border-bottom:1px solid var(--pise-light);width:900px;}
+  .doc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--pise-light);max-width:900px;}
+  .doc-card{background:var(--sky);padding:32px 28px;cursor:pointer;transition:background 0.15s;display:flex;flex-direction:column;justify-content:space-between;min-height:180px;}
+  .doc-card:hover{background:var(--sand);}
+  .doc-card-num{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;color:var(--pise-light);line-height:1;margin-bottom:12px;}
+  .doc-card-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--pise);margin-bottom:6px;line-height:1.3;}
+  .doc-card-sub{font-size:11px;color:var(--pise-mid);line-height:1.6;margin-bottom:16px;}
+  .doc-card-tag{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cedar);}
+  .doc-card-arrow{font-size:22px;color:var(--pise-light);align-self:flex-end;margin-top:16px;}
+
+  /* FRAME VIEW */
+  #frame-view{display:none;width:100%;flex-direction:column;flex:1;}
+  .frame-bar{background:var(--sand);border-bottom:1px solid var(--pise-light);padding:12px 48px;display:flex;align-items:center;gap:20px;}
+  .frame-nav{display:flex;align-items:center;gap:16px;margin-left:auto;}
+  .frame-nav-btn{font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise-mid);cursor:pointer;background:none;border:none;font-family:'Montserrat',sans-serif;font-weight:300;padding:6px 12px;border:1px solid var(--pise-light);transition:all 0.15s;}
+  .frame-nav-btn:hover{color:var(--cedar);border-color:var(--cedar);}
+  .frame-nav-btn:disabled{opacity:0.25;cursor:default;}
+  .frame-nav-pos{font-size:11px;letter-spacing:0.2em;color:var(--cedar);text-transform:uppercase;white-space:nowrap;}
+  .frame-back{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--pise-mid);cursor:pointer;background:none;border:none;font-family:'Montserrat',sans-serif;}
+  .frame-back:hover{color:var(--cedar);}
+  .frame-title{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise);}
+  iframe{width:100%;flex:1;border:none;min-height:calc(100vh - 120px);}
+
+  /* FOOTER */
+  footer{background:var(--sand);border-top:1px solid var(--pise-light);padding:24px 48px;display:flex;justify-content:space-between;align-items:center;}
+  footer span{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise-mid);}
+
+  /* FONT & NAV FIXES */
+  .login-logo{font-size:16px !important;}
+  .doc-card-title{font-size:20px !important;}
+  .doc-card-sub{font-size:13px !important;}
+  .doc-card-tag{font-size:10px !important;}
+  .nav-brand{font-size:16px !important;}
+  .nav-link{font-size:11px !important;}
+  .hero-eyebrow{font-size:11px !important;}
+  .hero-sub{font-size:22px !important;}
+  .hero-declaration{font-size:15px !important;}
+  .doc-section-title{font-size:11px !important;}
+
+  /* READING NAV BAR */
+  .reading-nav{width:100%;background:var(--sky);border-top:1px solid var(--pise-light);padding:16px 48px;display:flex;align-items:center;justify-content:center;gap:0;position:sticky;bottom:0;z-index:50;}
+  .rnav-btn{font-family:'Montserrat',sans-serif;font-weight:300;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise-mid);background:none;border:none;cursor:pointer;padding:8px 20px;transition:color 0.15s;min-width:240px;white-space:nowrap;}
+  .rnav-btn:hover:not(:disabled){color:var(--cedar);}
+  .rnav-btn:disabled{opacity:0.2;cursor:default;}
+  .rnav-btn.left{text-align:right;}
+  .rnav-btn.right{text-align:left;}
+  .rnav-center{text-align:center;min-width:180px;padding:0 20px;}
+  .rnav-pos{font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--cedar);display:block;}
+  .rnav-rule{width:1px;height:28px;background:var(--pise-light);flex-shrink:0;}
+
+  /* DOC CARD & GRID OVERRIDES */
+  .doc-card-num{font-size:48px !important;}
+  .doc-card-title{font-size:20px !important;line-height:1.3;}
+  .doc-card-sub{font-size:13px !important;line-height:1.7;}
+  .doc-card-tag{font-size:11px !important;}
+  .doc-section-title{font-size:11px !important;letter-spacing:0.28em;}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login-screen">
+  <div class="login-logo">Toile Blanche</div>
+  <div class="login-sub">Marrakech — Route de Fès</div>
+  <div class="login-box">
+    <div class="login-rule"></div>
+    <label class="login-label" for="pwd">Accès confidentiel</label>
+    <input class="login-input" type="password" id="pwd" placeholder="Mot de passe" autocomplete="off">
+    <button class="login-btn" onclick="checkPassword()">Accéder</button>
+    <div class="login-error" id="login-error">Mot de passe incorrect</div>
+  </div>
+  <div class="login-confidential">Document confidentiel — Usage exclusif associés pressentis</div>
+</div>
+
+<!-- SITE -->
+<div id="site">
+
+  <nav>
+    <div class="nav-brand" onclick="showHome()" style="cursor:pointer;">Toile Blanche <span>Marrakech</span></div>
+    <div class="nav-links">
+      <button class="nav-link active" id="nav-home" onclick="showHome()">Accueil</button>
+    </div>
+    <button class="nav-logout" onclick="logout()">Quitter</button>
+  </nav>
+
+
+  <!-- HOME VIEW -->
+  <div id="home-view">
+    <div class="hero">
+      <img class="hero-img" src="images/img_60d5d1e65440ff73.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-eyebrow">Toile Blanche — Marrakech — Route de Fès</div>
+        <div class="hero-title">Proposition<br>d'Investissement</div>
+        <div class="hero-sub">Un territoire déclaré œuvre</div>
+        <div class="hero-declaration">« Toile Blanche a été déclarée œuvre par les Leroy Brothers.<br>Elle continue de fonctionner normalement. »</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="doc-section">
+        <div class="doc-section-title">Proposition d'Investissement</div>
+        <div class="doc-grid">
+          <div class="doc-card" onclick="openDoc('tbm_proposition_part1_v2.html','Proposition — Partie 1')">
+            <div>
+              <div class="doc-card-num">01</div>
+              <div class="doc-card-title">Le concept et la déclaration</div>
+              <div class="doc-card-sub">L'image de référence. Second territoire. Territoire autonome. Les Compressions.</div>
+            </div>
+            <div class="doc-card-tag">Pages 1–4</div>
+          </div>
+          <div class="doc-card" onclick="openDoc('tbm_proposition_part2_clusters_budget.html','Proposition — Partie 2')">
+            <div>
+              <div class="doc-card-num">02</div>
+              <div class="doc-card-title">Les clusters et le budget</div>
+              <div class="doc-card-sub">5 clusters, logique ksar. Architecture des mini-riads. Budget détail Phase 1.</div>
+            </div>
+            <div class="doc-card-tag">Pages 5–7</div>
+          </div>
+          <div class="doc-card" onclick="openDoc('tbm_proposition_part3_finance_previsionnel_v2.html','Proposition — Partie 3')">
+            <div>
+              <div class="doc-card-num">03</div>
+              <div class="doc-card-title">Financement et prévisionnel</div>
+              <div class="doc-card-sub">Structure de capital. Fonds de Croissance. Prévisionnel 3 ans. Retour investisseur 5,7×.</div>
+            </div>
+            <div class="doc-card-tag">Pages 8–11</div>
+          </div>
+          <div class="doc-card" onclick="openDoc('tbm_proposition_part4_vie_conditions.html','Proposition — Partie 4')">
+            <div>
+              <div class="doc-card-num">04</div>
+              <div class="doc-card-title">La vie ici et les conditions</div>
+              <div class="doc-card-sub">Programme La Semaine, L'Atelier, Vignes Vivantes. Conditions de participation. Risques.</div>
+            </div>
+            <div class="doc-card-tag">Pages 12–14</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="doc-section" style="padding-top:0;">
+        <div class="doc-section-title">Documents de référence</div>
+        <div class="doc-grid">
+          <div class="doc-card" onclick="openDoc('tbm_brief_archi_part1.html','Brief Architectural — Partie 1')">
+            <div>
+              <div class="doc-card-num">A</div>
+              <div class="doc-card-title">Brief Architectural — Partie 1</div>
+              <div class="doc-card-sub">L'image de référence. Déclaration et intention. Le site — Route de Fès.</div>
+            </div>
+            <div class="doc-card-tag">Brief v2.0 — Pages 1–4</div>
+          </div>
+          <div class="doc-card" onclick="openDoc('tbm_brief_archi_part2.html','Brief Architectural — Partie 2')">
+            <div>
+              <div class="doc-card-num">B</div>
+              <div class="doc-card-title">Brief Architectural — Partie 2</div>
+              <div class="doc-card-sub">Les 5 clusters. Les mini-riads programme exact. Le bâtiment principal. Le Studio.</div>
+            </div>
+            <div class="doc-card-tag">Brief v2.0 — Pages 5–8</div>
+          </div>
+          <div class="doc-card" onclick="openDoc('tbm_brief_archi_part3.html','Brief Architectural — Partie 3')">
+            <div>
+              <div class="doc-card-num">C</div>
+              <div class="doc-card-title">Brief Architectural — Partie 3</div>
+              <div class="doc-card-sub">Infrastructure et autonomie. Palette matériaux. Les 8 contraintes absolues. Programme.</div>
+            </div>
+            <div class="doc-card-tag">Brief v2.0 — Pages 9–12</div>
+          </div>
+          <div class="doc-card" onclick="openDoc('tbm_termsheet.html','Term Sheet et Pacte de Sortie LBO')">
+            <div>
+              <div class="doc-card-num">D</div>
+              <div class="doc-card-title">Term Sheet et Pacte LBO</div>
+              <div class="doc-card-sub">Structure d'association. Gouvernance. Fonds de Croissance. Mécanisme de sortie LBO.</div>
+            </div>
+            <div class="doc-card-tag">Confidentiel — Pages 1–6</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- READING NAV -->
+    <div style="padding:48px;text-align:center;border-top:1px solid var(--pise-light);">
+      <div style="display:inline-flex;align-items:center;gap:0;">
+        <button id="rnav-prev" onclick="navDoc(-1)" disabled style="font-family:'Montserrat',sans-serif;font-weight:300;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise-mid);background:none;border:none;cursor:pointer;padding:10px 24px;min-width:220px;text-align:right;transition:color 0.15s;">← Précédent</button>
+        <div style="width:1px;height:28px;background:var(--pise-light);"></div>
+        <div style="padding:0 28px;text-align:center;min-width:200px;">
+          <span id="rnav-pos" style="font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--cedar);">Accueil</span>
+        </div>
+        <div style="width:1px;height:28px;background:var(--pise-light);"></div>
+        <button id="rnav-next" onclick="navDoc(1)" style="font-family:'Montserrat',sans-serif;font-weight:300;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise-mid);background:none;border:none;cursor:pointer;padding:10px 24px;min-width:220px;text-align:left;transition:color 0.15s;">Proposition — Le concept →</button>
+      </div>
+    </div>
+
+    <!-- PLOT AERIAL -->
+    <div style="margin-top:64px;">
+      <div style="padding:48px 48px 20px;">
+        <div style="font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--cedar);margin-bottom:4px;border-top:1px solid var(--pise-light);padding-top:48px;">Le terrain — Route de Fès</div>
+        <div style="font-size:12px;letter-spacing:0.15em;color:var(--pise-mid);margin-top:4px;">5 hectares — parcelle murée — Haouz</div>
+      </div>
+      <img src="images/img_b6085da8ddc7306d.png" alt="" style="width:100%;display:block;">
+    </div>
+
+    <footer></footer>
+  </div>
+
+  <!-- FRAME VIEW -->
+  <div id="frame-view">
+    <div class="frame-bar">
+      <button class="frame-back" onclick="showHome()">← Accueil</button>
+      <span class="frame-title" id="frame-title"></span>
+      <div class="frame-nav">
+        <button class="frame-nav-btn" id="btn-prev" onclick="navDoc(-1)">← Précédent</button>
+        <span class="frame-nav-pos" id="nav-pos"></span>
+        <button class="frame-nav-btn" id="btn-next" onclick="navDoc(1)">Suivant →</button>
+      </div>
+    </div>
+    <iframe id="doc-frame" src="" title="Document"></iframe>
+  </div>
+
+</div>
+
+<script>
+  const PASSWORD = 'toileblanche2026';
+
+  const DOCS = [
+    { file: 'tbm_proposition_part1_v2.html',                      title: 'Proposition — 1 / 4',  label: 'Le concept et la déclaration' },
+    { file: 'tbm_proposition_part2_clusters_budget.html',         title: 'Proposition — 2 / 4',  label: 'Les clusters et le budget' },
+    { file: 'tbm_proposition_part3_finance_previsionnel_v2.html', title: 'Proposition — 3 / 4',  label: 'Financement et prévisionnel' },
+    { file: 'tbm_proposition_part4_vie_conditions.html',          title: 'Proposition — 4 / 4',  label: 'La vie ici et les conditions' },
+    { file: 'tbm_brief_archi_part1.html',                         title: 'Brief Archi — 1 / 3',  label: 'Déclaration et site' },
+    { file: 'tbm_brief_archi_part2.html',                         title: 'Brief Archi — 2 / 3',  label: 'Clusters, riads, studio' },
+    { file: 'tbm_brief_archi_part3.html',                         title: 'Brief Archi — 3 / 3',  label: 'Infrastructure et matériaux' },
+    { file: 'tbm_termsheet.html',                                 title: 'Term Sheet',            label: 'Term Sheet et Pacte LBO' },
+
+  ];
+
+  let currentDocIndex = -1;
+
+  function checkPassword() {
+    const input = document.getElementById('pwd').value;
+    const error = document.getElementById('login-error');
+    if (input === PASSWORD) {
+      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('site').style.display = 'flex';
+      document.getElementById('site').style.flexDirection = 'column';
+      updateNavPos();
+    } else {
+      error.classList.add('show');
+      document.getElementById('pwd').value = '';
+      setTimeout(() => error.classList.remove('show'), 2000);
+    }
+  }
+
+  document.getElementById('pwd').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') checkPassword();
+  });
+
+  function openDoc(file, title) {
+    const idx = DOCS.findIndex(d => d.file === file);
+    currentDocIndex = idx;
+    document.getElementById('home-view').style.display = 'none';
+    const fv = document.getElementById('frame-view');
+    fv.style.display = 'flex';
+    fv.style.flexDirection = 'column';
+    document.getElementById('frame-title').textContent = title;
+    document.getElementById('doc-frame').src = file;
+    document.getElementById('nav-home').classList.remove('active');
+    updateNavPos();
+  }
+
+  function navDoc(direction) {
+    const newIdx = currentDocIndex + direction;
+    if (newIdx < -1 || newIdx >= DOCS.length) return;
+    if (newIdx === -1) { showHome(); return; }
+    const doc = DOCS[newIdx];
+    currentDocIndex = newIdx;
+    document.getElementById('home-view').style.display = 'none';
+    const fv = document.getElementById('frame-view');
+    fv.style.display = 'flex';
+    fv.style.flexDirection = 'column';
+    document.getElementById('nav-home').classList.remove('active');
+    document.getElementById('frame-title').textContent = doc.title;
+    document.getElementById('doc-frame').src = doc.file;
+    updateNavPos();
+  }
+
+  function updateNavPos() {
+    const idx = currentDocIndex;
+    const rPrev = document.getElementById('rnav-prev');
+    const rNext = document.getElementById('rnav-next');
+    const rPos  = document.getElementById('rnav-pos');
+    if (!rPrev || !rNext || !rPos) return;
+
+    if (idx < 0) {
+      rPos.textContent = 'Accueil';
+      rPrev.disabled = true;
+      rPrev.style.opacity = '0.25';
+      rPrev.textContent = '← Précédent';
+      rNext.disabled = false;
+      rNext.style.opacity = '1';
+      rNext.textContent = 'Proposition — Le concept →';
+      return;
+    }
+    rPos.textContent = DOCS[idx].title;
+    rPrev.disabled = false;
+    rPrev.style.opacity = '1';
+    rPrev.textContent = idx > 0 ? '← ' + DOCS[idx-1].label : '← Accueil';
+    rNext.disabled = idx === DOCS.length - 1;
+    rNext.style.opacity = idx === DOCS.length - 1 ? '0.25' : '1';
+    rNext.textContent = idx < DOCS.length - 1 ? DOCS[idx+1].label + ' →' : 'Fin du dossier';
+  }
+
+  function showHome() {
+    document.getElementById('frame-view').style.display = 'none';
+    document.getElementById('home-view').style.display = 'block';
+    document.getElementById('nav-home').classList.add('active');
+    document.getElementById('doc-frame').src = '';
+    currentDocIndex = -1;
+    updateNavPos();
+  }
+
+  function logout() {
+    document.getElementById('site').style.display = 'none';
+    document.getElementById('login-screen').style.display = 'flex';
+    document.getElementById('pwd').value = '';
+    showHome();
+  }
+</script>
+</body>
+</html>

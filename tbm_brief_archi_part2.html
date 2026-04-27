@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap');
+  :root{--sand:#F5F0E6;--pise:#111008;--pise-mid:#6B5D4F;--cedar:#C4A882;--sky:#FDFAF5;--pise-light:#E8E0D0;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--sand);color:var(--pise);font-family:'Montserrat',sans-serif;font-weight:300;font-size:17px;line-height:1.75;max-width:960px;margin:0 auto;}
+  .page{padding:56px 52px;border-bottom:1px solid var(--pise-light);}
+  .ph{display:flex;justify-content:space-between;margin-bottom:40px;padding-bottom:10px;border-bottom:1px solid var(--cedar);}
+  .ph span{font-size:15px;letter-spacing:0.2em;color:var(--cedar);text-transform:uppercase;}
+  .ph span:last-child{color:var(--pise-mid);}
+  .sl{font-size:10.5px;letter-spacing:0.24em;color:var(--cedar);text-transform:uppercase;margin-bottom:10px;}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:44px;line-height:1.12;margin-bottom:22px;}
+  h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:21px;line-height:1.3;margin-bottom:10px;margin-top:28px;}
+  h3{font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--pise-mid);margin-bottom:10px;margin-top:20px;font-weight:400;}
+  p{font-size:16.5px;line-height:1.9;margin-bottom:12px;}
+  .bs{font-size:15px;line-height:1.8;color:var(--pise-mid);margin-bottom:7px;}
+  .two{display:grid;grid-template-columns:1.15fr 0.85fr;gap:44px;margin:20px 0;}
+  .two-eq{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:20px 0;}
+  .ul{list-style:none;margin:0 0 14px;padding:0;}
+  .ul li{font-size:16.5px;line-height:1.75;padding-left:14px;position:relative;margin-bottom:4px;}
+  .ul li::before{content:'·';position:absolute;left:0;color:var(--cedar);font-size:18px;line-height:1.3;}
+  .pf{margin-top:40px;padding-top:12px;border-top:1px solid var(--pise-light);display:flex;justify-content:space-between;}
+  .pf span{font-size:9.5px;letter-spacing:0.14em;color:var(--pise-mid);text-transform:uppercase;}
+  .div-f{width:100%;height:1px;background:var(--pise-light);margin:28px 0;}
+  .img-h{width:100%;height:200px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9.5px;text-align:center;padding:16px;font-style:italic;}
+  .img-full{width:100%;height:260px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9.5px;text-align:center;padding:20px;font-style:italic;margin:24px 0;}
+
+  /* SPEC TABLE */
+  table.spec{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;}
+  table.spec tr{border-bottom:1px solid var(--pise-light);}
+  table.spec tr:last-child{border-bottom:none;border-top:1px solid var(--cedar);}
+  table.spec td{padding:6px 0;line-height:1.5;vertical-align:top;}
+  table.spec td:first-child{color:var(--pise-mid);width:42%;font-size:10.5px;}
+  table.spec td:last-child{color:var(--pise);font-weight:400;white-space:nowrap;}
+
+  /* CLUSTER CARDS */
+  .cluster-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--pise-light);margin:20px 0;}
+  .cc{background:var(--sky);padding:16px 12px;}
+  .cn{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:300;color:var(--pise-light);line-height:1;margin-bottom:5px;}
+  .cname{font-size:8.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cedar);margin-bottom:7px;}
+  .cdesc{font-size:9.5px;line-height:1.6;color:var(--pise-mid);}
+  .cloc{font-size:9px;color:var(--pise-mid);margin-top:7px;padding-top:7px;border-top:1px solid var(--pise-light);font-style:italic;}
+
+  /* TECH SPEC BLOCKS */
+  .tech-block{margin:16px 0;}
+  .tech-title{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cedar);margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--pise-light);font-weight:400;}
+  .tech-row{display:grid;grid-template-columns:160px 1fr;gap:12px;padding:5px 0;border-bottom:1px solid var(--pise-light);font-size:10.5px;}
+  .tech-row:last-child{border-bottom:none;}
+  .tech-label{color:var(--pise-mid);}
+  .tech-value{color:var(--pise);}
+
+  /* PROGRAMME TABLE */
+  table.prog{width:100%;border-collapse:collapse;margin:16px 0;font-size:10.5px;}
+  table.prog thead th{padding:6px 8px;font-size:8.5px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;text-align:left;border-bottom:1px solid var(--cedar);}
+  table.prog tbody tr{border-bottom:1px solid var(--pise-light);}
+  table.prog tbody td{padding:6px 8px;line-height:1.5;vertical-align:top;}
+  table.prog tbody td:nth-child(2){white-space:nowrap;text-align:right;}
+  .prog-sec td{background:var(--sand);color:var(--cedar);font-size:8.5px;letter-spacing:0.18em;text-transform:uppercase;padding:4px 8px;}
+  .prog-tot td{border-top:1px solid var(--cedar);font-weight:400;}
+
+  /* STUDIO BLOCK */
+  .studio-block{border:1px solid var(--cedar);padding:24px 28px;margin:24px 0;}
+  .studio-block h2{margin-top:0;}
+
+  /* TABLE & SMALL TEXT FIXES */
+  table.prev{font-size:14px;}
+  table.prev thead th{font-size:10px;letter-spacing:0.12em;padding:9px 10px;}
+  table.prev tbody td{font-size:14px;padding:9px 10px;line-height:1.65;}
+  table.scen{font-size:14px;}
+  table.scen thead th{font-size:10px;padding:9px 10px;}
+  table.scen tbody td{font-size:14px;padding:9px 10px;}
+  .ks-sub{font-size:12px !important;}
+  .ks-lbl{font-size:10px !important;}
+  .row-sec td{font-size:11px !important;}
+  .row-tot td{font-size:15.5px !important;}
+  .cdesc{font-size:13px !important;line-height:1.7;}
+  .vie-price{font-size:13px !important;}
+  .cond-body{font-size:14px !important;}
+  .risk-label{font-size:14px !important;}
+  .risk-body{font-size:14px !important;}
+  .dir-body{font-size:14px !important;}
+  .final-sub{font-size:11px !important;}
+  .fr .amt{font-size:16px !important;}
+
+  /* STRONG TABLE & SMALL TEXT OVERRIDES */
+  table{font-size:15px !important;}
+  table thead th{font-size:11px !important;letter-spacing:0.1em;padding:10px 12px !important;}
+  table tbody td{font-size:15px !important;padding:10px 12px !important;line-height:1.7 !important;}
+  table tbody td.r{font-size:15px !important;}
+  .row-sec td{font-size:12px !important;}
+  .row-tot td{font-size:16px !important;}
+  .ks-lbl{font-size:11px !important;}
+  .ks-sub{font-size:13px !important;}
+  .cdesc{font-size:14px !important;}
+  .cond-body{font-size:15px !important;}
+  .risk-label{font-size:15px !important;}
+  .risk-body{font-size:15px !important;}
+  .dir-body{font-size:15px !important;}
+  .vie-price{font-size:14px !important;}
+  .bs{font-size:14px !important;}
+
+  /* SCREEN: hide print headers/footers */
+  .ph{display:none!important;}
+  .pf{display:none!important;}
+
+  /* FULL-BLEED IMAGES — break out of max-width constraint */
+  img[src^="data:image"] {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    display: block !important;
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+  }
+  .two img[src^="data:image"],
+  .two-eq img[src^="data:image"] {
+    width: calc(100% + 104px) !important;
+    margin-left: -52px !important;
+    max-width: none !important;
+  }
+
+  /* HIDE PAGE HEADERS AND FOOTERS ON SCREEN */
+  .ph { display: none !important; }
+  .pf { display: none !important; }
+
+  /* BRIEF PART3 COMPREHENSIVE FONT FIXES */
+  .tech-title{font-size:12px !important;letter-spacing:0.18em;}
+  .tech-label{font-size:13px !important;}
+  .tech-value{font-size:14px !important;}
+  .tech-row{font-size:14px !important;line-height:1.8;}
+  .mat-name{font-size:13px !important;letter-spacing:0.1em;}
+  .mat-desc{font-size:14px !important;line-height:1.8;}
+  .mat-num{font-size:11px !important;}
+  .mat-interdit-title{font-size:13px !important;}
+  .mat-interdit-body{font-size:14px !important;line-height:1.8;}
+  .contrainte-num{font-size:11px !important;letter-spacing:0.2em;}
+  .contrainte-title{font-size:16px !important;}
+  .contrainte-body{font-size:15px !important;line-height:1.85;}
+  .ref-detail{font-size:12px !important;}
+  .ref-retient{font-size:14px !important;line-height:1.8;}
+  .ref-pas{font-size:13px !important;line-height:1.8;}
+  .closing-sub{font-size:12px !important;letter-spacing:0.18em;}
+  .closing-text{font-size:18px !important;line-height:1.6;}
+  table.prog{font-size:14px !important;}
+  table.prog thead th{font-size:11px !important;padding:9px 10px !important;}
+  table.prog tbody td{font-size:14px !important;padding:9px 10px !important;line-height:1.7;}
+  .prog-sec td{font-size:12px !important;}
+  .sl{font-size:11px !important;letter-spacing:0.22em;}
+  h3{font-size:13px !important;letter-spacing:0.15em;}
+</style>
+</head>
+<body>
+
+<!-- PAGE 5, LES 5 CLUSTERS -->
+<div class="page">
+  <div class="ph"><span>Toile Blanche, Marrakech</span><span>Brief Architectural v2.0, Avril 2026</span></div>
+  <div class="sl">3. Les 5 clusters, logique ksar et programme spatial</div>
+  <h1>5 clusters.<br>Logique ksar.<br>Un programme par cluster.</h1>
+
+  <div class="two">
+    <div>
+      <p>Le principe d'implantation abandonne le modèle de pavillons dispersés, qui produit un campus de resort, exactement ce que ce projet n'est pas. Il adopte la logique du ksar : des unités groupées autour d'un passage intérieur commun, murs extérieurs aveugles, intimité garantie par l'épaisseur du mur et non par la distance.</p>
+      <p>Chaque cluster regroupe 4 mini-riads partageant un passage intérieur. Les murs extérieurs du cluster sont aveugles, une porte arquée en cèdre par unité, deux ouvertures étroites maximum. Depuis l'extérieur, le cluster se lit comme un volume de pisé unique, sévère et silencieux. Les murs partagés entre unités adjacentes génèrent des économies constructives significatives et réduisent les réseaux enterrés.</p>
+      <p>Chaque cluster porte un programme unique, un élément attaché qui lui donne une identité propre et une raison de s'y rendre. L'espace entre les clusters est le programme : le jardin, l'oliveraie, les chemins cairnés. Un hôte qui reste 5 nuits a 5 raisons de marcher.</p>
+
+      <h3>Mix par cluster</h3>
+      <p>Phase 1 (Clusters 1, 2, 3) : 4×1BR par cluster = 12×1BR. Phase 2 (Cluster 4) et Phase 3 (Cluster 5) : 3×1BR + 1×2BR par cluster. Total à pleine capacité : 15×1BR + 5×2BR = 20 unités. Jamais plus, contrainte artistique absolue.</p>
+    </div>
+    <div>
+      <h3>Avantages constructifs du cluster</h3>
+      <ul class="ul">
+        <li>Murs partagés entre unités adjacentes : 8-12&#8239;000€ économisés par mur, 12-15 murs partagés sur les 5 clusters</li>
+        <li>Réseaux enterrés courts : tranchées partagées, distance minimale entre unités et locaux techniques</li>
+        <li>Un seul local technique par cluster : filtration piscines, batteries, onduleurs, stockage</li>
+        <li>Passage intérieur commun crée un microclimat : ombre portée, convection naturelle, protection Chergui</li>
+        <li>Construction séquentielle simple : chaque nouveau cluster est une unité connue, réplicable</li>
+        <li>Privacy totale garantie par le mur, pas par la distance, plus efficient en foncier</li>
+      </ul>
+
+      <h3>Contrainte de visibilité inter-unités</h3>
+      <p>Les ouvertures entre unités sont interdites. Contrainte absolue n°5, Brief Part 3.</p>
+    </div>
+  </div>
+
+  <div class="cluster-grid">
+    <div class="cc">
+      <div class="cn">01</div>
+      <div class="cname">Nocturne</div>
+      <div class="cdesc">Terrasse rooftop ouverte à tous les hôtes. Carte céleste en céramique dans le pisé. Trois chaises longues. Aucun éclairage artificiel. Obscurité totale, le Haouz à 30 minutes de Marrakech.</div>
+      <div class="cloc">Nord extrême. Destination après dîner.</div>
+    </div>
+    <div class="cc">
+      <div class="cn">02</div>
+      <div class="cname">Contemplatif</div>
+      <div class="cdesc">Hammam traditionnel, une salle, pierre, tadelakt, vapeur, silence. Aucun menu de soins. Cercle de méditation sous l'oliveraie. Prévoir local technique vapeur discret.</div>
+      <div class="cloc">Nord-milieu. Destination matin.</div>
+    </div>
+    <div class="cc">
+      <div class="cn">03</div>
+      <div class="cname">Productif</div>
+      <div class="cdesc">Potager muré adjacent. Zone biodigesteur visible et légible. Presse hydraulique Les Compressions. Studio Leroy Brothers attenant. Le cluster de la matière et du faire.</div>
+      <div class="cloc">Sud du bâtiment principal. Destination avant petit-déjeuner.</div>
+    </div>
+    <div class="cc">
+      <div class="cn">04</div>
+      <div class="cname">Culturel</div>
+      <div class="cdesc">Galerie intime intégrée dans un mur du cluster, une œuvre à la fois, sans label. Mur d'enceinte utilisé comme écran cinéma extérieur, deux soirs par semaine. Phase 2.</div>
+      <div class="cloc">Sud. Destination soirée.</div>
+    </div>
+    <div class="cc">
+      <div class="cn">05</div>
+      <div class="cname">Physique</div>
+      <div class="cdesc">Local vélos intégré dans le mur du cluster. Départ des trois itinéraires cairnés. Court de pétanque en terre battue entre clusters 4 et 5. Phase 3.</div>
+      <div class="cloc">Sud extrême. Destination matin.</div>
+    </div>
+  </div>
+
+  <div class="pf"><span>Leroy Brothers, Toile Blanche Group</span><span>5</span><span>Usage interne</span></div>
+</div>
+
+<!-- PAGE 6, LES MINI-RIADS -->
+<div class="page">
+  <div class="ph"><span>Toile Blanche, Marrakech</span><span>Brief Architectural v2.0, Avril 2026</span></div>
+  <div class="sl">4. Les mini-riads, principe architectural et programme exact</div>
+  <h1>Le principe de l'inversion.<br>Aveugle dehors.<br>Tout ouvert dedans.</h1>
+
+  <div class="two">
+    <div>
+      <p>Le riad marocain est une architecture de l'inversion : aveugle sur l'extérieur, tout entier tourné vers un jardin intérieur. C'est l'une des typologies résidentielles les plus sophistiquées au monde, une réponse directe à la chaleur, à la poussière, à l'indiscrétion. Nous réinterprétons ce principe dans un langage contemporain et désertique.</p>
+      <p>L'extérieur du mini-riad est presque aveugle. Un visiteur de passage voit un volume de terre crue, sévère et silencieux. Une seule porte en cèdre arquée, deux ouvertures étroites au maximum, hautes et fines. Rien ne trahit ce qui se passe à l'intérieur.</p>
+      <p>On pousse la porte : on entre dans un monde différent. Un jardin intérieur de 30m², au centre duquel une piscine en zellige foncé reflète le ciel. Les espaces de vie s'ouvrent entièrement sur ce patio. Le ciel est le seul horizon. La lumière change toutes les heures.</p>
+      <p>La piscine n'est pas un équipement de loisir, elle est structurellement intégrée au patio, au même niveau que le sol. Le bassin en zellige foncé réfléchit la lumière et crée le microclimat de la cour. Un olivier ou un grenadier pousse dans un angle. La nuit, des lanternes en laiton. Le silence.</p>
+      <p><strong>Le confort est total et invisible.</strong> Le lit est un Tréca. Le linge est du lin épais, légèrement froissé. La climatisation est réversible, encastrée, non visible. La salle de bain est en tadelakt intégral avec baignoire îlot et douche italienne. La sobriété est architecturale, pas ascétique.</p>
+
+      <h3>Programme 1BR, surfaces exactes</h3>
+      <table class="spec">
+        <tr><td>Chambre + dressing cèdre</td><td>45 m²</td></tr>
+        <tr><td>Salle de bain tadelakt</td><td>20 m²</td></tr>
+        <tr><td>Salon / espace vie</td><td>25 m²</td></tr>
+        <tr><td>Surface bâtie totale</td><td>110 m²</td></tr>
+        <tr><td>Patio intérieur</td><td>30 m²</td></tr>
+        <tr><td>Emprise totale au sol</td><td>140 m², env. 15×13m ext.</td></tr>
+        <tr><td>Piscine bassin zellige</td><td>4×5m, 1,4m profondeur</td></tr>
+        <tr><td>Coût construction</td><td>~199&#8239;000€ / unité (cluster)</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="tech-block">
+        <div class="tech-title">Structure et enveloppe</div>
+        <div class="tech-row"><div class="tech-label">Murs porteurs</div><div class="tech-value">Pisé (terre crue compactée) 50cm minimum. Terre du Haouz si géotechnique favorable.</div></div>
+        <div class="tech-row"><div class="tech-label">Fondations</div><div class="tech-value">Dalle béton armé sur terre ferme. Isolée humidité.</div></div>
+        <div class="tech-row"><div class="tech-label">Toiture</div><div class="tech-value">Terrasse béton + étanchéité. Accessible. Panneaux PV non visibles depuis sol.</div></div>
+        <div class="tech-row"><div class="tech-label">Façade extérieure</div><div class="tech-value">Pisé brut, sans enduit. Couleur naturelle ocre-brun. Aucune peinture.</div></div>
+        <div class="tech-row"><div class="tech-label">Porte principale</div><div class="tech-value">Une seule porte arquée cèdre de l'Atlas. Pleine. Ferronnerie laiton vieilli. Hauteur min. 2,4m.</div></div>
+        <div class="tech-row"><div class="tech-label">Ouvertures façade</div><div class="tech-value">Maximum 2, H 1,2m × L 0,25m. Hautes, lumière rasante, jamais en vis-à-vis.</div></div>
+      </div>
+
+      <div class="tech-block">
+        <div class="tech-title">Finitions intérieures</div>
+        <div class="tech-row"><div class="tech-label">Salle de bain</div><div class="tech-value">Tadelakt intégral sols et murs. Pierre claire ou gris chaud. Baignoire îlot. Douche italienne. Double vasque pierre locale.</div></div>
+        <div class="tech-row"><div class="tech-label">Sols chambre/salon</div><div class="tech-value">Zellige foncé ou pierre locale taillée. Tapis berbère sur dalle nue.</div></div>
+        <div class="tech-row"><div class="tech-label">Plafond</div><div class="tech-value">Béton brut coffré OU poutres cèdre + roseaux. Hauteur min. 3,2m.</div></div>
+        <div class="tech-row"><div class="tech-label">Menuiseries</div><div class="tech-value">Cèdre naturel non traité. Huile de lin + cire d'abeille. Aucun bois peint.</div></div>
+        <div class="tech-row"><div class="tech-label">Lit</div><div class="tech-value">Tréca, plateforme cèdre sur mesure. Linge lin épais. Confort 5 étoiles invisible.</div></div>
+      </div>
+
+      <div class="tech-block">
+        <div class="tech-title">Équipements techniques</div>
+        <div class="tech-row"><div class="tech-label">Climatisation</div><div class="tech-value">Réversible. Cassettes encastrées non visibles. Sur énergie PV cluster.</div></div>
+        <div class="tech-row"><div class="tech-label">Eau chaude</div><div class="tech-value">Solaire thermique toiture + appoint électrique PV.</div></div>
+        <div class="tech-row"><div class="tech-label">Piscine</div><div class="tech-value">Filtration locale + pompe à chaleur. Local technique enterré hors de vue.</div></div>
+        <div class="tech-row"><div class="tech-label">Domotique</div><div class="tech-value">Éclairage scénarisé 3 ambiances. Contrôle clim depuis smartphone. Discret.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <img src="images/img_8f44d1abf32963d2.png" alt="" style="width:100%;display:block;margin:32px 0;">
+  <div style="padding:48px 52px 0;">
+    <div class="sl">Le mini-riad — programme exact</div>
+    <h1>Une unité.<br>Tout est défini.</h1>
+    <p>Chaque mini-riad 1BR est identique dans son programme, distinct dans son orientation et son rapport au jardin. Surface : 55-65m². Aucune exception de programme sans accord écrit.</p>
+  </div>
+
+<img src="images/img_b052f005e61ae4eb.png" alt="" style="width:100%;display:block;margin:32px 0;">
+
+</div>
+
+<!-- PAGE 7, BÂTIMENT PRINCIPAL -->
+<div class="page">
+  <div class="ph"><span>Toile Blanche, Marrakech</span><span>Brief Architectural v2.0, Avril 2026</span></div>
+  <div class="sl">5. Le bâtiment principal, programme et esprit</div>
+  <h1>La ferme rénovée.<br>Cœur public<br>du territoire.</h1>
+
+  <p>La ferme existante de 1&#8239;200m² devient le cœur public du territoire. Elle accueille la vie collective : le restaurant gastronomique, la galerie Toile Blanche Contemporary Marrakech, la réception, le bar, la terrasse rooftop face à l'Atlas. Elle n'est pas rénovée pour ressembler à un hôtel, elle est rénovée pour ressembler à ce qu'elle a toujours été, avec une précision contemporaine assumée.</p>
+
+  <div class="two">
+    <div>
+      <h3>Esprit de la rénovation</h3>
+      <p>Le bâtiment existant en pisé est conservé dans ses grandes lignes. Les interventions contemporaines sont lisibles, assumées, jamais imitatives. On ne fabrique pas du vieux. On ne cache pas le neuf. La règle : le pisé original reste pisé, les additions en béton brut sont clairement béton brut, les menuiseries en cèdre sont nettement cèdre.</p>
+
+      <h3>Programme espaces publics</h3>
+      <table class="prog">
+        <thead><tr><th>Espace</th><th>Surface</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr class="prog-sec"><td colspan="3">F&B et accueil</td></tr>
+          <tr><td>Restaurant, Le Restaurant (dîner) + La Guinguette (déjeuner)</td><td>Salle + terrasse</td><td>40 couverts. Cuisine ouverte ou semi-ouverte. Une cuisine, deux formules.</td></tr>
+          <tr><td>Cuisine professionnelle</td><td>~70 m²</td><td>Froid, cuisson gaz/biogaz, extraction, plonge 80 cvts. HACCP.</td></tr>
+          <tr><td>Bar / réception</td><td>~40 m²</td><td>Comptoir pierre locale. Vue sur cour centrale.</td></tr>
+          <tr><td>Terrasse rooftop</td><td>~80 m²</td><td>Vue Atlas. Yoga matin. Dîner été. Non visible depuis la Route de Fès.</td></tr>
+          <tr class="prog-sec"><td colspan="3">Galerie</td></tr>
+          <tr><td>Toile Blanche Contemporary Marrakech</td><td>~150 m²</td><td>Cimaises blanches. Éclairage LED muséal (Erco). Sol béton ciré. Hauteur min. 4m dans la cour.</td></tr>
+          <tr><td>Réserve et stockage œuvres</td><td>~30 m²</td><td>Conditions climatiques stables. Sécurisé.</td></tr>
+          <tr class="prog-sec"><td colspan="3">Back-of-house</td></tr>
+          <tr><td>Bureaux direction</td><td>~25 m²</td><td>Gilles Leroy + Tahnee. Vue jardin si possible.</td></tr>
+          <tr><td>Logements staff</td><td>2 × 30 m²</td><td>Autonomes. Accès séparé. Phase 1 différée si budget contraint.</td></tr>
+          <tr><td>Sanitaires publics</td><td>~20 m²</td><td>H + F + PMR. Tadelakt. Aucune céramique industrielle.</td></tr>
+          <tr><td>Locaux service</td><td>~40 m²</td><td>Linge, ménage, stockage général.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>La cour centrale</h3>
+      <p>La cour intérieure à double hauteur du bâtiment existant est l'espace le plus précieux. Elle devient le cœur de la galerie, un espace d'exposition extérieur sous ciel ouvert. Les œuvres y sont présentées comme dans un jardin minéral. Aucune toiture permanente. Si une couverture partielle est nécessaire, elle doit être rétractable et invisible quand rangée.</p>
+    </div>
+    <div>
+      <h3>Le restaurant, deux formules</h3>
+      <p>Le Restaurant (dîner, 40 couverts) utilise la salle principale. La Guinguette (déjeuner informel) utilise la terrasse jardin et le comptoir. La cuisine est partagée. La cuisine doit être intégralement équipée, froid professionnel, cuisson gaz/biogaz (1 piano minimum), extraction puissante, plonge dimensionnée pour 80 couverts en pic saison. Le chef est recruté 6 mois avant l'ouverture.</p>
+
+      <h3>Le rooftop</h3>
+      <p>La terrasse rooftop est l'espace le plus stratégique en termes de paysage. Le matin : yoga (sol bois ipé ou deck pierre, aucun carrelage), face à l'Atlas. L'été : dîner sous les étoiles (8 tables maximum). La nuit : observation du ciel.</p>
+      <p>Contrainte absolue : depuis la Route de Fès, le rooftop ne doit pas être visible. Les garde-corps sont en verre trempé ou mur pisé de 60cm. Aucune structure apparente en métal.</p>
+
+      <h3>Accès et circulation</h3>
+      <p>L'entrée principale (réception / galerie) est clairement séparée de l'accès service (cuisine / livraisons). Les mini-riads sont accessibles par des chemins intérieurs privés, jamais visibles depuis le bâtiment principal. La réception voit l'entrée, pas les unités. Chaque cluster est invisible depuis tous les autres.</p>
+
+    
+  </div>
+
+  <div class="pf"><span>Leroy Brothers, Toile Blanche Group</span><span>7</span><span>Usage interne</span></div>
+</div>
+
+
+<!-- PAGE 8, LE STUDIO -->
+<div class="page">
+  <div class="ph"><span>Toile Blanche, Marrakech</span><span>Brief Architectural v2.0, Avril 2026</span></div>
+  <div class="sl">6. Le Studio Leroy Brothers</div>
+  <h1>Un lieu de travail.<br>Pas une galerie.<br>Un atelier.</h1>
+
+  <div class="studio-block">
+    <h2 style="margin-top:0;">Le Studio est la preuve que le lieu est habité par ceux qui l'ont déclaré.</h2>
+    <p>Le Studio Leroy Brothers n'est pas un espace d'exposition. C'est un lieu de travail effectif, un atelier où des œuvres sont en cours de production. Les hôtes qui s'y rendent sur invitation ouverte ne visitent pas une galerie. Ils entrent dans un espace de fabrication. Les œuvres en cours y sont visibles. Les matériaux sont présents. L'odeur de la terre et de la térébenthine est dans l'air.</p>
+    <p>Adjacent au Cluster 3 (productif), le Studio est dans la zone de la propriété dédiée à la matière et au faire : le potager, le biodigesteur, la presse hydraulique Les Compressions. C'est la partie du territoire où quelque chose se produit physiquement, pas seulement où quelque chose s'expose.</p>
+  </div>
+
+  <div class="two">
+    <div>
+      <h3>Programme et spécifications techniques</h3>
+      <div class="tech-block">
+        <div class="tech-row"><div class="tech-label">Surface</div><div class="tech-value">150m² minimum, volume unique, pas de cloisonnement</div></div>
+        <div class="tech-row"><div class="tech-label">Hauteur sous plafond</div><div class="tech-value">Minimum 5m, idéalement 6-7m. Indispensable pour œuvres de grand format et sculptures monumentales.</div></div>
+        <div class="tech-row"><div class="tech-label">Lumière</div><div class="tech-value">Lumière nord via clérestoire haut, non visible depuis l'extérieur au niveau du sol. Lumière directionnelle, pas diffuse.</div></div>
+        <div class="tech-row"><div class="tech-label">Sol</div><div class="tech-value">Béton coulé en place, brut, portant. Résistant aux charges lourdes (sculptures céramique, pierre).</div></div>
+        <div class="tech-row"><div class="tech-label">Accès large</div><div class="tech-value">Porte principale minimum 3m × 3m pour entrée/sortie des grandes œuvres. Accès véhicule si possible.</div></div>
+        <div class="tech-row"><div class="tech-label">Système de levage</div><div class="tech-value">Rail ou palan intégré à la structure de toiture. Capacité minimum 500kg.</div></div>
+        <div class="tech-row"><div class="tech-label">Électricité</div><div class="tech-value">Triphasé. Puissance suffisante pour équipements de sculpture (malaxeurs, fours céramique si nécessaire).</div></div>
+        <div class="tech-row"><div class="tech-label">Eau</div><div class="tech-value">Point d'eau et évacuation. Grand évier. Connexion à la citerne de récupération pour nettoyage.</div></div>
+        <div class="tech-row"><div class="tech-label">Ventilation</div><div class="tech-value">Naturelle par clérestoire + extraction mécanique pour poussières et solvants.</div></div>
+        <div class="tech-row"><div class="tech-label">Espace extérieur attenant</div><div class="tech-value">Zone de travail extérieure compactée, ~100m², pour assemblage grandes pièces et weathering. Zone presse hydraulique Les Compressions intégrée.</div></div>
+      </div>
+    </div>
+    <div>
+      <h3>Accès et usage</h3>
+      <p>Le Studio est ouvert aux hôtes selon présence et disponibilité des Leroy Brothers, sans programme ni réservation. Un membre du staff mentionne son existence une fois, discrètement, au moment opportun. Ceux qui s'y rendent, y vont. Ceux qui n'y vont pas, n'y vont pas.</p>
+      <p>La possibilité que les Leroy Brothers y travaillent effectivement, qu'un hôte entre et trouve une œuvre en cours, est plus précieuse que n'importe quelle visite guidée. C'est cette possibilité que l'architecture doit rendre crédible.</p>
+
+      <h3>Finitions</h3>
+      <p>Le Studio ne doit pas être beau. Il doit être juste, fonctionnel, robuste, honnête. Murs en pisé ou béton brut. Sol béton. Pas de finitions intérieures au sens habituel. Les outils sont visibles. Les œuvres en cours sont exposées à la vue sans mise en scène.</p>
+      <p>Une distinction essentielle : le Studio est sévère, pas le reste de la propriété. Les mini-riads offrent un confort total. Le Studio est le contrepoint, l'endroit où la propriété montre son vrai travail.</p>
+
+      <h3>Phasage</h3>
+      <p>Le Studio est différé à l'année 1 opérationnelle, financé par le Fonds de Croissance (35% du résultat net). Son emplacement et ses fondations sont réservés et raccordés lors de la construction Phase 1. Budget : ~275&#8239;000€.</p>
+    
+  </div>
+
+  <div class="pf"><span>Leroy Brothers, Toile Blanche Group</span><span>8</span><span>Usage interne</span></div>
+</div>
+  <img src="images/img_8ba77878a8051b91.png" alt="" style="width:100%;display:block;margin:32px 0;">
+
+</body>
+</html>

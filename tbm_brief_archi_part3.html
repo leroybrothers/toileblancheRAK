@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap');
+  :root{--sand:#F5F0E6;--pise:#111008;--pise-mid:#6B5D4F;--cedar:#C4A882;--sky:#FDFAF5;--pise-light:#E8E0D0;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--sand);color:var(--pise);font-family:'Montserrat',sans-serif;font-weight:300;font-size:17px;line-height:1.75;max-width:960px;margin:0 auto;}
+  .page{padding:56px 52px;border-bottom:1px solid var(--pise-light);}
+  .ph{display:flex;justify-content:space-between;margin-bottom:40px;padding-bottom:10px;border-bottom:1px solid var(--cedar);}
+  .ph span{font-size:15px;letter-spacing:0.2em;color:var(--cedar);text-transform:uppercase;}
+  .ph span:last-child{color:var(--pise-mid);}
+  .sl{font-size:10.5px;letter-spacing:0.24em;color:var(--cedar);text-transform:uppercase;margin-bottom:10px;}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:44px;line-height:1.12;margin-bottom:22px;}
+  h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:21px;line-height:1.3;margin-bottom:10px;margin-top:28px;}
+  h3{font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--pise-mid);margin-bottom:10px;margin-top:20px;font-weight:400;}
+  p{font-size:16.5px;line-height:1.9;margin-bottom:12px;}
+  .bs{font-size:15px;line-height:1.8;color:var(--pise-mid);margin-bottom:7px;}
+  .two{display:grid;grid-template-columns:1.15fr 0.85fr;gap:44px;margin:20px 0;}
+  .two-eq{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:20px 0;}
+  .ul{list-style:none;margin:0 0 14px;padding:0;}
+  .ul li{font-size:16.5px;line-height:1.75;padding-left:14px;position:relative;margin-bottom:4px;}
+  .ul li::before{content:'·';position:absolute;left:0;color:var(--cedar);font-size:18px;line-height:1.3;}
+  .pf{margin-top:40px;padding-top:12px;border-top:1px solid var(--pise-light);display:flex;justify-content:space-between;}
+  .pf span{font-size:9.5px;letter-spacing:0.14em;color:var(--pise-mid);text-transform:uppercase;}
+  .div-f{width:100%;height:1px;background:var(--pise-light);margin:28px 0;}
+  .img-h{width:100%;height:180px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9.5px;text-align:center;padding:16px;font-style:italic;}
+
+  /* TECH ROWS */
+  .tech-block{margin:16px 0;}
+  .tech-title{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cedar);margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--pise-light);font-weight:400;}
+  .tech-row{display:grid;grid-template-columns:160px 1fr;gap:12px;padding:5px 0;border-bottom:1px solid var(--pise-light);font-size:10.5px;}
+  .tech-row:last-child{border-bottom:none;}
+  .tech-label{color:var(--pise-mid);}
+  .tech-value{color:var(--pise);}
+
+  /* MATÉRIAUX GRID */
+  .mat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--pise-light);margin:20px 0;}
+  .mat-card{background:var(--sky);padding:18px 16px;}
+  .mat-num{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300;color:var(--pise-light);line-height:1;margin-bottom:4px;}
+  .mat-name{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--cedar);margin-bottom:8px;}
+  .mat-desc{font-size:10.5px;line-height:1.7;color:var(--pise-mid);}
+  .mat-interdit{background:var(--sand);padding:18px 16px;grid-column:span 2;}
+  .mat-interdit-title{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--pise);margin-bottom:8px;font-weight:400;}
+  .mat-interdit-body{font-size:10.5px;line-height:1.7;color:var(--pise-mid);}
+
+  /* CONTRAINTES */
+  .contrainte{margin:0 0 20px 0;padding:20px 24px;border-left:3px solid var(--cedar);background:var(--sky);}
+  .contrainte.warning{border-left-color:var(--pise);background:var(--sand);}
+  .contrainte-num{font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;}
+  .contrainte.warning .contrainte-num{color:var(--pise-mid);}
+  .contrainte-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--pise);margin-bottom:8px;line-height:1.3;}
+  .contrainte-body{font-size:10.5px;line-height:1.8;color:var(--pise-mid);}
+
+  /* REFERENCES */
+  .ref-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:20px 0;}
+  .ref-card{padding:16px 0;border-bottom:1px solid var(--pise-light);}
+  .ref-name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:var(--pise);margin-bottom:2px;}
+  .ref-detail{font-size:9px;letter-spacing:0.1em;color:var(--cedar);margin-bottom:8px;}
+  .ref-retient{font-size:10.5px;line-height:1.7;color:var(--pise-mid);}
+  .ref-pas{font-size:9.5px;line-height:1.65;color:var(--pise-light);margin-top:6px;font-style:italic;}
+
+  /* PROGRAMME TABLE */
+  table.prog{width:100%;border-collapse:collapse;margin:16px 0;font-size:10.5px;}
+  table.prog thead th{padding:6px 8px;font-size:8.5px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;text-align:left;border-bottom:1px solid var(--cedar);}
+  table.prog thead th.r{text-align:right;}
+  table.prog tbody tr{border-bottom:1px solid var(--pise-light);}
+  table.prog tbody td{padding:6px 8px;line-height:1.5;vertical-align:top;}
+  table.prog tbody td.r{text-align:right;white-space:nowrap;}
+  .prog-sec td{background:var(--sand);color:var(--cedar);font-size:8.5px;letter-spacing:0.18em;text-transform:uppercase;padding:4px 8px;}
+  .prog-tot td{border-top:2px solid var(--cedar);font-weight:400;font-size:14.5px;padding:8px 8px;}
+  .prog-tot td.r{white-space:nowrap;}
+
+  /* CLOSING */
+  .closing{border-top:2px solid var(--cedar);padding-top:28px;margin-top:40px;}
+  .closing-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;line-height:1.9;color:var(--pise);max-width:520px;}
+  .closing-sub{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--pise-mid);margin-top:12px;}
+
+  /* TABLE & SMALL TEXT FIXES */
+  table.prev{font-size:14px;}
+  table.prev thead th{font-size:10px;letter-spacing:0.12em;padding:9px 10px;}
+  table.prev tbody td{font-size:14px;padding:9px 10px;line-height:1.65;}
+  table.scen{font-size:14px;}
+  table.scen thead th{font-size:10px;padding:9px 10px;}
+  table.scen tbody td{font-size:14px;padding:9px 10px;}
+  .ks-sub{font-size:12px !important;}
+  .ks-lbl{font-size:10px !important;}
+  .row-sec td{font-size:11px !important;}
+  .row-tot td{font-size:15.5px !important;}
+  .cdesc{font-size:13px !important;line-height:1.7;}
+  .vie-price{font-size:13px !important;}
+  .cond-body{font-size:14px !important;}
+  .risk-label{font-size:14px !important;}
+  .risk-body{font-size:14px !important;}
+  .dir-body{font-size:14px !important;}
+  .final-sub{font-size:11px !important;}
+  .fr .amt{font-size:16px !important;}
+
+  /* STRONG TABLE & SMALL TEXT OVERRIDES */
+  table{font-size:15px !important;}
+  table thead th{font-size:11px !important;letter-spacing:0.1em;padding:10px 12px !important;}
+  table tbody td{font-size:15px !important;padding:10px 12px !important;line-height:1.7 !important;}
+  table tbody td.r{font-size:15px !important;}
+  .row-sec td{font-size:12px !important;}
+  .row-tot td{font-size:16px !important;}
+  .ks-lbl{font-size:11px !important;}
+  .ks-sub{font-size:13px !important;}
+  .cdesc{font-size:14px !important;}
+  .cond-body{font-size:15px !important;}
+  .risk-label{font-size:15px !important;}
+  .risk-body{font-size:15px !important;}
+  .dir-body{font-size:15px !important;}
+  .vie-price{font-size:14px !important;}
+  .bs{font-size:14px !important;}
+
+  /* SCREEN: hide print headers/footers */
+  .ph{display:none!important;}
+  .pf{display:none!important;}
+
+  /* FULL-BLEED IMAGES — break out of max-width constraint */
+  img[src^="data:image"] {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    display: block !important;
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+  }
+  .two img[src^="data:image"],
+  .two-eq img[src^="data:image"] {
+    width: calc(100% + 104px) !important;
+    margin-left: -52px !important;
+    max-width: none !important;
+  }
+
+  /* HIDE PAGE HEADERS AND FOOTERS ON SCREEN */
+  .ph { display: none !important; }
+  .pf { display: none !important; }
+
+  /* BRIEF PART3 FONT FIXES */
+  .tech-title{font-size:11px !important;}
+  .tech-row{font-size:14px !important;}
+  .mat-name{font-size:11px !important;}
+  .mat-desc{font-size:14px !important;line-height:1.8;}
+  .mat-interdit-title{font-size:11px !important;}
+  .mat-interdit-body{font-size:14px !important;line-height:1.8;}
+  .contrainte-num{font-size:11px !important;}
+  .contrainte-body{font-size:15px !important;line-height:1.85;}
+  .ref-detail{font-size:11px !important;}
+  .ref-retient{font-size:14px !important;line-height:1.8;}
+  .ref-pas{font-size:12px !important;}
+  table.prog{font-size:14px !important;}
+  table.prog thead th{font-size:11px !important;padding:9px 10px !important;}
+  .prog-sec td{font-size:11px !important;}
+  .closing-sub{font-size:11px !important;}
+  .tech-value{font-size:14px !important;}
+  .tech-label{font-size:12px !important;}
+
+  /* BRIEF PART3 COMPREHENSIVE FONT FIXES */
+  .tech-title{font-size:12px !important;letter-spacing:0.18em;}
+  .tech-label{font-size:13px !important;}
+  .tech-value{font-size:14px !important;}
+  .tech-row{font-size:14px !important;line-height:1.8;}
+  .mat-name{font-size:13px !important;letter-spacing:0.1em;}
+  .mat-desc{font-size:14px !important;line-height:1.8;}
+  .mat-num{font-size:11px !important;}
+  .mat-interdit-title{font-size:13px !important;}
+  .mat-interdit-body{font-size:14px !important;line-height:1.8;}
+  .contrainte-num{font-size:11px !important;letter-spacing:0.2em;}
+  .contrainte-title{font-size:16px !important;}
+  .contrainte-body{font-size:15px !important;line-height:1.85;}
+  .ref-detail{font-size:12px !important;}
+  .ref-retient{font-size:14px !important;line-height:1.8;}
+  .ref-pas{font-size:13px !important;line-height:1.8;}
+  .closing-sub{font-size:12px !important;letter-spacing:0.18em;}
+  .closing-text{font-size:18px !important;line-height:1.6;}
+  table.prog{font-size:14px !important;}
+  table.prog thead th{font-size:11px !important;padding:9px 10px !important;}
+  table.prog tbody td{font-size:14px !important;padding:9px 10px !important;line-height:1.7;}
+  .prog-sec td{font-size:12px !important;}
+  .sl{font-size:11px !important;letter-spacing:0.22em;}
+  h3{font-size:13px !important;letter-spacing:0.15em;}
+</style>
+</head>
+<body>
+
+<!-- PAGE 9, INFRASTRUCTURE ET AUTONOMIE -->
+<div class="page">
+  <div class="ph"><span>Toile Blanche, Marrakech</span><span>Brief Architectural v2.0, Avril 2026</span></div>
+  <div class="sl">7. Infrastructure commune et territoire autonome</div>
+  <h1>Territoire autonome.<br>Zéro dépendance externe.</div>
+
+  <img src="images/img_f7baa080d452f3ce.png" alt="" style="width:100%;display:block;margin:32px 0;">
+
+  <p>Toile Blanche Marrakech ne se raccorde pas au monde. Elle fonctionne avec ce qu'elle produit. Chaque cluster est une unité énergétique et hydrique indépendante. L'ensemble de la propriété fonctionne en autarcie complète, avec raccordement réseau en secours uniquement, jamais en source principale.</p>
+  <p>Cette contrainte est architecturale autant qu'éthique. Elle détermine l'implantation des équipements, la conception des toitures terrasses, les locaux techniques, le jardin, la zone de service. Elle doit être intégrée dès l'APS, pas rajoutée en fin de chantier.</p>
+
+  <div class="two">
+    <div>
+      <div class="tech-block">
+        <div class="tech-title">Énergie, off-grid complet</div>
+        <div class="tech-row"><div class="tech-label">Production PV</div><div class="tech-value">Panneaux photovoltaïques sur toitures terrasses de chaque cluster. Non visibles depuis le sol. Surface ~40-50m² par unité. Surplus alimenté vers le bâtiment principal.</div></div>
+        <div class="tech-row"><div class="tech-label">Stockage</div><div class="tech-value">Batterie partagée par cluster, un seul système pour 4 unités. Local technique enterré ou semi-enterré, hors de vue. Autonomie minimum 3 jours.</div></div>
+        <div class="tech-row"><div class="tech-label">Climatisation</div><div class="tech-value">Réversible variable speed (3× plus efficace que split standard). Alimentée sur PV. Le confort n'est pas négocié, la sobriété énergétique est dans l'architecture passive, pas dans le confort réduit.</div></div>
+        <div class="tech-row"><div class="tech-label">Eau chaude</div><div class="tech-value">Solaire thermique dédié (séparé du PV) pour eau chaude sanitaire et chauffage piscines. Couverture 80-90% annuelle. Appoint électrique sur PV.</div></div>
+        <div class="tech-row"><div class="tech-label">Cuisine</div><div class="tech-value">Biogaz primaire (biodigesteur). Réserve LPG enterrée, capacité 6 mois, remplie annuellement. Un remplissage par an n'est pas une dépendance, c'est une précaution.</div></div>
+        <div class="tech-row"><div class="tech-label">Éclairage extérieur</div><div class="tech-value">100% LED basse consommation. Bornes basses max 40cm sur les chemins. Bouchons lumineux enterrés au pied des oliviers. Aucun projecteur vers le ciel.</div></div>
+        <div class="tech-row"><div class="tech-label">Secours réseau</div><div class="tech-value">Raccordement réseau existant et disponible. Jamais utilisé en source principale. Groupe électrogène pour cuisine et équipements critiques.</div></div>
+      </div>
+
+      <div class="tech-block">
+        <div class="tech-title">Eau, cycle fermé</div>
+        <div class="tech-row"><div class="tech-label">Source</div><div class="tech-value">Puits profond existant + réservoir de stockage. Capacité minimum 5 jours d'autonomie. Traitement UV + filtration qualité potable.</div></div>
+        <div class="tech-row"><div class="tech-label">Eaux grises</div><div class="tech-value">Collecte, traitement, recyclage vers irrigation goutte-à-goutte. Secteurs séparés : oliveraie / jardins clusters / bâtiment principal.</div></div>
+        <div class="tech-row"><div class="tech-label">Eaux noires</div><div class="tech-value">Biodigesteur sur site. Rejet eaux traitées vers irrigation. Digestat vers potager et oliveraie. Aucun rejet direct en pleine terre.</div></div>
+        <div class="tech-row"><div class="tech-label">Pluie</div><div class="tech-value">Récupération toitures terrasses vers citernes enterrées par cluster. Source complémentaire pour irrigation.</div></div>
+        <div class="tech-row"><div class="tech-label">Piscines</div><div class="tech-value">Filtration locale par cluster. Pompe à chaleur alimentée PV. Local technique enterré hors de vue.</div></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="tech-block">
+        <div class="tech-title">Voiries et chemins</div>
+        <div class="tech-row"><div class="tech-label">Accès principal</div><div class="tech-value">Portail unique sur Route de Fès. Interphone + caméra discrets. Allée stabilisée sable compacté ou gravier local, pas d'asphalte.</div></div>
+        <div class="tech-row"><div class="tech-label">Chemins intérieurs</div><div class="tech-value">Stabilisé sable + gravier. Bornes basses max 40cm. Jamais en ligne droite, courbes qui préservent l'intimité. Pas de lampadaires.</div></div>
+        <div class="tech-row"><div class="tech-label">Réseaux enterrés</div><div class="tech-value">Intégraux. Tracé sur l'ensemble des 5 hectares dès Phase 1, conduits vides posés vers clusters 4 et 5. Creuser une fois.</div></div>
+      </div>
+
+      <div class="tech-block">
+        <div class="tech-title">Les Compressions, zone de service</div>
+        <div class="tech-row"><div class="tech-label">Emplacement</div><div class="tech-value">Adjacent au Cluster 3 et au Studio. Zone de service visible et accessible mais non intrusive.</div></div>
+        <div class="tech-row"><div class="tech-label">Presse hydraulique</div><div class="tech-value">Local dédié. Espace de stockage des compressions avant intégration à la collection. Accès véhicule pour évacuation des œuvres.</div></div>
+        <div class="tech-row"><div class="tech-label">Biodigesteur</div><div class="tech-value">Visible et lisible, présenté comme élément du programme, pas caché. Un panneau explicatif sobre dans l'esthétique du projet.</div></div>
+      </div>
+
+      <div class="tech-block">
+        <div class="tech-title">Le jardin, philosophie</div>
+        <div class="tech-row"><div class="tech-label">Principe</div><div class="tech-value">Territoire agricole de luxe, oliviers adultes, grenadiers, figuiers, herbes aromatiques, roseaux. Végétation productive ou endémique. Aucun gazon, aucune plante tropicale, aucun palmier.</div></div>
+        <div class="tech-row"><div class="tech-label">Oliveraie</div><div class="tech-value">Arbres existants à conserver et entretenir. Compléter avec 20-30 oliviers centennaux sur la bande nord.</div></div>
+        <div class="tech-row"><div class="tech-label">Cours intérieures</div><div class="tech-value">1 olivier OU 1 grenadier par cour, planté au sol. Terrasse bois autour de la piscine. Aucune décoration florale en pot.</div></div>
+        <div class="tech-row"><div class="tech-label">Bordures chemins</div><div class="tech-value">Lavande, romarin, salvia, plantes résistantes, odorantes, locales.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pf"><span>Leroy Brothers, Toile Blanche Group</span><span>9</span><span>Usage interne</span></div>
+</div>
+
+<!-- PAGE 10, PALETTE MATÉRIAUX -->
+<div class="page">
+  <div class="ph"><span>Toile Blanche, Marrakech</span><span>Brief Architectural v2.0, Avril 2026</span></div>
+  <img src="images/img_f8fc35ffa560ada5.png" alt="" style="width:100%;display:block;margin:32px 0;">
+  <div class="sl">8. Palette matériaux, spécifications et sourcing</div>
+  <h1>6 matériaux.<br>Aucune exception<br>sans accord écrit.</h1>
+
+  <p class="bs">La palette est limitée à 6 matériaux. Chaque matériau est noble et local (ou localement transformé). Aucune exception sans accord préalable écrit des Leroy Brothers. Aucun matériau de synthèse en surface visible.</p>
+
+  <div class="mat-grid">
+    <div class="mat-card">
+      <div class="mat-num">1</div>
+      <div class="mat-name">Pisé, terre crue compactée</div>
+      <div class="mat-desc">Matériau structurel et de façade. Local. Aucun traitement de surface. Terre du Haouz si analyse géotechnique favorable. Sinon terre importée de Zagora ou Taroudant. Compactage par couches de 15cm. Stabilisation minimale à la chaux (max 4%). Couleur naturelle ocre-brun, aucune teinture. Murs porteurs 50cm minimum. La texture du coffrage est conservée en façade, c'est la finition.</div>
+    </div>
+    <div class="mat-card">
+      <div class="mat-num">2</div>
+      <div class="mat-name">Tadelakt, enduit de chaux marocain</div>
+      <div class="mat-desc">Finition intérieure salle de bain. Imperméable, lisse, vivant. Application traditionnelle en 3 couches. Polissage à la pierre de rivière et savon noir. Couleur : pierre claire (ocre pâle, sable blanc cassé) ou gris chaud (gris tourterelle). Jamais blanc pur. Artisan tadelakt qualifié, références sur projets de même standing exigées. Prototype 2m² validé Leroy Brothers avant démarrage.</div>
+    </div>
+    <div class="mat-card">
+      <div class="mat-num">3</div>
+      <div class="mat-name">Zellige, carreaux de terre émaillée</div>
+      <div class="mat-desc">Piscine et sols. Deux couleurs uniquement. Zellige de Fès, fabrication artisanale. Piscine : bleu nuit profond (proche RAL 5026) ou vert ardoise foncé (proche RAL 6009), une seule couleur identique pour toutes les unités. Sols : zellige anthracite ou terre de Sienne. Pose en opus incertum. Les irrégularités de surface sont la norme et la beauté du produit. Commande directe atelier de Fès, délai 10-14 semaines.</div>
+    </div>
+    <div class="mat-card">
+      <div class="mat-num">4</div>
+      <div class="mat-name">Cèdre de l'Atlas, bois structurel et menuiserie</div>
+      <div class="mat-desc">Porte principale, poutres, menuiseries. Cedrus atlantica, forêts de l'Azilal ou Khénifra. Traitement : huile de lin + cire d'abeille uniquement. Aucun vernis, aucune lasure synthétique. La porte principale est arquée, pleine, ferronnerie laiton martelé. Poutres apparentes : section carrée 15×15cm ou ronde 18cm. Prototype porte validé Leroy Brothers avant fabrication série.</div>
+    </div>
+    <div class="mat-card">
+      <div class="mat-num">5</div>
+      <div class="mat-name">Béton brut, structure et complément</div>
+      <div class="mat-desc">Toitures terrasses, dalles, éléments coulés. Non traité. Coffrage bois laissant empreinte des planches. Aucune peinture, aucun revêtement. La patine naturelle du béton dans le Haouz est la finition. Les plafonds en béton brut coffré créent le contraste avec la douceur du tadelakt et la chaleur du cèdre. Toiture terrasse : béton + étanchéité bitumineuse + protection gravillons clairs.</div>
+    </div>
+    <div class="mat-card">
+      <div class="mat-num">6</div>
+      <div class="mat-name">Pierre locale, sols et éléments ponctuels</div>
+      <div class="mat-desc">Pierre calcaire ou grès local, taillée à la main ou sciée brut. Pas de marbre poli. Pas de granit. Utilisation : seuils de porte, vasques de salle de bain, dalles extérieures ponctuelles, margelles de piscine (si pas zellige). Pose irrégulière, joints en chaux naturelle, pas en ciment gris.</div>
+    </div>
+    <div class="mat-interdit">
+      <div class="mat-interdit-title">Ce qui est interdit, aucune exception sans accord écrit Leroy Brothers</div>
+      <div class="mat-interdit-body">Carrelage céramique industriel. Faïence. Parquet stratifié ou contrecollé. PVC ou résine en surface visible. Aluminium en menuiserie extérieure. Inox apparent. Peinture sur pisé extérieur. Crépi blanc. Toile de verre. Panneaux MDF ou aggloméré en surface visible. Plastique en aucun élément de décoration. Palmiers. Gazon. Fleurs ornementales. Textiles colorés visibles depuis l'extérieur.</div>
+    </div>
+  </div>
+
+  <div class="pf"><span>Leroy Brothers, Toile Blanche Group</span><span>10</span><span>Usage interne</span></div>
+</div>
+
+<!-- PAGE 11, CONTRAINTES ABSOLUES -->
+<div class="page">
+  <div class="ph"><span>Toile Blanche, Marrakech</span><span>Brief Architectural v2.0, Avril 2026</span></div>
+  <div class="sl">9. Contraintes absolues, lignes rouges architecturales</div>
+  <h1>8 contraintes.<br>Aucune ne peut être levée<br>par aucune décision.</h1>
+
+  <p class="bs">Ces contraintes ne peuvent être levées par aucune décision technique, budgétaire ou réglementaire. Elles sont la traduction architecturale du veto artistique absolu des Leroy Brothers. Toute proposition d'architecte ou d'entrepreneur qui y contrevient est refusée.</p>
+
+  <div class="two-eq" style="margin-top:20px;">
+    <div>
+      <div class="contrainte">
+        <div class="contrainte-num">Contrainte 1</div>
+        <div class="contrainte-title">L'extérieur est aveugle</div>
+        <div class="contrainte-body">Chaque mini-riad est presque aveugle côté extérieur. Une seule porte, deux ouvertures étroites maximum. Cette règle ne peut pas être assouplie pour des raisons de ventilation, d'éclairage naturel ou de confort, ces besoins sont satisfaits par le patio intérieur. Toute façade qui ressemble à une façade de maison est un échec architectural.</div>
+      </div>
+      <div class="contrainte">
+        <div class="contrainte-num">Contrainte 2</div>
+        <div class="contrainte-title">Aucune unité ne voit une autre unité</div>
+        <div class="contrainte-body">Depuis l'intérieur d'un mini-riad, patio, chambre, salon, il est impossible de voir l'intérieur ou le patio d'une autre unité, y compris au sein du même cluster. L'implantation et l'orientation des ouvertures doivent le garantir. Ce n'est pas une recommandation, c'est une condition sine qua non.</div>
+      </div>
+      <div class="contrainte">
+        <div class="contrainte-num">Contrainte 3</div>
+        <div class="contrainte-title">La vue sur l'Atlas reste libre à perpétuité</div>
+        <div class="contrainte-body">Depuis la terrasse rooftop du bâtiment principal et depuis les terrasses supérieures des mini-riads les mieux placés, la ligne de vue vers le Haut Atlas (plein sud) doit rester dégagée. Aucune construction Phase 2 ou 3, aucun arbre planté, aucun équipement ne peut obstruer cette vue. Elle est documentée et protégée dès le plan masse.</div>
+      </div>
+      <div class="contrainte">
+        <div class="contrainte-num">Contrainte 4</div>
+        <div class="contrainte-title">La palette matériaux est close</div>
+        <div class="contrainte-body">Pisé, tadelakt, zellige, cèdre, béton brut, pierre locale. Ces 6 matériaux couvrent l'intégralité du projet. Tout matériau supplémentaire requiert un accord écrit préalable des Leroy Brothers. La règle n'est pas une préférence esthétique, c'est la définition de ce que l'œuvre est faite.</div>
+      </div>
+    </div>
+    <div>
+      <div class="contrainte">
+        <div class="contrainte-num">Contrainte 5</div>
+        <div class="contrainte-title">La cour intérieure ne peut pas être couverte</div>
+        <div class="contrainte-body">Le patio de chaque mini-riad est à ciel ouvert. Il ne peut pas être couvert, même partiellement, même par une structure amovible. La relation avec le ciel, la lumière qui change, les étoiles la nuit, la pluie qui tombe dans la piscine en janvier, est constitutive de l'expérience. Un patio couvert est une chambre. Ce doit être une cour.</div>
+      </div>
+      <div class="contrainte">
+        <div class="contrainte-num">Contrainte 6</div>
+        <div class="contrainte-title">La cour centrale du bâtiment principal reste à ciel ouvert</div>
+        <div class="contrainte-body">Même contrainte que ci-dessus pour la cour intérieure double hauteur du bâtiment principal. Elle est le cœur de la galerie. Si une protection partielle contre la pluie est nécessaire, une toile tendue amovible (non visible quand rangée) est admise, aucune structure permanente.</div>
+      </div>
+      <div class="contrainte">
+        <div class="contrainte-num">Contrainte 7</div>
+        <div class="contrainte-title">La bande nord est réservée à la croissance</div>
+        <div class="contrainte-body">La parcelle longue et étroite remontant vers le nord (environ 45m × 350m) est le pipeline de construction Phases 2 et 3. Aucune infrastructure définitive ne peut y être posée sans compatibilité avec l'implantation future des clusters 4 et 5. Le plan masse Phase 1 doit réserver et documenter ces emplacements.</div>
+      </div>
+      <div class="contrainte warning">
+        <div class="contrainte-num">Contrainte 8, nouvelle</div>
+        <div class="contrainte-title">Le territoire est autonome en énergie et en eau</div>
+        <div class="contrainte-body">Chaque cluster est une unité énergétique et hydrique indépendante. PV toiture terrasse, batteries enterrées, eau du puits traitée sur site, eaux grises recyclées, biodigesteur. La climatisation fonctionne sur énergie solaire, le confort n'est pas négocié. Le raccordement réseau existe en secours uniquement. Cette contrainte est intégrée dès l'APS, pas rajoutée en phase d'exécution.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pf"><span>Leroy Brothers, Toile Blanche Group</span><span>11</span><span>Usage interne</span></div>
+</div>
+
+<!-- PAGE 12, PROGRAMME SYNTHÉTIQUE + PHASAGE -->
+<div class="page">
+  <div class="ph"><span>Toile Blanche, Marrakech</span><span>Brief Architectural v2.0, Avril 2026</span></div>
+  <div class="sl">10. Programme synthétique et phasage</div>
+  <h1>Ce qui se construit.<br>Quand. Dans quel ordre.</h1>
+
+  <table class="prog">
+    <thead>
+      <tr>
+        <th style="width:40%;">Élément</th>
+        <th>Surface</th>
+        <th class="r">Budget</th>
+        <th>Remarques</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="prog-sec"><td colspan="4">Phase 1, Construction principale, 18 mois</td></tr>
+      <tr><td>12 mini-riads 1BR, 3 clusters (Clusters 1, 2, 3)</td><td>990m² bâti + 360m² cours</td><td class="r">2&#8239;390&#8239;000€</td><td>~199&#8239;000€/unité. Murs partagés. Piscine privée 4×5m par unité.</td></tr>
+      <tr><td>Bâtiment principal, rénovation 1&#8239;200m²</td><td>1&#8239;200m²</td><td class="r">700&#8239;000€</td><td>Restaurant, galerie, réception, bar, rooftop, back-of-house.</td></tr>
+      <tr><td>Système off-grid Phase 1 (3 clusters)</td><td></td><td class="r">90&#8239;000€</td><td>PV, batteries, solaire thermique. Autonomie complète.</td></tr>
+      <tr><td>Biodigesteur + traitement eau + citernes</td><td></td><td class="r">80&#8239;000€</td><td>Dimensionné 20 unités dès Phase 1.</td></tr>
+      <tr><td>Voiries, réseaux, portail, mur clôture</td><td></td><td class="r">120&#8239;000€</td><td>Conduits Phase 2-3 inclus, creuser une fois.</td></tr>
+      <tr><td>Provisions Phase 2-3 (zones réservées, conduits)</td><td></td><td class="r">43&#8239;000€</td><td>Clusters 4 et 5 prévus et raccordés.</td></tr>
+      <tr><td>Zone service + presse hydraulique Les Compressions</td><td></td><td class="r">15&#8239;000€</td><td>Presse acquise sur Fonds de Croissance an 1.</td></tr>
+      <tr><td>Jardin Phase 1</td><td></td><td class="r">20&#8239;000€</td><td>Oliveraie complémentaire, potager, clusters.</td></tr>
+      <tr><td>Honoraires et frais</td><td></td><td class="r">117&#8239;000€</td><td>MOE 2%, contrôle technique, notaire, SIYAHA, fiscal.</td></tr>
+      <tr><td>Provision aléas (6%)</td><td></td><td class="r">204&#8239;000€</td><td>Gilles Leroy sur site en permanence.</td></tr>
+      <tr class="prog-tot"><td>Total construction Phase 1</td><td></td><td class="r">3&#8239;809&#8239;000€</td><td></td></tr>
+      <tr class="prog-sec"><td colspan="4">Fonds de Croissance, financement opérationnel (35% résultat net)</td></tr>
+      <tr><td>Studio Leroy Brothers</td><td>150m²+</td><td class="r">~275&#8239;000€</td><td>An 1. 6m plafond, clérestoire nord, palan, sol béton.</td></tr>
+      <tr><td>Hammam Cluster 2</td><td>~60m²</td><td class="r">~80&#8239;000€</td><td>An 2. Tadelakt, pierre, vapeur, une salle.</td></tr>
+      <tr><td>Off-grid Clusters 4 et 5</td><td></td><td class="r">~60&#8239;000€</td><td>An 2-3. Conduits déjà posés en Phase 1.</td></tr>
+      <tr class="prog-sec"><td colspan="4">Phase 2, Cluster 4, Année 3-4</td></tr>
+      <tr><td>Cluster 4 (3×1BR + 1×2BR) + programme culturel</td><td>~530m² bâti</td><td class="r">~850&#8239;000€</td><td>Auto-financé. Galerie intime + cinéma extérieur.</td></tr>
+      <tr class="prog-sec"><td colspan="4">Phase 3, Cluster 5, Année 6-7</td></tr>
+      <tr><td>Cluster 5 (3×1BR + 1×2BR) + programme physique</td><td>~530m² bâti</td><td class="r">~900&#8239;000€</td><td>Auto-financé. Local vélos, pétanque, départ cairns.</td></tr>
+      <tr class="prog-tot"><td>Total programme complet, 20 unités</td><td></td><td class="r">~5&#8239;559&#8239;000€</td><td>100% financement propre après Phase 1.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="div-f"></div>
+
+  <div class="two-eq">
+    <div>
+      <h3>Planning Phase 1, 18 mois</h3>
+      <div class="tech-block" style="margin-top:8px;">
+        <div class="tech-row"><div class="tech-label">Mois 1-3</div><div class="tech-value">APS, relevé topographique et géotechnique, analyse terre pisé, permis de construire, GO SIYAHA, sélection architecte marocain.</div></div>
+        <div class="tech-row"><div class="tech-label">Mois 3-6</div><div class="tech-value">APD, plans d'exécution, appel d'offres, obtention permis. Commandes longues : zellige Fès (10-14 semaines), cèdre Atlas.</div></div>
+        <div class="tech-row"><div class="tech-label">Mois 6-12</div><div class="tech-value">Gros œuvre 12 unités + 3 clusters. Réseaux enterrés complets. Bâtiment principal débuté mois 8.</div></div>
+        <div class="tech-row"><div class="tech-label">Mois 10-15</div><div class="tech-value">Lots techniques (clim, plomberie, électricité, PV, batteries). Bâtiment principal en parallèle.</div></div>
+        <div class="tech-row"><div class="tech-label">Mois 13-17</div><div class="tech-value">Finitions pisé, tadelakt, zellige, cèdre. FF&E et mobilier.</div></div>
+        <div class="tech-row"><div class="tech-label">Mois 17-18</div><div class="tech-value">Réception, commissioning systèmes, formation équipe, ouverture.</div></div>
+      </div>
+    </div>
+    <div>
+      <h3>Premier architecte à contacter</h3>
+      <p>Adam Elhattami, AD Architectes (Marrakech), a déjà travaillé sur Toile Blanche Marrakech en 2018 (dossier Draa Natfrante). Connaît le concept, le client, le territoire. A les agréments marocains requis. À réactiver en priorité pour évaluer sa disponibilité et son alignement avec le programme actuel, significativement différent du 2018.</p>
+
+      <h3>Critères de sélection architecte</h3>
+      <ul class="ul">
+        <li>Expérience pisé et tadelakt prouvée, visites de chantiers réalisés obligatoires</li>
+        <li>Références hôtellerie boutique Maroc</li>
+        <li>Capacité à travailler sous direction artistique externe forte</li>
+        <li>Disponibilité pour 18 mois de suivi de chantier</li>
+        <li>Agrément DPLG ou équivalent marocain</li>
+      </ul>
+
+      <div class="closing" style="margin-top:20px;">
+        <div class="closing-text">« Ce n'est pas un brief de plus. C'est la définition précise de ce que ce lieu doit être et de ce qu'il ne peut pas être. Chaque décision qui s'en écarte est refusée. »</div>
+        <div class="closing-sub">Leroy Brothers, Brief Architectural Toile Blanche Marrakech v2.0, Avril 2026, Usage interne</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pf"><span>Leroy Brothers, Toile Blanche Group</span><span>12</span><span>Usage interne</span></div>
+</div>
+
+</body>
+</html>
