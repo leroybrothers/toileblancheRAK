@@ -68,6 +68,7 @@
   table.budget tbody tr{border-bottom:1px solid var(--pise-light);}
   table.budget tbody td{padding:6px 8px;line-height:1.5;color:var(--pise);vertical-align:top;}
   table.budget tbody td.r{text-align:right;white-space:normal;word-break:break-word;}
+  table.budget th.r, table.budget td.r{width:170px;white-space:nowrap;word-break:normal;}
   table.budget tbody td.note{font-size:9.5px;color:var(--pise-mid);}
   .row-sec td{background:var(--sand);color:var(--cedar);font-size:8.5px;letter-spacing:0.2em;text-transform:uppercase;padding:5px 8px;}
   .row-sub td{background:var(--sand);font-weight:400;font-size:14px;}
@@ -219,9 +220,9 @@
   <table class="budget">
     <thead>
       <tr>
-        <th style="width:55%;">Poste</th>
-        <th class="r">Montant</th>
-        <th>Note</th>
+        <th style="width:50%;">Poste</th>
+        <th class="r" style="width:170px;">Montant</th>
+        <th style="width:30%;">Note</th>
       </tr>
     </thead>
     <tbody>
