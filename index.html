@@ -11,8 +11,8 @@
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap');
   :root{--sand:#F5F0E6;--pise:#111008;--pise-mid:#4F4336;--cedar:#A78661;--sky:#FDFAF5;--pise-light:#D8CCB8;}
   *{margin:0;padding:0;box-sizing:border-box;}
-  html,body{width:100%;max-width:100%;overflow-x:hidden;}
-  body{background:var(--sand);color:var(--pise);font-family:'Montserrat',sans-serif;font-weight:300;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  html,body{width:100%;max-width:100%;overflow-x:hidden;overscroll-behavior-x:none;}
+  body{touch-action:pan-y;background:var(--sand);color:var(--pise);font-family:'Montserrat',sans-serif;font-weight:300;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;}
 
   /* LOGIN */
   #login-screen{width:100%;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;}
@@ -30,6 +30,8 @@
   .login-confidential{font-size:10px;letter-spacing:0.15em;color:var(--pise-mid);text-align:center;margin-top:48px;text-transform:uppercase;}
 
   .site-shell{width:100%;max-width:100%;overflow-x:hidden;}
+
+  #site,#home-view,#frame-view{touch-action:pan-y;}
 
   /* SITE */
   #site{display:none;width:100%;max-width:100%;min-height:100vh;flex-direction:column;overflow-x:hidden;}
