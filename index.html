@@ -91,9 +91,7 @@
 
   /* FRAME VIEW */
   #frame-view{display:none;width:100%;flex-direction:column;flex:1;}
-  .frame-bar{background:var(--sand);border-bottom:1px solid var(--pise-light);padding:12px 48px;display:flex;justify-content:center;}
-  .frame-title{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise);text-align:center;}
-  iframe{width:100%;max-width:100%;flex:1;border:none;min-height:calc(100vh - 120px);}
+  iframe{width:100%;max-width:100%;flex:1;border:none;min-height:calc(100vh - 86px);}
 
   /* FOOTER */
   footer{background:var(--sand);border-top:1px solid var(--pise-light);padding:24px 48px;display:flex;justify-content:space-between;align-items:center;}
@@ -150,7 +148,7 @@
   <!-- HOME VIEW -->
   <div id="home-view">
     <div class="hero">
-      <img class="hero-img" src="images/img_60d5d1e65440ff73.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;">
+      <img class="hero-img" src="images/img_f1885b8c76850029.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;">
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <div class="hero-eyebrow">Toile Blanche — Marrakech — Route de Fès</div>
@@ -257,9 +255,6 @@
 
   <!-- FRAME VIEW -->
   <div id="frame-view">
-    <div class="frame-bar">
-      <span class="frame-title" id="frame-title"></span>
-    </div>
     <iframe id="doc-frame" src="" title="Document"></iframe>
   </div>
 
@@ -343,7 +338,6 @@
     const fv = document.getElementById('frame-view');
     fv.style.display = 'flex';
     fv.style.flexDirection = 'column';
-    document.getElementById('frame-title').textContent = title;
     document.getElementById('doc-frame').src = file;
     updateNavPos();
   }
@@ -358,7 +352,6 @@
     const fv = document.getElementById('frame-view');
     fv.style.display = 'flex';
     fv.style.flexDirection = 'column';
-    document.getElementById('frame-title').textContent = doc.title;
     document.getElementById('doc-frame').src = doc.file;
     updateNavPos();
   }
