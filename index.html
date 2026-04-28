@@ -78,8 +78,25 @@
   .doc-card-tag{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cedar);}
   .doc-card-arrow{font-size:22px;color:var(--pise-light);align-self:flex-end;margin-top:16px;}
 
+  /* HOME INTRO */
+  .home-intro{max-width:1200px;margin:0 auto;padding:72px 48px 40px;}
+  .home-kicker{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--cedar);margin-bottom:12px;}
+  .home-title{font-family:'Cormorant Garamond',serif;font-size:54px;line-height:1.08;color:var(--pise);font-weight:300;margin-bottom:22px;}
+  .home-text{max-width:980px;font-size:16px;line-height:1.9;color:var(--pise-mid);margin-bottom:10px;}
+  .project-compare{max-width:1200px;margin:0 auto;padding:0 48px 40px;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--pise-light);}
+  .project-block{background:var(--sky);padding:28px 28px 24px;cursor:pointer;transition:background 0.15s;}
+  .project-block:hover{background:var(--sand);}
+  .project-kicker{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cedar);margin-bottom:10px;}
+  .project-title{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300;line-height:1.2;color:var(--pise);margin-bottom:16px;}
+  .project-metric{padding:10px 0;border-top:1px solid var(--pise-light);}
+  .project-metric:first-of-type{border-top:1px solid var(--cedar);}
+  .metric-value{font-family:'Cormorant Garamond',serif;font-size:30px;line-height:1.1;color:var(--pise);}
+  .metric-label{font-size:12px;letter-spacing:0.08em;color:var(--pise-mid);margin-top:2px;}
+
   @media (max-width: 1100px){
     .doc-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .project-compare{grid-template-columns:1fr;}
+    .home-title{font-size:44px;}
   }
 
   @media (max-width: 720px){
@@ -88,6 +105,9 @@
     .nav-link{padding:6px 8px;letter-spacing:0.1em;white-space:normal;}
     .doc-section{padding:48px 20px;}
     .frame-bar, footer{padding-left:20px;padding-right:20px;}
+    .home-intro{padding:56px 20px 30px;}
+    .project-compare{padding:0 20px 30px;}
+    .home-title{font-size:38px;}
   }
 
   /* FRAME VIEW */
@@ -164,78 +184,54 @@
     </div>
 
     <div class="content">
-      <div class="doc-section">
-        <div class="doc-section-title">Proposition d'Investissement</div>
-        <div class="doc-grid">
-          <div class="doc-card" onclick="openDoc('tbm_proposition_part1_v2.html','Proposition — Partie 1')">
-            <div>
-              <div class="doc-card-num">01</div>
-              <div class="doc-card-title">Le concept et la déclaration</div>
-              <div class="doc-card-sub">L'image de référence. Second territoire. Territoire autonome. Les Compressions.</div>
-            </div>
-            <div class="doc-card-tag">L'investissement</div>
-          </div>
-          <div class="doc-card" onclick="openDoc('tbm_proposition_part2_clusters_budget.html','Proposition — Partie 2')">
-            <div>
-              <div class="doc-card-num">02</div>
-              <div class="doc-card-title">Les clusters et le budget</div>
-              <div class="doc-card-sub">5 clusters, logique ksar. Architecture des mini-riads. Budget détail Phase 1.</div>
-            </div>
-            <div class="doc-card-tag">Le programme</div>
-          </div>
-          <div class="doc-card" onclick="openDoc('tbm_proposition_part3_finance_previsionnel_v2.html','Proposition — Partie 3')">
-            <div>
-              <div class="doc-card-num">03</div>
-              <div class="doc-card-title">Financement et prévisionnel</div>
-              <div class="doc-card-sub">Structure de capital. Fonds de Croissance. Prévisionnel 3 ans. Retour investisseur 5,7×.</div>
-            </div>
-            <div class="doc-card-tag">Le financement</div>
-          </div>
-          <div class="doc-card" onclick="openDoc('tbm_proposition_part4_vie_conditions.html','Proposition — Partie 4')">
-            <div>
-              <div class="doc-card-num">04</div>
-              <div class="doc-card-title">La vie ici et les conditions</div>
-              <div class="doc-card-sub">Programme La Semaine, L'Atelier, Vignes Vivantes. Conditions de participation. Risques.</div>
-            </div>
-            <div class="doc-card-tag">La vie ici</div>
-          </div>
-        </div>
+      <div class="home-intro">
+        <div class="home-kicker">Toile Blanche Marrakech</div>
+        <h2 class="home-title">Deux propositions. Un territoire.</h2>
+        <p class="home-text">Ce document présente deux propositions d'investissement distinctes pour un même terrain de 5 hectares sur la Route de Fès, à 25 minutes de Marrakech.</p>
+        <p class="home-text">Les deux propositions partagent le même foncier, la même structure de capital, la même direction artistique, le même opérateur. Elles divergent sur l'architecture, les matériaux, la durée de vie des actifs et le positionnement tarifaire.</p>
+        <p class="home-text">Elles ont été préparées en parallèle, avec le même soin, la même honnêteté. Aucune n'est présentée comme la bonne réponse. Les chiffres le font.</p>
       </div>
 
-      <div class="doc-section" style="padding-top:0;">
-        <div class="doc-section-title">Documents de référence</div>
-        <div class="doc-grid">
-          <div class="doc-card" onclick="openDoc('tbm_brief_archi_part1.html','Brief Architectural — Partie 1')">
-            <div>
-              <div class="doc-card-num">A</div>
-              <div class="doc-card-title">Brief Architectural — Partie 1</div>
-              <div class="doc-card-sub">L'image de référence. Déclaration et intention. Le site — Route de Fès.</div>
-            </div>
-            <div class="doc-card-tag">L'architecture</div>
+      <div class="project-compare">
+        <div class="project-block" onclick="selectProject('riads-pise', true)">
+          <div class="project-kicker">Construction permanente</div>
+          <div class="project-title">Riads Pisé</div>
+          <div class="project-metric">
+            <div class="metric-value">4,76M€</div>
+            <div class="metric-label">Investissement total</div>
           </div>
-          <div class="doc-card" onclick="openDoc('tbm_brief_archi_part2.html','Brief Architectural — Partie 2')">
-            <div>
-              <div class="doc-card-num">B</div>
-              <div class="doc-card-title">Brief Architectural — Partie 2</div>
-              <div class="doc-card-sub">Les 5 clusters. Les mini-riads programme exact. Le bâtiment principal. Le Studio.</div>
-            </div>
-            <div class="doc-card-tag">Les 5 clusters</div>
+          <div class="project-metric">
+            <div class="metric-value">12 unités</div>
+            <div class="metric-label">Phase 1, 3 clusters</div>
           </div>
-          <div class="doc-card" onclick="openDoc('tbm_brief_archi_part3.html','Brief Architectural — Partie 3')">
-            <div>
-              <div class="doc-card-num">C</div>
-              <div class="doc-card-title">Brief Architectural — Partie 3</div>
-              <div class="doc-card-sub">Infrastructure et autonomie. Palette matériaux. Les 8 contraintes absolues. Programme.</div>
-            </div>
-            <div class="doc-card-tag">Le territoire autonome</div>
+          <div class="project-metric">
+            <div class="metric-value">800€</div>
+            <div class="metric-label">ADR blended</div>
           </div>
-          <div class="doc-card" onclick="openDoc('tbm_termsheet.html','Term Sheet et Pacte de Sortie LBO')">
-            <div>
-              <div class="doc-card-num">D</div>
-              <div class="doc-card-title">Term Sheet et Pacte LBO</div>
-              <div class="doc-card-sub">Structure d'association. Gouvernance. Fonds de Croissance. Mécanisme de sortie LBO.</div>
-            </div>
-            <div class="doc-card-tag">Les conditions</div>
+          <div class="project-metric">
+            <div class="metric-value">5,7×</div>
+            <div class="metric-label">Retour cible an 5</div>
+          </div>
+        </div>
+
+        <div class="project-block" onclick="selectProject('khaimas', true)">
+          <div class="project-kicker">Structures toile sur plateforme</div>
+          <div class="project-title">Khaimas</div>
+          <div class="project-metric">
+            <div class="metric-value">3,67M€</div>
+            <div class="metric-label">Investissement total</div>
+          </div>
+          <div class="project-metric">
+            <div class="metric-value">12 tentes</div>
+            <div class="metric-label">Phase 1</div>
+          </div>
+          <div class="project-metric">
+            <div class="metric-value">500€</div>
+            <div class="metric-label">ADR blended</div>
+          </div>
+          <div class="project-metric">
+            <div class="metric-value">x,x×</div>
+            <div class="metric-label">Retour cible an 5 (à calculer)</div>
           </div>
         </div>
       </div>
