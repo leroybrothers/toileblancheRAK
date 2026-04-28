@@ -58,9 +58,10 @@
   .hero-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:56px;line-height:1.05;color:var(--sky);margin-bottom:12px;}
   .hero-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:rgba(253,250,245,0.82);margin-bottom:48px;}
   .hero-declaration{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(253,250,245,0.74);border-left:1px solid var(--cedar);padding-left:20px;text-align:left;line-height:1.9;}
-  .hero-cta-wrap{margin-top:28px;display:flex;justify-content:center;}
+  .hero-cta-wrap{margin-top:28px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
   .hero-cta{font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--sky);background:rgba(167,134,97,0.22);border:1px solid rgba(167,134,97,0.5);padding:11px 18px;cursor:pointer;transition:all 0.15s;}
   .hero-cta:hover{background:rgba(167,134,97,0.34);border-color:rgba(167,134,97,0.75);}
+  .hero-cta.active{background:rgba(167,134,97,0.4);border-color:rgba(167,134,97,0.95);}
 
   /* CONTENT AREA */
   .content{width:100%;flex:1;}
@@ -156,7 +157,8 @@
         <div class="hero-sub">Un territoire déclaré œuvre</div>
         <div class="hero-declaration">« Toile Blanche a été déclarée œuvre par les Leroy Brothers.<br>Elle continue de fonctionner normalement. »</div>
         <div class="hero-cta-wrap">
-          <button class="hero-cta" onclick="openDoc('tbm_proposition_part1_v2.html', `L'investissement`)">Ouvrir L'investissement</button>
+          <button class="hero-cta active" id="cta-riads-pise" onclick="selectProject('riads-pise', true)">Riads Pisé</button>
+          <button class="hero-cta" id="cta-khaimas" onclick="selectProject('khaimas', true)">Khaimas</button>
         </div>
       </div>
     </div>
@@ -275,7 +277,57 @@
 
   ];
 
+  const PROJECT_FILES = {
+    'riads-pise': {
+      'tbm_proposition_part1_v2.html': 'tbm_proposition_part1_v2.html',
+      'tbm_proposition_part2_clusters_budget.html': 'tbm_proposition_part2_clusters_budget.html',
+      'tbm_proposition_part3_finance_previsionnel_v2.html': 'tbm_proposition_part3_finance_previsionnel_v2.html',
+      'tbm_proposition_part4_vie_conditions.html': 'tbm_proposition_part4_vie_conditions.html',
+      'tbm_brief_archi_part1.html': 'tbm_brief_archi_part1.html',
+      'tbm_brief_archi_part2.html': 'tbm_brief_archi_part2.html',
+      'tbm_brief_archi_part3.html': 'tbm_brief_archi_part3.html',
+      'tbm_termsheet.html': 'tbm_termsheet.html'
+    },
+    'khaimas': {
+      'tbm_proposition_part1_v2.html': 'khaimas_proposition_part1_v1.html',
+      'tbm_proposition_part2_clusters_budget.html': 'khaimas_proposition_part2_clusters_budget.html',
+      'tbm_proposition_part3_finance_previsionnel_v2.html': 'khaimas_proposition_part3_finance_previsionnel_v1.html',
+      'tbm_proposition_part4_vie_conditions.html': 'khaimas_proposition_part4_vie_conditions.html',
+      'tbm_brief_archi_part1.html': 'khaimas_brief_archi_part1.html',
+      'tbm_brief_archi_part2.html': 'khaimas_brief_archi_part2.html',
+      'tbm_brief_archi_part3.html': 'khaimas_brief_archi_part3.html',
+      'tbm_termsheet.html': 'khaimas_termsheet.html'
+    }
+  };
+
   let currentDocIndex = -1;
+  let currentProject = 'riads-pise';
+
+  function resolveProjectFile(baseFile) {
+    return (PROJECT_FILES[currentProject] && PROJECT_FILES[currentProject][baseFile]) || baseFile;
+  }
+
+  function updateProjectCtas() {
+    const ctaRiads = document.getElementById('cta-riads-pise');
+    const ctaKhaimas = document.getElementById('cta-khaimas');
+    if (!ctaRiads || !ctaKhaimas) return;
+    ctaRiads.classList.toggle('active', currentProject === 'riads-pise');
+    ctaKhaimas.classList.toggle('active', currentProject === 'khaimas');
+  }
+
+  function selectProject(projectKey, openFirstDoc = false) {
+    if (!PROJECT_FILES[projectKey]) return;
+    currentProject = projectKey;
+    updateProjectCtas();
+    if (openFirstDoc) {
+      openDoc(DOCS[0].file, DOCS[0].title);
+      return;
+    }
+    if (currentDocIndex >= 0) {
+      const doc = DOCS[currentDocIndex];
+      document.getElementById('doc-frame').src = resolveProjectFile(doc.file);
+    }
+  }
 
   function renderNavLinks() {
     const nav = document.getElementById('nav-links');
@@ -338,7 +390,7 @@
     const fv = document.getElementById('frame-view');
     fv.style.display = 'flex';
     fv.style.flexDirection = 'column';
-    document.getElementById('doc-frame').src = file;
+    document.getElementById('doc-frame').src = resolveProjectFile(file);
     updateNavPos();
   }
 
@@ -352,7 +404,7 @@
     const fv = document.getElementById('frame-view');
     fv.style.display = 'flex';
     fv.style.flexDirection = 'column';
-    document.getElementById('doc-frame').src = doc.file;
+    document.getElementById('doc-frame').src = resolveProjectFile(doc.file);
     updateNavPos();
   }
 

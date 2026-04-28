@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="referrer" content="no-referrer">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap');
+  :root{--sand:#F5F0E6;--pise:#111008;--pise-mid:#4F4336;--cedar:#A78661;--sky:#FDFAF5;--pise-light:#D8CCB8;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:100%;max-width:100%;overflow-x:hidden;overscroll-behavior-x:none;}
+  img,iframe{max-width:100%;height:auto;}
+  table{max-width:100%;}
+  body{touch-action:pan-y;background:var(--sand);color:var(--pise);font-family:'Montserrat',sans-serif;font-weight:300;font-size:17px;line-height:1.75;max-width:960px;margin:0 auto;}
+  .page{padding:56px 52px;border-bottom:1px solid var(--pise-light);}
+  .ph{display:flex;justify-content:space-between;margin-bottom:40px;padding-bottom:10px;border-bottom:1px solid var(--cedar);}
+  .ph span{font-size:15px;letter-spacing:0.2em;color:var(--cedar);text-transform:uppercase;}
+  .ph span:last-child{color:var(--pise-mid);}
+  .sl{font-size:11.5px;letter-spacing:0.22em;color:var(--cedar);text-transform:uppercase;margin-bottom:10px;}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:44px;line-height:1.12;margin-bottom:22px;}
+  h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:21px;line-height:1.3;margin-bottom:10px;margin-top:0;}
+  h3{font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--pise-mid);margin-bottom:10px;margin-top:20px;font-weight:400;}
+  p{font-size:16.5px;line-height:1.9;margin-bottom:12px;}
+  .bs{font-size:15px;line-height:1.8;color:var(--pise-mid);margin-bottom:7px;}
+  .two{display:grid;grid-template-columns:1.15fr 0.85fr;gap:44px;margin:20px 0;}
+  .two-eq{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:20px 0;}
+  .ul{list-style:none;margin:0 0 14px;padding:0;}
+  .ul li{font-size:16.5px;line-height:1.75;padding-left:14px;position:relative;margin-bottom:3px;}
+  .ul li::before{content:'·';position:absolute;left:0;color:var(--cedar);font-size:15px;line-height:1.4;}
+  .pf{margin-top:40px;padding-top:12px;border-top:1px solid var(--pise-light);display:flex;justify-content:space-between;}
+  .pf span{font-size:10.5px;letter-spacing:0.13em;color:var(--pise-mid);text-transform:uppercase;}
+  .div-f{width:100%;height:1px;background:var(--pise-light);margin:28px 0;}
+  .img-h{width:100%;height:190px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9.5px;text-align:center;padding:16px;font-style:italic;}
+  .img-full{width:100%;height:260px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9.5px;text-align:center;padding:20px;font-style:italic;margin:24px 0;}
+
+  /* VIE ICI */
+  .vie-item{padding:20px 0;border-bottom:1px solid var(--pise-light);}
+  .vie-item:last-child{border-bottom:none;}
+  .vie-freq{font-size:8.5px;letter-spacing:0.28em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;}
+  .vie-title{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:300;color:var(--pise);margin-bottom:8px;line-height:1.2;}
+  .vie-body{font-size:14px;line-height:1.85;color:var(--pise);margin-bottom:6px;}
+  .vie-price{font-size:9.5px;color:var(--pise-mid);font-style:italic;}
+
+  /* CONDITIONS GRID */
+  .cond-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--pise-light);margin:24px 0;}
+  .cond-card{background:var(--sky);padding:20px 16px;}
+  .cond-title{font-size:8.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cedar);margin-bottom:10px;line-height:1.5;}
+  .cond-body{font-size:9.5px;line-height:1.7;color:var(--pise-mid);}
+
+  /* RISK ROWS */
+  .risk-row{display:grid;grid-template-columns:140px 1fr;gap:24px;padding:14px 0;border-bottom:1px solid var(--pise-light);align-items:start;}
+  .risk-row:last-child{border-bottom:none;}
+  .risk-label{font-size:10.5px;font-weight:400;color:var(--pise);border-right:1px solid var(--cedar);padding-right:16px;line-height:1.6;}
+  .risk-body{font-size:10.5px;color:var(--pise-mid);line-height:1.8;}
+
+  /* DIRECTION */
+  .dir-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--pise-light);margin:20px 0;}
+  .dir-card{background:var(--sky);padding:18px 16px;}
+  .dir-role{font-size:8.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;}
+  .dir-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--pise);margin-bottom:6px;}
+  .dir-body{font-size:9.5px;line-height:1.65;color:var(--pise-mid);}
+
+  /* FINAL STATEMENT */
+  .final{border-top:2px solid var(--cedar);padding-top:32px;margin-top:40px;text-align:center;}
+  .final-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.8;color:var(--pise);max-width:520px;margin:0 auto 16px;}
+  .final-sub{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--pise-mid);}
+
+  /* TABLE & SMALL TEXT FIXES */
+  table.prev{font-size:14px;}
+  table.prev thead th{font-size:10px;letter-spacing:0.12em;padding:9px 10px;}
+  table.prev tbody td{font-size:14px;padding:9px 10px;line-height:1.65;}
+  table.scen{font-size:14px;}
+  table.scen thead th{font-size:10px;padding:9px 10px;}
+  table.scen tbody td{font-size:14px;padding:9px 10px;}
+  .ks-sub{font-size:12px !important;}
+  .ks-lbl{font-size:10px !important;}
+  .row-sec td{font-size:11px !important;}
+  .row-tot td{font-size:15.5px !important;}
+  .cdesc{font-size:13px !important;line-height:1.7;}
+  .vie-price{font-size:13px !important;}
+  .cond-body{font-size:14px !important;}
+  .risk-label{font-size:14px !important;}
+  .risk-body{font-size:14px !important;}
+  .dir-body{font-size:14px !important;}
+  .final-sub{font-size:11px !important;}
+  .fr .amt{font-size:16px !important;}
+
+  /* STRONG TABLE & SMALL TEXT OVERRIDES */
+  table{font-size:15px !important;}
+  table thead th{font-size:11px !important;letter-spacing:0.1em;padding:10px 12px !important;}
+  table tbody td{font-size:15px !important;padding:10px 12px !important;line-height:1.7 !important;}
+  table tbody td.r{font-size:15px !important;}
+  .row-sec td{font-size:12px !important;}
+  .row-tot td{font-size:16px !important;}
+  .ks-lbl{font-size:11px !important;}
+  .ks-sub{font-size:13px !important;}
+  .cdesc{font-size:14px !important;}
+  .cond-body{font-size:15px !important;}
+  .risk-label{font-size:15px !important;}
+  .risk-body{font-size:15px !important;}
+  .dir-body{font-size:15px !important;}
+  .vie-price{font-size:14px !important;}
+  .bs{font-size:14px !important;}
+
+</style>
+</head>
+<body>
+
+<!-- PAGE 12, LA VIE ICI -->
+<div class="page">
+  <div class="sl">La vie ici</div>
+  <h1>Ce que Toile Blanche<br>Marrakech est d'autre.</h1>
+
+  <p>Ce qui suit n'est pas un programme. C'est la vie d'un territoire, à travers les saisons, les présences et les moments partagés. Certaines choses se réservent. D'autres se révèlent par la conversation. D'autres encore ne viennent que sur invitation. Toile Blanche Marrakech n'est pas un hôtel avec des activités. C'est un lieu qui a une vie.</p>
+
+  <div class="two-eq" style="margin-top:28px;">
+    <div>
+      <div class="vie-item">
+        <div class="vie-freq">4 fois par an, printemps, été, automne, hiver</div>
+        <div class="vie-title">La Semaine</div>
+        <div class="vie-body">Quatre fois par an, les Leroy Brothers accueillent un petit groupe, collectionneurs, artistes, voyageurs attentifs. Cinq jours, un mini-riad pour chacun. La galerie est ouverte. Les conversations émergent sans être planifiées. Un soir, les Leroy Brothers s'assoient à la même table. Ce n'est pas une visite guidée, c'est une conversation sur ce qui est fait, et pourquoi.</div>
+        <div class="vie-price">À partir de 4&#8239;000€ / mini-riad / 5 nuits, tout inclus. Réservation directe uniquement.</div>
+      </div>
+      <div class="vie-item">
+        <div class="vie-freq">Novembre à mars, long séjour, par arrangement</div>
+        <div class="vie-title">L'Atelier</div>
+        <div class="vie-body">Écrivains, architectes, compositeurs, curators. Chacun arrive avec un projet et un besoin de silence, de beauté, de temps. Minimum deux semaines dans le même mini-riad. Les Leroy Brothers sont présents, à travailler sur le même territoire. La proximité est réelle.</div>
+        <div class="vie-price">À partir de 2&#8239;500€ / mini-riad / semaine. Direct uniquement.</div>
+      </div>
+      <div class="vie-item">
+        <div class="vie-freq">Deux fois par an, février et novembre</div>
+        <div class="vie-title">Vignes Vivantes Maroc</div>
+        <div class="vie-body">Avec Isabelle Legeron MW, fondatrice de RAW WINE. Quatre jours autour des vins naturels marocains. Une matinée dans les vignes. Un dîner long. Le samedi soir, les Leroy Brothers sont là.</div>
+        <div class="vie-price">À partir de 3&#8239;500€ / mini-riad / 4 nuits. 8 personnes maximum.</div>
+      </div>
+    </div>
+    <div>
+      <div class="vie-item">
+        <div class="vie-freq">Une fois par an, janvier ou février</div>
+        <div class="vie-title">L'Artiste Invité</div>
+        <div class="vie-body">Un artiste est invité à travailler sur le territoire pendant plusieurs semaines. Il peut utiliser la galerie, le studio, les espaces extérieurs, les matériaux du lieu. Il n'est obligé de rien produire. Mais il laisse quelque chose, une œuvre dans le jardin, une trace dans la galerie, un élément du paysage qui n'y était pas avant lui.</div>
+        <div class="vie-price">Sur invitation des Leroy Brothers uniquement.</div>
+      </div>
+      <div class="vie-item">
+        <div class="vie-freq">Plusieurs fois par an</div>
+        <div class="vie-title">Les Sessions</div>
+        <div class="vie-body">Art, musique, conversation. Toile Blanche Marrakech s'ouvre plus largement. Les cercles s'élargissent. Artistes, musiciens, collectionneurs, résidents du Haouz, les présences se mêlent sans hiérarchie. La galerie comme espace de rencontre, pas seulement d'exposition.</div>
+        <div class="vie-price">Accès libre sur invitation. Dates sur toileblanchecontemporary.com</div>
+      </div>
+      <div class="vie-item">
+        <div class="vie-freq">En continu, pour qui le cherche</div>
+        <div class="vie-title">Le Corps et le Lieu</div>
+        <div class="vie-body">5 hectares dans le Haouz. L'Atlas à l'horizon. Les routes de terre du matin qui partent dans toutes les directions. Le trail avant que le monde se réveille. Le yoga sur la terrasse du bâtiment principal. La méditation dans l'oliveraie. Le hammam. La pétanque entre deux clusters.</div>
+        <div class="vie-price">Intégré au séjour. Guide trail Atlas sur demande.</div>
+      </div>
+    </div>
+  </div>
+
+  <img src="images/img_dec7d617924a0f42.png" alt="" style="width:100%;display:block;margin:32px 0;">
+
+</div>
+
+<!-- PAGE 13, CONDITIONS + DIRECTION -->
+<div class="page">
+  <div class="sl">Conditions de participation</div>
+  <h1>Ce que les Leroy Brothers<br>apportent et exigent.</h1>
+
+  <div class="cond-grid">
+    <div class="cond-card">
+      <div class="cond-title">Conception et direction artistique</div>
+      <div class="cond-body">Les Leroy Brothers assurent la conception complète du projet, architecture, intérieurs, identité visuelle, programme artistique. Apport en nature valorisé à 20% du total projet. Direction artistique assurée en interne : aucun honoraire d'architecte de conception.</div>
+    </div>
+    <div class="cond-card">
+      <div class="cond-title">Contrôle artistique absolu</div>
+      <div class="cond-body">Veto irrevocable sur toute décision touchant à l'identité, la programmation artistique, le positionnement, les matériaux, l'architecture, le naming des espaces, la communication publique. Non négociable. C'est la contrepartie directe de l'apport de marque.</div>
+    </div>
+    <div class="cond-card">
+      <div class="cond-title">Licence de marque</div>
+      <div class="cond-body">Toile Blanche apportée sous licence exclusive Maroc. Propriété de Toile Blanche Group France, entité distincte. Durée alignée sur le pacte, 20 ans. Non cessible sans accord écrit. Sans cette licence, le projet n'a pas de valeur différenciante.</div>
+    </div>
+  </div>
+
+  <div class="div-f"></div>
+
+  <div class="sl">La direction sur site</div>
+  <div class="dir-grid">
+    <div class="dir-card">
+      <div class="dir-role">Directeur Général</div>
+      <div class="dir-name">Gilles Leroy</div>
+      <div class="dir-body">Cofondateur Toile Blanche Saint-Paul de Vence. Vision artistique et expertise opérationnelle hôtelière. Présence sur site minimum 30 jours par an en phase opérationnelle, supervision chantier en phase construction. 4&#8239;000€ / mois, dans le budget.</div>
+    </div>
+    <div class="dir-card">
+      <div class="dir-role">Front Office Manager</div>
+      <div class="dir-name">Tahnee Boucique</div>
+      <div class="dir-body">Design d'intérieur (Glenn Sestig Architects). Directrice CAB Fondation Saint-Paul de Vence. Accueil, expérience guest, coordination équipes. 3&#8239;000€ / mois, dans le budget.</div>
+    </div>
+    <div class="dir-card">
+      <div class="dir-role">Directeur local, à recruter</div>
+      <div class="dir-name">Profil bilingue FR/EN</div>
+      <div class="dir-body">Expérience hôtellerie de luxe Maroc. Réseau local, connaissance du marché, gestion opérationnelle quotidienne. Recrutement supervisé par les Leroy Brothers avant ouverture. Sélection finale par Gilles Leroy.</div>
+    </div>
+  </div>
+
+  <div class="div-f"></div>
+
+  <div class="sl">Distribution et audience</div>
+  <div class="two-eq">
+    <div>
+      <h3>Canaux de distribution</h3>
+      <ul class="ul">
+        <li>SLH (Small Luxury Hotels of the World), affiliation activable dès l'ouverture</li>
+        <li>Mr and Mrs Smith, Tablet Hotels, OTAs sélectifs haut de gamme</li>
+        <li>Site propriétaire, réservation directe prioritaire</li>
+        <li>Relations presse art et lifestyle (Europe, Moyen-Orient, US)</li>
+        <li>6&#8239;600 abonnés newsletter Toile Blanche, actifs dès l'ouverture</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Audience cible</h3>
+      <ul class="ul">
+        <li>Collectionneurs et amateurs d'art contemporain, audience naturelle Toile Blanche</li>
+        <li>Voyageurs ultra-premium 35-65 ans, Europe et Moyen-Orient</li>
+        <li>Couples et individus en quête d'une retraite radicalement privée</li>
+        <li>Mariages et privatisations exclusives, 5 ha entièrement murés</li>
+        <li>Presse : Dezeen, Wallpaper*, Vogue Living, Condé Nast Traveller</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<!-- PAGE 14, RISQUES + CLOSING -->
+<div class="page">
+  <div class="sl">Risques identifiés</div>
+  <h1>Ce qu'on a anticipé.<br>Ce qu'on a prévu.</h1>
+
+  <div style="margin-top:8px;">
+    <div class="risk-row">
+      <div class="risk-label">Délai de construction</div>
+      <div class="risk-body">18 mois de chantier avant ouverture. Risque de dépassement de délai au Maroc, courant sur les projets avec maître d'ouvrage absent. Ici : Gilles Leroy présent sur site minimum une semaine par mois pendant le chantier. Provision aléas 6% retenue vs 10-15% standard. Le risque est significativement réduit, pas éliminé.</div>
+    </div>
+    <div class="risk-row">
+      <div class="risk-label">Foncier</div>
+      <div class="risk-body">Titre Foncier confirmé, risque VNA inexistant. Propriété franche, sans indivision. Vérification notariale complète avant signature de l'acte d'acquisition recommandée. L'offre Willenbrock est confirmée à 700&#8239;000€.</div>
+    </div>
+    <div class="risk-row">
+      <div class="risk-label">ADR cible</div>
+      <div class="risk-body">800€ blended (650€ basse saison, 950€ haute saison) est justifié et défendu. L'Oberoi Marrakech pratique 540€ en tarif promotionnel basse saison pour ses villas avec piscine privée. Notre positionnement, 12 unités seulement, institution d'art, territoire autonome, aucun espace commun de type resort, justifie un tarif clairement supérieur. Le risque de ne pas atteindre 800€ est réel mais limité par la rareté de l'offre.</div>
+    </div>
+    <div class="risk-row">
+      <div class="risk-label">Autonomie énergétique</div>
+      <div class="risk-body">Système off-grid dimensionné avec marge. Raccordement réseau existant et disponible en secours permanent. La climatisation est maintenue sur énergie solaire, le confort guest n'est pas négocié. Risque opérationnel faible : le Haouz génère 9-11h de soleil par jour en été, 7h en hiver.</div>
+    </div>
+    <div class="risk-row">
+      <div class="risk-label">Dépendance aux Leroy Brothers</div>
+      <div class="risk-body">Le projet repose sur la présence et l'implication des Leroy Brothers. C'est un risque réel et assumé. La contrepartie : c'est précisément cette dépendance qui crée la valeur différenciante, la marque, l'audience, le programme artistique, le réseau SLH. Un projet sans cette dépendance serait un projet sans valeur distinctive. Le pacte prévoit des dispositions en cas d'incapacité ou de défaillance.</div>
+    </div>
+    <div class="risk-row">
+      <div class="risk-label">Liquidité pendant 5 ans</div>
+      <div class="risk-body">Les parts ne sont pas cessibles librement pendant les 5 premières années. L'investissement est illiquide par nature. En contrepartie : dividendes dès l'année 1, payback courant année 3, fenêtre de sortie garantie années 5-7 avec floor de 2&#8239;000&#8239;000€. Le Fonds de Croissance construit de la valeur pendant la période d'illiquidité.</div>
+    </div>
+  </div>
+
+  <div class="div-f"></div>
+
+  <div class="final">
+    <div class="final-text">« Toile Blanche a été déclarée œuvre par les Leroy Brothers. Elle continue de fonctionner normalement. Ce second territoire est la même déclaration, dans un contexte différent. Cinq hectares. Vingt unités. Zéro dépendance externe. Un lieu qui ne consomme pas le territoire, il fonctionne avec lui. »</div>
+    <div class="final-sub">Toile Blanche Group, Leroy Brothers, Avril 2026</div>
+    <div class="final-sub" style="margin-top:8px;">Document confidentiel, destiné exclusivement aux associés pressentis. Projections établies sur hypothèses raisonnées, ne constituent pas une garantie de rendement.</div>
+  </div>
+
+</div>
+
+
+<img src="images/img_conditions_sculpture.png" alt="" style="width:100%;display:block;margin:32px 0;">
+</body>
+</html>

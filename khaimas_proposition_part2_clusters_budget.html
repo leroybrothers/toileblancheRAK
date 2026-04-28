@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="referrer" content="no-referrer">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap');
+  :root{--sand:#F5F0E6;--pise:#111008;--pise-mid:#4F4336;--cedar:#A78661;--sky:#FDFAF5;--pise-light:#D8CCB8;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:100%;max-width:100%;overflow-x:hidden;overscroll-behavior-x:none;}
+  img,iframe{max-width:100%;height:auto;}
+  table{max-width:100%;}
+  body{touch-action:pan-y;background:var(--sand);color:var(--pise);font-family:'Montserrat',sans-serif;font-weight:300;font-size:17px;line-height:1.75;max-width:960px;margin:0 auto;}
+  .page{padding:56px 52px;border-bottom:1px solid var(--pise-light);}
+  .ph{display:flex;justify-content:space-between;margin-bottom:40px;padding-bottom:10px;border-bottom:1px solid var(--cedar);}
+  .ph span{font-size:15px;letter-spacing:0.2em;color:var(--cedar);text-transform:uppercase;}
+  .ph span:last-child{color:var(--pise-mid);}
+  .sl{font-size:11.5px;letter-spacing:0.22em;color:var(--cedar);text-transform:uppercase;margin-bottom:10px;}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:44px;line-height:1.12;margin-bottom:22px;}
+  h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:21px;line-height:1.3;margin-bottom:10px;margin-top:0;}
+  h3{font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--pise-mid);margin-bottom:10px;margin-top:20px;font-weight:400;}
+  p{font-size:16.5px;line-height:1.9;margin-bottom:12px;}
+  .bs{font-size:15px;line-height:1.8;color:var(--pise-mid);margin-bottom:7px;}
+  .two{display:grid;grid-template-columns:1.15fr 0.85fr;gap:44px;margin:20px 0;}
+  .two-eq{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:20px 0;}
+  .img-h{width:100%;height:200px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9.5px;text-align:center;padding:16px;font-style:italic;}
+  .img-full{width:100%;height:260px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9.5px;text-align:center;padding:20px;font-style:italic;margin:24px 0;}
+  .ul{list-style:none;margin:0 0 14px;padding:0;}
+  .ul li{font-size:16.5px;line-height:1.75;padding-left:14px;position:relative;margin-bottom:3px;}
+  .ul li::before{content:'·';position:absolute;left:0;color:var(--cedar);font-size:15px;line-height:1.4;}
+  .pf{margin-top:40px;padding-top:12px;border-top:1px solid var(--pise-light);display:flex;justify-content:space-between;}
+  .pf span{font-size:10.5px;letter-spacing:0.13em;color:var(--pise-mid);text-transform:uppercase;}
+  .qb{border-left:1px solid var(--cedar);padding:14px 20px;background:var(--sky);margin:16px 0;}
+  .qb p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;line-height:1.75;}
+  .qs{font-size:10.5px;letter-spacing:0.16em;color:var(--cedar);text-transform:uppercase;margin-top:7px;}
+
+  /* CLUSTER GRID */
+  .cluster-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--pise-light);margin:24px 0;}
+  .cc{background:var(--sky);padding:18px 14px;}
+  .cn{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;color:var(--pise-light);line-height:1;margin-bottom:6px;}
+  .cname{font-size:8.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--cedar);margin-bottom:8px;}
+  .cdesc{font-size:9.5px;line-height:1.65;color:var(--pise-mid);}
+  .cloc{font-size:9px;color:var(--pise-mid);margin-top:8px;padding-top:8px;border-top:1px solid var(--pise-light);font-style:italic;}
+
+  /* PHASE STRIP */
+  .pc{background:var(--sky);padding:20px 18px;margin-bottom:1px;}
+  .pc.hl{background:var(--sand);border-left:2px solid var(--cedar);}
+  .pl{font-size:8.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;}
+  .pt{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:300;color:var(--pise);margin-bottom:6px;line-height:1.2;}
+  .pd{font-size:10.5px;line-height:1.7;color:var(--pise-mid);}
+
+  /* SPEC TABLE */
+  .spec-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;}
+  .spec-table tr{border-bottom:1px solid var(--pise-light);}
+  .spec-table td{padding:6px 0;line-height:1.5;}
+  .spec-table td:last-child{text-align:right;white-space:normal;word-break:break-word;}
+  .spec-table tr:last-child{border-bottom:none;border-top:1px solid var(--cedar);}
+  .spec-table tr:last-child td{font-weight:400;}
+
+  /* BUDGET TABLE */
+  table.budget{width:100%;border-collapse:collapse;margin:20px 0;font-size:10.5px;}
+  table.budget thead tr{border-bottom:2px solid var(--cedar);}
+  table.budget thead th{padding:7px 8px;text-align:left;font-size:8.5px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
+  table.budget thead th.r{text-align:right;}
+  table.budget tbody tr{border-bottom:1px solid var(--pise-light);}
+  table.budget tbody td{padding:6px 8px;line-height:1.5;color:var(--pise);vertical-align:top;}
+  table.budget tbody td.r{text-align:right;white-space:normal;word-break:break-word;}
+  table.budget th.r, table.budget td.r{width:170px;white-space:nowrap;word-break:normal;}
+  table.budget tbody td.note{font-size:9.5px;color:var(--pise-mid);}
+  .row-sec td{background:var(--sand);color:var(--cedar);font-size:8.5px;letter-spacing:0.2em;text-transform:uppercase;padding:5px 8px;}
+  .row-sub td{background:var(--sand);font-weight:400;font-size:14px;}
+  .row-sub td.r{white-space:normal;word-break:break-word;}
+  .row-tot td{border-top:2px solid var(--cedar);border-bottom:none;font-weight:400;font-size:14.5px;padding:9px 8px;}
+  .row-tot td.r{white-space:normal;word-break:break-word;}
+
+  /* TABLE & SMALL TEXT FIXES */
+  table.prev{font-size:14px;}
+  table.prev thead th{font-size:10px;letter-spacing:0.12em;padding:9px 10px;}
+  table.prev tbody td{font-size:14px;padding:9px 10px;line-height:1.65;}
+  table.scen{font-size:14px;}
+  table.scen thead th{font-size:10px;padding:9px 10px;}
+  table.scen tbody td{font-size:14px;padding:9px 10px;}
+  .ks-sub{font-size:12px !important;}
+  .ks-lbl{font-size:10px !important;}
+  .row-sec td{font-size:11px !important;}
+  .row-tot td{font-size:15.5px !important;}
+  .cdesc{font-size:13px !important;line-height:1.7;}
+  .vie-price{font-size:13px !important;}
+  .cond-body{font-size:14px !important;}
+  .risk-label{font-size:14px !important;}
+  .risk-body{font-size:14px !important;}
+  .dir-body{font-size:14px !important;}
+  .final-sub{font-size:11px !important;}
+  .fr .amt{font-size:16px !important;}
+
+  /* STRONG TABLE & SMALL TEXT OVERRIDES */
+  table{font-size:15px !important;}
+  table thead th{font-size:11px !important;letter-spacing:0.1em;padding:10px 12px !important;}
+  table tbody td{font-size:15px !important;padding:10px 12px !important;line-height:1.7 !important;}
+  table tbody td.r{font-size:15px !important;}
+  .row-sec td{font-size:12px !important;}
+  .row-tot td{font-size:16px !important;}
+  .ks-lbl{font-size:11px !important;}
+  .ks-sub{font-size:13px !important;}
+  .cdesc{font-size:14px !important;}
+  .cond-body{font-size:15px !important;}
+  .risk-label{font-size:15px !important;}
+  .risk-body{font-size:15px !important;}
+  .dir-body{font-size:15px !important;}
+  .vie-price{font-size:14px !important;}
+  .bs{font-size:14px !important;}
+
+</style>
+</head>
+<body>
+
+<!-- PAGE 5, LES 5 CLUSTERS -->
+<div class="page">
+  <div class="sl">Le programme spatial</div>
+  <h1>5 clusters.<br>5 raisons de marcher.</h1>
+
+  <p>Chaque cluster regroupe 4 mini-riads autour d'un passage intérieur commun, logique de ksar, murs extérieurs aveugles, intimité par l'épaisseur du mur et non par la distance. Chaque cluster porte un programme unique qui lui est attaché. L'espace entre les clusters est le programme : le jardin, l'oliveraie, les chemins cairnés, le silence du Haouz.</p>
+
+  <img src="images/img_a6d717b0a3fab71d.png" alt="" style="width:100%;display:block;margin:32px 0;">
+
+  <div class="two-eq">
+    <div>
+      <h3>Logique ksar, architecture du cluster</h3>
+      <p>4 mini-riads partagent un passage intérieur commun. Les murs extérieurs sont aveugles, une porte arquée en cèdre par unité, deux ouvertures étroites maximum. L'intimité est garantie par l'épaisseur du pisé, non par la distance. Le riad marocain était inventé pour les médinas denses : cette même logique s'applique ici, dans le Haouz.</p>
+      <p>Les murs partagés entre unités adjacentes génèrent des économies significatives de construction et réduisent les réseaux enterrés. Le cluster est l'unité constructive et opérationnelle de base.</p>
+    </div>
+    <div>
+      <h3>Phasing, 3 campagnes, pas de chantier permanent</h3>
+      <div class="pc hl">
+        <div class="pl">Phase 1, Ouverture, 18 mois</div>
+        <div class="pt">3 clusters, 12 unités</div>
+        <div class="pd">12×1BR uniquement. Autour du bâtiment principal. Financée par les investisseurs. Une seule campagne de construction.</div>
+      </div>
+      <div class="pc">
+        <div class="pl">Phase 2, Année 3-4</div>
+        <div class="pt">1 cluster, 4 unités</div>
+        <div class="pd">3×1BR + 1×2BR. Auto-financé sur résultat d'exploitation. Une campagne courte, le cluster est une unité connue.</div>
+      </div>
+      <div class="pc">
+        <div class="pl">Phase 3, Année 6-7</div>
+        <div class="pt">1 cluster, 4 unités</div>
+        <div class="pd">3×1BR + 1×2BR. Auto-financé. Coïncide avec la fenêtre LBO. 20 unités, plafond artistique définitif.</div>
+      </div>
+      <p class="bs" style="margin-top:8px;">20 unités maximum. Jamais plus. Le nombre est une contrainte artistique.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- PAGE 6, ARCHITECTURE MINI-RIADS -->
+<div class="page">
+  <div class="sl">Les mini-riads</div>
+  <h1>Fermé à l'extérieur.<br>Ouvert sur le ciel.</h1>
+
+  <div class="two">
+    <div>
+      <p>Chaque mini-riad est une enceinte fermée en pisé. L'extérieur est presque aveugle, une porte arquée en cèdre, deux ouvertures hautes et étroites au maximum. Rien ne trahit ce qui se passe à l'intérieur.</p>
+      <p>On pousse la porte : on entre dans un monde différent. Un jardin intérieur privé de 30m², arboré, avec une piscine en bassin de zellige foncé au centre. Autour, les espaces de vie s'ouvrent entièrement sur ce patio. Le salon, la chambre, la salle de bain. Tout vit vers l'intérieur. Le ciel est le seul horizon.</p>
+      <p>La piscine n'est pas un aménagement de jardin. Elle est structurellement intégrée au patio. Le bassin en zellige foncé (4×5m) reflète le ciel. Un daybed en cèdre le borde. Un olivier ou un grenadier pousse dans un angle. La nuit, les lanternes en laiton. Le silence.</p>
+      <p>C'est le principe du riad marocain réinterprété dans un langage contemporain et désertique. La richesse est dans l'espace, la lumière, la qualité des matières. Pas dans l'ostentation.</p>
+      <h3>Palette matériaux, 6 matériaux, aucune exception sans accord écrit</h3>
+      <ul class="ul">
+        <li>Pisé, terre crue compactée, murs porteurs 50cm, couleur naturelle Haouz</li>
+        <li>Tadelakt, enduit chaux, salles de bain, poli pierre de rivière</li>
+        <li>Zellige, carreaux terre émaillée Fès, piscine et sols, bleu nuit ou vert ardoise</li>
+        <li>Cèdre de l'Atlas, portes, poutres, menuiseries, huile de lin uniquement</li>
+        <li>Béton brut, toitures terrasses, dalles, coffrage bois apparent</li>
+        <li>Pierre locale, seuils, vasques, margelles, joints chaux naturelle</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Spécifications par mini-riad, 1BR</h3>
+      <table class="spec-table">
+        <tr><td>Surface bâtie totale</td><td>110 m²</td></tr>
+        <tr><td>Patio intérieur</td><td>30 m²</td></tr>
+        <tr><td>Chambre + dressing cèdre</td><td>45 m²</td></tr>
+        <tr><td>Salle de bain tadelakt</td><td>20 m²</td></tr>
+        <tr><td>Salon / espace vie</td><td>25 m²</td></tr>
+        <tr><td>Piscine bassin zellige</td><td>4 × 5 m, 1,4m prof.</td></tr>
+        <tr><td>Fenêtres extérieures</td><td>Quasi-nulles</td></tr>
+        <tr><td>Structure</td><td>Pisé 50cm + béton brut</td></tr>
+        <tr><td>Finitions</td><td>Tadelakt, cèdre, zellige, pierre</td></tr>
+        <tr><td>Climatisation</td><td>Réversible encastrée, sur PV</td></tr>
+        <tr><td>Eau chaude</td><td>Solaire thermique + appoint PV</td></tr>
+        <tr><td>ADR blended</td><td>650–950€ / nuit (moy. 800€)</td></tr>
+        <tr><td>Coût construction cluster</td><td>~199&#8239;000€ / unité</td></tr>
+      </table>
+      <div class="qb" style="margin-top:20px;">
+        <p>Chaque mini-riad est invisible depuis tous les autres. Depuis l'intérieur d'un patio, il est impossible de voir le patio d'une autre unité. Ce n'est pas une recommandation, c'est une condition sine qua non.</p>
+        <div class="qs">Contrainte 2, Brief Architectural v2.0</div>
+      </div>
+    </div>
+  </div>
+
+  <img src="images/img_a8729ea839be5a7e.png" alt="" style="width:100%;display:block;margin:32px 0;">
+  <div style="padding:48px 52px 0;">
+    <div class="sl">La nuit</div>
+    <p>Le territoire change de nature après le coucher du soleil. Le Haouz est l'un des rares endroits, à 30 minutes d'une ville d'un million d'habitants, où les nuits sont vraiment noires. L'éclairage est minimal, rasant, dirigé vers le sol. Rien ne monte vers le ciel.</p>
+  </div>
+
+<img src="images/img_bbd37667d2ddd6af.png" alt="" style="width:100%;display:block;margin:32px 0;">
+
+</div>
+
+<!-- PAGE 7, BUDGET DÉTAIL -->
+<div class="page">
+  <div class="sl">Le budget</div>
+  <h1>Construction Phase 1.<br>Détail complet.</h1>
+
+  <p class="bs">Montants établis sur la base des référentiels de coûts marocains (province Marrakech-Safi, 2025-2026), de devis indicatifs auprès d'entreprises spécialisées pisé et tadelakt, et des coûts constatés sur des projets hôteliers boutique comparables dans le Haouz. Provision aléas 6%, Gilles Leroy présent sur site en permanence. Direction artistique assurée en interne par les Leroy Brothers.</p>
+
+  <table class="budget">
+    <thead>
+      <tr>
+        <th style="width:50%;">Poste</th>
+        <th class="r" style="width:170px;">Montant</th>
+        <th style="width:30%;">Note</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="row-sec"><td colspan="3">Construction principale</td></tr>
+      <tr>
+        <td>12 mini-riads 1BR, modèle cluster, murs partagés</td>
+        <td class="r">2&#8239;390&#8239;000€</td>
+        <td class="note">~199&#8239;000€ par unité</td>
+      </tr>
+      <tr>
+        <td>Bâtiment principal, rénovation 1&#8239;200m²</td>
+        <td class="r">700&#8239;000€</td>
+        <td class="note">Restaurant, galerie, réception, bar, rooftop</td>
+      </tr>
+      <tr class="row-sec"><td colspan="3">Autonomie et infrastructure</td></tr>
+      <tr>
+        <td>Système off-grid Phase 1, 3 clusters (PV, batteries, solaire thermique)</td>
+        <td class="r">90&#8239;000€</td>
+        <td class="note">Autonomie énergétique complète dès l'ouverture</td>
+      </tr>
+      <tr>
+        <td>Biodigesteur + traitement eau + citernes pluie</td>
+        <td class="r">80&#8239;000€</td>
+        <td class="note">Dimensionné pour 20 unités dès Phase 1</td>
+      </tr>
+      <tr>
+        <td>Voiries, réseaux, portail, réfection mur clôture 1,6km</td>
+        <td class="r">120&#8239;000€</td>
+        <td class="note">Conduits Phase 2-3 inclus, creuser une fois</td>
+      </tr>
+      <tr>
+        <td>Provisions Phase 2-3 (conduits, zones réservées, connexions)</td>
+        <td class="r">43&#8239;000€</td>
+        <td class="note">Évite double intervention future</td>
+      </tr>
+      <tr>
+        <td>Zone de service presse hydraulique Les Compressions</td>
+        <td class="r">15&#8239;000€</td>
+        <td class="note">Presse acquise sur fonds opérationnels an 1</td>
+      </tr>
+      <tr>
+        <td>Jardin Phase 1, oliveraie complémentaire, potager, clusters</td>
+        <td class="r">20&#8239;000€</td>
+        <td class="note">Sur existant, plantation complémentaire ciblée</td>
+      </tr>
+      <tr class="row-sec"><td colspan="3">Honoraires et frais</td></tr>
+      <tr>
+        <td>Architecte DPLG marocain, maîtrise d'œuvre (2%)</td>
+        <td class="r">67&#8239;000€</td>
+        <td class="note">Direction artistique Leroy Brothers en interne</td>
+      </tr>
+      <tr>
+        <td>Contrôle technique et coordination chantier</td>
+        <td class="r">20&#8239;000€</td>
+        <td class="note"></td>
+      </tr>
+      <tr>
+        <td>Notaire et frais juridiques acquisition foncière</td>
+        <td class="r">17&#8239;500€</td>
+        <td class="note"></td>
+      </tr>
+      <tr>
+        <td>GO SIYAHA, constitution société marocaine, conseil fiscal</td>
+        <td class="r">12&#8239;500€</td>
+        <td class="note"></td>
+      </tr>
+      <tr class="row-sec"><td colspan="3">Contingence</td></tr>
+      <tr>
+        <td>Provision aléas chantier (6%)</td>
+        <td class="r">204&#8239;000€</td>
+        <td class="note">Vs 10-15% standard pour maître d'ouvrage absent</td>
+      </tr>
+      <tr class="row-sub">
+        <td>Total construction</td>
+        <td class="r">3&#8239;809&#8239;000€</td>
+        <td></td>
+      </tr>
+      <tr class="row-sec"><td colspan="3">Hors construction</td></tr>
+      <tr>
+        <td>Acquisition foncière (5 ha, Titre Foncier, Route de Fès)</td>
+        <td class="r">700&#8239;000€</td>
+        <td class="note">Offre Willenbrock, confirmée</td>
+      </tr>
+      <tr>
+        <td>Budget lancement (stocks F&amp;B, marketing, formation, fonds de roulement)</td>
+        <td class="r">250&#8239;000€</td>
+        <td class="note">Hors budget construction</td>
+      </tr>
+      <tr class="row-tot">
+        <td>Total tout compris, Phase 1</td>
+        <td class="r">4&#8239;759&#8239;000€</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="two-eq" style="margin-top:16px;">
+    <div>
+      <h3>Avantages du modèle cluster</h3>
+      <ul class="ul">
+        <li>Murs partagés : 8-12&#8239;000€ économisés par mur, 12-15 murs sur 12 unités</li>
+        <li>Réseaux et locaux techniques mutualisés par cluster</li>
+        <li>Conduits Phase 2-3 posés lors de Phase 1 : économie significative sur chantiers futurs</li>
+      </ul>
+    </div>
+    <div>
+      
+  </div>
+
+</div>
+
+</body>
+</html>

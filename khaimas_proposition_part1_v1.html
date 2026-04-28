@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="referrer" content="no-referrer">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap');
+  :root{--sand:#F5F0E6;--pise:#111008;--pise-mid:#4F4336;--cedar:#A78661;--sky:#FDFAF5;--pise-light:#D8CCB8;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:100%;max-width:100%;overflow-x:hidden;overscroll-behavior-x:none;}
+  img,iframe{max-width:100%;height:auto;}
+  table{max-width:100%;}
+  body{touch-action:pan-y;background:var(--sand);color:var(--pise);font-family:'Montserrat',sans-serif;font-weight:300;font-size:17px;line-height:1.75;max-width:960px;margin:0 auto;}
+
+  /* COVER, light */
+  .cover{width:100%;min-height:620px;background:var(--sand);position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:56px 52px;}
+  .cover-brand{font-size:12px;letter-spacing:0.38em;color:var(--cedar);text-transform:uppercase;}
+  .cover-mid{padding:40px 0;}
+  .cover-rule{width:40px;height:1px;background:var(--cedar);margin-bottom:28px;}
+  .ct{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:58px;line-height:1.02;color:var(--pise);margin-bottom:8px;}
+  .cs{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:25px;color:var(--pise-mid);margin-bottom:36px;}
+  .cd{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16.5px;color:var(--pise-mid);max-width:420px;line-height:1.9;border-left:1px solid var(--cedar);padding-left:18px;}
+  .cover-bottom{border-top:1px solid var(--cedar);padding-top:24px;}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+  .kpi{padding-right:24px;border-right:1px solid var(--pise-light);}
+  .kpi:last-child{border-right:none;}
+  .kv{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:30px;color:var(--pise);line-height:1;margin-bottom:4px;}
+  .kl{font-size:10.5px;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;margin-bottom:2px;}
+  .ks{font-size:11.5px;color:var(--pise-mid);}
+  .cover-img{width:100%;height:260px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9.5px;text-align:center;padding:20px;font-style:italic;margin:32px 0;}
+
+  /* PAGES */
+  .page{padding:56px 52px;border-bottom:1px solid var(--pise-light);}
+  .ph{display:flex;justify-content:space-between;margin-bottom:40px;padding-bottom:10px;border-bottom:1px solid var(--cedar);}
+  .ph span{font-size:15px;letter-spacing:0.2em;color:var(--cedar);text-transform:uppercase;}
+  .ph span:last-child{color:var(--pise-mid);}
+  .sl{font-size:11.5px;letter-spacing:0.22em;color:var(--cedar);text-transform:uppercase;margin-bottom:10px;}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:44px;line-height:1.12;margin-bottom:22px;}
+  h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:21px;line-height:1.3;margin-bottom:10px;margin-top:0;}
+  h3{font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--pise-mid);margin-bottom:10px;margin-top:20px;font-weight:400;}
+  p{font-size:16.5px;line-height:1.9;margin-bottom:12px;}
+  .bs{font-size:15px;line-height:1.8;color:var(--pise-mid);margin-bottom:7px;}
+  .two{display:grid;grid-template-columns:1.15fr 0.85fr;gap:44px;margin:20px 0;}
+  .two-eq{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:20px 0;}
+  .img-anc{width:100%;height:340px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9.5px;letter-spacing:0.1em;text-align:center;padding:28px;font-style:italic;margin:24px 0;}
+  .img-h{width:100%;height:180px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9.5px;text-align:center;padding:16px;font-style:italic;}
+  .qb{border-left:1px solid var(--cedar);padding:14px 20px;background:var(--sky);margin:16px 0;}
+  .qb p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;line-height:1.75;}
+  .qs{font-size:10.5px;letter-spacing:0.16em;color:var(--cedar);text-transform:uppercase;margin-top:7px;}
+  .ul{list-style:none;margin:0 0 14px;padding:0;}
+  .ul li{font-size:16.5px;line-height:1.75;padding-left:14px;position:relative;margin-bottom:3px;}
+  .ul li::before{content:'·';position:absolute;left:0;color:var(--cedar);font-size:15px;line-height:1.4;}
+  .pf{margin-top:40px;padding-top:12px;border-top:1px solid var(--pise-light);display:flex;justify-content:space-between;}
+  .pf span{font-size:10.5px;letter-spacing:0.13em;color:var(--pise-mid);text-transform:uppercase;}
+  .ab{border-left:2px solid var(--cedar);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
+  .ab2{border-left:2px solid var(--pise-light);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
+  .rule{width:36px;height:1px;background:var(--cedar);margin:20px 0;}
+
+  /* TABLE & SMALL TEXT FIXES */
+  table.prev{font-size:14px;}
+  table.prev thead th{font-size:10px;letter-spacing:0.12em;padding:9px 10px;}
+  table.prev tbody td{font-size:14px;padding:9px 10px;line-height:1.65;}
+  table.scen{font-size:14px;}
+  table.scen thead th{font-size:10px;padding:9px 10px;}
+  table.scen tbody td{font-size:14px;padding:9px 10px;}
+  .ks-sub{font-size:12px !important;}
+  .ks-lbl{font-size:10px !important;}
+  .row-sec td{font-size:11px !important;}
+  .row-tot td{font-size:15.5px !important;}
+  .cdesc{font-size:13px !important;line-height:1.7;}
+  .vie-price{font-size:13px !important;}
+  .cond-body{font-size:14px !important;}
+  .risk-label{font-size:14px !important;}
+  .risk-body{font-size:14px !important;}
+  .dir-body{font-size:14px !important;}
+  .final-sub{font-size:11px !important;}
+  .fr .amt{font-size:16px !important;}
+
+  /* STRONG TABLE & SMALL TEXT OVERRIDES */
+  table{font-size:15px !important;}
+  table thead th{font-size:11px !important;letter-spacing:0.1em;padding:10px 12px !important;}
+  table tbody td{font-size:15px !important;padding:10px 12px !important;line-height:1.7 !important;}
+  table tbody td.r{font-size:15px !important;}
+  .row-sec td{font-size:12px !important;}
+  .row-tot td{font-size:16px !important;}
+  .ks-lbl{font-size:11px !important;}
+  .ks-sub{font-size:13px !important;}
+  .cdesc{font-size:14px !important;}
+  .cond-body{font-size:15px !important;}
+  .risk-label{font-size:15px !important;}
+  .risk-body{font-size:15px !important;}
+  .dir-body{font-size:15px !important;}
+  .vie-price{font-size:14px !important;}
+  .bs{font-size:14px !important;}
+
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-mid">
+    <div class="cover-rule"></div>
+    <div class="ct">Proposition<br>d'Investissement</div>
+    <div class="cs">Un territoire déclaré œuvre</div>
+    <div class="cd">« Toile Blanche a été déclarée œuvre par les Leroy Brothers.<br>Elle continue de fonctionner normalement. »</div>
+  </div>
+  <div>
+    
+    <div class="cover-bottom">
+      <div class="kpis">
+        <div class="kpi"><div class="kv">4,76M€</div><div class="kl">Investissement total</div><div class="ks">Phase 1, tout compris</div></div>
+        <div class="kpi" style="padding-left:24px;"><div class="kv">12</div><div class="kl">Mini-riads Phase 1</div><div class="ks">3 clusters, 12×1BR</div></div>
+        <div class="kpi" style="padding-left:24px;"><div class="kv">1M€</div><div class="kl">Par investisseur</div><div class="ks">Leroy Brothers : apport nature</div></div>
+        <div class="kpi" style="padding-left:24px;"><div class="kv">5,7×</div><div class="kl">Retour cible</div><div class="ks">Scénario cible, année 5</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2, IMAGE DE RÉFÉRENCE -->
+<div class="page">
+  <div class="sl">L'ancrage</div>
+  <h1>Une image.<br>Tout part d'elle.</h1>
+  <img src="images/img_150229b3053debc7.png" alt="" style="width:100%;display:block;margin:32px 0;">
+  <div class="two">
+    <div>
+      <p>Un mur de pisé brut, fissuré, non enduit. Une porte arquée en cèdre, pleine, sans grille. Deux appliques murales, affleurantes, sans ornement. Un bassin de zellige foncé, presque noir, au niveau du sol, sans margelle visible. Un daybed en bois brut. Un agave et un olivier, présents parce que le climat les a mis là. L'Atlas en arrière-plan, non cadré, simplement présent.</p>
+      <p>Rien dans cette image ne cherche à convaincre. Rien ne performe. La beauté n'est pas ajoutée, elle est le résultat d'une précision matérielle et d'une absence de décision inutile.</p>
+      <p>Cette image est l'étalon du projet. Chaque décision architecturale, chaque choix de matériau, chaque élément de paysage, chaque pièce de mobilier est mesuré contre elle. Si un élément n'existerait pas dans cette image, il n'existe pas sur ce territoire.</p>
+    </div>
+    <div>
+      <div class="qb">
+        <p>Le pisé est brut. Le cèdre est naturel. Le zellige est foncé. Le bassin est au niveau du sol. L'agave pousse ici parce qu'il pousse ici.</p>
+        <div class="qs">Contrainte fondatrice, Brief Architectural v2.0</div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 3, LE CONCEPT -->
+<div class="page">
+  <div class="sl">Le concept</div>
+  <h1>Second territoire.<br>Même déclaration.</h1>
+  <div class="two">
+    <div>
+      <p>Sur ce terrain de 5 hectares entièrement muré, sur la Route de Fès, à 25 minutes de Marrakech, les Leroy Brothers déclarent un second lieu. Même déclaration qu'à Saint-Paul de Vence. Même radicalité. Contexte différent.</p>
+      <p>Ce n'est pas un hôtel boutique avec une identité artistique. C'est un territoire déclaré œuvre, qui fonctionne comme lieu d'hébergement. Cette distinction n'est pas rhétorique. Elle détermine chaque décision architecturale, opérationnelle, financière.</p>
+      <p>Le bâtiment principal existant, vaste ferme marocaine de 1 200m² à double hauteur, devient le cœur public : restaurant gastronomique, Toile Blanche Contemporary Marrakech, réception, bar, terrasse rooftop face à l'Atlas. Autour, 5 clusters de mini-riads en pisé, chacun fermé sur l'extérieur, ouvert sur un jardin intérieur privé avec piscine.</p>
+      
+    </div>
+    <div>
+      <h3>Ce qui différencie radicalement</h3>
+      <ul class="ul">
+        <li>20 mini-riads en 3 phases, 5 clusters de 4 unités, logique ksar</li>
+        <li>Programme artistique vivant, expositions, résidences, œuvres dans le paysage</li>
+        <li>Toile Blanche Contemporary Marrakech, galerie dans la bâtisse principale</li>
+        <li>Studio Leroy Brothers, lieu de travail effectif, visitable</li>
+        <li>Territoire autonome, énergie, eau, alimentation produits sur site</li>
+        <li>Les Compressions, déchets transformés en œuvres titrées et datées</li>
+        <li>5 expériences spatiales distinctes, une par cluster</li>
+        <li>Affiliation SLH activable dès l'ouverture</li>
+        <li>Clef Michelin, réseau Toile Blanche Saint-Paul de Vence</li>
+        <li>Croissance auto-financée, Phase 2 et 3 sans apport supplémentaire</li>
+      </ul>
+    </div>
+  </div>
+  <img src="images/img_97381152ecd792eb.png" alt="" style="width:100%;display:block;margin:32px 0;">
+  <img src="images/img_investissement_second.png" alt="" style="width:100%;display:block;margin:32px 0;">
+</div>
+
+<!-- PAGE 4, TERRITOIRE AUTONOME + COMPRESSIONS -->
+<div class="page">
+  <div class="sl">La déclaration</div>
+  <h1>Un territoire qui<br>ne consomme pas.<br>Il produit.</h1>
+  <div class="two-eq">
+    <div>
+      <div class="ab">
+        <div class="sl">Territoire autonome</div>
+        <h2>Zéro dépendance externe</h2>
+        <p>Cinq hectares. Vingt unités. Le territoire produit son énergie, traite son eau, génère son gaz de cuisson, irrigue son potager. Rien ne quitte la propriété, sauf les hôtes.</p>
+        
+      </div>
+    </div>
+    <div>
+      <div class="ab2">
+        <div class="sl">Les Compressions</div>
+        <h2>Matière en attente de déclaration</h2>
+        <p>Les déchets solides résiduels, canettes, bouteilles, emballages, sont collectés, triés, compressés sur site par une presse hydraulique. Les briques s'accumulent. Une ou deux fois par an, les Leroy Brothers déclarent une compression. Elle est titrée, datée, numérotée. Certaines restent sur le territoire comme éléments du paysage. Certaines entrent dans la collection. Certaines rejoignent des collectionneurs.</p>
+        <p>Ce n'est pas une solution de gestion des déchets. C'est la démonstration que le lieu transforme tout ce qui le traverse, y compris ce qu'il ne devrait pas pouvoir transformer.</p>
+        <p style="font-style:italic;font-size:8px;color:var(--pise-mid);">La propriété ne produit pas de déchets. Elle produit de la matière en attente de déclaration.</p>
+      </div>
+      
+    </div>
+  </div>
+  <img src="images/img_1ec3695d7adb8f96.png" alt="" style="width:100%;display:block;margin:32px 0;">
+</div>
+
+</body>
+</html>
