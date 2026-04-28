@@ -51,7 +51,7 @@
 
   /* HERO */
   .hero{width:100%;min-height:80vh;background:var(--pise);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:64px;position:relative;overflow:hidden;}
-  .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.5;}
+  .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.5;will-change:transform;transform:translate3d(0,0,0) scale(1.05);}
   .hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,18,8,0.92) 0%,rgba(28,18,8,0.35) 60%,transparent 100%);}
   .hero-content{position:relative;z-index:2;text-align:center;max-width:680px;}
   .hero-eyebrow{font-size:11px;letter-spacing:0.4em;text-transform:uppercase;color:var(--cedar);margin-bottom:20px;}
@@ -298,6 +298,26 @@
 
   let currentDocIndex = -1;
   let currentProject = 'riads-pise';
+  let homeParallaxBound = false;
+
+  function updateHomeParallax() {
+    const heroImage = document.querySelector('.hero-img');
+    const homeView = document.getElementById('home-view');
+    if (!heroImage || !homeView) return;
+    if (homeView.style.display === 'none') {
+      heroImage.style.transform = 'translate3d(0,0,0) scale(1.05)';
+      return;
+    }
+    const y = window.scrollY || 0;
+    const offset = Math.min(28, y * 0.18);
+    heroImage.style.transform = `translate3d(0, ${offset}px, 0) scale(1.08)`;
+  }
+
+  function bindHomeParallax() {
+    if (homeParallaxBound) return;
+    window.addEventListener('scroll', updateHomeParallax, { passive: true });
+    homeParallaxBound = true;
+  }
 
   function setNavVisibility(inProjectView) {
     const nav = document.getElementById('top-nav');
@@ -382,6 +402,8 @@
   document.getElementById('pwd').addEventListener('keydown', function(e) {
     if (e.key === 'Enter') checkPassword();
   });
+  bindHomeParallax();
+  updateHomeParallax();
   renderNavLinks();
   setActiveNavLink();
 
@@ -424,6 +446,7 @@
     document.getElementById('doc-frame').src = '';
     currentDocIndex = -1;
     updateNavPos();
+    updateHomeParallax();
   }
 
   function logout() {
