@@ -14,9 +14,7 @@
 
   /* COVER, light */
   .cover{width:100%;min-height:620px;background:var(--sand);position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:56px 52px;}
-  .cover-top{display:flex;justify-content:space-between;align-items:flex-start;}
   .cover-brand{font-size:12px;letter-spacing:0.38em;color:var(--cedar);text-transform:uppercase;}
-  .cover-conf{font-size:10.5px;letter-spacing:0.18em;color:var(--pise-mid);text-transform:uppercase;}
   .cover-mid{padding:40px 0;}
   .cover-rule{width:40px;height:1px;background:var(--cedar);margin-bottom:28px;}
   .ct{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:58px;line-height:1.02;color:var(--pise);margin-bottom:8px;}
@@ -95,9 +93,6 @@
   .vie-price{font-size:14px !important;}
   .bs{font-size:14px !important;}
 
-  /* SCREEN: hide print headers/footers */
-  .ph{display:none!important;}
-  .pf{display:none!important;}
 
   /* FULL-BLEED IMAGES — break out of max-width constraint */
   img[src^="data:image"] {
@@ -116,18 +111,12 @@
     max-width: none !important;
   }
 
-  /* HIDE PAGE HEADERS AND FOOTERS ON SCREEN */
-  .ph { display: none !important; }
-  .pf { display: none !important; }
 </style>
 </head>
 <body>
 
 <!-- COVER -->
 <div class="cover">
-  <div class="cover-top">
-    <div class="cover-brand">Toile Blanche, Marrakech, Route de Fès, Avril 2026</div>
-  </div>
   <div class="cover-mid">
     <div class="cover-rule"></div>
     <div class="ct">Proposition<br>d'Investissement</div>
@@ -144,16 +133,11 @@
         <div class="kpi" style="padding-left:24px;"><div class="kv">5,7×</div><div class="kl">Retour cible</div><div class="ks">Scénario cible, année 5</div></div>
       </div>
     </div>
-    <div style="display:flex;justify-content:space-between;margin-top:20px;padding-top:16px;border-top:1px solid var(--pise-light);">
-      <span class="cover-conf">Avril 2026</span>
-      <span class="cover-conf">Confidentiel, Usage exclusif associés pressentis</span>
-    </div>
   </div>
 </div>
 
 <!-- PAGE 2, IMAGE DE RÉFÉRENCE -->
 <div class="page">
-  <div class="ph"><span>Toile Blanche, Marrakech</span><span>Proposition d'Investissement, Avril 2026</span></div>
   <div class="sl">L'ancrage</div>
   <h1>Une image.<br>Tout part d'elle.</h1>
   <img src="images/img_150229b3053debc7.png" alt="" style="width:100%;display:block;margin:32px 0;">
@@ -171,12 +155,10 @@
       
     </div>
   </div>
-  <div class="pf"><span>Toile Blanche Group</span><span>2</span><span>Confidentiel</span></div>
 </div>
 
 <!-- PAGE 3, LE CONCEPT -->
 <div class="page">
-  <div class="ph"><span>Toile Blanche, Marrakech</span><span>Proposition d'Investissement, Avril 2026</span></div>
   <div class="sl">Le concept</div>
   <h1>Second territoire.<br>Même déclaration.</h1>
   <div class="two">
@@ -204,12 +186,10 @@
   </div>
   <img src="images/img_97381152ecd792eb.png" alt="" style="width:100%;display:block;margin:32px 0;">
   <img src="images/img_60d5d1e65440ff73.png" alt="" style="width:100%;display:block;margin:32px 0;">
-  <div class="pf"><span>Toile Blanche Group</span><span>3</span><span>Confidentiel</span></div>
 </div>
 
 <!-- PAGE 4, TERRITOIRE AUTONOME + COMPRESSIONS -->
 <div class="page">
-  <div class="ph"><span>Toile Blanche, Marrakech</span><span>Proposition d'Investissement, Avril 2026</span></div>
   <div class="sl">La déclaration</div>
   <h1>Un territoire qui<br>ne consomme pas.<br>Il produit.</h1>
   <div class="two-eq">
@@ -233,7 +213,6 @@
     </div>
   </div>
   <img src="images/img_1ec3695d7adb8f96.png" alt="" style="width:100%;display:block;margin:32px 0;">
-  <div class="pf"><span>Toile Blanche Group</span><span>4</span><span>Confidentiel</span></div>
 </div>
 
 </body>

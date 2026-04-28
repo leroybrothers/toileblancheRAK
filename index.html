@@ -11,6 +11,7 @@
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap');
   :root{--sand:#F5F0E6;--pise:#111008;--pise-mid:#4F4336;--cedar:#A78661;--sky:#FDFAF5;--pise-light:#D8CCB8;}
   *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:100%;max-width:100%;overflow-x:hidden;}
   body{background:var(--sand);color:var(--pise);font-family:'Montserrat',sans-serif;font-weight:300;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;}
 
   /* LOGIN */
@@ -29,7 +30,7 @@
   .login-confidential{font-size:10px;letter-spacing:0.15em;color:var(--pise-mid);text-align:center;margin-top:48px;text-transform:uppercase;}
 
   /* SITE */
-  #site{display:none;width:100%;min-height:100vh;flex-direction:column;}
+  #site{display:none;width:100%;max-width:100%;min-height:100vh;flex-direction:column;overflow-x:hidden;}
 
   /* NAV */
   nav{width:100%;background:var(--sand);border-bottom:1px solid var(--pise-light);padding:0;position:sticky;top:0;z-index:100;}
@@ -78,6 +79,10 @@
 
   @media (max-width: 720px){
     .doc-grid{grid-template-columns:1fr;}
+    .nav-links{padding:10px 16px;}
+    .nav-link{padding:6px 8px;letter-spacing:0.1em;white-space:normal;}
+    .doc-section{padding:48px 20px;}
+    .frame-bar, footer{padding-left:20px;padding-right:20px;}
   }
 
   /* FRAME VIEW */
@@ -164,7 +169,7 @@
               <div class="doc-card-title">Le concept et la déclaration</div>
               <div class="doc-card-sub">L'image de référence. Second territoire. Territoire autonome. Les Compressions.</div>
             </div>
-            <div class="doc-card-tag">Pages 1–4</div>
+            <div class="doc-card-tag">L'investissement</div>
           </div>
           <div class="doc-card" onclick="openDoc('tbm_proposition_part2_clusters_budget.html','Proposition — Partie 2')">
             <div>
@@ -172,7 +177,7 @@
               <div class="doc-card-title">Les clusters et le budget</div>
               <div class="doc-card-sub">5 clusters, logique ksar. Architecture des mini-riads. Budget détail Phase 1.</div>
             </div>
-            <div class="doc-card-tag">Pages 5–7</div>
+            <div class="doc-card-tag">Le programme</div>
           </div>
           <div class="doc-card" onclick="openDoc('tbm_proposition_part3_finance_previsionnel_v2.html','Proposition — Partie 3')">
             <div>
@@ -180,7 +185,7 @@
               <div class="doc-card-title">Financement et prévisionnel</div>
               <div class="doc-card-sub">Structure de capital. Fonds de Croissance. Prévisionnel 3 ans. Retour investisseur 5,7×.</div>
             </div>
-            <div class="doc-card-tag">Pages 8–11</div>
+            <div class="doc-card-tag">Le financement</div>
           </div>
           <div class="doc-card" onclick="openDoc('tbm_proposition_part4_vie_conditions.html','Proposition — Partie 4')">
             <div>
@@ -188,7 +193,7 @@
               <div class="doc-card-title">La vie ici et les conditions</div>
               <div class="doc-card-sub">Programme La Semaine, L'Atelier, Vignes Vivantes. Conditions de participation. Risques.</div>
             </div>
-            <div class="doc-card-tag">Pages 12–14</div>
+            <div class="doc-card-tag">La vie ici</div>
           </div>
         </div>
       </div>
@@ -202,7 +207,7 @@
               <div class="doc-card-title">Brief Architectural — Partie 1</div>
               <div class="doc-card-sub">L'image de référence. Déclaration et intention. Le site — Route de Fès.</div>
             </div>
-            <div class="doc-card-tag">Brief v2.0 — Pages 1–4</div>
+            <div class="doc-card-tag">L'architecture</div>
           </div>
           <div class="doc-card" onclick="openDoc('tbm_brief_archi_part2.html','Brief Architectural — Partie 2')">
             <div>
@@ -210,7 +215,7 @@
               <div class="doc-card-title">Brief Architectural — Partie 2</div>
               <div class="doc-card-sub">Les 5 clusters. Les mini-riads programme exact. Le bâtiment principal. Le Studio.</div>
             </div>
-            <div class="doc-card-tag">Brief v2.0 — Pages 5–8</div>
+            <div class="doc-card-tag">Les 5 clusters</div>
           </div>
           <div class="doc-card" onclick="openDoc('tbm_brief_archi_part3.html','Brief Architectural — Partie 3')">
             <div>
@@ -218,7 +223,7 @@
               <div class="doc-card-title">Brief Architectural — Partie 3</div>
               <div class="doc-card-sub">Infrastructure et autonomie. Palette matériaux. Les 8 contraintes absolues. Programme.</div>
             </div>
-            <div class="doc-card-tag">Brief v2.0 — Pages 9–12</div>
+            <div class="doc-card-tag">Le territoire autonome</div>
           </div>
           <div class="doc-card" onclick="openDoc('tbm_termsheet.html','Term Sheet et Pacte de Sortie LBO')">
             <div>
@@ -226,7 +231,7 @@
               <div class="doc-card-title">Term Sheet et Pacte LBO</div>
               <div class="doc-card-sub">Structure d'association. Gouvernance. Fonds de Croissance. Mécanisme de sortie LBO.</div>
             </div>
-            <div class="doc-card-tag">Confidentiel — Pages 1–6</div>
+            <div class="doc-card-tag">Les conditions</div>
           </div>
         </div>
       </div>
