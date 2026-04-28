@@ -10,6 +10,7 @@
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap');
   :root{--sand:#F5F0E6;--pise:#111008;--pise-mid:#4F4336;--cedar:#A78661;--sky:#FDFAF5;--pise-light:#D8CCB8;}
   *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:100%;max-width:100%;overflow-x:hidden;}
   body{background:var(--sand);color:var(--pise);font-family:'Montserrat',sans-serif;font-weight:300;font-size:17px;line-height:1.75;max-width:960px;margin:0 auto;}
   .page{padding:56px 52px;border-bottom:1px solid var(--pise-light);}
   .ph{display:flex;justify-content:space-between;margin-bottom:40px;padding-bottom:10px;border-bottom:1px solid var(--cedar);}
@@ -100,24 +101,6 @@
   .dir-body{font-size:15px !important;}
   .vie-price{font-size:14px !important;}
   .bs{font-size:14px !important;}
-
-
-  /* FULL-BLEED IMAGES — break out of max-width constraint */
-  img[src^="data:image"] {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    margin-left: calc(-50vw + 50%) !important;
-    margin-right: calc(-50vw + 50%) !important;
-    display: block !important;
-    margin-top: 40px !important;
-    margin-bottom: 40px !important;
-  }
-  .two img[src^="data:image"],
-  .two-eq img[src^="data:image"] {
-    width: calc(100% + 104px) !important;
-    margin-left: -52px !important;
-    max-width: none !important;
-  }
 
 </style>
 </head>
