@@ -29,6 +29,8 @@
   .login-error.show{opacity:1;}
   .login-confidential{font-size:10px;letter-spacing:0.15em;color:var(--pise-mid);text-align:center;margin-top:48px;text-transform:uppercase;}
 
+  .site-shell{width:100%;max-width:100%;overflow-x:hidden;}
+
   /* SITE */
   #site{display:none;width:100%;max-width:100%;min-height:100vh;flex-direction:column;overflow-x:hidden;}
 
@@ -89,7 +91,7 @@
   #frame-view{display:none;width:100%;flex-direction:column;flex:1;}
   .frame-bar{background:var(--sand);border-bottom:1px solid var(--pise-light);padding:12px 48px;display:flex;justify-content:center;}
   .frame-title{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise);text-align:center;}
-  iframe{width:100%;flex:1;border:none;min-height:calc(100vh - 120px);}
+  iframe{width:100%;max-width:100%;flex:1;border:none;min-height:calc(100vh - 120px);}
 
   /* FOOTER */
   footer{background:var(--sand);border-top:1px solid var(--pise-light);padding:24px 48px;display:flex;justify-content:space-between;align-items:center;}
@@ -132,7 +134,7 @@
 </div>
 
 <!-- SITE -->
-<div id="site">
+<div id="site" class="site-shell">
 
   <nav>
     <div class="nav-top">
