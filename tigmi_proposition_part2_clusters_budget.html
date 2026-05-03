@@ -37,21 +37,17 @@
   .qb{border-left:1px solid var(--cedar);padding:14px 20px;background:var(--sky);margin:16px 0;}
   .qb p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;line-height:1.75;}
   .qs{font-size:10.5px;letter-spacing:0.16em;color:var(--cedar);text-transform:uppercase;margin-top:7px;}
+  .ab{border-left:2px solid var(--cedar);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
+  .ab2{border-left:2px solid var(--pise-light);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
+  .rule{width:36px;height:1px;background:var(--cedar);margin:20px 0;}
 
-  /* CLUSTER GRID */
-  .cluster-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--pise-light);margin:24px 0;}
-  .cc{background:var(--sky);padding:18px 14px;}
-  .cn{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;color:var(--pise-light);line-height:1;margin-bottom:6px;}
-  .cname{font-size:8.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--cedar);margin-bottom:8px;}
-  .cdesc{font-size:9.5px;line-height:1.65;color:var(--pise-mid);}
-  .cloc{font-size:9px;color:var(--pise-mid);margin-top:8px;padding-top:8px;border-top:1px solid var(--pise-light);font-style:italic;}
-
-  /* PHASE STRIP */
-  .pc{background:var(--sky);padding:20px 18px;margin-bottom:1px;}
-  .pc.hl{background:var(--sand);border-left:2px solid var(--cedar);}
-  .pl{font-size:8.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;}
-  .pt{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:300;color:var(--pise);margin-bottom:6px;line-height:1.2;}
-  .pd{font-size:10.5px;line-height:1.7;color:var(--pise-mid);}
+  /* ROOM GRID */
+  .room-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--pise-light);margin:24px 0;}
+  .rc{background:var(--sky);padding:20px 16px;}
+  .rn{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--pise-light);line-height:1;margin-bottom:6px;}
+  .rname{font-size:8.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--cedar);margin-bottom:8px;}
+  .rdesc{font-size:13px;line-height:1.65;color:var(--pise-mid);}
+  .rprice{font-size:12px;color:var(--pise-mid);margin-top:8px;padding-top:8px;border-top:1px solid var(--pise-light);font-style:italic;}
 
   /* SPEC TABLE */
   .spec-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;}
@@ -61,279 +57,270 @@
   .spec-table tr:last-child{border-bottom:none;border-top:1px solid var(--cedar);}
   .spec-table tr:last-child td{font-weight:400;}
 
+  /* BLOCK GRID */
+  .block-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--pise-light);margin:24px 0;}
+  .bc{background:var(--sky);padding:20px 18px;}
+  .bl{font-size:8.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;}
+  .bt{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--pise);margin-bottom:8px;line-height:1.2;}
+  .bd{font-size:13px;line-height:1.7;color:var(--pise-mid);}
+
   /* BUDGET TABLE */
-  table.budget{width:100%;border-collapse:collapse;margin:20px 0;font-size:10.5px;}
+  table.budget{width:100%;border-collapse:collapse;margin:20px 0;}
   table.budget thead tr{border-bottom:2px solid var(--cedar);}
   table.budget thead th{padding:7px 8px;text-align:left;font-size:8.5px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
   table.budget thead th.r{text-align:right;}
   table.budget tbody tr{border-bottom:1px solid var(--pise-light);}
   table.budget tbody td{padding:6px 8px;line-height:1.5;color:var(--pise);vertical-align:top;}
-  table.budget tbody td.r{text-align:right;white-space:normal;word-break:break-word;}
-  table.budget th.r, table.budget td.r{width:170px;white-space:nowrap;word-break:normal;}
+  table.budget tbody td.r{text-align:right;}
   table.budget tbody td.note{font-size:9.5px;color:var(--pise-mid);}
-  .row-sec td{background:var(--sand);color:var(--cedar);font-size:8.5px;letter-spacing:0.2em;text-transform:uppercase;padding:5px 8px;}
-  .row-sub td{background:var(--sand);font-weight:400;font-size:14px;}
-  .row-sub td.r{white-space:normal;word-break:break-word;}
-  .row-tot td{border-top:2px solid var(--cedar);border-bottom:none;font-weight:400;font-size:14.5px;padding:9px 8px;}
-  .row-tot td.r{white-space:normal;word-break:break-word;}
+  .row-sec td{background:var(--sand);color:var(--cedar);letter-spacing:0.2em;text-transform:uppercase;padding:5px 8px;}
+  .row-sub td{background:var(--sand);font-weight:400;}
+  .row-tot td{border-top:2px solid var(--cedar);border-bottom:none;font-weight:400;padding:9px 8px;}
 
-  /* TABLE & SMALL TEXT FIXES */
-  table.prev{font-size:14px;}
-  table.prev thead th{font-size:10px;letter-spacing:0.12em;padding:9px 10px;}
-  table.prev tbody td{font-size:14px;padding:9px 10px;line-height:1.65;}
-  table.scen{font-size:14px;}
-  table.scen thead th{font-size:10px;padding:9px 10px;}
-  table.scen tbody td{font-size:14px;padding:9px 10px;}
-  .ks-sub{font-size:12px !important;}
-  .ks-lbl{font-size:10px !important;}
-  .row-sec td{font-size:11px !important;}
-  .row-tot td{font-size:15.5px !important;}
-  .cdesc{font-size:13px !important;line-height:1.7;}
-  .vie-price{font-size:13px !important;}
-  .cond-body{font-size:14px !important;}
-  .risk-label{font-size:14px !important;}
-  .risk-body{font-size:14px !important;}
-  .dir-body{font-size:14px !important;}
-  .final-sub{font-size:11px !important;}
-  .fr .amt{font-size:16px !important;}
-
-  /* STRONG TABLE & SMALL TEXT OVERRIDES */
+  /* OVERRIDES */
   table{font-size:15px !important;}
   table thead th{font-size:11px !important;letter-spacing:0.1em;padding:10px 12px !important;}
   table tbody td{font-size:15px !important;padding:10px 12px !important;line-height:1.7 !important;}
-  table tbody td.r{font-size:15px !important;}
   .row-sec td{font-size:12px !important;}
   .row-tot td{font-size:16px !important;}
-  .ks-lbl{font-size:11px !important;}
-  .ks-sub{font-size:13px !important;}
-  .cdesc{font-size:14px !important;}
-  .cond-body{font-size:15px !important;}
-  .risk-label{font-size:15px !important;}
-  .risk-body{font-size:15px !important;}
-  .dir-body{font-size:15px !important;}
-  .vie-price{font-size:14px !important;}
+  .rdesc{font-size:14px !important;}
+  .bd{font-size:14px !important;}
   .bs{font-size:14px !important;}
-
 </style>
-  <link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
 
-<!-- PAGE 5, LES 5 CLUSTERS -->
+<!-- ═══════════════════════════════════ PAGE 1 : LE PROGRAMME SPATIAL -->
 <div class="page">
+  <div class="ph"><span>Tigmi — Toile Blanche Marrakech</span><span>Le programme</span></div>
   <div class="sl">Le programme spatial</div>
-  <h1>5 clusters.<br>5 raisons de marcher.</h1>
-
-  <p>Chaque cluster regroupe 4 mini-riads autour d'un passage intérieur commun, logique de ksar, murs extérieurs aveugles, intimité par l'épaisseur du mur et non par la distance. Chaque cluster porte un programme unique qui lui est attaché. L'espace entre les clusters est le programme : le jardin, l'oliveraie, les chemins cairnés, le silence du Haouz.</p>
-
-  <img src="images/img_a6d717b0a3fab71d.png" alt="" style="width:100%;display:block;margin:32px 0;">
-
-  <div class="two-eq">
-    <div>
-      <h3>Logique ksar, architecture du cluster</h3>
-      <p>4 mini-riads partagent un passage intérieur commun. Les murs extérieurs sont aveugles, une porte arquée en cèdre par unité, deux ouvertures étroites maximum. L'intimité est garantie par l'épaisseur du pisé, non par la distance. Le riad marocain était inventé pour les médinas denses : cette même logique s'applique ici, dans le Haouz.</p>
-      <p>Les murs partagés entre unités adjacentes génèrent des économies significatives de construction et réduisent les réseaux enterrés. Le cluster est l'unité constructive et opérationnelle de base.</p>
-    </div>
-    <div>
-      <h3>Phasing, 3 campagnes, pas de chantier permanent</h3>
-      <div class="pc hl">
-        <div class="pl">Phase 1, Ouverture, 18 mois</div>
-        <div class="pt">3 clusters, 12 unités</div>
-        <div class="pd">12×1BR uniquement. Autour du bâtiment principal. Financée par les investisseurs. Une seule campagne de construction.</div>
-      </div>
-      <div class="pc">
-        <div class="pl">Phase 2, Année 3-4</div>
-        <div class="pt">1 cluster, 4 unités</div>
-        <div class="pd">3×1BR + 1×2BR. Auto-financé sur résultat d'exploitation. Une campagne courte, le cluster est une unité connue.</div>
-      </div>
-      <div class="pc">
-        <div class="pl">Phase 3, Année 6-7</div>
-        <div class="pt">1 cluster, 4 unités</div>
-        <div class="pd">3×1BR + 1×2BR. Auto-financé. Coïncide avec la fenêtre LBO. 20 unités, plafond artistique définitif.</div>
-      </div>
-      <p class="bs" style="margin-top:8px;">20 unités maximum. Jamais plus. Le nombre est une contrainte artistique.</p>
-    </div>
-  </div>
-
-</div>
-
-<!-- PAGE 6, ARCHITECTURE MINI-RIADS -->
-<div class="page">
-  <div class="sl">Les mini-riads</div>
-  <h1>Fermé à l'extérieur.<br>Ouvert sur le ciel.</h1>
+  <h1>Deux blocs.<br>Une transformation.<br>Douze mois.</h1>
 
   <div class="two">
     <div>
-      <p>Chaque mini-riad est une enceinte fermée en pisé. L'extérieur est presque aveugle, une porte arquée en cèdre, deux ouvertures hautes et étroites au maximum. Rien ne trahit ce qui se passe à l'intérieur.</p>
-      <p>On pousse la porte : on entre dans un monde différent. Un jardin intérieur privé de 30m², arboré, avec une piscine en bassin de zellige foncé au centre. Autour, les espaces de vie s'ouvrent entièrement sur ce patio. Le salon, la chambre, la salle de bain. Tout vit vers l'intérieur. Le ciel est le seul horizon.</p>
-      <p>La piscine n'est pas un aménagement de jardin. Elle est structurellement intégrée au patio. Le bassin en zellige foncé (4×5m) reflète le ciel. Un daybed en cèdre le borde. Un olivier ou un grenadier pousse dans un angle. La nuit, les lanternes en laiton. Le silence.</p>
-      <p>C'est le principe du riad marocain réinterprété dans un langage contemporain et désertique. La richesse est dans l'espace, la lumière, la qualité des matières. Pas dans l'ostentation.</p>
-      <h3>Palette matériaux, 6 matériaux, aucune exception sans accord écrit</h3>
-      <ul class="ul">
-        <li>Pisé, terre crue compactée, murs porteurs 50cm, couleur naturelle Haouz</li>
-        <li>Tadelakt, enduit chaux, salles de bain, poli pierre de rivière</li>
-        <li>Zellige, carreaux terre émaillée Fès, piscine et sols, bleu nuit ou vert ardoise</li>
-        <li>Cèdre de l'Atlas, portes, poutres, menuiseries, huile de lin uniquement</li>
-        <li>Béton brut, toitures terrasses, dalles, coffrage bois apparent</li>
-        <li>Pierre locale, seuils, vasques, margelles, joints chaux naturelle</li>
-      </ul>
-    </div>
-    <div>
-      <h3>Spécifications par mini-riad, 1BR</h3>
-      <table class="spec-table">
-        <tr><td>Surface bâtie totale</td><td>110 m²</td></tr>
-        <tr><td>Patio intérieur</td><td>30 m²</td></tr>
-        <tr><td>Chambre + dressing cèdre</td><td>45 m²</td></tr>
-        <tr><td>Salle de bain tadelakt</td><td>20 m²</td></tr>
-        <tr><td>Salon / espace vie</td><td>25 m²</td></tr>
-        <tr><td>Piscine bassin zellige</td><td>4 × 5 m, 1,4m prof.</td></tr>
-        <tr><td>Fenêtres extérieures</td><td>Quasi-nulles</td></tr>
-        <tr><td>Structure</td><td>Pisé 50cm + béton brut</td></tr>
-        <tr><td>Finitions</td><td>Tadelakt, cèdre, zellige, pierre</td></tr>
-        <tr><td>Climatisation</td><td>Réversible encastrée, sur PV</td></tr>
-        <tr><td>Eau chaude</td><td>Solaire thermique + appoint PV</td></tr>
-        <tr><td>ADR blended</td><td>650–950€ / nuit (moy. 800€)</td></tr>
-        <tr><td>Coût construction cluster</td><td>~199&#8239;000€ / unité</td></tr>
-      </table>
-      <div class="qb" style="margin-top:20px;">
-        <p>Chaque mini-riad est invisible depuis tous les autres. Depuis l'intérieur d'un patio, il est impossible de voir le patio d'une autre unité. Ce n'est pas une recommandation, c'est une condition sine qua non.</p>
-        <div class="qs">Contrainte 2, Brief Architectural v2.0</div>
+      <p>Tigmi est structuré en deux blocs distincts séparés par un jardin central. Cette géographie existante est l'avantage opérationnel du projet : les deux blocs peuvent être rénovés simultanément sans interruption de l'un par l'autre, et chacun dispose de sa propre piscine. La transformation est totale, pas partielle. L'hôtel ferme douze mois. Il rouvre Toile Blanche Marrakech, à trente chambres, parfait.</p>
+      <p>Le bâtiment principal — restaurant, réception, bar, hammam, galerie — est le cœur public du territoire. Il concentre les espaces de vie commune et abrite la galerie Toile Blanche Contemporary Marrakech. C'est là que le programme artistique vit, que les œuvres sont exposées, que les conversations se font. Autour, les trente unités s'organisent en deux ailes distinctes, chacune autour de sa cour et de son eau.</p>
+
+      <div class="qb">
+        <p>L'atlas est là, derrière. Pas cadré, pas mis en scène. Présent parce qu'il est là. C'est suffisant.</p>
+        <div class="qs">Brief Architectural Toile Blanche Marrakech</div>
       </div>
     </div>
+    <div>
+      <h3>Ce qui reste</h3>
+      <ul class="ul">
+        <li>Les murs en pisé — structure et âme du lieu, conservés intégralement</li>
+        <li>Les deux piscines — rénovées et redessinées en bassin zellige foncé</li>
+        <li>Le studio de yoga — transformé en espace polyvalent et salle de méditation</li>
+        <li>Le restaurant — réaménagé, cuisine ouverte, terrasse Atlas</li>
+        <li>Le hammam — entièrement refait aux standards Toile Blanche</li>
+        <li>Les jardins et l'oliveraie — paysagement complet, palette végétale locale</li>
+      </ul>
+      <h3>Ce qui disparaît</h3>
+      <ul class="ul">
+        <li>Toute l'identité visuelle Tigmi — signalétique, couleurs, mobilier</li>
+        <li>Les finitions hétérogènes — carrelage, boiseries peintes, éléments décoratifs</li>
+        <li>Le positionnement yoga-retraite comme axe principal</li>
+        <li>Le bar non licencié — remplacé par un bar à cocktails avec licence en cours</li>
+        <li>La réception bureau — remplacée par accueil salon, sans comptoir</li>
+      </ul>
+    </div>
   </div>
 
-  <img src="images/img_a8729ea839be5a7e.png" alt="" style="width:100%;display:block;margin:32px 0;">
-  <div style="padding:48px 52px 0;">
-    <div class="sl">La nuit</div>
-    <p>Le territoire change de nature après le coucher du soleil. Le Haouz est l'un des rares endroits, à 30 minutes d'une ville d'un million d'habitants, où les nuits sont vraiment noires. L'éclairage est minimal, rasant, dirigé vers le sol. Rien ne monte vers le ciel.</p>
-  </div>
-
-<img src="images/img_bbd37667d2ddd6af.png" alt="" style="width:100%;display:block;margin:32px 0;">
-
+  <div class="img-full">[ Image : plan masse Tigmi — deux blocs, jardin central, bâtiment principal ]</div>
 </div>
 
-<!-- PAGE 7, BUDGET DÉTAIL -->
-<div class="page">
-  <div class="sl">Le budget</div>
-  <h1>Construction Phase 1.<br>Détail complet.</h1>
 
-  <p class="bs">Montants établis sur la base des référentiels de coûts marocains (province Marrakech-Safi, 2025-2026), de devis indicatifs auprès d'entreprises spécialisées pisé et tadelakt, et des coûts constatés sur des projets hôteliers boutique comparables dans le Haouz. Provision aléas 6%, Gilles Leroy présent sur site en permanence. Direction artistique assurée en interne par les Leroy Brothers.</p>
+<!-- ═══════════════════════════════════ PAGE 2 : LES CHAMBRES -->
+<div class="page">
+  <div class="ph"><span>Tigmi — Toile Blanche Marrakech</span><span>Les unités</span></div>
+  <div class="sl">Le programme hébergement</div>
+  <h1>Trente unités.<br>Trois catégories.<br>Un seul standard.</h1>
+
+  <p>Le standard de finition est identique dans les trois catégories — même palette de matériaux, même qualité d'exécution, même mobilier cèdre et laiton. Ce qui diffère : la surface, la configuration, la relation à l'extérieur. Aucune chambre ne s'excuse de ne pas être une suite. Chacune est ce qu'elle est, complètement.</p>
+
+  <!-- ROOM GRID -->
+  <div class="room-grid">
+    <div class="rc">
+      <div class="rn">24</div>
+      <div class="rname">Chambres standard</div>
+      <div class="rdesc">~40m². Murs en tadelakt naturel, sol en pierre locale, mobilier en cèdre de l'Atlas. Salle de bain ouverte sur la chambre, vasque en pierre taillée. Terrasse ou accès jardin direct selon position dans le bloc. Vue sur jardin ou Atlas.</div>
+      <div class="rprice">ADR : 380–520€ selon saison</div>
+    </div>
+    <div class="rc">
+      <div class="rn">5</div>
+      <div class="rname">Suites</div>
+      <div class="rdesc">~55m². Salon séparé, salle de bain avec baignoire sur pied en fonte émaillée, terrasse privée avec daybed. Orientation privilegiée — vue dégagée sur les jardins ou les montagnes. Même matériaux, espace et lumière supplémentaires.</div>
+      <div class="rprice">ADR : 520–680€ selon saison</div>
+    </div>
+    <div class="rc">
+      <div class="rn">1</div>
+      <div class="rname">Suite piscine</div>
+      <div class="rdesc">~70m². La seule unité avec piscine privée. Salon, chambre, salle de bain hammam en tadelakt noir, terrasse jardin fermée avec bassin de zellige 3×4m. Position isolée dans le bloc. Réservée en priorité aux séjours Semaine et aux privatisations.</div>
+      <div class="rprice">ADR : 680–850€ selon saison</div>
+    </div>
+  </div>
+
+  <div class="two">
+    <div>
+      <h3>Palette matériaux — même règle que Saint-Paul</h3>
+      <ul class="ul">
+        <li>Tadelakt enduit chaux — murs de toutes les salles de bain, finition poli pierre de rivière</li>
+        <li>Pierre locale du Haouz — sols, vasques, seuils, margelles</li>
+        <li>Cèdre de l'Atlas — portes, mobilier, claustra, huile de lin uniquement, jamais verni</li>
+        <li>Zellige de Fès — bassins, douches, éléments sol, tons noir et vert ardoise</li>
+        <li>Laiton brut — robinetterie, luminaires, poignées — non traité, patine naturelle</li>
+        <li>Lin et coton naturel non teint — literie, rideaux, coussins</li>
+      </ul>
+
+      <div class="qb">
+        <p>Aucun élément ne serait dans cette chambre s'il ne pouvait pas exister dans l'image de référence. La règle s'applique ici comme à Saint-Paul.</p>
+        <div class="qs">Direction artistique, Leroy Brothers</div>
+      </div>
+    </div>
+    <div>
+      <h3>Spécifications standard — chambre 40m²</h3>
+      <table class="spec-table">
+        <tbody>
+          <tr><td>Surface totale</td><td>~40 m²</td></tr>
+          <tr><td>Chambre + dressing</td><td>22 m²</td></tr>
+          <tr><td>Salle de bain tadelakt</td><td>10 m²</td></tr>
+          <tr><td>Terrasse ou loggia</td><td>8 m²</td></tr>
+          <tr><td>Murs</td><td>Tadelakt naturel ou pisé apparent</td></tr>
+          <tr><td>Sol</td><td>Pierre locale, joints chaux</td></tr>
+          <tr><td>Menuiseries</td><td>Cèdre brut huilé</td></tr>
+          <tr><td>Éclairage</td><td>Laiton brut, LED chaud 2700K</td></tr>
+          <tr><td>Climatisation</td><td>Réversible encastrée, sur PV</td></tr>
+          <tr><td>Eau chaude</td><td>Solaire thermique + appoint</td></tr>
+          <tr><td>Connectivité</td><td>Wifi discret, pas de TV</td></tr>
+          <tr><td>ADR blended cible</td><td>450€ ouverture → 500€ stabilisé</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════ PAGE 3 : LES ESPACES COMMUNS -->
+<div class="page">
+  <div class="ph"><span>Tigmi — Toile Blanche Marrakech</span><span>Les espaces communs</span></div>
+  <div class="sl">Le cœur public</div>
+  <h1>Un bâtiment.<br>Plusieurs vies.</h1>
+
+  <p>Le bâtiment principal de Tigmi — grande ferme marocaine de 1 200m² à double hauteur — devient le cœur public de Toile Blanche Marrakech. Il concentre tout ce qui n'est pas privé : la galerie, le restaurant, le bar, la réception-salon, le hammam. C'est là que le territoire parle le plus fort. C'est aussi l'espace qui justifie l'ADR — pas les chambres seules, mais la qualité totale de ce qui entoure les chambres.</p>
+
+  <div class="block-grid">
+    <div class="bc">
+      <div class="bl">Rez-de-chaussée</div>
+      <div class="bt">Toile Blanche Contemporary Marrakech</div>
+      <div class="bd">La galerie occupe le rez-de-chaussée du bâtiment principal. Murs en pisé brut non enduit, lumière naturelle zénithale. Programme d'expositions Leroy Brothers — œuvres sur territoire, œuvres en collection, œuvres de passage. Accessible aux résidents et sur invitation lors des Sessions. Entrée distincte depuis le jardin.</div>
+    </div>
+    <div class="bc">
+      <div class="bl">Rez-de-chaussée</div>
+      <div class="bt">Restaurant et bar</div>
+      <div class="bd">Restaurant gastronomique dans le volume principal — cuisine ouverte, table longue communautaire et tables individuelles. Terrasse extérieure face à l'Atlas. Bar cheminée pour la soirée, carta courte, vins naturels marocains et méditerranéens. Breakfast servi en chambre ou sur terrasse sur demande.</div>
+    </div>
+    <div class="bc">
+      <div class="bl">Rez-de-chaussée</div>
+      <div class="bt">Réception et salon d'arrivée</div>
+      <div class="bd">Pas de comptoir. Un salon. L'arrivée se fait autour d'un thé, assis. Les clés ne sont pas remises — le guide accompagne jusqu'à la chambre. La logistique disparaît dans le soin. Standard Toile Blanche Saint-Paul, transposé.</div>
+    </div>
+    <div class="bc">
+      <div class="bl">Sous-sol et annexe</div>
+      <div class="bt">Hammam et soins</div>
+      <div class="bd">Hammam traditionnel entièrement refait — sol et murs en zellige, vapeur, table de massage en pierre. Deux cabines de soins individuels. Pas de spa « resort » — un hammam marocain vrai, aux standards de finition Toile Blanche. Accès sur réservation, exclusif aux résidents.</div>
+    </div>
+    <div class="bc">
+      <div class="bl">Terrasse rooftop</div>
+      <div class="bt">Vue Atlas — usage libre</div>
+      <div class="bd">Terrasse non aménagée comme espace de service. Quelques daybeds en cèdre, pas de bar, pas de musique. La vue sur l'Atlas et la plaine du Haouz est le programme. Le coucher de soleil depuis ici est la meilleure chose que le territoire offre gratuitement.</div>
+    </div>
+    <div class="bc">
+      <div class="bl">Jardin central</div>
+      <div class="bt">Entre les deux blocs</div>
+      <div class="bd">Jardin planté d'oliviers, de grenadiers, de lavande et de romarin. Chemin en pierre locale entre les deux ailes. Pas d'éclairage haut — lanternes au sol uniquement. La nuit dans le Haouz est noire. Elle doit le rester.</div>
+    </div>
+  </div>
+
+  <div class="img-full">[ Image : bâtiment principal — galerie en rez-de-chaussée, restaurant terrasse, vue Atlas ]</div>
+
+  <div class="pf">
+    <span>Toile Blanche Group — Leroy Brothers — Mai 2026</span>
+    <span>Document confidentiel — associés pressentis uniquement</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════ PAGE 4 : LE BUDGET RÉNOVATION -->
+<div class="page">
+  <div class="ph"><span>Tigmi — Toile Blanche Marrakech</span><span>Le budget</span></div>
+  <div class="sl">Rénovation complète</div>
+  <h1>1 500 000€.<br>Douze mois.<br>Trente unités prêtes.</h1>
+
+  <p>Montants établis sur la base des référentiels de coûts marocains (province Marrakech-Safi, 2025-2026), de devis indicatifs auprès d'entreprises spécialisées tadelakt, zellige et menuiserie cèdre, et des coûts constatés sur des projets hôteliers boutique comparables dans le Haouz. Gilles Leroy présent sur site une semaine par mois pendant le chantier. Direction artistique assurée en interne. Provision aléas incluse.</p>
 
   <table class="budget">
     <thead>
       <tr>
-        <th style="width:50%;">Poste</th>
-        <th class="r" style="width:170px;">Montant</th>
-        <th style="width:30%;">Note</th>
+        <th>Poste</th>
+        <th class="r">Montant</th>
+        <th>Note</th>
       </tr>
     </thead>
     <tbody>
-      <tr class="row-sec"><td colspan="3">Construction principale</td></tr>
-      <tr>
-        <td>12 mini-riads 1BR, modèle cluster, murs partagés</td>
-        <td class="r">2&#8239;390&#8239;000€</td>
-        <td class="note">~199&#8239;000€ par unité</td>
-      </tr>
-      <tr>
-        <td>Bâtiment principal, rénovation 1&#8239;200m²</td>
-        <td class="r">700&#8239;000€</td>
-        <td class="note">Restaurant, galerie, réception, bar, rooftop</td>
-      </tr>
-      <tr class="row-sec"><td colspan="3">Autonomie et infrastructure</td></tr>
-      <tr>
-        <td>Système off-grid Phase 1, 3 clusters (PV, batteries, solaire thermique)</td>
-        <td class="r">90&#8239;000€</td>
-        <td class="note">Autonomie énergétique complète dès l'ouverture</td>
-      </tr>
-      <tr>
-        <td>Biodigesteur + traitement eau + citernes pluie</td>
-        <td class="r">80&#8239;000€</td>
-        <td class="note">Dimensionné pour 20 unités dès Phase 1</td>
-      </tr>
-      <tr>
-        <td>Voiries, réseaux, portail, réfection mur clôture 1,6km</td>
-        <td class="r">120&#8239;000€</td>
-        <td class="note">Conduits Phase 2-3 inclus, creuser une fois</td>
-      </tr>
-      <tr>
-        <td>Provisions Phase 2-3 (conduits, zones réservées, connexions)</td>
-        <td class="r">43&#8239;000€</td>
-        <td class="note">Évite double intervention future</td>
-      </tr>
-      <tr>
-        <td>Zone de service presse hydraulique Les Compressions</td>
-        <td class="r">15&#8239;000€</td>
-        <td class="note">Presse acquise sur fonds opérationnels an 1</td>
-      </tr>
-      <tr>
-        <td>Jardin Phase 1, oliveraie complémentaire, potager, clusters</td>
-        <td class="r">20&#8239;000€</td>
-        <td class="note">Sur existant, plantation complémentaire ciblée</td>
-      </tr>
-      <tr class="row-sec"><td colspan="3">Honoraires et frais</td></tr>
-      <tr>
-        <td>Architecte DPLG marocain, maîtrise d'œuvre (2%)</td>
-        <td class="r">67&#8239;000€</td>
-        <td class="note">Direction artistique Leroy Brothers en interne</td>
-      </tr>
-      <tr>
-        <td>Contrôle technique et coordination chantier</td>
-        <td class="r">20&#8239;000€</td>
-        <td class="note"></td>
-      </tr>
-      <tr>
-        <td>Notaire et frais juridiques acquisition foncière</td>
-        <td class="r">17&#8239;500€</td>
-        <td class="note"></td>
-      </tr>
-      <tr>
-        <td>GO SIYAHA, constitution société marocaine, conseil fiscal</td>
-        <td class="r">12&#8239;500€</td>
-        <td class="note"></td>
-      </tr>
-      <tr class="row-sec"><td colspan="3">Contingence</td></tr>
-      <tr>
-        <td>Provision aléas chantier (6%)</td>
-        <td class="r">204&#8239;000€</td>
-        <td class="note">Vs 10-15% standard pour maître d'ouvrage absent</td>
-      </tr>
-      <tr class="row-sub">
-        <td>Total construction</td>
-        <td class="r">3&#8239;809&#8239;000€</td>
-        <td></td>
-      </tr>
-      <tr class="row-sec"><td colspan="3">Hors construction</td></tr>
-      <tr>
-        <td>Acquisition foncière (5 ha, Titre Foncier, Route de Fès)</td>
-        <td class="r">700&#8239;000€</td>
-        <td class="note">Offre Willenbrock, confirmée</td>
-      </tr>
-      <tr>
-        <td>Budget lancement (stocks F&amp;B, marketing, formation, fonds de roulement)</td>
-        <td class="r">250&#8239;000€</td>
-        <td class="note">Hors budget construction</td>
-      </tr>
-      <tr class="row-tot">
-        <td>Total tout compris, Phase 1</td>
-        <td class="r">4&#8239;759&#8239;000€</td>
-        <td></td>
-      </tr>
+      <tr class="row-sec"><td colspan="3">Hébergement — 30 unités</td></tr>
+      <tr><td>Rénovation complète 24 chambres standard (~40m²)</td><td class="r">480 000€</td><td class="note">~20 000€/ch. — finitions, salle de bain, menuiseries, électricité</td></tr>
+      <tr><td>Rénovation 5 suites (~55m²)</td><td class="r">137 500€</td><td class="note">~27 500€/suite — surface et salle de bain baignoire sur pied</td></tr>
+      <tr><td>Rénovation suite piscine + bassin zellige privé</td><td class="r">82 500€</td><td class="note">Piscine intégrée 3×4m, tadelakt noir, terrasse fermée</td></tr>
+      <tr class="row-sub"><td><strong>Sous-total hébergement</strong></td><td class="r"><strong>700 000€</strong></td><td></td></tr>
+
+      <tr class="row-sec"><td colspan="3">Bâtiment principal — espaces communs</td></tr>
+      <tr><td>Galerie Toile Blanche Contemporary Marrakech</td><td class="r">80 000€</td><td class="note">Murs bruts, éclairage galerie, cimaises invisibles, sol pierre</td></tr>
+      <tr><td>Restaurant — cuisine ouverte + salle</td><td class="r">120 000€</td><td class="note">Équipement cuisine pro, mobilier cèdre, terrasse Atlas</td></tr>
+      <tr><td>Bar cheminée + salon réception</td><td class="r">60 000€</td><td class="note">Cheminée, mobilier, éclairage laiton, pas de comptoir</td></tr>
+      <tr><td>Hammam complet — zellige, vapeur, soins</td><td class="r">90 000€</td><td class="note">Deux cabines massage, sol et murs zellige, table pierre</td></tr>
+      <tr><td>Rooftop terrasse Atlas</td><td class="r">30 000€</td><td class="note">Daybeds cèdre, sol pierre, garde-corps sobre</td></tr>
+      <tr class="row-sub"><td><strong>Sous-total bâtiment principal</strong></td><td class="r"><strong>380 000€</strong></td><td></td></tr>
+
+      <tr class="row-sec"><td colspan="3">Infrastructure et autonomie</td></tr>
+      <tr><td>Citerne eau 60m³ + station pompage triplex</td><td class="r">45 000€</td><td class="note">Urgence opérationnelle — puits insuffisant seul</td></tr>
+      <tr><td>Micro-STEP recyclage eaux grises jardins</td><td class="r">25 000€</td><td class="note">Irrigation légale — utilisation eau fraîche interdite jardins</td></tr>
+      <tr><td>Installation solaire photovoltaïque + thermique</td><td class="r">60 000€</td><td class="note">Autonomie énergétique partielle, eau chaude solaire complète</td></tr>
+      <tr><td>Mise aux normes sismiques — murs périmétriques</td><td class="r">50 000€</td><td class="note">Post-séisme Al Haouz 2023, bureaux d'études certifiés</td></tr>
+      <tr><td>Réseaux et voiries internes</td><td class="r">40 000€</td><td class="note">Éclairage extérieur sol, chemins pierre, irrigation</td></tr>
+      <tr class="row-sub"><td><strong>Sous-total infrastructure</strong></td><td class="r"><strong>220 000€</strong></td><td></td></tr>
+
+      <tr class="row-sec"><td colspan="3">Jardins et paysagement</td></tr>
+      <tr><td>Jardin central — plantations, allées pierre, éclairage sol</td><td class="r">60 000€</td><td class="note">Oliviers, grenadiers, lavande, romarin — palette locale</td></tr>
+      <tr><td>Deux piscines principales — redessin zellige foncé</td><td class="r">80 000€</td><td class="note">Rhabillage zellige bleu nuit, margelles pierre, nage à ras bord</td></tr>
+      <tr class="row-sub"><td><strong>Sous-total jardins</strong></td><td class="r"><strong>140 000€</strong></td><td></td></tr>
+
+      <tr class="row-sec"><td colspan="3">FF&amp;E et provision</td></tr>
+      <tr><td>Mobilier — chambres, communs (cèdre, lin, laiton)</td><td class="r">40 000€</td><td class="note">Artisans locaux supervisés par Leroy Brothers</td></tr>
+      <tr><td>Literie, linge, équipements</td><td class="r">15 000€</td><td class="note">Standard Toile Blanche — lin naturel, non teint</td></tr>
+      <tr><td>Provision aléas 8%</td><td class="r">63 600€</td><td class="note">Chantier de rénovation, surprises structurelles possibles</td></tr>
+      <tr class="row-sub"><td><strong>Sous-total FF&amp;E et provision</strong></td><td class="r"><strong>118 600€</strong></td><td></td></tr>
+
+      <tr class="row-sec"><td colspan="3">Lancement</td></tr>
+      <tr><td>Transfert licence alcool + frais légaux + CNSS</td><td class="r">50 000€</td><td class="note">Buffer social ancienne gestion inclus</td></tr>
+      <tr><td>Pre-opening marketing, presse, identité visuelle</td><td class="r">100 000€</td><td class="note">Campagne lancement TB Marrakech, relations presse</td></tr>
+      <tr><td>Fonds de roulement — 6 mois de charges fixes</td><td class="r">100 000€</td><td class="note">Avant premier exercice plein</td></tr>
+      <tr class="row-sub"><td><strong>Sous-total lancement</strong></td><td class="r"><strong>250 000€</strong></td><td></td></tr>
+
+      <tr class="row-tot"><td><strong>Total rénovation et lancement</strong></td><td class="r"><strong>1 808 600€</strong></td><td class="note">Arrondi budget 1 500 000€ rénovation + 308 600€ lancement et infrastructure</td></tr>
+
+      <tr class="row-sec"><td colspan="3">Acquisition (rappel)</td></tr>
+      <tr><td>Achat SCI + SARL (100% parts, cible négociée)</td><td class="r">1 400 000€</td><td class="note">Levier liabilities — voir mémo acquisition</td></tr>
+
+      <tr class="row-tot"><td><strong>Investissement total</strong></td><td class="r"><strong>3 150 000€</strong></td><td class="note">Arrondi de travail — à affiner après devis définitifs</td></tr>
     </tbody>
   </table>
 
-  <div class="two-eq" style="margin-top:16px;">
-    <div>
-      <h3>Avantages du modèle cluster</h3>
-      <ul class="ul">
-        <li>Murs partagés : 8-12&#8239;000€ économisés par mur, 12-15 murs sur 12 unités</li>
-        <li>Réseaux et locaux techniques mutualisés par cluster</li>
-        <li>Conduits Phase 2-3 posés lors de Phase 1 : économie significative sur chantiers futurs</li>
-      </ul>
-    </div>
-    <div>
-      
+  <div class="pf">
+    <span>Toile Blanche Group — Leroy Brothers — Mai 2026</span>
+    <span>Document confidentiel — projections à titre indicatif</span>
   </div>
-
 </div>
 
 </body>

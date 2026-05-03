@@ -17,19 +17,18 @@
   body{touch-action:pan-y;background:var(--sand);color:var(--pise);font-family:'Montserrat',sans-serif;font-weight:300;font-size:17px;line-height:1.75;max-width:960px;margin:0 auto;}
 
   /* COVER */
-  .cover{width:100%;min-height:580px;background:var(--sand);display:flex;flex-direction:column;justify-content:space-between;padding:56px 52px;}
-  .cover-brand{font-size:12px;letter-spacing:0.38em;color:var(--cedar);text-transform:uppercase;}
-  .cover-mid{padding:48px 0 32px;}
+  .cover{width:100%;min-height:480px;background:var(--sand);display:flex;flex-direction:column;justify-content:space-between;padding:56px 52px;border-bottom:1px solid var(--pise-light);}
   .cover-rule{width:40px;height:1px;background:var(--cedar);margin-bottom:28px;}
-  .ct{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:64px;line-height:1.02;color:var(--pise);margin-bottom:8px;}
-  .cs{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--pise-mid);margin-bottom:28px;}
-  .cd{font-size:14px;line-height:1.85;color:var(--pise-mid);max-width:480px;border-left:1px solid var(--cedar);padding-left:18px;}
-  .cover-bottom{border-top:1px solid var(--cedar);padding-top:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
-  .cm-item{padding-right:20px;border-right:1px solid var(--pise-light);}
-  .cm-item:last-child{border-right:none;padding-left:20px;padding-right:0;}
-  .cm-item:nth-child(2){padding-left:20px;}
-  .cm-label{font-size:8.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cedar);margin-bottom:4px;}
-  .cm-value{font-size:14px;color:var(--pise);line-height:1.5;}
+  .ct{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:52px;line-height:1.02;color:var(--pise);margin-bottom:8px;}
+  .cs{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--pise-mid);margin-bottom:28px;}
+  .cd{font-size:14px;line-height:1.8;color:var(--pise-mid);max-width:520px;border-left:1px solid var(--cedar);padding-left:18px;}
+  .cover-bottom{border-top:1px solid var(--cedar);padding-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
+  .kpi{padding-right:24px;border-right:1px solid var(--pise-light);}
+  .kpi:last-child{border-right:none;padding-left:24px;padding-right:0;}
+  .kpi:nth-child(2){padding-left:24px;}
+  .kv{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:28px;color:var(--pise);line-height:1;margin-bottom:4px;}
+  .kl{font-size:10px;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;margin-bottom:2px;}
+  .ks{font-size:11.5px;color:var(--pise-mid);}
 
   /* PAGES */
   .page{padding:56px 52px;border-bottom:1px solid var(--pise-light);}
@@ -38,429 +37,300 @@
   .ph span:last-child{color:var(--pise-mid);}
   .sl{font-size:11.5px;letter-spacing:0.22em;color:var(--cedar);text-transform:uppercase;margin-bottom:10px;}
   h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:44px;line-height:1.12;margin-bottom:22px;}
-  h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:21px;line-height:1.3;margin-bottom:10px;margin-top:28px;}
-  h3{font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--pise-mid);margin-bottom:10px;margin-top:24px;font-weight:400;}
+  h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:20px;line-height:1.3;margin-bottom:10px;margin-top:0;}
+  h3{font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--pise-mid);margin-bottom:10px;margin-top:20px;font-weight:400;}
   p{font-size:16.5px;line-height:1.9;margin-bottom:12px;}
   .bs{font-size:15px;line-height:1.8;color:var(--pise-mid);margin-bottom:7px;}
-  .two{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin:20px 0;}
   .pf{margin-top:40px;padding-top:12px;border-top:1px solid var(--pise-light);display:flex;justify-content:space-between;}
   .pf span{font-size:10.5px;letter-spacing:0.13em;color:var(--pise-mid);text-transform:uppercase;}
-  .div-f{width:100%;height:1px;background:var(--pise-light);margin:28px 0;}
+  .ab{border-left:2px solid var(--cedar);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
+  .ab2{border-left:2px solid var(--pise-light);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
+  .rule{width:36px;height:1px;background:var(--cedar);margin:20px 0;}
+  .two-eq{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:20px 0;}
 
   /* ARTICLE BLOCKS */
-  .article{margin-bottom:32px;}
-  .article-num{font-size:8.5px;letter-spacing:0.3em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;}
-  .article-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--pise);margin-bottom:12px;line-height:1.3;}
-  .article-body{font-size:14px;line-height:1.85;color:var(--pise);}
+  .art{margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--pise-light);}
+  .art:last-child{border-bottom:none;}
+  .art-num{font-size:10px;letter-spacing:0.22em;color:var(--cedar);text-transform:uppercase;margin-bottom:6px;}
+  .art-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--pise);margin-bottom:10px;}
+  .art-body{font-size:15px;line-height:1.8;color:var(--pise-mid);}
 
   /* DATA ROWS */
-  .dr{padding:8px 0;border-bottom:1px solid var(--pise-light);}
-  .dr:last-child{border-bottom:none;}
-  .dr .lbl{color:var(--cedar);font-size:8.5px;letter-spacing:0.18em;text-transform:uppercase;display:block;margin-bottom:2px;}
-  .dr .val{color:var(--pise);font-size:14px;display:block;line-height:1.6;}
+  .data-row{display:grid;grid-template-columns:200px 1fr;gap:16px;padding:10px 0;border-bottom:1px solid var(--pise-light);font-size:15px;}
+  .data-row:last-child{border-bottom:none;}
+  .data-label{color:var(--cedar);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;padding-top:2px;}
+  .data-val{color:var(--pise);line-height:1.7;}
 
   /* PARTIES BLOCK */
-  .parties-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--pise-light);margin:20px 0;}
-  .partie-card{background:var(--sky);padding:20px 18px;}
-  .partie-role{font-size:8.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;}
-  .partie-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--pise);margin-bottom:4px;}
-  .partie-pct{font-size:30px;font-family:'Cormorant Garamond',serif;font-weight:300;color:var(--cedar);line-height:1;margin-bottom:8px;}
-  .partie-detail{font-size:9.5px;line-height:1.65;color:var(--pise-mid);}
+  .parties{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--pise-light);margin:20px 0;}
+  .party{background:var(--sky);padding:18px 16px;}
+  .party-role{font-size:8.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;}
+  .party-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--pise);margin-bottom:6px;}
+  .party-pct{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--pise-light);line-height:1;margin-bottom:8px;}
+  .party-detail{font-size:12px;line-height:1.65;color:var(--pise-mid);}
 
   /* DECISION TABLE */
-  table.dec{width:100%;border-collapse:collapse;margin:16px 0;font-size:10.5px;}
-  table.dec thead th{padding:7px 10px;font-size:8.5px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;text-align:left;border-bottom:1px solid var(--cedar);}
+  table.dec{width:100%;border-collapse:collapse;margin:16px 0;}
+  table.dec thead tr{border-bottom:2px solid var(--cedar);}
+  table.dec thead th{padding:8px 10px;text-align:left;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
   table.dec tbody tr{border-bottom:1px solid var(--pise-light);}
-  table.dec tbody td{padding:7px 10px;line-height:1.6;vertical-align:top;}
-  table.dec tbody td:first-child{color:var(--cedar);font-size:9.5px;letter-spacing:0.05em;white-space:normal;word-break:break-word;width:30%;}
-  .dec-sec td{background:var(--sand);color:var(--pise-mid);font-size:8.5px;letter-spacing:0.2em;text-transform:uppercase;padding:5px 10px;}
+  table.dec tbody td{padding:9px 10px;font-size:14px;line-height:1.65;color:var(--pise);vertical-align:top;}
 
   /* FEES TABLE */
-  table.fees{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;}
+  table.fees{width:100%;border-collapse:collapse;margin:16px 0;}
+  table.fees thead tr{border-bottom:2px solid var(--cedar);}
+  table.fees thead th{padding:8px 10px;text-align:left;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
   table.fees tbody tr{border-bottom:1px solid var(--pise-light);}
-  table.fees tbody td{padding:8px 10px;line-height:1.6;vertical-align:top;}
-  table.fees tbody td:first-child{color:var(--pise-mid);font-size:10.5px;width:28%;}
-  table.fees tbody td:nth-child(2){color:var(--cedar);font-weight:400;white-space:normal;word-break:break-word;width:20%;}
-  table.fees tbody td:last-child{color:var(--pise);}
-  .fees-tot td{border-top:1px solid var(--cedar);font-weight:400;}
-
-  /* FONDS BLOCK */
-  .fonds-block{border-left:2px solid var(--cedar);padding:18px 24px;background:var(--sky);margin:20px 0;}
-  .fonds-block h2{margin-top:0;font-size:15px;}
+  table.fees tbody td{padding:9px 10px;font-size:14px;line-height:1.65;color:var(--pise);vertical-align:top;}
+  table.fees .row-tot td{border-top:2px solid var(--cedar);font-weight:400;}
 
   /* SORTIE TABLE */
-  table.sortie{width:100%;border-collapse:collapse;margin:16px 0;font-size:10.5px;}
-  table.sortie thead th{padding:7px 10px;font-size:8.5px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;text-align:left;border-bottom:1px solid var(--cedar);}
+  table.sortie{width:100%;border-collapse:collapse;margin:16px 0;}
+  table.sortie thead tr{border-bottom:2px solid var(--cedar);}
+  table.sortie thead th{padding:8px 10px;text-align:left;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
   table.sortie thead th.r{text-align:right;}
   table.sortie tbody tr{border-bottom:1px solid var(--pise-light);}
-  table.sortie tbody td{padding:7px 10px;line-height:1.5;vertical-align:top;}
-  table.sortie tbody td.r{text-align:right;white-space:normal;word-break:break-word;}
-  .sortie-hl td{background:var(--sand);font-weight:400;}
-  .sortie-tot td{border-top:2px solid var(--cedar);font-weight:400;font-size:14.5px;padding:9px 10px;}
-  .sortie-tot td.r{white-space:normal;word-break:break-word;}
+  table.sortie tbody td{padding:9px 10px;font-size:14px;line-height:1.65;color:var(--pise);vertical-align:top;}
+  table.sortie tbody td.r{text-align:right;}
+  table.sortie .row-tot td{border-top:2px solid var(--cedar);font-weight:400;}
+  table.sortie .row-hl td{background:var(--sky);}
 
-  /* CLOSING */
-  .closing{border-top:2px solid var(--cedar);padding-top:28px;margin-top:40px;}
-  .closing-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;line-height:1.9;color:var(--pise-mid);max-width:540px;}
-  .closing-sub{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--pise-mid);margin-top:12px;}
-
-  /* TABLE & SMALL TEXT FIXES */
-  table.prev{font-size:14px;}
-  table.prev thead th{font-size:10px;letter-spacing:0.12em;padding:9px 10px;}
-  table.prev tbody td{font-size:14px;padding:9px 10px;line-height:1.65;}
-  table.scen{font-size:14px;}
-  table.scen thead th{font-size:10px;padding:9px 10px;}
-  table.scen tbody td{font-size:14px;padding:9px 10px;}
-  .ks-sub{font-size:12px !important;}
-  .ks-lbl{font-size:10px !important;}
-  .row-sec td{font-size:11px !important;}
-  .row-tot td{font-size:15.5px !important;}
-  .cdesc{font-size:13px !important;line-height:1.7;}
-  .vie-price{font-size:13px !important;}
-  .cond-body{font-size:14px !important;}
-  .risk-label{font-size:14px !important;}
-  .risk-body{font-size:14px !important;}
-  .dir-body{font-size:14px !important;}
-  .final-sub{font-size:11px !important;}
-  .fr .amt{font-size:16px !important;}
-
-  /* STRONG TABLE & SMALL TEXT OVERRIDES */
+  /* OVERRIDES */
   table{font-size:15px !important;}
   table thead th{font-size:11px !important;letter-spacing:0.1em;padding:10px 12px !important;}
   table tbody td{font-size:15px !important;padding:10px 12px !important;line-height:1.7 !important;}
-  table tbody td.r{font-size:15px !important;}
-  .row-sec td{font-size:12px !important;}
-  .row-tot td{font-size:16px !important;}
-  .ks-lbl{font-size:11px !important;}
-  .ks-sub{font-size:13px !important;}
-  .cdesc{font-size:14px !important;}
-  .cond-body{font-size:15px !important;}
-  .risk-label{font-size:15px !important;}
-  .risk-body{font-size:15px !important;}
-  .dir-body{font-size:15px !important;}
-  .vie-price{font-size:14px !important;}
+  .art-body{font-size:15px !important;}
+  .data-val{font-size:15px !important;}
+  .party-detail{font-size:13px !important;}
   .bs{font-size:14px !important;}
-
 </style>
-  <link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
 
-<!-- COVER -->
+<!-- ═══════════════════════════════════ COVER -->
 <div class="cover">
-  <div class="cover-mid">
+  <div>
     <div class="cover-rule"></div>
     <div class="ct">Term Sheet<br>et Pacte de Sortie LBO</div>
-    <div class="cs">TIGMI — Structure d'association, droits et obligations, mécanisme de sortie</div>
-    <div class="cd">Document élaboré en complément de la Proposition d'Investissement Toile Blanche Marrakech, Route de Fès. Ce document a valeur de cadre de négociation. Il est destiné à être transposé en actes définitifs par les conseils juridiques des parties.</div>
+    <div class="cs">Tigmi — Toile Blanche Marrakech</div>
+    <div class="cd">Structure d'association, droits et obligations, mécanisme de sortie. Document élaboré en complément de la Proposition d'Investissement Tigmi — Toile Blanche Marrakech. Ce document a valeur de cadre de négociation. Il est destiné à être transposé en actes définitifs par les conseils juridiques des parties.</div>
   </div>
   <div class="cover-bottom">
-    <div class="cm-item">
-      <div class="cm-label">Investisseurs</div>
-      <div class="cm-value">Finot / Riner, 40% chacun</div>
+    <div class="kpi">
+      <div class="kv">Finot / Riner</div>
+      <div class="kl">Investisseurs</div>
+      <div class="ks">40% chacun</div>
     </div>
-    <div class="cm-item">
-      <div class="cm-label">Management</div>
-      <div class="cm-value">Leroy Brothers, 20% apport nature</div>
+    <div class="kpi">
+      <div class="kv">Leroy Brothers</div>
+      <div class="kl">Management</div>
+      <div class="ks">20% apport nature</div>
     </div>
-    <div class="cm-item">
-      <div class="cm-label">Mise par investisseur</div>
-      <div class="cm-value">1&#8239;000&#8239;000€</div>
-    </div>
-  
-  </div>
-</div><!-- PAGE 2, PARTIE 1 : TERMSHEET -->
-<div class="page">
-  <div class="sl">Partie 1, Term Sheet, Structure d'association</div>
-  <h1>1.1 Capital et répartition</h1>
-
-  <div class="parties-grid">
-    <div class="partie-card">
-      <div class="partie-role">Investisseur</div>
-      <div class="partie-name">Investisseur A</div>
-      <div class="partie-pct">40%</div>
-      <div class="partie-detail">Apport cash : 1&#8239;000&#8239;000€. Versé en deux tranches, 50% à la signature de l'acte d'acquisition foncière, 50% au démarrage du chantier. Droits de vote : 40%.</div>
-    </div>
-    <div class="partie-card">
-      <div class="partie-role">Investisseur</div>
-      <div class="partie-name">Investisseur B</div>
-      <div class="partie-pct">40%</div>
-      <div class="partie-detail">Apport cash : 1&#8239;000&#8239;000€. Versé en deux tranches, 50% à la signature de l'acte d'acquisition foncière, 50% au démarrage du chantier. Droits de vote : 40%.</div>
-    </div>
-    <div class="partie-card">
-      <div class="partie-role">Management</div>
-      <div class="partie-name">Leroy Brothers</div>
-      <div class="partie-pct">20%</div>
-      <div class="partie-detail">Apport en nature : droits de marque Toile Blanche, savoir-faire, direction artistique, gestion opérationnelle, réseau SLH. Valorisé à 20% du total projet. Droits de vote : 20% + veto artistique absolu.</div>
+    <div class="kpi">
+      <div class="kv">1&#8239;000&#8239;000€</div>
+      <div class="kl">Mise par investisseur</div>
+      <div class="ks">Cash, deux tranches</div>
     </div>
   </div>
-
-
-
-  <div class="div-f"></div>
-
-  <h1 style="font-size:24px;">1.2 Structure juridique et véhicule</h1>
-  <div class="two">
-    <div>
-      <div class="dr"><div class="lbl">Véhicule</div><div class="val">Société de droit marocain (SARL ou SA selon conseil fiscal local). Siège social : adresse de la propriété, Route de Fès, Marrakech.</div></div>
-      <div class="dr"><div class="lbl">Dénomination</div><div class="val">Toile Blanche Marrakech SARL, ou dénomination équivalente approuvée par les Leroy Brothers.</div></div>
-      <div class="dr"><div class="lbl">Licence de marque</div><div class="val">Accordée par Toile Blanche Group (société française). Durée : alignée sur le pacte (20 ans). Résiliation anticipée uniquement en cas de faute grave ou 3 exercices déficitaires consécutifs.</div></div>
-      <div class="dr"><div class="lbl">Compte bancaire</div><div class="val">Compte professionnel marocain dédié. Signataires : GM + un associé investisseur pour tout mouvement supérieur à 50&#8239;000€.</div></div>
-    </div>
-    <div>
-      <div class="dr"><div class="lbl">Exercice fiscal</div><div class="val">1er janvier au 31 décembre. Premier exercice potentiellement court selon date de constitution.</div></div>
-      <div class="dr"><div class="lbl">Audit annuel</div><div class="val">Commissaire aux comptes indépendant désigné à l'unanimité des associés. Rapport transmis à chaque associé dans les 90 jours suivant la clôture.</div></div>
-      <div class="dr"><div class="lbl">Fonds de Croissance</div><div class="val">Compte dédié "Fonds de Croissance", 35% du résultat net dès l'année 1. Propriété collective des associés dans leurs proportions respectives (40/40/20). Affecté en priorité aux infrastructures différées, puis aux clusters Phase 2 et 3.</div></div>
-      <div class="dr"><div class="lbl">Conditions préalables, foncier et VNA</div><div class="val">L'acquisition foncière est subordonnée à la vérification préalable du statut VNA de la parcelle et à la confirmation qu'aucun arrangement de prête-nom n'est requis pour la détention. Si une demande de dérogation est nécessaire, le calendrier de construction est ajusté en conséquence. Le financement bancaire ne sera activé qu'après obtention de la dérogation ou confirmation du statut constructible. Les investisseurs ne versent la tranche construction (50% de leur mise) qu'à cette date.</div></div>
-    </div>
-  </div>
-
 </div>
 
-<!-- PAGE 3, GOUVERNANCE + FEES -->
+
+<!-- ═══════════════════════════════════ PAGE 1 : STRUCTURE -->
 <div class="page">
-  <h1 style="font-size:24px;">1.3 Gouvernance et prises de décision</h1>
+  <div class="ph"><span>Tigmi — Term Sheet</span><span>Partie 1 — Structure d'association</span></div>
+  <div class="sl">1.1 Capital et répartition</div>
+  <h1>La structure.</h1>
+
+  <div class="parties">
+    <div class="party">
+      <div class="party-role">Investisseur A</div>
+      <div class="party-name">Régis Finot</div>
+      <div class="party-pct">40%</div>
+      <div class="party-detail">Apport cash : 1&#8239;000&#8239;000€. Versé en deux tranches : 50% à la signature de l'acte d'acquisition (SCI + SARL), 50% au démarrage du chantier de rénovation (attestation architecte). Droits de vote : 40%.</div>
+    </div>
+    <div class="party">
+      <div class="party-role">Investisseur B</div>
+      <div class="party-name">Teddy Riner</div>
+      <div class="party-pct">40%</div>
+      <div class="party-detail">Apport cash : 1&#8239;000&#8239;000€. Versé en deux tranches : 50% à la signature de l'acte d'acquisition (SCI + SARL), 50% au démarrage du chantier de rénovation (attestation architecte). Droits de vote : 40%.</div>
+    </div>
+    <div class="party">
+      <div class="party-role">Management</div>
+      <div class="party-name">Leroy Brothers</div>
+      <div class="party-pct">20%</div>
+      <div class="party-detail">Apport en nature : droits de marque Toile Blanche (licence exclusive Maroc), direction artistique complète, savoir-faire opérationnel hôtelier, réseau SLH, programme d'expositions. Valorisé à 20% du total projet. Droits de vote : 20% + veto artistique absolu et irrévocable.</div>
+    </div>
+  </div>
+
+  <div class="sl" style="margin-top:32px;">1.2 Structure juridique et véhicule</div>
+
+  <div class="data-row"><div class="data-label">Véhicule</div><div class="data-val">Acquisition de 100% des parts de la SCI (propriétaire des murs) et de la SARL (fonds de commerce, licences, contrats de travail). Les deux entités existantes sont acquises simultanément.</div></div>
+  <div class="data-row"><div class="data-label">Dénomination</div><div class="data-val">Toile Blanche Marrakech SARL, ou dénomination équivalente approuvée par les Leroy Brothers. Rebrand complet — la marque Tigmi disparaît à l'ouverture.</div></div>
+  <div class="data-row"><div class="data-label">Licence de marque</div><div class="data-val">Accordée par Toile Blanche Group (société française). Durée : alignée sur le pacte (20 ans). Résiliation anticipée uniquement en cas de faute grave documentée ou 3 exercices déficitaires consécutifs.</div></div>
+  <div class="data-row"><div class="data-label">Compte bancaire</div><div class="data-val">Compte professionnel marocain dédié. Signataires : Directeur local + un associé investisseur pour tout mouvement supérieur à 50&#8239;000€.</div></div>
+  <div class="data-row"><div class="data-label">Exercice fiscal</div><div class="data-val">1er janvier au 31 décembre. Premier exercice potentiellement court selon date de constitution.</div></div>
+  <div class="data-row"><div class="data-label">Audit annuel</div><div class="data-val">Commissaire aux comptes indépendant désigné à l'unanimité des associés. Rapport transmis à chaque associé dans les 90 jours suivant la clôture de l'exercice.</div></div>
+  <div class="data-row"><div class="data-label">Conditions préalables</div><div class="data-val">VNA définitive vérifiée. Exequatur de l'héritage britannique validé par juge marocain. Audit structurel parasismique satisfaisant. Aucune de ces conditions n'est négociable — leur non-satisfaction repousse ou annule l'acquisition.</div></div>
+
+  <div class="sl" style="margin-top:32px;">1.3 Gouvernance et prises de décision</div>
 
   <table class="dec">
-    <thead><tr><th>Niveau de décision</th><th>Périmètre</th><th>Conditions</th></tr></thead>
+    <thead>
+      <tr><th>Niveau</th><th>Périmètre</th><th>Conditions</th></tr>
+    </thead>
     <tbody>
-      <tr class="dec-sec"><td colspan="3">Décisions ordinaires</td></tr>
-      <tr><td>Majorité simple 51%</td><td>Routine opérationnelle, recrutement, contrats fournisseurs inférieurs à 20&#8239;000€, tarification courante, programme culturel, budget annuel.</td><td>Applicable à toute décision non listée dans les catégories supérieures.</td></tr>
-      <tr class="dec-sec"><td colspan="3">Décisions qualifiées</td></tr>
-      <tr><td>Unanimité requise</td><td>Investissements supérieurs à 100&#8239;000€ hors budget approuvé, dette supplémentaire, cession d'actif, modification du pacte, entrée d'un nouvel associé.</td><td>Droit de préemption : Leroy Brothers en premier, puis Finot, puis Riner.</td></tr>
-      <tr class="dec-sec"><td colspan="3">Veto absolu Leroy Brothers, irrévocable</td></tr>
-      <tr><td>Veto artistique</td><td>Identité visuelle, positionnement de marque, sélection des artistes et œuvres, architecture intérieure, choix des matériaux, naming des espaces, communication publique.</td><td>Ce veto ne peut être levé par aucune majorité. Il est la contrepartie directe de l'apport de marque.</td></tr>
-      <tr><td>Standard opérationnel</td><td>Niveaux de service, sélection des fournisseurs stratégiques, politique tarifaire plancher (ADR minimum 650€, jamais en dessous).</td><td>Non négociable.</td></tr>
+      <tr>
+        <td>Décisions ordinaires — Majorité simple 51%</td>
+        <td>Routine opérationnelle, recrutement, contrats fournisseurs inférieurs à 20&#8239;000€, tarification courante, budget annuel, programme culturel</td>
+        <td>Applicable à toute décision non listée dans les catégories supérieures</td>
+      </tr>
+      <tr>
+        <td>Décisions qualifiées — Unanimité requise</td>
+        <td>Investissements supérieurs à 100&#8239;000€ hors budget approuvé, dette supplémentaire, cession d'actif, modification du pacte, entrée d'un nouvel associé</td>
+        <td>Droit de préemption : Leroy Brothers en premier, puis Finot, puis Riner</td>
+      </tr>
+      <tr>
+        <td>Veto absolu Leroy Brothers — Irrévocable</td>
+        <td>Identité visuelle, positionnement de marque, programme artistique, sélection des artistes et des œuvres, architecture intérieure, matériaux, naming des espaces, communication publique, ADR plancher</td>
+        <td>Ce veto ne peut être levé par aucune majorité. Il est la contrepartie directe de l'apport de marque et la condition de l'ADR cible.</td>
+      </tr>
     </tbody>
   </table>
-  <div class="dr"><div class="lbl">Condition préalable, déclenchement Phase 2</div><div class="val">Toute construction Phase 2 est subordonnée à la constitution préalable d'une réserve de trésorerie opérationnelle équivalente à six mois de charges totales (RH + charges opérationnelles, hors service de dette).</div></div>
-  <div class="dr"><div class="lbl">Seuil contractuel</div><div class="val">À la date de rédaction, ce seuil est fixé à 400&#8239;000€. Il est recalculé annuellement sur la base des charges réelles de l'exercice précédent.</div></div>
-  <div class="dr"><div class="lbl">Règle de maintien</div><div class="val">Cette réserve est maintenue en permanence à compter du déclenchement de la Phase 2. Elle est non distribuable et non affectable au Fonds de Croissance.</div></div>
-
-  <div class="div-f"></div>
+</div>
 
 
-  <img src="images/img_fc9681a46523b382.png" alt="" style="width:100%;display:block;margin:40px 0;">
+<!-- ═══════════════════════════════════ PAGE 2 : RÉMUNÉRATION -->
+<div class="page">
+  <div class="ph"><span>Tigmi — Term Sheet</span><span>Rémunération et distributions</span></div>
+  <div class="sl">1.4 Fees de management Toile Blanche Group</div>
+  <h1>Deux rémunérations.<br>Deux rôles distincts.</h1>
 
-  <h1 style="font-size:24px;">1.4 Rémunération et distributions</h1>
+  <p>Toile Blanche Group (société française) facture à la SARL marocaine un management fee au titre de l'opération hôtelière — indépendamment des dividendes perçus au titre des 20% de capital. Ces deux flux sont distincts, distincts dans leur nature et distincts dans leur calcul. Le management fee rémunère un service. Les dividendes rémunèrent un actif. La confusion des deux est une erreur de structuration.</p>
 
-  <h3>Fees de management Toile Blanche Group</h3>
   <table class="fees">
+    <thead>
+      <tr><th>Fee</th><th>Assiette</th><th>Modalité</th><th>Rémunère</th></tr>
+    </thead>
     <tbody>
-      <tr><td>Base Fee</td><td>5% du CA HT</td><td>Prélevé mensuellement avant tout calcul de résultat. Rémunère la direction générale, le management opérationnel, le système de réservations, le marketing digital et la coordination SLH.</td></tr>
-      <tr><td>Brand Fee</td><td>2,5% du CA HT</td><td>Prélevé mensuellement. Rémunère la licence de marque Toile Blanche, l'accès aux 6&#8239;600 abonnés newsletter, au programme SLH, aux OTAs négociés.</td></tr>
-      <tr><td>Incentive Fee</td><td>15% du GOP</td><td>Versé après approbation des comptes par le commissaire aux comptes. Plafonné à 150&#8239;000€ par exercice les 3 premières années.</td></tr>
-      <tr class="fees-tot"><td>Total management</td><td>7,5% du CA</td><td>En dessous des standards Aman (8-10%) et Six Senses (10-12%). L'Incentive Fee est conditionnelle.</td></tr>
+      <tr><td>Base Fee — 5% du CA HT</td><td>Chiffre d'affaires total hors taxes</td><td>Prélevé mensuellement avant tout calcul de résultat</td><td>Direction générale, management opérationnel, système de réservations, coordination SLH</td></tr>
+      <tr><td>Brand Fee — 2,5% du CA HT</td><td>Chiffre d'affaires total hors taxes</td><td>Prélevé mensuellement</td><td>Licence de marque Toile Blanche, accès newsletter 6&#8239;600 abonnés, programme SLH, OTAs négociés, presse acquise</td></tr>
+      <tr><td>Incentive Fee — 15% du GOP</td><td>GOP après Base Fee et Brand Fee déduits</td><td>Versé après approbation des comptes par le commissaire aux comptes</td><td>Performance opérationnelle — conditionnelle au résultat</td></tr>
+      <tr class="row-tot"><td><strong>Total Base + Brand</strong></td><td><strong>7,5% du CA HT</strong></td><td colspan="2">En ligne avec les standards Aman (8–10%) et Six Senses (10–12%). L'Incentive Fee est conditionnelle au GOP positif.</td></tr>
     </tbody>
   </table>
 
-  <h3>Le Fonds de Croissance</h3>
-  <div class="fonds-block">
-    <h2>35% du résultat net, dès l'année 1, sans exception.</h2>
-    <p>35% du résultat net de l'exploitation, dès l'année 1, affecté exclusivement au développement des Phases 2 et 3. Non distribuable. Non négociable.</p>
-    <p>Affectation par priorité : infrastructures différées Phase 1 (studio, hammam, off-grid clusters 4-5) en premier, puis accumulation vers la construction du cluster suivant, puis amélioration continue du territoire. Aucun retrait possible sans unanimité des associés.</p>
-    <p class="bs">Les investisseurs ne sont jamais sollicités après leur mise initiale. Le territoire se développe avec ses propres revenus. Chaque actif construit par le Fonds appartient à tous dans les mêmes proportions que la société.</p>
-  </div>
+  <div class="sl" style="margin-top:32px;">Dividendes associés</div>
 
-  <h3>Dividendes associés</h3>
-  <div class="dr"><div class="lbl">Base de calcul</div><div class="val">Résultat net après tous fees, service de dette, IS, et prélèvement Fonds de Croissance (35%). Le résultat distribuable représente 65% du résultat net.</div></div>
-  <div class="dr"><div class="lbl">Répartition</div><div class="val">Finot 40% / Riner 40% / Leroy Brothers 20% du résultat distribuable.</div></div>
-  <div class="dr"><div class="lbl">Calendrier</div><div class="val">Acomptes trimestriels (mars, juin, septembre, décembre) sur la base des comptes intermédiaires. Solde annuel après approbation des comptes définitifs.</div></div>
-  <div class="dr"><div class="lbl">Réserve minimale</div><div class="val">Fonds de roulement minimum équivalent à 3 mois de charges totales maintenu en permanence. Aucune distribution ne peut ramener la trésorerie en dessous de ce seuil.</div></div>
+  <div class="data-row"><div class="data-label">Base de calcul</div><div class="data-val">Résultat net après tous fees de management, service de dette, IS (exonéré 5 ans sur CA en devises), et réserve minimale de trésorerie. Aucun Fonds de Croissance obligatoire — les dividendes sont distribués intégralement sur le résultat net disponible.</div></div>
+  <div class="data-row"><div class="data-label">Répartition</div><div class="data-val">Finot 40% / Riner 40% / Leroy Brothers 20% du résultat net distribuable.</div></div>
+  <div class="data-row"><div class="data-label">Calendrier</div><div class="data-val">Acomptes trimestriels (mars, juin, septembre, décembre) sur la base des comptes intermédiaires. Solde annuel après approbation des comptes définitifs par le commissaire aux comptes.</div></div>
+  <div class="data-row"><div class="data-label">Réserve minimale</div><div class="data-val">Fonds de roulement minimum équivalent à 3 mois de charges totales maintenu en permanence. Aucune distribution ne peut ramener la trésorerie en dessous de ce seuil. Seuil indicatif : 200&#8239;000€, recalculé annuellement.</div></div>
 
+  <div class="sl" style="margin-top:32px;">1.5 Obligations des parties</div>
 
-  <img src="images/img_conditions_hammam_alt.png" alt="" style="width:100%;display:block;margin:40px 0 0;">
-</div>
-
-<!-- PAGE 4, OBLIGATIONS + DURÉE -->
-<div class="page">
-  <h1 style="font-size:24px;">1.5 Obligations et représentations des parties</h1>
-
-  <div class="two">
+  <div class="two-eq">
     <div>
-      <h3>Obligations des investisseurs (Finot et Riner)</h3>
-      <div class="article">
-        <div class="article-body">
-          <div class="dr"><div class="lbl">Mise de fonds</div><div class="val">1&#8239;000&#8239;000€ chacun, versés en deux tranches : 50% à la signature de l'acte d'acquisition foncière, 50% au démarrage du chantier (attestation architecte).</div></div>
-          <div class="dr"><div class="lbl">Non-concurrence</div><div class="val">Pendant la durée du pacte, les investisseurs s'engagent à ne pas prendre de participation dans un établissement hôtelier de positionnement comparable dans un rayon de 50 km de la propriété, sans accord préalable des Leroy Brothers.</div></div>
-          <div class="dr"><div class="lbl">Confidentialité</div><div class="val">Perpétuelle sur les termes financiers du présent pacte et les performances de l'établissement.</div></div>
-          <div class="dr"><div class="lbl">Disponibilité</div><div class="val">Chaque investisseur bénéficie de 15 nuits par an à titre gratuit, hors haute saison (novembre-mars). Sur réservation 60 jours à l'avance.</div></div>
+      <div class="ab2">
+        <div class="sl">Investisseurs (Finot et Riner)</div>
+        <div class="art-body">
+          <p class="bs"><strong>Mise de fonds :</strong> 1&#8239;000&#8239;000€ chacun, deux tranches : 50% à l'acquisition, 50% au démarrage du chantier.</p>
+          <p class="bs"><strong>Non-concurrence :</strong> Pendant la durée du pacte, pas de participation dans un établissement hôtelier comparable dans un rayon de 50 km sans accord préalable des Leroy Brothers.</p>
+          <p class="bs"><strong>Confidentialité :</strong> Perpétuelle sur les termes financiers et les performances de l'établissement.</p>
+          <p class="bs"><strong>Disponibilité :</strong> 15 nuits par an à titre gratuit, hors haute saison (novembre–mars). Sur réservation 60 jours à l'avance.</p>
         </div>
       </div>
     </div>
     <div>
-      <h3>Obligations des Leroy Brothers</h3>
-      <div class="article">
-        <div class="article-body">
-          <div class="dr"><div class="lbl">Direction artistique</div><div class="val">Présence effective sur site minimum 30 jours par an en phase opérationnelle. Les Semaines (4 par an) assurées par au moins un membre du collectif.</div></div>
-          <div class="dr"><div class="lbl">Marque et standard</div><div class="val">Maintien de l'affiliation SLH. Maintien du positionnement éditorial et digital de la marque Toile Blanche au niveau atteint lors de la signature.</div></div>
-          <div class="dr"><div class="lbl">Reporting</div><div class="val">Tableau de bord mensuel transmis à chaque associé avant le 15 du mois suivant : revenus, taux d'occupation, ADR, coûts principaux, trésorerie.</div></div>
-          <div class="dr"><div class="lbl">Comptes annuels</div><div class="val">Budget prévisionnel transmis avant le 1er décembre pour l'exercice suivant. Comptes définitifs transmis dans les 90 jours après clôture.</div></div>
+      <div class="ab">
+        <div class="sl">Leroy Brothers</div>
+        <div class="art-body">
+          <p class="bs"><strong>Direction artistique :</strong> Présence effective sur site minimum 30 jours par an en phase opérationnelle. Les Semaines (4 par an) assurées par au moins un membre du collectif.</p>
+          <p class="bs"><strong>Marque et standard :</strong> Maintien de l'affiliation SLH. Maintien du positionnement Toile Blanche au niveau atteint lors de la signature du pacte.</p>
+          <p class="bs"><strong>Reporting :</strong> Tableau de bord mensuel transmis avant le 15 du mois suivant — revenus, TO, ADR, coûts principaux, trésorerie.</p>
+          <p class="bs"><strong>Comptes :</strong> Budget prévisionnel transmis avant le 1er décembre pour l'exercice suivant. Comptes définitifs dans les 90 jours après clôture.</p>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="div-f"></div>
+  <div class="sl" style="margin-top:32px;">1.6 Durée, résiliation et clauses de protection</div>
 
-  <h1 style="font-size:24px;">1.6 Durée, résiliation et clauses de protection</h1>
-  <div class="two">
-    <div>
-      <div class="dr"><div class="lbl">Durée du pacte</div><div class="val">20 ans à compter de la date d'ouverture de l'établissement. Renouvelable par accord unanime.</div></div>
-      <div class="dr"><div class="lbl">Résiliation par les investisseurs</div><div class="val">Possible uniquement après 3 exercices consécutifs avec résultat net négatif, ou en cas de faute grave documentée des Leroy Brothers. Préavis 12 mois.</div></div>
-      <div class="dr"><div class="lbl">Résiliation par les Leroy Brothers</div><div class="val">Impossible pendant les 5 premières années. Après : possible avec indemnité aux investisseurs = 3 années de Base Fee + Brand Fee calculées sur la moyenne des 3 derniers exercices. Préavis 18 mois.</div></div>
-      <div class="dr"><div class="lbl">Contrat de management</div><div class="val">20 ans, résiliable uniquement après 3 exercices déficitaires consécutifs ou faute grave. Ne pas accepter une clause de revue à 5 ans.</div></div>
-    </div>
-    <div>
-      <div class="dr"><div class="lbl">Clause d'incessibilité</div><div class="val">Aucune cession de parts possible sans accord unanime des associés pendant les 5 premières années. Après, droit de préemption : Leroy Brothers en premier (30 jours), puis les autres investisseurs (30 jours supplémentaires), puis tiers.</div></div>
-      <div class="dr"><div class="lbl">Clause anti-dilution</div><div class="val">Toute émission de nouvelles parts doit être proposée aux associés existants au prorata de leur participation.</div></div>
-      <div class="dr"><div class="lbl">Loi applicable</div><div class="val">Droit marocain pour la société de gestion. Le pacte lui-même peut être soumis au droit français si les parties en conviennent. Juridiction : Tribunal de Commerce de Marrakech en première instance.</div></div>
-      <div class="dr"><div class="lbl">Indemnité de résiliation</div><div class="val">En cas de résiliation pour faute imputable aux Leroy Brothers : remboursement intégral des mises investisseurs + intérêts au taux légal marocain + indemnité de 20% des mises initiales.</div></div>
-    </div>
-  </div>
-
+  <div class="data-row"><div class="data-label">Durée du pacte</div><div class="data-val">20 ans à compter de la date d'ouverture de l'établissement sous la marque Toile Blanche Marrakech. Renouvelable par accord unanime.</div></div>
+  <div class="data-row"><div class="data-label">Résiliation investisseurs</div><div class="data-val">Possible uniquement après 3 exercices consécutifs avec résultat net négatif, ou en cas de faute grave documentée des Leroy Brothers. Préavis 12 mois.</div></div>
+  <div class="data-row"><div class="data-label">Résiliation LB</div><div class="data-val">Impossible pendant les 5 premières années. Après : possible avec indemnité aux investisseurs = 3 années de Base Fee + Brand Fee sur la moyenne des 3 derniers exercices. Préavis 18 mois.</div></div>
+  <div class="data-row"><div class="data-label">Contrat de management</div><div class="data-val">20 ans. Résiliable uniquement après 3 exercices déficitaires consécutifs ou faute grave. Ne pas accepter de clause de revue à 5 ans.</div></div>
+  <div class="data-row"><div class="data-label">Incessibilité</div><div class="data-val">Aucune cession de parts possible sans accord unanime pendant les 5 premières années. Après : droit de préemption Leroy Brothers (30 jours), puis autres associés (30 jours), puis tiers.</div></div>
+  <div class="data-row"><div class="data-label">Anti-dilution</div><div class="data-val">Toute émission de nouvelles parts doit être proposée aux associés existants au prorata de leur participation.</div></div>
+  <div class="data-row"><div class="data-label">Loi applicable</div><div class="data-val">Droit marocain pour la société de gestion. Le pacte peut être soumis au droit français si les parties en conviennent. Juridiction : Tribunal de Commerce de Marrakech en première instance.</div></div>
 </div>
 
-<!-- PAGE 5, PARTIE 2 : PACTE DE SORTIE LBO -->
+
+<!-- ═══════════════════════════════════ PAGE 3 : SORTIE LBO -->
 <div class="page">
-  <div class="sl">Partie 2, Pacte de sortie et mécanisme de rachat LBO Leroy Brothers</div>
-  <h1>La conclusion naturelle<br>du partenariat.</h1>
+  <div class="ph"><span>Tigmi — Term Sheet</span><span>Partie 2 — Pacte de sortie LBO</span></div>
+  <div class="sl">La conclusion naturelle du partenariat</div>
+  <h1>La sortie.<br>Années 5 à 7.</h1>
 
-  <p>Cette partie définit le mécanisme par lequel les Leroy Brothers rachètent les parts des investisseurs à l'expiration de la fenêtre de sortie (années 5 à 7). Ce mécanisme est structuré comme un LBO (Leveraged Buyout) financé par les fees de management accumulés et un crédit d'acquisition adossé aux flux de trésorerie de l'établissement. Les investisseurs sortent avec un multiple significatif. Les Leroy Brothers deviennent propriétaires uniques de l'actif qu'ils ont créé.</p>
+  <p>Cette partie définit le mécanisme par lequel les Leroy Brothers rachètent les parts des investisseurs à l'expiration de la fenêtre de sortie (années 5 à 7). Ce mécanisme est structuré comme un LBO financé par les fees de management accumulés et un crédit d'acquisition adossé aux flux de trésorerie stabilisés de l'établissement. Les investisseurs sortent avec un multiple significatif. Les Leroy Brothers deviennent propriétaires uniques d'un actif qu'ils ont transformé et opèrent depuis l'origine.</p>
 
-  <div class="div-f"></div>
-
-  <h1 style="font-size:24px;">2.1 Fenêtre et déclencheur de la sortie</h1>
-  <div class="two">
-    <div>
-      <div class="dr"><div class="lbl">Fenêtre de sortie</div><div class="val">Années 5, 6 ou 7 à compter de la date d'ouverture. Les investisseurs peuvent exercer leur droit de cession à partir du début de l'année 5.</div></div>
-      <div class="dr"><div class="lbl">Initiative</div><div class="val">La sortie est exercée à l'initiative des investisseurs (put option) ou des Leroy Brothers (call option). Les deux parties peuvent l'initier dans la fenêtre.</div></div>
-      <div class="dr"><div class="lbl">Notification</div><div class="val">La partie qui souhaite activer la sortie notifie les autres par lettre recommandée avec AR. Période de négociation exclusive de 90 jours suit la notification.</div></div>
-    </div>
-    <div>
-      <div class="dr"><div class="lbl">Obligation de rachat</div><div class="val">Les Leroy Brothers s'engagent à racheter les parts des investisseurs dans la fenêtre, sauf défaillance du financement bancaire pour des raisons indépendantes de leur volonté. Dans ce cas, un report de 12 mois maximum est possible, après quoi les investisseurs peuvent imposer une vente à un tiers.</div></div>
-      <div class="dr"><div class="lbl">Valeur des clusters Phase 2-3</div><div class="val">Le prix de cession valorise l'actif complet à la sortie, y compris les clusters construits par le Fonds de Croissance. Un investisseur qui sort en année 5-7 cède sa part d'un actif complet, pas seulement des 12 unités initiales.</div></div>
-    </div>
+  <div class="ab">
+    <div class="sl">La logique de la structure</div>
+    <h2>Le service de dette se ferme quand la fenêtre s'ouvre.</h2>
+    <p class="bs">Le crédit bancaire de 850&#8239;000€ est remboursé en 7 ans. La fenêtre de sortie s'ouvre à l'année 5. Ce n'est pas une coïncidence — c'est une structure. À la cession, l'actif porte une dette résiduelle réduite. Le crédit d'acquisition LBO s'adosse à des flux de trésorerie libres dès l'année du rachat. Pour l'investisseur : la sortie est propre. Pour les Leroy Brothers : le financement est direct.</p>
   </div>
 
-  <div class="div-f"></div>
+  <div class="sl" style="margin-top:28px;">2.1 Fenêtre et déclencheur</div>
 
-  <h1 style="font-size:24px;">2.2 Formule de valorisation</h1>
-  <p style="font-family:'Cormorant Garamond',serif;font-size:14px;font-style:italic;margin-bottom:16px;">Prix par investisseur (40%) = 5 × EBITDA moyen (N-1 / N-2) × 40%</p>
+  <div class="data-row"><div class="data-label">Fenêtre de sortie</div><div class="data-val">Années 5, 6 ou 7 à compter de la date d'ouverture. Les investisseurs peuvent exercer leur droit de cession à partir du début de l'année 5.</div></div>
+  <div class="data-row"><div class="data-label">Initiative</div><div class="data-val">Put option pour les investisseurs (droit de vendre). Call option pour les Leroy Brothers (droit d'acheter). Les deux parties peuvent initier dans la fenêtre.</div></div>
+  <div class="data-row"><div class="data-label">Notification</div><div class="data-val">Lettre recommandée avec AR. Période de négociation exclusive de 90 jours suit la notification. Au-delà, procédure d'expertise indépendante.</div></div>
+  <div class="data-row"><div class="data-label">Obligation de rachat</div><div class="data-val">Les Leroy Brothers s'engagent à racheter dans la fenêtre, sauf défaillance du financement bancaire pour raisons indépendantes de leur volonté. Dans ce cas, report de 12 mois maximum. Passé ce délai, les investisseurs peuvent imposer une vente à un tiers.</div></div>
 
-  <div class="two">
-    <div>
-      <div class="dr"><div class="lbl">Prix plancher</div><div class="val">2&#8239;000&#8239;000€ par investisseur, quelles que soient les performances. Garantit un retour minimum de 1,6× la mise initiale (1&#8239;000&#8239;000€) dans tous les scénarios.</div></div>
-      <div class="dr"><div class="lbl">Prix plafond</div><div class="val">4&#8239;000&#8239;000€ par investisseur. Au-delà, la valorisation supplémentaire reste acquise aux Leroy Brothers. Ce plafond incite les investisseurs à sortir dans la fenêtre.</div></div>
-      <div class="dr"><div class="lbl">EBITDA référence</div><div class="val">Calculé par le commissaire aux comptes indépendant sur la base des 2 derniers exercices clos audités. Non contestable sauf erreur matérielle documentée.</div></div>
-      <div class="dr"><div class="lbl">Ajustements</div><div class="val">L'EBITDA de référence est ajusté en neutralisant tout événement exceptionnel (sinistre, pandémie, fermeture administrative) ayant affecté un exercice de plus de 20% par rapport à l'exercice précédent.</div></div>
-    </div>
-    <div>
-      <h3>Simulation, sortie année 5 (scénario cible)</h3>
-      <div class="dr" style="margin-top:8px;"><div class="lbl">EBITDA yr5 estimé</div><div class="val">~1&#8239;900&#8239;000€</div></div>
-      <div class="dr"><div class="lbl">Valorisation totale (5×)</div><div class="val">~9&#8239;500&#8239;000€</div></div>
-      <div class="dr"><div class="lbl">Prix par investisseur (40%)</div><div class="val">~3&#8239;800&#8239;000€ (dans le plafond)</div></div>
-      <div class="dr"><div class="lbl">Dividendes cumulés 5 ans</div><div class="val">~2&#8239;872&#8239;000€</div></div>
-      <div class="dr"><div class="lbl">Retour total / investisseur</div><div class="val">~6&#8239;872&#8239;000€</div></div>
-      <div class="dr" style="border-top:1px solid var(--cedar);padding-top:10px;"><span class="lbl" style="font-weight:400;">Multiple</div><span class="val" style="font-weight:400;font-size:14px;font-family:'Cormorant Garamond',serif;">5,5× le capital investi</div></div>
-    </div>
-  </div>
+  <div class="sl" style="margin-top:28px;">2.2 Formule de valorisation</div>
 
-</div>
+  <p style="font-size:16px;text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;margin:20px 0;padding:18px;background:var(--sky);">Prix / investisseur (40%) = 5 × EBITDA moyen (N-1 / N-2) × 40%</p>
 
-<!-- PAGE 6, MÉCANISME LBO + SCÉNARIOS -->
-<div class="page">
-  <h1 style="font-size:24px;">2.3 Mécanisme de financement LBO Leroy Brothers</h1>
+  <div class="data-row"><div class="data-label">Prix plancher</div><div class="data-val">1&#8239;500&#8239;000€ par investisseur, quelles que soient les performances. Garantit un retour minimum de 1,5× la mise initiale dans tous les scénarios — y compris le plus conservateur.</div></div>
+  <div class="data-row"><div class="data-label">Prix plafond</div><div class="data-val">2&#8239;500&#8239;000€ par investisseur. Au-delà, la valorisation supplémentaire reste acquise aux Leroy Brothers. Ce plafond incite les investisseurs à sortir dans la fenêtre et rend l'opération finançable pour les Leroy Brothers.</div></div>
+  <div class="data-row"><div class="data-label">EBITDA référence</div><div class="data-val">Calculé par le commissaire aux comptes indépendant sur la base des 2 derniers exercices clos audités. Non contestable sauf erreur matérielle documentée.</div></div>
+  <div class="data-row"><div class="data-label">Ajustements</div><div class="data-val">L'EBITDA de référence est ajusté en neutralisant tout événement exceptionnel (sinistre, pandémie, fermeture administrative) ayant affecté un exercice de plus de 20% par rapport à l'exercice précédent.</div></div>
 
-  <p>Les Leroy Brothers financent le rachat des 80% de parts (Finot 40% + Riner 40%) par une combinaison de fonds propres accumulés et d'un crédit d'acquisition. Ils deviennent alors propriétaires à 100% de l'actif.</p>
-  <h3 style="margin-top:16px;">L'actif est libre à la sortie.</h3>
-  <p>Le prêt bancaire de 2&#8239;200&#8239;000€ est remboursé en 7 ans. La fenêtre de sortie s'ouvre à l'an 5 et se ferme à l'an 7. Ce n'est pas une coïncidence, c'est une structure.</p>
-  <p>À la cession, la propriété ne porte aucune dette. Les Leroy Brothers rachètent un actif net. La valorisation est calculée sur un EBITDA plein, non amputé d'un service bancaire résiduel. Le crédit d'acquisition LBO s'adosse à des flux de trésorerie libres dès l'année du rachat.</p>
-  <p>Pour l'investisseur : la sortie est propre. Pour les Leroy Brothers : le financement est direct. Pour la valorisation : elle est maximale.</p>
-
-  <div class="two">
-    <div>
-      <h3>Fonds propres Leroy Brothers (apport LBO)</h3>
-      <div class="dr"><div class="lbl">Fees accumulés yrs 1-5</div><div class="val">~2&#8239;400&#8239;000€ (Base Fee 5% + Brand Fee 2,5% + Incentive Fee 15% GOP, cumulés sur 5 ans)</div></div>
-      <div class="dr"><div class="lbl">Dividendes Leroy 20% yrs 1-5</div><div class="val">~630&#8239;000€</div></div>
-      <div class="dr" style="border-top:1px solid var(--cedar);padding-top:8px;"><span class="lbl" style="font-weight:400;">Total apport propre</div><span class="val" style="font-weight:400;">~3&#8239;030&#8239;000€</div></div>
-    </div>
-    <div>
-      <h3>Crédit d'acquisition (dette LBO)</h3>
-      <div class="dr"><div class="lbl">Prix de rachat total (80%)</div><div class="val">~7&#8239;600&#8239;000€</div></div>
-      <div class="dr"><div class="lbl">Apport fonds propres</div><div class="val">-3&#8239;030&#8239;000€</div></div>
-      <div class="dr"><div class="lbl">Dette d'acquisition</div><div class="val">~4&#8239;570&#8239;000€</div></div>
-      <div class="dr"><div class="lbl">DSCR (couverture dette)</div><div class="val">~3,5×, largement au-dessus du seuil bancaire standard (1,25× minimum)</div></div>
-      <div class="dr"><div class="lbl">Banques cibles</div><div class="val">Attijariwafa Bank, CIH Bank, BMCE Bank of Africa. Dossier présentable dès l'année 3 en pré-négociation.</div></div>
-    </div>
-  </div>
-
-  <div class="div-f"></div>
-
-  <h1 style="font-size:24px;">2.4 Scénarios de sortie comparés</h1>
+  <div class="rule" style="margin-top:28px;"></div>
+  <div class="sl">Simulation — Sortie année 5, scénario cible</div>
 
   <table class="sortie">
     <thead>
-      <tr>
-        <th>Scénario retenu</th>
-        <th class="r">Dividendes 5 ans</th>
-        <th class="r">Prix cession</th>
-        <th class="r">Total / investisseur</th>
-        <th class="r">Multiple</th>
-      </tr>
+      <tr><th>Indicateur</th><th class="r">Montant</th></tr>
     </thead>
     <tbody>
-      <tr class="sortie-hl"><td>Cible (TO 82%, ADR 800€)</td><td class="r">2&#8239;872&#8239;000€</td><td class="r">4&#8239;000&#8239;000€</td><td class="r">6&#8239;872&#8239;000€</td><td class="r">5,5×</td></tr>
+      <tr><td>EBITDA Y5 estimé (stabilisé)</td><td class="r">~1&#8239;700&#8239;000€</td></tr>
+      <tr><td>Valorisation totale (5× EBITDA)</td><td class="r">~8&#8239;500&#8239;000€</td></tr>
+      <tr><td>Prix par investisseur à 40% (dans le plafond)</td><td class="r">~2&#8239;500&#8239;000€</td></tr>
+      <tr><td>Dividendes cumulés Y1–Y5 / investisseur</td><td class="r">~4&#8239;533&#8239;000€</td></tr>
+      <tr class="row-tot"><td><strong>Retour total / investisseur (scénario cible)</strong></td><td class="r"><strong>~7&#8239;033&#8239;000€</strong></td></tr>
+      <tr class="row-hl"><td><strong>Multiple cible</strong></td><td class="r" style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:var(--cedar);">7,0×</td></tr>
+      <tr><td style="font-size:13px;color:var(--pise-mid);">Mise initiale : 1&#8239;000&#8239;000€. Payback par dividendes : fin année 2 (650K€ + 874K€ = 1&#8239;524&#8239;000€).</td><td></td></tr>
     </tbody>
   </table>
-  <p class="bs">Analyse complète des trois scénarios (conservateur, cible, optimiste) : Proposition d'Investissement, section Prévisionnel.</p>
 
-  <p class="bs">Le plancher de 2&#8239;000&#8239;000€ garantit 3,3× minimum en scénario conservateur. Le capital investi est remboursé par dividendes seuls courant année 3 dans le scénario cible. La question n'est pas "est-ce que je récupère ma mise" mais "quel multiple je capture à la sortie".</p>
+  <div class="sl" style="margin-top:28px;">2.3 Mécanisme de financement LBO Leroy Brothers</div>
 
-  <div class="div-f"></div>
+  <div class="data-row"><div class="data-label">Fonds propres LB</div><div class="data-val">Fees de management accumulés sur 5 ans (Base + Brand + Incentive) — estimés à 2&#8239;500&#8239;000€+ sur le cycle. Ce sont les fonds propres de l'opération LBO, sans appel à l'extérieur.</div></div>
+  <div class="data-row"><div class="data-label">Crédit d'acquisition</div><div class="data-val">Complément bancaire adossé aux flux de trésorerie libres de la SARL marocaine post-cession. L'établissement finance son propre rachat. Durée estimée : 5–7 ans sur le prix de cession.</div></div>
+  <div class="data-row"><div class="data-label">Garantie</div><div class="data-val">Nantissement des parts de la SARL et de la SCI. Hypothèque de premier rang sur l'actif immobilier (murs). L'actif est libre de toute dette bancaire initiale à partir de l'année 7.</div></div>
+  <div class="data-row"><div class="data-label">Post-cession</div><div class="data-val">Les Leroy Brothers deviennent propriétaires à 100% de l'actif — terrain, murs, fonds de commerce, marque sur le territoire marocain. Le contrat de management TB Group continue, désormais entre LB en tant que propriétaires et LB en tant qu'opérateurs — structure simplifiée.</div></div>
 
-  <h1 style="font-size:24px;">2.5 Timeline récapitulative</h1>
-  <div class="two">
-    <div>
-      <div class="dr"><div class="lbl">Mois 1-6</div><div class="val">Signature des actes et acquisition foncière. Constitution de la société marocaine. Versement première tranche investisseurs (625&#8239;000€ chacun). Dépôt dossier GO SIYAHA.</div></div>
-      <div class="dr"><div class="lbl">Mois 6-24</div><div class="val">Construction Phase 1, 12 mini-riads + bâtiment principal. Versement deuxième tranche investisseurs (625&#8239;000€ chacun) au démarrage chantier. Déblocage prêt bancaire 50%. Réception GO SIYAHA.</div></div>
-      <div class="dr"><div class="lbl">Année 1-2</div><div class="val">Ouverture et montée en charge. TO 65% (an 1), 75% (an 2). Premiers dividendes. Fonds de Croissance finance studio et hammam.</div></div>
-    </div>
-    <div>
-      <div class="dr"><div class="lbl">Année 3-4</div><div class="val">Stabilisation, TO 82%. Fonds de Croissance accumule vers Cluster 4. Cluster 4 lancé fin année 3. Pré-négociation crédit d'acquisition LBO avec banques marocaines.</div></div>
-      <div class="dr"><div class="lbl">Année 5-7</div><div class="val">Fenêtre de sortie. Notification. Valorisation 5× EBITDA par commissaire aux comptes. Prix cible : ~3&#8239;800&#8239;000€/investisseur. Déblocage crédit d'acquisition. Signature des cessions de parts. Les Leroy Brothers deviennent propriétaires à 100%.</div></div>
-      <div class="dr"><div class="lbl">Après sortie</div><div class="val">Le management et la marque sont inchangés. Cluster 5 construit avec Fonds de Croissance. 20 unités, plafond artistique atteint. La vie du lieu continue.</div></div>
-    </div>
+  <div class="final-statement" style="padding:32px;background:var(--sky);margin-top:28px;text-align:center;">
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.65;color:var(--pise);max-width:580px;margin:0 auto 14px;">« Un hôtel existant. Trente chambres. Un lieu réel. Les Leroy Brothers déclarent sa transformation. Cinq ans plus tard, ils en sont les seuls propriétaires. C'est le plan depuis le début. »</p>
+    <div style="font-size:10px;letter-spacing:0.2em;color:var(--cedar);text-transform:uppercase;">Toile Blanche Group, Leroy Brothers, Mai 2026</div>
   </div>
 
-  <div class="closing">
-    <div class="closing-text">Document confidentiel, destiné exclusivement aux associés pressentis. Ce document n'a pas de valeur contractuelle et doit être transposé en actes définitifs par les conseils juridiques des parties.</div>
-    <div class="closing-sub">Toile Blanche Group, Avril 2026</div>
+  <div class="pf">
+    <span>Toile Blanche Group — Leroy Brothers — Mai 2026</span>
+    <span>Document confidentiel — cadre de négociation, non contractuel</span>
   </div>
-
 </div>
 
 </body>
 </html>
-  <div class="page">
-    <div class="sl">1.3 Dette bancaire et sécurisation</div>
-    <h1>TAMWILCOM — Protection des associés</h1>
-    <div class="two">
-      <div>
-        <h3>Damane Istithmar — Garantie de crédit</h3>
-        <div class="dr"><div class="lbl">Prêt bancaire</div><div class="val">2&#8239;200&#8239;000€ à 4,5%, 7 ans. Service annuel : 373&#8239;000€.</div></div>
-        <div class="dr"><div class="lbl">Garantie TAMWILCOM</div><div class="val">60% du principal garanti par TAMWILCOM (Damane Istithmar). Risque résiduel non garanti : 880&#8239;000€.</div></div>
-        <div class="dr"><div class="lbl">Cautions personnelles</div><div class="val">L'intervention de TAMWILCOM à 60% conduit structurellement la banque à limiter ou plafonner les cautions personnelles et solidaires. Protection directe des associés investisseurs.</div></div>
-        <div class="dr"><div class="lbl">Couverture par l'actif</div><div class="val">Le risque résiduel non garanti de 880&#8239;000€ est intégralement couvert par la valeur du terrain et du bâtiment existant, acquis à 700&#8239;000€ à l'état brut. La valeur de l'actif après construction Phase 1 est estimée entre 6 et 8 fois le coût d'acquisition initial. En cas de défaut, la banque dispose d'un actif immobilier dont la valeur nette dépasse structurellement l'encours résiduel. Les cautions personnelles sont donc une protection de confort, non une nécessité financière.</div></div>
-        <div class="dr"><div class="lbl">Cofinancement complémentaire</div><div class="val">Si nécessaire, TAMWILCOM propose Cap Jeune ou Invest pour renforcer les fonds propres sans dilution supplémentaire.</div></div>
-      </div>
-      <div>
-        <h3>Couverture IS exonération — Service de la dette</h3>
-        <div class="dr"><div class="lbl">IS exonéré années 1-5</div><div class="val">~150&#8239;000€/an d'économie fiscale. Couvre partiellement le service bancaire annuel de 373&#8239;000€ sur la même période.</div></div>
-        <div class="dr"><div class="lbl">Post année 5</div><div class="val">IS à 20%. Service bancaire décroissant. Couvert par l'EBITDA projeté supérieur à 1&#8239;000&#8239;000€/an dès l'année 2.</div></div>
-        <div class="dr"><div class="lbl">Probabilité d'obtention</div><div class="val">Quasi-certaine. Le profil du projet (investissement durable, ancrage territorial, identité culturelle) est aligné avec les priorités de TAMWILCOM.</div></div>
-      </div>
-    </div>
-  </div>
-
-
