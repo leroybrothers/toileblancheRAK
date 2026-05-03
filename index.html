@@ -214,8 +214,8 @@
             <div class="metric-label">Tentes-lodges dès l'ouverture</div>
           </div>
           <div class="project-metric">
-            <div class="metric-value">700€</div>
-            <div class="metric-label">ADR blended stabilisé</div>
+            <div class="metric-value">500€</div>
+            <div class="metric-label">ADR cible — Scén. A</div>
           </div>
           <div class="project-metric">
             <div class="metric-value">3,4×</div>
@@ -247,6 +247,12 @@
         </div>
 
       </div><!-- /project-compare -->
+    </div>
+
+    <!-- CONCLUSIONS CTA -->
+    <div style="padding:48px 48px 0;text-align:center;">
+      <div style="font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--cedar);margin-bottom:16px;">Synthèse comparative</div>
+      <button onclick="openConclusions()" style="font-family:'Montserrat',sans-serif;font-weight:300;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--pise);border:1px solid var(--cedar);background:transparent;padding:14px 32px;cursor:pointer;">Voir les conclusions — Les trois projets côte à côte</button>
     </div>
 
     <!-- TERRAIN AERIAL -->
@@ -413,7 +419,28 @@
       nav.appendChild(btn);
     });
 
+    // Global conclusions button — always visible
+    const concBtn = document.createElement('button');
+    concBtn.className = 'nav-link';
+    concBtn.id = 'nav-conclusions';
+    concBtn.textContent = 'Conclusions';
+    concBtn.addEventListener('click', openConclusions);
+    nav.appendChild(concBtn);
+
     setActiveNavLink();
+  }
+
+  function openConclusions() {
+    currentDocFile = 'conclusions.html';
+    setNavVisibility(true);
+    document.getElementById('home-view').style.display = 'none';
+    const fv = document.getElementById('frame-view');
+    fv.style.display = 'flex';
+    fv.style.flexDirection = 'column';
+    document.getElementById('doc-frame').src = 'conclusions.html';
+    document.querySelectorAll('.nav-link').forEach(btn => btn.classList.remove('active'));
+    const c = document.getElementById('nav-conclusions');
+    if (c) c.classList.add('active');
   }
 
   function setActiveNavLink() {

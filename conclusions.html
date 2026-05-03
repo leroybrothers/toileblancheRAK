@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="referrer" content="no-referrer">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap');
+  :root{--sand:#F5F0E6;--pise:#111008;--pise-mid:#4F4336;--cedar:#A78661;--sky:#FDFAF5;--pise-light:#D8CCB8;--alert:#8B3A2A;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:100%;max-width:100%;overflow-x:hidden;}
+  body{background:var(--sand);color:var(--pise);font-family:'Montserrat',sans-serif;font-weight:300;font-size:17px;line-height:1.75;max-width:1040px;margin:0 auto;}
+
+  .page{padding:56px 52px;border-bottom:1px solid var(--pise-light);}
+  .ph{display:flex;justify-content:space-between;margin-bottom:40px;padding-bottom:10px;border-bottom:1px solid var(--cedar);}
+  .ph span{font-size:15px;letter-spacing:0.2em;color:var(--cedar);text-transform:uppercase;}
+  .ph span:last-child{color:var(--pise-mid);}
+  .sl{font-size:11.5px;letter-spacing:0.22em;color:var(--cedar);text-transform:uppercase;margin-bottom:10px;}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:44px;line-height:1.12;margin-bottom:22px;}
+  h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:22px;line-height:1.3;margin-bottom:10px;margin-top:0;}
+  h3{font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--pise-mid);margin-bottom:12px;margin-top:24px;font-weight:400;}
+  p{font-size:16px;line-height:1.9;margin-bottom:12px;}
+  .bs{font-size:14px;line-height:1.8;color:var(--pise-mid);margin-bottom:7px;}
+  .pf{margin-top:40px;padding-top:12px;border-top:1px solid var(--pise-light);display:flex;justify-content:space-between;}
+  .pf span{font-size:10.5px;letter-spacing:0.13em;color:var(--pise-mid);text-transform:uppercase;}
+  .ab{border-left:2px solid var(--cedar);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
+  .ab2{border-left:2px solid var(--pise-light);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
+  .alert-box{border-left:2px solid var(--alert);padding:18px 22px;background:#FDF5F3;margin-bottom:16px;}
+  .rule{width:36px;height:1px;background:var(--cedar);margin:24px 0;}
+  .two-eq{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:20px 0;}
+  .three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--pise-light);margin:24px 0;}
+  .ul{list-style:none;margin:0 0 14px;padding:0;}
+  .ul li{font-size:15px;line-height:1.75;padding-left:14px;position:relative;margin-bottom:3px;}
+  .ul li::before{content:'·';position:absolute;left:0;color:var(--cedar);}
+
+  /* COVER KPI STRIP */
+  .kpi-cover{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--pise-light);margin:28px 0;}
+  .kpi-block{background:var(--sky);padding:22px 20px;}
+  .kpi-project{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--cedar);margin-bottom:8px;}
+  .kpi-name{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--pise);margin-bottom:12px;line-height:1;}
+  .kpi-row{padding:7px 0;border-top:1px solid var(--pise-light);display:flex;justify-content:space-between;align-items:baseline;}
+  .kpi-row:first-of-type{border-top:1px solid var(--cedar);}
+  .kpi-val{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--pise);font-weight:300;}
+  .kpi-lbl{font-size:10px;letter-spacing:0.1em;color:var(--pise-mid);text-transform:uppercase;}
+
+  /* MASTER COMPARISON TABLE */
+  table.master{width:100%;border-collapse:collapse;margin:20px 0;}
+  table.master thead tr{border-bottom:2px solid var(--cedar);}
+  table.master thead th{padding:10px 12px;text-align:left;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
+  table.master thead th.r{text-align:right;}
+  table.master thead th.project{text-align:right;font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:300;color:var(--pise);letter-spacing:0.05em;text-transform:none;}
+  table.master tbody tr{border-bottom:1px solid var(--pise-light);}
+  table.master tbody td{padding:9px 12px;font-size:14px;color:var(--pise);vertical-align:middle;}
+  table.master tbody td.r{text-align:right;}
+  table.master tbody td.best{text-align:right;color:var(--cedar);font-weight:400;}
+  table.master tbody td.worst{text-align:right;color:var(--alert);}
+  table.master tbody td.label{color:var(--pise-mid);font-size:12px;letter-spacing:0.08em;}
+  table.master .section-row td{background:var(--sand);color:var(--cedar);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:6px 12px;font-weight:400;}
+  table.master .total-row td{border-top:2px solid var(--cedar);font-weight:400;padding:11px 12px;font-size:15px;}
+  table.master .total-row td.best{color:var(--cedar);}
+
+  /* THREE COLUMNS — profile blocks */
+  .profile-col{background:var(--sky);padding:24px 20px;}
+  .profile-label{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--cedar);margin-bottom:8px;}
+  .profile-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:var(--pise);margin-bottom:14px;line-height:1.1;}
+  .profile-body{font-size:13px;line-height:1.7;color:var(--pise-mid);}
+  .profile-str{margin-top:14px;}
+  .profile-str-item{font-size:12px;padding:5px 0;border-top:1px solid var(--pise-light);color:var(--pise);display:flex;gap:8px;line-height:1.5;}
+  .profile-str-item::before{content:'↑';color:var(--cedar);flex-shrink:0;}
+  .profile-weak-item{font-size:12px;padding:5px 0;border-top:1px solid var(--pise-light);color:var(--pise-mid);display:flex;gap:8px;line-height:1.5;}
+  .profile-weak-item::before{content:'↓';color:var(--pise-light);flex-shrink:0;}
+
+  /* INVESTOR PROFILE BLOCKS */
+  .investor-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--pise-light);margin:20px 0;}
+  .inv-block{background:var(--sky);padding:22px 20px;}
+  .inv-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--pise);margin-bottom:6px;}
+  .inv-sub{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cedar);margin-bottom:12px;}
+  .inv-body{font-size:13px;line-height:1.7;color:var(--pise-mid);}
+  .inv-verdict{font-size:13px;color:var(--pise);margin-top:10px;padding-top:10px;border-top:1px solid var(--pise-light);}
+
+  /* FINAL STATEMENT */
+  .final{padding:40px;background:var(--sky);margin:28px 0;text-align:center;}
+  .final-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;line-height:1.65;color:var(--pise);max-width:680px;margin:0 auto 18px;}
+  .final-sub{font-size:10px;letter-spacing:0.2em;color:var(--cedar);text-transform:uppercase;}
+</style>
+<link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+
+<!-- ═══════════════ PAGE 1 : OUVERTURE -->
+<div class="page">
+  <div class="ph"><span>Toile Blanche Marrakech</span><span>Conclusions</span></div>
+  <div class="sl">Synthèse comparative</div>
+  <h1>Trois projets.<br>Un seul investisseur.<br>Quelle décision ?</h1>
+
+  <p>Ce document a présenté trois propositions distinctes sous la même marque, avec le même opérateur, la même structure de capital. Il est maintenant temps de les mettre côte à côte — sans rhétorique, sans préférence affichée — et de laisser les chiffres conduire la réflexion.</p>
+  <p>Deux observations préliminaires. Première : Riads Pisé et Khaimas partagent le même terrain. Ce n'est pas un choix entre trois projets — c'est un choix entre deux chemins pour un même foncier, plus un troisième projet sur un actif distinct. Deuxième : la mise est identique pour les trois — 1 000 000€ par investisseur. Ce qui diffère, c'est ce que cette mise produit.</p>
+
+  <!-- KPI COVER STRIP -->
+  <div class="kpi-cover">
+    <div class="kpi-block">
+      <div class="kpi-project">Construction permanente — Route de Fès</div>
+      <div class="kpi-name">Riads Pisé</div>
+      <div class="kpi-row"><span class="kpi-lbl">Investissement total</span><span class="kpi-val">4,76M€</span></div>
+      <div class="kpi-row"><span class="kpi-lbl">Unités ouverture / final</span><span class="kpi-val">12 → 20</span></div>
+      <div class="kpi-row"><span class="kpi-lbl">ADR stabilisé</span><span class="kpi-val">800€</span></div>
+      <div class="kpi-row"><span class="kpi-lbl">Dividende Y3 / invest.</span><span class="kpi-val">588K€</span></div>
+      <div class="kpi-row"><span class="kpi-lbl">Payback</span><span class="kpi-val">Courant Y3</span></div>
+      <div class="kpi-row"><span class="kpi-lbl">Multiple cible</span><span class="kpi-val">5,7×</span></div>
+    </div>
+    <div class="kpi-block">
+      <div class="kpi-project">Tentes-lodges — Route de Fès</div>
+      <div class="kpi-name">Khaimas</div>
+      <div class="kpi-row"><span class="kpi-lbl">Investissement total</span><span class="kpi-val">7,82M€</span></div>
+      <div class="kpi-row"><span class="kpi-lbl">Unités ouverture / final</span><span class="kpi-val">24 / 24</span></div>
+      <div class="kpi-row"><span class="kpi-lbl">ADR stabilisé</span><span class="kpi-val">700€</span></div>
+      <div class="kpi-row"><span class="kpi-lbl">Dividende Y3 / invest.</span><span class="kpi-val">458K€</span></div>
+      <div class="kpi-row"><span class="kpi-lbl">Payback</span><span class="kpi-val">Courant Y3</span></div>
+      <div class="kpi-row"><span class="kpi-lbl">Multiple cible</span><span class="kpi-val">3,4×</span></div>
+    </div>
+    <div class="kpi-block">
+      <div class="kpi-project">Transformation — Tagadirt, pied de l'Atlas</div>
+      <div class="kpi-name">Tigmi</div>
+      <div class="kpi-row"><span class="kpi-lbl">Investissement total</span><span class="kpi-val">3,15M€</span></div>
+      <div class="kpi-row"><span class="kpi-lbl">Unités ouverture / final</span><span class="kpi-val">30 / 30</span></div>
+      <div class="kpi-row"><span class="kpi-lbl">ADR stabilisé</span><span class="kpi-val">500€</span></div>
+      <div class="kpi-row"><span class="kpi-lbl">Dividende Y3 / invest.</span><span class="kpi-val">1 003K€</span></div>
+      <div class="kpi-row"><span class="kpi-lbl">Payback</span><span class="kpi-val">Fin année 2</span></div>
+      <div class="kpi-row"><span class="kpi-lbl">Multiple cible</span><span class="kpi-val">7,0×</span></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════ PAGE 2 : LA TABLE MAÎTRE -->
+<div class="page">
+  <div class="ph"><span>Toile Blanche Marrakech</span><span>Comparatif complet</span></div>
+  <div class="sl">Tous les chiffres</div>
+  <h1>La table complète.</h1>
+
+  <table class="master">
+    <thead>
+      <tr>
+        <th style="width:36%;">Critère</th>
+        <th class="project">Riads Pisé</th>
+        <th class="project">Khaimas</th>
+        <th class="project">Tigmi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- STRUCTURE -->
+      <tr class="section-row"><td colspan="4">Structure</td></tr>
+      <tr><td class="label">Investissement total</td><td class="r">4,76M€</td><td class="worst">7,82M€</td><td class="best">3,15M€</td></tr>
+      <tr><td class="label">Mise / investisseur</td><td class="r">1 000K€</td><td class="r">1 000K€</td><td class="r">1 000K€</td></tr>
+      <tr><td class="label">Gap financement à lever</td><td class="best">Aucun</td><td class="worst">4,02M€</td><td class="best">Aucun</td></tr>
+      <tr><td class="label">Equity Finot + Riner</td><td class="r">2 000K€</td><td class="r">2 000K€</td><td class="r">2 000K€</td></tr>
+      <tr><td class="label">Dette structurée</td><td class="r">2,76M€</td><td class="r">1,80M€</td><td class="r">1,15M€</td></tr>
+
+      <!-- PROGRAMME -->
+      <tr class="section-row"><td colspan="4">Programme</td></tr>
+      <tr><td class="label">Unités à l'ouverture</td><td class="r">12</td><td class="r">24</td><td class="best">30</td></tr>
+      <tr><td class="label">Unités à terme</td><td class="best">20</td><td class="r">24</td><td class="r">30</td></tr>
+      <tr><td class="label">Croissance organique</td><td class="best">+8 unités, auto-financées</td><td class="worst">Aucune</td><td class="worst">Aucune</td></tr>
+      <tr><td class="label">Durée de vie de l'actif</td><td class="best">Permanent</td><td class="worst">7–10 ans</td><td class="best">Permanent</td></tr>
+      <tr><td class="label">Provision remplacement / an</td><td class="best">0€</td><td class="worst">360 000€</td><td class="best">0€</td></tr>
+      <tr><td class="label">Délai avant ouverture</td><td class="worst">24 mois</td><td class="r">18 mois</td><td class="best">12 mois</td></tr>
+      <tr><td class="label">Permis construire requis</td><td class="worst">Oui</td><td class="best">Non</td><td class="best">Non</td></tr>
+      <tr><td class="label">VNA requis</td><td class="best">Non</td><td class="best">Non</td><td class="r">Oui</td></tr>
+
+      <!-- EXPLOITATION -->
+      <tr class="section-row"><td colspan="4">Exploitation</td></tr>
+      <tr><td class="label">ADR Y1</td><td class="r">650€</td><td class="r">600€</td><td class="r">450€</td></tr>
+      <tr><td class="label">ADR stabilisé</td><td class="best">800€</td><td class="r">700€</td><td class="r">500€</td></tr>
+      <tr><td class="label">TO stabilisé</td><td class="best">82%</td><td class="r">70%</td><td class="r">75%</td></tr>
+      <tr><td class="label">Revenu total Y1</td><td class="r">2,17M€</td><td class="r">3,91M€</td><td class="best">3,69M€</td></tr>
+      <tr><td class="label">Revenu total Y3 stabilisé</td><td class="r">3,60M€</td><td class="best">5,73M€</td><td class="r">5,16M€</td></tr>
+      <tr><td class="label">Résultat net Y1</td><td class="r">949K€</td><td class="r">1 101K€</td><td class="best">1 624K€</td></tr>
+      <tr><td class="label">Résultat net Y3 stabilisé</td><td class="r">2 260K€</td><td class="r">2 166K€</td><td class="best">2 508K€</td></tr>
+      <tr><td class="label">Marketing & distribution</td><td class="r">10% du CA</td><td class="worst">12% du CA</td><td class="r">10% du CA</td></tr>
+
+      <!-- RETOUR INVESTISSEUR -->
+      <tr class="section-row"><td colspan="4">Retour investisseur (40%)</td></tr>
+      <tr><td class="label">Dividende Y1 / investisseur</td><td class="r">423K€</td><td class="worst">198K€</td><td class="best">650K€</td></tr>
+      <tr><td class="label">Dividende Y2 / investisseur</td><td class="r">522K€</td><td class="worst">368K€</td><td class="best">874K€</td></tr>
+      <tr><td class="label">Dividende Y3 / investisseur</td><td class="r">588K€</td><td class="worst">458K€</td><td class="best">1 003K€</td></tr>
+      <tr><td class="label">Dividendes cumulés Y1–Y5</td><td class="r">2 709K€</td><td class="r">1 941K€</td><td class="best">4 533K€</td></tr>
+      <tr><td class="label">Payback mise initiale</td><td class="worst">Courant Y3</td><td class="worst">Courant Y3</td><td class="best">Fin année 2</td></tr>
+      <tr><td class="label">Cession plancher LBO</td><td class="best">2 000K€</td><td class="worst">800K€</td><td class="r">1 500K€</td></tr>
+      <tr><td class="label">Cession plafond LBO</td><td class="best">3 000K€</td><td class="worst">1 500K€</td><td class="r">2 500K€</td></tr>
+      <tr><td class="label">Retour total cible (plafond)</td><td class="r">5 709K€</td><td class="worst">3 441K€</td><td class="best">7 033K€</td></tr>
+      <tr class="total-row"><td><strong>Multiple cible</strong></td><td class="r" style="font-family:'Cormorant Garamond',serif;font-size:22px;">5,7×</td><td class="worst" style="font-family:'Cormorant Garamond',serif;font-size:22px;">3,4×</td><td class="best" style="font-family:'Cormorant Garamond',serif;font-size:26px;">7,0×</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- ═══════════════ PAGE 3 : PROFILS -->
+<div class="page">
+  <div class="ph"><span>Toile Blanche Marrakech</span><span>Les profils</span></div>
+  <div class="sl">Ce que chaque projet est vraiment</div>
+  <h1>Trois paris.<br>Trois logiques.</h1>
+
+  <div class="three">
+    <div class="profile-col">
+      <div class="profile-label">Construction permanente — Route de Fès</div>
+      <div class="profile-title">Riads Pisé</div>
+      <div class="profile-body">Le pari de la valeur à long terme. On construit from scratch, on attend 24 mois, on ouvre à 12 unités avec l'ADR le plus élevé du marché. On ne distribue pas beaucoup les premières années — mais on accumule de la valeur. Les actifs s'apprécient, la marque se renforce, la croissance organique porte de 12 à 20 unités sans rappel de capital. À la sortie, on vend de la pierre rarissime dans le Haouz sous une marque internationalement reconnue.</div>
+      <div class="profile-str">
+        <div class="profile-str-item">ADR le plus élevé — 800€ stabilisé</div>
+        <div class="profile-str-item">Actif permanent en matériaux rares</div>
+        <div class="profile-str-item">Croissance auto-financée sans capital</div>
+        <div class="profile-str-item">Cession plafond la plus élevée — 3M€</div>
+        <div class="profile-str-item">Déclaration artistique la plus pure</div>
+        <div class="profile-weak-item">Délai d'ouverture 24 mois</div>
+        <div class="profile-weak-item">Dividendes Y1–Y3 les plus faibles</div>
+        <div class="profile-weak-item">Risque construction + permis</div>
+      </div>
+    </div>
+    <div class="profile-col">
+      <div class="profile-label">Tentes-lodges — même terrain</div>
+      <div class="profile-title">Khaimas</div>
+      <div class="profile-body">Le pari des revenus immédiats sur actif temporaire. 24 unités dès l'ouverture génèrent un flux de dividendes supérieur en Y1–Y5. Mais l'actif s'efface. Les tentes ont 7 à 10 ans de vie commerciale, ensuite il faut réécrire un chèque de 3,6M€ ou fermer. La cession valorise un terrain et des infrastructures permanentes — pas les tentes. Le gap de financement de 4M€ est le problème structurel majeur : le projet ne peut pas démarrer avec les deux investisseurs actuels seuls.</div>
+      <div class="profile-str">
+        <div class="profile-str-item">24 unités dès l'ouverture</div>
+        <div class="profile-str-item">Dividendes Y1–Y5 les plus faibles des trois (Scénario A)</div>
+        <div class="profile-str-item">Ouverture 18 mois, pas de permis</div>
+        <div class="profile-weak-item">Gap 4,02M€ sans source identifiée</div>
+        <div class="profile-weak-item">Actif temporaire — 0€ à 10 ans</div>
+        <div class="profile-weak-item">360K€/an provision structurelle</div>
+        <div class="profile-weak-item">Cession plafond 1,5M€ seulement</div>
+        <div class="profile-weak-item">Multiple le plus faible — 3,4×</div>
+      </div>
+    </div>
+    <div class="profile-col">
+      <div class="profile-label">Transformation — Tagadirt</div>
+      <div class="profile-title">Tigmi</div>
+      <div class="profile-body">Le pari de la transformation. Un actif existant, sous-exploité, mal géré, avec des murs en pisé, deux piscines, un hammam et une vue sur l'Atlas. On achète, on ferme 12 mois, on transforme tout, on ouvre Toile Blanche Marrakech à 30 chambres. L'infrastructure existe déjà. Les risques sont connus et chiffrés. Le voisin (Kasbah Dif) confirme l'ADR cible. On distribue dès l'année 1, on est remboursé fin Y2, et on sort à 7,0×. C'est le projet le plus efficace financièrement — sur chaque métrique de rendement.</div>
+      <div class="profile-str">
+        <div class="profile-str-item">Multiple le plus élevé — 7,0×</div>
+        <div class="profile-str-item">Payback le plus rapide — fin Y2</div>
+        <div class="profile-str-item">Investissement le plus bas — 3,15M€</div>
+        <div class="profile-str-item">30 clés dès l'ouverture</div>
+        <div class="profile-str-item">Ouverture 12 mois — zéro permis</div>
+        <div class="profile-str-item">Financement bouclé sans gap</div>
+        <div class="profile-str-item">Dividende Y3 : 1 003K€ / investisseur</div>
+        <div class="profile-weak-item">ADR le plus bas — 500€</div>
+        <div class="profile-weak-item">Risques d'acquisition spécifiques</div>
+        <div class="profile-weak-item">Négociation encore en cours</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════ PAGE 4 : PROFILS INVESTISSEURS -->
+<div class="page">
+  <div class="ph"><span>Toile Blanche Marrakech</span><span>Pour qui, quel projet</span></div>
+  <div class="sl">Quel projet pour quel profil</div>
+  <h1>Le bon projet<br>dépend de la question<br>qu'on se pose.</h1>
+
+  <p>Les trois projets sont défendables. Ils ne s'adressent pas au même investisseur — ou plutôt, ils ne s'adressent pas à la même intention. La question n'est pas "lequel est le meilleur" mais "quel est mon horizon, ma tolérance au risque, ma priorité — le flux ou la valeur, la vitesse ou la solidité ?"</p>
+
+  <div class="investor-grid">
+    <div class="inv-block">
+      <div class="inv-sub">Priorité : rendement total, patrimoine long terme</div>
+      <div class="inv-title">L'investisseur patrimonial</div>
+      <div class="inv-body">Il veut un actif qui s'apprécie. Il accepte d'attendre. Il est moins sensible aux dividendes des trois premières années qu'à la valeur de ce qu'il possède à la sortie. Il comprend que 800€ d'ADR sur un riad en pisé dans le Haouz sous marque Toile Blanche est un actif que personne d'autre ne peut reproduire.</div>
+      <div class="inv-verdict"><strong>Son projet : Riads Pisé.</strong> Actif permanent, ADR le plus élevé, cession à 3M€, croissance organique à 20 unités sans rappel de capital.</div>
+    </div>
+    <div class="inv-block">
+      <div class="inv-sub">Priorité : rendement rapide, risque minimal</div>
+      <div class="inv-title">L'investisseur rendement</div>
+      <div class="inv-body">Il veut être remboursé vite. Il veut des dividendes dès la première année. Il préfère un actif existant à un chantier. La construction l'inquiète, les permis l'inquiètent, le gap de financement l'inquiète. Il veut mettre 1M€ et savoir que dans 2 ans il l'a récupéré.</div>
+      <div class="inv-verdict"><strong>Son projet : Tigmi.</strong> Payback fin Y2. Dividende Y1 = 650K€. Multiple 7,0×. Zéro risque construction. Financement bouclé.</div>
+    </div>
+    <div class="inv-block">
+      <div class="inv-sub">Priorité : volume de revenus, horizon court</div>
+      <div class="inv-title">L'investisseur flux</div>
+      <div class="inv-body">Il veut maximiser les dividendes sur 5 ans, peu importe la valeur résiduelle. 24 unités dès l'ouverture génèrent plus de cash que 12 ou 30 au même ADR. Il est prêt à accepter que l'actif se dévalue à 10 ans en échange de distributions supérieures maintenant.</div>
+      <div class="inv-verdict"><strong>Son projet : Khaimas — avec réserves.</strong> Le gap de financement de 4M€ doit être résolu avant toute décision. Si le financement est bouclé, les dividendes Y1–Y5 de Khaimas Scénario A sont inférieurs aux deux autres projets. Le Scénario B pourrait changer la donne. Si non, le projet ne démarre pas.</div>
+    </div>
+    <div class="inv-block">
+      <div class="inv-sub">Priorité : diversification, deux territoires</div>
+      <div class="inv-title">Le duo optimal</div>
+      <div class="inv-body">La combinaison la plus cohérente n'est pas un choix entre les trois. C'est d'en faire deux : <strong>Tigmi + Riads Pisé.</strong> Tigmi démarre en 12 mois, distribue dès Y1, rembourse la mise fin Y2 — ses dividendes financent partiellement la période de construction de Riads Pisé. À l'ouverture de Riads Pisé (mois 24), l'investisseur touche des dividendes sur deux projets simultanément sous la même marque. C'est la logique d'un portefeuille, pas d'un choix.</div>
+      <div class="inv-verdict"><strong>Mise totale : 2M€ par investisseur.</strong> Tigmi démarre immédiatement. Riads Pisé ouvre 12 mois après Tigmi. Khaimas est abandonné — le gap de financement n'est pas résolu et le multiple inférieur ne justifie pas l'effort.</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════ PAGE 5 : VERDICT -->
+<div class="page">
+  <div class="ph"><span>Toile Blanche Marrakech</span><span>Le verdict</span></div>
+  <div class="sl">Ce que les chiffres imposent</div>
+  <h1>La conclusion<br>que les chiffres<br>écrivent.</h1>
+
+  <div class="two-eq">
+    <div>
+      <div class="ab">
+        <div class="sl">Sur le terrain Route de Fès</div>
+        <h2>Riads Pisé. Sans hésitation.</h2>
+        <p class="bs">Face à Khaimas sur le même foncier, Riads Pisé gagne sur 9 des 14 critères comparables. L'argument en faveur de Khaimas — des dividendes plus élevés en Y1–Y5 — est réel (+1 023K€ cumulés) mais entièrement effacé par l'écart de cession (–1 500K€). Le bilan est négatif de 477K€ pour Khaimas. Et ce calcul ignore le gap de financement de 4M€, la provision de 360K€/an et la destruction de valeur à 10 ans.</p>
+        <p class="bs">Khaimas est exclu. Riads Pisé est le seul projet défendable sur ce terrain.</p>
+      </div>
+
+      <div class="ab2">
+        <div class="sl">Sur Tigmi</div>
+        <h2>Le projet le plus efficace financièrement.</h2>
+        <p class="bs">Sur chaque métrique de rendement, Tigmi domine : multiple 7,0× vs 5,7×, dividende Y3 = 1 003K€ vs 588K€, payback fin Y2 vs courant Y3, investissement total 3,15M€ vs 4,76M€. C'est un actif existant, un risque de construction nul, un voisin qui confirme l'ADR cible. Les risques d'acquisition (foncier Melkia, séisme, eau) sont connus, chiffrés, et partiellement absorbés dans le discount de négociation.</p>
+        <p class="bs">Tigmi est le projet le plus immédiatement actionnable et le plus rentable.</p>
+      </div>
+    </div>
+    <div>
+      <div class="ab">
+        <div class="sl">Le scénario optimal</div>
+        <h2>Les deux. Dans cet ordre.</h2>
+        <p class="bs"><strong>Étape 1 — Tigmi maintenant.</strong> Acquisition en cours de négociation. Fermeture et rénovation 12 mois. Ouverture Toile Blanche Marrakech (Tagadirt). Dividendes dès l'année 1. Mise remboursée fin Y2.</p>
+        <p class="bs"><strong>Étape 2 — Riads Pisé 6 à 12 mois après.</strong> Acquisition terrain Route de Fès. Permis, chantier, ouverture 24 mois. Les dividendes de Tigmi couvrent partiellement la période d'attente. À l'ouverture de Riads Pisé, les deux projets distribuent simultanément.</p>
+        <p class="bs"><strong>Résultat à 5 ans / investisseur :</strong> dividendes Tigmi ~4 533K€ + dividendes Riads Pisé ~2 709K€ + deux cessions (3M€ + 2,5M€) = <strong>retour total ~12 700K€ sur 2M€ investis — soit ~6,3× sur le portefeuille.</strong></p>
+        <p class="bs" style="color:var(--cedar);">Ce n'est pas une proposition nouvelle. C'est la conséquence logique de ce que les trois documents ont démontré.</p>
+      </div>
+
+      <div class="alert-box">
+        <div class="sl">Pourquoi pas Khaimas</div>
+        <h2>Le seul projet exclu.</h2>
+        <p class="bs">Khaimas a un seul avantage réel sur Riads Pisé : des dividendes supérieurs en Y1–Y5 grâce à 24 unités vs 12. Cet avantage (+1 023K€) est inférieur à l'écart de cession (–1 500K€). Le bilan est –477K€. En plus : un gap de 4M€ non financé, une provision de 360K€/an pour un actif qui disparaît, et un multiple inférieur (3,4× vs 5,7×). Il n'y a pas de scénario dans lequel Khaimas est préférable à Riads Pisé sur le même terrain. Le plan initial de Finot reposait sur des hypothèses d'ADR et de coûts incompatibles avec le marché réel.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <h3>Récapitulatif — Scores de recommandation</h3>
+  <table class="master">
+    <thead>
+      <tr>
+        <th>Dimension</th>
+        <th class="project">Riads Pisé</th>
+        <th class="project">Khaimas</th>
+        <th class="project">Tigmi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="label">Rendement total</td><td class="r">●●●●○</td><td class="worst">●●●○○</td><td class="best">●●●●●</td></tr>
+      <tr><td class="label">Vitesse de retour</td><td class="r">●●●○○</td><td class="r">●●●○○</td><td class="best">●●●●●</td></tr>
+      <tr><td class="label">Pérennité de l'actif</td><td class="best">●●●●●</td><td class="worst">●○○○○</td><td class="best">●●●●●</td></tr>
+      <tr><td class="label">Faisabilité financière</td><td class="best">●●●●●</td><td class="worst">●●○○○</td><td class="best">●●●●●</td></tr>
+      <tr><td class="label">Risque de construction</td><td class="r">●●●○○</td><td class="r">●●●●○</td><td class="best">●●●●●</td></tr>
+      <tr><td class="label">Valeur à la sortie</td><td class="best">●●●●●</td><td class="worst">●●○○○</td><td class="r">●●●●○</td></tr>
+      <tr><td class="label">Puissance déclaration artistique</td><td class="best">●●●●●</td><td class="r">●●●○○</td><td class="r">●●●●○</td></tr>
+      <tr class="total-row"><td><strong>Recommandation</strong></td><td class="best" style="font-size:13px;letter-spacing:0.1em;">RECOMMANDÉ<br>Projet long terme</td><td class="worst" style="font-size:13px;letter-spacing:0.1em;">NON RECOMMANDÉ<br>Remplacé par Riads Pisé</td><td class="best" style="font-size:13px;letter-spacing:0.1em;">RECOMMANDÉ EN PREMIER<br>Projet immédiat</td></tr>
+    </tbody>
+  </table>
+
+  <div class="final">
+    <div class="final-text">« Un territoire déclaré œuvre. Un hôtel transformé en déclaration. Deux actifs permanents, deux fois la même marque, deux fois les mêmes partenaires. Ce n'est pas une diversification — c'est une amplification. »</div>
+    <div class="final-sub">Toile Blanche Group — Leroy Brothers — Mai 2026</div>
+  </div>
+
+  <div class="pf">
+    <span>Toile Blanche Group — Leroy Brothers — Mai 2026</span>
+    <span>Document confidentiel — usage exclusif associés pressentis</span>
+  </div>
+</div>
+
+</body>
+</html>
