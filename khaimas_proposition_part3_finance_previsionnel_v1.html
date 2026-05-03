@@ -8,12 +8,28 @@
 <meta name="referrer" content="no-referrer">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap');
-  :root{--sand:#F5F0E6;--pise:#111008;--pise-mid:#4F4336;--cedar:#A78661;--sky:#FDFAF5;--pise-light:#D8CCB8;}
+  :root{--sand:#F5F0E6;--pise:#111008;--pise-mid:#4F4336;--cedar:#A78661;--sky:#FDFAF5;--pise-light:#D8CCB8;--alert:#8B3A2A;}
   *{margin:0;padding:0;box-sizing:border-box;}
   html,body{width:100%;max-width:100%;overflow-x:hidden;overscroll-behavior-x:none;}
   img,iframe{max-width:100%;height:auto;}
-  table{max-width:100%;}
+  table{max-width:100%;width:100%;table-layout:fixed;}
+  th,td{overflow-wrap:anywhere;word-break:break-word;}
   body{touch-action:pan-y;background:var(--sand);color:var(--pise);font-family:'Montserrat',sans-serif;font-weight:300;font-size:17px;line-height:1.75;max-width:960px;margin:0 auto;}
+
+  .cover{width:100%;min-height:620px;background:var(--sand);position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:56px 52px;}
+  .cover-mid{padding:40px 0;}
+  .cover-rule{width:40px;height:1px;background:var(--cedar);margin-bottom:28px;}
+  .ct{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:58px;line-height:1.02;color:var(--pise);margin-bottom:8px;}
+  .cs{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:25px;color:var(--pise-mid);margin-bottom:36px;}
+  .cd{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16.5px;color:var(--pise-mid);max-width:460px;line-height:1.9;border-left:1px solid var(--cedar);padding-left:18px;}
+  .cover-bottom{border-top:1px solid var(--cedar);padding-top:24px;}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+  .kpi{padding-right:24px;border-right:1px solid var(--pise-light);}
+  .kpi:last-child{border-right:none;}
+  .kv{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:30px;color:var(--pise);line-height:1;margin-bottom:4px;}
+  .kl{font-size:10.5px;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;margin-bottom:2px;}
+  .ks{font-size:11.5px;color:var(--pise-mid);}
+
   .page{padding:56px 52px;border-bottom:1px solid var(--pise-light);}
   .ph{display:flex;justify-content:space-between;margin-bottom:40px;padding-bottom:10px;border-bottom:1px solid var(--cedar);}
   .ph span{font-size:15px;letter-spacing:0.2em;color:var(--cedar);text-transform:uppercase;}
@@ -29,272 +45,104 @@
   .ul{list-style:none;margin:0 0 14px;padding:0;}
   .ul li{font-size:16.5px;line-height:1.75;padding-left:14px;position:relative;margin-bottom:3px;}
   .ul li::before{content:'·';position:absolute;left:0;color:var(--cedar);font-size:15px;line-height:1.4;}
+  .qb{border-left:1px solid var(--cedar);padding:14px 20px;background:var(--sky);margin:16px 0;}
+  .qb p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;line-height:1.75;}
+  .qs{font-size:10.5px;letter-spacing:0.16em;color:var(--cedar);text-transform:uppercase;margin-top:7px;}
   .pf{margin-top:40px;padding-top:12px;border-top:1px solid var(--pise-light);display:flex;justify-content:space-between;}
   .pf span{font-size:10.5px;letter-spacing:0.13em;color:var(--pise-mid);text-transform:uppercase;}
-  .div-f{width:100%;height:1px;background:var(--pise-light);margin:28px 0;}
-
-  /* FINANCE ROWS */
-  .fr{padding:8px 0;border-bottom:1px solid var(--pise-light);}
-  .fr.total{border-bottom:none;border-top:1px solid var(--cedar);padding-top:10px;margin-top:4px;}
-  .fr .lbl{color:var(--cedar);font-size:8.5px;letter-spacing:0.18em;text-transform:uppercase;display:block;margin-bottom:2px;}
-  .fr .amt{color:var(--pise);font-size:14px;display:block;font-weight:400;}
+  .ab{border-left:2px solid var(--cedar);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
+  .ab2{border-left:2px solid var(--pise-light);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
+  .alert{border-left:2px solid var(--alert);padding:18px 22px;background:#FDF5F3;margin-bottom:16px;}
+  .alert .sl{color:var(--alert);}
+  .rule{width:36px;height:1px;background:var(--cedar);margin:20px 0;}
 
   /* KPI STRIP */
   .kpi-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--pise-light);margin:24px 0;}
-  .ks-item{background:var(--sky);padding:20px 18px;}
-  .ks-val{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:300;color:var(--pise);line-height:1;margin-bottom:4px;}
-  .ks-lbl{font-size:8.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cedar);margin-bottom:3px;}
-  .ks-sub{font-size:9.5px;color:var(--pise-mid);}
+  .ks-box{background:var(--sky);padding:20px 18px;}
+  .ks-val{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--pise);line-height:1;margin-bottom:6px;}
+  .ks-lbl{font-size:10px;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;}
+  .ks-sub{font-size:12px;color:var(--pise-mid);margin-top:3px;}
 
-  /* PREV TABLE */
-  table.prev{width:100%;border-collapse:collapse;margin:20px 0;font-size:10.5px;}
+  /* TABLES */
+  table.budget{width:100%;border-collapse:collapse;margin:20px 0;}
+  table.budget thead tr{border-bottom:2px solid var(--cedar);}
+  table.budget thead th{padding:8px 10px;text-align:left;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
+  table.budget thead th.r{text-align:right;}
+  table.budget tbody tr{border-bottom:1px solid var(--pise-light);}
+  table.budget tbody td{padding:7px 10px;color:var(--pise);font-size:14px;}
+  table.budget tbody td.r{text-align:right;}
+  table.budget tbody td.note{font-size:10.5px;color:var(--pise-mid);}
+  table.budget tbody td.alert-cell{color:var(--alert);font-size:13px;}
+
+  table.prev{width:100%;border-collapse:collapse;margin:20px 0;}
   table.prev thead tr{border-bottom:2px solid var(--cedar);}
-  table.prev thead th{padding:7px 8px;text-align:left;font-size:8.5px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
+  table.prev thead th{padding:9px 10px;text-align:left;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
   table.prev thead th.r{text-align:right;}
   table.prev tbody tr{border-bottom:1px solid var(--pise-light);}
-  table.prev tbody td{padding:6px 8px;line-height:1.5;color:var(--pise);vertical-align:top;}
-  table.prev tbody td.r{text-align:right;white-space:normal;word-break:break-word;}
-  .row-sec td{background:var(--sand);color:var(--cedar);font-size:8.5px;letter-spacing:0.2em;text-transform:uppercase;padding:5px 8px;}
+  table.prev tbody td{font-size:14px;padding:9px 10px;line-height:1.65;color:var(--pise);}
+  table.prev tbody td.r{text-align:right;}
+
+  .row-sec td{background:var(--sand);color:var(--cedar);font-size:9px !important;letter-spacing:0.2em;text-transform:uppercase;padding:5px 10px !important;}
   .row-sub td{background:var(--sand);font-weight:400;}
-  .row-sub td.r{white-space:normal;word-break:break-word;}
-  .row-fund td{background:var(--sand);color:var(--cedar);font-weight:400;}
-  .row-fund td.r{white-space:normal;word-break:break-word;}
-  .row-tot td{border-top:2px solid var(--cedar);border-bottom:none;font-weight:400;font-size:14.5px;padding:9px 8px;}
-  .row-tot td.r{white-space:normal;word-break:break-word;}
+  .row-tot td{border-top:2px solid var(--cedar);border-bottom:none;font-weight:400;font-size:15px !important;padding:10px 10px !important;}
+  .row-gop td{background:var(--sky);font-style:italic;color:var(--pise-mid);}
+  .row-alert td{background:#FDF5F3;color:var(--alert);}
+  .row-finot td{background:#F5F9F0;color:#3A6B2A;}
 
-  /* FONDS BLOCK */
-  .fonds-block{border:1px solid var(--cedar);padding:36px 40px;margin:32px 0;background:var(--sky);}
-  .fonds-header{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--pise-light);}
-  .fonds-title{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;line-height:1.2;margin-bottom:6px;}
-  .fonds-pct{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:300;line-height:1;color:var(--cedar);text-align:right;}
-  .fonds-pct-label{font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--pise-mid);text-align:right;margin-top:4px;}
-  .fonds-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--pise-light);margin-top:16px;}
-  .fonds-col{background:var(--sand);padding:22px 20px;min-height:200px;}
-  .fonds-col-title{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--cedar);margin-bottom:10px;}
-  .fonds-col-body{font-size:14px;line-height:1.75;color:var(--pise-mid);}
-  .fonds-timeline{margin-top:26px;padding-top:20px;border-top:1px solid var(--pise-light);}
-  .ft-row{display:grid;grid-template-columns:110px 1fr auto;gap:18px;align-items:start;padding:12px 0;border-bottom:1px solid var(--pise-light);font-size:14px;}
-  .ft-row:last-child{border-bottom:none;}
-  .ft-year{color:var(--cedar);font-weight:400;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;}
-  .ft-desc{color:var(--pise-mid);line-height:1.75;}
-  .ft-amt{color:var(--pise);font-weight:400;white-space:normal;word-break:break-word;text-align:right;font-size:14px;}
+  /* COMPARISON TABLE */
+  table.comp{width:100%;border-collapse:collapse;margin:20px 0;}
+  table.comp thead tr{border-bottom:2px solid var(--cedar);}
+  table.comp thead th{padding:10px 12px;text-align:left;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
+  table.comp thead th.r{text-align:right;}
+  table.comp tbody tr{border-bottom:1px solid var(--pise-light);}
+  table.comp tbody td{padding:10px 12px;font-size:14px;color:var(--pise);}
+  table.comp tbody td.r{text-align:right;}
+  table.comp tbody td.best{color:var(--cedar);font-weight:400;}
+  table.comp tbody td.worst{color:var(--alert);}
+  table.comp .row-tot td{border-top:2px solid var(--cedar);border-bottom:none;font-weight:400;font-size:15px !important;padding:12px !important;}
 
-  /* RETOUR */
-  .retour-box{border:1px solid var(--cedar);padding:24px 28px;margin:24px 0;display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;}
-  .retour-big{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:300;line-height:1;color:var(--pise);}
-  .retour-label{font-size:8.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cedar);margin-bottom:4px;}
-  .retour-sub{font-size:9.5px;color:var(--pise-mid);margin-top:4px;}
-
-  /* SCENARIO TABLE */
-  table.scen{width:100%;border-collapse:collapse;margin:16px 0;font-size:10.5px;}
-  table.scen thead th{padding:7px 8px;font-size:8.5px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;text-align:left;border-bottom:1px solid var(--cedar);}
-  table.scen thead th.r{text-align:right;}
-  table.scen tbody tr{border-bottom:1px solid var(--pise-light);}
-  table.scen tbody td{padding:7px 8px;white-space:normal;word-break:break-word;}
-  table.scen tbody td:not(:first-child){text-align:right;}
-  .scen-hl td{background:var(--sand);font-weight:400;}
-
-  /* TABLE & SMALL TEXT FIXES */
-  table.prev{font-size:14px;}
-  table.prev thead th{font-size:10px;letter-spacing:0.12em;padding:9px 10px;}
-  table.prev tbody td{font-size:14px;padding:9px 10px;line-height:1.65;}
-  table.scen{font-size:14px;}
-  table.scen thead th{font-size:10px;padding:9px 10px;}
-  table.scen tbody td{font-size:14px;padding:9px 10px;}
-  .ks-sub{font-size:12px !important;}
-  .ks-lbl{font-size:10px !important;}
-  .row-sec td{font-size:11px !important;}
-  .row-tot td{font-size:15.5px !important;}
-  .cdesc{font-size:13px !important;line-height:1.7;}
-  .vie-price{font-size:13px !important;}
-  .cond-body{font-size:14px !important;}
-  .risk-label{font-size:14px !important;}
-  .risk-body{font-size:14px !important;}
-  .dir-body{font-size:14px !important;}
-  .final-sub{font-size:11px !important;}
-  .fr .amt{font-size:16px !important;}
-
-  /* STRONG TABLE & SMALL TEXT OVERRIDES */
+  /* OVERRIDES */
   table{font-size:15px !important;}
   table thead th{font-size:11px !important;letter-spacing:0.1em;padding:10px 12px !important;}
   table tbody td{font-size:15px !important;padding:10px 12px !important;line-height:1.7 !important;}
-  table tbody td.r{font-size:15px !important;}
-  .row-sec td{font-size:12px !important;}
+  .row-sec td{font-size:11px !important;}
   .row-tot td{font-size:16px !important;}
   .ks-lbl{font-size:11px !important;}
   .ks-sub{font-size:13px !important;}
-  .cdesc{font-size:14px !important;}
-  .cond-body{font-size:15px !important;}
-  .risk-label{font-size:15px !important;}
-  .risk-body{font-size:15px !important;}
-  .dir-body{font-size:15px !important;}
-  .vie-price{font-size:14px !important;}
   .bs{font-size:14px !important;}
-
 </style>
-  <link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
 
-<!-- PAGE 8, FINANCEMENT -->
+<!-- ═══════════════ PAGE 5 : PRÉVISIONNEL -->
 <div class="page">
-  <div class="sl">Le financement</div>
-  <h1>Structure de capital<br>et avantages fiscaux.</h1>
-
-  <div class="two">
-    <div>
-      <h3>Sources de financement</h3>
-      <div class="fr"><div class="lbl">Investisseurs (2 × 1&#8239;000&#8239;000€)</div><div class="amt">2&#8239;000&#8239;000€</div></div>
-      <div class="fr"><div class="lbl">Financement bancaire (55% construction, 45% projet total)</div><div class="amt">2&#8239;200&#8239;000€</div></div>
-      <div class="fr"><div class="lbl">Subvention GO SIYAHA</div><div class="amt">560&#8239;000€</div></div>
-      <div class="fr total"><div class="lbl">Total sources</div><div class="amt">4&#8239;760&#8239;000€</div></div>
-
-      <h3 style="margin-top:28px;">Répartition capitalistique</h3>
-      <div class="fr"><div class="lbl">Régis Finot</div><div class="amt">40%, 1&#8239;000&#8239;000€ cash</div></div>
-      <div class="fr"><div class="lbl">Teddy Riner</div><div class="amt">40%, 1&#8239;000&#8239;000€ cash</div></div>
-      <div class="fr"><div class="lbl">Leroy Brothers</div><div class="amt">20%, apport en nature</div></div>
-      <p class="bs" style="margin-top:12px;">L'apport en nature Leroy Brothers, droits de marque Toile Blanche, savoir-faire, direction artistique, gestion opérationnelle, réseau SLH, est valorisé à 20% du total projet.</p>
-
-      <h3 style="margin-top:24px;">Structure juridique et dette</h3>
-      <div class="fr"><div class="lbl">Véhicule</div><div class="amt">SARL droit marocain</div></div>
-      <div class="fr"><div class="lbl">Prêt bancaire @ 4,5%, 7 ans</div><div class="amt">373&#8239;000€ / an</div></div>
-      <div class="fr"><div class="lbl">Titre Foncier confirmé</div><div class="amt">Zéro risque VNA</div></div>
-      <div class="fr"><div class="lbl">GO SIYAHA, probabilité</div><div class="amt">Quasi-certaine</div></div>
-    </div>
-
-    <div>
-      <h3 style="margin-top:28px;">Subvention GO SIYAHA — optimisation par axes</h3>
-      <div class="fr"><div class="lbl">Axe Hébergement + Animation (30%)</div><div class="amt">~225&#8239;000€</div></div>
-      <div class="fr"><div class="lbl">Axe Croissance Verte (40% investissements off-grid)</div><div class="amt">~200&#8239;000€</div></div>
-      <div class="fr"><div class="lbl">Axe Appui Conseil (90% expertise technique)</div><div class="amt">~135&#8239;000€</div></div>
-      <div class="fr total"><div class="lbl">Total GO SIYAHA estimé</div><div class="amt">560&#8239;000€</div></div>
-      <p class="bs" style="margin-top:10px;">Le programme GO SIYAHA (Maroc PME) court jusqu'en 2026. Le dossier Toile Blanche Marrakech est éligible aux trois axes simultanément. L'axe Croissance Verte s'applique aux investissements solaires, gestion de l'eau et biodigesteur. L'axe Appui Conseil couvre l'ingénierie touristique et la stratégie opérationnelle à 90%. Probabilité d'obtention : quasi-certaine selon le profil du dossier.</p>
-
-
-      <h3 style="margin-top:36px;">TAMWILCOM — Sécurisation de la dette et protection des associés</h3>
-      <p>L'intervention de TAMWILCOM (ex-CCG) est la clé pour lever les verrous bancaires classiques. Elle répond directement à la question des cautions personnelles.</p>
-      <div class="fr"><div class="lbl">Damane Istithmar — Garantie de crédit</div><div class="amt">60% du principal</div></div>
-      <div class="fr"><div class="lbl">Prêt bancaire garanti</div><div class="amt">2&#8239;200&#8239;000€</div></div>
-      <div class="fr"><div class="lbl">Risque résiduel non garanti</div><div class="amt">880&#8239;000€</div></div>
-      <p class="bs" style="margin-top:12px;">En partageant 60% du risque avec TAMWILCOM, la banque est structurellement moins exposée et donc plus encline à limiter ou plafonner les cautions personnelles et solidaires demandées aux associés. C'est la protection directe de l'investisseur face à la dette de construction.</p>
-      <p class="bs">Le risque résiduel non garanti de 880&#8239;000€ est par ailleurs intégralement couvert par la valeur du terrain et du bâtiment existant, acquis à 700&#8239;000€ à l'état brut. Après construction Phase 1, la valeur de l'actif dépasse structurellement l'encours bancaire résiduel. Les cautions personnelles constituent une protection de confort pour la banque, non une nécessité financière au regard de la valeur de l'actif nanti.</p>
-      <p class="bs">Si nécessaire, TAMWILCOM propose également des solutions de cofinancement (Cap Jeune, Invest) pour renforcer la structure financière sans dilution supplémentaire du capital.</p>
-    </div>
-  </div>
-
-  <h3 style="margin-top:28px;">Avantages fiscaux Maroc</h3>
-  <div style="border-left:2px solid var(--cedar);padding:16px 20px;background:var(--sky);margin-bottom:16px;">
-    <div class="sl">Exonération IS, 5 ans</div>
-    <h2 style="font-size:14px;margin-top:4px;">~750&#8239;000€ d'économie cumulée</h2>
-    <p>Exonération totale d'IS sur le CA en devises étrangères rapatriées, confirmé LF 2026. Clientèle européenne majoritaire : quasi-totalité du CA hébergement éligible. Après 5 ans : IS à 20%.</p>
-    <p class="bs">Couvre quasi-intégralement le service de la dette bancaire sur la même période.</p>
-  </div>
-  <div style="border-left:2px solid var(--pise-light);padding:16px 20px;background:var(--sky);margin-bottom:16px;">
-    <div class="sl">TVA hébergement et restauration</div>
-    <h2 style="font-size:14px;margin-top:4px;">10%, taux réduit permanent</h2>
-    <p class="bs">Vs 20% taux standard. Améliore directement la compétitivité tarifaire sans effort commercial supplémentaire.</p>
-  </div>
-  <img src="images/img_financement_avantages_maroc.png" alt="" style="width:100%;display:block;margin:32px 0;">
-
-</div>
-
-<!-- PAGE 9, FONDS DE CROISSANCE -->
-<div class="page">
-  <div class="sl">Le mécanisme de croissance</div>
-  <h1>Le Fonds de Croissance.<br>L'actif qui se construit<br>lui-même.</h1>
-
-  <div class="fonds-block">
-    <div class="fonds-header">
-      <div>
-        <div class="fonds-title">35% du résultat net,<br>dès l'année 1, sans exception.</div>
-        <p style="margin-top:12px;">Le Fonds de Croissance n'est pas une réserve dormante. C'est un investissement collectif continu, prélevé sur les bénéfices de l'exploitation, affecté au développement du territoire. Chaque euro qui entre dans le fonds construit des actifs qui appartiennent à tous les associés dans leurs proportions respectives, 40% Finot, 40% Riner, 20% Leroy Brothers. Les investisseurs ne sont jamais sollicités après leur mise initiale. Le territoire se développe avec ses propres revenus.</p>
-        <p>Ce mécanisme est la différence fondamentale entre un investissement hôtelier classique et ce projet. Ailleurs, la croissance requiert du capital externe. Ici, elle est organique, le résultat de ce qui a déjà été construit finance ce qui sera construit ensuite.</p>
-        <p class="bs">Le déclenchement de la Phase 2 est conditionné à la constitution préalable d'une réserve opérationnelle de 6 mois de charges (seuil indicatif : 400&#8239;000€). La croissance ne compromet jamais l'exploitation.</p>
-      </div>
-      <div>
-        <div class="fonds-pct">35%</div>
-        <div class="fonds-pct-label">Du résultat net<br>dès l'année 1</div>
-      </div>
-    </div>
-
-    <div class="fonds-grid">
-      <div class="fonds-col">
-        <div class="fonds-col-title">Priorité 1, Infrastructures</div>
-        <div class="fonds-col-body">Studio Leroy Brothers, hammam, systèmes off-grid clusters 4 et 5, enhancements du territoire. Ces éléments sont déjà provisionnés et réservés dans le plan masse Phase 1. Le fonds les finance dès l'année 1 sans attendre.</div>
-      </div>
-      <div class="fonds-col">
-        <div class="fonds-col-title">Priorité 2, Clusters</div>
-        <div class="fonds-col-body">Une fois les infrastructures couvertes, le fonds accumule vers le prochain cluster. Un cluster coûte ~850&#8239;000€. À 700&#8239;000€ de versement annuel moyen, le fonds atteint ce seuil en environ 14-18 mois après les infrastructures. Cluster 4 en construction année 3-4.</div>
-      </div>
-      <div class="fonds-col">
-        <div class="fonds-col-title">Priorité 3, Amélioration continue</div>
-        <div class="fonds-col-body">Entre les clusters, le fonds finance les améliorations permanentes du territoire, nouvelles œuvres, plantation oliveraie nord, équipements culturels, programme artistique. Le lieu évolue en permanence, sans jamais solliciter les associés.</div>
-      </div>
-    </div>
-
-    <div class="fonds-timeline">
-      <div class="sl" style="margin-bottom:12px;">Projection du fonds, utilisation année par année</div>
-      <div class="ft-row">
-        <div class="ft-year">Année 1</div>
-        <div class="ft-desc">Abondement 639&#8239;000€. Studio Leroy Brothers (275&#8239;000€) + hammam réservé + premiers enhancements. Solde reporté ~284&#8239;000€.</div>
-        <div class="ft-amt">+639&#8239;000€</div>
-      </div>
-      <div class="ft-row">
-        <div class="ft-year">Année 2</div>
-        <div class="ft-desc">Abondement 772&#8239;000€. Hammam Cluster 2 (80&#8239;000€) + off-grid clusters 4-5 (90&#8239;000€) + oliveraie nord. Solde cumulé ~886&#8239;000€.</div>
-        <div class="ft-amt">+772&#8239;000€</div>
-      </div>
-      <div class="ft-row">
-        <div class="ft-year">Année 3</div>
-        <div class="ft-desc">Abondement 861&#8239;000€. Solde cumulé ~1&#8239;747&#8239;000€. Cluster 4 lancé en fin d'année (4 unités, ~850&#8239;000€). Solde restant ~897&#8239;000€.</div>
-        <div class="ft-amt">+861&#8239;000€</div>
-      </div>
-      <div class="ft-row">
-        <div class="ft-year">Années 4-6</div>
-        <div class="ft-desc">Abondements annuels ~900&#8239;000€+. Cluster 4 en exploitation ajoute des revenus. Accumulation vers Cluster 5. Cluster 5 construit en année 5-6. Territoire complet à 20 unités.</div>
-        <div class="ft-amt">~900&#8239;000€/an</div>
-      </div>
-      <div class="ft-row">
-        <div class="ft-year">Année 7+</div>
-        <div class="ft-desc">20 unités en exploitation. Fonds de Croissance devient fonds d'amélioration permanente du territoire. Aucune nouvelle construction, plafond artistique atteint.</div>
-        <div class="ft-amt">Territoire complet</div>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<!-- PAGE 10, PRÉVISIONNEL -->
-<div class="page">
-  <div class="sl">Le prévisionnel</div>
-  <h1>12 unités dès l'ouverture.<br>Payback année 3.</h1>
-
-  <p class="bs">12 unités à l'ouverture. TO année 1 établi à 65%, niveau conservateur pour un projet avec audience pré-constituée (6&#8239;600 abonnés newsletter, SLH dès l'ouverture, campagne pré-ouverture, événement de lancement). 35% du résultat net affecté au Fonds de Croissance dès l'année 1, le dividende distribué aux associés est calculé sur les 65% restants.</p>
+  <div class="ph"><span>Khaimas — Toile Blanche Marrakech</span><span>Le prévisionnel</span></div>
+  <div class="sl">Exploitation corrigée</div>
+  <h1>24 tentes.<br>Hypothèses de marché réelles.</h1>
 
   <div class="kpi-strip">
-    <div class="ks-item">
-      <div class="ks-val">65%</div>
+    <div class="ks-box">
+      <div class="ks-val">55%</div>
       <div class="ks-lbl">TO année 1</div>
-      <div class="ks-sub">2&#8239;847 nuits vendues</div>
+      <div class="ks-sub">4 818 nuits vendues</div>
     </div>
-    <div class="ks-item">
-      <div class="ks-val">75%</div>
+    <div class="ks-box">
+      <div class="ks-val">65%</div>
       <div class="ks-lbl">TO année 2</div>
-      <div class="ks-sub">3&#8239;285 nuits vendues</div>
+      <div class="ks-sub">5 694 nuits vendues</div>
     </div>
-    <div class="ks-item">
-      <div class="ks-val">82%</div>
+    <div class="ks-box">
+      <div class="ks-val">70%</div>
       <div class="ks-lbl">TO année 3 stabilisé</div>
-      <div class="ks-sub">3&#8239;584 nuits vendues</div>
+      <div class="ks-sub">6 132 nuits vendues</div>
     </div>
   </div>
-
-<img src="images/img_b0edb9b0a9a7147c.png" alt="" style="width:100%;display:block;margin:32px 0;">
 
   <table class="prev">
     <thead>
       <tr>
-        <th style="width:44%;">Indicateur</th>
+        <th>Indicateur</th>
         <th class="r">Année 1</th>
         <th class="r">Année 2</th>
         <th class="r">Année 3 stabilisé</th>
@@ -302,101 +150,135 @@
     </thead>
     <tbody>
       <tr class="row-sec"><td colspan="4">Hypothèses</td></tr>
-      <tr><td>Taux d'occupation</td><td class="r">65%</td><td class="r">75%</td><td class="r">82%</td></tr>
-      <tr><td>ADR 1BR blended (650€ basse / 950€ haute)</td><td class="r">800€</td><td class="r">800€</td><td class="r">800€</td></tr>
-      <tr><td>Nuits vendues (12 unités × 365j)</td><td class="r">2&#8239;847</td><td class="r">3&#8239;285</td><td class="r">3&#8239;584</td></tr>
+      <tr><td>Taux d'occupation</td><td class="r">55%</td><td class="r">65%</td><td class="r">70%</td></tr>
+      <tr><td>ADR blended (24 tentes)</td><td class="r">600€</td><td class="r">650€</td><td class="r">700€</td></tr>
+      <tr><td>Nuits vendues</td><td class="r">4 818</td><td class="r">5 694</td><td class="r">6 132</td></tr>
+
       <tr class="row-sec"><td colspan="4">Revenus</td></tr>
-      <tr><td>Hébergement (12 mini-riads @ 800€ blended)</td><td class="r">2&#8239;278&#8239;000€</td><td class="r">2&#8239;628&#8239;000€</td><td class="r">2&#8239;867&#8239;000€</td></tr>
-      <tr><td>Restaurant, bar, galerie (22% du CA hébergement)</td><td class="r">501&#8239;000€</td><td class="r">578&#8239;000€</td><td class="r">631&#8239;000€</td></tr>
-      <tr><td>Événements et privatisations</td><td class="r">40&#8239;000€</td><td class="r">70&#8239;000€</td><td class="r">100&#8239;000€</td></tr>
-      <tr class="row-sub"><td>Total revenus</td><td class="r">2&#8239;819&#8239;000€</td><td class="r">3&#8239;276&#8239;000€</td><td class="r">3&#8239;598&#8239;000€</td></tr>
-      <tr class="row-sec"><td colspan="4">Charges</td></tr>
-      <tr><td>Ressources humaines (17 ETP an 1)</td><td class="r">390&#8239;000€</td><td class="r">430&#8239;000€</td><td class="r">470&#8239;000€</td></tr>
-      <tr><td>Charges opérationnelles</td><td class="r">430&#8239;000€</td><td class="r">465&#8239;000€</td><td class="r">495&#8239;000€</td></tr>
-      <tr><td>Service dette bancaire</td><td class="r">373&#8239;000€</td><td class="r">373&#8239;000€</td><td class="r">373&#8239;000€</td></tr>
-      <tr class="row-sub"><td>Total charges</td><td class="r">1&#8239;193&#8239;000€</td><td class="r">1&#8239;268&#8239;000€</td><td class="r">1&#8239;338&#8239;000€</td></tr>
-      <tr class="row-sub"><td>Résultat net</td><td class="r">1&#8239;626&#8239;000€</td><td class="r">2&#8239;008&#8239;000€</td><td class="r">2&#8239;260&#8239;000€</td></tr>
-      <tr class="row-sec"><td colspan="4">Affectation du résultat</td></tr>
-      <tr class="row-fund"><td>Fonds de Croissance (35%)</td><td class="r">-569&#8239;000€</td><td class="r">-703&#8239;000€</td><td class="r">-791&#8239;000€</td></tr>
-      <tr class="row-sub"><td>Résultat distribuable (65%)</td><td class="r">1&#8239;057&#8239;000€</td><td class="r">1&#8239;305&#8239;000€</td><td class="r">1&#8239;469&#8239;000€</td></tr>
-      <tr class="row-tot"><td>Dividende par investisseur (40%)</td><td class="r">423&#8239;000€</td><td class="r">522&#8239;000€</td><td class="r">588&#8239;000€</td></tr>
+      <tr><td>Hébergement</td><td class="r">2 891 000€</td><td class="r">3 701 000€</td><td class="r">4 292 000€</td></tr>
+      <tr><td>Restaurant, bar (22% héb.)</td><td class="r">636 000€</td><td class="r">814 000€</td><td class="r">944 000€</td></tr>
+      <tr><td>Spa, hammam, activités</td><td class="r">385 000€</td><td class="r">456 000€</td><td class="r">491 000€</td></tr>
+      <tr class="row-sub"><td><strong>Total revenus</strong></td><td class="r"><strong>3 912 000€</strong></td><td class="r"><strong>4 971 000€</strong></td><td class="r"><strong>5 727 000€</strong></td></tr>
+
+      <tr class="row-sec"><td colspan="4">Charges d'exploitation</td></tr>
+      <tr><td>Ressources humaines (45 ETP)</td><td class="r">540 000€</td><td class="r">575 000€</td><td class="r">610 000€</td></tr>
+      <tr><td>Achats F&amp;B (25% CA F&amp;B)</td><td class="r">159 000€</td><td class="r">204 000€</td><td class="r">236 000€</td></tr>
+      <tr><td>Charges opérationnelles</td><td class="r">450 000€</td><td class="r">480 000€</td><td class="r">510 000€</td></tr>
+      <tr><td>Marketing et distribution (12%)</td><td class="r">469 000€</td><td class="r">597 000€</td><td class="r">687 000€</td></tr>
+      <tr><td>TB Management Fee (7,5%)</td><td class="r">293 000€</td><td class="r">373 000€</td><td class="r">430 000€</td></tr>
+      <tr class="row-gop"><td>GOP (base, avant incentive)</td><td class="r">2 001 000€</td><td class="r">2 742 000€</td><td class="r">3 254 000€</td></tr>
+      <tr><td>TB Incentive Fee (15% du GOP)</td><td class="r">300 000€</td><td class="r">411 000€</td><td class="r">488 000€</td></tr>
+      <tr><td>Service dette (1,5M€ @ 4,5%, 7 ans)</td><td class="r">240 000€</td><td class="r">240 000€</td><td class="r">240 000€</td></tr>
+      <tr class="row-alert"><td><strong>Provision remplacement tentes (10 ans)</strong></td><td class="r"><strong>360 000€</strong></td><td class="r"><strong>360 000€</strong></td><td class="r"><strong>360 000€</strong></td></tr>
+      <tr class="row-sub"><td><strong>Total charges</strong></td><td class="r"><strong>2 811 000€</strong></td><td class="r"><strong>3 240 000€</strong></td><td class="r"><strong>3 561 000€</strong></td></tr>
+
+      <tr class="row-sec"><td colspan="4">Résultat</td></tr>
+      <tr class="row-tot"><td><strong>Résultat net</strong></td><td class="r"><strong>1 101 000€</strong></td><td class="r"><strong>1 731 000€</strong></td><td class="r"><strong>2 166 000€</strong></td></tr>
+      <tr><td>Dividende / investisseur (40%)</td><td class="r">440 000€</td><td class="r">693 000€</td><td class="r">866 000€</td></tr>
+      <tr><td style="font-style:italic;font-size:13px;color:var(--pise-mid);" colspan="4">Sans provision tentes : résultat net Y3 = 2 526 000€ — mais ce capital doit être disponible au moment du remplacement.</td></tr>
     </tbody>
   </table>
 
-  <p class="bs">Résultat avant IS (exonéré 5 ans sur CA en devises). Le Fonds de Croissance est commun aux trois associés dans leurs proportions respectives, 40/40/20. Chaque actif construit par le fonds appartient à tous. Payback de la mise initiale (1&#8239;250&#8239;000€) atteint courant année 3 par dividendes cumulés (423K + 522K + 588K = 1&#8239;533&#8239;000€).</p>
-
+  <div class="ab2" style="margin-top:12px;">
+    <p style="font-size:14px;color:var(--pise-mid);line-height:1.8;">Marketing à 12% vs. 10% pour les autres projets : une tente sur la Route de Fès, sans track record ni réputation établie, nécessite un effort marketing supérieur pour atteindre la clientèle premium internationale. Les projets Riads Pisé et Tigmi bénéficient du réseau Toile Blanche Saint-Paul de Vence et d'une presse déjà acquise. Khaimas part de zéro en notoriété.</p>
+  </div>
 </div>
 
-<!-- PAGE 11, RETOUR INVESTISSEUR -->
-<div class="page">
-  <div class="sl">Le retour investisseur</div>
-  <h1>Mise : 1&#8239;250&#8239;000€.<br>Synthèse 5 ans.</h1>
 
-  <div class="retour-box">
+
+
+<!-- ═══════════════ PAGE 6 : RETOUR + COMPARATIF -->
+<div class="page">
+  <div class="ph"><span>Khaimas — Toile Blanche Marrakech</span><span>Le retour et le comparatif</span></div>
+  <div class="sl">Retour investisseur</div>
+  <h1>Les trois projets.<br>Côte à côte.</h1>
+
+  <div class="two">
     <div>
-      <div class="retour-label">Retour cible, scénario TO 82%</div>
-      <div class="retour-big">5,5×</div>
-      <div class="retour-sub">Payback par dividendes seuls, année 3</div>
+      <table class="prev">
+        <thead>
+          <tr><th>Flux / investisseur (40%)</th><th class="r">Khaimas</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Mise initiale</td><td class="r">1 000 000€</td></tr>
+          <tr class="row-sec"><td colspan="2">Dividendes</td></tr>
+          <tr><td>Année 1</td><td class="r">440 000€</td></tr>
+          <tr><td>Année 2</td><td class="r">692 000€</td></tr>
+          <tr><td>Année 3</td><td class="r">866 000€</td></tr>
+          <tr><td>Année 4</td><td class="r">866 000€</td></tr>
+          <tr><td>Année 5</td><td class="r">866 000€</td></tr>
+          <tr class="row-sub"><td><strong>Dividendes cumulés Y1–Y5</strong></td><td class="r"><strong>3 732 000€</strong></td></tr>
+          <tr class="row-sec"><td colspan="2">Cession — fenêtre années 5–7</td></tr>
+          <tr><td>Prix plancher (LBO)</td><td class="r">1 000 000€</td></tr>
+          <tr><td>Prix plafond (LBO)</td><td class="r">2 000 000€</td></tr>
+          <tr class="row-tot"><td><strong>Retour total cible</strong></td><td class="r"><strong>~5 232 000€</strong></td></tr>
+          <tr><td style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--cedar);">Multiple cible</td><td class="r" style="font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--cedar);font-weight:300;">5,2×</td></tr>
+          <tr><td style="font-size:13px;color:var(--alert);font-style:italic;" colspan="2">Payback : courant année 3 — Y1+Y2 = 1 132 000€ (insuffisant). Y1+Y2+Y3 = 1 999 000€.</td></tr>
+          <tr><td style="font-size:13px;color:var(--alert);font-style:italic;" colspan="2">Note : La cession plafond est plus basse car l'actif principal (les tentes) ne vaut presque rien à 7 ans.</td></tr>
+        </tbody>
+      </table>
     </div>
+
     <div>
-      <div class="fr"><div class="lbl">Dividendes cumulés 5 ans / investisseur</div><div class="amt">~2&#8239;872&#8239;000€</div></div>
-      <div class="fr"><div class="lbl">Prix plancher de cession / investisseur</div><div class="amt">2&#8239;000&#8239;000€</div></div>
-      <div class="fr"><div class="lbl">Prix plafond de cession / investisseur</div><div class="amt">4&#8239;000&#8239;000€</div></div>
-      <div class="fr"><div class="lbl">Fenêtre de sortie</div><div class="amt">Années 5, 6 ou 7</div></div>
-      <div class="fr"><div class="lbl">Mécanisme</div><div class="amt">LBO Leroy Brothers</div></div>
-      <div class="fr total"><div class="lbl">Retour total cible / investisseur</div><div class="amt">~6&#8239;872&#8239;000€</div></div>
+      <div class="ab">
+        <div class="sl">Ce que la cession valorise</div>
+        <h2>Un actif sans tentes<br>vaut moins.</h2>
+        <p class="bs">À l'heure de la sortie (années 5–7), les tentes ont 5 à 7 ans. Elles ont perdu une partie significative de leur valeur commerciale. Ce qui reste à céder : le terrain, le bâtiment principal, la piscine, les infrastructures permanentes. La valeur de cession est donc structurellement inférieure à celle d'un actif en pierre — Riads Pisé ou Tigmi — où chaque mètre carré construit prend de la valeur avec le temps.</p>
+        <p class="bs">C'est la différence fondamentale entre un investissement en actif périssable et un investissement en actif permanent. Le multiple est similaire <em>en apparence</em> — il est structurellement plus fragile.</p>
+      </div>
     </div>
   </div>
 
-  <table class="prev">
+  <!-- FULL 3-WAY COMPARISON -->
+  <div class="rule"></div>
+  <h3>Comparatif complet — Les trois projets</h3>
+  <table class="comp">
     <thead>
       <tr>
-        <th style="width:36%;">Flux / investisseur (40%)</th>
-        <th class="r">Année 1</th>
-        <th class="r">Année 2</th>
-        <th class="r">Année 3</th>
-        <th class="r">Année 4</th>
-        <th class="r">Année 5</th>
+        <th>Critère</th>
+        <th class="r">Khaimas</th>
+        <th class="r">Tigmi</th>
+        <th class="r">Riads Pisé</th>
       </tr>
     </thead>
     <tbody>
-      <tr><td>Résultat net total</td><td class="r">1&#8239;626&#8239;000€</td><td class="r">2&#8239;008&#8239;000€</td><td class="r">2&#8239;260&#8239;000€</td><td class="r">~2&#8239;432&#8239;000€</td><td class="r">~2&#8239;719&#8239;000€</td></tr>
-      <tr><td>Fonds de Croissance (35%)</td><td class="r">-569&#8239;000€</td><td class="r">-703&#8239;000€</td><td class="r">-791&#8239;000€</td><td class="r">-851&#8239;000€</td><td class="r">-952&#8239;000€</td></tr>
-      <tr class="row-sub"><td>Résultat distribuable</td><td class="r">1&#8239;057&#8239;000€</td><td class="r">1&#8239;305&#8239;000€</td><td class="r">1&#8239;469&#8239;000€</td><td class="r">1&#8239;581&#8239;000€</td><td class="r">1&#8239;767&#8239;000€</td></tr>
-      <tr class="row-sub"><td>Dividende / investisseur (40%)</td><td class="r">423&#8239;000€</td><td class="r">522&#8239;000€</td><td class="r">588&#8239;000€</td><td class="r">632&#8239;000€</td><td class="r">707&#8239;000€</td></tr>
-      <tr class="row-sec"><td colspan="6">Cumulé et sortie</td></tr>
-      <tr><td>Dividendes cumulés 5 ans / investisseur</td><td class="r" colspan="5">2&#8239;872&#8239;000€</td></tr>
-      <tr><td>Actifs créés par le Fonds de Croissance (appartiennent aux associés)</td><td class="r" colspan="5">Clusters 4 et 5 + infrastructures, valeur ~2&#8239;000&#8239;000€</td></tr>
-      <tr><td>Prix de cession (5× EBITDA yr5, fenêtre yr5-7)</td><td class="r" colspan="5">~4&#8239;000&#8239;000€ (plafond), floor 2&#8239;000&#8239;000€</td></tr>
-      <tr class="row-tot"><td>Retour total / investisseur</td><td class="r" colspan="5">~6&#8239;872&#8239;000€, soit 5,5× le capital investi minimum</td></tr>
-    </tbody>
-  </table>
-
-  <p class="bs" style="margin-top:8px;">Note importante : le prix de cession valorise l'actif complet à la sortie, y compris les clusters construits par le Fonds de Croissance. Un investisseur qui sort en année 5 cède sa part d'un actif de 20 unités, dont 8 ont été construites avec les bénéfices de l'exploitation. Il ne sort pas sur la base de 12 unités. C'est la puissance du mécanisme : le Fonds de Croissance travaille pour la valeur de sortie autant que pour le développement du territoire.</p>
-
-  <div class="div-f"></div>
-
-  <h3>Scénarios comparés, retour par investisseur à la sortie année 5</h3>
-  <table class="scen">
-    <thead>
-      <tr>
-        <th>Scénario</th>
-        <th class="r">Dividendes 5 ans</th>
-        <th class="r">Prix cession</th>
-        <th class="r">Total</th>
-        <th class="r">Multiple</th>
+      <tr><td>Investissement total</td><td class="r worst">7,82M€</td><td class="r best">3,15M€</td><td class="r">4,76M€</td></tr>
+      <tr><td>Gap de financement</td><td class="r worst">4,02M€ à lever</td><td class="r best">Aucun</td><td class="r best">Aucun</td></tr>
+      <tr><td>Mise / investisseur</td><td class="r">1,00M€</td><td class="r best">1,00M€</td><td class="r">1,25M€</td></tr>
+      <tr><td>Unités à l'ouverture</td><td class="r">24 tentes</td><td class="r best">30 clés</td><td class="r">12 clés</td></tr>
+      <tr><td>Délai avant ouverture</td><td class="r">18 mois</td><td class="r best">12 mois</td><td class="r worst">24 mois</td></tr>
+      <tr><td>ADR cible stabilisé</td><td class="r">700€</td><td class="r">500€</td><td class="r best">800€</td></tr>
+      <tr><td>Durée de vie actif</td><td class="r worst">7–10 ans</td><td class="r best">Permanent</td><td class="r best">Permanent</td></tr>
+      <tr><td>Provision remplacement</td><td class="r worst">360 000€/an</td><td class="r best">0€</td><td class="r best">0€</td></tr>
+      <tr><td>Revenu Y3 stabilisé</td><td class="r">5 727 000€</td><td class="r best">5 159 000€</td><td class="r">3 598 000€</td></tr>
+      <tr><td>Résultat net Y3</td><td class="r">2 166 000€</td><td class="r best">2 508 000€</td><td class="r">2 260 000€</td></tr>
+      <tr><td>Dividende Y3 / invest.</td><td class="r">866 000€</td><td class="r best">1 003 000€</td><td class="r">588 000€</td></tr>
+      <tr><td>Payback mise initiale</td><td class="r worst">Courant Y3</td><td class="r best">Fin Y2</td><td class="r">Courant Y3</td></tr>
+      <tr><td>Dividendes cumulés Y1–Y5</td><td class="r">3 732 000€</td><td class="r best">4 533 000€</td><td class="r">2 709 000€</td></tr>
+      <tr><td>Cession plafond LBO</td><td class="r worst">1 500 000€</td><td class="r">2 500 000€</td><td class="r best">3 000 000€</td></tr>
+      <tr class="row-tot">
+        <td><strong>Multiple cible</strong></td>
+        <td class="r" style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--alert);">5,2×</td>
+        <td class="r" style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--cedar);">7,0×</td>
+        <td class="r" style="font-family:'Cormorant Garamond',serif;font-size:22px;">5,7×</td>
       </tr>
-    </thead>
-    <tbody>
-      <tr><td>Conservateur (TO 65%, ADR 750€)</td><td>2&#8239;100&#8239;000€</td><td>2&#8239;000&#8239;000€</td><td>4&#8239;100&#8239;000€</td><td>3,3×</td></tr>
-      <tr class="scen-hl"><td>Cible (TO 82%, ADR 800€)</td><td>2&#8239;872&#8239;000€</td><td>~4&#8239;000&#8239;000€</td><td>~6&#8239;872&#8239;000€</td><td>5,5×</td></tr>
-      <tr><td>Favorable (TO 90%, ADR 850€)</td><td>3&#8239;800&#8239;000€</td><td>4&#8239;000&#8239;000€</td><td>~7&#8239;800&#8239;000€</td><td>6,2×</td></tr>
     </tbody>
   </table>
 
-  <p class="bs" style="margin-top:10px;">Le plancher de 2&#8239;000&#8239;000€ garantit 3,3× minimum en scénario conservateur, capital investi remboursé par dividendes courant année 3 dans tous les scénarios. La question n'est pas "est-ce que je récupère ma mise" mais "quel multiple je capture à la sortie".</p>
+  <div class="alert" style="margin-top:20px;">
+    <div class="sl">La conclusion que les chiffres imposent</div>
+    <h2>Même multiple. Risque supérieur. Financement plus complexe.</h2>
+    <p class="bs">Khaimas affiche un multiple de 5,2× contre 5,7× pour Riads Pisé. Khaimas nécessite 7,82M€ d'investissement (dont 4,02M€ à lever), génère des dividendes inférieurs à Tigmi chaque année, impose une provision structurelle de 360 000€/an pour un actif qui s'efface, et produit une cession à valeur résiduelle réduite. Le projet est possible. Il n'est pas optimal. Les chiffres ne mentent pas.</p>
+  </div>
 
+  <div class="pf">
+    <span>Toile Blanche Group — Leroy Brothers — Mai 2026</span>
+    <span>Document confidentiel — projections à titre indicatif</span>
+  </div>
 </div>
+
+
+
 
 </body>
 </html>
