@@ -16,19 +16,20 @@
   th,td{overflow-wrap:anywhere;word-break:break-word;}
   body{touch-action:pan-y;background:var(--sand);color:var(--pise);font-family:'Montserrat',sans-serif;font-weight:300;font-size:17px;line-height:1.75;max-width:960px;margin:0 auto;}
 
-  .cover{width:100%;min-height:620px;background:var(--sand);position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:56px 52px;}
+  .cover{width:100%;min-height:620px;background:var(--sand);display:flex;flex-direction:column;justify-content:space-between;padding:56px 52px;}
   .cover-mid{padding:40px 0;}
   .cover-rule{width:40px;height:1px;background:var(--cedar);margin-bottom:28px;}
   .ct{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:58px;line-height:1.02;color:var(--pise);margin-bottom:8px;}
   .cs{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:25px;color:var(--pise-mid);margin-bottom:36px;}
-  .cd{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16.5px;color:var(--pise-mid);max-width:460px;line-height:1.9;border-left:1px solid var(--cedar);padding-left:18px;}
+  .cd{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--pise-mid);max-width:460px;line-height:1.9;border-left:1px solid var(--cedar);padding-left:18px;}
   .cover-bottom{border-top:1px solid var(--cedar);padding-top:24px;}
   .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
   .kpi{padding-right:24px;border-right:1px solid var(--pise-light);}
   .kpi:last-child{border-right:none;}
-  .kv{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:30px;color:var(--pise);line-height:1;margin-bottom:4px;}
-  .kl{font-size:10.5px;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;margin-bottom:2px;}
-  .ks{font-size:11.5px;color:var(--pise-mid);}
+  .kpi:not(:first-child){padding-left:24px;}
+  .kv{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:28px;color:var(--pise);line-height:1;margin-bottom:4px;}
+  .kl{font-size:10px;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;margin-bottom:2px;}
+  .ks{font-size:11px;color:var(--pise-mid);}
 
   .page{padding:56px 52px;border-bottom:1px solid var(--pise-light);}
   .ph{display:flex;justify-content:space-between;margin-bottom:40px;padding-bottom:10px;border-bottom:1px solid var(--cedar);}
@@ -43,53 +44,45 @@
   .two{display:grid;grid-template-columns:1.15fr 0.85fr;gap:44px;margin:20px 0;}
   .two-eq{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:20px 0;}
   .ul{list-style:none;margin:0 0 14px;padding:0;}
-  .ul li{font-size:16.5px;line-height:1.75;padding-left:14px;position:relative;margin-bottom:3px;}
-  .ul li::before{content:'·';position:absolute;left:0;color:var(--cedar);font-size:15px;line-height:1.4;}
-  .qb{border-left:1px solid var(--cedar);padding:14px 20px;background:var(--sky);margin:16px 0;}
-  .qb p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;line-height:1.75;}
-  .qs{font-size:10.5px;letter-spacing:0.16em;color:var(--cedar);text-transform:uppercase;margin-top:7px;}
+  .ul li{font-size:16px;line-height:1.75;padding-left:14px;position:relative;margin-bottom:3px;}
+  .ul li::before{content:'·';position:absolute;left:0;color:var(--cedar);}
   .pf{margin-top:40px;padding-top:12px;border-top:1px solid var(--pise-light);display:flex;justify-content:space-between;}
   .pf span{font-size:10.5px;letter-spacing:0.13em;color:var(--pise-mid);text-transform:uppercase;}
   .ab{border-left:2px solid var(--cedar);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
   .ab2{border-left:2px solid var(--pise-light);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
   .alert{border-left:2px solid var(--alert);padding:18px 22px;background:#FDF5F3;margin-bottom:16px;}
   .alert .sl{color:var(--alert);}
+  .preferred{border-left:2px solid var(--pise);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
   .rule{width:36px;height:1px;background:var(--cedar);margin:20px 0;}
 
-  /* KPI STRIP */
-  .kpi-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--pise-light);margin:24px 0;}
-  .ks-box{background:var(--sky);padding:20px 18px;}
-  .ks-val{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--pise);line-height:1;margin-bottom:6px;}
-  .ks-lbl{font-size:10px;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;}
-  .ks-sub{font-size:12px;color:var(--pise-mid);margin-top:3px;}
+  .scen-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--pise-light);margin:24px 0;}
+  .scen-block{padding:24px 22px;}
+  .scen-a{background:var(--sky);}
+  .scen-b{background:var(--sand);}
+  .scen-label{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;}
+  .scen-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:var(--pise);margin-bottom:10px;line-height:1.2;}
+  .scen-body{font-size:14px;line-height:1.7;color:var(--pise-mid);}
+  .scen-kpi{display:flex;justify-content:space-between;padding:7px 0;border-top:1px solid var(--pise-light);margin-top:2px;}
+  .scen-kpi:first-of-type{border-top:1px solid var(--cedar);margin-top:12px;}
+  .scen-kv{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--pise);}
+  .scen-kl{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--pise-mid);align-self:center;}
+  .preferred-tag{display:inline-block;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--sky);background:var(--pise);padding:3px 8px;margin-bottom:8px;}
 
-  /* TABLES */
   table.budget{width:100%;border-collapse:collapse;margin:20px 0;}
   table.budget thead tr{border-bottom:2px solid var(--cedar);}
   table.budget thead th{padding:8px 10px;text-align:left;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
   table.budget thead th.r{text-align:right;}
   table.budget tbody tr{border-bottom:1px solid var(--pise-light);}
-  table.budget tbody td{padding:7px 10px;color:var(--pise);font-size:14px;}
+  table.budget tbody td{padding:7px 10px;color:var(--pise);font-size:14px;vertical-align:top;}
   table.budget tbody td.r{text-align:right;}
   table.budget tbody td.note{font-size:10.5px;color:var(--pise-mid);}
-  table.budget tbody td.alert-cell{color:var(--alert);font-size:13px;}
-
-  table.prev{width:100%;border-collapse:collapse;margin:20px 0;}
-  table.prev thead tr{border-bottom:2px solid var(--cedar);}
-  table.prev thead th{padding:9px 10px;text-align:left;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
-  table.prev thead th.r{text-align:right;}
-  table.prev tbody tr{border-bottom:1px solid var(--pise-light);}
-  table.prev tbody td{font-size:14px;padding:9px 10px;line-height:1.65;color:var(--pise);}
-  table.prev tbody td.r{text-align:right;}
-
-  .row-sec td{background:var(--sand);color:var(--cedar);font-size:9px !important;letter-spacing:0.2em;text-transform:uppercase;padding:5px 10px !important;}
+  table.budget tbody td.alert-cell{color:var(--alert);}
+  .row-sec td{background:var(--sand);color:var(--cedar);letter-spacing:0.2em;text-transform:uppercase;padding:5px 10px;}
   .row-sub td{background:var(--sand);font-weight:400;}
-  .row-tot td{border-top:2px solid var(--cedar);border-bottom:none;font-weight:400;font-size:15px !important;padding:10px 10px !important;}
+  .row-tot td{border-top:2px solid var(--cedar);border-bottom:none;font-weight:400;padding:10px;}
   .row-gop td{background:var(--sky);font-style:italic;color:var(--pise-mid);}
   .row-alert td{background:#FDF5F3;color:var(--alert);}
-  .row-finot td{background:#F5F9F0;color:#3A6B2A;}
 
-  /* COMPARISON TABLE */
   table.comp{width:100%;border-collapse:collapse;margin:20px 0;}
   table.comp thead tr{border-bottom:2px solid var(--cedar);}
   table.comp thead th{padding:10px 12px;text-align:left;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
@@ -97,100 +90,95 @@
   table.comp tbody tr{border-bottom:1px solid var(--pise-light);}
   table.comp tbody td{padding:10px 12px;font-size:14px;color:var(--pise);}
   table.comp tbody td.r{text-align:right;}
-  table.comp tbody td.best{color:var(--cedar);font-weight:400;}
-  table.comp tbody td.worst{color:var(--alert);}
-  table.comp .row-tot td{border-top:2px solid var(--cedar);border-bottom:none;font-weight:400;font-size:15px !important;padding:12px !important;}
+  table.comp tbody td.best{color:var(--cedar);font-weight:400;text-align:right;}
+  table.comp tbody td.worst{color:var(--alert);text-align:right;}
+  table.comp .row-tot td{border-top:2px solid var(--cedar);font-weight:400;font-size:15px;padding:12px;}
 
-  /* OVERRIDES */
+  .weakness{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--pise-light);}
+  .weakness:last-child{border-bottom:none;}
+  .weakness-label{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--alert);margin-bottom:5px;font-weight:400;}
+  .weakness-body{font-size:15px;line-height:1.8;color:var(--pise);}
+
   table{font-size:15px !important;}
   table thead th{font-size:11px !important;letter-spacing:0.1em;padding:10px 12px !important;}
   table tbody td{font-size:15px !important;padding:10px 12px !important;line-height:1.7 !important;}
   .row-sec td{font-size:11px !important;}
   .row-tot td{font-size:16px !important;}
-  .ks-lbl{font-size:11px !important;}
-  .ks-sub{font-size:13px !important;}
   .bs{font-size:14px !important;}
+  .weakness-body{font-size:15px !important;}
+  .scen-body{font-size:14px !important;}
 </style>
 <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
 
-<!-- ═══════════════ PAGE 7 : DÉCISION -->
+<!-- PAGE 6 : RETOUR ET DÉCISION -->
 <div class="page">
-  <div class="ph"><span>Khaimas — Toile Blanche Marrakech</span><span>La décision</span></div>
-  <div class="sl">Même terrain. Il faut choisir.</div>
-  <h1>Riads Pisé ou Khaimas.<br>Les chiffres tranchent.</h1>
+  <div class="ph"><span>Khaimas — Route de Fès</span><span>Retour et décision</span></div>
+  <div class="sl">Retour investisseur et comparatif</div>
+  <h1>Mise : 1 000 000€.<br>Ce que chaque projet produit.</h1>
 
-  <p>Le terrain de la Route de Fès n'est pas encore acquis. C'est le même foncier pour les deux projets. Il faut choisir l'un. Cette page présente le verdict chiffré, sans argument de style ou de vision — uniquement ce que les modèles produisent.</p>
+  <div class="two-eq">
+    <div>
+      <table class="budget">
+        <thead><tr><th>Flux / investisseur (40%) — Scénario A</th><th class="r">Montant</th></tr></thead>
+        <tbody>
+          <tr><td>Mise initiale</td><td class="r">1 000 000€</td></tr>
+          <tr class="row-sec"><td colspan="2">Dividendes</td></tr>
+          <tr><td>Année 1</td><td class="r">197 937€</td></tr>
+          <tr><td>Année 2</td><td class="r">368 136€</td></tr>
+          <tr><td>Année 3</td><td class="r">458 346€</td></tr>
+          <tr><td>Année 4</td><td class="r">458 346€</td></tr>
+          <tr><td>Année 5</td><td class="r">458 346€</td></tr>
+          <tr class="row-sub"><td><strong>Dividendes cumulés Y1–Y5</strong></td><td class="r"><strong>1 941 111€</strong></td></tr>
+          <tr class="row-sec"><td colspan="2">Cession — fenêtre années 5–7</td></tr>
+          <tr><td>Prix plafond (terrain + infra permanentes)</td><td class="r">1 500 000€</td></tr>
+          <tr><td>Prix plancher</td><td class="r">800 000€</td></tr>
+          <tr><td style="font-size:12px;color:var(--pise-mid);" colspan="2">Tentes sans valeur résiduelle à l'exit — l'acheteur déduira le coût de remplacement</td></tr>
+          <tr class="row-tot"><td><strong>Retour total cible</strong></td><td class="r"><strong>3 441 111€</strong></td></tr>
+          <tr><td style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--alert);">Multiple cible</td><td class="r" style="font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--alert);font-weight:300;">3,4×</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-  <table class="comp">
-    <thead>
-      <tr>
-        <th>Critère</th>
-        <th class="r">Khaimas</th>
-        <th class="r">Riads Pisé</th>
-        <th>Avantage</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>Investissement total</td><td class="r worst">7,82M€</td><td class="r best">4,76M€</td><td class="best">Riads Pisé</td></tr>
-      <tr><td>Gap de financement à lever</td><td class="r worst">4,02M€</td><td class="r best">Aucun</td><td class="best">Riads Pisé</td></tr>
-      <tr><td>Mise / investisseur</td><td class="r">1 000K€</td><td class="r">1 000K€</td><td>Égal</td></tr>
-      <tr><td>Unités à l'ouverture</td><td class="r best">24 tentes</td><td class="r">12 clés</td><td class="best">Khaimas</td></tr>
-      <tr><td>Délai avant ouverture</td><td class="r best">18 mois</td><td class="r">24 mois</td><td class="best">Khaimas</td></tr>
-      <tr><td>Durée de vie actif</td><td class="r worst">7–10 ans</td><td class="r best">Permanent</td><td class="best">Riads Pisé</td></tr>
-      <tr><td>Provision remplacement / an</td><td class="r worst">360 000€</td><td class="r best">0€</td><td class="best">Riads Pisé</td></tr>
-      <tr><td>ADR stabilisé</td><td class="r">700€</td><td class="r best">800€</td><td class="best">Riads Pisé</td></tr>
-      <tr><td>Dividende Y1 / investisseur</td><td class="r best">440 000€</td><td class="r">423 000€</td><td class="best">Khaimas</td></tr>
-      <tr><td>Dividende Y3 / investisseur</td><td class="r best">866 000€</td><td class="r">588 000€</td><td class="best">Khaimas</td></tr>
-      <tr><td>Dividendes cumulés Y1–Y5</td><td class="r best">3 732 000€</td><td class="r">2 709 000€</td><td class="best">Khaimas</td></tr>
-      <tr><td>Cession plafond LBO</td><td class="r worst">1 500 000€</td><td class="r best">3 000 000€</td><td class="best">Riads Pisé</td></tr>
-      <tr><td>Retour total cible / invest.</td><td class="r">5 232 000€</td><td class="r best">5 709 000€</td><td class="best">Riads Pisé</td></tr>
-      <tr><td>Croissance organique Phase 2+</td><td class="r worst">Aucune — max 24 dès Y1</td><td class="r best">+8 unités auto-financées</td><td class="best">Riads Pisé</td></tr>
-      <tr><td>Payback</td><td class="r">Courant Y3</td><td class="r">Courant Y3</td><td>Égal</td></tr>
-      <tr class="row-tot">
-        <td><strong>Multiple cible</strong></td>
-        <td class="r" style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--alert);">5,2×</td>
-        <td class="r" style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--cedar);">5,7×</td>
-        <td class="best">Riads Pisé</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="two-eq" style="margin-top:24px;">
     <div>
       <div class="ab">
-        <div class="sl">Ce que Khaimas gagne</div>
-        <h2>Les 3 premières années.</h2>
-        <p class="bs">Avec 24 unités dès l'ouverture, Khaimas distribue plus de dividendes en Y1, Y2 et Y3 que Riads Pisé à 12 unités. L'avantage cumulé Y1–Y5 est de <strong>+1 023 000€</strong> par investisseur. C'est réel. C'est aussi le seul avantage financier de Khaimas sur l'ensemble du cycle.</p>
-        <p class="bs">À partir de l'année 4, Riads Pisé Phase 2 démarre — 4 unités supplémentaires, auto-financées. L'écart de dividendes se resserre puis s'inverse.</p>
-      </div>
-    </div>
-    <div>
-      <div class="alert">
-        <div class="sl">Ce que Khaimas perd à la sortie</div>
-        <h2>La cession efface l'avantage.</h2>
-        <p class="bs">L'avantage dividendes de Khaimas (+1 023 000€) est intégralement effacé par l'écart de cession. Riads Pisé cède à <strong>3 000 000€</strong> — des murs en pisé qui s'apprécient. Khaimas cède à <strong>1 500 000€</strong> — terrain + constructions permanentes, après déduction de la valeur résiduelle quasi nulle des tentes. Écart de cession : <strong>–1 500 000€</strong>. Résultat net final : <strong>–477 000€</strong> pour Khaimas sur l'ensemble du cycle.</p>
+        <div class="sl">Comparatif trois projets — même mise 1M€</div>
+        <table class="comp" style="margin-top:12px;">
+          <thead><tr><th>Critère</th><th class="r">Khaimas A</th><th class="r">Tigmi</th><th class="r">Riads Pisé</th></tr></thead>
+          <tbody>
+            <tr><td>Investissement</td><td class="r worst">7,82M€</td><td class="r best">3,15M€</td><td class="r">4,76M€</td></tr>
+            <tr><td>Gap financement</td><td class="r worst">4,02M€</td><td class="r best">Aucun</td><td class="r best">Aucun</td></tr>
+            <tr><td>ADR stabilisé</td><td class="r">500€</td><td class="r">500€</td><td class="r best">800€</td></tr>
+            <tr><td>Résultat net Y3</td><td class="r worst">1 146K€</td><td class="r best">2 508K€</td><td class="r">2 260K€</td></tr>
+            <tr><td>Div. Y3 / invest.</td><td class="r worst">458K€</td><td class="r best">1 003K€</td><td class="r">588K€</td></tr>
+            <tr><td>Div. Y1–Y5 / invest.</td><td class="r worst">1 941K€</td><td class="r best">4 533K€</td><td class="r">2 709K€</td></tr>
+            <tr><td>Payback</td><td class="r worst">Courant Y4</td><td class="r best">Fin Y2</td><td class="r">Courant Y3</td></tr>
+            <tr><td>Cession plafond</td><td class="r worst">1 500K€</td><td class="r">2 500K€</td><td class="r best">3 000K€</td></tr>
+            <tr><td>Actif à 10 ans</td><td class="r worst">Remplacement 3,6M€</td><td class="r best">Permanent</td><td class="r best">Permanent</td></tr>
+            <tr class="row-tot"><td><strong>Multiple cible</strong></td><td class="r worst">3,4×</td><td class="r best">7,0×</td><td class="r">5,7×</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
 
   <img src="images/img_vie_ici_dec7d617_replacement.png" alt="" style="width:100%;display:block;margin:32px 0;">
 
-  <div class="ab" style="margin-top:8px;">
-    <div class="sl">Le verdict</div>
-    <h2>Riads Pisé. Pour quatre raisons que les chiffres confirment.</h2>
-    <p class="bs"><strong>1. Le retour total est supérieur.</strong> 5,7× contre 5,2×. L'écart est de 477 000€ par investisseur sur le cycle complet — en faveur de Riads Pisé.</p>
-    <p class="bs"><strong>2. Le financement est bouclé.</strong> Riads Pisé est intégralement financé avec les deux investisseurs + banque + GO SIYAHA. Khaimas laisse un gap de 4,02M€ sans source identifiée. Ce gap seul peut tuer le projet avant qu'il commence.</p>
-    <p class="bs"><strong>3. L'actif s'apprécie. L'actif ne s'efface pas.</strong> Un mini-riad en pisé construit aujourd'hui vaut plus dans 10 ans. Une tente de luxe vaut zéro dans 10 ans et coûte 3,6M€ à remplacer. Ce n'est pas un jugement esthétique — c'est une réalité comptable.</p>
-    <p class="bs"><strong>4. La croissance est organique.</strong> Riads Pisé passe de 12 à 20 unités sans capital externe. Les investisseurs ne remettent jamais la main à la poche. Khaimas est à son maximum dès le premier jour et n'a nulle part où aller.</p>
+  <div class="rule"></div>
+
+  <div class="ab">
+    <div class="sl">La conclusion honnête</div>
+    <h2>Le Scénario A ne concurrence aucun des deux autres projets.</h2>
+    <p class="bs">Avec un ADR identique à Tigmi (500€), Khaimas Scénario A produit un multiple de 3,4× contre 7,0× pour Tigmi — pour un investissement 2,5 fois plus élevé, un gap de financement de 4M€ non résolu, et un actif qui nécessite 3,6M€ de réinvestissement à 10 ans. Aucune configuration ne rend le Scénario A préférable à Tigmi ou à Riads Pisé.</p>
+    <p class="bs">Le Scénario B est une question différente. 10 lodges à 200 000€, ADR 700€, croissance phasée : c'est un projet potentiellement défendable sous la marque Toile Blanche, avec un multiple supérieur et une cohérence de positionnement. Si les investisseurs souhaitent explorer cette voie, le modèle complet sera produit. La décision revient aux investisseurs : <strong>quel produit voulez-vous construire ?</strong></p>
   </div>
 
   <img src="images/img_conditions_sculpture_replacement.png" alt="" style="width:100%;display:block;margin:32px 0;">
 
   <div class="pf">
     <span>Toile Blanche Group — Leroy Brothers — Mai 2026</span>
-    <span>Document confidentiel — usage exclusif associés pressentis</span>
+    <span>Document confidentiel — projections à titre indicatif, non contractuelles</span>
   </div>
 </div>
 
