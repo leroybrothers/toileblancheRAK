@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="referrer" content="no-referrer">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap');
+  :root{--sand:#F5F0E6;--pise:#111008;--pise-mid:#4F4336;--cedar:#A78661;--sky:#FDFAF5;--pise-light:#D8CCB8;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:100%;max-width:100%;overflow-x:hidden;overscroll-behavior-x:none;}
+  img,iframe{max-width:100%;height:auto;}
+  table{max-width:100%;width:100%;table-layout:fixed;}
+  th,td{overflow-wrap:anywhere;word-break:break-word;}
+  body{touch-action:pan-y;background:var(--sand);color:var(--pise);font-family:'Montserrat',sans-serif;font-weight:300;font-size:17px;line-height:1.75;max-width:960px;margin:0 auto;}
+
+  /* COVER */
+  .cover{width:100%;min-height:620px;background:var(--sand);position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:56px 52px;}
+  .cover-mid{padding:40px 0;}
+  .cover-rule{width:40px;height:1px;background:var(--cedar);margin-bottom:28px;}
+  .ct{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:58px;line-height:1.02;color:var(--pise);margin-bottom:8px;}
+  .cs{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:25px;color:var(--pise-mid);margin-bottom:36px;}
+  .cd{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16.5px;color:var(--pise-mid);max-width:440px;line-height:1.9;border-left:1px solid var(--cedar);padding-left:18px;}
+  .cover-bottom{border-top:1px solid var(--cedar);padding-top:24px;}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+  .kpi{padding-right:24px;border-right:1px solid var(--pise-light);}
+  .kpi:last-child{border-right:none;}
+  .kv{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:30px;color:var(--pise);line-height:1;margin-bottom:4px;}
+  .kl{font-size:10.5px;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;margin-bottom:2px;}
+  .ks{font-size:11.5px;color:var(--pise-mid);}
+
+  /* PAGES */
+  .page{padding:56px 52px;border-bottom:1px solid var(--pise-light);}
+  .ph{display:flex;justify-content:space-between;margin-bottom:40px;padding-bottom:10px;border-bottom:1px solid var(--cedar);}
+  .ph span{font-size:15px;letter-spacing:0.2em;color:var(--cedar);text-transform:uppercase;}
+  .ph span:last-child{color:var(--pise-mid);}
+  .sl{font-size:11.5px;letter-spacing:0.22em;color:var(--cedar);text-transform:uppercase;margin-bottom:10px;}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:44px;line-height:1.12;margin-bottom:22px;}
+  h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:21px;line-height:1.3;margin-bottom:10px;margin-top:0;}
+  h3{font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--pise-mid);margin-bottom:10px;margin-top:20px;font-weight:400;}
+  p{font-size:16.5px;line-height:1.9;margin-bottom:12px;}
+  .bs{font-size:15px;line-height:1.8;color:var(--pise-mid);margin-bottom:7px;}
+  .two{display:grid;grid-template-columns:1.15fr 0.85fr;gap:44px;margin:20px 0;}
+  .two-eq{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:20px 0;}
+  .img-anc{width:100%;height:340px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9.5px;letter-spacing:0.1em;text-align:center;padding:28px;font-style:italic;margin:24px 0;}
+  .img-h{width:100%;height:200px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9.5px;text-align:center;padding:16px;font-style:italic;}
+  .qb{border-left:1px solid var(--cedar);padding:14px 20px;background:var(--sky);margin:16px 0;}
+  .qb p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;line-height:1.75;}
+  .qs{font-size:10.5px;letter-spacing:0.16em;color:var(--cedar);text-transform:uppercase;margin-top:7px;}
+  .ul{list-style:none;margin:0 0 14px;padding:0;}
+  .ul li{font-size:16.5px;line-height:1.75;padding-left:14px;position:relative;margin-bottom:3px;}
+  .ul li::before{content:'·';position:absolute;left:0;color:var(--cedar);font-size:15px;line-height:1.4;}
+  .pf{margin-top:40px;padding-top:12px;border-top:1px solid var(--pise-light);display:flex;justify-content:space-between;}
+  .pf span{font-size:10.5px;letter-spacing:0.13em;color:var(--pise-mid);text-transform:uppercase;}
+  .ab{border-left:2px solid var(--cedar);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
+  .ab2{border-left:2px solid var(--pise-light);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
+  .rule{width:36px;height:1px;background:var(--cedar);margin:20px 0;}
+
+  /* BUDGET / FINANCE TABLES */
+  table.budget{width:100%;border-collapse:collapse;margin:20px 0;}
+  table.budget thead tr{border-bottom:2px solid var(--cedar);}
+  table.budget thead th{padding:8px 10px;text-align:left;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
+  table.budget thead th.r{text-align:right;}
+  table.budget tbody tr{border-bottom:1px solid var(--pise-light);}
+  table.budget tbody td{padding:7px 10px;color:var(--pise);vertical-align:top;font-size:14px;}
+  table.budget tbody td.r{text-align:right;}
+  table.budget tbody td.note{font-size:10.5px;color:var(--pise-mid);}
+  .row-sec td{background:var(--sand);color:var(--cedar);font-size:9px !important;letter-spacing:0.2em;text-transform:uppercase;padding:5px 10px !important;}
+  .row-sub td{background:var(--sand);font-weight:400;}
+  .row-tot td{border-top:2px solid var(--cedar);border-bottom:none;font-weight:400;font-size:15px !important;padding:10px 10px !important;}
+  .row-gop td{background:var(--sky);font-style:italic;color:var(--pise-mid);}
+
+  /* PREV TABLE */
+  table.prev{width:100%;border-collapse:collapse;margin:20px 0;}
+  table.prev thead tr{border-bottom:2px solid var(--cedar);}
+  table.prev thead th{padding:9px 10px;text-align:left;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
+  table.prev thead th.r{text-align:right;}
+  table.prev tbody tr{border-bottom:1px solid var(--pise-light);}
+  table.prev tbody td{font-size:14px;padding:9px 10px;line-height:1.65;color:var(--pise);}
+  table.prev tbody td.r{text-align:right;}
+  table.prev .row-sec td{background:var(--sand);color:var(--cedar);font-size:9px !important;letter-spacing:0.2em;text-transform:uppercase;padding:5px 10px !important;}
+  table.prev .row-sub td{background:var(--sand);font-weight:400;}
+  table.prev .row-tot td{border-top:2px solid var(--cedar);border-bottom:none;font-weight:400;font-size:15px !important;padding:10px 10px !important;}
+  table.prev .row-gop td{background:var(--sky);font-style:italic;color:var(--pise-mid);font-size:13px !important;}
+
+  /* KPI STRIP */
+  .kpi-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--pise-light);margin:24px 0;}
+  .ks-box{background:var(--sky);padding:20px 18px;}
+  .ks-val{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--pise);line-height:1;margin-bottom:6px;}
+  .ks-lbl{font-size:10px !important;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;}
+  .ks-sub{font-size:12px !important;color:var(--pise-mid);margin-top:3px;}
+
+  /* RISK ROWS */
+  .risk-row{margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--pise-light);}
+  .risk-label{font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise-mid);margin-bottom:4px;}
+  .risk-body{font-size:15px;line-height:1.8;color:var(--pise);}
+
+  /* OVERRIDES */
+  table{font-size:15px !important;}
+  table thead th{font-size:11px !important;letter-spacing:0.1em;padding:10px 12px !important;}
+  table tbody td{font-size:15px !important;padding:10px 12px !important;line-height:1.7 !important;}
+  table tbody td.r{font-size:15px !important;}
+  .row-sec td{font-size:11px !important;}
+  .row-tot td{font-size:16px !important;}
+  .ks-lbl{font-size:11px !important;}
+  .ks-sub{font-size:13px !important;}
+  .bs{font-size:14px !important;}
+  .risk-label{font-size:14px !important;}
+  .risk-body{font-size:15px !important;}
+</style>
+<link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════ COVER -->
+<div class="cover">
+  <div class="cover-mid">
+    <div class="cover-rule"></div>
+    <div class="ct">Proposition<br>d'Investissement</div>
+    <div class="cs">La transformation déclarée œuvre</div>
+    <div class="cd">« Un hôtel existant. Trente chambres. Un lieu réel, avec une histoire, des murs en terre, un puits et des tortues. Les Leroy Brothers déclarent sa transformation. »</div>
+  </div>
+  <div>
+    <div class="cover-bottom">
+      <div class="kpis">
+        <div class="kpi">
+          <div class="kv">3,15M€</div>
+          <div class="kl">Investissement total</div>
+          <div class="ks">Acquisition + rénovation complète</div>
+        </div>
+        <div class="kpi" style="padding-left:24px;">
+          <div class="kv">30</div>
+          <div class="kl">Clés à l'ouverture</div>
+          <div class="ks">25 rénovées + 5 nouvelles</div>
+        </div>
+        <div class="kpi" style="padding-left:24px;">
+          <div class="kv">1M€</div>
+          <div class="kl">Par investisseur</div>
+          <div class="ks">Leroy Brothers : apport nature</div>
+        </div>
+        <div class="kpi" style="padding-left:24px;">
+          <div class="kv">7×</div>
+          <div class="kl">Retour cible</div>
+          <div class="ks">Scénario cible, année 5</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════ PAGE 2 : L'ACTIF -->
+<div class="page">
+  <div class="ph"><span>Tigmi — Toile Blanche Marrakech</span><span>L'actif</span></div>
+  <div class="sl">Le point de départ</div>
+  <h1>Un lieu qui existe<br>déjà. C'est l'avantage.</h1>
+
+  <div class="two">
+    <div>
+      <p>À Tagadirt, à 25 minutes au sud de Marrakech, au pied de l'Atlas, un hôtel de 25 chambres existe depuis plus de vingt ans. Il s'appelle Tigmi — « ma maison » en berbère. Il a des murs en pisé, deux piscines, un hammam, un studio de yoga, un restaurant avec vue sur la plaine du Haouz et les montagnes derrière.</p>
+      <p>Il est en vente. Les héritiers de l'ancien propriétaire britannique souhaitent une sortie rapide et propre. Le Certificat de Conformité est obtenu. Le Titre Foncier est en cours de consolidation. L'hôtel fonctionne, génère des revenus, dispose d'une clientèle acquise et d'équipes en place.</p>
+      <p>Ce n'est pas un terrain vide avec un projet. C'est un actif réel, sous-exploité, mal positionné, géré en-dessous de son potentiel — et c'est précisément pourquoi il est disponible à un prix qui permet la transformation.</p>
+
+      <div class="qb">
+        <p>Kasbah Dif a ouvert à 300 mètres. Taux minimum : 520€ la nuit. Le marché confirme le positionnement cible.</p>
+        <div class="qs">Référence marché — Route de l'Ourika, Haouz, 2025</div>
+      </div>
+    </div>
+    <div>
+      <h3>Ce que l'actif contient</h3>
+      <ul class="ul">
+        <li>25 clés existantes : chambres standard, suites, suite piscine</li>
+        <li>Deux piscines, dont une dans le bloc principal</li>
+        <li>Studio de yoga intérieur + terrasse yoga extérieure vue Atlas</li>
+        <li>Hammam et spa avec traitement et soins</li>
+        <li>Restaurant intérieur et terrasse extérieure</li>
+        <li>Bar avec cheminée</li>
+        <li>Jardin, oliveraie, cours intérieures</li>
+        <li>Équipes locales en place, fournisseurs établis</li>
+        <li>Clientèle yoga et retraite bien-être constituée</li>
+        <li>Fonds de commerce licencié (licence alcool incluse dans la cession)</li>
+      </ul>
+
+      <h3>Ce que la transformation apporte</h3>
+      <ul class="ul">
+        <li>Rebrand complet Toile Blanche Marrakech — marque, identité, standards</li>
+        <li>5 clés supplémentaires construites ex nihilo, 30 unités total</li>
+        <li>ADR repositionné de 150€ actuels vers 450€ à l'ouverture</li>
+        <li>Programme artistique Leroy Brothers intégré</li>
+        <li>Affiliation SLH activable dès l'ouverture</li>
+        <li>Direction artistique et gestion opérationnelle Toile Blanche Group</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="img-anc">[ Image : vue terrasse Tigmi — Atlas en arrière-plan, lumière du matin ]</div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════ PAGE 3 : LE CONCEPT -->
+<div class="page">
+  <div class="ph"><span>Tigmi — Toile Blanche Marrakech</span><span>La déclaration</span></div>
+  <div class="sl">Le concept</div>
+  <h1>Même déclaration.<br>Contexte différent.</h1>
+
+  <div class="two">
+    <div>
+      <p>À Saint-Paul de Vence, les Leroy Brothers ont déclaré un hôtel existant œuvre. Ils n'ont pas construit. Ils ont déclaré. Et cette déclaration a transformé un B&B de 6 chambres en un hôtel 22 suites récompensé d'une Clef Michelin.</p>
+      <p>À Tagadirt, la même chose se produit. Pas une imitation. Pas un duplicate. Une nouvelle occurrence de la même logique, dans un contexte radicalement différent — le Haouz, l'Atlas, la tradition berbère, l'architecture de terre crue.</p>
+      <p>Tigmi devient Toile Blanche Marrakech. L'hôtel ferme douze mois. Tout est transformé simultanément : les chambres, les espaces communs, les jardins, les cinq nouvelles unités, l'identité visuelle, la présence digitale, les standards de service. L'hôtel rouvre parfait, sous une marque qui a déjà une réputation internationale, une affiliation SLH et une presse acquise.</p>
+      <p>Ce n'est pas une rénovation. C'est une transformation déclarée — et la distinction n'est pas rhétorique. Elle détermine l'ADR, le positionnement, la presse, le multiple de sortie.</p>
+    </div>
+    <div>
+      <h3>Ce qui différencie radicalement</h3>
+      <ul class="ul">
+        <li>Actif existant — zéro risque de construction from scratch</li>
+        <li>Infrastructure hospitality en place — équipes, fournisseurs, licences</li>
+        <li>Ouverture 12 mois après acquisition, vs. 18–24 mois pour une construction</li>
+        <li>30 clés dès l'ouverture — revenus immédiats, payback fin année 2</li>
+        <li>Programme yoga et bien-être conservé et repositionné premium</li>
+        <li>ADR multiplié par 3 sur une base de clientèle existante</li>
+        <li>Kasbah Dif à 300m confirme la demande au niveau cible</li>
+        <li>Affiliation SLH dès l'ouverture, réseau Toile Blanche Saint-Paul de Vence</li>
+        <li>Direction artistique Leroy Brothers, programme d'expositions et résidences</li>
+        <li>Structure fiscale marocaine optimisée — exonération IS 5 ans sur devises</li>
+      </ul>
+
+      <div class="qb">
+        <p>Tigmi opère à 150€ d'ADR avec une mauvaise gestion et zéro positionnement. Kasbah Dif ouvre à 520€ minimum à 300 mètres. L'écart n'est pas un mystère : c'est une marque, un opérateur, une déclaration.</p>
+        <div class="qs">Analyse concurrentielle Haouz, 2025</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="img-anc">[ Image : moodboard — intérieur TB Marrakech, pisé brut, zellige sombre, lumière zénithale ]</div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════ PAGE 4 : ACQUISITION -->
+<div class="page">
+  <div class="ph"><span>Tigmi — Toile Blanche Marrakech</span><span>L'acquisition</span></div>
+  <div class="sl">La stratégie d'acquisition</div>
+  <h1>Un actif sous-évalué<br>par ses propres défauts.</h1>
+
+  <div class="two">
+    <div>
+      <p>Les héritiers du propriétaire britannique original demandent 1,6M€. C'est le prix d'un actif sans problèmes. Tigmi a des problèmes — et chacun d'eux est un levier de négociation chiffré.</p>
+      <p>Notre offre cible est de 1,4M€ — soit un écart de 200 000€ justifié poste par poste par les passifs que nous absorbons : risque foncier Melkia, mise aux normes sismiques post-tremblement de terre 2023, transfert de licence alcool, audit social CNSS, infrastructure eau critique à reconstruire. Ces charges nous incombent, pas à eux. Ce transfert de risque a un prix.</p>
+      <p>L'avantage stratégique : les héritiers souhaitent une sortie rapide. Une offre en cash avec séquestre notarial et délai court prime sur le prix. Notre structure — 2M€ de fonds propres disponibles — nous permet de proposer une fermeture en 60 jours. C'est notre levier principal.</p>
+
+      <div class="ab">
+        <div class="sl">Structure juridique d'acquisition</div>
+        <h2>Achat 100% des parts — SCI + SARL</h2>
+        <p class="bs">La SCI détient le foncier et les murs. La SARL détient le fonds de commerce, les licences et les contrats de travail. Les deux entités doivent être acquises simultanément. Condition préalable absolue : exequatur de l'héritage par un juge marocain — les héritiers ne peuvent vendre ce qu'ils ne possèdent pas légalement au Maroc.</p>
+      </div>
+    </div>
+
+    <div>
+      <h3>Passifs absorbés — justification du discount</h3>
+      <ul class="ul">
+        <li>Risque foncier Melkia : parcelle partiellement non titrée, procédure de Réquisition 2 ans à absorber</li>
+        <li>Audit sismique obligatoire : zone épicentrale séisme Al Haouz 2023 — le CC ne garantit pas la conformité parasismique</li>
+        <li>Infrastructure eau : puits récemment approfondi, pas de bâches de stockage, risque d'assèchement total — citerne à construire</li>
+        <li>Transfert licence alcool : 6 à 9 mois, perte de revenus bar à haute marge pendant la période</li>
+        <li>Audit social CNSS : provision pour passif social non déclaré par l'ancienne gestion</li>
+      </ul>
+
+      <h3>VNA — condition non négociable</h3>
+      <p class="bs">La SCI doit détenir un VNA (Vocation Non-Agricole) définitif. Sans ce certificat, aucune entité à capital étranger ne peut légalement détenir le foncier en zone rurale marocaine. Nous exigeons sa production avant toute signature de promesse de vente.</p>
+    </div>
+  </div>
+
+  <!-- ACQUISITION TABLE -->
+  <table class="budget">
+    <thead>
+      <tr>
+        <th>Poste</th>
+        <th class="r">Prix demandé</th>
+        <th class="r">Déduction</th>
+        <th class="r">Justification</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Prix demandé vendeurs</td><td class="r">1 600 000€</td><td class="r">—</td><td class="note">Base de négociation</td></tr>
+      <tr><td>Risque foncier Melkia</td><td class="r">—</td><td class="r">– 75 000€</td><td class="note">Procédure Réquisition + risque VNA</td></tr>
+      <tr><td>Mise aux normes sismiques</td><td class="r">—</td><td class="r">– 50 000€</td><td class="note">Murs périmétriques + annexes</td></tr>
+      <tr><td>Infrastructure eau (citerne, pompe, STEP)</td><td class="r">—</td><td class="r">– 34 000€</td><td class="note">Actif opérationnel critique manquant</td></tr>
+      <tr><td>Transfert licence alcool</td><td class="r">—</td><td class="r">– 40 000€</td><td class="note">6–9 mois sans revenus bar</td></tr>
+      <tr><td>Provision CNSS / passif social</td><td class="r">—</td><td class="r">– 30 000€</td><td class="note">Audit préventif ancienne gestion</td></tr>
+      <tr class="row-tot"><td><strong>Offre cible</strong></td><td class="r"><strong>1 400 000€</strong></td><td class="r"><strong>– 229 000€</strong></td><td class="note">Offre cash, fermeture 60 jours</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+</body>
+</html>

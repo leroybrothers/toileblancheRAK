@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="referrer" content="no-referrer">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap');
+  :root{--sand:#F5F0E6;--pise:#111008;--pise-mid:#4F4336;--cedar:#A78661;--sky:#FDFAF5;--pise-light:#D8CCB8;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:100%;max-width:100%;overflow-x:hidden;overscroll-behavior-x:none;}
+  img,iframe{max-width:100%;height:auto;}
+  table{max-width:100%;width:100%;table-layout:fixed;}
+  th,td{overflow-wrap:anywhere;word-break:break-word;}
+  body{touch-action:pan-y;background:var(--sand);color:var(--pise);font-family:'Montserrat',sans-serif;font-weight:300;font-size:17px;line-height:1.75;max-width:960px;margin:0 auto;}
+
+  /* COVER */
+  .cover{width:100%;min-height:620px;background:var(--sand);position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:56px 52px;}
+  .cover-mid{padding:40px 0;}
+  .cover-rule{width:40px;height:1px;background:var(--cedar);margin-bottom:28px;}
+  .ct{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:58px;line-height:1.02;color:var(--pise);margin-bottom:8px;}
+  .cs{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:25px;color:var(--pise-mid);margin-bottom:36px;}
+  .cd{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16.5px;color:var(--pise-mid);max-width:440px;line-height:1.9;border-left:1px solid var(--cedar);padding-left:18px;}
+  .cover-bottom{border-top:1px solid var(--cedar);padding-top:24px;}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+  .kpi{padding-right:24px;border-right:1px solid var(--pise-light);}
+  .kpi:last-child{border-right:none;}
+  .kv{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:30px;color:var(--pise);line-height:1;margin-bottom:4px;}
+  .kl{font-size:10.5px;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;margin-bottom:2px;}
+  .ks{font-size:11.5px;color:var(--pise-mid);}
+
+  /* PAGES */
+  .page{padding:56px 52px;border-bottom:1px solid var(--pise-light);}
+  .ph{display:flex;justify-content:space-between;margin-bottom:40px;padding-bottom:10px;border-bottom:1px solid var(--cedar);}
+  .ph span{font-size:15px;letter-spacing:0.2em;color:var(--cedar);text-transform:uppercase;}
+  .ph span:last-child{color:var(--pise-mid);}
+  .sl{font-size:11.5px;letter-spacing:0.22em;color:var(--cedar);text-transform:uppercase;margin-bottom:10px;}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:44px;line-height:1.12;margin-bottom:22px;}
+  h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:21px;line-height:1.3;margin-bottom:10px;margin-top:0;}
+  h3{font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--pise-mid);margin-bottom:10px;margin-top:20px;font-weight:400;}
+  p{font-size:16.5px;line-height:1.9;margin-bottom:12px;}
+  .bs{font-size:15px;line-height:1.8;color:var(--pise-mid);margin-bottom:7px;}
+  .two{display:grid;grid-template-columns:1.15fr 0.85fr;gap:44px;margin:20px 0;}
+  .two-eq{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:20px 0;}
+  .img-anc{width:100%;height:340px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9.5px;letter-spacing:0.1em;text-align:center;padding:28px;font-style:italic;margin:24px 0;}
+  .img-h{width:100%;height:200px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9.5px;text-align:center;padding:16px;font-style:italic;}
+  .qb{border-left:1px solid var(--cedar);padding:14px 20px;background:var(--sky);margin:16px 0;}
+  .qb p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;line-height:1.75;}
+  .qs{font-size:10.5px;letter-spacing:0.16em;color:var(--cedar);text-transform:uppercase;margin-top:7px;}
+  .ul{list-style:none;margin:0 0 14px;padding:0;}
+  .ul li{font-size:16.5px;line-height:1.75;padding-left:14px;position:relative;margin-bottom:3px;}
+  .ul li::before{content:'·';position:absolute;left:0;color:var(--cedar);font-size:15px;line-height:1.4;}
+  .pf{margin-top:40px;padding-top:12px;border-top:1px solid var(--pise-light);display:flex;justify-content:space-between;}
+  .pf span{font-size:10.5px;letter-spacing:0.13em;color:var(--pise-mid);text-transform:uppercase;}
+  .ab{border-left:2px solid var(--cedar);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
+  .ab2{border-left:2px solid var(--pise-light);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
+  .rule{width:36px;height:1px;background:var(--cedar);margin:20px 0;}
+
+  /* BUDGET / FINANCE TABLES */
+  table.budget{width:100%;border-collapse:collapse;margin:20px 0;}
+  table.budget thead tr{border-bottom:2px solid var(--cedar);}
+  table.budget thead th{padding:8px 10px;text-align:left;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
+  table.budget thead th.r{text-align:right;}
+  table.budget tbody tr{border-bottom:1px solid var(--pise-light);}
+  table.budget tbody td{padding:7px 10px;color:var(--pise);vertical-align:top;font-size:14px;}
+  table.budget tbody td.r{text-align:right;}
+  table.budget tbody td.note{font-size:10.5px;color:var(--pise-mid);}
+  .row-sec td{background:var(--sand);color:var(--cedar);font-size:9px !important;letter-spacing:0.2em;text-transform:uppercase;padding:5px 10px !important;}
+  .row-sub td{background:var(--sand);font-weight:400;}
+  .row-tot td{border-top:2px solid var(--cedar);border-bottom:none;font-weight:400;font-size:15px !important;padding:10px 10px !important;}
+  .row-gop td{background:var(--sky);font-style:italic;color:var(--pise-mid);}
+
+  /* PREV TABLE */
+  table.prev{width:100%;border-collapse:collapse;margin:20px 0;}
+  table.prev thead tr{border-bottom:2px solid var(--cedar);}
+  table.prev thead th{padding:9px 10px;text-align:left;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
+  table.prev thead th.r{text-align:right;}
+  table.prev tbody tr{border-bottom:1px solid var(--pise-light);}
+  table.prev tbody td{font-size:14px;padding:9px 10px;line-height:1.65;color:var(--pise);}
+  table.prev tbody td.r{text-align:right;}
+  table.prev .row-sec td{background:var(--sand);color:var(--cedar);font-size:9px !important;letter-spacing:0.2em;text-transform:uppercase;padding:5px 10px !important;}
+  table.prev .row-sub td{background:var(--sand);font-weight:400;}
+  table.prev .row-tot td{border-top:2px solid var(--cedar);border-bottom:none;font-weight:400;font-size:15px !important;padding:10px 10px !important;}
+  table.prev .row-gop td{background:var(--sky);font-style:italic;color:var(--pise-mid);font-size:13px !important;}
+
+  /* KPI STRIP */
+  .kpi-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--pise-light);margin:24px 0;}
+  .ks-box{background:var(--sky);padding:20px 18px;}
+  .ks-val{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--pise);line-height:1;margin-bottom:6px;}
+  .ks-lbl{font-size:10px !important;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;}
+  .ks-sub{font-size:12px !important;color:var(--pise-mid);margin-top:3px;}
+
+  /* RISK ROWS */
+  .risk-row{margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--pise-light);}
+  .risk-label{font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise-mid);margin-bottom:4px;}
+  .risk-body{font-size:15px;line-height:1.8;color:var(--pise);}
+
+  /* OVERRIDES */
+  table{font-size:15px !important;}
+  table thead th{font-size:11px !important;letter-spacing:0.1em;padding:10px 12px !important;}
+  table tbody td{font-size:15px !important;padding:10px 12px !important;line-height:1.7 !important;}
+  table tbody td.r{font-size:15px !important;}
+  .row-sec td{font-size:11px !important;}
+  .row-tot td{font-size:16px !important;}
+  .ks-lbl{font-size:11px !important;}
+  .ks-sub{font-size:13px !important;}
+  .bs{font-size:14px !important;}
+  .risk-label{font-size:14px !important;}
+  .risk-body{font-size:15px !important;}
+</style>
+<link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════ PAGE 8 : CONDITIONS & RISQUES -->
+<div class="page">
+  <div class="ph"><span>Tigmi — Toile Blanche Marrakech</span><span>Conditions et risques</span></div>
+  <div class="sl">Ce que les Leroy Brothers apportent et exigent</div>
+  <h1>Les conditions<br>non négociables.</h1>
+
+  <div class="two-eq">
+    <div>
+      <div class="ab">
+        <div class="sl">Conception et direction artistique</div>
+        <h2>Contrôle absolu</h2>
+        <p class="bs">Les Leroy Brothers assurent la direction artistique et architecturale complète de la transformation. Chaque décision de matériau, d'espace, d'identité visuelle et de programme artistique leur appartient. Aucun élément ne peut être modifié sans leur accord écrit. C'est la condition de l'ADR cible.</p>
+      </div>
+
+      <div class="ab2">
+        <div class="sl">Licence de marque</div>
+        <h2>Toile Blanche — Licence exclusive Maroc</h2>
+        <p class="bs">La marque Toile Blanche est apportée sous licence exclusive pour le Maroc. Elle reste la propriété de Toile Blanche Group France. Durée alignée sur le pacte d'associés. Non cessible sans accord écrit. Sans cette licence, le projet génère 150€ d'ADR. Avec elle, il en génère 500.</p>
+      </div>
+    </div>
+
+    <div>
+      <h3>La direction sur site</h3>
+      <div class="ab2">
+        <h2>Gilles Leroy — Directeur Général</h2>
+        <p class="bs">Cofondateur Toile Blanche Saint-Paul de Vence. Vision artistique et expertise opérationnelle hôtelière. Supervision du chantier de transformation. Présence minimum 30 jours par an en phase opérationnelle. Rémunération intégrée au budget opérationnel.</p>
+      </div>
+      <div class="ab2">
+        <h2>Directeur local — À recruter</h2>
+        <p class="bs">Profil bilingue FR/EN/AR. Expérience hôtellerie de luxe Maroc. Réseau local, connaissance du marché Haouz. Recrutement supervisé par les Leroy Brothers. Sélection finale par Gilles Leroy avant ouverture.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+  <div class="sl">Risques identifiés — Ce qu'on a anticipé</div>
+
+  <div class="risk-row">
+    <div class="risk-label">Foncier — Melkia et VNA</div>
+    <div class="risk-body">Une portion de l'empreinte hôtelière est sur terrain Melkia non titré. Nous absorbons la procédure de Réquisition (environ 2 ans) dans notre structuration. Le VNA définitif est une condition préalable à la signature. Risque connu, chiffré, intégré dans le discount d'acquisition.</div>
+  </div>
+
+  <div class="risk-row">
+    <div class="risk-label">Séisme — Conformité structurelle</div>
+    <div class="risk-body">Tagadirt est dans la zone épicentrale du séisme Al Haouz de septembre 2023. Le Certificat de Conformité existant confirme la conformité architecturale aux plans — pas la résistance parasismique. Un audit structurel indépendant par un Bureau d'Études certifié est une condition préalable absolue à la signature.</div>
+  </div>
+
+  <div class="risk-row">
+    <div class="risk-label">Eau — Risque opérationnel critique</div>
+    <div class="risk-body">Le puits a dû être approfondi récemment, signal d'un niveau phréatique en baisse. L'hôtel n'a actuellement aucune réserve de stockage. Construction d'une citerne de 50–60m³, station de pompage triplex et micro-STEP pour recyclage eaux grises intégrée dans le budget rénovation. Le Maroc est en 6e année de sécheresse sévère dans le bassin Tensift/Al Haouz : cette infrastructure n'est pas optionnelle.</div>
+  </div>
+
+  <div class="risk-row">
+    <div class="risk-label">Licence alcool — Délai de transfert</div>
+    <div class="risk-body">La licence est au nom du propriétaire décédé. Le transfert prend 6 à 9 mois et implique un préjudice temporaire sur les revenus bar (haute marge). Ce délai est calé sur la période de fermeture pour rénovation — l'impact opérationnel est nul si le transfert est initié dès l'acquisition.</div>
+  </div>
+
+  <div class="risk-row" style="border-bottom:none;">
+    <div class="risk-label">Illiquidité — 5 ans</div>
+    <div class="risk-body">Les parts ne sont pas librement cessibles pendant les 5 premières années. L'investissement est illiquide par nature. En contrepartie : dividendes dès l'année 1, payback fin année 2, fenêtre de sortie garantie années 5–7 avec floor de 1 500 000€ par investisseur.</div>
+  </div>
+
+  <div class="pf">
+    <span>Toile Blanche Group — Leroy Brothers — Mai 2026</span>
+    <span>Document confidentiel — projections à titre indicatif, non contractuelles</span>
+  </div>
+</div>
+
+
+
+</body>
+</html>

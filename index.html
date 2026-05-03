@@ -180,6 +180,7 @@
         <div class="hero-cta-wrap">
           <button class="hero-cta active" id="cta-riads-pise" onclick="selectProject('riads-pise', true)">Riads Pisé</button>
           <button class="hero-cta" id="cta-khaimas" onclick="selectProject('khaimas', true)">Khaimas</button>
+          <button class="hero-cta" id="cta-tigmi" onclick="selectProject('tigmi', true)">Tigmi</button>
         </div>
       </div>
     </div>
@@ -187,9 +188,9 @@
     <div class="content">
       <div class="home-intro">
         <div class="home-kicker">Toile Blanche Marrakech</div>
-        <h2 class="home-title">Deux propositions. Un territoire.</h2>
-        <p class="home-text">Ce document présente deux propositions d'investissement distinctes pour un même terrain de 5 hectares sur la Route de Fès, à 25 minutes de Marrakech.</p>
-        <p class="home-text">Les deux propositions partagent le même foncier, la même structure de capital, la même direction artistique, le même opérateur. Elles divergent sur l'architecture, les matériaux, la durée de vie des actifs et le positionnement tarifaire.</p>
+        <h2 class="home-title">Trois propositions. Un territoire.</h2>
+        <p class="home-text">Ce document présente trois propositions d'investissement distinctes pour un même terrain de 5 hectares sur la Route de Fès, à 25 minutes de Marrakech.</p>
+        <p class="home-text">Les trois propositions partagent le même foncier, la même structure de capital, la même direction artistique, le même opérateur. Elles divergent sur l'architecture, les matériaux, la durée de vie des actifs et le positionnement tarifaire.</p>
         <p class="home-text">Elles ont été préparées en parallèle, avec le même soin, la même honnêteté. Aucune n'est présentée comme la bonne réponse. Les chiffres le font.</p>
       </div>
 
@@ -233,6 +234,27 @@
           <div class="project-metric">
             <div class="metric-value">x,x×</div>
             <div class="metric-label">Retour cible an 5 (à calculer)</div>
+          </div>
+        </div>
+
+        <div class="project-block" onclick="selectProject('tigmi', true)">
+          <div class="project-kicker">Tagadirt — Route de l'Ourika</div>
+          <div class="project-title">Tigmi</div>
+          <div class="project-metric">
+            <div class="metric-value">3,15M€</div>
+            <div class="metric-label">Investissement total</div>
+          </div>
+          <div class="project-metric">
+            <div class="metric-value">30 clés</div>
+            <div class="metric-label">À l'ouverture</div>
+          </div>
+          <div class="project-metric">
+            <div class="metric-value">500€</div>
+            <div class="metric-label">ADR blended stabilisé</div>
+          </div>
+          <div class="project-metric">
+            <div class="metric-value">7,0×</div>
+            <div class="metric-label">Retour cible an 5</div>
           </div>
         </div>
       </div>
@@ -297,6 +319,16 @@
       'tbm_brief_archi_part2.html': 'khaimas_brief_archi_part2.html',
       'tbm_brief_archi_part3.html': 'khaimas_brief_archi_part3.html',
       'tbm_termsheet.html': 'khaimas_termsheet.html'
+    },
+    'tigmi': {
+      'tbm_proposition_part1_v2.html': 'tigmi_proposition_part1_v1.html',
+      'tbm_proposition_part2_clusters_budget.html': 'tigmi_proposition_part2_clusters_budget.html',
+      'tbm_proposition_part3_finance_previsionnel_v2.html': 'tigmi_proposition_part3_finance_previsionnel_v1.html',
+      'tbm_proposition_part4_vie_conditions.html': 'tigmi_proposition_part4_vie_conditions.html',
+      'tbm_brief_archi_part1.html': 'tigmi_brief_archi_part1.html',
+      'tbm_brief_archi_part2.html': 'tigmi_brief_archi_part2.html',
+      'tbm_brief_archi_part3.html': 'tigmi_brief_archi_part3.html',
+      'tbm_termsheet.html': 'tigmi_termsheet.html'
     }
   };
 
@@ -336,9 +368,10 @@
   function updateProjectCtas() {
     const ctaRiads = document.getElementById('cta-riads-pise');
     const ctaKhaimas = document.getElementById('cta-khaimas');
-    if (!ctaRiads || !ctaKhaimas) return;
-    ctaRiads.classList.toggle('active', currentProject === 'riads-pise');
-    ctaKhaimas.classList.toggle('active', currentProject === 'khaimas');
+    const ctaTigmi = document.getElementById('cta-tigmi');
+    if (ctaRiads) ctaRiads.classList.toggle('active', currentProject === 'riads-pise');
+    if (ctaKhaimas) ctaKhaimas.classList.toggle('active', currentProject === 'khaimas');
+    if (ctaTigmi) ctaTigmi.classList.toggle('active', currentProject === 'tigmi');
   }
 
   function selectProject(projectKey, openFirstDoc = false) {
