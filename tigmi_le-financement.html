@@ -218,6 +218,9 @@
   table.budget tbody td{padding:7px 10px;color:var(--pise);font-size:14px;vertical-align:top;}
   table.budget tbody td.r{text-align:right;}
   table.budget tbody td.note{font-size:10.5px;color:var(--pise-mid);}
+  table.budget .row-sec td{background:var(--sand);color:var(--cedar);font-size:9px;letter-spacing:0.2em;text-transform:uppercase;padding:5px 10px;}
+  table.budget .row-sub td{background:var(--sand);font-weight:400;}
+  table.budget .row-tot td{border-top:2px solid var(--cedar);border-bottom:none;font-weight:400;padding:10px;}
 </style>
 <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
@@ -329,7 +332,111 @@
     </div>
   </div>
 
-  
+<div class="rule" style="margin-top:40px;"></div>
+<div class="sl" data-fr="Prévisionnel d'exploitation - 3 ans" data-nl="Exploitatiebegroting - 3 jaar">Prévisionnel d'exploitation - 3 ans</div>
+<h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:32px;line-height:1.2;margin-bottom:16px;" data-fr="30 clés. Hypothèses de marché réelles." data-nl="30 kamers. Realistische markthypothesen.">30 clés. Hypothèses de marché réelles.</h2>
+<div style="border-left:2px solid var(--pise-light);padding:16px 20px;background:var(--sky);margin-bottom:16px;">
+  <p style="font-size:13px;color:var(--pise-mid);line-height:1.8;"
+     data-fr="Y0 = 12 mois de chantier, aucun dividende. Les chiffres sont les résultats nets après fees Toile Blanche Group (7,5% base + 15% incentive GOP), avant application du waterfall de distribution (Fondation 10% / Preferred 8% / Growth Fund 10% / Split 70/30). Exonération IS totale 5 ans sur CA en devises (LF 2026)."
+     data-nl="J0 = 12 maanden bouwplaats, geen dividend. De cijfers zijn nettoresultaten na Toile Blanche Group fees (7,5% basis + 15% incentive GOP), vóór toepassing van de distributiereeks (Stichting 10% / Preferred 8% / Growth Fund 10% / Split 70/30). Volledige VPB-vrijstelling 5 jaar op deviezenomzet (LF 2026).">
+    Y0 = 12 mois de chantier, aucun dividende. Résultats nets après fees TB Group, avant waterfall. Exonération IS 5 ans.
+  </p>
+</div>
+<table class="prev">
+    <thead>
+      <tr>
+        <th>Indicateur</th>
+        <th class="r">Année 1</th>
+        <th class="r">Année 2</th>
+        <th class="r">Année 3 stabilisé</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="row-sec"><td colspan="4">Hypothèses</td></tr>
+      <tr><td>Taux d'occupation</td><td class="r">60%</td><td class="r">70%</td><td class="r">75%</td></tr>
+      <tr><td>Prix moyen blended (30 unités)</td><td class="r">450€</td><td class="r">480€</td><td class="r">500€</td></tr>
+      <tr><td>Nuits vendues</td><td class="r">6 570</td><td class="r">7 665</td><td class="r">8 213</td></tr>
+      <tr class="row-sec"><td colspan="4">Revenus</td></tr>
+      <tr><td>Hébergement</td><td class="r">2 957 000€</td><td class="r">3 679 000€</td><td class="r">4 106 000€</td></tr>
+      <tr><td>Restaurant, bar, breakfast (22% héb.)</td><td class="r">650 000€</td><td class="r">809 000€</td><td class="r">903 000€</td></tr>
+      <tr><td>Yoga retreats, spa, privatisations</td><td class="r">80 000€</td><td class="r">120 000€</td><td class="r">150 000€</td></tr>
+      <tr class="row-sub"><td><strong>Total revenus</strong></td><td class="r"><strong>3 687 000€</strong></td><td class="r"><strong>4 608 000€</strong></td><td class="r"><strong>5 159 000€</strong></td></tr>
+      <tr class="row-sec"><td colspan="4">Charges d'exploitation</td></tr>
+      <tr><td>Ressources humaines (27 ETP)</td><td class="r">458 000€</td><td class="r">490 000€</td><td class="r">520 000€</td></tr>
+      <tr><td>Achats F&amp;B (25% CA F&amp;B)</td><td class="r">163 000€</td><td class="r">202 000€</td><td class="r">226 000€</td></tr>
+      <tr><td>Charges opérationnelles</td><td class="r">350 000€</td><td class="r">380 000€</td><td class="r">400 000€</td></tr>
+      <tr><td>Marketing et distribution (10%)</td><td class="r">369 000€</td><td class="r">461 000€</td><td class="r">516 000€</td></tr>
+      <tr><td>TB Management Fee (7,5% revenus)</td><td class="r">277 000€</td><td class="r">346 000€</td><td class="r">387 000€</td></tr>
+      <tr class="row-gop"><td>GOP (base, avant incentive)</td><td class="r">2 071 000€</td><td class="r">2 730 000€</td><td class="r">3 111 000€</td></tr>
+      <tr><td>TB Incentive Fee (15% du GOP)</td><td class="r">311 000€</td><td class="r">409 000€</td><td class="r">467 000€</td></tr>
+      <tr><td>Service dette (850K€ @ 4,5%, 7 ans)</td><td class="r">136 000€</td><td class="r">136 000€</td><td class="r">136 000€</td></tr>
+      <tr class="row-sub"><td><strong>Total charges</strong></td><td class="r"><strong>2 064 000€</strong></td><td class="r"><strong>2 424 000€</strong></td><td class="r"><strong>2 652 000€</strong></td></tr>
+      <tr class="row-sec"><td colspan="4">Résultat</td></tr>
+      <tr class="row-tot"><td><strong>Résultat net</strong></td><td class="r"><strong>1 624 000€</strong></td><td class="r"><strong>2 184 000€</strong></td><td class="r"><strong>2 508 000€</strong></td></tr>
+      <tr><td>Fondation Tagadirt (10% net)</td><td class="r">162 400€</td><td class="r">218 400€</td><td class="r">250 800€</td></tr>
+      <tr><td>Preferred 8% / investisseur (prioritaire)</td><td class="r">20 000€</td><td class="r">20 000€</td><td class="r">20 000€</td></tr>
+      <tr><td>Growth Fund TB Maroc (10% résiduel)</td><td class="r">130 160€</td><td class="r">180 560€</td><td class="r">209 720€</td></tr>
+      <tr><td>Dividende total / investisseur (8,75%)</td><td class="r">122 501€</td><td class="r">162 191€</td><td class="r">185 154€</td></tr>
+    </tbody>
+  </table>
+
+<div class="rule" style="margin-top:40px;"></div>
+<div class="sl" data-fr="Budget rénovation détaillé - poste par poste" data-nl="Gedetailleerd renovatiebudget - post per post">Budget rénovation détaillé - poste par poste</div>
+<h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:32px;line-height:1.2;margin-bottom:16px;" data-fr="1 500 000€. Chaque euro justifié." data-nl="1 500 000€. Elke euro verantwoord.">1 500 000€. Chaque euro justifié.</h2>
+<table class="budget">
+    <thead>
+      <tr>
+        <th>Poste</th>
+        <th class="r">Montant</th>
+        <th>Note</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="row-sec"><td colspan="3">Hébergement, 30 unités</td></tr>
+      <tr><td>Rénovation complète 24 chambres standard (~40m²)</td><td class="r">480 000€</td><td class="note">~20 000€/ch., finitions, salle de bain, menuiseries, électricité</td></tr>
+      <tr><td>Rénovation 5 suites (~55m²)</td><td class="r">137 500€</td><td class="note">~27 500€/suite, surface et salle de bain baignoire sur pied</td></tr>
+      <tr><td>Rénovation suite piscine + bassin zellige privé</td><td class="r">82 500€</td><td class="note">Piscine intégrée 3×4m, tadelakt noir, terrasse fermée</td></tr>
+      <tr class="row-sub"><td><strong>Sous-total hébergement</strong></td><td class="r"><strong>700 000€</strong></td><td></td></tr>
+      <tr class="row-sec"><td colspan="3">Bâtiment principal, espaces communs</td></tr>
+      <tr><td>Galerie Toile Blanche Contemporary Marrakech</td><td class="r">80 000€</td><td class="note">Murs bruts, éclairage galerie, cimaises invisibles, sol pierre</td></tr>
+      <tr><td>Restaurant, cuisine ouverte + salle</td><td class="r">120 000€</td><td class="note">Équipement cuisine pro, mobilier cèdre, terrasse Atlas</td></tr>
+      <tr><td>Bar cheminée + salon réception</td><td class="r">60 000€</td><td class="note">Cheminée, mobilier, éclairage laiton, pas de comptoir</td></tr>
+      <tr><td>Hammam complet, zellige, vapeur, soins</td><td class="r">90 000€</td><td class="note">Deux cabines massage, sol et murs zellige, table pierre</td></tr>
+      <tr><td>Rooftop terrasse Atlas</td><td class="r">30 000€</td><td class="note">Daybeds cèdre, sol pierre, garde-corps sobre</td></tr>
+      <tr class="row-sub"><td><strong>Sous-total bâtiment principal</strong></td><td class="r"><strong>380 000€</strong></td><td></td></tr>
+      <tr class="row-sec"><td colspan="3">Infrastructure et autonomie</td></tr>
+      <tr><td>Citerne eau 60m³ + station pompage triplex</td><td class="r">45 000€</td><td class="note">Urgence opérationnelle, puits insuffisant seul</td></tr>
+      <tr><td>Micro-STEP recyclage eaux grises jardins</td><td class="r">25 000€</td><td class="note">Irrigation légale, utilisation eau fraîche interdite jardins</td></tr>
+      <tr><td>Installation solaire photovoltaïque + thermique</td><td class="r">60 000€</td><td class="note">Autonomie énergétique partielle, eau chaude solaire complète</td></tr>
+      <tr><td>Mise aux normes sismiques, murs périmétriques</td><td class="r">50 000€</td><td class="note">Post-séisme Al Haouz 2023, bureaux d'études certifiés</td></tr>
+      <tr><td>Réseaux et voiries internes</td><td class="r">40 000€</td><td class="note">Éclairage extérieur sol, chemins pierre, irrigation</td></tr>
+      <tr class="row-sub"><td><strong>Sous-total infrastructure</strong></td><td class="r"><strong>220 000€</strong></td><td></td></tr>
+      <tr class="row-sec"><td colspan="3">Jardins et paysagement</td></tr>
+      <tr><td>Jardin central, plantations, allées pierre, éclairage sol</td><td class="r">60 000€</td><td class="note">Oliviers, grenadiers, lavande, romarin, palette locale</td></tr>
+      <tr><td>Deux piscines principales, redessin zellige foncé</td><td class="r">80 000€</td><td class="note">Rhabillage zellige bleu nuit, margelles pierre, nage à ras bord</td></tr>
+      <tr class="row-sub"><td><strong>Sous-total jardins</strong></td><td class="r"><strong>140 000€</strong></td><td></td></tr>
+      <tr class="row-sec"><td colspan="3">FF&amp;E et provision</td></tr>
+      <tr><td>Mobilier, chambres, communs (cèdre, lin, laiton)</td><td class="r">120 000€</td><td class="note">4 000€/clé - artisans locaux supervisés par LB</td></tr>
+      <tr><td>Literie, linge, équipements</td><td class="r">15 000€</td><td class="note">Standard Toile Blanche, lin naturel, non teint</td></tr>
+      <tr><td>Provision aléas 8%</td><td class="r">63 600€</td><td class="note">Chantier de rénovation, surprises structurelles possibles</td></tr>
+      <tr class="row-sub"><td><strong>Sous-total FF&amp;E et provision</strong></td><td class="r"><strong>198 600€</strong></td><td></td></tr>
+      <tr class="row-sec"><td colspan="3">Lancement</td></tr>
+      <tr><td>Transfert licence alcool + frais légaux + CNSS</td><td class="r">50 000€</td><td class="note">Buffer social ancienne gestion inclus</td></tr>
+      <tr><td>Pre-opening marketing, presse, identité visuelle</td><td class="r">50 000€</td><td class="note">Apporté par LB - réduction vs budget initial</td></tr>
+      <tr><td>Fonds de roulement, 6 mois de charges fixes</td><td class="r">70 000€</td><td class="note">LB apporte 100 000€ complémentaires à l'ouverture</td></tr>
+      <tr class="row-sub"><td><strong>Sous-total lancement</strong></td><td class="r"><strong>170 000€</strong></td><td></td></tr>
+      <tr class="row-tot"><td><strong>Total rénovation et lancement</strong></td><td class="r"><strong>1 808 600€</strong></td><td class="note">Arrondi budget 1 500 000€ rénovation + 308 600€ lancement et infrastructure</td></tr>
+      <tr class="row-sec"><td colspan="3">Acquisition (rappel)</td></tr>
+      <tr><td>Achat SCI + SARL (100% parts, cible négociée)</td><td class="r">1 400 000€</td><td class="note">Levier liabilities, voir mémo acquisition</td></tr>
+      <tr class="row-tot"><td><strong>Investissement total</strong></td><td class="r"><strong>3 150 000€</strong></td><td class="note">Arrondi de travail, à affiner après devis définitifs</td></tr>
+    </tbody>
+  </table>
+
+<div class="pf" style="margin-top:40px;">
+  <span data-fr="Toile Blanche Group - Leroy Brothers - Mai 2026" data-nl="Toile Blanche Group - Leroy Brothers - Mei 2026">Toile Blanche Group - Leroy Brothers - Mai 2026</span>
+  <span data-fr="Document confidentiel - projections à titre indicatif" data-nl="Vertrouwelijk document - indicatieve projecties">Document confidentiel - projections indicatives</span>
+</div>
+
 </div>
 <script>
 const LANG_KEY = 'tbm_lang';
