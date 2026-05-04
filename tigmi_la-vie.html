@@ -192,10 +192,20 @@
     .nav-top{padding:12px 20px;}
     .data-row{grid-template-columns:1fr;}
   }
+
+  #lang-bar{position:fixed;top:14px;right:20px;z-index:999;display:flex;gap:0;background:var(--sand);border:1px solid var(--pise-light);}
+  .lang-btn{font-family:'Montserrat',sans-serif;font-weight:400;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--pise-mid);background:transparent;border:none;padding:7px 12px;cursor:pointer;transition:color 0.15s,background 0.15s;}
+  .lang-btn.active{background:var(--cedar);color:var(--sky);}
+  .lang-btn:hover:not(.active){color:var(--cedar);}
 </style>
 <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
+
+<div id="lang-bar">
+  <button class="lang-btn active" id="btn-fr" onclick="setLang('fr')">FR</button>
+  <button class="lang-btn" id="btn-nl" onclick="setLang('nl')">NL</button>
+</div>
 <div class="page">
 
   <div class="ph">
