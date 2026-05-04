@@ -6,7 +6,7 @@
 <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Toile Blanche - Marrakech</title>
+<title>Toile Blanche, Marrakech</title>
 <style>
  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap');
  :root{--sand:#F5F0E6;--pise:#111008;--pise-mid:#4F4336;--cedar:#A78661;--sky:#FDFAF5;--pise-light:#D8CCB8;}
@@ -128,7 +128,7 @@
 <!-- LOGIN -->
 <div id="login-screen">
  <div class="login-logo">Toile Blanche</div>
- <div class="login-sub">Marrakech - Propositions d'investissement</div>
+  <div class="login-sub">Marrakech, Propositions d'investissement</div>
  <div class="login-box">
  <div class="login-rule"></div>
  <label class="login-label" for="pwd">Accès confidentiel</label>
@@ -136,7 +136,7 @@
  <button class="login-btn" onclick="checkPassword()">Accéder</button>
  <div class="login-error" id="login-error">Mot de passe incorrect</div>
  </div>
- <div class="login-confidential">Document confidentiel - Usage exclusif associés pressentis</div>
+  <div class="login-confidential">Document confidentiel, Usage exclusif associés pressentis</div>
 </div>
 
 <!-- SITE -->
@@ -156,15 +156,16 @@
  <img class="hero-img" src="images/img_accueil_neutre.png" alt="">
  <div class="hero-overlay"></div>
  <div class="hero-content">
- <div class="hero-eyebrow">Toile Blanche - Marrakech</div>
+        <div class="hero-eyebrow">Toile Blanche, Marrakech</div>
  <div class="hero-title">Propositions<br>d'Investissement</div>
  <div class="hero-sub">Trois projets. Trois déclarations.</div>
  <div class="hero-declaration">« Toile Blanche a été déclarée œuvre par les Leroy Brothers.<br>Elle continue de fonctionner normalement. »</div>
  <div class="hero-cta-wrap">
  <button class="hero-cta active" id="cta-riads-pise" onclick="selectProject('riads-pise', true)">Riads Pisé</button>
  <button class="hero-cta" id="cta-khaimas" onclick="selectProject('khaimas', true)">Khaimas</button>
- <button class="hero-cta" id="cta-tigmi" onclick="selectProject('tigmi', true)">Tigmi</button>
- </div>
+          <button class="hero-cta" id="cta-tigmi" onclick="selectProject('tigmi', true)">Tigmi</button>
+          <button class="hero-cta" id="cta-conclusions" onclick="openConclusions()">Conclusions</button>
+        </div>
  </div>
  </div>
 
@@ -249,24 +250,18 @@
  </div><!-- /project-compare -->
  </div>
 
- <!-- CONCLUSIONS CTA -->
- <div style="padding:48px 48px 0;text-align:center;">
- <div style="font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--cedar);margin-bottom:16px;">Synthèse comparative</div>
- <button onclick="openConclusions()" style="font-family:'Montserrat',sans-serif;font-weight:300;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--pise);border:1px solid var(--cedar);background:transparent;padding:14px 32px;cursor:pointer;">Voir les conclusions - Les trois projets côte à côte</button>
- </div>
-
- <!-- TERRAIN AERIAL -->
+    <!-- TERRAIN AERIAL -->
  <div style="margin-top:64px;">
  <div style="padding:48px 48px 20px;">
- <div style="font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--cedar);margin-bottom:4px;border-top:1px solid var(--pise-light);padding-top:48px;">Le terrain - Route de Fès</div>
- <div style="font-size:12px;letter-spacing:0.15em;color:var(--pise-mid);margin-top:4px;">5 hectares - parcelle murée - Haouz - Riads Pisé ou Khaimas</div>
+        <div style="font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--cedar);margin-bottom:4px;border-top:1px solid var(--pise-light);padding-top:48px;">Le terrain, Route de Fès</div>
+        <div style="font-size:12px;letter-spacing:0.15em;color:var(--pise-mid);margin-top:4px;">5 hectares, parcelle murée, Haouz, Riads Pisé ou Khaimas</div>
  </div>
  <img src="images/img_b6085da8ddc7306d.png" alt="" style="width:100%;display:block;">
  </div>
 
  <footer>
- <span>Toile Blanche Marrakech - Document de travail confidentiel</span>
- <span>Trois propositions d'investissement - Mai 2026</span>
+      <span>Toile Blanche Marrakech, Document de travail confidentiel</span>
+      <span>Trois propositions d'investissement, Mai 2026</span>
  </footer>
  </div><!-- /home-view -->
 
@@ -423,18 +418,18 @@
  setActiveNavLink();
  }
 
- function openConclusions() {
- currentDocFile = 'conclusions.html';
- setNavVisibility(true);
- document.getElementById('home-view').style.display = 'none';
- const fv = document.getElementById('frame-view');
- fv.style.display = 'flex';
- fv.style.flexDirection = 'column';
- document.getElementById('doc-frame').src = 'conclusions.html';
- document.querySelectorAll('.nav-link').forEach(btn => btn.classList.remove('active'));
- const c = document.getElementById('nav-conclusions');
- if (c) c.classList.add('active');
- }
+  function openConclusions() {
+    setNavVisibility(false);
+    document.getElementById('home-view').style.display = 'none';
+    const fv = document.getElementById('frame-view');
+    fv.style.display = 'flex';
+    fv.style.flexDirection = 'column';
+    document.getElementById('doc-frame').src = 'conclusions.html';
+    currentDocFile = 'conclusions.html';
+    document.querySelectorAll('.hero-cta').forEach(b => b.classList.remove('active'));
+    const cb = document.getElementById('cta-conclusions');
+    if (cb) cb.classList.add('active');
+  }
 
  function setActiveNavLink() {
  document.querySelectorAll('.nav-link').forEach(btn => btn.classList.remove('active'));
