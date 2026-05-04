@@ -86,8 +86,18 @@
   .final-sub{font-size:10px;letter-spacing:0.2em;color:var(--cedar);text-transform:uppercase;}
 </style>
 <link rel="icon" type="image/png" href="images/favicon.png">
+<style>
+  #back-home{position:fixed;top:16px;left:24px;z-index:999;display:flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;font-weight:400;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--pise-mid);background:var(--sand);border:1px solid var(--pise-light);padding:8px 16px;cursor:pointer;transition:color 0.2s,border-color 0.2s;}
+  #back-home:hover{color:var(--cedar);border-color:var(--cedar);}
+  #back-home svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0;}
+</style>
 </head>
 <body>
+
+<button id="back-home" onclick="if(window.parent && window.parent.showHome){window.parent.showHome();}else{window.history.back();}">
+  <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+  Accueil
+</button>
 
 <!-- ═══════════════ PAGE 1 : OUVERTURE -->
 <div class="page">
