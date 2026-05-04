@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="referrer" content="no-referrer">
+<title>Toile Blanche Marrakech — L'Art & La Galerie</title>
+<style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap');
+  :root{--sand:#F5F0E6;--pise:#111008;--pise-mid:#4F4336;--cedar:#A78661;--sky:#FDFAF5;--pise-light:#D8CCB8;--alert:#8B3A2A;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:100%;max-width:100%;overflow-x:hidden;}
+  body{background:var(--sand);color:var(--pise);font-family:'Montserrat',sans-serif;font-weight:300;font-size:16px;line-height:1.75;}
+
+  /* LOGIN */
+  #login-screen{width:100%;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;background:var(--sand);}
+  .login-logo{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:0.5em;text-transform:uppercase;color:var(--pise);margin-bottom:6px;text-align:center;}
+  .login-sub{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--cedar);margin-bottom:56px;text-align:center;}
+  .login-box{width:100%;max-width:340px;text-align:center;}
+  .login-rule{width:28px;height:1px;background:var(--cedar);margin:0 auto 36px;}
+  .login-label{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--pise-mid);display:block;margin-bottom:10px;}
+  .login-input{width:100%;background:var(--sky);border:1px solid var(--pise-light);padding:13px 18px;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:300;color:var(--pise);text-align:center;letter-spacing:0.12em;outline:none;}
+  .login-input:focus{border-color:var(--cedar);}
+  .login-btn{width:100%;margin-top:10px;background:var(--pise);color:var(--sky);border:none;padding:13px 18px;font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;cursor:pointer;}
+  .login-btn:hover{background:var(--cedar);}
+  .login-error{font-size:10px;letter-spacing:0.15em;color:var(--alert);text-align:center;margin-top:10px;opacity:0;transition:opacity 0.2s;}
+  .login-error.show{opacity:1;}
+  .login-conf{font-size:9px;letter-spacing:0.15em;color:var(--pise-mid);text-align:center;margin-top:44px;text-transform:uppercase;}
+
+  /* SITE SHELL */
+  #site{display:none;}
+
+  /* NAV */
+  nav{width:100%;background:var(--sand);border-bottom:1px solid var(--pise-light);position:sticky;top:0;z-index:100;}
+  .nav-top{padding:12px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--pise-light);}
+  .nav-brand{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:0.28em;text-transform:uppercase;color:var(--pise);cursor:pointer;}
+  .nav-brand span{color:var(--cedar);}
+  .nav-right{display:flex;align-items:center;gap:16px;}
+  .lang-toggle{display:flex;gap:0;}
+  .lang-btn{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:5px 10px;background:none;border:1px solid var(--pise-light);font-family:'Montserrat',sans-serif;font-weight:300;cursor:pointer;color:var(--pise-mid);transition:all 0.15s;}
+  .lang-btn.active{background:var(--pise);color:var(--sky);border-color:var(--pise);}
+  .nav-logout{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--pise-mid);cursor:pointer;background:none;border:none;font-family:'Montserrat',sans-serif;}
+  .nav-links{padding:9px 40px;display:flex;gap:4px;flex-wrap:wrap;}
+  .nav-link{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--pise-mid);cursor:pointer;padding:6px 10px;border:1px solid transparent;background:none;font-family:'Montserrat',sans-serif;font-weight:300;transition:all 0.15s;}
+  .nav-link:hover{color:var(--pise);}
+  .nav-link.active{color:var(--pise);border-color:var(--cedar);}
+
+  /* PAGES */
+  .page{max-width:960px;margin:0 auto;padding:56px 52px;border-bottom:1px solid var(--pise-light);display:none;}
+  .page.visible{display:block;}
+  .ph{display:flex;justify-content:space-between;margin-bottom:40px;padding-bottom:10px;border-bottom:1px solid var(--cedar);}
+  .ph span{font-size:14px;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;}
+  .ph span:last-child{color:var(--pise-mid);}
+  .sl{font-size:11px;letter-spacing:0.22em;color:var(--cedar);text-transform:uppercase;margin-bottom:10px;}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:44px;line-height:1.12;margin-bottom:22px;}
+  h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:21px;line-height:1.3;margin-bottom:10px;}
+  h3{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--pise-mid);margin-bottom:10px;margin-top:20px;font-weight:400;}
+  p{font-size:16px;line-height:1.9;margin-bottom:12px;}
+  .bs{font-size:14px;line-height:1.8;color:var(--pise-mid);margin-bottom:7px;}
+  .two{display:grid;grid-template-columns:1.15fr 0.85fr;gap:44px;margin:20px 0;}
+  .two-eq{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin:20px 0;}
+  .three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--pise-light);margin:24px 0;}
+  .ul{list-style:none;margin:0 0 14px;padding:0;}
+  .ul li{font-size:15px;line-height:1.75;padding-left:14px;position:relative;margin-bottom:3px;}
+  .ul li::before{content:'·';position:absolute;left:0;color:var(--cedar);}
+  .ab{border-left:2px solid var(--cedar);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
+  .ab2{border-left:2px solid var(--pise-light);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
+  .ab-dark{padding:32px 36px;background:var(--pise);margin:24px 0;}
+  .ab-dark p{color:rgba(253,250,245,0.85);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.65;}
+  .ab-dark .sl{color:var(--cedar);}
+  .alert-box{border-left:2px solid var(--alert);padding:18px 22px;background:#FDF5F3;margin-bottom:16px;}
+  .qb{border-left:1px solid var(--cedar);padding:14px 20px;background:var(--sky);margin:16px 0;}
+  .qb p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;line-height:1.75;}
+  .qs{font-size:10px;letter-spacing:0.16em;color:var(--cedar);text-transform:uppercase;margin-top:7px;}
+  .rule{width:36px;height:1px;background:var(--cedar);margin:22px 0;}
+  .pf{margin-top:40px;padding-top:12px;border-top:1px solid var(--pise-light);display:flex;justify-content:space-between;}
+  .pf span{font-size:10px;letter-spacing:0.13em;color:var(--pise-mid);text-transform:uppercase;}
+
+  /* IMAGE PLACEHOLDERS */
+  .img-full{width:100%;height:340px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9px;letter-spacing:0.12em;text-align:center;padding:24px;font-style:italic;margin:24px 0;}
+  .img-h{width:100%;height:200px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9px;text-align:center;padding:16px;font-style:italic;}
+  .img-sq{width:100%;height:260px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9px;text-align:center;padding:16px;font-style:italic;}
+
+  /* KPI STRIPS */
+  .kpi-cover{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--pise-light);margin:28px 0;}
+  .kc{background:var(--sky);padding:20px 18px;}
+  .kc-v{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--pise);line-height:1;margin-bottom:5px;}
+  .kc-l{font-size:9px;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;margin-bottom:2px;}
+  .kc-s{font-size:11px;color:var(--pise-mid);}
+  .kpi-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--pise-light);margin:24px 0;}
+  .ks-box{background:var(--sky);padding:20px 18px;}
+  .ks-val{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300;color:var(--pise);line-height:1;margin-bottom:5px;}
+  .ks-lbl{font-size:9px;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;}
+  .ks-sub{font-size:12px;color:var(--pise-mid);margin-top:3px;}
+
+  /* BLOCK GRIDS */
+  .block-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--pise-light);margin:24px 0;}
+  .bc{background:var(--sky);padding:22px 20px;}
+  .bl{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;}
+  .bt{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--pise);margin-bottom:8px;line-height:1.2;}
+  .bd{font-size:13px;line-height:1.7;color:var(--pise-mid);}
+  .bp{font-size:11px;color:var(--pise-mid);margin-top:8px;padding-top:8px;border-top:1px solid var(--pise-light);font-style:italic;}
+
+  /* WATERFALL TABLE */
+  .waterfall{margin:24px 0;}
+  .wf-row{display:grid;grid-template-columns:28px 1fr 1fr;gap:0;border-bottom:1px solid var(--pise-light);padding:12px 0;align-items:start;}
+  .wf-row:first-child{border-top:2px solid var(--cedar);}
+  .wf-num{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--pise-light);font-weight:300;line-height:1;margin-top:2px;}
+  .wf-title{font-size:13px;font-weight:400;color:var(--pise);letter-spacing:0.08em;margin-bottom:3px;}
+  .wf-desc{font-size:12px;color:var(--pise-mid);line-height:1.65;}
+  .wf-amount{font-size:13px;color:var(--cedar);text-align:right;padding-top:3px;}
+  .wf-highlight .wf-num{color:var(--cedar);}
+  .wf-highlight .wf-title{color:var(--cedar);}
+
+  /* RETURN TABLE */
+  table.ret{width:100%;border-collapse:collapse;margin:20px 0;}
+  table.ret thead tr{border-bottom:2px solid var(--cedar);}
+  table.ret thead th{padding:8px 10px;text-align:left;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
+  table.ret thead th.r{text-align:right;}
+  table.ret tbody tr{border-bottom:1px solid var(--pise-light);}
+  table.ret tbody td{padding:8px 10px;font-size:14px;color:var(--pise);}
+  table.ret tbody td.r{text-align:right;}
+  table.ret tbody td.muted{color:var(--pise-mid);font-style:italic;}
+  table.ret .row-sub td{background:var(--sand);font-weight:400;}
+  table.ret .row-tot td{border-top:2px solid var(--cedar);font-weight:400;font-size:15px;padding:10px;}
+  table.ret .row-pref td{background:var(--sky);}
+
+  /* DATA ROWS */
+  .data-row{display:grid;grid-template-columns:180px 1fr;gap:16px;padding:10px 0;border-bottom:1px solid var(--pise-light);font-size:14px;}
+  .data-row:last-child{border-bottom:none;}
+  .data-label{color:var(--cedar);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;padding-top:2px;}
+  .data-val{color:var(--pise);line-height:1.7;}
+
+  /* ECO GRID */
+  .eco-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--pise-light);margin:24px 0;}
+  .eco-cell{background:var(--sky);padding:20px 18px;}
+  .eco-icon{font-size:24px;margin-bottom:8px;}
+  .eco-title{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;font-weight:400;}
+  .eco-body{font-size:13px;line-height:1.7;color:var(--pise-mid);}
+  .eco-premium{font-size:12px;color:var(--pise);margin-top:8px;padding-top:8px;border-top:1px solid var(--pise-light);}
+
+  /* ART GRID */
+  .art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--pise-light);margin:24px 0;}
+  .art-cell{background:var(--sky);padding:20px 16px;}
+  .art-label{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;}
+  .art-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--pise);margin-bottom:8px;line-height:1.2;}
+  .art-body{font-size:12px;line-height:1.7;color:var(--pise-mid);}
+
+  /* OVERRIDES */
+  table{font-size:15px !important;}
+  table thead th{font-size:11px !important;padding:10px !important;}
+  table tbody td{font-size:14px !important;padding:9px 10px !important;line-height:1.7 !important;}
+  .bd{font-size:13px !important;}
+  .bs{font-size:14px !important;}
+
+  @media(max-width:720px){
+    .page{padding:40px 20px;}
+    .nav-links{padding:8px 16px;}
+    .two,.two-eq,.block-grid,.eco-grid{grid-template-columns:1fr;}
+    .kpi-cover{grid-template-columns:1fr 1fr;}
+    .art-grid{grid-template-columns:1fr;}
+    .three{grid-template-columns:1fr;}
+    h1{font-size:36px;}
+    .nav-top{padding:12px 20px;}
+    .data-row{grid-template-columns:1fr;}
+  }
+
+  /* Multi-page specific */
+  a.nav-link{text-decoration:none;display:inline-block;}
+  nav{width:100%;background:var(--sand);border-bottom:1px solid var(--pise-light);position:sticky;top:0;z-index:100;}
+  .nav-top{padding:12px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--pise-light);}
+  .nav-brand{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:0.28em;text-transform:uppercase;color:var(--pise);text-decoration:none;}
+  .nav-brand span{color:var(--cedar);}
+  .nav-right{display:flex;align-items:center;gap:16px;}
+  .lang-toggle{display:flex;gap:0;}
+  .lang-btn{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:5px 10px;background:none;border:1px solid var(--pise-light);font-family:'Montserrat',sans-serif;font-weight:300;cursor:pointer;color:var(--pise-mid);transition:all 0.15s;}
+  .lang-btn.active{background:var(--pise);color:var(--sky);border-color:var(--pise);}
+  .nav-links{padding:9px 40px;display:flex;gap:4px;flex-wrap:wrap;}
+  .nav-link{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--pise-mid);padding:6px 10px;border:1px solid transparent;font-family:'Montserrat',sans-serif;font-weight:300;transition:all 0.15s;}
+  .nav-link:hover{color:var(--pise);}
+  .nav-link.active{color:var(--pise);border-color:var(--cedar);}
+  .page{max-width:960px;margin:0 auto;padding:56px 52px;}
+  @media(max-width:720px){
+    .page{padding:40px 20px;}
+    .nav-links{padding:8px 16px;}
+    .two,.two-eq,.block-grid,.eco-grid{grid-template-columns:1fr;}
+    .kpi-cover{grid-template-columns:1fr 1fr;}
+    .art-grid,.three{grid-template-columns:1fr;}
+    h1{font-size:36px;}
+    .nav-top{padding:12px 20px;}
+    .data-row{grid-template-columns:1fr;}
+  }
+</style>
+<script>
+if (!sessionStorage.getItem('tbm_auth')) { window.location.href = 'index.html'; }
+</script>
+<link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+<div class="page">
+
+  <div class="ph">
+    <span data-fr="L'art et la galerie" data-nl="De kunst en de galerie">L'art et la galerie</span>
+    <span data-fr="Toile Blanche Contemporary Marrakech" data-nl="Toile Blanche Contemporary Marrakech">Toile Blanche Contemporary Marrakech</span>
+  </div>
+  <div class="sl" data-fr="Le programme vivant" data-nl="Het levende programma">Le programme vivant</div>
+  <h1 data-fr="Un hôtel avec de l'art<br>n'est pas la même chose<br>qu'un lieu où l'art est la raison d'être." data-nl="Een hotel met kunst<br>is niet hetzelfde als<br>een plek waar kunst de bestaansreden is.">Un hôtel avec de l'art<br>n'est pas la même chose<br>qu'un lieu où l'art est la raison d'être.</h1>
+
+  <div class="two">
+    <div>
+      <p data-fr="Les Leroy Brothers sont un collectif d'art contemporain belge actif depuis 1997. Leur travail se situe à l'intersection de l'art conceptuel, de la culture digitale et de la critique institutionnelle. Ils ont exposé dans des institutions internationales, travaillé avec des galeries en Europe, aux États-Unis et en Asie, et constitué une collection qui entre régulièrement dans des fonds privés et publics."
+         data-nl="De Leroy Brothers zijn een Belgisch hedendaags kunstcollectief actief sinds 1997. Hun werk bevindt zich op het snijvlak van conceptuele kunst, digitale cultuur en institutionele kritiek. Ze hebben tentoongesteld in internationale instellingen, samengewerkt met galerijen in Europa, de VS en Azië, en een collectie opgebouwd die regelmatig in particuliere en openbare fondsen terechtkomt.">
+        Les Leroy Brothers sont un collectif d'art contemporain belge actif depuis 1997. Leur travail se situe à l'intersection de l'art conceptuel, de la culture digitale et de la critique institutionnelle. Ils ont exposé dans des institutions internationales, travaillé avec des galeries en Europe, aux États-Unis et en Asie, et constitué une collection qui entre régulièrement dans des fonds privés et publics.
+      </p>
+      <p data-fr="La déclaration artistique est le cœur du projet. Toile Blanche Marrakech n'est pas un hôtel boutique avec une identité artistique. C'est un territoire déclaré œuvre, qui fonctionne comme lieu d'hébergement. Cette distinction n'est pas rhétorique. Elle détermine l'ADR, la presse, le type de clientèle, et finalement le multiple de sortie."
+         data-nl="De artistieke verklaring is het hart van het project. Toile Blanche Marrakech is geen boetiekhotel met een artistieke identiteit. Het is een tot kunstwerk verklaard grondgebied dat functioneert als verblijfplaats. Dit onderscheid is niet retorisch. Het bepaalt de ADR, de pers, het type clientèle, en uiteindelijk het uitstapveelvoud.">
+        La déclaration artistique est le cœur du projet. Toile Blanche Marrakech n'est pas un hôtel boutique avec une identité artistique. C'est un territoire déclaré œuvre, qui fonctionne comme lieu d'hébergement. Cette distinction n'est pas rhétorique. Elle détermine l'ADR, la presse, le type de clientèle, et finalement le multiple de sortie.
+      </p>
+    </div>
+    <div>
+      <div class="ab">
+        <div class="sl" data-fr="Studio Leroy Brothers — sur territoire" data-nl="Studio Leroy Brothers — op het grondgebied">Studio Leroy Brothers — sur territoire</div>
+        <h2 data-fr="Un lieu de travail effectif,<br>visitable." data-nl="Een echte werkplek,<br>te bezoeken.">Un lieu de travail effectif,<br>visitable.</h2>
+        <p class="bs" data-fr="Les Leroy Brothers travaillent effectivement sur le territoire — pas en visite, en résidence de travail. Le studio est une pièce du programme spatial. Il est visitable par les résidents de l'hôtel, sur invitation. La présence réelle des artistes sur le lieu est ce qui distingue une déclaration d'une décoration."
+                  data-nl="De Leroy Brothers werken effectief op het grondgebied — niet op bezoek, maar in werkresidentie. Het atelier maakt deel uit van het ruimtelijk programma. Het is toegankelijk voor hotelgasten, op uitnodiging. De werkelijke aanwezigheid van de kunstenaars op de plek is wat een verklaring onderscheidt van een decoratie.">
+          Les Leroy Brothers travaillent effectivement sur le territoire — pas en visite, en résidence de travail. Le studio est visitable par les résidents sur invitation. La présence réelle des artistes distingue une déclaration d'une décoration.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="art-grid">
+    <div class="art-cell">
+      <div class="art-label" data-fr="La galerie" data-nl="De galerie">La galerie</div>
+      <div class="art-title" data-fr="Toile Blanche Contemporary Marrakech" data-nl="Toile Blanche Contemporary Marrakech">Toile Blanche Contemporary Marrakech</div>
+      <div class="art-body" data-fr="Rez-de-chaussée du bâtiment principal. Murs en pisé brut non enduit, lumière naturelle zénithale. Programme d'expositions : œuvres sur territoire, œuvres en collection, œuvres de passage. Accessible aux résidents et sur invitation lors des Sessions. Entrée distincte depuis le jardin." data-nl="Begane grond van het hoofdgebouw. Ruwe ongepleisterde pisé muren, zenitaal natuurlijk licht. Tentoonstellingsprogramma : werken op het grondgebied, werken in collectie, doorgaande werken. Toegankelijk voor gasten en op uitnodiging tijdens de Sessions. Aparte ingang vanuit de tuin.">Rez-de-chaussée du bâtiment principal. Pisé brut, lumière zénithale. Programme d'expositions permanent et temporaire. Accessible résidents et invités.</div>
+    </div>
+    <div class="art-cell">
+      <div class="art-label" data-fr="Le programme" data-nl="Het programma">Le programme</div>
+      <div class="art-title" data-fr="La Semaine · L'Atelier · Les Sessions" data-nl="La Semaine · L'Atelier · Les Sessions">La Semaine · L'Atelier · Les Sessions</div>
+      <div class="art-body" data-fr="La Semaine : 4 fois par an, collectionneurs et amateurs d'art invités pour 5 jours en présence des Leroy Brothers. L'Atelier : résidences longue durée pour créateurs. Les Sessions : ouverture élargie — art, musique, conversation. Programmation par les Leroy Brothers uniquement." data-nl="La Semaine : 4 keer per jaar, verzamelaars en kunstliefhebbers uitgenodigd voor 5 dagen in aanwezigheid van de Leroy Brothers. L'Atelier : langdurige residenties voor creatieven. Les Sessions : bredere opening — kunst, muziek, gesprek. Programmering uitsluitend door de Leroy Brothers.">La Semaine (4×/an), L'Atelier (résidences longue durée), Les Sessions (ouvertures). Toutes programmées par les Leroy Brothers.</div>
+    </div>
+    <div class="art-cell">
+      <div class="art-label" data-fr="L'artiste invité" data-nl="De uitgenodigde kunstenaar">L'artiste invité</div>
+      <div class="art-title" data-fr="Une œuvre par an.<br>Permanente." data-nl="Één werk per jaar.<br>Permanent.">Une œuvre par an.<br>Permanente.</div>
+      <div class="art-body" data-fr="Un artiste est invité chaque année à séjourner sur le territoire. Il laisse une œuvre — dans le jardin, dans la galerie, dans le paysage. Ces œuvres s'accumulent. Elles constituent une collection permanente croissante, propriété de la SARL, valorisée dans le bilan de l'entreprise." data-nl="Elk jaar wordt een kunstenaar uitgenodigd op het grondgebied te verblijven. Hij laat een werk achter — in de tuin, in de galerie, in het landschap. Deze werken stapelen zich op. Ze vormen een groeiende permanente collectie, eigendom van de SARL, gewaardeerd op de balans van het bedrijf.">Un artiste invité par an laisse une œuvre permanente. Collection croissante, propriété de la SARL, valorisée au bilan.</div>
+    </div>
+    <div class="art-cell">
+      <div class="art-label" data-fr="Les Compressions" data-nl="De Compressions">Les Compressions</div>
+      <div class="art-title" data-fr="Matière en attente<br>de déclaration." data-nl="Materie in afwachting<br>van verklaring.">Matière en attente<br>de déclaration.</div>
+      <div class="art-body" data-fr="Les déchets solides résiduels sont compressés en briques par une presse hydraulique sur site. Une ou deux fois par an, les Leroy Brothers déclarent une Compression : titrée, datée, numérotée. Certaines entrent dans la collection, certaines rejoignent des collectionneurs. Ce n'est pas une solution de gestion des déchets. C'est une œuvre." data-nl="Resterende vaste afvalstoffen worden ter plaatse in blokken geperst door een hydraulische pers. Een of twee keer per jaar verklaren de Leroy Brothers een Compressie : betiteld, gedateerd, genummerd. Sommige komen in de collectie, sommige gaan naar verzamelaars. Dit is geen afvalbeheeroplossing. Het is een kunstwerk.">Déchets compressés en œuvres titrées. Gestion des déchets et art sont la même chose ici.</div>
+    </div>
+    <div class="art-cell">
+      <div class="art-label" data-fr="La collection" data-nl="De collectie">La collection</div>
+      <div class="art-title" data-fr="500 000€ de valeur<br>apportés par LB." data-nl="500 000€ waarde<br>ingebracht door LB.">500 000€ de valeur<br>apportés par LB.</div>
+      <div class="art-body" data-fr="Les Leroy Brothers apportent en prêt une collection d'œuvres valorisée à 500 000€+, intégrée dans l'apport en nature de 30%. Elle est présente dans la galerie, dans les chambres, dans les espaces extérieurs. Elle constitue une garantie immatérielle supplémentaire pour les investisseurs." data-nl="De Leroy Brothers brengen een bruikleencollectie van werken met een waarde van 500 000€+, opgenomen in de in-natura inbreng van 30%. Aanwezig in de galerie, in de kamers, in de buitenruimtes. Het vormt een aanvullende immateriële garantie voor de investeerders.">Collection en prêt, valorisée 500K€+, intégrée dans l'apport LB 30%. Présente galerie, chambres et extérieur.</div>
+    </div>
+    <div class="art-cell">
+      <div class="art-label" data-fr="La presse" data-nl="De pers">La presse</div>
+      <div class="art-title" data-fr="Impossible à acheter.<br>Garantie par le projet." data-nl="Onmogelijk te kopen.<br>Gegarandeerd door het project.">Impossible à acheter.<br>Garantie par le projet.</div>
+      <div class="art-body" data-fr="Dezeen, Wallpaper*, Vogue Living, Condé Nast Traveller couvrent les projets qui ont une histoire réelle. Un hôtel déclaré œuvre par un collectif d'art reconnu internationalement, avec un programme de résidences, une galerie et une infrastructure éco-réelle dans un village post-séisme — c'est le genre d'histoire qu'ils publient sans sollicitation." data-nl="Dezeen, Wallpaper*, Vogue Living, Condé Nast Traveller behandelen projecten met een echt verhaal. Een hotel dat door een internationaal erkend kunstcollectief tot kunstwerk is verklaard, met een residentieprogramma, een galerie en een echte eco-infrastructuur in een post-aardbeving dorp — dat is het soort verhaal dat ze publiceren zonder te worden gevraagd.">Dezeen, Wallpaper*, Vogue Living couvrent ce projet sans qu'on le demande. L'histoire est réelle, c'est suffisant.</div>
+    </div>
+  </div>
+
+  <div class="img-full" data-fr="[ Image : galerie Toile Blanche Contemporary Marrakech — pisé brut, œuvres, lumière zénithale ]" data-nl="[ Afbeelding : galerie Toile Blanche Contemporary Marrakech — ruwe pisé, werken, zenitaal licht ]">[ Image : galerie Toile Blanche Contemporary Marrakech — pisé brut, œuvres, lumière zénithale ]</div>
+
+</div>
+<script>
+const LANG_KEY = 'tbm_lang';
+let currentLang = localStorage.getItem(LANG_KEY) || 'fr';
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem(LANG_KEY, lang);
+  document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+  document.getElementById('btn-nl').classList.toggle('active', lang === 'nl');
+  document.querySelectorAll('[data-fr]').forEach(el => {
+    const val = el.getAttribute('data-' + lang);
+    if (val) el.innerHTML = val;
+  });
+  // Update nav links lang
+  document.querySelectorAll('a.nav-link[data-fr]').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + lang);
+    if (el.classList.contains('active')) el.innerHTML = el.getAttribute('data-' + lang);
+  });
+}
+
+// Apply saved language on load
+if (currentLang === 'nl') setLang('nl');
+</script>
+</body>
+</html>
