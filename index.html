@@ -6,120 +6,120 @@
 <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Toile Blanche — Marrakech</title>
+<title>Toile Blanche - Marrakech</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap');
-  :root{--sand:#F5F0E6;--pise:#111008;--pise-mid:#4F4336;--cedar:#A78661;--sky:#FDFAF5;--pise-light:#D8CCB8;}
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html,body{width:100%;max-width:100%;overflow-x:hidden;overscroll-behavior-x:none;}
-  body{touch-action:pan-y;background:var(--sand);color:var(--pise);font-family:'Montserrat',sans-serif;font-weight:300;min-height:100vh;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;}
+ @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap');
+ :root{--sand:#F5F0E6;--pise:#111008;--pise-mid:#4F4336;--cedar:#A78661;--sky:#FDFAF5;--pise-light:#D8CCB8;}
+ *{margin:0;padding:0;box-sizing:border-box;}
+ html,body{width:100%;max-width:100%;overflow-x:hidden;overscroll-behavior-x:none;}
+ body{touch-action:pan-y;background:var(--sand);color:var(--pise);font-family:'Montserrat',sans-serif;font-weight:300;min-height:100vh;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;}
 
-  /* LOGIN */
-  #login-screen{width:100%;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;}
-  .login-logo{font-family:'Cormorant Garamond',serif;font-size:16px;letter-spacing:0.5em;text-transform:uppercase;color:var(--pise);margin-bottom:8px;text-align:center;}
-  .login-sub{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--cedar);margin-bottom:60px;text-align:center;}
-  .login-box{width:100%;max-width:360px;}
-  .login-rule{width:32px;height:1px;background:var(--cedar);margin:0 auto 40px;}
-  .login-label{font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--pise-mid);display:block;margin-bottom:10px;text-align:center;}
-  .login-input{width:100%;background:var(--sky);border:1px solid var(--pise-light);border-radius:0;padding:14px 20px;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:300;color:var(--pise);text-align:center;letter-spacing:0.15em;outline:none;transition:border-color 0.2s;}
-  .login-input:focus{border-color:var(--cedar);}
-  .login-btn{width:100%;margin-top:12px;background:var(--pise);color:var(--sky);border:none;padding:14px 20px;font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
-  .login-btn:hover{background:var(--cedar);}
-  .login-error{font-size:11px;letter-spacing:0.15em;color:var(--cedar);text-align:center;margin-top:12px;opacity:0;transition:opacity 0.2s;}
-  .login-error.show{opacity:1;}
-  .login-confidential{font-size:10px;letter-spacing:0.15em;color:var(--pise-mid);text-align:center;margin-top:48px;text-transform:uppercase;}
+ /* LOGIN */
+ #login-screen{width:100%;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;}
+ .login-logo{font-family:'Cormorant Garamond',serif;font-size:16px;letter-spacing:0.5em;text-transform:uppercase;color:var(--pise);margin-bottom:8px;text-align:center;}
+ .login-sub{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--cedar);margin-bottom:60px;text-align:center;}
+ .login-box{width:100%;max-width:360px;}
+ .login-rule{width:32px;height:1px;background:var(--cedar);margin:0 auto 40px;}
+ .login-label{font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--pise-mid);display:block;margin-bottom:10px;text-align:center;}
+ .login-input{width:100%;background:var(--sky);border:1px solid var(--pise-light);border-radius:0;padding:14px 20px;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:300;color:var(--pise);text-align:center;letter-spacing:0.15em;outline:none;transition:border-color 0.2s;}
+ .login-input:focus{border-color:var(--cedar);}
+ .login-btn{width:100%;margin-top:12px;background:var(--pise);color:var(--sky);border:none;padding:14px 20px;font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;}
+ .login-btn:hover{background:var(--cedar);}
+ .login-error{font-size:11px;letter-spacing:0.15em;color:var(--cedar);text-align:center;margin-top:12px;opacity:0;transition:opacity 0.2s;}
+ .login-error.show{opacity:1;}
+ .login-confidential{font-size:10px;letter-spacing:0.15em;color:var(--pise-mid);text-align:center;margin-top:48px;text-transform:uppercase;}
 
-  .site-shell{width:100%;max-width:100%;overflow-x:hidden;}
-  #site,#home-view,#frame-view{touch-action:pan-y;}
+ .site-shell{width:100%;max-width:100%;overflow-x:hidden;}
+ #site,#home-view,#frame-view{touch-action:pan-y;}
 
-  /* SITE */
-  #site{display:none;width:100%;max-width:100%;min-height:100vh;flex-direction:column;overflow-x:hidden;}
+ /* SITE */
+ #site{display:none;width:100%;max-width:100%;min-height:100vh;flex-direction:column;overflow-x:hidden;}
 
-  /* NAV */
-  nav{display:none;width:100%;background:var(--sand);border-bottom:1px solid var(--pise-light);padding:0;position:sticky;top:0;z-index:100;}
-  .nav-top{padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:18px;border-bottom:1px solid var(--pise-light);}
-  .nav-brand{font-family:'Cormorant Garamond',serif;font-size:16px;letter-spacing:0.3em;text-transform:uppercase;color:var(--pise);}
-  .nav-brand span{color:var(--cedar);}
-  .nav-links{padding:10px 32px;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;}
-  .nav-link{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--pise-mid);cursor:pointer;padding:7px 12px;border:1px solid transparent;transition:all 0.15s;background:none;font-family:'Montserrat',sans-serif;font-weight:300;white-space:normal;text-align:center;position:relative;}
-  .nav-link:hover{color:var(--pise);}
-  .nav-link.active{color:var(--pise);border-color:var(--cedar);background:rgba(167,134,97,0.06);}
-  .nav-link.active::after{content:'';position:absolute;left:10px;right:10px;bottom:2px;height:1px;background:var(--cedar);}
-  .nav-logout{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--pise-mid);cursor:pointer;background:none;border:none;font-family:'Montserrat',sans-serif;}
-  .nav-logout:hover{color:var(--pise);}
+ /* NAV */
+ nav{display:none;width:100%;background:var(--sand);border-bottom:1px solid var(--pise-light);padding:0;position:sticky;top:0;z-index:100;}
+ .nav-top{padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:18px;border-bottom:1px solid var(--pise-light);}
+ .nav-brand{font-family:'Cormorant Garamond',serif;font-size:16px;letter-spacing:0.3em;text-transform:uppercase;color:var(--pise);}
+ .nav-brand span{color:var(--cedar);}
+ .nav-links{padding:10px 32px;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;}
+ .nav-link{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--pise-mid);cursor:pointer;padding:7px 12px;border:1px solid transparent;transition:all 0.15s;background:none;font-family:'Montserrat',sans-serif;font-weight:300;white-space:normal;text-align:center;position:relative;}
+ .nav-link:hover{color:var(--pise);}
+ .nav-link.active{color:var(--pise);border-color:var(--cedar);background:rgba(167,134,97,0.06);}
+ .nav-link.active::after{content:'';position:absolute;left:10px;right:10px;bottom:2px;height:1px;background:var(--cedar);}
+ .nav-logout{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--pise-mid);cursor:pointer;background:none;border:none;font-family:'Montserrat',sans-serif;}
+ .nav-logout:hover{color:var(--pise);}
 
-  /* HERO */
-  .hero{width:100%;height:100vh;min-height:100vh;min-height:100svh;background:var(--pise);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:64px;position:relative;overflow:hidden;}
-  .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.5;will-change:transform;transform:translate3d(0,0,0) scale(1.05);}
-  .hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,18,8,0.92) 0%,rgba(28,18,8,0.35) 60%,transparent 100%);}
-  .hero-content{position:relative;z-index:2;text-align:center;max-width:760px;}
-  .hero-eyebrow{font-size:11px;letter-spacing:0.4em;text-transform:uppercase;color:var(--cedar);margin-bottom:20px;}
-  .hero-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:56px;line-height:1.05;color:var(--sky);margin-bottom:12px;}
-  .hero-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:rgba(253,250,245,0.82);margin-bottom:48px;}
-  .hero-declaration{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(253,250,245,0.74);border-left:1px solid var(--cedar);padding-left:20px;text-align:left;line-height:1.9;}
-  .hero-cta-wrap{margin-top:28px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
-  .hero-cta{font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--sky);background:rgba(167,134,97,0.22);border:1px solid rgba(167,134,97,0.5);padding:14px 22px;min-width:180px;text-align:center;cursor:pointer;transition:all 0.15s;}
-  .hero-cta:hover{background:rgba(167,134,97,0.34);border-color:rgba(167,134,97,0.75);}
-  .hero-cta.active{background:rgba(167,134,97,0.4);border-color:rgba(167,134,97,0.95);}
+ /* HERO */
+ .hero{width:100%;height:100vh;min-height:100vh;min-height:100svh;background:var(--pise);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:64px;position:relative;overflow:hidden;}
+ .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.5;will-change:transform;transform:translate3d(0,0,0) scale(1.05);}
+ .hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,18,8,0.92) 0%,rgba(28,18,8,0.35) 60%,transparent 100%);}
+ .hero-content{position:relative;z-index:2;text-align:center;max-width:760px;}
+ .hero-eyebrow{font-size:11px;letter-spacing:0.4em;text-transform:uppercase;color:var(--cedar);margin-bottom:20px;}
+ .hero-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:56px;line-height:1.05;color:var(--sky);margin-bottom:12px;}
+ .hero-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:rgba(253,250,245,0.82);margin-bottom:48px;}
+ .hero-declaration{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:rgba(253,250,245,0.74);border-left:1px solid var(--cedar);padding-left:20px;text-align:left;line-height:1.9;}
+ .hero-cta-wrap{margin-top:28px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+ .hero-cta{font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--sky);background:rgba(167,134,97,0.22);border:1px solid rgba(167,134,97,0.5);padding:14px 22px;min-width:180px;text-align:center;cursor:pointer;transition:all 0.15s;}
+ .hero-cta:hover{background:rgba(167,134,97,0.34);border-color:rgba(167,134,97,0.75);}
+ .hero-cta.active{background:rgba(167,134,97,0.4);border-color:rgba(167,134,97,0.95);}
 
-  /* CONTENT AREA */
-  .content{width:100%;flex:1;}
+ /* CONTENT AREA */
+ .content{width:100%;flex:1;}
 
-  /* DOC GRID */
-  .doc-section{padding:64px 48px;display:flex;flex-direction:column;align-items:center;}
-  .doc-section-title{font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--cedar);margin-bottom:32px;padding-bottom:12px;border-bottom:1px solid var(--pise-light);width:1200px;max-width:100%;}
-  .doc-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--pise-light);max-width:1200px;width:100%;}
-  .doc-card{background:var(--sky);padding:32px 28px;cursor:pointer;transition:background 0.15s;display:flex;flex-direction:column;justify-content:space-between;min-height:180px;}
-  .doc-card:hover{background:var(--sand);}
-  .doc-card-num{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:#B8A890;line-height:1;margin-bottom:12px;}
-  .doc-card-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--pise);margin-bottom:6px;line-height:1.3;}
-  .doc-card-sub{font-size:13px;color:var(--pise-mid);line-height:1.7;margin-bottom:16px;}
-  .doc-card-tag{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cedar);}
+ /* DOC GRID */
+ .doc-section{padding:64px 48px;display:flex;flex-direction:column;align-items:center;}
+ .doc-section-title{font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--cedar);margin-bottom:32px;padding-bottom:12px;border-bottom:1px solid var(--pise-light);width:1200px;max-width:100%;}
+ .doc-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--pise-light);max-width:1200px;width:100%;}
+ .doc-card{background:var(--sky);padding:32px 28px;cursor:pointer;transition:background 0.15s;display:flex;flex-direction:column;justify-content:space-between;min-height:180px;}
+ .doc-card:hover{background:var(--sand);}
+ .doc-card-num{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:#B8A890;line-height:1;margin-bottom:12px;}
+ .doc-card-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--pise);margin-bottom:6px;line-height:1.3;}
+ .doc-card-sub{font-size:13px;color:var(--pise-mid);line-height:1.7;margin-bottom:16px;}
+ .doc-card-tag{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cedar);}
 
-  /* HOME INTRO */
-  .home-intro{max-width:1200px;margin:0 auto;padding:96px 48px 40px;}
-  .home-kicker{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--cedar);margin-bottom:12px;}
-  .home-title{font-family:'Cormorant Garamond',serif;font-size:54px;line-height:1.08;color:var(--pise);font-weight:300;margin-bottom:22px;}
-  .home-text{max-width:980px;font-size:16px;line-height:1.9;color:var(--pise-mid);margin-bottom:10px;}
+ /* HOME INTRO */
+ .home-intro{max-width:1200px;margin:0 auto;padding:96px 48px 40px;}
+ .home-kicker{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--cedar);margin-bottom:12px;}
+ .home-title{font-family:'Cormorant Garamond',serif;font-size:54px;line-height:1.08;color:var(--pise);font-weight:300;margin-bottom:22px;}
+ .home-text{max-width:980px;font-size:16px;line-height:1.9;color:var(--pise-mid);margin-bottom:10px;}
 
-  /* PROJECT COMPARE — 3 columns */
-  .project-compare{max-width:1200px;margin:0 auto;padding:0 48px 40px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--pise-light);}
-  .project-block{background:var(--sky);padding:28px 28px 24px;cursor:pointer;transition:background 0.15s;}
-  .project-block:hover{background:var(--sand);}
-  .project-block.active-project{background:var(--sand);border-top:2px solid var(--cedar);}
-  .project-kicker{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cedar);margin-bottom:10px;}
-  .project-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;line-height:1.2;color:var(--pise);margin-bottom:16px;}
-  .project-metric{padding:10px 0;border-top:1px solid var(--pise-light);}
-  .project-metric:first-of-type{border-top:1px solid var(--cedar);}
-  .metric-value{font-family:'Cormorant Garamond',serif;font-size:28px;line-height:1.1;color:var(--pise);}
-  .metric-label{font-size:12px;letter-spacing:0.08em;color:var(--pise-mid);margin-top:2px;}
-  .project-note{font-size:11px;color:var(--cedar);margin-top:14px;padding-top:10px;border-top:1px solid var(--pise-light);letter-spacing:0.05em;line-height:1.6;}
+ /* PROJECT COMPARE - 3 columns */
+ .project-compare{max-width:1200px;margin:0 auto;padding:0 48px 40px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--pise-light);}
+ .project-block{background:var(--sky);padding:28px 28px 24px;cursor:pointer;transition:background 0.15s;}
+ .project-block:hover{background:var(--sand);}
+ .project-block.active-project{background:var(--sand);border-top:2px solid var(--cedar);}
+ .project-kicker{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cedar);margin-bottom:10px;}
+ .project-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;line-height:1.2;color:var(--pise);margin-bottom:16px;}
+ .project-metric{padding:10px 0;border-top:1px solid var(--pise-light);}
+ .project-metric:first-of-type{border-top:1px solid var(--cedar);}
+ .metric-value{font-family:'Cormorant Garamond',serif;font-size:28px;line-height:1.1;color:var(--pise);}
+ .metric-label{font-size:12px;letter-spacing:0.08em;color:var(--pise-mid);margin-top:2px;}
+ .project-note{font-size:11px;color:var(--cedar);margin-top:14px;padding-top:10px;border-top:1px solid var(--pise-light);letter-spacing:0.05em;line-height:1.6;}
 
-  /* FRAME VIEW */
-  #frame-view{display:none;width:100%;flex-direction:column;flex:1;}
-  iframe{width:100%;max-width:100%;flex:1;border:none;min-height:calc(100vh - 86px);}
+ /* FRAME VIEW */
+ #frame-view{display:none;width:100%;flex-direction:column;flex:1;}
+ iframe{width:100%;max-width:100%;flex:1;border:none;min-height:calc(100vh - 86px);}
 
-  /* FOOTER */
-  footer{background:var(--sand);border-top:1px solid var(--pise-light);padding:24px 48px;display:flex;justify-content:space-between;align-items:center;}
-  footer span{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise-mid);}
+ /* FOOTER */
+ footer{background:var(--sand);border-top:1px solid var(--pise-light);padding:24px 48px;display:flex;justify-content:space-between;align-items:center;}
+ footer span{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise-mid);}
 
-  @media (max-width:1100px){
-    .doc-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
-    .project-compare{grid-template-columns:1fr;}
-    .home-title{font-size:44px;}
-  }
-  @media (max-width:720px){
-    .doc-grid{grid-template-columns:1fr;}
-    .nav-links{padding:10px 16px;}
-    .nav-link{padding:6px 8px;letter-spacing:0.1em;}
-    .doc-section{padding:48px 20px;}
-    .home-intro{padding:56px 20px 30px;}
-    .project-compare{padding:0 20px 30px;}
-    .home-title{font-size:36px;}
-    footer{padding:20px;}
-    .hero{padding:40px 24px;}
-    .hero-title{font-size:40px;}
-  }
+ @media (max-width:1100px){
+ .doc-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+ .project-compare{grid-template-columns:1fr;}
+ .home-title{font-size:44px;}
+ }
+ @media (max-width:720px){
+ .doc-grid{grid-template-columns:1fr;}
+ .nav-links{padding:10px 16px;}
+ .nav-link{padding:6px 8px;letter-spacing:0.1em;}
+ .doc-section{padding:48px 20px;}
+ .home-intro{padding:56px 20px 30px;}
+ .project-compare{padding:0 20px 30px;}
+ .home-title{font-size:36px;}
+ footer{padding:20px;}
+ .hero{padding:40px 24px;}
+ .hero-title{font-size:40px;}
+ }
 </style>
 <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
@@ -127,393 +127,393 @@
 
 <!-- LOGIN -->
 <div id="login-screen">
-  <div class="login-logo">Toile Blanche</div>
-  <div class="login-sub">Marrakech — Propositions d'investissement</div>
-  <div class="login-box">
-    <div class="login-rule"></div>
-    <label class="login-label" for="pwd">Accès confidentiel</label>
-    <input class="login-input" type="password" id="pwd" placeholder="Mot de passe" autocomplete="off">
-    <button class="login-btn" onclick="checkPassword()">Accéder</button>
-    <div class="login-error" id="login-error">Mot de passe incorrect</div>
-  </div>
-  <div class="login-confidential">Document confidentiel — Usage exclusif associés pressentis</div>
+ <div class="login-logo">Toile Blanche</div>
+ <div class="login-sub">Marrakech - Propositions d'investissement</div>
+ <div class="login-box">
+ <div class="login-rule"></div>
+ <label class="login-label" for="pwd">Accès confidentiel</label>
+ <input class="login-input" type="password" id="pwd" placeholder="Mot de passe" autocomplete="off">
+ <button class="login-btn" onclick="checkPassword()">Accéder</button>
+ <div class="login-error" id="login-error">Mot de passe incorrect</div>
+ </div>
+ <div class="login-confidential">Document confidentiel - Usage exclusif associés pressentis</div>
 </div>
 
 <!-- SITE -->
 <div id="site" class="site-shell">
 
-  <nav id="top-nav">
-    <div class="nav-top">
-      <div class="nav-brand" onclick="showHome()" style="cursor:pointer;">Toile Blanche <span>Marrakech</span></div>
-      <button class="nav-logout" onclick="logout()">Quitter</button>
-    </div>
-    <div class="nav-links" id="nav-links"></div>
-  </nav>
+ <nav id="top-nav">
+ <div class="nav-top">
+ <div class="nav-brand" onclick="showHome()" style="cursor:pointer;">Toile Blanche <span>Marrakech</span></div>
+ <button class="nav-logout" onclick="logout()">Quitter</button>
+ </div>
+ <div class="nav-links" id="nav-links"></div>
+ </nav>
 
-  <!-- HOME VIEW -->
-  <div id="home-view">
-    <div class="hero">
-      <img class="hero-img" src="images/img_accueil_neutre.png" alt="">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <div class="hero-eyebrow">Toile Blanche — Marrakech</div>
-        <div class="hero-title">Propositions<br>d'Investissement</div>
-        <div class="hero-sub">Trois projets. Trois déclarations.</div>
-        <div class="hero-declaration">« Toile Blanche a été déclarée œuvre par les Leroy Brothers.<br>Elle continue de fonctionner normalement. »</div>
-        <div class="hero-cta-wrap">
-          <button class="hero-cta active" id="cta-riads-pise" onclick="selectProject('riads-pise', true)">Riads Pisé</button>
-          <button class="hero-cta" id="cta-khaimas" onclick="selectProject('khaimas', true)">Khaimas</button>
-          <button class="hero-cta" id="cta-tigmi" onclick="selectProject('tigmi', true)">Tigmi</button>
-        </div>
-      </div>
-    </div>
+ <!-- HOME VIEW -->
+ <div id="home-view">
+ <div class="hero">
+ <img class="hero-img" src="images/img_accueil_neutre.png" alt="">
+ <div class="hero-overlay"></div>
+ <div class="hero-content">
+ <div class="hero-eyebrow">Toile Blanche - Marrakech</div>
+ <div class="hero-title">Propositions<br>d'Investissement</div>
+ <div class="hero-sub">Trois projets. Trois déclarations.</div>
+ <div class="hero-declaration">« Toile Blanche a été déclarée œuvre par les Leroy Brothers.<br>Elle continue de fonctionner normalement. »</div>
+ <div class="hero-cta-wrap">
+ <button class="hero-cta active" id="cta-riads-pise" onclick="selectProject('riads-pise', true)">Riads Pisé</button>
+ <button class="hero-cta" id="cta-khaimas" onclick="selectProject('khaimas', true)">Khaimas</button>
+ <button class="hero-cta" id="cta-tigmi" onclick="selectProject('tigmi', true)">Tigmi</button>
+ </div>
+ </div>
+ </div>
 
-    <div class="content">
-      <div class="home-intro">
-        <div class="home-kicker">Toile Blanche Marrakech</div>
-        <h2 class="home-title">Trois propositions.<br>Deux territoires.</h2>
-        <p class="home-text">Ce document présente trois propositions d'investissement distinctes. Deux partagent le même terrain de 5 hectares sur la Route de Fès — il faudra en choisir une. La troisième est un hôtel existant à Tagadirt, à 25 minutes de Marrakech, à transformer intégralement.</p>
-        <p class="home-text">Les trois propositions partagent la même structure de capital, la même direction artistique, le même opérateur. Elles divergent sur l'architecture, les matériaux, le profil de risque, la durée de vie des actifs et le positionnement tarifaire.</p>
-        <p class="home-text">Elles ont été préparées avec le même soin, la même honnêteté. Aucune n'est présentée comme la bonne réponse. Les chiffres le font.</p>
-      </div>
+ <div class="content">
+ <div class="home-intro">
+ <div class="home-kicker">Toile Blanche Marrakech</div>
+ <h2 class="home-title">Trois propositions.<br>Deux territoires.</h2>
+ <p class="home-text">Ce document présente trois propositions d'investissement distinctes. Deux partagent le même terrain de 5 hectares sur la Route de Fès - il faudra en choisir une. La troisième est un hôtel existant à Tagadirt, à 25 minutes de Marrakech, à transformer intégralement.</p>
+ <p class="home-text">Les trois propositions partagent la même structure de capital, la même direction artistique, le même opérateur. Elles divergent sur l'architecture, les matériaux, le profil de risque, la durée de vie des actifs et le positionnement tarifaire.</p>
+ <p class="home-text">Elles ont été préparées avec le même soin, la même honnêteté. Aucune n'est présentée comme la bonne réponse. Les chiffres le font.</p>
+ </div>
 
-      <!-- THREE PROJECT BLOCKS -->
-      <div class="project-compare" id="project-compare-grid">
+ <!-- THREE PROJECT BLOCKS -->
+ <div class="project-compare" id="project-compare-grid">
 
-        <div class="project-block active-project" id="block-riads-pise" onclick="selectProject('riads-pise', true)">
-          <div class="project-kicker">Construction permanente — Route de Fès</div>
-          <div class="project-title">Riads Pisé</div>
-          <div class="project-metric">
-            <div class="metric-value">4,76M€</div>
-            <div class="metric-label">Investissement total</div>
-          </div>
-          <div class="project-metric">
-            <div class="metric-value">12 → 20</div>
-            <div class="metric-label">Unités — Phase 1 puis croissance organique</div>
-          </div>
-          <div class="project-metric">
-            <div class="metric-value">800€</div>
-            <div class="metric-label">ADR blended stabilisé</div>
-          </div>
-          <div class="project-metric">
-            <div class="metric-value">5,7×</div>
-            <div class="metric-label">Retour cible — mise 1M€</div>
-          </div>
-          <div class="project-note">Actif permanent. Pisé, cèdre, zellige. Croissance auto-financée. Permis construire requis — ouverture 24 mois.</div>
-        </div>
+ <div class="project-block active-project" id="block-riads-pise" onclick="selectProject('riads-pise', true)">
+ <div class="project-kicker">Construction permanente - Route de Fès</div>
+ <div class="project-title">Riads Pisé</div>
+ <div class="project-metric">
+ <div class="metric-value">4,76M€</div>
+ <div class="metric-label">Investissement total</div>
+ </div>
+ <div class="project-metric">
+ <div class="metric-value">12 → 20</div>
+ <div class="metric-label">Unités - Phase 1 puis croissance organique</div>
+ </div>
+ <div class="project-metric">
+ <div class="metric-value">800€</div>
+ <div class="metric-label">ADR blended stabilisé</div>
+ </div>
+ <div class="project-metric">
+ <div class="metric-value">5,7×</div>
+ <div class="metric-label">Retour cible - mise 1M€</div>
+ </div>
+ <div class="project-note">Actif permanent. Pisé, cèdre, zellige. Croissance auto-financée. Permis construire requis - ouverture 24 mois.</div>
+ </div>
 
-        <div class="project-block" id="block-khaimas" onclick="selectProject('khaimas', true)">
-          <div class="project-kicker">Structures légères — Route de Fès</div>
-          <div class="project-title">Khaimas</div>
-          <div class="project-metric">
-            <div class="metric-value">7,82M€</div>
-            <div class="metric-label">Investissement total</div>
-          </div>
-          <div class="project-metric">
-            <div class="metric-value">24</div>
-            <div class="metric-label">Tentes-lodges dès l'ouverture</div>
-          </div>
-          <div class="project-metric">
-            <div class="metric-value">500€</div>
-            <div class="metric-label">ADR cible — Scén. A</div>
-          </div>
-          <div class="project-metric">
-            <div class="metric-value">3,4×</div>
-            <div class="metric-label">Retour cible Scén. A — mise 1M€</div>
-          </div>
-          <div class="project-note">Actif temporaire — remplacement à 10 ans (360K€/an provisionné). Gap financement 4M€ à lever. Ouverture 18 mois.</div>
-        </div>
+ <div class="project-block" id="block-khaimas" onclick="selectProject('khaimas', true)">
+ <div class="project-kicker">Structures légères - Route de Fès</div>
+ <div class="project-title">Khaimas</div>
+ <div class="project-metric">
+ <div class="metric-value">7,82M€</div>
+ <div class="metric-label">Investissement total</div>
+ </div>
+ <div class="project-metric">
+ <div class="metric-value">24</div>
+ <div class="metric-label">Tentes-lodges dès l'ouverture</div>
+ </div>
+ <div class="project-metric">
+ <div class="metric-value">500€</div>
+ <div class="metric-label">ADR cible - Scén. A</div>
+ </div>
+ <div class="project-metric">
+ <div class="metric-value">3,4×</div>
+ <div class="metric-label">Retour cible Scén. A - mise 1M€</div>
+ </div>
+ <div class="project-note">Actif temporaire - remplacement à 10 ans (360K€/an provisionné). Gap financement 4M€ à lever. Ouverture 18 mois.</div>
+ </div>
 
-        <div class="project-block" id="block-tigmi" onclick="selectProject('tigmi', true)">
-          <div class="project-kicker">Transformation — Tagadirt, pied de l'Atlas</div>
-          <div class="project-title">Tigmi</div>
-          <div class="project-metric">
-            <div class="metric-value">3,15M€</div>
-            <div class="metric-label">Investissement total</div>
-          </div>
-          <div class="project-metric">
-            <div class="metric-value">30</div>
-            <div class="metric-label">Clés dès l'ouverture</div>
-          </div>
-          <div class="project-metric">
-            <div class="metric-value">500€</div>
-            <div class="metric-label">ADR blended stabilisé</div>
-          </div>
-          <div class="project-metric">
-            <div class="metric-value">7,0×</div>
-            <div class="metric-label">Retour cible — mise 1M€</div>
-          </div>
-          <div class="project-note">Actif existant. Zéro risque construction. Payback fin année 2. Acquisition en cours de négociation — ouverture 12 mois.</div>
-        </div>
+ <div class="project-block" id="block-tigmi" onclick="selectProject('tigmi', true)">
+ <div class="project-kicker">Transformation - Tagadirt, pied de l'Atlas</div>
+ <div class="project-title">Tigmi</div>
+ <div class="project-metric">
+ <div class="metric-value">3,15M€</div>
+ <div class="metric-label">Investissement total</div>
+ </div>
+ <div class="project-metric">
+ <div class="metric-value">30</div>
+ <div class="metric-label">Clés dès l'ouverture</div>
+ </div>
+ <div class="project-metric">
+ <div class="metric-value">500€</div>
+ <div class="metric-label">ADR blended stabilisé</div>
+ </div>
+ <div class="project-metric">
+ <div class="metric-value">7,0×</div>
+ <div class="metric-label">Retour cible - mise 1M€</div>
+ </div>
+ <div class="project-note">Actif existant. Zéro risque construction. Payback fin année 2. Acquisition en cours de négociation - ouverture 12 mois.</div>
+ </div>
 
-      </div><!-- /project-compare -->
-    </div>
+ </div><!-- /project-compare -->
+ </div>
 
-    <!-- CONCLUSIONS CTA -->
-    <div style="padding:48px 48px 0;text-align:center;">
-      <div style="font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--cedar);margin-bottom:16px;">Synthèse comparative</div>
-      <button onclick="openConclusions()" style="font-family:'Montserrat',sans-serif;font-weight:300;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--pise);border:1px solid var(--cedar);background:transparent;padding:14px 32px;cursor:pointer;">Voir les conclusions — Les trois projets côte à côte</button>
-    </div>
+ <!-- CONCLUSIONS CTA -->
+ <div style="padding:48px 48px 0;text-align:center;">
+ <div style="font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--cedar);margin-bottom:16px;">Synthèse comparative</div>
+ <button onclick="openConclusions()" style="font-family:'Montserrat',sans-serif;font-weight:300;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--pise);border:1px solid var(--cedar);background:transparent;padding:14px 32px;cursor:pointer;">Voir les conclusions - Les trois projets côte à côte</button>
+ </div>
 
-    <!-- TERRAIN AERIAL -->
-    <div style="margin-top:64px;">
-      <div style="padding:48px 48px 20px;">
-        <div style="font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--cedar);margin-bottom:4px;border-top:1px solid var(--pise-light);padding-top:48px;">Le terrain — Route de Fès</div>
-        <div style="font-size:12px;letter-spacing:0.15em;color:var(--pise-mid);margin-top:4px;">5 hectares — parcelle murée — Haouz — Riads Pisé ou Khaimas</div>
-      </div>
-      <img src="images/img_b6085da8ddc7306d.png" alt="" style="width:100%;display:block;">
-    </div>
+ <!-- TERRAIN AERIAL -->
+ <div style="margin-top:64px;">
+ <div style="padding:48px 48px 20px;">
+ <div style="font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--cedar);margin-bottom:4px;border-top:1px solid var(--pise-light);padding-top:48px;">Le terrain - Route de Fès</div>
+ <div style="font-size:12px;letter-spacing:0.15em;color:var(--pise-mid);margin-top:4px;">5 hectares - parcelle murée - Haouz - Riads Pisé ou Khaimas</div>
+ </div>
+ <img src="images/img_b6085da8ddc7306d.png" alt="" style="width:100%;display:block;">
+ </div>
 
-    <footer>
-      <span>Toile Blanche Marrakech — Document de travail confidentiel</span>
-      <span>Trois propositions d'investissement — Mai 2026</span>
-    </footer>
-  </div><!-- /home-view -->
+ <footer>
+ <span>Toile Blanche Marrakech - Document de travail confidentiel</span>
+ <span>Trois propositions d'investissement - Mai 2026</span>
+ </footer>
+ </div><!-- /home-view -->
 
-  <!-- FRAME VIEW -->
-  <div id="frame-view">
-    <iframe id="doc-frame" src="" title="Document"></iframe>
-  </div>
+ <!-- FRAME VIEW -->
+ <div id="frame-view">
+ <iframe id="doc-frame" src="" title="Document"></iframe>
+ </div>
 
 </div><!-- /site -->
 
 <script>
-  const PASSWORD = 'toileblanche2026';
+ const PASSWORD = 'toileblanche2026';
 
-  // DOCS definition — same keys, project files resolve per project
-  const DOCS = [
-    { file: 'tbm_proposition_part1_v2.html',                      nav: "L'investissement" },
-    { file: 'tbm_proposition_part2_clusters_budget.html',         nav: 'Le programme' },
-    { file: 'tbm_proposition_part3_finance_previsionnel_v2.html', nav: 'Le financement' },
-    { file: 'tbm_proposition_part4_vie_conditions.html',          nav: 'La vie ici' },
-    { file: 'tbm_brief_archi_part1.html',                         nav: "L'architecture" },
-    { file: 'tbm_brief_archi_part2.html',                         nav: 'Les espaces' },
-    { file: 'tbm_brief_archi_part3.html',                         nav: 'Le territoire' },
-    { file: 'tbm_termsheet.html',                                 nav: 'Term Sheet' },
-  ];
+ // DOCS definition - same keys, project files resolve per project
+ const DOCS = [
+ { file: 'tbm_proposition_part1_v2.html', nav: "L'investissement" },
+ { file: 'tbm_proposition_part2_clusters_budget.html', nav: 'Le programme' },
+ { file: 'tbm_proposition_part3_finance_previsionnel_v2.html', nav: 'Le financement' },
+ { file: 'tbm_proposition_part4_vie_conditions.html', nav: 'La vie ici' },
+ { file: 'tbm_brief_archi_part1.html', nav: "L'architecture" },
+ { file: 'tbm_brief_archi_part2.html', nav: 'Les espaces' },
+ { file: 'tbm_brief_archi_part3.html', nav: 'Le territoire' },
+ { file: 'tbm_termsheet.html', nav: 'Term Sheet' },
+ ];
 
-  const PROJECT_FILES = {
-    'riads-pise': {
-      'tbm_proposition_part1_v2.html':                      'tbm_proposition_part1_v2.html',
-      'tbm_proposition_part2_clusters_budget.html':         'tbm_proposition_part2_clusters_budget.html',
-      'tbm_proposition_part3_finance_previsionnel_v2.html': 'tbm_proposition_part3_finance_previsionnel_v2.html',
-      'tbm_proposition_part4_vie_conditions.html':          'tbm_proposition_part4_vie_conditions.html',
-      'tbm_brief_archi_part1.html':                         'tbm_brief_archi_part1.html',
-      'tbm_brief_archi_part2.html':                         'tbm_brief_archi_part2.html',
-      'tbm_brief_archi_part3.html':                         'tbm_brief_archi_part3.html',
-      'tbm_termsheet.html':                                 'tbm_termsheet.html',
-    },
-    'khaimas': {
-      'tbm_proposition_part1_v2.html':                      'khaimas_proposition_part1_v1.html',
-      'tbm_proposition_part2_clusters_budget.html':         'khaimas_proposition_part2_clusters_budget.html',
-      'tbm_proposition_part3_finance_previsionnel_v2.html': 'khaimas_proposition_part3_finance_previsionnel_v1.html',
-      'tbm_proposition_part4_vie_conditions.html':          'khaimas_proposition_part4_vie_conditions.html',
-      'tbm_brief_archi_part1.html':                         'khaimas_brief_archi_part1.html',
-      'tbm_brief_archi_part2.html':                         'khaimas_brief_archi_part2.html',
-      'tbm_brief_archi_part3.html':                         'khaimas_brief_archi_part3.html',
-      'tbm_termsheet.html':                                 'khaimas_termsheet.html',
-    },
-    'tigmi': {
-      'tbm_proposition_part1_v2.html':                      'tigmi_proposition_part1_v1.html',
-      'tbm_proposition_part2_clusters_budget.html':         'tigmi_proposition_part2_clusters_budget.html',
-      'tbm_proposition_part3_finance_previsionnel_v2.html': 'tigmi_proposition_part3_finance_previsionnel_v1.html',
-      'tbm_proposition_part4_vie_conditions.html':          'tigmi_proposition_part4_vie_conditions.html',
-      'tbm_brief_archi_part1.html':                         'tigmi_brief_archi_part1.html',
-      'tbm_brief_archi_part2.html':                         'tigmi_brief_archi_part2.html',
-      'tbm_brief_archi_part3.html':                         'tigmi_brief_archi_part3.html',
-      'tbm_termsheet.html':                                 'tigmi_termsheet.html',
-    }
-  };
+ const PROJECT_FILES = {
+ 'riads-pise': {
+ 'tbm_proposition_part1_v2.html': 'tbm_proposition_part1_v2.html',
+ 'tbm_proposition_part2_clusters_budget.html': 'tbm_proposition_part2_clusters_budget.html',
+ 'tbm_proposition_part3_finance_previsionnel_v2.html': 'tbm_proposition_part3_finance_previsionnel_v2.html',
+ 'tbm_proposition_part4_vie_conditions.html': 'tbm_proposition_part4_vie_conditions.html',
+ 'tbm_brief_archi_part1.html': 'tbm_brief_archi_part1.html',
+ 'tbm_brief_archi_part2.html': 'tbm_brief_archi_part2.html',
+ 'tbm_brief_archi_part3.html': 'tbm_brief_archi_part3.html',
+ 'tbm_termsheet.html': 'tbm_termsheet.html',
+ },
+ 'khaimas': {
+ 'tbm_proposition_part1_v2.html': 'khaimas_proposition_part1_v1.html',
+ 'tbm_proposition_part2_clusters_budget.html': 'khaimas_proposition_part2_clusters_budget.html',
+ 'tbm_proposition_part3_finance_previsionnel_v2.html': 'khaimas_proposition_part3_finance_previsionnel_v1.html',
+ 'tbm_proposition_part4_vie_conditions.html': 'khaimas_proposition_part4_vie_conditions.html',
+ 'tbm_brief_archi_part1.html': 'khaimas_brief_archi_part1.html',
+ 'tbm_brief_archi_part2.html': 'khaimas_brief_archi_part2.html',
+ 'tbm_brief_archi_part3.html': 'khaimas_brief_archi_part3.html',
+ 'tbm_termsheet.html': 'khaimas_termsheet.html',
+ },
+ 'tigmi': {
+ 'tbm_proposition_part1_v2.html': 'tigmi_proposition_part1_v1.html',
+ 'tbm_proposition_part2_clusters_budget.html': 'tigmi_proposition_part2_clusters_budget.html',
+ 'tbm_proposition_part3_finance_previsionnel_v2.html': 'tigmi_proposition_part3_finance_previsionnel_v1.html',
+ 'tbm_proposition_part4_vie_conditions.html': 'tigmi_proposition_part4_vie_conditions.html',
+ 'tbm_brief_archi_part1.html': 'tigmi_brief_archi_part1.html',
+ 'tbm_brief_archi_part2.html': 'tigmi_brief_archi_part2.html',
+ 'tbm_brief_archi_part3.html': 'tigmi_brief_archi_part3.html',
+ 'tbm_termsheet.html': 'tigmi_termsheet.html',
+ }
+ };
 
-  // Per-project nav labels — only show docs that exist for each project
-  const PROJECT_NAV = {
-    'riads-pise': [
-      { file: 'tbm_proposition_part1_v2.html',                      nav: "L'investissement" },
-      { file: 'tbm_proposition_part2_clusters_budget.html',         nav: 'Le programme' },
-      { file: 'tbm_proposition_part3_finance_previsionnel_v2.html', nav: 'Le financement' },
-      { file: 'tbm_proposition_part4_vie_conditions.html',          nav: 'La vie ici' },
-      { file: 'tbm_brief_archi_part1.html',                         nav: "L'architecture" },
-      { file: 'tbm_brief_archi_part2.html',                         nav: 'Les 5 clusters' },
-      { file: 'tbm_brief_archi_part3.html',                         nav: 'Le territoire' },
-      { file: 'tbm_termsheet.html',                                 nav: 'Term Sheet' },
-    ],
-    'khaimas': [
-      { file: 'tbm_proposition_part1_v2.html',                      nav: 'Le projet' },
-      { file: 'tbm_proposition_part3_finance_previsionnel_v2.html', nav: 'Le prévisionnel' },
-      { file: 'tbm_proposition_part4_vie_conditions.html',          nav: 'La décision' },
-    ],
-    'tigmi': [
-      { file: 'tbm_proposition_part1_v2.html',                      nav: "L'investissement" },
-      { file: 'tbm_proposition_part2_clusters_budget.html',         nav: 'Le programme' },
-      { file: 'tbm_proposition_part3_finance_previsionnel_v2.html', nav: 'Le financement' },
-      { file: 'tbm_proposition_part4_vie_conditions.html',          nav: 'La vie ici' },
-      { file: 'tigmi_proposition_part5_tagadirt.html',             nav: 'Le territoire' },
-      { file: 'tbm_termsheet.html',                                 nav: 'Term Sheet' },
-    ]
-  };
+ // Per-project nav labels - only show docs that exist for each project
+ const PROJECT_NAV = {
+ 'riads-pise': [
+ { file: 'tbm_proposition_part1_v2.html', nav: "L'investissement" },
+ { file: 'tbm_proposition_part2_clusters_budget.html', nav: 'Le programme' },
+ { file: 'tbm_proposition_part3_finance_previsionnel_v2.html', nav: 'Le financement' },
+ { file: 'tbm_proposition_part4_vie_conditions.html', nav: 'La vie ici' },
+ { file: 'tbm_brief_archi_part1.html', nav: "L'architecture" },
+ { file: 'tbm_brief_archi_part2.html', nav: 'Les 5 clusters' },
+ { file: 'tbm_brief_archi_part3.html', nav: 'Le territoire' },
+ { file: 'tbm_termsheet.html', nav: 'Term Sheet' },
+ ],
+ 'khaimas': [
+ { file: 'tbm_proposition_part1_v2.html', nav: 'Le projet' },
+ { file: 'tbm_proposition_part3_finance_previsionnel_v2.html', nav: 'Le prévisionnel' },
+ { file: 'tbm_proposition_part4_vie_conditions.html', nav: 'La décision' },
+ ],
+ 'tigmi': [
+ { file: 'tbm_proposition_part1_v2.html', nav: "L'investissement" },
+ { file: 'tbm_proposition_part2_clusters_budget.html', nav: 'Le programme' },
+ { file: 'tbm_proposition_part3_finance_previsionnel_v2.html', nav: 'Le financement' },
+ { file: 'tbm_proposition_part4_vie_conditions.html', nav: 'La vie ici' },
+ { file: 'tigmi_proposition_part5_tagadirt.html', nav: 'Le territoire' },
+ { file: 'tbm_termsheet.html', nav: 'Term Sheet' },
+ ]
+ };
 
-  let currentDocFile = null;
-  let currentProject = 'riads-pise';
-  let homeParallaxBound = false;
+ let currentDocFile = null;
+ let currentProject = 'riads-pise';
+ let homeParallaxBound = false;
 
-  function updateHomeParallax() {
-    const heroImage = document.querySelector('.hero-img');
-    const homeView = document.getElementById('home-view');
-    if (!heroImage || !homeView) return;
-    if (homeView.style.display === 'none') {
-      heroImage.style.transform = 'translate3d(0,0,0) scale(1.05)';
-      return;
-    }
-    const y = window.scrollY || 0;
-    const offset = Math.min(28, y * 0.18);
-    heroImage.style.transform = `translate3d(0, ${offset}px, 0) scale(1.08)`;
-  }
+ function updateHomeParallax() {
+ const heroImage = document.querySelector('.hero-img');
+ const homeView = document.getElementById('home-view');
+ if (!heroImage || !homeView) return;
+ if (homeView.style.display === 'none') {
+ heroImage.style.transform = 'translate3d(0,0,0) scale(1.05)';
+ return;
+ }
+ const y = window.scrollY || 0;
+ const offset = Math.min(28, y * 0.18);
+ heroImage.style.transform = `translate3d(0, ${offset}px, 0) scale(1.08)`;
+ }
 
-  function bindHomeParallax() {
-    if (homeParallaxBound) return;
-    window.addEventListener('scroll', updateHomeParallax, { passive: true });
-    homeParallaxBound = true;
-  }
+ function bindHomeParallax() {
+ if (homeParallaxBound) return;
+ window.addEventListener('scroll', updateHomeParallax, { passive: true });
+ homeParallaxBound = true;
+ }
 
-  function setNavVisibility(show) {
-    const nav = document.getElementById('top-nav');
-    if (nav) nav.style.display = show ? 'block' : 'none';
-  }
+ function setNavVisibility(show) {
+ const nav = document.getElementById('top-nav');
+ if (nav) nav.style.display = show ? 'block' : 'none';
+ }
 
-  function resolveFile(baseFile) {
-    const map = PROJECT_FILES[currentProject];
-    return (map && map[baseFile]) || baseFile;
-  }
+ function resolveFile(baseFile) {
+ const map = PROJECT_FILES[currentProject];
+ return (map && map[baseFile]) || baseFile;
+ }
 
-  function updateProjectBlocks() {
-    ['riads-pise', 'khaimas', 'tigmi'].forEach(key => {
-      const el = document.getElementById('block-' + key);
-      if (el) el.classList.toggle('active-project', key === currentProject);
-    });
-    ['riads-pise', 'khaimas', 'tigmi'].forEach(key => {
-      const cta = document.getElementById('cta-' + key);
-      if (cta) cta.classList.toggle('active', key === currentProject);
-    });
-  }
+ function updateProjectBlocks() {
+ ['riads-pise', 'khaimas', 'tigmi'].forEach(key => {
+ const el = document.getElementById('block-' + key);
+ if (el) el.classList.toggle('active-project', key === currentProject);
+ });
+ ['riads-pise', 'khaimas', 'tigmi'].forEach(key => {
+ const cta = document.getElementById('cta-' + key);
+ if (cta) cta.classList.toggle('active', key === currentProject);
+ });
+ }
 
-  function renderNavLinks() {
-    const nav = document.getElementById('nav-links');
-    if (!nav) return;
-    nav.innerHTML = '';
+ function renderNavLinks() {
+ const nav = document.getElementById('nav-links');
+ if (!nav) return;
+ nav.innerHTML = '';
 
-    // Home button
-    const homeBtn = document.createElement('button');
-    homeBtn.className = 'nav-link';
-    homeBtn.id = 'nav-home';
-    homeBtn.textContent = 'Accueil';
-    homeBtn.addEventListener('click', showHome);
-    nav.appendChild(homeBtn);
+ // Home button
+ const homeBtn = document.createElement('button');
+ homeBtn.className = 'nav-link';
+ homeBtn.id = 'nav-home';
+ homeBtn.textContent = 'Accueil';
+ homeBtn.addEventListener('click', showHome);
+ nav.appendChild(homeBtn);
 
-    // Project-specific nav items
-    const docs = PROJECT_NAV[currentProject] || [];
-    docs.forEach((doc, idx) => {
-      const btn = document.createElement('button');
-      btn.className = 'nav-link';
-      btn.id = `nav-doc-${idx}`;
-      btn.textContent = doc.nav;
-      btn.addEventListener('click', () => openDoc(doc.file));
-      nav.appendChild(btn);
-    });
+ // Project-specific nav items
+ const docs = PROJECT_NAV[currentProject] || [];
+ docs.forEach((doc, idx) => {
+ const btn = document.createElement('button');
+ btn.className = 'nav-link';
+ btn.id = `nav-doc-${idx}`;
+ btn.textContent = doc.nav;
+ btn.addEventListener('click', () => openDoc(doc.file));
+ nav.appendChild(btn);
+ });
 
-    setActiveNavLink();
-  }
+ setActiveNavLink();
+ }
 
-  function openConclusions() {
-    currentDocFile = 'conclusions.html';
-    setNavVisibility(true);
-    document.getElementById('home-view').style.display = 'none';
-    const fv = document.getElementById('frame-view');
-    fv.style.display = 'flex';
-    fv.style.flexDirection = 'column';
-    document.getElementById('doc-frame').src = 'conclusions.html';
-    document.querySelectorAll('.nav-link').forEach(btn => btn.classList.remove('active'));
-    const c = document.getElementById('nav-conclusions');
-    if (c) c.classList.add('active');
-  }
+ function openConclusions() {
+ currentDocFile = 'conclusions.html';
+ setNavVisibility(true);
+ document.getElementById('home-view').style.display = 'none';
+ const fv = document.getElementById('frame-view');
+ fv.style.display = 'flex';
+ fv.style.flexDirection = 'column';
+ document.getElementById('doc-frame').src = 'conclusions.html';
+ document.querySelectorAll('.nav-link').forEach(btn => btn.classList.remove('active'));
+ const c = document.getElementById('nav-conclusions');
+ if (c) c.classList.add('active');
+ }
 
-  function setActiveNavLink() {
-    document.querySelectorAll('.nav-link').forEach(btn => btn.classList.remove('active'));
-    if (!currentDocFile) {
-      const h = document.getElementById('nav-home');
-      if (h) h.classList.add('active');
-      return;
-    }
-    const docs = PROJECT_NAV[currentProject] || [];
-    const idx = docs.findIndex(d => d.file === currentDocFile);
-    if (idx >= 0) {
-      const btn = document.getElementById(`nav-doc-${idx}`);
-      if (btn) btn.classList.add('active');
-    }
-  }
+ function setActiveNavLink() {
+ document.querySelectorAll('.nav-link').forEach(btn => btn.classList.remove('active'));
+ if (!currentDocFile) {
+ const h = document.getElementById('nav-home');
+ if (h) h.classList.add('active');
+ return;
+ }
+ const docs = PROJECT_NAV[currentProject] || [];
+ const idx = docs.findIndex(d => d.file === currentDocFile);
+ if (idx >= 0) {
+ const btn = document.getElementById(`nav-doc-${idx}`);
+ if (btn) btn.classList.add('active');
+ }
+ }
 
-  function selectProject(key, openFirst = false) {
-    if (!PROJECT_FILES[key]) return;
-    currentProject = key;
-    updateProjectBlocks();
-    renderNavLinks();
-    if (openFirst) {
-      const docs = PROJECT_NAV[key] || [];
-      if (docs.length) openDoc(docs[0].file);
-    } else if (currentDocFile) {
-      document.getElementById('doc-frame').src = resolveFile(currentDocFile);
-    }
-  }
+ function selectProject(key, openFirst = false) {
+ if (!PROJECT_FILES[key]) return;
+ currentProject = key;
+ updateProjectBlocks();
+ renderNavLinks();
+ if (openFirst) {
+ const docs = PROJECT_NAV[key] || [];
+ if (docs.length) openDoc(docs[0].file);
+ } else if (currentDocFile) {
+ document.getElementById('doc-frame').src = resolveFile(currentDocFile);
+ }
+ }
 
-  function openDoc(file) {
-    currentDocFile = file;
-    setNavVisibility(true);
-    document.getElementById('home-view').style.display = 'none';
-    const fv = document.getElementById('frame-view');
-    fv.style.display = 'flex';
-    fv.style.flexDirection = 'column';
-    document.getElementById('doc-frame').src = resolveFile(file);
-    setActiveNavLink();
-  }
+ function openDoc(file) {
+ currentDocFile = file;
+ setNavVisibility(true);
+ document.getElementById('home-view').style.display = 'none';
+ const fv = document.getElementById('frame-view');
+ fv.style.display = 'flex';
+ fv.style.flexDirection = 'column';
+ document.getElementById('doc-frame').src = resolveFile(file);
+ setActiveNavLink();
+ }
 
-  function showHome() {
-    setNavVisibility(false);
-    document.getElementById('frame-view').style.display = 'none';
-    document.getElementById('home-view').style.display = 'block';
-    document.getElementById('doc-frame').src = '';
-    currentDocFile = null;
-    setActiveNavLink();
-    updateHomeParallax();
-  }
+ function showHome() {
+ setNavVisibility(false);
+ document.getElementById('frame-view').style.display = 'none';
+ document.getElementById('home-view').style.display = 'block';
+ document.getElementById('doc-frame').src = '';
+ currentDocFile = null;
+ setActiveNavLink();
+ updateHomeParallax();
+ }
 
-  function checkPassword() {
-    const input = document.getElementById('pwd').value;
-    const error = document.getElementById('login-error');
-    if (input === PASSWORD) {
-      document.getElementById('login-screen').style.display = 'none';
-      const site = document.getElementById('site');
-      site.style.display = 'flex';
-      site.style.flexDirection = 'column';
-    } else {
-      error.classList.add('show');
-      document.getElementById('pwd').value = '';
-      setTimeout(() => error.classList.remove('show'), 2000);
-    }
-  }
+ function checkPassword() {
+ const input = document.getElementById('pwd').value;
+ const error = document.getElementById('login-error');
+ if (input === PASSWORD) {
+ document.getElementById('login-screen').style.display = 'none';
+ const site = document.getElementById('site');
+ site.style.display = 'flex';
+ site.style.flexDirection = 'column';
+ } else {
+ error.classList.add('show');
+ document.getElementById('pwd').value = '';
+ setTimeout(() => error.classList.remove('show'), 2000);
+ }
+ }
 
-  function logout() {
-    setNavVisibility(false);
-    document.getElementById('site').style.display = 'none';
-    document.getElementById('login-screen').style.display = 'flex';
-    document.getElementById('pwd').value = '';
-    showHome();
-  }
+ function logout() {
+ setNavVisibility(false);
+ document.getElementById('site').style.display = 'none';
+ document.getElementById('login-screen').style.display = 'flex';
+ document.getElementById('pwd').value = '';
+ showHome();
+ }
 
-  // Init
-  document.getElementById('pwd').addEventListener('keydown', e => { if (e.key === 'Enter') checkPassword(); });
-  bindHomeParallax();
-  updateHomeParallax();
-  renderNavLinks();
-  updateProjectBlocks();
+ // Init
+ document.getElementById('pwd').addEventListener('keydown', e => { if (e.key === 'Enter') checkPassword(); });
+ bindHomeParallax();
+ updateHomeParallax();
+ renderNavLinks();
+ updateProjectBlocks();
 </script>
 </body>
 </html>

@@ -7,106 +7,106 @@
 <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <meta name="referrer" content="no-referrer">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap');
-  :root{--sand:#F5F0E6;--pise:#111008;--pise-mid:#4F4336;--cedar:#A78661;--sky:#FDFAF5;--pise-light:#D8CCB8;--alert:#8B3A2A;}
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html,body{width:100%;max-width:100%;overflow-x:hidden;overscroll-behavior-x:none;}
-  img,iframe{max-width:100%;height:auto;}
-  table{max-width:100%;width:100%;table-layout:fixed;}
-  th,td{overflow-wrap:anywhere;word-break:break-word;}
-  body{touch-action:pan-y;background:var(--sand);color:var(--pise);font-family:'Montserrat',sans-serif;font-weight:300;font-size:17px;line-height:1.75;max-width:960px;margin:0 auto;}
+ @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap');
+ :root{--sand:#F5F0E6;--pise:#111008;--pise-mid:#4F4336;--cedar:#A78661;--sky:#FDFAF5;--pise-light:#D8CCB8;--alert:#8B3A2A;}
+ *{margin:0;padding:0;box-sizing:border-box;}
+ html,body{width:100%;max-width:100%;overflow-x:hidden;overscroll-behavior-x:none;}
+ img,iframe{max-width:100%;height:auto;}
+ table{max-width:100%;width:100%;table-layout:fixed;}
+ th,td{overflow-wrap:anywhere;word-break:break-word;}
+ body{touch-action:pan-y;background:var(--sand);color:var(--pise);font-family:'Montserrat',sans-serif;font-weight:300;font-size:17px;line-height:1.75;max-width:960px;margin:0 auto;}
 
-  .cover{width:100%;min-height:620px;background:var(--sand);display:flex;flex-direction:column;justify-content:space-between;padding:56px 52px;}
-  .cover-mid{padding:40px 0;}
-  .cover-rule{width:40px;height:1px;background:var(--cedar);margin-bottom:28px;}
-  .ct{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:58px;line-height:1.02;color:var(--pise);margin-bottom:8px;}
-  .cs{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:25px;color:var(--pise-mid);margin-bottom:36px;}
-  .cd{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--pise-mid);max-width:460px;line-height:1.9;border-left:1px solid var(--cedar);padding-left:18px;}
-  .cover-bottom{border-top:1px solid var(--cedar);padding-top:24px;}
-  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
-  .kpi{padding-right:24px;border-right:1px solid var(--pise-light);}
-  .kpi:last-child{border-right:none;}
-  .kpi:not(:first-child){padding-left:24px;}
-  .kv{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:28px;color:var(--pise);line-height:1;margin-bottom:4px;}
-  .kl{font-size:10px;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;margin-bottom:2px;}
-  .ks{font-size:11px;color:var(--pise-mid);}
+ .cover{width:100%;min-height:620px;background:var(--sand);display:flex;flex-direction:column;justify-content:space-between;padding:56px 52px;}
+ .cover-mid{padding:40px 0;}
+ .cover-rule{width:40px;height:1px;background:var(--cedar);margin-bottom:28px;}
+ .ct{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:58px;line-height:1.02;color:var(--pise);margin-bottom:8px;}
+ .cs{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:25px;color:var(--pise-mid);margin-bottom:36px;}
+ .cd{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--pise-mid);max-width:460px;line-height:1.9;border-left:1px solid var(--cedar);padding-left:18px;}
+ .cover-bottom{border-top:1px solid var(--cedar);padding-top:24px;}
+ .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+ .kpi{padding-right:24px;border-right:1px solid var(--pise-light);}
+ .kpi:last-child{border-right:none;}
+ .kpi:not(:first-child){padding-left:24px;}
+ .kv{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:28px;color:var(--pise);line-height:1;margin-bottom:4px;}
+ .kl{font-size:10px;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;margin-bottom:2px;}
+ .ks{font-size:11px;color:var(--pise-mid);}
 
-  .page{padding:56px 52px;border-bottom:1px solid var(--pise-light);}
-  .ph{display:flex;justify-content:space-between;margin-bottom:40px;padding-bottom:10px;border-bottom:1px solid var(--cedar);}
-  .ph span{font-size:15px;letter-spacing:0.2em;color:var(--cedar);text-transform:uppercase;}
-  .ph span:last-child{color:var(--pise-mid);}
-  .sl{font-size:11.5px;letter-spacing:0.22em;color:var(--cedar);text-transform:uppercase;margin-bottom:10px;}
-  h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:44px;line-height:1.12;margin-bottom:22px;}
-  h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:21px;line-height:1.3;margin-bottom:10px;margin-top:0;}
-  h3{font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--pise-mid);margin-bottom:10px;margin-top:20px;font-weight:400;}
-  p{font-size:16.5px;line-height:1.9;margin-bottom:12px;}
-  .bs{font-size:15px;line-height:1.8;color:var(--pise-mid);margin-bottom:7px;}
-  .two{display:grid;grid-template-columns:1.15fr 0.85fr;gap:44px;margin:20px 0;}
-  .two-eq{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:20px 0;}
-  .ul{list-style:none;margin:0 0 14px;padding:0;}
-  .ul li{font-size:16px;line-height:1.75;padding-left:14px;position:relative;margin-bottom:3px;}
-  .ul li::before{content:'·';position:absolute;left:0;color:var(--cedar);}
-  .pf{margin-top:40px;padding-top:12px;border-top:1px solid var(--pise-light);display:flex;justify-content:space-between;}
-  .pf span{font-size:10.5px;letter-spacing:0.13em;color:var(--pise-mid);text-transform:uppercase;}
-  .ab{border-left:2px solid var(--cedar);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
-  .ab2{border-left:2px solid var(--pise-light);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
-  .alert{border-left:2px solid var(--alert);padding:18px 22px;background:#FDF5F3;margin-bottom:16px;}
-  .alert .sl{color:var(--alert);}
-  .preferred{border-left:2px solid var(--pise);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
-  .rule{width:36px;height:1px;background:var(--cedar);margin:20px 0;}
+ .page{padding:56px 52px;border-bottom:1px solid var(--pise-light);}
+ .ph{display:flex;justify-content:space-between;margin-bottom:40px;padding-bottom:10px;border-bottom:1px solid var(--cedar);}
+ .ph span{font-size:15px;letter-spacing:0.2em;color:var(--cedar);text-transform:uppercase;}
+ .ph span:last-child{color:var(--pise-mid);}
+ .sl{font-size:11.5px;letter-spacing:0.22em;color:var(--cedar);text-transform:uppercase;margin-bottom:10px;}
+ h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:44px;line-height:1.12;margin-bottom:22px;}
+ h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:21px;line-height:1.3;margin-bottom:10px;margin-top:0;}
+ h3{font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--pise-mid);margin-bottom:10px;margin-top:20px;font-weight:400;}
+ p{font-size:16.5px;line-height:1.9;margin-bottom:12px;}
+ .bs{font-size:15px;line-height:1.8;color:var(--pise-mid);margin-bottom:7px;}
+ .two{display:grid;grid-template-columns:1.15fr 0.85fr;gap:44px;margin:20px 0;}
+ .two-eq{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:20px 0;}
+ .ul{list-style:none;margin:0 0 14px;padding:0;}
+ .ul li{font-size:16px;line-height:1.75;padding-left:14px;position:relative;margin-bottom:3px;}
+ .ul li::before{content:'·';position:absolute;left:0;color:var(--cedar);}
+ .pf{margin-top:40px;padding-top:12px;border-top:1px solid var(--pise-light);display:flex;justify-content:space-between;}
+ .pf span{font-size:10.5px;letter-spacing:0.13em;color:var(--pise-mid);text-transform:uppercase;}
+ .ab{border-left:2px solid var(--cedar);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
+ .ab2{border-left:2px solid var(--pise-light);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
+ .alert{border-left:2px solid var(--alert);padding:18px 22px;background:#FDF5F3;margin-bottom:16px;}
+ .alert .sl{color:var(--alert);}
+ .preferred{border-left:2px solid var(--pise);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
+ .rule{width:36px;height:1px;background:var(--cedar);margin:20px 0;}
 
-  .scen-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--pise-light);margin:24px 0;}
-  .scen-block{padding:24px 22px;}
-  .scen-a{background:var(--sky);}
-  .scen-b{background:var(--sand);}
-  .scen-label{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;}
-  .scen-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:var(--pise);margin-bottom:10px;line-height:1.2;}
-  .scen-body{font-size:14px;line-height:1.7;color:var(--pise-mid);}
-  .scen-kpi{display:flex;justify-content:space-between;padding:7px 0;border-top:1px solid var(--pise-light);margin-top:2px;}
-  .scen-kpi:first-of-type{border-top:1px solid var(--cedar);margin-top:12px;}
-  .scen-kv{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--pise);}
-  .scen-kl{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--pise-mid);align-self:center;}
-  .preferred-tag{display:inline-block;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--sky);background:var(--pise);padding:3px 8px;margin-bottom:8px;}
+ .scen-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--pise-light);margin:24px 0;}
+ .scen-block{padding:24px 22px;}
+ .scen-a{background:var(--sky);}
+ .scen-b{background:var(--sand);}
+ .scen-label{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;}
+ .scen-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:var(--pise);margin-bottom:10px;line-height:1.2;}
+ .scen-body{font-size:14px;line-height:1.7;color:var(--pise-mid);}
+ .scen-kpi{display:flex;justify-content:space-between;padding:7px 0;border-top:1px solid var(--pise-light);margin-top:2px;}
+ .scen-kpi:first-of-type{border-top:1px solid var(--cedar);margin-top:12px;}
+ .scen-kv{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--pise);}
+ .scen-kl{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--pise-mid);align-self:center;}
+ .preferred-tag{display:inline-block;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--sky);background:var(--pise);padding:3px 8px;margin-bottom:8px;}
 
-  table.budget{width:100%;border-collapse:collapse;margin:20px 0;}
-  table.budget thead tr{border-bottom:2px solid var(--cedar);}
-  table.budget thead th{padding:8px 10px;text-align:left;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
-  table.budget thead th.r{text-align:right;}
-  table.budget tbody tr{border-bottom:1px solid var(--pise-light);}
-  table.budget tbody td{padding:7px 10px;color:var(--pise);font-size:14px;vertical-align:top;}
-  table.budget tbody td.r{text-align:right;}
-  table.budget tbody td.note{font-size:10.5px;color:var(--pise-mid);}
-  table.budget tbody td.alert-cell{color:var(--alert);}
-  .row-sec td{background:var(--sand);color:var(--cedar);letter-spacing:0.2em;text-transform:uppercase;padding:5px 10px;}
-  .row-sub td{background:var(--sand);font-weight:400;}
-  .row-tot td{border-top:2px solid var(--cedar);border-bottom:none;font-weight:400;padding:10px;}
-  .row-gop td{background:var(--sky);font-style:italic;color:var(--pise-mid);}
-  .row-alert td{background:#FDF5F3;color:var(--alert);}
+ table.budget{width:100%;border-collapse:collapse;margin:20px 0;}
+ table.budget thead tr{border-bottom:2px solid var(--cedar);}
+ table.budget thead th{padding:8px 10px;text-align:left;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
+ table.budget thead th.r{text-align:right;}
+ table.budget tbody tr{border-bottom:1px solid var(--pise-light);}
+ table.budget tbody td{padding:7px 10px;color:var(--pise);font-size:14px;vertical-align:top;}
+ table.budget tbody td.r{text-align:right;}
+ table.budget tbody td.note{font-size:10.5px;color:var(--pise-mid);}
+ table.budget tbody td.alert-cell{color:var(--alert);}
+ .row-sec td{background:var(--sand);color:var(--cedar);letter-spacing:0.2em;text-transform:uppercase;padding:5px 10px;}
+ .row-sub td{background:var(--sand);font-weight:400;}
+ .row-tot td{border-top:2px solid var(--cedar);border-bottom:none;font-weight:400;padding:10px;}
+ .row-gop td{background:var(--sky);font-style:italic;color:var(--pise-mid);}
+ .row-alert td{background:#FDF5F3;color:var(--alert);}
 
-  table.comp{width:100%;border-collapse:collapse;margin:20px 0;}
-  table.comp thead tr{border-bottom:2px solid var(--cedar);}
-  table.comp thead th{padding:10px 12px;text-align:left;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
-  table.comp thead th.r{text-align:right;}
-  table.comp tbody tr{border-bottom:1px solid var(--pise-light);}
-  table.comp tbody td{padding:10px 12px;font-size:14px;color:var(--pise);}
-  table.comp tbody td.r{text-align:right;}
-  table.comp tbody td.best{color:var(--cedar);font-weight:400;text-align:right;}
-  table.comp tbody td.worst{color:var(--alert);text-align:right;}
-  table.comp .row-tot td{border-top:2px solid var(--cedar);font-weight:400;font-size:15px;padding:12px;}
+ table.comp{width:100%;border-collapse:collapse;margin:20px 0;}
+ table.comp thead tr{border-bottom:2px solid var(--cedar);}
+ table.comp thead th{padding:10px 12px;text-align:left;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
+ table.comp thead th.r{text-align:right;}
+ table.comp tbody tr{border-bottom:1px solid var(--pise-light);}
+ table.comp tbody td{padding:10px 12px;font-size:14px;color:var(--pise);}
+ table.comp tbody td.r{text-align:right;}
+ table.comp tbody td.best{color:var(--cedar);font-weight:400;text-align:right;}
+ table.comp tbody td.worst{color:var(--alert);text-align:right;}
+ table.comp .row-tot td{border-top:2px solid var(--cedar);font-weight:400;font-size:15px;padding:12px;}
 
-  .weakness{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--pise-light);}
-  .weakness:last-child{border-bottom:none;}
-  .weakness-label{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--alert);margin-bottom:5px;font-weight:400;}
-  .weakness-body{font-size:15px;line-height:1.8;color:var(--pise);}
+ .weakness{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--pise-light);}
+ .weakness:last-child{border-bottom:none;}
+ .weakness-label{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--alert);margin-bottom:5px;font-weight:400;}
+ .weakness-body{font-size:15px;line-height:1.8;color:var(--pise);}
 
-  table{font-size:15px !important;}
-  table thead th{font-size:11px !important;letter-spacing:0.1em;padding:10px 12px !important;}
-  table tbody td{font-size:15px !important;padding:10px 12px !important;line-height:1.7 !important;}
-  .row-sec td{font-size:11px !important;}
-  .row-tot td{font-size:16px !important;}
-  .bs{font-size:14px !important;}
-  .weakness-body{font-size:15px !important;}
-  .scen-body{font-size:14px !important;}
+ table{font-size:15px !important;}
+ table thead th{font-size:11px !important;letter-spacing:0.1em;padding:10px 12px !important;}
+ table tbody td{font-size:15px !important;padding:10px 12px !important;line-height:1.7 !important;}
+ .row-sec td{font-size:11px !important;}
+ .row-tot td{font-size:16px !important;}
+ .bs{font-size:14px !important;}
+ .weakness-body{font-size:15px !important;}
+ .scen-body{font-size:14px !important;}
 </style>
 <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
@@ -114,72 +114,72 @@
 
 <!-- PAGE 6 : RETOUR ET DÉCISION -->
 <div class="page">
-  <div class="ph"><span>Khaimas — Route de Fès</span><span>Retour et décision</span></div>
-  <div class="sl">Retour investisseur et comparatif</div>
-  <h1>Mise : 1 000 000€.<br>Ce que chaque projet produit.</h1>
+ <div class="ph"><span>Khaimas - Route de Fès</span><span>Retour et décision</span></div>
+ <div class="sl">Retour investisseur et comparatif</div>
+ <h1>Mise : 1 000 000€.<br>Ce que chaque projet produit.</h1>
 
-  <div class="two-eq">
-    <div>
-      <table class="budget">
-        <thead><tr><th>Flux / investisseur (40%) — Scénario A</th><th class="r">Montant</th></tr></thead>
-        <tbody>
-          <tr><td>Mise initiale</td><td class="r">1 000 000€</td></tr>
-          <tr class="row-sec"><td colspan="2">Dividendes</td></tr>
-          <tr><td>Année 1</td><td class="r">197 937€</td></tr>
-          <tr><td>Année 2</td><td class="r">368 136€</td></tr>
-          <tr><td>Année 3</td><td class="r">458 346€</td></tr>
-          <tr><td>Année 4</td><td class="r">458 346€</td></tr>
-          <tr><td>Année 5</td><td class="r">458 346€</td></tr>
-          <tr class="row-sub"><td><strong>Dividendes cumulés Y1–Y5</strong></td><td class="r"><strong>1 941 111€</strong></td></tr>
-          <tr class="row-sec"><td colspan="2">Cession — fenêtre années 5–7</td></tr>
-          <tr><td>Prix plafond (terrain + infra permanentes)</td><td class="r">1 500 000€</td></tr>
-          <tr><td>Prix plancher</td><td class="r">800 000€</td></tr>
-          <tr><td style="font-size:12px;color:var(--pise-mid);" colspan="2">Tentes sans valeur résiduelle à l'exit — l'acheteur déduira le coût de remplacement</td></tr>
-          <tr class="row-tot"><td><strong>Retour total cible</strong></td><td class="r"><strong>3 441 111€</strong></td></tr>
-          <tr><td style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--alert);">Multiple cible</td><td class="r" style="font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--alert);font-weight:300;">3,4×</td></tr>
-        </tbody>
-      </table>
-    </div>
+ <div class="two-eq">
+ <div>
+ <table class="budget">
+ <thead><tr><th>Flux / investisseur (40%) - Scénario A</th><th class="r">Montant</th></tr></thead>
+ <tbody>
+ <tr><td>Mise initiale</td><td class="r">1 000 000€</td></tr>
+ <tr class="row-sec"><td colspan="2">Dividendes</td></tr>
+ <tr><td>Année 1</td><td class="r">197 937€</td></tr>
+ <tr><td>Année 2</td><td class="r">368 136€</td></tr>
+ <tr><td>Année 3</td><td class="r">458 346€</td></tr>
+ <tr><td>Année 4</td><td class="r">458 346€</td></tr>
+ <tr><td>Année 5</td><td class="r">458 346€</td></tr>
+ <tr class="row-sub"><td><strong>Dividendes cumulés Y1–Y5</strong></td><td class="r"><strong>1 941 111€</strong></td></tr>
+ <tr class="row-sec"><td colspan="2">Cession - fenêtre années 5–7</td></tr>
+ <tr><td>Prix plafond (terrain + infra permanentes)</td><td class="r">1 500 000€</td></tr>
+ <tr><td>Prix plancher</td><td class="r">800 000€</td></tr>
+ <tr><td style="font-size:12px;color:var(--pise-mid);" colspan="2">Tentes sans valeur résiduelle à l'exit - l'acheteur déduira le coût de remplacement</td></tr>
+ <tr class="row-tot"><td><strong>Retour total cible</strong></td><td class="r"><strong>3 441 111€</strong></td></tr>
+ <tr><td style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--alert);">Multiple cible</td><td class="r" style="font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--alert);font-weight:300;">3,4×</td></tr>
+ </tbody>
+ </table>
+ </div>
 
-    <div>
-      <div class="ab">
-        <div class="sl">Comparatif trois projets — même mise 1M€</div>
-        <table class="comp" style="margin-top:12px;">
-          <thead><tr><th>Critère</th><th class="r">Khaimas A</th><th class="r">Tigmi</th><th class="r">Riads Pisé</th></tr></thead>
-          <tbody>
-            <tr><td>Investissement</td><td class="r worst">7,82M€</td><td class="r best">3,15M€</td><td class="r">4,76M€</td></tr>
-            <tr><td>Gap financement</td><td class="r worst">4,02M€</td><td class="r best">Aucun</td><td class="r best">Aucun</td></tr>
-            <tr><td>ADR stabilisé</td><td class="r">500€</td><td class="r">500€</td><td class="r best">800€</td></tr>
-            <tr><td>Résultat net Y3</td><td class="r worst">1 146K€</td><td class="r best">2 508K€</td><td class="r">2 260K€</td></tr>
-            <tr><td>Div. Y3 / invest.</td><td class="r worst">458K€</td><td class="r best">1 003K€</td><td class="r">588K€</td></tr>
-            <tr><td>Div. Y1–Y5 / invest.</td><td class="r worst">1 941K€</td><td class="r best">4 533K€</td><td class="r">2 709K€</td></tr>
-            <tr><td>Payback</td><td class="r worst">Courant Y4</td><td class="r best">Fin Y2</td><td class="r">Courant Y3</td></tr>
-            <tr><td>Cession plafond</td><td class="r worst">1 500K€</td><td class="r">2 500K€</td><td class="r best">3 000K€</td></tr>
-            <tr><td>Actif à 10 ans</td><td class="r worst">Remplacement 3,6M€</td><td class="r best">Permanent</td><td class="r best">Permanent</td></tr>
-            <tr class="row-tot"><td><strong>Multiple cible</strong></td><td class="r worst">3,4×</td><td class="r best">7,0×</td><td class="r">5,7×</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
+ <div>
+ <div class="ab">
+ <div class="sl">Comparatif trois projets - même mise 1M€</div>
+ <table class="comp" style="margin-top:12px;">
+ <thead><tr><th>Critère</th><th class="r">Khaimas A</th><th class="r">Tigmi</th><th class="r">Riads Pisé</th></tr></thead>
+ <tbody>
+ <tr><td>Investissement</td><td class="r worst">7,82M€</td><td class="r best">3,15M€</td><td class="r">4,76M€</td></tr>
+ <tr><td>Gap financement</td><td class="r worst">4,02M€</td><td class="r best">Aucun</td><td class="r best">Aucun</td></tr>
+ <tr><td>ADR stabilisé</td><td class="r">500€</td><td class="r">500€</td><td class="r best">800€</td></tr>
+ <tr><td>Résultat net Y3</td><td class="r worst">1 146K€</td><td class="r best">2 508K€</td><td class="r">2 260K€</td></tr>
+ <tr><td>Div. Y3 / invest.</td><td class="r worst">458K€</td><td class="r best">1 003K€</td><td class="r">588K€</td></tr>
+ <tr><td>Div. Y1–Y5 / invest.</td><td class="r worst">1 941K€</td><td class="r best">4 533K€</td><td class="r">2 709K€</td></tr>
+ <tr><td>Payback</td><td class="r worst">Courant Y4</td><td class="r best">Fin Y2</td><td class="r">Courant Y3</td></tr>
+ <tr><td>Cession plafond</td><td class="r worst">1 500K€</td><td class="r">2 500K€</td><td class="r best">3 000K€</td></tr>
+ <tr><td>Actif à 10 ans</td><td class="r worst">Remplacement 3,6M€</td><td class="r best">Permanent</td><td class="r best">Permanent</td></tr>
+ <tr class="row-tot"><td><strong>Multiple cible</strong></td><td class="r worst">3,4×</td><td class="r best">7,0×</td><td class="r">5,7×</td></tr>
+ </tbody>
+ </table>
+ </div>
+ </div>
+ </div>
 
-  <img src="images/img_vie_ici_dec7d617_replacement.png" alt="" style="width:100%;display:block;margin:32px 0;">
+ <img src="images/img_vie_ici_dec7d617_replacement.png" alt="" style="width:100%;display:block;margin:32px 0;">
 
-  <div class="rule"></div>
+ <div class="rule"></div>
 
-  <div class="ab">
-    <div class="sl">La conclusion honnête</div>
-    <h2>Le Scénario A ne concurrence aucun des deux autres projets.</h2>
-    <p class="bs">Avec un ADR identique à Tigmi (500€), Khaimas Scénario A produit un multiple de 3,4× contre 7,0× pour Tigmi — pour un investissement 2,5 fois plus élevé, un gap de financement de 4M€ non résolu, et un actif qui nécessite 3,6M€ de réinvestissement à 10 ans. Aucune configuration ne rend le Scénario A préférable à Tigmi ou à Riads Pisé.</p>
-    <p class="bs">Le Scénario B est une question différente. 10 lodges à 200 000€, ADR 700€, croissance phasée : c'est un projet potentiellement défendable sous la marque Toile Blanche, avec un multiple supérieur et une cohérence de positionnement. Si les investisseurs souhaitent explorer cette voie, le modèle complet sera produit. La décision revient aux investisseurs : <strong>quel produit voulez-vous construire ?</strong></p>
-  </div>
+ <div class="ab">
+ <div class="sl">La conclusion honnête</div>
+ <h2>Le Scénario A ne concurrence aucun des deux autres projets.</h2>
+ <p class="bs">Avec un ADR identique à Tigmi (500€), Khaimas Scénario A produit un multiple de 3,4× contre 7,0× pour Tigmi - pour un investissement 2,5 fois plus élevé, un gap de financement de 4M€ non résolu, et un actif qui nécessite 3,6M€ de réinvestissement à 10 ans. Aucune configuration ne rend le Scénario A préférable à Tigmi ou à Riads Pisé.</p>
+ <p class="bs">Le Scénario B est une question différente. 10 lodges à 200 000€, ADR 700€, croissance phasée : c'est un projet potentiellement défendable sous la marque Toile Blanche, avec un multiple supérieur et une cohérence de positionnement. Si les investisseurs souhaitent explorer cette voie, le modèle complet sera produit. La décision revient aux investisseurs : <strong>quel produit voulez-vous construire ?</strong></p>
+ </div>
 
-  <img src="images/img_conditions_sculpture_replacement.png" alt="" style="width:100%;display:block;margin:32px 0;">
+ <img src="images/img_conditions_sculpture_replacement.png" alt="" style="width:100%;display:block;margin:32px 0;">
 
-  <div class="pf">
-    <span>Toile Blanche Group — Leroy Brothers — Mai 2026</span>
-    <span>Document confidentiel — projections à titre indicatif, non contractuelles</span>
-  </div>
+ <div class="pf">
+ <span>Toile Blanche Group - Leroy Brothers - Mai 2026</span>
+ <span>Document confidentiel - projections à titre indicatif, non contractuelles</span>
+ </div>
 </div>
 
 
