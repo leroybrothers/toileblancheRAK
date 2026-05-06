@@ -155,31 +155,18 @@
  <div class="hero">
  <img class="hero-img" src="images/img_accueil_neutre.png" alt="">
  <div class="hero-overlay"></div>
- <div class="hero-content">
-        <div class="hero-eyebrow">Toile Blanche, Marrakech</div>
- <div class="hero-title">Propositions<br>d'Investissement</div>
- <div class="hero-sub">Trois projets. Trois déclarations.</div>
- <div class="hero-declaration">« Toile Blanche a été déclarée œuvre par les Leroy Brothers.<br>Elle continue de fonctionner normalement. »</div>
- <div class="hero-cta-wrap">
- <button class="hero-cta active" id="cta-riads-pise" onclick="selectProject('riads-pise', true)">Riads Pisé</button>
- <button class="hero-cta" id="cta-khaimas" onclick="selectProject('khaimas', true)">Khaimas</button>
-          <button class="hero-cta" id="cta-tigmi" onclick="selectProject('tigmi', true)">Tigmi</button>
-          <button class="hero-cta" id="cta-conclusions" onclick="openConclusions()">Conclusions</button>
-        </div>
- </div>
- </div>
+<div class="hero-content">
+  <div class="hero-eyebrow">Toile Blanche Marrakech</div>
+  <div class="hero-title">Club Deal</div>
+  <div class="hero-sub">Tigmi, Tagadirt</div>
+  <div class="hero-cta-wrap">
+    <button class="hero-cta active" id="cta-tigmi" onclick="selectProject('tigmi', true)">Tigmi</button>
+  </div>
+</div>
+</div>
 
- <div class="content">
- <div class="home-intro">
- <div class="home-kicker">Toile Blanche Marrakech</div>
- <h2 class="home-title">Trois propositions.<br>Deux territoires.</h2>
- <p class="home-text">Ce document présente trois propositions d'investissement distinctes. Deux partagent le même terrain de 5 hectares sur la Route de Fès - il faudra en choisir une. La troisième est un hôtel existant à Tagadirt, à 25 minutes de Marrakech, à transformer intégralement.</p>
- <p class="home-text">Les trois propositions partagent la même structure de capital, la même direction artistique, le même opérateur. Elles divergent sur l'architecture, les matériaux, le profil de risque, la durée de vie des actifs et le positionnement tarifaire.</p>
- <p class="home-text">Elles ont été préparées avec le même soin, la même honnêteté. Aucune n'est présentée comme la bonne réponse. Les chiffres le font.</p>
- </div>
-
- <!-- THREE PROJECT BLOCKS -->
- <div class="project-compare" id="project-compare-grid">
+<div class="content" style="display:none;">
+<div class="project-compare" id="project-compare-grid">
 
  <div class="project-block active-project" id="block-riads-pise" onclick="selectProject('riads-pise', true)">
  <div class="project-kicker">Construction permanente - Route de Fès</div>
@@ -247,23 +234,9 @@
  <div class="project-note">Actif existant. Zéro risque construction. Payback fin année 2. Acquisition en cours de négociation - ouverture 12 mois.</div>
  </div>
 
- </div><!-- /project-compare -->
- </div>
-
-    <!-- TERRAIN AERIAL -->
- <div style="margin-top:64px;">
- <div style="padding:48px 48px 20px;">
-        <div style="font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--cedar);margin-bottom:4px;border-top:1px solid var(--pise-light);padding-top:48px;">Le terrain, Route de Fès</div>
-        <div style="font-size:12px;letter-spacing:0.15em;color:var(--pise-mid);margin-top:4px;">5 hectares, parcelle murée, Haouz, Riads Pisé ou Khaimas</div>
- </div>
- <img src="images/img_b6085da8ddc7306d.png" alt="" style="width:100%;display:block;">
- </div>
-
- <footer>
-      <span>Toile Blanche Marrakech, Document de travail confidentiel</span>
-      <span>Trois propositions d'investissement, Mai 2026</span>
- </footer>
- </div><!-- /home-view -->
+</div><!-- /project-compare -->
+</div><!-- /content -->
+</div><!-- /home-view -->
 
  <!-- FRAME VIEW -->
  <div id="frame-view">
@@ -342,7 +315,7 @@
  };
 
  let currentDocFile = null;
- let currentProject = 'riads-pise';
+ let currentProject = 'tigmi';
  let homeParallaxBound = false;
 
  function updateHomeParallax() {
