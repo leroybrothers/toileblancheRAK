@@ -318,19 +318,6 @@ btn.textContent = (NAV_LABELS.docs[doc.file] && NAV_LABELS.docs[doc.file][lang])
  setActiveNavLink();
  }
 
-  function openConclusions() {
-    setNavVisibility(false);
-    document.getElementById('home-view').style.display = 'none';
-    const fv = document.getElementById('frame-view');
-    fv.style.display = 'flex';
-    fv.style.flexDirection = 'column';
-    document.getElementById('doc-frame').src = 'conclusions.html';
-    currentDocFile = 'conclusions.html';
-    document.querySelectorAll('.hero-cta').forEach(b => b.classList.remove('active'));
-    const cb = document.getElementById('cta-conclusions');
-    if (cb) cb.classList.add('active');
-  }
-
  function setActiveNavLink() {
  document.querySelectorAll('.nav-link').forEach(btn => btn.classList.remove('active'));
  if (!currentDocFile) {
