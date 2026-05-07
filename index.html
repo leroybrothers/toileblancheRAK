@@ -318,6 +318,28 @@
  let currentDocFile = null;
  let currentProject = 'tigmi';
  let homeParallaxBound = false;
+const LANG_KEY = 'tbm_lang';
+
+function getCurrentLang() {
+const lang = localStorage.getItem(LANG_KEY) || 'fr';
+return ['fr', 'nl', 'en'].includes(lang) ? lang : 'fr';
+}
+
+const NAV_LABELS = {
+home: { fr: 'Accueil', nl: 'Home', en: 'Home' },
+docs: {
+'tigmi_introduction.html': { fr: 'Le Projet', nl: 'Het Project', en: 'The Project' },
+'tigmi_la-marque.html': { fr: 'La Marque', nl: 'Het Merk', en: 'The Brand' },
+'tigmi_le-lieu.html': { fr: 'Le Lieu', nl: 'De Locatie', en: 'The Place' },
+'tigmi_la-transformation.html': { fr: 'La Transformation', nl: 'De Transformatie', en: 'The Transformation' },
+'tigmi_eco-territoire.html': { fr: 'Éco & Territoire', nl: 'Eco & Territorium', en: 'Eco & Territory' },
+'tigmi_art-galerie.html': { fr: "L'Art & La Galerie", nl: 'Kunst & Galerie', en: 'Art & Gallery' },
+'tigmi_la-vie.html': { fr: 'La Vie Ici', nl: 'Het Leven Hier', en: 'Life Here' },
+'tigmi_le-financement.html': { fr: 'Le Financement', nl: 'Financiering', en: 'Financing' },
+'tigmi_term-sheet.html': { fr: 'Term Sheet', nl: 'Term Sheet', en: 'Term Sheet' },
+'tigmi_due-diligence.html': { fr: 'Due Diligence', nl: 'Due Diligence', en: 'Due Diligence' }
+}
+};
 
  function updateHomeParallax() {
  const heroImage = document.querySelector('.hero-img');
@@ -363,12 +385,13 @@
  const nav = document.getElementById('nav-links');
  if (!nav) return;
  nav.innerHTML = '';
+const lang = getCurrentLang();
 
  // Home button
  const homeBtn = document.createElement('button');
  homeBtn.className = 'nav-link';
  homeBtn.id = 'nav-home';
- homeBtn.textContent = 'Accueil';
+homeBtn.textContent = NAV_LABELS.home[lang] || 'Accueil';
  homeBtn.addEventListener('click', showHome);
  nav.appendChild(homeBtn);
 
@@ -378,7 +401,7 @@
  const btn = document.createElement('button');
  btn.className = 'nav-link';
  btn.id = `nav-doc-${idx}`;
- btn.textContent = doc.nav;
+btn.textContent = (NAV_LABELS.docs[doc.file] && NAV_LABELS.docs[doc.file][lang]) || doc.nav;
  btn.addEventListener('click', () => openDoc(doc.file));
  nav.appendChild(btn);
  });
@@ -448,6 +471,12 @@
  updateHomeParallax();
  }
 
+function syncNavLanguage() {
+if (document.getElementById('top-nav').style.display !== 'none') {
+renderNavLinks();
+}
+}
+
  function checkPassword() {
  const input = document.getElementById('pwd').value;
  const error = document.getElementById('login-error');
@@ -477,6 +506,10 @@
  updateHomeParallax();
  renderNavLinks();
  updateProjectBlocks();
+window.addEventListener('storage', (e) => {
+if (e.key === LANG_KEY) syncNavLanguage();
+});
+window.addEventListener('focus', syncNavLanguage);
 </script>
 </body>
 </html>
