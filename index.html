@@ -168,51 +168,7 @@
 <div class="content" style="display:none;">
 <div class="project-compare" id="project-compare-grid">
 
- <div class="project-block active-project" id="block-riads-pise" onclick="selectProject('riads-pise', true)">
- <div class="project-kicker">Construction permanente - Route de Fès</div>
- <div class="project-title">Riads Pisé</div>
- <div class="project-metric">
- <div class="metric-value">4,76M€</div>
- <div class="metric-label">Investissement total</div>
- </div>
- <div class="project-metric">
- <div class="metric-value">12 → 20</div>
- <div class="metric-label">Unités - Phase 1 puis croissance organique</div>
- </div>
- <div class="project-metric">
- <div class="metric-value">800€</div>
- <div class="metric-label">prix moyen blended stabilisé</div>
- </div>
- <div class="project-metric">
- <div class="metric-value">5,7×</div>
- <div class="metric-label">Retour cible - mise 1M€</div>
- </div>
- <div class="project-note">Actif permanent. Pisé, cèdre, zellige. Croissance auto-financée. Permis construire requis - ouverture 24 mois.</div>
- </div>
-
- <div class="project-block" id="block-khaimas" onclick="selectProject('khaimas', true)">
- <div class="project-kicker">Structures légères - Route de Fès</div>
- <div class="project-title">Khaimas</div>
- <div class="project-metric">
- <div class="metric-value">7,82M€</div>
- <div class="metric-label">Investissement total</div>
- </div>
- <div class="project-metric">
- <div class="metric-value">24</div>
- <div class="metric-label">Tentes-lodges dès l'ouverture</div>
- </div>
- <div class="project-metric">
- <div class="metric-value">500€</div>
- <div class="metric-label">prix moyen cible - Scén. A</div>
- </div>
- <div class="project-metric">
- <div class="metric-value">3,4×</div>
- <div class="metric-label">Retour cible Scén. A - mise 1M€</div>
- </div>
- <div class="project-note">Actif temporaire - remplacement à 10 ans (360K€/an provisionné). Gap financement 4M€ à lever. Ouverture 18 mois.</div>
- </div>
-
- <div class="project-block" id="block-tigmi" onclick="selectProject('tigmi', true)">
+<div class="project-block active-project" id="block-tigmi" onclick="selectProject('tigmi', true)">
  <div class="project-kicker">Transformation - Tagadirt, pied de l'Atlas</div>
  <div class="project-title">Tigmi</div>
  <div class="project-metric">
@@ -248,59 +204,12 @@
 <script>
  const PASSWORD = 'toileblanche2026';
 
- // DOCS definition - same keys, project files resolve per project
- const DOCS = [
- { file: 'tbm_proposition_part1_v2.html', nav: "L'investissement" },
- { file: 'tbm_proposition_part2_clusters_budget.html', nav: 'Le programme' },
- { file: 'tbm_proposition_part3_finance_previsionnel_v2.html', nav: 'Le financement' },
- { file: 'tbm_proposition_part4_vie_conditions.html', nav: 'La vie ici' },
- { file: 'tbm_brief_archi_part1.html', nav: "L'architecture" },
- { file: 'tbm_brief_archi_part2.html', nav: 'Les espaces' },
- { file: 'tbm_brief_archi_part3.html', nav: 'Le territoire' },
- { file: 'tbm_termsheet.html', nav: 'Term Sheet' },
- ];
-
- const PROJECT_FILES = {
- 'riads-pise': {
- 'tbm_proposition_part1_v2.html': 'tbm_proposition_part1_v2.html',
- 'tbm_proposition_part2_clusters_budget.html': 'tbm_proposition_part2_clusters_budget.html',
- 'tbm_proposition_part3_finance_previsionnel_v2.html': 'tbm_proposition_part3_finance_previsionnel_v2.html',
- 'tbm_proposition_part4_vie_conditions.html': 'tbm_proposition_part4_vie_conditions.html',
- 'tbm_brief_archi_part1.html': 'tbm_brief_archi_part1.html',
- 'tbm_brief_archi_part2.html': 'tbm_brief_archi_part2.html',
- 'tbm_brief_archi_part3.html': 'tbm_brief_archi_part3.html',
- 'tbm_termsheet.html': 'tbm_termsheet.html',
- },
- 'khaimas': {
- 'tbm_proposition_part1_v2.html': 'khaimas_proposition_part1_v1.html',
- 'tbm_proposition_part2_clusters_budget.html': 'khaimas_proposition_part2_clusters_budget.html',
- 'tbm_proposition_part3_finance_previsionnel_v2.html': 'khaimas_proposition_part3_finance_previsionnel_v1.html',
- 'tbm_proposition_part4_vie_conditions.html': 'khaimas_proposition_part4_vie_conditions.html',
- 'tbm_brief_archi_part1.html': 'khaimas_brief_archi_part1.html',
- 'tbm_brief_archi_part2.html': 'khaimas_brief_archi_part2.html',
- 'tbm_brief_archi_part3.html': 'khaimas_brief_archi_part3.html',
- 'tbm_termsheet.html': 'khaimas_termsheet.html',
- },
+const PROJECT_FILES = {
 'tigmi': {}
- };
+};
 
  // Per-project nav labels - only show docs that exist for each project
- const PROJECT_NAV = {
- 'riads-pise': [
- { file: 'tbm_proposition_part1_v2.html', nav: "L'investissement" },
- { file: 'tbm_proposition_part2_clusters_budget.html', nav: 'Le programme' },
- { file: 'tbm_proposition_part3_finance_previsionnel_v2.html', nav: 'Le financement' },
- { file: 'tbm_proposition_part4_vie_conditions.html', nav: 'La vie ici' },
- { file: 'tbm_brief_archi_part1.html', nav: "L'architecture" },
- { file: 'tbm_brief_archi_part2.html', nav: 'Les 5 clusters' },
- { file: 'tbm_brief_archi_part3.html', nav: 'Le territoire' },
- { file: 'tbm_termsheet.html', nav: 'Term Sheet' },
- ],
- 'khaimas': [
- { file: 'tbm_proposition_part1_v2.html', nav: 'Le projet' },
- { file: 'tbm_proposition_part3_finance_previsionnel_v2.html', nav: 'Le prévisionnel' },
- { file: 'tbm_proposition_part4_vie_conditions.html', nav: 'La décision' },
- ],
+const PROJECT_NAV = {
 'tigmi': [
 { file: 'tigmi_introduction.html', nav: 'Le Projet' },
 { file: 'tigmi_la-marque.html', nav: 'La Marque' },
@@ -371,11 +280,11 @@ docs: {
  }
 
  function updateProjectBlocks() {
- ['riads-pise', 'khaimas', 'tigmi'].forEach(key => {
+['tigmi'].forEach(key => {
  const el = document.getElementById('block-' + key);
  if (el) el.classList.toggle('active-project', key === currentProject);
  });
- ['riads-pise', 'khaimas', 'tigmi'].forEach(key => {
+['tigmi'].forEach(key => {
  const cta = document.getElementById('cta-' + key);
  if (cta) cta.classList.toggle('active', key === currentProject);
  });
