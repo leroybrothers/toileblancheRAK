@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="referrer" content="no-referrer">
+<title>Toile Blanche Marrakech - La Marque</title>
+<style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap');
+  :root{--sand:#F5F0E6;--pise:#111008;--pise-mid:#4F4336;--cedar:#A78661;--sky:#FDFAF5;--pise-light:#D8CCB8;--alert:#8B3A2A;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:100%;max-width:100%;overflow-x:hidden;}
+  body{background:var(--sand);color:var(--pise);font-family:'Montserrat',sans-serif;font-weight:300;font-size:16px;line-height:1.75;}
+
+  /* LOGIN */
+  #login-screen{width:100%;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;background:var(--sand);}
+  .login-logo{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:0.5em;text-transform:uppercase;color:var(--pise);margin-bottom:6px;text-align:center;}
+  .login-sub{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--cedar);margin-bottom:56px;text-align:center;}
+  .login-box{width:100%;max-width:340px;text-align:center;}
+  .login-rule{width:28px;height:1px;background:var(--cedar);margin:0 auto 36px;}
+  .login-label{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--pise-mid);display:block;margin-bottom:10px;}
+  .login-input{width:100%;background:var(--sky);border:1px solid var(--pise-light);padding:13px 18px;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:300;color:var(--pise);text-align:center;letter-spacing:0.12em;outline:none;}
+  .login-input:focus{border-color:var(--cedar);}
+  .login-btn{width:100%;margin-top:10px;background:var(--pise);color:var(--sky);border:none;padding:13px 18px;font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;cursor:pointer;}
+  .login-btn:hover{background:var(--cedar);}
+  .login-error{font-size:10px;letter-spacing:0.15em;color:var(--alert);text-align:center;margin-top:10px;opacity:0;transition:opacity 0.2s;}
+  .login-error.show{opacity:1;}
+  .login-conf{font-size:9px;letter-spacing:0.15em;color:var(--pise-mid);text-align:center;margin-top:44px;text-transform:uppercase;}
+
+  /* SITE SHELL */
+  #site{display:none;}
+
+  /* NAV */
+  nav{width:100%;background:var(--sand);border-bottom:1px solid var(--pise-light);position:sticky;top:0;z-index:100;}
+  .nav-top{padding:12px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--pise-light);}
+  .nav-brand{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:0.28em;text-transform:uppercase;color:var(--pise);cursor:pointer;}
+  .nav-brand span{color:var(--cedar);}
+  .nav-right{display:flex;align-items:center;gap:16px;}
+  .lang-toggle{display:flex;gap:0;}
+  .lang-btn{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:5px 10px;background:none;border:1px solid var(--pise-light);font-family:'Montserrat',sans-serif;font-weight:300;cursor:pointer;color:var(--pise-mid);transition:all 0.15s;}
+  .lang-btn.active{background:var(--pise);color:var(--sky);border-color:var(--pise);}
+  .nav-logout{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--pise-mid);cursor:pointer;background:none;border:none;font-family:'Montserrat',sans-serif;}
+  .nav-links{padding:9px 40px;display:flex;gap:4px;flex-wrap:wrap;}
+  .nav-link{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--pise-mid);cursor:pointer;padding:6px 10px;border:1px solid transparent;background:none;font-family:'Montserrat',sans-serif;font-weight:300;transition:all 0.15s;}
+  .nav-link:hover{color:var(--pise);}
+  .nav-link.active{color:var(--pise);border-color:var(--cedar);}
+
+  /* PAGES */
+  .page{max-width:960px;margin:0 auto;padding:56px 52px;border-bottom:1px solid var(--pise-light);}
+  .page.visible{display:block;}
+  .ph{display:flex;justify-content:space-between;margin-bottom:40px;padding-bottom:10px;border-bottom:1px solid var(--cedar);}
+  .ph span{font-size:14px;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;}
+  .ph span:last-child{color:var(--pise-mid);}
+  .sl{font-size:11px;letter-spacing:0.22em;color:var(--cedar);text-transform:uppercase;margin-bottom:10px;}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:44px;line-height:1.12;margin-bottom:22px;}
+  h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:21px;line-height:1.3;margin-bottom:10px;}
+  h3{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--pise-mid);margin-bottom:10px;margin-top:20px;font-weight:400;}
+  p{font-size:16px;line-height:1.9;margin-bottom:12px;}
+  .bs{font-size:14px;line-height:1.8;color:var(--pise-mid);margin-bottom:7px;}
+  .two{display:grid;grid-template-columns:1.15fr 0.85fr;gap:44px;margin:20px 0;}
+  .two-eq{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin:20px 0;}
+  .three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--pise-light);margin:24px 0;}
+  .ul{list-style:none;margin:0 0 14px;padding:0;}
+  .ul li{font-size:15px;line-height:1.75;padding-left:14px;position:relative;margin-bottom:3px;}
+  .ul li::before{content:'·';position:absolute;left:0;color:var(--cedar);}
+  .ab{border-left:2px solid var(--cedar);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
+  .ab2{border-left:2px solid var(--pise-light);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
+  .ab-dark{padding:32px 36px;background:var(--cedar);margin:24px 0;border-left:3px solid var(--pise-mid);}
+  .ab-dark p{color:var(--sky);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.65;}
+  .ab-dark .sl{color:var(--cedar);}
+  .alert-box{border-left:2px solid var(--alert);padding:18px 22px;background:#FDF5F3;margin-bottom:16px;}
+  .qb{border-left:1px solid var(--cedar);padding:14px 20px;background:var(--sky);margin:16px 0;}
+  .qb p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;line-height:1.75;}
+  .qs{font-size:10px;letter-spacing:0.16em;color:var(--cedar);text-transform:uppercase;margin-top:7px;}
+  .rule{width:36px;height:1px;background:var(--cedar);margin:22px 0;}
+  .pf{margin-top:40px;padding-top:12px;border-top:1px solid var(--pise-light);display:flex;justify-content:space-between;}
+  .pf span{font-size:10px;letter-spacing:0.13em;color:var(--pise-mid);text-transform:uppercase;}
+
+  /* IMAGE PLACEHOLDERS */
+  .img-full{width:100%;height:480px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9px;letter-spacing:0.12em;text-align:center;padding:24px;font-style:italic;margin:24px 0;}
+  .img-h{width:100%;height:340px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9px;text-align:center;padding:16px;font-style:italic;}
+  .img-sq{width:100%;height:400px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9px;text-align:center;padding:16px;font-style:italic;}
+
+  /* KPI STRIPS */
+  .kpi-cover{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--pise-light);margin:28px 0;}
+  .kc{background:var(--sky);padding:20px 18px;}
+  .kc-v{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--pise);line-height:1;margin-bottom:5px;}
+  .kc-l{font-size:9px;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;margin-bottom:2px;}
+  .kc-s{font-size:11px;color:var(--pise-mid);}
+  .kpi-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--pise-light);margin:24px 0;}
+  .ks-box{background:var(--sky);padding:20px 18px;}
+  .ks-val{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300;color:var(--pise);line-height:1;margin-bottom:5px;}
+  .ks-lbl{font-size:9px;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;}
+  .ks-sub{font-size:12px;color:var(--pise-mid);margin-top:3px;}
+
+  /* BLOCK GRIDS */
+  .block-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--pise-light);margin:24px 0;}
+  .bc{background:var(--sky);padding:22px 20px;}
+  .bl{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;}
+  .bt{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--pise);margin-bottom:8px;line-height:1.2;}
+  .bd{font-size:13px;line-height:1.7;color:var(--pise-mid);}
+  .bp{font-size:11px;color:var(--pise-mid);margin-top:8px;padding-top:8px;border-top:1px solid var(--pise-light);font-style:italic;}
+
+  /* WATERFALL TABLE */
+  .waterfall{margin:24px 0;}
+  .wf-row{display:grid;grid-template-columns:28px 1fr 1fr;gap:0;border-bottom:1px solid var(--pise-light);padding:12px 0;align-items:start;}
+  .wf-row:first-child{border-top:2px solid var(--cedar);}
+  .wf-num{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--pise-light);font-weight:300;line-height:1;margin-top:2px;}
+  .wf-title{font-size:13px;font-weight:400;color:var(--pise);letter-spacing:0.08em;margin-bottom:3px;}
+  .wf-desc{font-size:12px;color:var(--pise-mid);line-height:1.65;}
+  .wf-amount{font-size:13px;color:var(--cedar);text-align:right;padding-top:3px;}
+  .wf-highlight .wf-num{color:var(--cedar);}
+  .wf-highlight .wf-title{color:var(--cedar);}
+
+  /* RETURN TABLE */
+  table.ret{width:100%;border-collapse:collapse;margin:20px 0;}
+  table.ret thead tr{border-bottom:2px solid var(--cedar);}
+  table.ret thead th{padding:8px 10px;text-align:left;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
+  table.ret thead th.r{text-align:right;}
+  table.ret tbody tr{border-bottom:1px solid var(--pise-light);}
+  table.ret tbody td{padding:8px 10px;font-size:14px;color:var(--pise);}
+  table.ret tbody td.r{text-align:right;}
+  table.ret tbody td.muted{color:var(--pise-mid);font-style:italic;}
+  table.ret .row-sub td{background:var(--sand);font-weight:400;}
+  table.ret .row-tot td{border-top:2px solid var(--cedar);font-weight:400;font-size:15px;padding:10px;}
+  table.ret .row-pref td{background:var(--sky);}
+
+  /* DATA ROWS */
+  .data-row{display:grid;grid-template-columns:180px 1fr;gap:16px;padding:10px 0;border-bottom:1px solid var(--pise-light);font-size:14px;}
+  .data-row:last-child{border-bottom:none;}
+  .data-label{color:var(--cedar);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;padding-top:2px;}
+  .data-val{color:var(--pise);line-height:1.7;}
+
+  /* ECO GRID */
+  .eco-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--pise-light);margin:24px 0;}
+  .eco-cell{background:var(--sky);padding:20px 18px;}
+  .eco-icon{font-size:24px;margin-bottom:8px;}
+  .eco-title{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;font-weight:400;}
+  .eco-body{font-size:13px;line-height:1.7;color:var(--pise-mid);}
+  .eco-premium{font-size:12px;color:var(--pise);margin-top:8px;padding-top:8px;border-top:1px solid var(--pise-light);}
+
+  /* ART GRID */
+  .art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--pise-light);margin:24px 0;}
+  .art-cell{background:var(--sky);padding:20px 16px;}
+  .art-label{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;}
+  .art-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--pise);margin-bottom:8px;line-height:1.2;}
+  .art-body{font-size:12px;line-height:1.7;color:var(--pise-mid);}
+
+  /* OVERRIDES */
+  table{font-size:15px !important;}
+  table thead th{font-size:11px !important;padding:10px !important;}
+  table tbody td{font-size:14px !important;padding:9px 10px !important;line-height:1.7 !important;}
+  .bd{font-size:13px !important;}
+  .bs{font-size:14px !important;}
+
+  @media(max-width:720px){
+    .page{padding:40px 20px;}
+    .nav-links{padding:8px 16px;}
+    .two,.two-eq,.block-grid,.eco-grid{grid-template-columns:1fr;}
+    .kpi-cover{grid-template-columns:1fr 1fr;}
+    .art-grid{grid-template-columns:1fr;}
+    .three{grid-template-columns:1fr;}
+    h1{font-size:36px;}
+    .nav-top{padding:12px 20px;}
+    .data-row{grid-template-columns:1fr;}
+  }
+
+  /* Multi-page specific */
+  a.nav-link{text-decoration:none;display:inline-block;}
+  nav{width:100%;background:var(--sand);border-bottom:1px solid var(--pise-light);position:sticky;top:0;z-index:100;}
+  .nav-top{padding:12px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--pise-light);}
+  .nav-brand{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:0.28em;text-transform:uppercase;color:var(--pise);text-decoration:none;}
+  .nav-brand span{color:var(--cedar);}
+  .nav-right{display:flex;align-items:center;gap:16px;}
+  .lang-toggle{display:flex;gap:0;}
+  .lang-btn{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:5px 10px;background:none;border:1px solid var(--pise-light);font-family:'Montserrat',sans-serif;font-weight:300;cursor:pointer;color:var(--pise-mid);transition:all 0.15s;}
+  .lang-btn.active{background:var(--pise);color:var(--sky);border-color:var(--pise);}
+  .nav-links{padding:9px 40px;display:flex;gap:4px;flex-wrap:wrap;}
+  .nav-link{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--pise-mid);padding:6px 10px;border:1px solid transparent;font-family:'Montserrat',sans-serif;font-weight:300;transition:all 0.15s;}
+  .nav-link:hover{color:var(--pise);}
+  .nav-link.active{color:var(--pise);border-color:var(--cedar);}
+  .page{max-width:960px;margin:0 auto;padding:56px 52px;}
+  @media(max-width:720px){
+    .page{padding:40px 20px;}
+    .nav-links{padding:8px 16px;}
+    .two,.two-eq,.block-grid,.eco-grid{grid-template-columns:1fr;}
+    .kpi-cover{grid-template-columns:1fr 1fr;}
+    .art-grid,.three{grid-template-columns:1fr;}
+    h1{font-size:36px;}
+    .nav-top{padding:12px 20px;}
+    .data-row{grid-template-columns:1fr;}
+  }
+
+  #lang-bar{position:fixed;top:14px;right:20px;z-index:999;display:flex;gap:0;background:var(--sand);border:1px solid var(--pise-light);}
+  .lang-btn{font-family:'Montserrat',sans-serif;font-weight:400;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--pise-mid);background:transparent;border:none;padding:7px 12px;cursor:pointer;transition:color 0.15s,background 0.15s;}
+  .lang-btn.active{background:var(--cedar);color:var(--sky);}
+  .lang-btn:hover:not(.active){color:var(--cedar);}
+</style>
+<link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+
+<div id="lang-bar">
+  <button class="lang-btn active" id="btn-fr" onclick="setLang('fr')">FR</button>
+  <button class="lang-btn" id="btn-nl" onclick="setLang('nl')">NL</button>
+  <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+</div>
+<div class="page">
+
+<div class="ph">
+  <span data-fr="Le Projet" data-nl="Het Project" data-en="The Project">Le Projet</span>
+  <span data-fr="Vue d'ensemble - Toile Blanche Marrakech" data-nl="Overzicht - Toile Blanche Marrakech" data-en="Overview - Toile Blanche Marrakech">Vue d'ensemble - Toile Blanche Marrakech</span>
+</div>
+
+<div style="margin-bottom:40px;">
+  <div class="sl" data-fr="Tagadirt, Al Haouz, Maroc" data-nl="Tagadirt, Al Haouz, Marokko" data-en="Tagadirt, Al Haouz, Morocco">Tagadirt, Al Haouz, Maroc</div>
+  <h1 style="font-size:52px;line-height:1.05;" data-fr="Un hôtel existant.<br>Un village en reconstruction.<br>Une déclaration." data-nl="Een bestaand hotel.<br>Een dorp in wederopbouw.<br>Een verklaring." data-en="An Existing Hotel.<br>A Village Rebuilding.<br>A Declaration.">Un hôtel existant.<br>Un village en reconstruction.<br>Une déclaration.</h1>
+</div>
+
+<div style="width:100%;height:420px;background:var(--pise-light);display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:40px;position:relative;">
+  <div style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--pise-mid);margin-bottom:8px;" data-fr="Vue satellite - Tagadirt, pied de l'Atlas" data-nl="Satellietweergave - Tagadirt, voet van de Atlas" data-en="Satellite view - Tagadirt, foot of the Atlas">Vue satellite - Tagadirt, pied de l'Atlas</div>
+  <div style="font-size:13px;color:var(--pise-mid);font-style:italic;text-align:center;max-width:400px;line-height:1.7;" data-fr="[ Remplacer par capture Google Maps montrant l'hôtel Tigmi, le douar Tagadirt et les maisons potentielles pour les riads ]" data-nl="[ Vervangen door Google Maps-schermafbeelding met hotel Tigmi, douar Tagadirt en potentiële riadwoningen ]" data-en="[ Replace with Google Maps screenshot showing Tigmi hotel, Douar Tagadirt and potential riad locations ]">[ Remplacer par capture Google Maps - Tigmi + douar Tagadirt + emplacements riads potentiels ]</div>
+  <div style="position:absolute;bottom:14px;right:16px;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--cedar);" data-fr="25 min de Marrakech · Altitude 1 050m · Vue Atlas" data-nl="25 min van Marrakech · Hoogte 1 050m · Uitzicht Atlas" data-en="25 min from Marrakech · Altitude 1,050m · Atlas view">25 min de Marrakech · Altitude 1 050m · Vue Atlas</div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-bottom:40px;">
+  <div>
+    <div class="sl" data-fr="Le projet" data-nl="Het project" data-en="The Project">Le projet</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:28px;line-height:1.2;margin-bottom:16px;" data-fr="Tigmi devient Toile Blanche Marrakech." data-nl="Tigmi wordt Toile Blanche Marrakech." data-en="Tigmi Becomes Toile Blanche Marrakech.">Tigmi devient Toile Blanche Marrakech.</h2>
+    <p style="font-size:15px;line-height:1.9;margin-bottom:12px;"
+       data-fr="Nous acquérons l'hôtel Tigmi - 25 chambres en pisé, deux piscines, un hammam, une vue sur l'Atlas, une clientèle existante. Nous le fermons 12 mois. Nous le transformons intégralement sous la marque Toile Blanche : 30 clés, galerie d'art contemporain, programme de résidences, restaurant, standard Michelin Key."
+       data-nl="Wij verwerven hotel Tigmi - 25 kamers in pisé, twee zwembaden, een hammam, uitzicht op de Atlas, een bestaande clientèle. Wij sluiten het 12 maanden. Wij transformeren het volledig onder het merk Toile Blanche : 30 kamers, galerie voor hedendaagse kunst, residentieprogramma, restaurant, Michelin Key-standaard."
+       data-en="We acquire hotel Tigmi - 25 pisé rooms, two pools, a hammam, Atlas views, an existing clientele. We close it for 12 months. We transform it entirely under the Toile Blanche brand: 30 keys, contemporary art gallery, residency programme, restaurant, Michelin Key standard.">Nous acquérons l'hôtel Tigmi - 25 chambres en pisé, deux piscines, un hammam, une vue sur l'Atlas. Nous le fermons 12 mois. Nous le transformons intégralement : 30 clés, galerie d'art, programme de résidences, restaurant, standard Michelin Key.</p>
+    <p style="font-size:15px;line-height:1.9;"
+       data-fr="Le douar Tagadirt, frappé par le séisme de 2023, se reconstruit à côté. Des maisons en pisé, à 5 minutes à pied de l'hôtel, deviendront des riads Toile Blanche - un par investisseur, à la sortie du Club Deal."
+       data-nl="Het douar Tagadirt, getroffen door de aardbeving van 2023, herbouwt zich ernaast. Pisé-huizen op 5 minuten wandelen van het hotel worden Toile Blanche riads - één per investeerder, bij de uitstap van de Club Deal."
+       data-en="The douar Tagadirt, struck by the 2023 earthquake, is rebuilding alongside. Pisé houses 5 minutes' walk from the hotel will become Toile Blanche riads - one per investor, at the Club Deal exit.">Le douar Tagadirt, frappé par le séisme de 2023, se reconstruit à côté. Des maisons à 5 minutes à pied deviendront des riads Toile Blanche - un par investisseur, à la sortie.</p>
+  </div>
+
+  <div>
+    <div class="sl" data-fr="Le Club Deal" data-nl="De Club Deal" data-en="The Club Deal">Le Club Deal</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:28px;line-height:1.2;margin-bottom:16px;" data-fr="10 investisseurs. 250 000€ chacun." data-nl="10 investeerders. 250 000€ elk." data-en="10 Investors. €250,000 Each.">10 investisseurs. 250 000€ chacun.</h2>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--pise-light);margin-bottom:20px;">
+      <div style="background:var(--sky);padding:18px 16px;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--pise);line-height:1;margin-bottom:4px;">30</div>
+        <div style="font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cedar);margin-bottom:2px;" data-fr="Clés dès l'ouverture" data-nl="Kamers bij opening" data-en="Keys from Day One">Clés dès l'ouverture</div>
+        <div style="font-size:11px;color:var(--pise-mid);" data-fr="Standard Toile Blanche, jour 1" data-nl="Toile Blanche standaard, dag 1" data-en="Toile Blanche standard, day 1">Standard Toile Blanche, jour 1</div>
+      </div>
+      <div style="background:var(--sky);padding:18px 16px;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--pise);line-height:1;margin-bottom:4px;">10%</div>
+        <div style="font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cedar);margin-bottom:2px;" data-fr="Preferred garanti" data-nl="Gegarandeerd preferred" data-en="Guaranteed Preferred">Preferred garanti</div>
+        <div style="font-size:11px;color:var(--pise-mid);" data-fr="25 000€/an, versé en priorité" data-nl="25 000€/jaar, als prioriteit" data-en="€25,000/year, paid first">25 000€/an, versé en priorité</div>
+      </div>
+      <div style="background:var(--sky);padding:18px 16px;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--pise);line-height:1;margin-bottom:4px;">14,2%</div>
+        <div style="font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cedar);margin-bottom:2px;" data-fr="IRR annuel (cash)" data-nl="Jaarlijkse IRR (cash)" data-en="Annual IRR (cash)">IRR annuel (cash)</div>
+        <div style="font-size:11px;color:var(--pise-mid);" data-fr="19,4% usage personnel inclus" data-nl="19,4% met persoonlijk gebruik" data-en="19.4% with personal use">19,4% usage personnel inclus</div>
+      </div>
+      <div style="background:var(--sky);padding:18px 16px;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--pise);line-height:1;margin-bottom:4px;">Riad</div>
+        <div style="font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cedar);margin-bottom:2px;" data-fr="Sortie - pas de cash" data-nl="Uitstap - geen cash" data-en="Exit - no cash out">Sortie - pas de cash</div>
+        <div style="font-size:11px;color:var(--pise-mid);" data-fr="37 800€/an, 60 nuits/an, 10 ans" data-nl="37 800€/jaar, 60 nachten/jaar, 10 jaar" data-en="€37,800/yr, 60 nights/yr, 10 years">37 800€/an · 60 nuits · 10 ans</div>
+      </div>
+    </div>
+
+    <div style="border-left:2px solid var(--cedar);padding:16px 18px;background:var(--sky);">
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;line-height:1.7;color:var(--pise);margin:0;"
+         data-fr="« Vous investissez 250 000€. En 5 ans vous recevez 225 000€ de dividendes. À la sortie, l'hôtel vous remet un riad rénové dans le village - 37 800€ de revenus par an et 60 nuits à vous pour 10 ans. »"
+         data-nl="« U investeert 250 000€. In 5 jaar ontvangt u 225 000€ aan dividenden. Bij de uitstap geeft het hotel u een gerenoveerde riad in het dorp - 37 800€ inkomsten per jaar en 60 nachten voor u gedurende 10 jaar. »"
+         data-en="« You invest €250,000. In 5 years you receive €225,000 in dividends. At exit, the hotel hands you a renovated riad in the village - €37,800 in revenue per year and 60 nights for you for 10 years. »">
+        « Vous investissez 250 000€. En 5 ans vous recevez 225 000€ de dividendes. À la sortie, l'hôtel vous remet un riad rénové dans le village - 37 800€ de revenus par an et 60 nuits à vous pour 10 ans. »
+      </p>
+    </div>
+  </div>
+</div>
+
+<div style="border-top:1px solid var(--pise-light);padding-top:28px;">
+  <div class="sl" data-fr="Ce document" data-nl="Dit document" data-en="This Document">Ce document</div>
+  <p style="font-size:14px;line-height:1.9;color:var(--pise-mid);max-width:680px;"
+     data-fr="Ce dossier est structuré en 10 sections accessibles depuis le menu. Nous vous suggérons de commencer par La Marque pour comprendre ce qu'est Toile Blanche, puis Le Lieu pour ancrer le projet dans son territoire. Le Financement et le Term Sheet répondent à toutes les questions contractuelles. La Due Diligence adresse les risques et les garanties avec la même honnêteté que le reste du dossier."
+     data-nl="Dit dossier is gestructureerd in 10 secties die toegankelijk zijn via het menu. We raden u aan te beginnen met Het Merk om te begrijpen wat Toile Blanche is, dan De Locatie om het project in zijn grondgebied te verankeren. De Financiering en de Term Sheet beantwoorden alle contractuele vragen. De Due Diligence behandelt de risico's en garanties met dezelfde eerlijkheid als de rest van het dossier."
+     data-en="This dossier is structured in 10 sections accessible from the menu. We suggest starting with La Marque to understand what Toile Blanche is, then Le Lieu to ground the project in its territory. Le Financement and the Term Sheet answer all contractual questions. Due Diligence addresses risks and guarantees with the same honesty as the rest of the dossier.">
+    Ce dossier est structuré en 10 sections. Commencez par La Marque pour comprendre ce qu'est Toile Blanche, puis Le Lieu pour ancrer le projet. Le Financement et le Term Sheet répondent aux questions contractuelles. La Due Diligence adresse les risques avec la même honnêteté que le reste du dossier.
+  </p>
+</div>
+
+<div class="pf">
+  <span data-fr="Toile Blanche Group - Leroy Brothers - Mai 2026" data-nl="Toile Blanche Group - Leroy Brothers - Mei 2026" data-en="Toile Blanche Group - Leroy Brothers - May 2026">Toile Blanche Group - Leroy Brothers - Mai 2026</span>
+  <span data-fr="Document confidentiel - usage exclusif destinataires" data-nl="Vertrouwelijk document - uitsluitend voor ontvangers" data-en="Confidential document - for intended recipients only">Document confidentiel - usage exclusif destinataires</span>
+</div>
+
+</div>
+<script>
+const LANG_KEY = 'tbm_lang';
+let currentLang = localStorage.getItem(LANG_KEY) || 'fr';
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem(LANG_KEY, lang);
+  document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+  document.getElementById('btn-nl').classList.toggle('active', lang === 'nl');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.querySelectorAll('[data-fr]').forEach(el => {
+    const val = el.getAttribute('data-' + lang) || el.getAttribute('data-fr');
+    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+      el.value = val;
+    } else {
+      el.innerHTML = val;
+    }
+  });
+}
+setLang(currentLang);
+</script>
+</body>
+</html>
