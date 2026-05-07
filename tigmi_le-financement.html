@@ -269,25 +269,31 @@
         <thead>
           <tr>
             <th data-fr="Période" data-nl="Periode" data-en="Period">Période</th>
-            <th class="r" data-fr="Dividende / revenu" data-nl="Dividend / inkomen" data-en="Dividend / Revenue">Dividende / revenu</th>
-            <th class="r" data-fr="Cumulé" data-nl="Cumulatief" data-en="Cumulative">Cumulé</th>
+            <th class="r" data-fr="Vous percevez" data-nl="U ontvangt" data-en="You Receive">Vous percevez</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td data-fr="Y0 - Chantier (12 mois)" data-nl="J0 - Werf (12 maanden)" data-en="Y0 - Construction (12 months)">Y0 - Chantier</td><td class="r muted">0€</td><td class="r muted">-250 000€</td></tr>
-          <tr class="row-pref"><td data-fr="Y1 - Preferred 10% garanti" data-nl="J1 - Preferred 10% gegarandeerd" data-en="Y1 - Guaranteed 10% Preferred">Y1 - Preferred 10%</td><td class="r">25 000€</td><td class="r">-225 000€</td></tr>
-          <tr class="row-pref"><td data-fr="Y2 - Preferred 10% + Performance 10%" data-nl="J2 - Preferred 10% + Prestatie 10%" data-en="Y2 - Preferred 10% + Performance 10%">Y2 - 10% + 10%</td><td class="r">50 000€</td><td class="r">-175 000€</td></tr>
-          <tr class="row-pref"><td data-fr="Y3 - Preferred 10% + Performance 10%" data-nl="J3 - Preferred 10% + Prestatie 10%" data-en="Y3 - Preferred 10% + Performance 10%">Y3 - 10% + 10%</td><td class="r">50 000€</td><td class="r">-125 000€</td></tr>
-          <tr class="row-pref"><td data-fr="Y4 - Preferred 10% + Performance 10%" data-nl="J4 - Preferred 10% + Prestatie 10%" data-en="Y4 - Preferred 10% + Performance 10%">Y4 - 10% + 10%</td><td class="r">50 000€</td><td class="r">-75 000€</td></tr>
-          <tr class="row-pref"><td data-fr="Y5 - Preferred 10% + Performance 10%" data-nl="J5 - Preferred 10% + Prestatie 10%" data-en="Y5 - Preferred 10% + Performance 10%">Y5 - 10% + 10%</td><td class="r">50 000€</td><td class="r">-25 000€</td></tr>
-          <tr class="row-sub"><td data-fr="Total dividendes cash Y1-Y5" data-nl="Totaal cash dividenden J1-J5" data-en="Total Cash Dividends Y1-Y5">Total dividendes cash Y1-Y5</td><td class="r">225 000€</td><td class="r" style="color:var(--cedar);">90% récupéré</td></tr>
-          <tr style="background:var(--sky);"><td data-fr="Y5-Y10 - Swap equity → bail riad Tagadirt" data-nl="J5-J10 - Swap equity → erfpacht riad Tagadirt" data-en="Y5-Y10 - Equity Swap → Riad Tagadirt Lease">Y5-Y10 - Swap - Riad Tagadirt</td><td class="r" style="color:var(--cedar);" data-fr="10 ans usage + revenus" data-nl="10 jaar gebruik + inkomsten" data-en="10 years use + revenue">10 ans usage + revenus</td><td></td></tr>
-          <tr><td data-fr="Revenus riad/an (net après 20% charges)" data-nl="Riadinkomsten/jaar (na 20% kosten)" data-en="Riad Revenue/Year (net after 20% costs)">Revenus riad/an</td><td class="r">37 800€/an</td><td></td></tr>
-          <tr><td data-fr="Revenus riad sur 10 ans" data-nl="Riadinkomsten over 10 jaar" data-en="Riad Revenue over 10 Years">Revenus riad 10 ans</td><td class="r">378 000€</td><td></td></tr>
-          <tr><td data-fr="Usage personnel (60 nuits/an × 500€ × 10 ans)" data-nl="Persoonlijk gebruik (60 nachten/jaar × 500€ × 10 jaar)" data-en="Personal Use (60 nights/year × €500 × 10 years)">Usage personnel 10 ans</td><td class="r" style="color:var(--pise-mid);">300 000€ valeur</td><td></td></tr>
-          <tr class="row-tot"><td data-fr="IRR annuel (cash uniquement)" data-nl="Jaarlijks IRR (alleen cash)" data-en="Annual IRR (cash only)">IRR cash</td><td class="r" style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--cedar);">14,2%/an</td><td class="r" style="font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--cedar);" data-fr="19,4% avec usage" data-nl="19,4% met gebruik" data-en="19.4% with usage">19,4% avec usage</td></tr>
+          <tr><td data-fr="Y0 - Chantier (12 mois)" data-nl="J0 - Werf (12 maanden)" data-en="Y0 - Construction (12 months)">Y0 - Chantier (12 mois)</td><td class="r muted">0€</td></tr>
+          <tr class="row-pref"><td data-fr="Y1 - Preferred 10% garanti" data-nl="J1 - Preferred 10% gegarandeerd" data-en="Y1 - Guaranteed 10% Preferred">Y1 - Preferred 10% garanti</td><td class="r">25 000€</td></tr>
+          <tr class="row-pref"><td data-fr="Y2 - Preferred 10% + Performance 10%" data-nl="J2 - Preferred 10% + Prestatie 10%" data-en="Y2 - Preferred 10% + Performance 10%">Y2 - 10% + 10%</td><td class="r">50 000€</td></tr>
+          <tr class="row-pref"><td data-fr="Y3 - Preferred 10% + Performance 10%" data-nl="J3 - Preferred 10% + Prestatie 10%" data-en="Y3 - Preferred 10% + Performance 10%">Y3 - 10% + 10%</td><td class="r">50 000€</td></tr>
+          <tr class="row-pref"><td data-fr="Y4 - Preferred 10% + Performance 10%" data-nl="J4 - Preferred 10% + Prestatie 10%" data-en="Y4 - Preferred 10% + Performance 10%">Y4 - 10% + 10%</td><td class="r">50 000€</td></tr>
+          <tr class="row-pref"><td data-fr="Y5 - Preferred 10% + Performance 10%" data-nl="J5 - Preferred 10% + Prestatie 10%" data-en="Y5 - Preferred 10% + Performance 10%">Y5 - 10% + 10%</td><td class="r">50 000€</td></tr>
+          <tr class="row-sub"><td data-fr="Total dividendes cash Y1-Y5" data-nl="Totaal cash dividenden J1-J5" data-en="Total Cash Dividends Y1-Y5">Total dividendes cash Y1-Y5</td><td class="r">225 000€</td></tr>
+          <tr style="background:var(--sky);"><td data-fr="Sortie Y5-Y10 : Swap equity → Riad Tagadirt" data-nl="Uitstap J5-J10 : Swap equity → Riad Tagadirt" data-en="Exit Y5-Y10: Equity Swap → Riad Tagadirt">Sortie Y5-Y10 : Swap equity → Riad Tagadirt</td><td class="r" style="color:var(--cedar);" data-fr="10 ans usage + revenus" data-nl="10 jaar gebruik + inkomsten" data-en="10 years use + revenue">10 ans usage + revenus</td></tr>
+          <tr><td data-fr="Revenus riad/an (net après 20% charges)" data-nl="Riadinkomsten/jaar (na 20% kosten)" data-en="Riad Revenue/Year (net after 20% costs)">Revenus riad/an</td><td class="r">37 800€/an</td></tr>
+          <tr><td data-fr="Revenus riad sur 10 ans" data-nl="Riadinkomsten over 10 jaar" data-en="Riad Revenue over 10 Years">Revenus riad 10 ans</td><td class="r">378 000€</td></tr>
+          <tr><td data-fr="Usage personnel (60 nuits/an × 500€ × 10 ans)" data-nl="Persoonlijk gebruik (60 nachten/jaar × 500€ × 10 jaar)" data-en="Personal Use (60 nights/year × €500 × 10 years)">Usage personnel 10 ans</td><td class="r" style="color:var(--pise-mid);">300 000€ valeur</td></tr>
+          <tr class="row-tot"><td data-fr="IRR annuel (cash uniquement)" data-nl="Jaarlijks IRR (alleen cash)" data-en="Annual IRR (cash only)">IRR cash</td><td class="r" style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--cedar);">14,2%/an</td></tr>
         </tbody>
       </table>
+
+      <p style="font-size:13px;color:var(--cedar);letter-spacing:0.05em;margin-top:8px;padding:10px 0;border-top:1px solid var(--pise-light);"
+         data-fr="90% de votre mise récupérée en dividendes avant la sortie. Le principal n'est pas remboursé en cash - il est échangé contre votre riad."
+         data-nl="90% van uw inleg teruggekregen in dividenden vóór de uitstap. Het kapitaal wordt niet terugbetaald in cash - het wordt ingeruild voor uw riad."
+         data-en="90% of your investment recovered in dividends before exit. The principal is not repaid in cash - it is exchanged for your riad.">
+        90% de votre mise récupérée en dividendes avant la sortie. Le principal n'est pas remboursé en cash - il est échangé contre votre riad.
+      </p>
 
       <div class="ab2" style="margin-top:16px;">
         <p style="font-size:13px;color:var(--pise-mid);line-height:1.8;" data-fr="Note fiscale : les 20% retenus (Fondation 10% + Growth Fund TB Maroc 10%) correspondent exactement au taux IS dont bénéficie la SARL marocaine sur ses 5 premières années d'exploitation. Ces fonds restent dans le territoire et dans la marque. L'exonération finance le développement - pas la distribution."
