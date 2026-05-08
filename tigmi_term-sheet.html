@@ -7,49 +7,20 @@
 <meta name="referrer" content="no-referrer">
 <title>Toile Blanche Marrakech - Term Sheet</title>
 <style>
-
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap');
   :root{--sand:#F5F0E6;--pise:#111008;--pise-mid:#4F4336;--cedar:#A78661;--sky:#FDFAF5;--pise-light:#D8CCB8;--alert:#8B3A2A;}
   *{margin:0;padding:0;box-sizing:border-box;}
   html,body{width:100%;max-width:100%;overflow-x:hidden;}
   body{background:var(--sand);color:var(--pise);font-family:'Montserrat',sans-serif;font-weight:300;font-size:16px;line-height:1.75;}
-
-  /* LOGIN */
-  #login-screen{width:100%;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;background:var(--sand);}
-  .login-logo{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:0.5em;text-transform:uppercase;color:var(--pise);margin-bottom:6px;text-align:center;}
-  .login-sub{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--cedar);margin-bottom:56px;text-align:center;}
-  .login-box{width:100%;max-width:340px;text-align:center;}
-  .login-rule{width:28px;height:1px;background:var(--cedar);margin:0 auto 36px;}
-  .login-label{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--pise-mid);display:block;margin-bottom:10px;}
-  .login-input{width:100%;background:var(--sky);border:1px solid var(--pise-light);padding:13px 18px;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:300;color:var(--pise);text-align:center;letter-spacing:0.12em;outline:none;}
-  .login-input:focus{border-color:var(--cedar);}
-  .login-btn{width:100%;margin-top:10px;background:var(--pise);color:var(--sky);border:none;padding:13px 18px;font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;cursor:pointer;}
-  .login-btn:hover{background:var(--cedar);}
-  .login-error{font-size:10px;letter-spacing:0.15em;color:var(--alert);text-align:center;margin-top:10px;opacity:0;transition:opacity 0.2s;}
-  .login-error.show{opacity:1;}
-  .login-conf{font-size:9px;letter-spacing:0.15em;color:var(--pise-mid);text-align:center;margin-top:44px;text-transform:uppercase;}
-
-  /* SITE SHELL */
   #site{display:none;}
-
-  /* NAV */
   nav{width:100%;background:var(--sand);border-bottom:1px solid var(--pise-light);position:sticky;top:0;z-index:100;}
   .nav-top{padding:12px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--pise-light);}
   .nav-brand{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:0.28em;text-transform:uppercase;color:var(--pise);cursor:pointer;}
   .nav-brand span{color:var(--cedar);}
   .nav-right{display:flex;align-items:center;gap:16px;}
-  .lang-toggle{display:flex;gap:0;}
   .lang-btn{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:5px 10px;background:none;border:1px solid var(--pise-light);font-family:'Montserrat',sans-serif;font-weight:300;cursor:pointer;color:var(--pise-mid);transition:all 0.15s;}
   .lang-btn.active{background:var(--pise);color:var(--sky);border-color:var(--pise);}
-  .nav-logout{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--pise-mid);cursor:pointer;background:none;border:none;font-family:'Montserrat',sans-serif;}
-  .nav-links{padding:9px 40px;display:flex;gap:4px;flex-wrap:wrap;}
-  .nav-link{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--pise-mid);cursor:pointer;padding:6px 10px;border:1px solid transparent;background:none;font-family:'Montserrat',sans-serif;font-weight:300;transition:all 0.15s;}
-  .nav-link:hover{color:var(--pise);}
-  .nav-link.active{color:var(--pise);border-color:var(--cedar);}
-
-  /* PAGES */
   .page{max-width:960px;margin:0 auto;padding:56px 52px;border-bottom:1px solid var(--pise-light);}
-  .page.visible{display:block;}
   .ph{display:flex;justify-content:space-between;margin-bottom:40px;padding-bottom:10px;border-bottom:1px solid var(--cedar);}
   .ph span{font-size:14px;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;}
   .ph span:last-child{color:var(--pise-mid);}
@@ -58,145 +29,27 @@
   h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:21px;line-height:1.3;margin-bottom:10px;}
   h3{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--pise-mid);margin-bottom:10px;margin-top:20px;font-weight:400;}
   p{font-size:16px;line-height:1.9;margin-bottom:12px;}
-  .bs{font-size:14px;line-height:1.8;color:var(--pise-mid);margin-bottom:7px;}
-  .two{display:grid;grid-template-columns:1.15fr 0.85fr;gap:44px;margin:20px 0;}
-  .two-eq{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin:20px 0;}
-  .three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--pise-light);margin:24px 0;}
-  .ul{list-style:none;margin:0 0 14px;padding:0;}
-  .ul li{font-size:15px;line-height:1.75;padding-left:14px;position:relative;margin-bottom:3px;}
-  .ul li::before{content:'·';position:absolute;left:0;color:var(--cedar);}
   .ab{border-left:2px solid var(--cedar);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
   .ab2{border-left:2px solid var(--pise-light);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
-  .ab-dark{padding:32px 36px;background:var(--cedar);margin:24px 0;border-left:3px solid var(--pise-mid);}
-  .ab-dark p{color:var(--sky);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.65;}
-  .ab-dark .sl{color:var(--cedar);}
-  .alert-box{border-left:2px solid var(--alert);padding:18px 22px;background:#FDF5F3;margin-bottom:16px;}
-  .qb{border-left:1px solid var(--cedar);padding:14px 20px;background:var(--sky);margin:16px 0;}
-  .qb p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;line-height:1.75;}
-  .qs{font-size:10px;letter-spacing:0.16em;color:var(--cedar);text-transform:uppercase;margin-top:7px;}
   .rule{width:36px;height:1px;background:var(--cedar);margin:22px 0;}
   .pf{margin-top:40px;padding-top:12px;border-top:1px solid var(--pise-light);display:flex;justify-content:space-between;}
   .pf span{font-size:10px;letter-spacing:0.13em;color:var(--pise-mid);text-transform:uppercase;}
-
-  /* IMAGE PLACEHOLDERS */
-  .img-full{width:100%;height:480px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9px;letter-spacing:0.12em;text-align:center;padding:24px;font-style:italic;margin:24px 0;}
-  .img-h{width:100%;height:340px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9px;text-align:center;padding:16px;font-style:italic;}
-  .img-sq{width:100%;height:400px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9px;text-align:center;padding:16px;font-style:italic;}
-
-  /* KPI STRIPS */
-  .kpi-cover{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--pise-light);margin:28px 0;}
-  .kc{background:var(--sky);padding:20px 18px;}
-  .kc-v{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--pise);line-height:1;margin-bottom:5px;}
-  .kc-l{font-size:9px;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;margin-bottom:2px;}
-  .kc-s{font-size:11px;color:var(--pise-mid);}
-  .kpi-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--pise-light);margin:24px 0;}
-  .ks-box{background:var(--sky);padding:20px 18px;}
-  .ks-val{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300;color:var(--pise);line-height:1;margin-bottom:5px;}
-  .ks-lbl{font-size:9px;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;}
-  .ks-sub{font-size:12px;color:var(--pise-mid);margin-top:3px;}
-
-  /* BLOCK GRIDS */
-  .block-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--pise-light);margin:24px 0;}
-  .bc{background:var(--sky);padding:22px 20px;}
-  .bl{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;}
-  .bt{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--pise);margin-bottom:8px;line-height:1.2;}
-  .bd{font-size:13px;line-height:1.7;color:var(--pise-mid);}
-  .bp{font-size:11px;color:var(--pise-mid);margin-top:8px;padding-top:8px;border-top:1px solid var(--pise-light);font-style:italic;}
-
-  /* WATERFALL TABLE */
-  .waterfall{margin:24px 0;}
-  .wf-row{display:grid;grid-template-columns:28px 1fr 1fr;gap:0;border-bottom:1px solid var(--pise-light);padding:12px 0;align-items:start;}
-  .wf-row:first-child{border-top:2px solid var(--cedar);}
-  .wf-num{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--pise-light);font-weight:300;line-height:1;margin-top:2px;}
-  .wf-title{font-size:13px;font-weight:400;color:var(--pise);letter-spacing:0.08em;margin-bottom:3px;}
-  .wf-desc{font-size:12px;color:var(--pise-mid);line-height:1.65;}
-  .wf-amount{font-size:13px;color:var(--cedar);text-align:right;padding-top:3px;}
-  .wf-highlight .wf-num{color:var(--cedar);}
-  .wf-highlight .wf-title{color:var(--cedar);}
-
-  /* RETURN TABLE */
-  table.ret{width:100%;border-collapse:collapse;margin:20px 0;}
-  table.ret thead tr{border-bottom:2px solid var(--cedar);}
-  table.ret thead th{padding:8px 10px;text-align:left;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
-  table.ret thead th.r{text-align:right;}
-  table.ret tbody tr{border-bottom:1px solid var(--pise-light);}
-  table.ret tbody td{padding:8px 10px;font-size:14px;color:var(--pise);}
-  table.ret tbody td.r{text-align:right;}
-  table.ret tbody td.muted{color:var(--pise-mid);font-style:italic;}
-  table.ret .row-sub td{background:var(--sand);font-weight:400;}
-  table.ret .row-tot td{border-top:2px solid var(--cedar);font-weight:400;font-size:15px;padding:10px;}
-  table.ret .row-pref td{background:var(--sky);}
-
-  /* DATA ROWS */
   .data-row{display:grid;grid-template-columns:180px 1fr;gap:16px;padding:10px 0;border-bottom:1px solid var(--pise-light);font-size:14px;}
   .data-row:last-child{border-bottom:none;}
   .data-label{color:var(--cedar);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;padding-top:2px;}
   .data-val{color:var(--pise);line-height:1.7;}
-
-  /* ECO GRID */
-  .eco-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--pise-light);margin:24px 0;}
-  .eco-cell{background:var(--sky);padding:20px 18px;}
-  .eco-icon{font-size:24px;margin-bottom:8px;}
-  .eco-title{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;font-weight:400;}
-  .eco-body{font-size:13px;line-height:1.7;color:var(--pise-mid);}
-  .eco-premium{font-size:12px;color:var(--pise);margin-top:8px;padding-top:8px;border-top:1px solid var(--pise-light);}
-
-  /* ART GRID */
-  .art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--pise-light);margin:24px 0;}
-  .art-cell{background:var(--sky);padding:20px 16px;}
-  .art-label{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;}
-  .art-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--pise);margin-bottom:8px;line-height:1.2;}
-  .art-body{font-size:12px;line-height:1.7;color:var(--pise-mid);}
-
-  /* OVERRIDES */
   table{font-size:15px !important;}
   table thead th{font-size:11px !important;padding:10px !important;}
   table tbody td{font-size:14px !important;padding:9px 10px !important;line-height:1.7 !important;}
-  .bd{font-size:13px !important;}
-  .bs{font-size:14px !important;}
-
-  @media(max-width:720px){
-    .page{padding:40px 20px;}
-    .nav-links{padding:8px 16px;}
-    .two,.two-eq,.block-grid,.eco-grid{grid-template-columns:1fr;}
-    .kpi-cover{grid-template-columns:1fr 1fr;}
-    .art-grid{grid-template-columns:1fr;}
-    .three{grid-template-columns:1fr;}
-    h1{font-size:36px;}
-    .nav-top{padding:12px 20px;}
-    .data-row{grid-template-columns:1fr;}
-  }
-
-  /* Multi-page specific */
-  a.nav-link{text-decoration:none;display:inline-block;}
-  nav{width:100%;background:var(--sand);border-bottom:1px solid var(--pise-light);position:sticky;top:0;z-index:100;}
-  .nav-top{padding:12px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--pise-light);}
-  .nav-brand{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:0.28em;text-transform:uppercase;color:var(--pise);text-decoration:none;}
-  .nav-brand span{color:var(--cedar);}
-  .nav-right{display:flex;align-items:center;gap:16px;}
-  .lang-toggle{display:flex;gap:0;}
-  .lang-btn{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:5px 10px;background:none;border:1px solid var(--pise-light);font-family:'Montserrat',sans-serif;font-weight:300;cursor:pointer;color:var(--pise-mid);transition:all 0.15s;}
-  .lang-btn.active{background:var(--pise);color:var(--sky);border-color:var(--pise);}
-  .nav-links{padding:9px 40px;display:flex;gap:4px;flex-wrap:wrap;}
-  .nav-link{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--pise-mid);padding:6px 10px;border:1px solid transparent;font-family:'Montserrat',sans-serif;font-weight:300;transition:all 0.15s;}
-  .nav-link:hover{color:var(--pise);}
-  .nav-link.active{color:var(--pise);border-color:var(--cedar);}
-  .page{max-width:960px;margin:0 auto;padding:56px 52px;}
-  @media(max-width:720px){
-    .page{padding:40px 20px;}
-    .nav-links{padding:8px 16px;}
-    .two,.two-eq,.block-grid,.eco-grid{grid-template-columns:1fr;}
-    .kpi-cover{grid-template-columns:1fr 1fr;}
-    .art-grid,.three{grid-template-columns:1fr;}
-    h1{font-size:36px;}
-    .nav-top{padding:12px 20px;}
-    .data-row{grid-template-columns:1fr;}
-  }
-
   #lang-bar{position:fixed;top:14px;right:20px;z-index:999;display:flex;gap:0;background:var(--sand);border:1px solid var(--pise-light);}
   .lang-btn{font-family:'Montserrat',sans-serif;font-weight:400;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--pise-mid);background:transparent;border:none;padding:7px 12px;cursor:pointer;transition:color 0.15s,background 0.15s;}
   .lang-btn.active{background:var(--cedar);color:var(--sky);}
   .lang-btn:hover:not(.active){color:var(--cedar);}
+  @media(max-width:720px){
+    .page{padding:40px 20px;}
+    .data-row{grid-template-columns:1fr;}
+    h1{font-size:36px;}
+  }
 </style>
 <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
@@ -216,60 +69,156 @@
   <div class="sl" data-fr="Les termes" data-nl="De voorwaarden" data-en="The Terms">Les termes</div>
   <h1 data-fr="Le pacte.<br>Sans ambiguïté." data-nl="Het pact.<br>Zonder ambiguïteit." data-en="The Pact.<br>No Ambiguity.">Le pacte.<br>Sans ambiguïté.</h1>
 
-<img src="images/img_tigmi_hammam_pool.png" alt="[ Image : hammam Tigmi - bassin zellige sombre, lit palettes, jarres terre cuite, lumière rasante ]" style="width:100%;height:480px;object-fit:cover;display:block;margin:32px 0;">
+  <img src="images/img_tigmi_hammam_pool.png" alt="hammam Tigmi" style="width:100%;height:480px;object-fit:cover;display:block;margin:32px 0;">
 
-  
   <h3 data-fr="Structure juridique" data-nl="Juridische structuur" data-en="Legal Structure">Structure juridique</h3>
-      <div class="data-row"><div class="data-label" data-fr="Véhicule" data-nl="Vehikel" data-en="Vehicle">Véhicule</div><div class="data-val" data-fr="Acquisition 100% parts SCI (murs) + SARL (fonds de commerce, licences, contrats). Rebrand Toile Blanche Marrakech à l'ouverture." data-nl="Acquisitie 100% aandelen SCI (muren) + SARL (handelsfonds, licenties, contracten). Rebranding Toile Blanche Marrakech bij opening." data-en="Acquisition of 100% of SCI shares (property) + SARL (operating business, licences, contracts). Rebrand as Toile Blanche Marrakech at opening.">Acquisition SCI + SARL. Rebrand à l'ouverture.</div></div>
-      <div class="data-row"><div class="data-label" data-fr="Conditions préalables" data-nl="Voorwaarden" data-en="Prerequisites">Conditions préalables</div><div class="data-val" data-fr="VNA définitif vérifié. Exequatur héritage. Audit sismique indépendant satisfaisant. Non-négociables." data-nl="Definitief VNA geverifieerd. Exequatur erfenis. Onafhankelijke seismische audit. Niet-onderhandelbaar." data-en="Final VNA verified. Inheritance exequatur. Independent seismic audit passed. Non-negotiable.">VNA + Exequatur + Audit sismique. Non-négociables.</div></div>
+  <div class="data-row">
+    <div class="data-label" data-fr="Véhicule" data-nl="Vehikel" data-en="Vehicle">Véhicule</div>
+    <div class="data-val" data-fr="Acquisition 100% parts SCI (murs) + SARL (fonds de commerce, licences, contrats). Rebrand Toile Blanche Marrakech à l'ouverture." data-nl="Acquisitie 100% aandelen SCI (muren) + SARL (handelsfonds, licenties, contracten). Rebranding Toile Blanche Marrakech bij opening." data-en="Acquisition of 100% of SCI shares (property) + SARL (operating business, licences, contracts). Rebrand as Toile Blanche Marrakech at opening.">Acquisition SCI + SARL. Rebrand à l'ouverture.</div>
+  </div>
+  <div class="data-row">
+    <div class="data-label" data-fr="Conditions préalables" data-nl="Voorwaarden" data-en="Prerequisites">Conditions préalables</div>
+    <div class="data-val" data-fr="VNA définitif vérifié. Exequatur héritage. Audit sismique indépendant satisfaisant. Non-négociables." data-nl="Definitief VNA geverifieerd. Exequatur erfenis. Onafhankelijke seismische audit. Niet-onderhandelbaar." data-en="Final VNA verified. Inheritance exequatur. Independent seismic audit passed. Non-negotiable.">VNA + Exequatur + Audit sismique. Non-négociables.</div>
+  </div>
 
-      <h3 style="margin-top:20px;" data-fr="Capital et gouvernance" data-nl="Kapitaal en bestuur" data-en="Capital and Governance">Capital et gouvernance</h3>
-      <div class="data-row"><div class="data-label" data-fr="Investisseurs" data-nl="Investeerders" data-en="Investors">Investisseurs</div><div class="data-val">10 × 250 000€ = 2 500 000€ - 70% (7% chacun)</div></div>
-      <div class="data-row"><div class="data-label" data-fr="Véhicule investisseurs" data-nl="Investeerdersvehikel" data-en="Investor Vehicle">Véhicule investisseurs</div><div class="data-val" data-fr="Les investisseurs entrent dans la SARL marocaine via la SAS TB INVEST (France), véhicule de participation dédié. Leurs droits financiers et leur droit au riad sont identiques à une participation directe." data-nl="Investeerders treden toe tot de Marokkaanse SARL via de SAS TB INVEST (Frankrijk), een dedicated participatievehikel. Hun financiële rechten en hun recht op de riad zijn identiek aan een directe participatie." data-en="Investors enter the Moroccan SARL via SAS TB INVEST (France), a dedicated participation vehicle. Their financial rights and their right to the riad are identical to a direct participation.">Via SAS TB INVEST (France). Droits financiers et droit au riad identiques à une participation directe.</div></div>
-      <div class="data-row"><div class="data-label" data-fr="Répartition du capital" data-nl="Kapitaalverdeling" data-en="Capital allocation">Répartition du capital</div><div class="data-val" data-fr="La répartition 70% investisseurs / 30% Leroy Brothers est définie contractuellement dans le pacte d'associés et les statuts de TB Invest SAS. Elle ne résulte pas d'un calcul pro-rata des apports en numéraire - elle intègre la valeur de l'apport en nature de Leroy Brothers (licence de marque, collection d'art, droits PI, savoir-faire opérationnel), évaluée à sa valeur de contribution au projet et non à sa valeur de marché abstraite. Cette répartition est irrévocable pour la durée du pacte." data-nl="De verdeling 70% investeerders / 30% Leroy Brothers is contractueel vastgelegd in de aandeelhoudersovereenkomst en de statuten van TB Invest SAS. Ze is niet het resultaat van een pro-rata berekening van de geldelijke inbrengen - ze integreert de waarde van de inbreng in natura van Leroy Brothers (merklicentie, kunstcollectie, IE-rechten, operationele knowhow), gewaardeerd op zijn bijdragewaarde aan het project en niet op zijn abstracte marktwaarde. Deze verdeling is onherroepelijk voor de duur van het pact." data-en="The 70% investors / 30% Leroy Brothers allocation is contractually defined in the shareholders' pact and TB Invest SAS articles of association. It does not result from a pro-rata calculation of cash contributions - it incorporates the value of Leroy Brothers' in-kind contribution (brand licence, art collection, IP rights, operational know-how), valued at its contribution to the project rather than at an abstract market value. This allocation is irrevocable for the duration of the pact.">La répartition 70% investisseurs / 30% Leroy Brothers est définie contractuellement dans le pacte d'associés et les statuts de TB Invest SAS. Elle ne résulte pas d'un calcul pro-rata des apports en numéraire - elle intègre la valeur de l'apport en nature de Leroy Brothers (licence de marque, collection d'art, droits PI, savoir-faire opérationnel), évaluée à sa valeur de contribution au projet et non à sa valeur de marché abstraite. Cette répartition est irrévocable pour la durée du pacte.</div></div>
-      <div class="data-row"><div class="data-label" data-fr="Leroy Brothers" data-nl="Leroy Brothers" data-en="Leroy Brothers">Leroy Brothers</div><div class="data-val" data-fr="200 000€ cash + 600 000€ nature - 30%" data-nl="200 000€ cash + 600 000€ natura - 30%" data-en="€200,000 cash + €600,000 in-kind - 30%">200 000€ cash + 600 000€ nature - 30%</div></div>
-      <div class="data-row"><div class="data-label" data-fr="Veto artistique LB" data-nl="Artistiek veto LB" data-en="LB Artistic Veto">Veto artistique LB</div><div class="data-val" data-fr="Absolu et irrévocable sur l'identité artistique, les standards de marque, la palette matériaux et l'ADR plancher. Il ne s'applique pas aux décisions opérationnelles, budgétaires ou à une cession future de l'actif." data-nl="Absoluut en onherroepelijk over artistieke identiteit, merkstandaarden, materiaalpalet en ADR-bodem. Het is niet van toepassing op operationele of budgettaire beslissingen, noch op een toekomstige verkoop van het actief." data-en="Absolute and irrevocable on artistic identity, brand standards, material palette and floor ADR. It does not apply to operational or budget decisions, nor to a future sale of the asset.">Limité à l'identité artistique, standards de marque, matériaux et ADR plancher. Ne s'applique pas aux décisions opérationnelles, budgétaires ou à une cession.</div></div>
-      <div class="data-row"><div class="data-label" data-fr="Preferred return" data-nl="Preferred return" data-en="Preferred Return">Preferred return</div><div class="data-val" data-fr="10% par an (25 000€ par investisseur), prioritaire et cumulatif. Servi avant toute distribution non prioritaire." data-nl="10% per jaar (25 000€ per investeerder), prioritair en cumulatief. Uitbetaald vóór elke niet-prioritaire distributie." data-en="10% per year (€25,000 per investor), priority and cumulative. Paid before any non-priority distribution.">10% par an (25 000€), prioritaire et cumulatif.</div></div>
-      <div class="data-row"><div class="data-label" data-fr="Le paiement différé de 200 000€ aux vendeurs (an 2)" data-nl="De uitgestelde betaling van 200 000€ aan verkopers (jaar 2)" data-en="Deferred €200,000 Payment to Sellers (Year 2)">Le paiement différé de 200 000€ aux vendeurs (an 2)</div><div class="data-val" data-fr="Ce paiement est une charge opérationnelle de la SARL, réglée depuis le chiffre d'affaires avant calcul du résultat net. Il ne concurrence pas votre retour préférentiel - il se situe en amont. En aucun cas ce paiement ne peut suspendre, réduire ou retarder votre preferred. Si le résultat net après ce paiement est insuffisant pour couvrir le preferred, le solde est cumulatif et versé en priorité l'exercice suivant." data-nl="Deze betaling is een operationele kost van de SARL, betaald uit de omzet vóór berekening van het nettoresultaat. Het concurreert niet met uw preferentieel rendement - het bevindt zich stroomopwaarts. Deze betaling kan uw preferred in geen geval opschorten, verminderen of vertragen. Als het nettoresultaat na deze betaling onvoldoende is om het preferred te dekken, is het saldo cumulatief en wordt het het volgende boekjaar als prioriteit uitbetaald." data-en="This payment is an operating expense of the SARL, paid from revenue before net result is calculated. It does not compete with your preferred return - it sits upstream. Under no circumstances can this payment suspend, reduce, or delay your preferred. If net result after this payment is insufficient to cover preferred, the balance is cumulative and paid in priority the following year.">Ce paiement est une charge opérationnelle de la SARL, réglée depuis le chiffre d'affaires avant calcul du résultat net. Il ne concurrence pas votre retour préférentiel - il se situe en amont. En aucun cas ce paiement ne peut suspendre, réduire ou retarder votre preferred. Si le résultat net après ce paiement est insuffisant pour couvrir le preferred, le solde est cumulatif et versé en priorité l'exercice suivant.</div></div>
-      <div class="data-row"><div class="data-label" data-fr="Fees TB Group" data-nl="TB Group fees" data-en="TB Group Fees">Fees TB Group</div><div class="data-val" data-fr="7,5% base + 15% incentive sur GOP. Facturé TB France à SARL Maroc. Indépendant des dividendes." data-nl="7,5% basis + 15% incentive op GOP. Gefactureerd TB Frankrijk aan SARL Maroc. Onafhankelijk van dividenden." data-en="7.5% base + 15% incentive on GOP. Billed by TB France to SARL Maroc. Independent of dividends.">7,5% base + 15% incentive GOP. TB France → SARL Maroc.</div></div>
+  <h3 style="margin-top:20px;" data-fr="Capital et gouvernance" data-nl="Kapitaal en bestuur" data-en="Capital and Governance">Capital et gouvernance</h3>
 
-      <h3 style="margin-top:20px;" data-fr="La sortie - Le Riad Tagadirt" data-nl="De uitstap - De Riad Tagadirt" data-en="The Exit - The Riad Tagadirt">La sortie - Le Riad Tagadirt</h3>
+  <div class="data-row">
+    <div class="data-label" data-fr="Parts souscrites" data-nl="Ingeschreven aandelen" data-en="Slots subscribed">Parts souscrites</div>
+    <div class="data-val"
+         data-fr="Jusqu'à 12 parts de 250 000€. Syndicat structuré en unités égales. Un investisseur peut souscrire 2 parts (500 000€). Clôture entre 10 et 12 parts selon confirmation GO SIYAHA et prêt opérationnel."
+         data-nl="Tot 12 aandelen van 250 000€. Syndicaat gestructureerd in gelijke eenheden. Een investeerder kan 2 aandelen inschrijven (500 000€). Sluiting tussen 10 en 12 aandelen naargelang bevestiging GO SIYAHA en operationele lening."
+         data-en="Up to 12 slots of €250,000. Syndicate structured in equal units. An investor may subscribe 2 slots (€500,000). Closing between 10 and 12 slots subject to GO SIYAHA and operational loan confirmation.">
+      Jusqu'à 12 parts de 250 000€. Clôture entre 10 et 12 selon confirmation GO SIYAHA et prêt opérationnel.
+    </div>
+  </div>
 
-      <div style="border-left:2px solid var(--cedar);padding:16px 20px;background:var(--sky);margin-bottom:14px;">
-        <div class="sl" data-fr="La sortie est un bien, pas un virement" data-nl="De uitstap is een eigendom, geen overschrijving" data-en="The Exit is a Property, Not a Bank Transfer">La sortie est un bien, pas un virement</div>
-        <p style="font-size:14px;color:var(--pise-mid);line-height:1.8;margin-top:8px;"
-           data-fr="Entre l'année 5 et l'année 10, vos parts (7%) sont échangées contre un riad rénové aux standards Toile Blanche à Tagadirt. Vous recevez un bail vous donnant la jouissance du bien pour 10 ans, et un contrat de gestion locative avec l'hôtel. Vous ne sortez pas un euro supplémentaire de votre poche - le riad est financé par le surplus de trésorerie de l'hôtel."
-           data-nl="Tussen jaar 5 en jaar 10 worden uw aandelen (7%) ingeruild voor een gerenoveerde riad volgens Toile Blanche-standaarden in Tagadirt. U ontvangt een erfpacht die u het genot van het goed geeft voor 10 jaar, en een beheerovereenkomst met het hotel. U haalt geen extra euro uit uw zak - de riad wordt gefinancierd door het kasstrooverschot van het hotel."
-           data-en="Between Year 5 and Year 10, your shares (7%) are exchanged for a Toile Blanche-standard renovated riad in Tagadirt. You receive a 10-year lease giving you enjoyment of the property, and a rental management contract with the hotel. You don't put in a single extra euro - the riad is funded by the hotel's cash surplus.">
-          Entre l'année 5 et l'année 10, vos parts sont échangées contre un riad rénové TB à Tagadirt. Bail de jouissance 10 ans + contrat de gestion locative avec l'hôtel. Financé par le surplus hôtel.
-        </p>
-      </div>
+  <div class="data-row">
+    <div class="data-label" data-fr="Option double part" data-nl="Optie dubbel aandeel" data-en="Double slot option">Option double part</div>
+    <div class="data-val"
+         data-fr="Un investisseur peut souscrire 2 parts (500 000€). Chaque part porte les mêmes droits : preferred, performance et droit de sortie. Sortie naturelle sur 2 parts : 1 riad + 1 remboursement cash de 250 000€ garanti dans le pacte."
+         data-nl="Een investeerder kan 2 aandelen inschrijven (500 000€). Elk aandeel draagt dezelfde rechten : preferred, prestatie en uitstaprecht. Natuurlijke uitstap op 2 aandelen : 1 riad + 1 cash-terugbetaling van 250 000€ gegarandeerd in het pact."
+         data-en="An investor may subscribe 2 slots (€500,000). Each slot carries identical rights: preferred return, performance dividend, and exit right. Natural exit on 2 slots: 1 riad + 1 cash refund of €250,000 guaranteed in the pact.">
+      2 parts possibles (500 000€). Sortie naturelle : 1 riad + 1 remboursement cash garanti.
+    </div>
+  </div>
 
-      <div class="data-row"><div class="data-label" data-fr="Fenêtre de sortie" data-nl="Uitstapvenster" data-en="Exit Window">Fenêtre de sortie</div>
-        <div class="data-val" data-fr="Années 5 à 10. Un riad par investisseur. Livraison en deux phases : 8 riads livrés à l'année 5, 2 riads livrés à l'année 6-7 selon disponibilité foncière. Les investisseurs dont la sortie intervient en fin de fenêtre bénéficient d'une priorité de livraison dans la première vague. L'ordre est déterminé par la date de notification de sortie."
-             data-nl="Jaren 5 tot 10. Eén riad per investeerder. Levering in twee fasen : 8 riads geleverd in jaar 5, 2 riads geleverd in jaar 6-7 naargelang beschikbaarheid van gronden. Investeerders wier uitstap aan het einde van het venster valt, genieten leveringsprioriteit in de eerste golf. De volgorde wordt bepaald door de datum van de uitstapmelding."
-             data-en="Years 5 to 10. One riad per investor. Delivery in two phases: 8 riads delivered at Year 5, 2 riads delivered at Year 6-7 subject to land availability. Investors whose exit falls later in the window receive delivery priority in the first wave. Order is determined by notification date.">Années 5 à 10. Un riad par investisseur. Livraison en deux phases : 8 riads livrés à l'année 5, 2 riads livrés à l'année 6-7 selon disponibilité foncière. Les investisseurs dont la sortie intervient en fin de fenêtre bénéficient d'une priorité de livraison dans la première vague. L'ordre est déterminé par la date de notification de sortie.</div></div>
+  <div class="data-row">
+    <div class="data-label" data-fr="Véhicule investisseurs" data-nl="Investeerdersvehikel" data-en="Investor Vehicle">Véhicule investisseurs</div>
+    <div class="data-val" data-fr="Les investisseurs entrent dans la SARL marocaine via la SAS TB INVEST (France), véhicule de participation dédié. Leurs droits financiers et leur droit au riad sont identiques à une participation directe." data-nl="Investeerders treden toe tot de Marokkaanse SARL via de SAS TB INVEST (Frankrijk), een dedicated participatievehikel. Hun financiële rechten en hun recht op de riad zijn identiek aan een directe participatie." data-en="Investors enter the Moroccan SARL via SAS TB INVEST (France), a dedicated participation vehicle. Their financial rights and their right to the riad are identical to a direct participation.">Via SAS TB INVEST (France). Droits financiers et droit au riad identiques à une participation directe.</div>
+  </div>
 
-      <div class="data-row"><div class="data-label" data-fr="Le riad" data-nl="De riad" data-en="The Riad">Le riad</div>
-        <div class="data-val" data-fr="Rénové aux standards Toile Blanche dans le douar Tagadirt, à 5 minutes de l'hôtel. 3 à 4 chambres, piscine, jardins." data-nl="Gerenoveerd volgens Toile Blanche-standaarden in douar Tagadirt, op 5 minuten van het hotel. 3 tot 4 kamers, zwembad, tuinen." data-en="Renovated to Toile Blanche standards in Douar Tagadirt, 5 minutes from the hotel. 3 to 4 rooms, pool, gardens.">Rénové aux standards TB. 3-4 chambres, piscine, jardins.</div></div>
+  <div class="data-row">
+    <div class="data-label" data-fr="Répartition du capital" data-nl="Kapitaalverdeling" data-en="Capital allocation">Répartition du capital</div>
+    <div class="data-val" data-fr="La répartition 70% investisseurs / 30% Leroy Brothers est définie contractuellement dans le pacte d'associés et les statuts de TB Invest SAS. Elle ne résulte pas d'un calcul pro-rata des apports en numéraire - elle intègre la valeur de l'apport en nature de Leroy Brothers (licence de marque, collection d'art, droits PI, savoir-faire opérationnel), évaluée à sa valeur de contribution au projet et non à sa valeur de marché abstraite. Cette répartition est irrévocable pour la durée du pacte." data-nl="De verdeling 70% investeerders / 30% Leroy Brothers is contractueel vastgelegd in de aandeelhoudersovereenkomst en de statuten van TB Invest SAS. Ze is niet het resultaat van een pro-rata berekening van de geldelijke inbrengen - ze integreert de waarde van de inbreng in natura van Leroy Brothers (merklicentie, kunstcollectie, IE-rechten, operationele knowhow), gewaardeerd op zijn bijdragewaarde aan het project en niet op zijn abstracte marktwaarde. Deze verdeling is onherroepelijk voor de duur van het pact." data-en="The 70% investors / 30% Leroy Brothers allocation is contractually defined in the shareholders' pact and TB Invest SAS articles of association. It does not result from a pro-rata calculation of cash contributions - it incorporates the value of Leroy Brothers' in-kind contribution (brand licence, art collection, IP rights, operational know-how), valued at its contribution to the project rather than at an abstract market value. This allocation is irrevocable for the duration of the pact.">La répartition 70% investisseurs / 30% Leroy Brothers est définie contractuellement. Elle intègre la valeur de l'apport en nature de Leroy Brothers. Irrévocable pour la durée du pacte.</div>
+  </div>
 
-      <div class="data-row"><div class="data-label" data-fr="Votre bail" data-nl="Uw erfpacht" data-en="Your Lease">Votre bail</div>
-        <div class="data-val" data-fr="Bail de jouissance de 10 ans sur le riad, signé entre vous et la SARL. Acte notarié marocain. Transmissible à vos héritiers directs pour la durée restante." data-nl="Erfpacht van 10 jaar op de riad, ondertekend tussen u en de SARL. Marokkaanse notariële akte. Overdraagbaar aan uw directe erfgenamen voor de resterende duur." data-en="10-year enjoyment lease on the riad, signed between you and the SARL. Moroccan notarial deed. Transferable to your direct heirs for the remaining term.">Bail de jouissance 10 ans. Acte notarié marocain. Transmissible aux héritiers directs.</div></div>
+  <div class="data-row">
+    <div class="data-label" data-fr="Quote-part par part" data-nl="Aandeel per eenheid" data-en="Equity per slot">Quote-part par part</div>
+    <div class="data-val"
+         data-fr="70% du capital divisés en parts égales entre les souscripteurs à la clôture. A titre indicatif : 7% par part si clôture à 10 parts, 6,36% à 11 parts, 5,83% à 12 parts. La quote-part exacte est fixée définitivement à la clôture du syndicat."
+         data-nl="70% van het kapitaal verdeeld in gelijke aandelen tussen de inschrijvers bij sluiting. Ter indicatie : 7% per aandeel bij sluiting op 10 aandelen, 6,36% op 11, 5,83% op 12. Het exacte aandeel wordt definitief vastgesteld bij sluiting van het syndicaat."
+         data-en="70% of equity divided equally among subscribers at closing. Indicative: 7% per slot if closed at 10 slots, 6.36% at 11, 5.83% at 12. The exact percentage is fixed definitively at syndicate closing.">
+      70% divisés entre les parts souscrites à la clôture. Indicatif : 7% (10 parts) / 6,36% (11 parts) / 5,83% (12 parts).
+    </div>
+  </div>
 
-      <div class="data-row"><div class="data-label" data-fr="Usage personnel" data-nl="Persoonlijk gebruik" data-en="Personal Use">Usage personnel</div>
-        <div class="data-val" data-fr="60 nuits par an à votre disposition, hors haute saison (juillet-août). Sur préavis de 60 jours." data-nl="60 nachten per jaar tot uw beschikking, buiten het hoogseizoen (juli-augustus). Met 60 dagen vooropzeg." data-en="60 nights per year at your disposal, outside peak season (July-August). With 60 days' notice.">60 nuits/an. Hors haute saison. Préavis 60 jours.</div></div>
+  <div class="data-row">
+    <div class="data-label" data-fr="Leroy Brothers" data-nl="Leroy Brothers" data-en="Leroy Brothers">Leroy Brothers</div>
+    <div class="data-val" data-fr="200 000€ cash + 600 000€ nature - 30%" data-nl="200 000€ cash + 600 000€ natura - 30%" data-en="€200,000 cash + €600,000 in-kind - 30%">200 000€ cash + 600 000€ nature - 30%</div>
+  </div>
 
-      <div class="data-row"><div class="data-label" data-fr="Contrat de gestion locative" data-nl="Verhuurbeheersovereenkomst" data-en="Rental Management Contract">Contrat de gestion locative</div>
-        <div class="data-val" data-fr="L'hôtel gère la location du riad les mois où vous ne l'occupez pas. Revenus nets (après 20% de charges opérationnelles) partagés 50/50 entre vous et l'hôtel." data-nl="Het hotel beheert de verhuur van de riad de maanden dat u het niet bezet. Netto-inkomsten (na 20% operationele kosten) 50/50 verdeeld tussen u en het hotel." data-en="The hotel manages the rental of the riad during the months you don't occupy it. Net revenue (after 20% operating costs) split 50/50 between you and the hotel.">Gestion locative par l'hôtel. 50% des revenus nets (après 20% charges) vous reviennent.</div></div>
-      <div class="data-row"><div class="data-label" data-fr="Protection en cas de cession de l'hôtel" data-nl="Bescherming bij hotelverkoop" data-en="Protection in case of hotel sale">Protection en cas de cession de l'hôtel</div>
-        <div class="data-val" data-fr="Clause de novation obligatoire inscrite au pacte : tout acquéreur de la SARL doit reprendre formellement les contrats de gestion locative des riads comme condition de closing. Veto collectif des investisseurs sur toute vente sans reprise de leurs droits." data-nl="Verplichte novatieclausule opgenomen in het pact : elke koper van de SARL moet de verhuurbeheerscontracten formeel overnemen als sluitingsvoorwaarde. Collectief vetorecht van investeerders op elke verkoop zonder overname van hun rechten." data-en="Mandatory novation clause in the shareholders' pact: any acquirer of the SARL must formally assume the riad rental management contracts as a closing condition. Collective investor veto right on any sale without full assumption of their rights.">Clause de novation obligatoire inscrite au pacte : tout acquéreur de la SARL doit reprendre formellement les contrats de gestion locative des riads comme condition de closing. Veto collectif des investisseurs sur toute vente sans reprise de leurs droits.</div></div>
-      <div class="data-row"><div class="data-label" data-fr="Mécanisme de rachat" data-nl="Terugkoopmechanisme" data-en="Buyback Mechanism">Mécanisme de rachat</div>
-        <div class="data-val" data-fr="Rachat au niveau de TB Invest SAS (droit français). La SARL marocaine est sans dette à l'horizon de sortie - actif net 4,5M€ à 9M€. TB Invest SAS finance le rachat via prêt bancaire français garanti par sa participation dans la SARL. LTV 6 à 17%. Paiement en euros depuis une entité française." data-nl="Terugkoop op niveau van TB Invest SAS (Frans recht). De Marokkaanse SARL is schuldenvrij op de uitstaphorizon - netto actief 4,5M€ tot 9M€. TB Invest SAS financiert de terugkoop via Franse banklening gegarandeerd door haar participatie in de SARL. LTV 6 tot 17%. Betaling in euro's vanuit een Franse entiteit." data-en="Buyback at TB Invest SAS level (French law). The Moroccan SARL is debt-free at the exit horizon - net asset value €4.5M to €9M. TB Invest SAS finances the buyback via French bank debt secured by its participation in the SARL. LTV 6% to 17%. Payment in euros from a French entity.">Rachat au niveau de TB Invest SAS (droit français). La SARL marocaine est sans dette à l'horizon de sortie - actif net 4,5M€ à 9M€. TB Invest SAS finance le rachat via prêt bancaire français garanti par sa participation dans la SARL. LTV 6 à 17%. Paiement en euros depuis une entité française.</div></div>
-      <div class="data-row"><div class="data-label" data-fr="Limite annuelle" data-nl="Jaarlijkse limiet" data-en="Annual cap">Limite annuelle</div>
-        <div class="data-val" data-fr="Maximum 3 rachats cash par année civile. Notification requise avant la fin de l'année 4. Au-delà, report à l'année suivante selon ordre de notification. Garanti dans le pacte d'associés." data-nl="Maximaal 3 cash-terugkopen per kalenderjaar. Melding vereist vóór het einde van jaar 4. Daarboven verschuiving naar het volgende jaar in volgorde van melding. Gegarandeerd in de aandeelhoudersovereenkomst." data-en="Maximum 3 cash buybacks per calendar year. Notification required before end of Year 4. Beyond this, deferred to following year in order of notification. Guaranteed in the shareholders' pact.">Maximum 3 rachats cash par année civile. Notification requise avant la fin de l'année 4. Au-delà, report à l'année suivante selon ordre de notification. Garanti dans le pacte d'associés.</div></div>
+  <div class="data-row">
+    <div class="data-label" data-fr="Veto artistique LB" data-nl="Artistiek veto LB" data-en="LB Artistic Veto">Veto artistique LB</div>
+    <div class="data-val" data-fr="Absolu et irrévocable sur l'identité artistique, les standards de marque, la palette matériaux et l'ADR plancher. Il ne s'applique pas aux décisions opérationnelles, budgétaires ou à une cession future de l'actif." data-nl="Absoluut en onherroepelijk over artistieke identiteit, merkstandaarden, materiaalpalet en ADR-bodem. Het is niet van toepassing op operationele of budgettaire beslissingen, noch op een toekomstige verkoop van het actief." data-en="Absolute and irrevocable on artistic identity, brand standards, material palette and floor ADR. It does not apply to operational or budget decisions, nor to a future sale of the asset.">Limité à l'identité artistique, standards de marque, matériaux et ADR plancher. Ne s'applique pas aux décisions opérationnelles, budgétaires ou à une cession.</div>
+  </div>
 
-      <div class="data-row" style="border-bottom:none;"><div class="data-label" data-fr="Revenus estimés" data-nl="Geschatte inkomsten" data-en="Estimated Revenue">Revenus estimés</div>
-        <div class="data-val" data-fr="37 800€/an (10 mois de location × 70% TO × 350€ ADR × 50% net). Sur 10 ans : ~378 000€. Valeur d'usage personnel (60 nuits × 500€/nuit × 10 ans) : ~300 000€ supplémentaires." data-nl="37 800€/jaar (10 maanden verhuur × 70% bezetting × 350€ ADR × 50% netto). Over 10 jaar : ~378 000€. Persoonlijke gebruikswaarde (60 nachten × 500€/nacht × 10 jaar) : ~300 000€ extra." data-en="€37,800/year (10 months rental × 70% occupancy × €350 ADR × 50% net). Over 10 years: ~€378,000. Personal use value (60 nights × €500/night × 10 years): ~€300,000 additional.">37 800€/an. Sur 10 ans : ~378 000€. Plus 60 nuits/an usage personnel.</div></div>
+  <div class="data-row">
+    <div class="data-label" data-fr="Preferred return" data-nl="Preferred return" data-en="Preferred Return">Preferred return</div>
+    <div class="data-val"
+         data-fr="10% par an (25 000€ par part), prioritaire et cumulatif. Servi avant toute distribution non prioritaire. Total : 300 000€/an pour 12 parts."
+         data-nl="10% per jaar (25 000€ per aandeel), prioritair en cumulatief. Uitbetaald voor elke niet-prioritaire distributie. Totaal : 300 000€/jaar voor 12 aandelen."
+         data-en="10% per year (€25,000 per slot), priority and cumulative. Paid before any non-priority distribution. Total: €300,000/year for 12 slots.">
+      10% par an (25 000€/part), prioritaire et cumulatif. Total : 300 000€/an (12 parts).
+    </div>
+  </div>
+
+  <div class="data-row">
+    <div class="data-label" data-fr="Le paiement différé de 200 000€ aux vendeurs (an 2)" data-nl="De uitgestelde betaling van 200 000€ aan verkopers (jaar 2)" data-en="Deferred €200,000 Payment to Sellers (Year 2)">Le paiement différé de 200 000€ aux vendeurs (an 2)</div>
+    <div class="data-val"
+         data-fr="Le paiement différé de 200 000€ aux vendeurs est une charge d'exploitation de la SARL, réglée depuis les revenus de l'hôtel avant le calcul du résultat net. Il n'a aucune interaction avec votre retour préférentiel : il se situe en amont de la cascade de distribution et n'entre en concurrence avec aucune distribution. Votre retour préférentiel de 25 000€ par part et par an est prélevé sur le résultat net, en première priorité avant toute autre distribution aux investisseurs ou à Leroy Brothers. Si le résultat net d'une année donnée est insuffisant pour régler le préférentiel en totalité, le solde impayé est cumulatif et devient la première obligation de l'année suivante, avant toute autre distribution. Leroy Brothers perçoit zéro dividende tant que l'ensemble des arriérés préférentiels cumulés n'est pas soldé. Le préférentiel n'est pas garanti contre une perte d'exploitation. Il est garanti en priorité sur toutes les autres distributions issues de tout résultat net positif."
+         data-nl="De uitgestelde betaling van 200 000€ aan de verkopers is een operationele kost van de SARL, vereffend uit de hotelinkomsten vóór berekening van het nettoresultaat. Ze heeft geen enkele interactie met uw preferentieel rendement: ze bevindt zich stroomopwaarts van de distributiecascade en concurreert met geen enkele uitkering. Uw preferentieel rendement van 25 000€ per aandeel per jaar wordt uitbetaald uit het nettoresultaat, met absolute voorrang boven alle andere uitkeringen aan investeerders of aan Leroy Brothers. Als het nettoresultaat in een bepaald jaar onvoldoende is om het preferentieel volledig te vereffenen, is het onbetaalde saldo cumulatief en wordt het de eerste verplichting van het volgende jaar, vóór alle andere uitkeringen. Leroy Brothers ontvangt nul dividend zolang alle gecumuleerde preferentiele achterstallen niet volledig zijn vereffend. Het preferentieel is niet gegarandeerd tegen een bedrijfsverlies. Het is gegarandeerd in prioriteit boven alle andere uitkeringen uit elk positief nettoresultaat."
+         data-en="The deferred payment of 200,000 EUR to the sellers is an operating expense of the SARL, settled from hotel revenue before net result is calculated. It has no interaction with your preferred return: it sits upstream of the distribution waterfall and does not compete with any distribution. Your preferred return of 25,000 EUR per slot per year is paid from net result, in first priority before any other distribution to investors or to Leroy Brothers. If net result in any given year is insufficient to pay the preferred in full, the unpaid balance is cumulative and becomes the first obligation of the following year, ahead of all other distributions. Leroy Brothers receives zero dividend until all cumulative preferred arrears are settled in full. The preferred is not guaranteed against an operating loss. It is guaranteed in priority over all other distributions from any positive net result.">
+      Le paiement différé de 200 000€ aux vendeurs est une charge d'exploitation de la SARL, réglée avant le calcul du résultat net. Il n'a aucune interaction avec votre retour préférentiel. Votre preferred de 25 000€ par part est prélevé sur le résultat net, en première priorité. Si insuffisant, le solde est cumulatif et devient la première obligation de l'année suivante. LB perçoit zéro dividende tant que les arriérés ne sont pas soldés. Le préférentiel n'est pas garanti contre une perte d'exploitation. Il est garanti en priorité sur toutes les distributions issues de tout résultat net positif.
+    </div>
+  </div>
+
+  <div class="data-row">
+    <div class="data-label" data-fr="Fees TB Group" data-nl="TB Group fees" data-en="TB Group Fees">Fees TB Group</div>
+    <div class="data-val" data-fr="7,5% base + 15% incentive sur GOP. Facturé TB France à SARL Maroc. Indépendant des dividendes." data-nl="7,5% basis + 15% incentive op GOP. Gefactureerd TB Frankrijk aan SARL Maroc. Onafhankelijk van dividenden." data-en="7.5% base + 15% incentive on GOP. Billed by TB France to SARL Maroc. Independent of dividends.">7,5% base + 15% incentive GOP. TB France vers SARL Maroc.</div>
+  </div>
+
+  <h3 style="margin-top:20px;" data-fr="La sortie - Votre choix à l'année 5" data-nl="De uitstap - Uw keuze in jaar 5" data-en="The Exit - Your Choice at Year 5">La sortie - Votre choix à l'année 5</h3>
+
+  <div style="border-left:2px solid var(--cedar);padding:16px 20px;background:var(--sky);margin-bottom:14px;">
+    <div class="sl" data-fr="Le riad ou le cash. Les deux sont garantis dans le pacte." data-nl="De riad of cash. Beide zijn gegarandeerd in het pact." data-en="The riad or cash. Both are guaranteed in the pact.">Le riad ou le cash. Les deux sont garantis dans le pacte.</div>
+    <p style="font-size:14px;color:var(--pise-mid);line-height:1.8;margin-top:8px;"
+       data-fr="Entre l'année 5 et l'année 10, vos parts dans TB Invest SAS sont rachetées. Vous choisissez librement entre deux options garanties dans le pacte d'associés : le riad (meilleur rendement long terme) ou le remboursement cash de 250 000€. La notification est requise avant la fin de l'année 4."
+       data-nl="Tussen jaar 5 en jaar 10 worden uw aandelen in TB Invest SAS ingekocht. U kiest vrij tussen twee opties gegarandeerd in de aandeelhoudersovereenkomst : de riad (beste langetermijnrendement) of de cash-terugbetaling van 250 000€. De melding is vereist voor het einde van jaar 4."
+       data-en="Between Year 5 and Year 10, your shares in TB Invest SAS are redeemed. You freely choose between two options guaranteed in the shareholders' pact: the riad (better long-term return) or the cash refund of €250,000. Notification is required before the end of Year 4.">
+      Entre l'année 5 et l'année 10, vos parts dans TB Invest SAS sont rachetées. Vous choisissez librement entre deux options garanties dans le pacte : le riad (meilleur rendement long terme) ou le remboursement cash de 250 000€. Notification requise avant la fin de l'année 4.
+    </p>
+  </div>
+
+  <div class="data-row">
+    <div class="data-label" data-fr="Fenêtre de sortie" data-nl="Uitstapvenster" data-en="Exit Window">Fenêtre de sortie</div>
+    <div class="data-val"
+         data-fr="Années 5 à 10. Un riad par part (Option A) ou 250 000€ cash (Option B). Livraison riads en deux phases : 8 livrés à l'année 5, 2 livrés à l'année 6-7 selon disponibilité foncière. L'ordre est déterminé par la date de notification de sortie."
+         data-nl="Jaren 5 tot 10. Eén riad per aandeel (Optie A) of 250 000€ cash (Optie B). Levering riads in twee fasen : 8 geleverd in jaar 5, 2 geleverd in jaar 6-7 naargelang beschikbaarheid van gronden. De volgorde wordt bepaald door de datum van de uitstapmelding."
+         data-en="Years 5 to 10. One riad per slot (Option A) or €250,000 cash (Option B). Riad delivery in two phases: 8 delivered at Year 5, 2 delivered at Year 6-7 subject to land availability. Order is determined by notification date.">
+      Années 5 à 10. Option A : 1 riad par part. Option B : 250 000€ cash. Livraison en deux phases.
+    </div>
+  </div>
+
+  <div class="data-row">
+    <div class="data-label" data-fr="Option A - Le riad" data-nl="Optie A - De riad" data-en="Option A - The Riad">Option A - Le riad</div>
+    <div class="data-val"
+         data-fr="Bail emphytéotique de 10 ans sur un riad rénové aux standards Toile Blanche dans le douar Tagadirt, à 5 minutes de l'hôtel. 3 à 4 chambres, piscine privée, jardins. Droit exclusif d'occuper, de louer et de transmettre à vos héritiers directs pour la durée restante. 60 nuits par an à votre disposition, hors haute saison (juillet-août), sur préavis de 60 jours. Revenus locatifs nets projetés : 37 800€/an (50% des revenus après 20% de charges opérationnelles). Sur 10 ans : ~378 000€. Construit entièrement sur les surplus de l'hôtel, sans coût supplémentaire pour vous."
+         data-nl="Erfpacht van 10 jaar op een gerenoveerde riad volgens Toile Blanche-standaarden in douar Tagadirt, op 5 minuten van het hotel. 3 tot 4 kamers, privézwembad, tuinen. Exclusief recht om te bewonen, verhuren en overdragen aan directe erfgenamen voor de resterende duur. 60 nachten per jaar, buiten het hoogseizoen (juli-augustus), met 60 dagen vooropzeg. Geprojecteerde netto huurinkomsten : 37 800€/jaar. Over 10 jaar : ~378 000€. Volledig gebouwd uit hotelüberschot, zonder extra kosten."
+         data-en="10-year emphyteutic lease on a Toile Blanche-standard renovated riad in Douar Tagadirt, 5 minutes from the hotel. 3 to 4 rooms, private pool, gardens. Exclusive right to occupy, rent, and transmit to direct heirs for the remaining term. 60 nights per year, outside peak season (July-August), with 60 days notice. Projected net rental income: €37,800/year (50% of revenue after 20% operating costs). Over 10 years: ~€378,000. Built entirely from hotel surplus, at no additional cost to you.">
+      Bail emphytéotique 10 ans. 3-4 chambres, piscine, jardins. 60 nuits/an. 37 800€/an revenus locatifs projetés. Transmissible aux héritiers. Construit sur les surplus hôtel, sans coût supplémentaire.
+    </div>
+  </div>
+
+  <div class="data-row">
+    <div class="data-label" data-fr="Option B - Remboursement cash" data-nl="Optie B - Cash-terugbetaling" data-en="Option B - Cash Refund">Option B - Remboursement cash</div>
+    <div class="data-val"
+         data-fr="250 000€ garanti dans le pacte d'associés. Notification requise avant la fin de l'année 4. Rachat au niveau de TB Invest SAS (droit français). Paiement en euros depuis une entité française."
+         data-nl="250 000€ gegarandeerd in de aandeelhoudersovereenkomst. Melding vereist voor het einde van jaar 4. Terugkoop op niveau van TB Invest SAS (Frans recht). Betaling in euro's vanuit een Franse entiteit."
+         data-en="€250,000 guaranteed in the shareholders' pact. Notification required before end of Year 4. Buyback at TB Invest SAS level (French law). Payment in euros from a French entity.">
+      250 000€ garanti dans le pacte. Notification avant fin année 4. Rachat TB Invest SAS, droit français, paiement en euros.
+    </div>
+  </div>
+
+  <div class="data-row">
+    <div class="data-label" data-fr="Mécanisme de rachat" data-nl="Terugkoopmechanisme" data-en="Buyback Mechanism">Mécanisme de rachat</div>
+    <div class="data-val" data-fr="Rachat au niveau de TB Invest SAS (droit français). La SARL marocaine est sans dette à l'horizon de sortie - actif net 4,5M€ à 9M€. TB Invest SAS finance le rachat via prêt bancaire français garanti par sa participation dans la SARL. LTV 6 à 17%. Paiement en euros depuis une entité française." data-nl="Terugkoop op niveau van TB Invest SAS (Frans recht). De Marokkaanse SARL is schuldenvrij op de uitstaphorizon - netto actief 4,5M€ tot 9M€. LTV 6 tot 17%. Betaling in euro's vanuit een Franse entiteit." data-en="Buyback at TB Invest SAS level (French law). The Moroccan SARL is debt-free at the exit horizon - net asset value €4.5M to €9M. LTV 6% to 17%. Payment in euros from a French entity.">Rachat TB Invest SAS (droit français). SARL sans dette à la sortie, actif net 4,5M€ à 9M€. LTV 6 à 17%. Paiement en euros.</div>
+  </div>
+
+  <div class="data-row">
+    <div class="data-label" data-fr="Limite annuelle" data-nl="Jaarlijkse limiet" data-en="Annual cap">Limite annuelle</div>
+    <div class="data-val" data-fr="Maximum 3 rachats cash par année civile. Notification requise avant la fin de l'année 4. Au-delà, report à l'année suivante selon ordre de notification. Garanti dans le pacte d'associés." data-nl="Maximaal 3 cash-terugkopen per kalenderjaar. Melding vereist vóór het einde van jaar 4. Daarboven verschuiving naar het volgende jaar in volgorde van melding. Gegarandeerd in de aandeelhoudersovereenkomst." data-en="Maximum 3 cash buybacks per calendar year. Notification required before end of Year 4. Beyond this, deferred to following year in order of notification. Guaranteed in the shareholders' pact.">Maximum 3 rachats cash par année civile. Notification avant fin année 4. Au-delà, report l'année suivante selon ordre de notification.</div>
+  </div>
+
+  <div class="data-row">
+    <div class="data-label" data-fr="Protection en cas de cession de l'hôtel" data-nl="Bescherming bij hotelverkoop" data-en="Protection in case of hotel sale">Protection en cas de cession de l'hôtel</div>
+    <div class="data-val" data-fr="Clause de novation obligatoire inscrite au pacte : tout acquéreur de la SARL doit reprendre formellement les contrats de gestion locative des riads comme condition de closing. Veto collectif des investisseurs sur toute vente sans reprise de leurs droits." data-nl="Verplichte novatieclausule opgenomen in het pact : elke koper van de SARL moet de verhuurbeheerscontracten formeel overnemen als sluitingsvoorwaarde. Collectief vetorecht van investeerders op elke verkoop zonder overname van hun rechten." data-en="Mandatory novation clause in the shareholders' pact: any acquirer of the SARL must formally assume the riad rental management contracts as a closing condition. Collective investor veto right on any sale without full assumption of their rights.">Clause de novation obligatoire. Tout acquéreur reprend les contrats riad comme condition de closing. Veto collectif des investisseurs sur toute vente sans reprise de leurs droits.</div>
+  </div>
+
+  <div class="data-row" style="border-bottom:none;">
+    <div class="data-label" data-fr="Revenus estimés (Option A)" data-nl="Geschatte inkomsten (Optie A)" data-en="Estimated Revenue (Option A)">Revenus estimés (Option A)</div>
+    <div class="data-val" data-fr="37 800€/an (10 mois de location × 70% TO × 350€ ADR × 50% net). Sur 10 ans : ~378 000€. Valeur d'usage personnel (60 nuits × 500€/nuit × 10 ans) : ~300 000€ supplémentaires." data-nl="37 800€/jaar (10 maanden verhuur × 70% bezetting × 350€ ADR × 50% netto). Over 10 jaar : ~378 000€. Persoonlijke gebruikswaarde : ~300 000€ extra." data-en="€37,800/year (10 months rental × 70% occupancy × €350 ADR × 50% net). Over 10 years: ~€378,000. Personal use value (60 nights × €500/night × 10 years): ~€300,000 additional.">37 800€/an. Sur 10 ans : ~378 000€. Plus 60 nuits/an usage personnel (~300 000€ valeur).</div>
+  </div>
 
   <div class="pf">
     <span data-fr="Toile Blanche Group - Leroy Brothers - Mai 2026" data-nl="Toile Blanche Group - Leroy Brothers - Mei 2026" data-en="Toile Blanche Group - Leroy Brothers - May 2026">Toile Blanche Group - Leroy Brothers - Mai 2026</span>
@@ -291,13 +240,8 @@ function setLang(lang) {
     const val = el.getAttribute('data-' + lang) || el.getAttribute('data-fr');
     if (val) el.innerHTML = val;
   });
-  document.querySelectorAll('a.nav-link[data-fr]').forEach(el => {
-    el.innerHTML = el.getAttribute('data-' + lang) || el.getAttribute('data-fr');
-    if (el.classList.contains('active')) el.innerHTML = el.getAttribute('data-' + lang) || el.getAttribute('data-fr');
-  });
 }
 
-// Apply saved language on load
 setLang(currentLang);
 </script>
 </body>

@@ -7,50 +7,17 @@
 <meta name="referrer" content="no-referrer">
 <title>Toile Blanche Marrakech - Due Diligence</title>
 <style>
-
-
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap');
   :root{--sand:#F5F0E6;--pise:#111008;--pise-mid:#4F4336;--cedar:#A78661;--sky:#FDFAF5;--pise-light:#D8CCB8;--alert:#8B3A2A;}
   *{margin:0;padding:0;box-sizing:border-box;}
   html,body{width:100%;max-width:100%;overflow-x:hidden;}
   body{background:var(--sand);color:var(--pise);font-family:'Montserrat',sans-serif;font-weight:300;font-size:16px;line-height:1.75;}
-
-  /* LOGIN */
-  #login-screen{width:100%;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;background:var(--sand);}
-  .login-logo{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:0.5em;text-transform:uppercase;color:var(--pise);margin-bottom:6px;text-align:center;}
-  .login-sub{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--cedar);margin-bottom:56px;text-align:center;}
-  .login-box{width:100%;max-width:340px;text-align:center;}
-  .login-rule{width:28px;height:1px;background:var(--cedar);margin:0 auto 36px;}
-  .login-label{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--pise-mid);display:block;margin-bottom:10px;}
-  .login-input{width:100%;background:var(--sky);border:1px solid var(--pise-light);padding:13px 18px;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:300;color:var(--pise);text-align:center;letter-spacing:0.12em;outline:none;}
-  .login-input:focus{border-color:var(--cedar);}
-  .login-btn{width:100%;margin-top:10px;background:var(--pise);color:var(--sky);border:none;padding:13px 18px;font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;cursor:pointer;}
-  .login-btn:hover{background:var(--cedar);}
-  .login-error{font-size:10px;letter-spacing:0.15em;color:var(--alert);text-align:center;margin-top:10px;opacity:0;transition:opacity 0.2s;}
-  .login-error.show{opacity:1;}
-  .login-conf{font-size:9px;letter-spacing:0.15em;color:var(--pise-mid);text-align:center;margin-top:44px;text-transform:uppercase;}
-
-  /* SITE SHELL */
   #site{display:none;}
-
-  /* NAV */
   nav{width:100%;background:var(--sand);border-bottom:1px solid var(--pise-light);position:sticky;top:0;z-index:100;}
   .nav-top{padding:12px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--pise-light);}
   .nav-brand{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:0.28em;text-transform:uppercase;color:var(--pise);cursor:pointer;}
   .nav-brand span{color:var(--cedar);}
-  .nav-right{display:flex;align-items:center;gap:16px;}
-  .lang-toggle{display:flex;gap:0;}
-  .lang-btn{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:5px 10px;background:none;border:1px solid var(--pise-light);font-family:'Montserrat',sans-serif;font-weight:300;cursor:pointer;color:var(--pise-mid);transition:all 0.15s;}
-  .lang-btn.active{background:var(--pise);color:var(--sky);border-color:var(--pise);}
-  .nav-logout{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--pise-mid);cursor:pointer;background:none;border:none;font-family:'Montserrat',sans-serif;}
-  .nav-links{padding:9px 40px;display:flex;gap:4px;flex-wrap:wrap;}
-  .nav-link{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--pise-mid);cursor:pointer;padding:6px 10px;border:1px solid transparent;background:none;font-family:'Montserrat',sans-serif;font-weight:300;transition:all 0.15s;}
-  .nav-link:hover{color:var(--pise);}
-  .nav-link.active{color:var(--pise);border-color:var(--cedar);}
-
-  /* PAGES */
   .page{max-width:960px;margin:0 auto;padding:56px 52px;border-bottom:1px solid var(--pise-light);}
-  .page.visible{display:block;}
   .ph{display:flex;justify-content:space-between;margin-bottom:40px;padding-bottom:10px;border-bottom:1px solid var(--cedar);}
   .ph span{font-size:14px;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;}
   .ph span:last-child{color:var(--pise-mid);}
@@ -62,15 +29,11 @@
   .bs{font-size:14px;line-height:1.8;color:var(--pise-mid);margin-bottom:7px;}
   .two{display:grid;grid-template-columns:1.15fr 0.85fr;gap:44px;margin:20px 0;}
   .two-eq{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin:20px 0;}
-  .three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--pise-light);margin:24px 0;}
   .ul{list-style:none;margin:0 0 14px;padding:0;}
   .ul li{font-size:15px;line-height:1.75;padding-left:14px;position:relative;margin-bottom:3px;}
   .ul li::before{content:'·';position:absolute;left:0;color:var(--cedar);}
   .ab{border-left:2px solid var(--cedar);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
   .ab2{border-left:2px solid var(--pise-light);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
-  .ab-dark{padding:32px 36px;background:var(--cedar);margin:24px 0;border-left:3px solid var(--pise-mid);}
-  .ab-dark p{color:var(--sky);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.65;}
-  .ab-dark .sl{color:var(--cedar);}
   .alert-box{border-left:2px solid var(--alert);padding:18px 22px;background:#FDF5F3;margin-bottom:16px;}
   .qb{border-left:1px solid var(--cedar);padding:14px 20px;background:var(--sky);margin:16px 0;}
   .qb p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;line-height:1.75;}
@@ -78,33 +41,10 @@
   .rule{width:36px;height:1px;background:var(--cedar);margin:22px 0;}
   .pf{margin-top:40px;padding-top:12px;border-top:1px solid var(--pise-light);display:flex;justify-content:space-between;}
   .pf span{font-size:10px;letter-spacing:0.13em;color:var(--pise-mid);text-transform:uppercase;}
-
-  /* IMAGE PLACEHOLDERS */
-  .img-full{width:100%;height:480px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9px;letter-spacing:0.12em;text-align:center;padding:24px;font-style:italic;margin:24px 0;}
-  .img-h{width:100%;height:340px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9px;text-align:center;padding:16px;font-style:italic;}
-  .img-sq{width:100%;height:400px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9px;text-align:center;padding:16px;font-style:italic;}
-
-  /* KPI STRIPS */
-  .kpi-cover{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--pise-light);margin:28px 0;}
-  .kc{background:var(--sky);padding:20px 18px;}
-  .kc-v{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--pise);line-height:1;margin-bottom:5px;}
-  .kc-l{font-size:9px;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;margin-bottom:2px;}
-  .kc-s{font-size:11px;color:var(--pise-mid);}
-  .kpi-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--pise-light);margin:24px 0;}
-  .ks-box{background:var(--sky);padding:20px 18px;}
-  .ks-val{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300;color:var(--pise);line-height:1;margin-bottom:5px;}
-  .ks-lbl{font-size:9px;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;}
-  .ks-sub{font-size:12px;color:var(--pise-mid);margin-top:3px;}
-
-  /* BLOCK GRIDS */
   .block-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--pise-light);margin:24px 0;}
   .bc{background:var(--sky);padding:22px 20px;}
   .bl{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;}
-  .bt{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--pise);margin-bottom:8px;line-height:1.2;}
   .bd{font-size:13px;line-height:1.7;color:var(--pise-mid);}
-  .bp{font-size:11px;color:var(--pise-mid);margin-top:8px;padding-top:8px;border-top:1px solid var(--pise-light);font-style:italic;}
-
-  /* WATERFALL TABLE */
   .waterfall{margin:24px 0;}
   .wf-row{display:grid;grid-template-columns:28px 1fr 1fr;gap:0;border-bottom:1px solid var(--pise-light);padding:12px 0;align-items:start;}
   .wf-row:first-child{border-top:2px solid var(--cedar);}
@@ -114,102 +54,25 @@
   .wf-amount{font-size:13px;color:var(--cedar);text-align:right;padding-top:3px;}
   .wf-highlight .wf-num{color:var(--cedar);}
   .wf-highlight .wf-title{color:var(--cedar);}
-
-  /* RETURN TABLE */
-  table.ret{width:100%;border-collapse:collapse;margin:20px 0;}
-  table.ret thead tr{border-bottom:2px solid var(--cedar);}
-  table.ret thead th{padding:8px 10px;text-align:left;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
-  table.ret thead th.r{text-align:right;}
-  table.ret tbody tr{border-bottom:1px solid var(--pise-light);}
-  table.ret tbody td{padding:8px 10px;font-size:14px;color:var(--pise);}
-  table.ret tbody td.r{text-align:right;}
-  table.ret tbody td.muted{color:var(--pise-mid);font-style:italic;}
-  table.ret .row-sub td{background:var(--sand);font-weight:400;}
-  table.ret .row-tot td{border-top:2px solid var(--cedar);font-weight:400;font-size:15px;padding:10px;}
-  table.ret .row-pref td{background:var(--sky);}
-
-  /* DATA ROWS */
   .data-row{display:grid;grid-template-columns:180px 1fr;gap:16px;padding:10px 0;border-bottom:1px solid var(--pise-light);font-size:14px;}
   .data-row:last-child{border-bottom:none;}
   .data-label{color:var(--cedar);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;padding-top:2px;}
   .data-val{color:var(--pise);line-height:1.7;}
-
-  /* ECO GRID */
-  .eco-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--pise-light);margin:24px 0;}
-  .eco-cell{background:var(--sky);padding:20px 18px;}
-  .eco-icon{font-size:24px;margin-bottom:8px;}
-  .eco-title{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;font-weight:400;}
-  .eco-body{font-size:13px;line-height:1.7;color:var(--pise-mid);}
-  .eco-premium{font-size:12px;color:var(--pise);margin-top:8px;padding-top:8px;border-top:1px solid var(--pise-light);}
-
-  /* ART GRID */
-  .art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--pise-light);margin:24px 0;}
-  .art-cell{background:var(--sky);padding:20px 16px;}
-  .art-label{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;}
-  .art-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--pise);margin-bottom:8px;line-height:1.2;}
-  .art-body{font-size:12px;line-height:1.7;color:var(--pise-mid);}
-
-  /* OVERRIDES */
   table{font-size:15px !important;}
   table thead th{font-size:11px !important;padding:10px !important;}
   table tbody td{font-size:14px !important;padding:9px 10px !important;line-height:1.7 !important;}
   .bd{font-size:13px !important;}
   .bs{font-size:14px !important;}
-
-  @media(max-width:720px){
-    .page{padding:40px 20px;}
-    .nav-links{padding:8px 16px;}
-    .two,.two-eq,.block-grid,.eco-grid{grid-template-columns:1fr;}
-    .kpi-cover{grid-template-columns:1fr 1fr;}
-    .art-grid{grid-template-columns:1fr;}
-    .three{grid-template-columns:1fr;}
-    h1{font-size:36px;}
-    .nav-top{padding:12px 20px;}
-    .data-row{grid-template-columns:1fr;}
-  }
-
-  /* Multi-page specific */
-  a.nav-link{text-decoration:none;display:inline-block;}
-  nav{width:100%;background:var(--sand);border-bottom:1px solid var(--pise-light);position:sticky;top:0;z-index:100;}
-  .nav-top{padding:12px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--pise-light);}
-  .nav-brand{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:0.28em;text-transform:uppercase;color:var(--pise);text-decoration:none;}
-  .nav-brand span{color:var(--cedar);}
-  .nav-right{display:flex;align-items:center;gap:16px;}
-  .lang-toggle{display:flex;gap:0;}
-  .lang-btn{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:5px 10px;background:none;border:1px solid var(--pise-light);font-family:'Montserrat',sans-serif;font-weight:300;cursor:pointer;color:var(--pise-mid);transition:all 0.15s;}
-  .lang-btn.active{background:var(--pise);color:var(--sky);border-color:var(--pise);}
-  .nav-links{padding:9px 40px;display:flex;gap:4px;flex-wrap:wrap;}
-  .nav-link{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--pise-mid);padding:6px 10px;border:1px solid transparent;font-family:'Montserrat',sans-serif;font-weight:300;transition:all 0.15s;}
-  .nav-link:hover{color:var(--pise);}
-  .nav-link.active{color:var(--pise);border-color:var(--cedar);}
-  .page{max-width:960px;margin:0 auto;padding:56px 52px;}
-  @media(max-width:720px){
-    .page{padding:40px 20px;}
-    .nav-links{padding:8px 16px;}
-    .two,.two-eq,.block-grid,.eco-grid{grid-template-columns:1fr;}
-    .kpi-cover{grid-template-columns:1fr 1fr;}
-    .art-grid,.three{grid-template-columns:1fr;}
-    h1{font-size:36px;}
-    .nav-top{padding:12px 20px;}
-    .data-row{grid-template-columns:1fr;}
-  }
-
-  a.nav-link{text-decoration:none;display:inline-block;}
-  .page{max-width:960px;margin:0 auto;padding:56px 52px;}
-  @media(max-width:720px){
-    .page{padding:40px 20px;}
-    .nav-links{padding:8px 16px;}
-    .two,.two-eq,.block-grid,.eco-grid{grid-template-columns:1fr;}
-    .kpi-cover{grid-template-columns:1fr 1fr;}
-    h1{font-size:36px;}
-    .nav-top{padding:12px 20px;}
-    .data-row{grid-template-columns:1fr;}
-  }
-
   #lang-bar{position:fixed;top:14px;right:20px;z-index:999;display:flex;gap:0;background:var(--sand);border:1px solid var(--pise-light);}
   .lang-btn{font-family:'Montserrat',sans-serif;font-weight:400;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--pise-mid);background:transparent;border:none;padding:7px 12px;cursor:pointer;transition:color 0.15s,background 0.15s;}
   .lang-btn.active{background:var(--cedar);color:var(--sky);}
   .lang-btn:hover:not(.active){color:var(--cedar);}
+  @media(max-width:720px){
+    .page{padding:40px 20px;}
+    .two,.two-eq,.block-grid{grid-template-columns:1fr;}
+    h1{font-size:36px;}
+    .data-row{grid-template-columns:1fr;}
+  }
 </style>
 <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
@@ -230,9 +93,11 @@
     data-nl="Zeven punten.<br>Geen verrassingen<br>na ondertekening."
     data-en="Seven points.<br>No surprises<br>after signing.">Sept points.<br>Aucune surprise<br>après la signature.</h1>
 
-<p data-fr="Ce document de due diligence adresse les questions que tout investisseur sérieux pose avant d'engager 250 000€ dans un actif immobilier étranger. Chaque point est traité avec la même honnêteté que l'ensemble du dossier. Les risques sont nommés, les provisions sont chiffrées, les délais sont réalistes."
-   data-nl="Dit due diligence-document behandelt de vragen die elke serieuze investeerder stelt voordat hij 250 000€ inlegt in een buitenlands onroerend goed. Elk punt wordt behandeld met dezelfde eerlijkheid als het volledige dossier. Risico's worden benoemd, provisies worden gekwantificeerd, termijnen zijn realistisch." data-en="This due diligence document addresses the questions that any serious investor asks before committing €250,000 to a foreign real estate asset. Each point is treated with the same honesty as the entire dossier. The risks are named, the provisions are quantified, the timelines are realistic.">
-  Ce document de due diligence adresse les questions que tout investisseur sérieux pose avant d'engager 250 000€ dans un actif immobilier étranger. Chaque point est traité avec la même honnêteté que l'ensemble du dossier.
+<!-- CHANGE 1: intro updated — per slot language, slot strategy note -->
+<p data-fr="Ce document de due diligence adresse les questions que tout investisseur sérieux pose avant d'engager 250 000€ par part dans un actif immobilier étranger. Chaque point est traité avec la même honnêteté que l'ensemble du dossier. Les risques sont nommés, les provisions sont chiffrées, les délais sont réalistes."
+   data-nl="Dit due diligence-document behandelt de vragen die elke serieuze investeerder stelt voordat hij 250 000€ per aandeel inlegt in een buitenlands onroerend goed. Elk punt wordt behandeld met dezelfde eerlijkheid als het volledige dossier. Risico's worden benoemd, provisies worden gekwantificeerd, termijnen zijn realistisch."
+   data-en="This due diligence document addresses the questions that any serious investor asks before committing €250,000 per slot to a foreign real estate asset. Each point is treated with the same honesty as the entire dossier. The risks are named, the provisions are quantified, the timelines are realistic.">
+  Ce document de due diligence adresse les questions que tout investisseur sérieux pose avant d'engager 250 000€ par part dans un actif immobilier étranger. Chaque point est traité avec la même honnêteté que l'ensemble du dossier.
 </p>
 <p data-fr="Les investisseurs entrent via TB Invest SAS, société par actions simplifiée de droit français. Les dividendes sont versés en euros depuis la SAS. La convention fiscale France-Belgique s'applique. Aucune procédure de change ou de rapatriement marocaine n'est requise de la part des investisseurs."
    data-nl="Investeerders treden toe via TB Invest SAS, een Franse vereenvoudigde naamloze vennootschap. Dividenden worden in euro uitgekeerd vanuit de SAS. Het fiscaal verdrag Frankrijk-België is van toepassing. Geen enkele Marokkaanse wissel- of repatriëringsprocedure is vereist van de investeerders."
@@ -240,8 +105,18 @@
   Les investisseurs entrent via TB Invest SAS, société par actions simplifiée de droit français. Les dividendes sont versés en euros depuis la SAS. La convention fiscale France-Belgique s'applique. Aucune procédure de change ou de rapatriement marocaine n'est requise de la part des investisseurs.
 </p>
 
+<!-- CHANGE 2: slot strategy note added -->
+<div class="ab2" style="margin-bottom:24px;">
+  <p class="bs"
+     data-fr="Le syndicat est structuré en parts de 250 000€. Un investisseur peut souscrire 1 ou 2 parts. Clôture entre 10 et 12 parts selon confirmation GO SIYAHA (300 000€ conditionnel) et prêt opérationnel. Chaque part porte les mêmes droits : preferred, performance, droit de sortie (riad ou cash). Un investisseur souscrivant 2 parts sort naturellement avec 1 riad + 1 remboursement cash de 250 000€ garanti dans le pacte."
+     data-nl="Het syndicaat is gestructureerd in aandelen van 250 000€. Een investeerder kan 1 of 2 aandelen inschrijven. Sluiting tussen 10 en 12 aandelen naargelang bevestiging GO SIYAHA en operationele lening. Elk aandeel draagt dezelfde rechten. Een investeerder die 2 aandelen inschrijft, stapt uit met 1 riad + 1 cash-terugbetaling van 250 000€."
+     data-en="The syndicate is structured in slots of €250,000. An investor may subscribe 1 or 2 slots. Closing between 10 and 12 slots subject to GO SIYAHA confirmation and operational loan. Each slot carries identical rights: preferred, performance, exit right (riad or cash). An investor subscribing 2 slots exits naturally with 1 riad + 1 cash refund of €250,000 guaranteed in the pact.">
+    Le syndicat est structuré en parts de 250 000€. Un investisseur peut souscrire 1 ou 2 parts. Clôture entre 10 et 12 parts selon confirmation GO SIYAHA et prêt opérationnel. Chaque part porte les mêmes droits : preferred, performance, droit de sortie (riad ou cash). Un investisseur souscrivant 2 parts sort naturellement avec 1 riad + 1 remboursement cash de 250 000€ garanti dans le pacte.
+  </p>
+</div>
+
 <!-- ══════ 1. ACQUISITION ══════ -->
-<img src="images/img_tigmi_sculpture_olives.png" alt="[ Image : sculpture terre cuite Tagadirt - sphères empilées, oliveraie, Atlas enneigé ]" style="width:100%;height:480px;object-fit:cover;display:block;margin:32px 0;">
+<img src="images/img_tigmi_sculpture_olives.png" alt="[ Image : sculpture terre cuite Tagadirt ]" style="width:100%;height:480px;object-fit:cover;display:block;margin:32px 0;">
 <div class="rule"></div>
 <div class="sl" data-fr="1. L'acquisition - Où en sommes-nous" data-nl="1. De acquisitie - Stand van zaken" data-en="1. Acquisition - Where Do We Stand">1. L'acquisition - Où en sommes-nous</div>
 <h2 data-fr="Une offre acceptée. Un décès. Quatorze mois. Les fils rappellent."
@@ -250,11 +125,13 @@
 <div class="two">
   <div>
     <p data-fr="En 2024, nous avons soumis et fait accepter une offre d'achat à 1 400 000€ par le propriétaire britannique de Tigmi. L'accord était verbal mais ferme. Avant la signature de la promesse de vente, le propriétaire est décédé. L'actif s'est retrouvé dans une succession britannique nécessitant un exequatur marocain - procédure longue et bloquante."
-       data-nl="In 2024 hebben wij een bod van 1 400 000€ ingediend en laten aanvaarden door de Britse eigenaar van Tigmi. De overeenkomst was mondeling maar vast. Vóór de ondertekening van de verkoopbelofte overleed de eigenaar. Het actief belandde in een Britse nalatenschap die een Marokkaanse exequatur vereist - een lange en blokkerende procedure." data-en="In 2024, we submitted and had accepted a purchase offer of €1,400,000 from the British owner of Tigmi. The agreement was verbal but firm. Before the signing of the preliminary contract, the owner passed away. The asset became part of a British estate requiring a Moroccan exequatur - a lengthy and blocking procedure.">
+       data-nl="In 2024 hebben wij een bod van 1 400 000€ ingediend en laten aanvaarden door de Britse eigenaar van Tigmi. De overeenkomst was mondeling maar vast. Vóór de ondertekening van de verkoopbelofte overleed de eigenaar. Het actief belandde in een Britse nalatenschap die een Marokkaanse exequatur vereist."
+       data-en="In 2024, we submitted and had accepted a purchase offer of €1,400,000 from the British owner of Tigmi. The agreement was verbal but firm. Before the signing of the preliminary contract, the owner passed away. The asset became part of a British estate requiring a Moroccan exequatur.">
       En 2024, nous avons soumis et fait accepter une offre d'achat à 1 400 000€ par le propriétaire britannique de Tigmi. Avant la signature de la promesse de vente, le propriétaire est décédé. Procédure d'exequatur engagée.
     </p>
     <p data-fr="Quatorze mois plus tard, les héritiers - les fils du propriétaire - nous ont recontactés. Ils souhaitent conclure la vente. Notre position est simple et non négociable : nous ne paierons pas un euro de plus que l'offre acceptée par leur père. 1 400 000€, point."
-       data-nl="Veertien maanden later hebben de erfgenamen - de zonen van de eigenaar - opnieuw contact met ons opgenomen. Ze willen de verkoop afsluiten. Onze positie is eenvoudig en niet onderhandelbaar : we betalen geen euro meer dan het bod dat door hun vader was aanvaard. 1 400 000€, punt." data-en="Fourteen months later, the heirs - the owner's sons - contacted us again. They wish to conclude the sale. Our position is simple and non-negotiable: we will not pay one euro more than the offer accepted by their father. €1,400,000, full stop.">
+       data-nl="Veertien maanden later hebben de erfgenamen - de zonen van de eigenaar - opnieuw contact met ons opgenomen. Ze willen de verkoop afsluiten. Onze positie is eenvoudig en niet onderhandelbaar : we betalen geen euro meer dan het bod dat door hun vader was aanvaard. 1 400 000€, punt."
+       data-en="Fourteen months later, the heirs - the owner's sons - contacted us again. They wish to conclude the sale. Our position is simple and non-negotiable: we will not pay one euro more than the offer accepted by their father. €1,400,000, full stop.">
       Quatorze mois plus tard, les fils nous recontactent. Notre position est non négociable : 1 400 000€, l'offre acceptée par leur père. Pas un euro de plus.
     </p>
 
@@ -264,7 +141,8 @@
           data-nl="1 400 000€ nu.<br>200 000€ later,<br>door het bedrijf zelf."
           data-en="€1,400,000 now.<br>€200,000 later,<br>paid by the company itself.">1 400 000€ maintenant.<br>200 000€ plus tard,<br>par l'entreprise elle-même.</h2>
       <p class="bs" data-fr="Le prix d'acquisition est structuré en deux composantes. La première : 1 400 000€ au closing, financés intégralement par les fonds propres des investisseurs réunis dans TB Invest SAS. Aucune dette bancaire. L'hôtel est acquis sans levier. La seconde : 200 000€ provisionnés pour la société d'exploitation (SARL), payables 24 mois après l'ouverture, depuis la trésorerie de l'hôtel lui-même. Ces 200 000€ ne sont pas un appel de fonds supplémentaire aux investisseurs. Ils sont payés par l'hôtel, sur ses propres revenus, après 2 années d'exploitation. Pour les investisseurs, le coût effectif d'entrée est 1 400 000€, pas 1 600 000€."
-                data-nl="De aankoopprijs is in twee componenten gestructureerd. De eerste : 1 400 000€ bij het sluiten, volledig gefinancierd door de eigen middelen van de investeerders via TB Invest SAS. Geen bancaire schuld. Het hotel wordt schuldvrij verworven. De tweede : 200 000€ voorzien voor de exploitatievennootschap (SARL), betaalbaar 24 maanden na de opening, vanuit de kasstroom van het hotel zelf. Deze 200 000€ zijn geen bijkomende kapitaaloproep aan de investeerders. Ze worden betaald door het hotel, uit zijn eigen inkomsten. Voor de investeerders bedragen de effectieve instapkosten 1 400 000€, niet 1 600 000€." data-en="The acquisition price is structured in two components. The first: €1,400,000 at closing, funded entirely by investor equity pooled through TB Invest SAS. No bank debt. The hotel is acquired debt-free. The second: €200,000 provisioned for the operating company (SARL), payable 24 months after opening, from the hotel's own cash flow. These €200,000 are not an additional capital call to investors. They are paid by the hotel, from its own revenues, after 2 years of operation. For investors, the effective entry cost is €1,400,000, not €1,600,000.">
+                data-nl="De aankoopprijs is in twee componenten gestructureerd. De eerste : 1 400 000€ bij het sluiten, volledig gefinancierd door de eigen middelen van de investeerders via TB Invest SAS. Geen bancaire schuld. Het hotel wordt schuldvrij verworven. De tweede : 200 000€ voorzien voor de exploitatievennootschap (SARL), betaalbaar 24 maanden na de opening, vanuit de kasstroom van het hotel zelf. Voor de investeerders bedragen de effectieve instapkosten 1 400 000€, niet 1 600 000€."
+                data-en="The acquisition price is structured in two components. The first: €1,400,000 at closing, funded entirely by investor equity pooled through TB Invest SAS. No bank debt. The hotel is acquired debt-free. The second: €200,000 provisioned for the operating company (SARL), payable 24 months after opening, from the hotel's own cash flow. These €200,000 are not an additional capital call to investors. They are paid by the hotel, from its own revenues, after 2 years of operation. For investors, the effective entry cost is €1,400,000, not €1,600,000.">
         1 400 000€ au closing - financés intégralement par les fonds propres des investisseurs via TB Invest SAS, sans dette bancaire. 200 000€ payables 24 mois après l'ouverture, depuis la trésorerie de l'hôtel. Aucun appel de fonds supplémentaire aux investisseurs pour cette composante.
       </p>
     </div>
@@ -291,8 +169,12 @@
       <div class="wf-row">
         <div class="wf-num">→</div>
         <div>
+          <!-- CHANGE 3: capital call updated to "par part" -->
           <div class="wf-title" data-fr="Clôture investisseurs - Appel de fonds 1" data-nl="Afsluiting investeerders - Kapitaaloproep 1" data-en="Investor Close - Capital Call 1">Clôture investisseurs - Appel de fonds 1</div>
-          <div class="wf-desc" data-fr="50% de la mise (125 000€/invest.) versés à la signature de la promesse de vente." data-nl="50% van de inleg (125 000€/invest.) gestort bij ondertekening van de verkoopbelofte." data-en="50% of the investment (€125,000/investor) paid at signing of the preliminary contract.">125 000€ / investisseur à la promesse.</div>
+          <div class="wf-desc"
+               data-fr="50% de la mise par part (125 000€/part) versés à la signature de la promesse de vente."
+               data-nl="50% van de inleg per aandeel (125 000€/aandeel) gestort bij ondertekening van de verkoopbelofte."
+               data-en="50% of the investment per slot (€125,000/slot) paid at signing of the preliminary contract.">125 000€ / part à la promesse.</div>
         </div>
         <div class="wf-amount" data-fr="M+2 à M+4" data-nl="M+2 tot M+4" data-en="M+2 to M+4">M+2 à M+4</div>
       </div>
@@ -308,7 +190,10 @@
         <div class="wf-num">→</div>
         <div>
           <div class="wf-title" data-fr="Appel de fonds 2 - Démarrage chantier" data-nl="Kapitaaloproep 2 - Start werf" data-en="Capital Call 2 - Construction Start">Appel de fonds 2 - Démarrage chantier</div>
-          <div class="wf-desc" data-fr="50% restants de la mise (125 000€/invest.) à l'attestation architecte de démarrage des travaux." data-nl="Resterende 50% van de inleg (125 000€/invest.) bij de architectenattest van de start der werken." data-en="Remaining 50% of investment (€125,000/investor) upon architect's confirmation of works commencement.">125 000€ / investisseur au démarrage travaux.</div>
+          <div class="wf-desc"
+               data-fr="50% restants de la mise par part (125 000€/part) à l'attestation architecte de démarrage des travaux."
+               data-nl="Resterende 50% van de inleg per aandeel (125 000€/aandeel) bij de architectenattest van de start der werken."
+               data-en="Remaining 50% of investment per slot (€125,000/slot) upon architect's confirmation of works commencement.">125 000€ / part au démarrage travaux.</div>
         </div>
         <div class="wf-amount" data-fr="M+6" data-nl="M+6" data-en="M+6">M+6</div>
       </div>
@@ -332,14 +217,18 @@
   </div>
 </div>
 
+<!-- CHANGE 4: deferred payment — already correct, kept verbatim -->
 <div class="data-row" style="margin-top:12px;">
   <div class="data-label" data-fr="Le paiement différé de 200 000€ aux vendeurs (an 2)" data-nl="De uitgestelde betaling van 200 000€ aan verkopers (jaar 2)" data-en="Deferred €200,000 Payment to Sellers (Year 2)">Le paiement différé de 200 000€ aux vendeurs (an 2)</div>
-  <div class="data-val" data-fr="Ce paiement est une charge opérationnelle de la SARL, réglée depuis le chiffre d'affaires avant calcul du résultat net. Il ne concurrence pas votre retour préférentiel - il se situe en amont. En aucun cas ce paiement ne peut suspendre, réduire ou retarder votre preferred. Si le résultat net après ce paiement est insuffisant pour couvrir le preferred, le solde est cumulatif et versé en priorité l'exercice suivant."
-       data-nl="Deze betaling is een operationele kost van de SARL, betaald uit de omzet vóór berekening van het nettoresultaat. Het concurreert niet met uw preferentieel rendement - het bevindt zich stroomopwaarts. Deze betaling kan uw preferred in geen geval opschorten, verminderen of vertragen. Als het nettoresultaat na deze betaling onvoldoende is om het preferred te dekken, is het saldo cumulatief en wordt het het volgende boekjaar als prioriteit uitbetaald."
-       data-en="This payment is an operating expense of the SARL, paid from revenue before net result is calculated. It does not compete with your preferred return - it sits upstream. Under no circumstances can this payment suspend, reduce, or delay your preferred. If net result after this payment is insufficient to cover preferred, the balance is cumulative and paid in priority the following year.">Ce paiement est une charge opérationnelle de la SARL, réglée depuis le chiffre d'affaires avant calcul du résultat net. Il ne concurrence pas votre retour préférentiel - il se situe en amont. En aucun cas ce paiement ne peut suspendre, réduire ou retarder votre preferred. Si le résultat net après ce paiement est insuffisant pour couvrir le preferred, le solde est cumulatif et versé en priorité l'exercice suivant.</div>
+  <div class="data-val"
+       data-fr="Le paiement différé de 200 000€ aux vendeurs est une charge d'exploitation de la SARL, réglée depuis les revenus de l'hôtel avant le calcul du résultat net. Il n'a aucune interaction avec votre retour préférentiel : il se situe en amont de la cascade de distribution et n'entre en concurrence avec aucune distribution. Votre retour préférentiel de 25 000€ par part et par an est prélevé sur le résultat net, en première priorité avant toute autre distribution aux investisseurs ou à Leroy Brothers. Si le résultat net d'une année donnée est insuffisant pour régler le préférentiel en totalité, le solde impayé est cumulatif et devient la première obligation de l'année suivante, avant toute autre distribution. Leroy Brothers perçoit zéro dividende tant que l'ensemble des arriérés préférentiels cumulés n'est pas soldé. Le préférentiel n'est pas garanti contre une perte d'exploitation. Il est garanti en priorité sur toutes les autres distributions issues de tout résultat net positif."
+       data-nl="De uitgestelde betaling van 200 000€ aan de verkopers is een operationele kost van de SARL, vereffend uit de hotelinkomsten vóór berekening van het nettoresultaat. Ze heeft geen enkele interactie met uw preferentieel rendement: ze bevindt zich stroomopwaarts van de distributiecascade en concurreert met geen enkele uitkering. Uw preferentieel rendement van 25 000€ per aandeel per jaar wordt uitbetaald uit het nettoresultaat, met absolute voorrang boven alle andere uitkeringen aan investeerders of aan Leroy Brothers. Als het nettoresultaat in een bepaald jaar onvoldoende is om het preferentieel volledig te vereffenen, is het onbetaalde saldo cumulatief en wordt het de eerste verplichting van het volgende jaar, vóór alle andere uitkeringen. Leroy Brothers ontvangt nul dividend zolang alle gecumuleerde preferentiele achterstallen niet volledig zijn vereffend. Het preferentieel is niet gegarandeerd tegen een bedrijfsverlies. Het is gegarandeerd in prioriteit boven alle andere uitkeringen uit elk positief nettoresultaat."
+       data-en="The deferred payment of 200,000 EUR to the sellers is an operating expense of the SARL, settled from hotel revenue before net result is calculated. It has no interaction with your preferred return: it sits upstream of the distribution waterfall and does not compete with any distribution. Your preferred return of 25,000 EUR per slot per year is paid from net result, in first priority before any other distribution to investors or to Leroy Brothers. If net result in any given year is insufficient to pay the preferred in full, the unpaid balance is cumulative and becomes the first obligation of the following year, ahead of all other distributions. Leroy Brothers receives zero dividend until all cumulative preferred arrears are settled in full. The preferred is not guaranteed against an operating loss. It is guaranteed in priority over all other distributions from any positive net result.">
+    Le paiement différé de 200 000€ aux vendeurs est une charge d'exploitation de la SARL, réglée depuis les revenus de l'hôtel avant le calcul du résultat net. Il n'a aucune interaction avec votre retour préférentiel : il se situe en amont de la cascade de distribution et n'entre en concurrence avec aucune distribution. Votre retour préférentiel de 25 000€ par part et par an est prélevé sur le résultat net, en première priorité avant toute autre distribution aux investisseurs ou à Leroy Brothers. Si le résultat net d'une année donnée est insuffisant pour régler le préférentiel en totalité, le solde impayé est cumulatif et devient la première obligation de l'année suivante, avant toute autre distribution. Leroy Brothers perçoit zéro dividende tant que l'ensemble des arriérés préférentiels cumulés n'est pas soldé. Le préférentiel n'est pas garanti contre une perte d'exploitation. Il est garanti en priorité sur toutes les autres distributions issues de tout résultat net positif.
+  </div>
 </div>
 
-<!-- ══════ STAFF / SERVICE CHARGE SECTION ══════ -->
+<!-- ══════ STAFF ══════ -->
 <div class="rule" style="margin-top:40px;"></div>
 <div class="sl" data-fr="La rémunération et la qualité de service" data-nl="Verloning en servicekwaliteit" data-en="Compensation and Service Quality">La rémunération et la qualité de service</div>
 <h2 data-fr="Comment 27 personnes délivrent un service Aman<br>sans ballonner la masse salariale."
@@ -348,39 +237,44 @@
 
 <div class="two">
   <div>
-    <p data-fr="La question de la qualité de service à 350-395€ d'ADR avec 27 ETP est légitime. La réponse est dans la structure de rémunération, pas dans le nombre de têtes. Nous mettons en place un système en deux étages : un tronc de service transparent collecté auprès des clients, et un bonus de performance lié aux scores de satisfaction."
-       data-nl="De vraag naar servicekwaliteit bij 350-395€ ADR met 27 VTE is legitiem. Het antwoord zit in de verloningsstructuur, niet in het aantal mensen. Wij implementeren een tweeledig systeem: een transparante servicecharge bij de gasten, en een prestatiebon gekoppeld aan tevredenheidsscores."
-       data-en="The question of service quality at a €350-€395 ADR with 27 FTE is legitimate. The answer lies in compensation structure, not headcount. We implement a two-tier system: a transparent service charge collected from guests, and a performance bonus linked to satisfaction scores.">
-      La question est légitime. La réponse est dans la structure de rémunération, pas dans le nombre de têtes. Un tronc de service transparent collecté auprès des clients, plus un bonus de performance lié aux scores de satisfaction.
+    <p data-fr="La question de la qualité de service avec 27 ETP est légitime. La réponse est dans la structure de rémunération, pas dans le nombre de têtes. Nous mettons en place un système en deux étages : un tronc de service transparent collecté auprès des clients, et un bonus de performance lié aux scores de satisfaction."
+       data-nl="De vraag naar servicekwaliteit met 27 VTE is legitiem. Het antwoord zit in de verloningsstructuur, niet in het aantal mensen. Wij implementeren een tweeledig systeem: een transparante servicecharge bij de gasten, en een prestatiebon gekoppeld aan tevredenheidsscores."
+       data-en="The question of service quality with 27 FTE is legitimate. The answer lies in compensation structure, not headcount. We implement a two-tier system: a transparent service charge collected from guests, and a performance bonus linked to satisfaction scores.">
+      La question est légitime. La réponse est dans la structure de rémunération, pas dans le nombre de têtes.
     </p>
 
     <div class="ab">
       <div class="sl" data-fr="Le Tronc de service, 4% sur le CA hébergement" data-nl="De servicecharge, 4% op de verblijfsomzet" data-en="Service Charge, 4% of Accommodation Revenue">Le Tronc, 4% sur le CA hébergement</div>
-      <p class="bs" data-fr="4% du chiffre d'affaires hébergement est collecté auprès des clients sous forme de frais de service, à l'instar de la pratique standard marocaine et internationale. Cette somme est redistribuée intégralement et mensuellement à l'ensemble des 27 collaborateurs. Elle ne transite pas par le compte de résultat de l'hôtel et n'affecte pas le GOP. Elle est affichée de manière transparente sur toutes les factures."
-                data-nl="4% van de verblijfsomzet wordt bij gasten geïnd als servicecharge, conform de standaard Marokkaanse en internationale praktijk. Dit bedrag wordt volledig en maandelijks herverdeeld aan alle 27 medewerkers. Het loopt niet via de resultatenrekening van het hotel en heeft geen invloed op de GOP. Het wordt transparant vermeld op alle facturen."
-                data-en="4% of accommodation revenue is collected from guests as a service charge, in line with standard Moroccan and international practice. This amount is fully redistributed monthly to all 27 team members. It does not pass through the hotel's P&L and does not affect GOP. It is displayed transparently on all invoices.">
-        4% du CA hébergement collecté auprès des clients, redistribué intégralement à tous les collaborateurs. Ne transite pas par le GOP. Affiché sur toutes les factures.
+      <p class="bs" data-fr="4% du chiffre d'affaires hébergement est collecté auprès des clients sous forme de frais de service. Cette somme est redistribuée intégralement et mensuellement à l'ensemble des 27 collaborateurs. Elle ne transite pas par le compte de résultat de l'hôtel et n'affecte pas le GOP. Elle est affichée de manière transparente sur toutes les factures."
+                data-nl="4% van de verblijfsomzet wordt bij gasten geïnd als servicecharge. Dit bedrag wordt volledig en maandelijks herverdeeld aan alle 27 medewerkers. Het loopt niet via de resultatenrekening van het hotel en heeft geen invloed op de GOP."
+                data-en="4% of accommodation revenue is collected from guests as a service charge. This amount is fully redistributed monthly to all 27 team members. It does not pass through the hotel's P&L and does not affect GOP. It is displayed transparently on all invoices.">
+        4% du CA hébergement collecté auprès des clients, redistribué intégralement à tous les collaborateurs. Ne transite pas par le GOP.
       </p>
+      <!-- CHANGE 5: tronc amounts recalculated at new ADR 400/445 -->
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--pise-light);margin-top:12px;">
         <div style="background:var(--sky);padding:14px 16px;">
-          <div style="font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cedar);margin-bottom:4px;" data-fr="Y1, 60% TO, 350€ ADR" data-nl="J1, 60% bezetting, 350€ ADR" data-en="Y1, 60% Occupancy, €350 ADR">Y1, 60% TO, 350€ ADR</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--pise);">92 000€/an</div>
-          <div style="font-size:12px;color:var(--pise-mid);margin-top:2px;" data-fr="soit 284€/mois/collaborateur" data-nl="ofwel 284€/maand/medewerker" data-en="or €284/month/employee">soit 284€/mois/collaborateur</div>
+          <div style="font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cedar);margin-bottom:4px;"
+               data-fr="Y1, 60% TO, 400€ ADR" data-nl="J1, 60% bezetting, 400€ ADR" data-en="Y1, 60% Occupancy, €400 ADR">Y1, 60% TO, 400€ ADR</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--pise);">105 000€/an</div>
+          <div style="font-size:12px;color:var(--pise-mid);margin-top:2px;"
+               data-fr="soit 324€/mois/collaborateur" data-nl="ofwel 324€/maand/medewerker" data-en="or €324/month/employee">soit 324€/mois/collaborateur</div>
         </div>
         <div style="background:var(--sky);padding:14px 16px;">
-          <div style="font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cedar);margin-bottom:4px;" data-fr="Stabilisé, 75% TO, 395€ ADR" data-nl="Gestabiliseerd, 75% bezetting, 395€ ADR" data-en="Stabilized, 75% Occupancy, €395 ADR">Stabilisé, 75% TO, 395€ ADR</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--pise);">129 760€/an</div>
-          <div style="font-size:12px;color:var(--pise-mid);margin-top:2px;" data-fr="soit 400€/mois/collaborateur" data-nl="ofwel 400€/maand/medewerker" data-en="or €400/month/employee">soit 400€/mois/collaborateur</div>
+          <div style="font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cedar);margin-bottom:4px;"
+               data-fr="Stabilisé, 75% TO, 445€ ADR" data-nl="Gestabiliseerd, 75% bezetting, 445€ ADR" data-en="Stabilized, 75% Occupancy, €445 ADR">Stabilisé, 75% TO, 445€ ADR</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--pise);">146 000€/an</div>
+          <div style="font-size:12px;color:var(--pise-mid);margin-top:2px;"
+               data-fr="soit 451€/mois/collaborateur" data-nl="ofwel 451€/maand/medewerker" data-en="or €451/month/employee">soit 451€/mois/collaborateur</div>
         </div>
       </div>
     </div>
 
     <div class="ab2" style="margin-top:16px;">
       <div class="sl" data-fr="Le Bonus de performance, scores de satisfaction" data-nl="De prestatiebon, tevredenheidsscores" data-en="Performance Bonus, Satisfaction Scores">Le Bonus de performance</div>
-      <p class="bs" data-fr="Un pool de bonus annuel de 5% de la masse salariale de base (~9 400€) est déclenché si le score moyen de satisfaction client dépasse 4,6/5,0 sur TripAdvisor, Google et les audits SLH. Distribué trimestriellement, à parts égales entre tous les collaborateurs. Si le staff sait qu'un avis 5 étoiles impacte directement sa rémunération mensuelle, il délivre un service de luxe sans qu'on ait besoin de l'encadrer en permanence."
-                data-nl="Een jaarlijkse bonuspool van 5% van de basisloonmassa (~9 400€) wordt geactiveerd als de gemiddelde klanttevredenheidsscore boven 4,6/5,0 uitkomt op TripAdvisor, Google en SLH-audits. Driemaandelijks verdeeld, in gelijke delen aan alle medewerkers. Als het personeel weet dat een 5-sterrenrecensie hun maandloon direct beïnvloedt, leveren ze luxeservice zonder constante begeleiding."
-                data-en="An annual bonus pool of 5% of base payroll (~€9,400) is triggered if average customer satisfaction exceeds 4.6/5.0 on TripAdvisor, Google and SLH audits. Distributed quarterly, equally among all team members. When staff know a 5-star review directly affects their monthly pay, they deliver luxury service without constant supervision.">
-        Pool de ~9 400€ déclenché si score moyen 4,6/5,0. Distribution trimestrielle à parts égales. Le lien direct entre avis client et salaire crée l'excellence sans supervision permanente.
+      <p class="bs" data-fr="Un pool de bonus annuel de 5% de la masse salariale de base (~9 400€) est déclenché si le score moyen de satisfaction client dépasse 4,6/5,0 sur TripAdvisor, Google et les audits SLH. Distribué trimestriellement, à parts égales entre tous les collaborateurs."
+                data-nl="Een jaarlijkse bonuspool van 5% van de basisloonmassa (~9 400€) wordt geactiveerd als de gemiddelde klanttevredenheidsscore boven 4,6/5,0 uitkomt."
+                data-en="An annual bonus pool of 5% of base payroll (~€9,400) is triggered if average customer satisfaction exceeds 4.6/5.0 on TripAdvisor, Google and SLH audits. Distributed quarterly, equally among all team members.">
+        Pool de ~9 400€ déclenché si score moyen 4,6/5,0. Distribution trimestrielle à parts égales.
       </p>
     </div>
   </div>
@@ -388,13 +282,14 @@
   <div>
     <div class="ab">
       <div class="sl" data-fr="La rémunération totale vs marché local" data-nl="Totale verloning vs lokale markt" data-en="Total Compensation vs Local Market">Rémunération totale vs marché local</div>
+      <!-- CHANGE 6: compensation table updated with new tronc -->
       <div class="data-row" style="border-top:1px solid var(--cedar);">
         <div class="data-label" data-fr="Salaire de base moyen" data-nl="Gemiddeld basissalaris" data-en="Average Base Salary">Salaire de base moyen</div>
         <div class="data-val">6 200 MAD/mois (579€)</div>
       </div>
       <div class="data-row">
         <div class="data-label" data-fr="Tronc Y1 moyen" data-nl="Gemiddelde tronc J1" data-en="Average Y1 Service Charge">Tronc Y1</div>
-        <div class="data-val">+284€/mois</div>
+        <div class="data-val">+324€/mois</div>
       </div>
       <div class="data-row">
         <div class="data-label" data-fr="Bonus satisfaction (si atteint)" data-nl="Tevredenheidsbonus (indien bereikt)" data-en="Satisfaction Bonus (if reached)">Bonus satisfaction</div>
@@ -402,16 +297,19 @@
       </div>
       <div class="data-row" style="border-bottom:none;">
         <div class="data-label" data-fr="Total Y1 effectif" data-nl="Effectief totaal J1" data-en="Effective Y1 Total">Total Y1 effectif</div>
-        <div class="data-val" style="color:var(--cedar);font-weight:400;" data-fr="~892€/mois soit ~9 580 MAD, très au-dessus de la moyenne pré-séisme du douar (3 000-4 000 MAD)" data-nl="~892€/maand ofwel ~9 580 MAD, ruim boven het pre-aardbeving gemiddelde van het dorp (3 000-4 000 MAD)" data-en="~€892/month, i.e. ~9,580 MAD, well above the pre-earthquake village average (3,000-4,000 MAD)">~892€/mois soit ~9 580 MAD, très au-dessus de la moyenne locale</div>
+        <div class="data-val" style="color:var(--cedar);font-weight:400;"
+             data-fr="~932€/mois soit ~10 010 MAD, très au-dessus de la moyenne pré-séisme du douar (3 000-4 000 MAD)"
+             data-nl="~932€/maand ofwel ~10 010 MAD, ruim boven het pre-aardbeving gemiddelde van het dorp (3 000-4 000 MAD)"
+             data-en="~€932/month, i.e. ~10,010 MAD, well above the pre-earthquake village average (3,000-4,000 MAD)">~932€/mois soit ~10 010 MAD, très au-dessus de la moyenne locale</div>
       </div>
     </div>
 
     <div class="ab2" style="margin-top:16px;">
       <div class="sl" data-fr="Impact sur le GOP, quasi nul" data-nl="Impact op GOP, quasi nul" data-en="Impact on GOP, Near Zero">Impact sur le GOP</div>
-      <p class="bs" data-fr="Le tronc est collecté auprès des clients, il ne passe pas par le compte de résultat et n'affecte pas le GOP. Seul le bonus de performance (~9 400€/an) est une charge réelle, représentant moins de 0,5% du GOP en année 1. La qualité de service est achetée sans impact matériel sur les marges opérationnelles."
-                data-nl="De servicecharge wordt bij gasten geïnd, loopt niet via de resultatenrekening en heeft geen invloed op de GOP. Alleen de prestatiebon (~9 400€/jaar) is een reële kost, goed voor minder dan 0,5% van de GOP in jaar 1. Servicekwaliteit wordt gekocht zonder materiële impact op de operationele marges."
-                data-en="The service charge is collected from guests, does not pass through the P&L and does not affect GOP. Only the performance bonus (~€9,400/year) is a real expense, representing less than 0.5% of GOP in Year 1. Service quality is bought without material impact on operating margins.">
-        Le tronc ne touche pas le GOP. Seul le bonus (~9 400€/an) est une charge, soit moins de 0,5% du GOP. Qualité de service achetée sans impact sur les marges.
+      <p class="bs" data-fr="Le tronc est collecté auprès des clients, il ne passe pas par le compte de résultat et n'affecte pas le GOP. Seul le bonus de performance (~9 400€/an) est une charge réelle, représentant moins de 0,5% du GOP en année 1."
+                data-nl="De servicecharge wordt bij gasten geïnd, loopt niet via de resultatenrekening en heeft geen invloed op de GOP. Alleen de prestatiebon (~9 400€/jaar) is een reële kost, goed voor minder dan 0,5% van de GOP in jaar 1."
+                data-en="The service charge is collected from guests, does not pass through the P&L and does not affect GOP. Only the performance bonus (~€9,400/year) is a real expense, representing less than 0.5% of GOP in Year 1.">
+        Le tronc ne touche pas le GOP. Seul le bonus (~9 400€/an) est une charge, soit moins de 0,5% du GOP.
       </p>
     </div>
 
@@ -419,7 +317,7 @@
       <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;line-height:1.65;color:var(--sky);"
          data-fr="« Un collaborateur de Toile Blanche Marrakech gagne très au-dessus de la moyenne du douar. Il sait que chaque avis client impacte sa rémunération. Il travaille à 5 minutes à pied de chez lui. Ce n'est pas un contrat de travail. C'est un projet de vie. »"
          data-nl="« Een medewerker van Toile Blanche Marrakech verdient ruim boven het dorpsgemiddelde. Hij weet dat elke gastrecensie zijn verloning beïnvloedt. Hij werkt op 5 minuten wandelen van zijn huis. Dit is geen arbeidscontract. Het is een levensproject. »"
-         data-en="“A Toile Blanche Marrakech team member earns well above the village average. They know every guest review impacts their pay. They work 5 minutes from home. This is not just employment. It is a life project.”">
+         data-en=""A Toile Blanche Marrakech team member earns well above the village average. They know every guest review impacts their pay. They work 5 minutes from home. This is not just employment. It is a life project."">
         « Un collaborateur de Toile Blanche Marrakech gagne très au-dessus de la moyenne du douar. Il sait que chaque avis client impacte sa rémunération. Il travaille à 5 minutes à pied de chez lui. Ce n'est pas un contrat de travail. C'est un projet de vie. »
       </p>
     </div>
@@ -429,23 +327,33 @@
 <!-- ══════ 2. EQUIPE ══════ -->
 <div class="rule" style="margin-top:40px;"></div>
 <div class="sl" data-fr="2. L'équipe - Au-delà de Gilles et Tahnee" data-nl="2. Het team - Verder dan Gilles en Tahnee" data-en="2. The Team - Beyond Gilles and Tahnee">2. L'équipe - Au-delà de Gilles et Tahnee</div>
-<h2 data-fr="27 ETP. Qui sont-ils ?"
-    data-nl="27 VTE. Wie zijn het?" data-en="27 FTE. Who Are They?">27 ETP. Qui sont-ils ?</h2>
+<h2 data-fr="27 ETP. Qui sont-ils ?" data-nl="27 VTE. Wie zijn het?" data-en="27 FTE. Who Are They?">27 ETP. Qui sont-ils ?</h2>
 
 <div class="two-eq">
   <div>
     <div class="ab">
       <div class="sl" data-fr="Direction - Nommés" data-nl="Directie - Benoemd" data-en="Management - Appointed">Direction - Nommés</div>
-      <div class="data-row"><div class="data-label" data-fr="Directeur Général" data-nl="Algemeen Directeur" data-en="General Manager">Directeur Général</div>
-        <div class="data-val" data-fr="Gilles Leroy. Cofondateur Toile Blanche Saint-Paul de Vence. Présent minimum 2 semaines/mois pendant le chantier, 3 semaines/mois en phase opérationnelle." data-nl="Gilles Leroy. Mede-oprichter Toile Blanche Saint-Paul de Vence. Aanwezig minimum 2 weken/maand tijdens de werf, 3 weken/maand in operationele fase." data-en="Gilles Leroy. Co-founder of Toile Blanche Saint-Paul de Vence. Present minimum 2 weeks/month during construction, 3 weeks/month in operational phase.">Gilles Leroy. Cofondateur TB Saint-Paul. 2 sem./mois chantier, 3 sem./mois opérationnel.</div></div>
-      <div class="data-row"><div class="data-label" data-fr="Front Office Manager" data-nl="Front Office Manager" data-en="Front Office Manager">Front Office Manager</div>
-        <div class="data-val" data-fr="Tahnee Boucique. Design d'intérieur (Glenn Sestig Architects). Directrice CAB Fondation Saint-Paul. Présente 3 semaines/mois en phase opérationnelle." data-nl="Tahnee Boucique. Interieurontwerp (Glenn Sestig Architects). Directeur CAB Fondation Saint-Paul. Aanwezig 3 weken/maand in operationele fase." data-en="Tahnee Boucique. Interior design (Glenn Sestig Architects). Director of CAB Fondation Saint-Paul. Present 3 weeks/month in operational phase.">Tahnee Boucique. Design d'intérieur. Directrice CAB Fondation. Présente 3 sem./mois en phase opérationnelle.</div></div>
+      <div class="data-row">
+        <div class="data-label" data-fr="Directeur Général" data-nl="Algemeen Directeur" data-en="General Manager">Directeur Général</div>
+        <div class="data-val"
+             data-fr="Gilles Leroy. Cofondateur Toile Blanche Saint-Paul de Vence. Relocalisé à Marrakech pour la durée du projet. Présent minimum 2 semaines/mois pendant le chantier, 3 semaines/mois en phase opérationnelle."
+             data-nl="Gilles Leroy. Mede-oprichter Toile Blanche Saint-Paul de Vence. Geherlocaliseerd naar Marrakech voor de duur van het project. Aanwezig minimum 2 weken/maand tijdens de werf, 3 weken/maand in operationele fase."
+             data-en="Gilles Leroy. Co-founder of Toile Blanche Saint-Paul de Vence. Relocating to Marrakech for the project duration. Present minimum 2 weeks/month during construction, 3 weeks/month in operational phase.">Gilles Leroy. Cofondateur TB Saint-Paul. Relocalisé à Marrakech. 2 sem./mois chantier, 3 sem./mois opérationnel.</div>
+      </div>
+      <div class="data-row">
+        <div class="data-label" data-fr="Front Office Manager" data-nl="Front Office Manager" data-en="Front Office Manager">Front Office Manager</div>
+        <div class="data-val"
+             data-fr="Tahnee Boucique. Design d'intérieur (Glenn Sestig Architects). Directrice CAB Fondation Saint-Paul. Relocalisée à Marrakech. Présente 3 semaines/mois en phase opérationnelle."
+             data-nl="Tahnee Boucique. Interieurontwerp (Glenn Sestig Architects). Directeur CAB Fondation Saint-Paul. Geherlocaliseerd naar Marrakech. Aanwezig 3 weken/maand in operationele fase."
+             data-en="Tahnee Boucique. Interior design (Glenn Sestig Architects). Director of CAB Fondation Saint-Paul. Relocating to Marrakech. Present 3 weeks/month in operational phase.">Tahnee Boucique. Design d'intérieur. Directrice CAB Fondation. Relocalisée à Marrakech. Présente 3 sem./mois en phase opérationnelle.</div>
+      </div>
     </div>
     <div class="ab2">
       <div class="sl" data-fr="Directeur local - Recrutement en cours" data-nl="Lokale directeur - Werving loopt" data-en="Local Director - Recruitment Underway">Directeur local - Recrutement en cours</div>
-      <p class="bs" data-fr="Profil : bilingue FR/EN/AR, expérience confirmée hôtellerie de luxe au Maroc, réseau local Haouz, connaissance des fournisseurs et du bassin d'emploi local. Recrutement supervisé par Gilles Leroy. Sélection finale par les Leroy Brothers avant l'ouverture. Salarié de la SARL marocaine. Ce poste est prioritaire dans la roadmap - idéalement recruté avant le démarrage du chantier pour assurer le suivi quotidien des travaux."
-                data-nl="Profiel : tweetalig FR/EN/AR, bewezen ervaring in luxe-hotellerie in Marokko, lokaal netwerk Haouz, kennis van leveranciers en lokale arbeidsmarkt. Werving onder toezicht van Gilles Leroy. Definitieve selectie door de Leroy Brothers vóór de opening. In dienst van de Marokkaanse SARL. Deze functie heeft prioriteit in de roadmap - idealiter aangeworven vóór de start van de werf." data-en="Profile: bilingual FR/EN/AR, confirmed luxury hotel experience in Morocco, local Haouz network, knowledge of suppliers and local employment pool. Recruitment supervised by Gilles Leroy. Final selection by the Leroy Brothers before opening. This position is a priority recruitment before construction starts to ensure day-to-day site supervision.">
-        Bilingue FR/EN/AR. Luxe Maroc. Réseau local Haouz. Recruté avant démarrage chantier. Salarié SARL marocaine.
+      <p class="bs" data-fr="Profil : bilingue FR/EN/AR, expérience confirmée hôtellerie de luxe au Maroc, réseau local Haouz. Recrutement supervisé par Gilles Leroy. Ce poste est prioritaire - idéalement recruté avant le démarrage du chantier. Dans l'intervalle, Gilles et Tahnee assurent la direction locale à temps plein depuis Marrakech."
+                data-nl="Profiel : tweetalig FR/EN/AR, bewezen ervaring in luxe-hotellerie in Marokko, lokaal netwerk Haouz. Werving onder toezicht van Gilles Leroy. Deze functie heeft prioriteit - idealiter aangeworven vóór de start van de werf. In de tussentijd verzekeren Gilles en Tahnee de lokale directie voltijds vanuit Marrakech."
+                data-en="Profile: bilingual FR/EN/AR, confirmed luxury hotel experience in Morocco, local Haouz network. Recruitment supervised by Gilles Leroy. This position is a priority - ideally recruited before construction starts. In the interim, Gilles and Tahnee provide full-time local management from Marrakech.">
+        Bilingue FR/EN/AR. Luxe Maroc. Réseau local Haouz. Recruté avant démarrage chantier. Dans l'intervalle, Gilles et Tahnee assurent la direction locale à temps plein.
       </p>
     </div>
   </div>
@@ -454,11 +362,11 @@
     <div class="block-grid" style="grid-template-columns:1fr;">
       <div class="bc">
         <div class="bl" data-fr="Hébergement - 12 ETP" data-nl="Verblijf - 12 VTE" data-en="Accommodation - 12 FTE">Hébergement - 12 ETP</div>
-        <div class="bd" data-fr="Gouvernantes et femmes de chambre (8), réception et concierge (3), directeur local (1). Personnel 100% local, formé aux standards Toile Blanche." data-nl="Gouvernantes en kamermeisjes (8), receptie en conciërge (3), lokale directeur (1). 100% lokaal personeel, opgeleid in Toile Blanche-standaarden." data-en="Housekeepers and chambermaids (8), reception and concierge (3), local director (1). 100% local staff, trained to Toile Blanche standards.">Gouvernantes (8), réception (3), directeur local (1).</div>
+        <div class="bd" data-fr="Gouvernantes et femmes de chambre (8), réception et concierge (3), directeur local (1). Personnel 100% local, formé aux standards Toile Blanche." data-nl="Gouvernantes en kamermeisjes (8), receptie en conciërge (3), lokale directeur (1). 100% lokaal personeel." data-en="Housekeepers and chambermaids (8), reception and concierge (3), local director (1). 100% local staff, trained to Toile Blanche standards.">Gouvernantes (8), réception (3), directeur local (1).</div>
       </div>
       <div class="bc">
         <div class="bl" data-fr="Restaurant, bar et cuisine - 8 ETP" data-nl="Restaurant, bar en keuken - 8 VTE" data-en="Restaurant, Bar & Kitchen - 8 FTE">Restaurant, bar et cuisine - 8 ETP</div>
-        <div class="bd" data-fr="Chef cuisinier (1), brigade cuisine (3), service salle et terrasse (3), barman (1). Sourcing alimentaire local prioritaire - producteurs du Haouz." data-nl="Chefkok (1), keukenploeg (3), bediening zaal en terras (3), barman (1). Prioritaire lokale voedselinkoop - producenten van de Haouz." data-en="Head chef (1), kitchen brigade (3), dining room and terrace service (3), barman (1). Priority local food sourcing - Haouz producers.">Chef + brigade (4), service (3), bar (1). Sourcing local prioritaire.</div>
+        <div class="bd" data-fr="Chef cuisinier (1), brigade cuisine (3), service salle et terrasse (3), barman (1). Table d'hôtes le soir - format résidentiel. Sourcing alimentaire local prioritaire - producteurs du Haouz." data-nl="Chefkok (1), keukenploeg (3), bediening zaal en terras (3), barman (1). Table d'hôtes formaat. Prioritaire lokale voedselinkoop - producenten van de Haouz." data-en="Head chef (1), kitchen brigade (3), dining room and terrace service (3), barman (1). Table d'hotes format - residential dining. Priority local food sourcing - Haouz producers.">Chef + brigade (4), service (3), bar (1). Table d'hôtes le soir. Sourcing local prioritaire.</div>
       </div>
       <div class="bc">
         <div class="bl" data-fr="Spa, hammam et entretien - 7 ETP" data-nl="Spa, hammam en onderhoud - 7 VTE" data-en="Spa, Hammam & Maintenance - 7 FTE">Spa, hammam et entretien - 7 ETP</div>
@@ -466,8 +374,9 @@
       </div>
     </div>
     <div class="ab2" style="margin-top:16px;">
-      <p class="bs" data-fr="Les équipes actuelles de Tigmi constituent la base de recrutement prioritaire pour Toile Blanche Marrakech. Les employés qui acceptent les nouvelles conditions (salaires revalorisés, formation TB Standards, contrats CNSS conformes) sont intégrés en priorité. C'est à la fois une question d'éthique et une question opérationnelle - ils connaissent le lieu."
-                data-nl="De huidige Tigmi-teams vormen de prioritaire wervingsbasis voor Toile Blanche Marrakech. Medewerkers die de nieuwe voorwaarden aanvaarden (verhoogde lonen, TB Standards-opleiding, conforme CNSS-contracten) worden als prioriteit geïntegreerd. Dit is zowel een ethische als een operationele kwestie - zij kennen de plek." data-en="The current Tigmi teams form the priority recruitment base for Toile Blanche Marrakech. Employees who accept the new terms (improved salaries, TB Standards training, compliant CNSS contracts) are integrated as a priority. This is both an ethical question and an operational one - they know the place.">
+      <p class="bs" data-fr="Les équipes actuelles de Tigmi constituent la base de recrutement prioritaire pour Toile Blanche Marrakech. Les employés qui acceptent les nouvelles conditions (salaires revalorisés, formation TB Standards, contrats CNSS conformes) sont intégrés en priorité."
+                data-nl="De huidige Tigmi-teams vormen de prioritaire wervingsbasis voor Toile Blanche Marrakech. Medewerkers die de nieuwe voorwaarden aanvaarden worden als prioriteit geïntegreerd."
+                data-en="The current Tigmi teams form the priority recruitment base for Toile Blanche Marrakech. Employees who accept the new terms are integrated as a priority.">
         Équipes Tigmi actuelles = base de recrutement prioritaire. Salaires revalorisés, formation TB Standards, CNSS conformes.
       </p>
     </div>
@@ -477,34 +386,41 @@
 <!-- ══════ 3. LICENCE ALCOOL ══════ -->
 <div class="rule" style="margin-top:40px;"></div>
 <div class="sl" data-fr="3. La licence alcool - Impact réel" data-nl="3. De alcoholvergunning - Werkelijke impact" data-en="3. Alcohol Licence - Real Impact">3. La licence alcool - Impact réel</div>
-<h2 data-fr="6 à 9 mois de transfert.<br>Impact opérationnel : zéro."
-    data-nl="6 tot 9 maanden overdracht.<br>Operationele impact : nul."
-    data-en="6 to 9 months transfer time.<br>Operational impact: zero.">6 à 9 mois de transfert.<br>Impact opérationnel : zéro.</h2>
+<h2 data-fr="6 à 9 mois de transfert.<br>Impact opérationnel : zéro." data-nl="6 tot 9 maanden overdracht.<br>Operationele impact : nul." data-en="6 to 9 months transfer time.<br>Operational impact: zero.">6 à 9 mois de transfert.<br>Impact opérationnel : zéro.</h2>
 
 <div class="two">
   <div>
     <p data-fr="La licence alcool est actuellement au nom du propriétaire décédé. Son transfert aux nouveaux propriétaires est une procédure administrative marocaine qui prend 6 à 9 mois. Pendant cette période, la vente d'alcool est légalement suspendue."
-       data-nl="De alcoholvergunning staat momenteel op naam van de overleden eigenaar. De overdracht aan de nieuwe eigenaars is een Marokkaanse administratieve procedure die 6 tot 9 maanden duurt. Gedurende deze periode is de verkoop van alcohol wettelijk opgeschort." data-en="The alcohol licence is currently in the name of the deceased owner. Its transfer to the new owners is a Moroccan administrative procedure taking 6 to 9 months. During this period, the sale of alcohol is legally suspended.">
+       data-nl="De alcoholvergunning staat momenteel op naam van de overleden eigenaar. De overdracht aan de nieuwe eigenaars is een Marokkaanse administratieve procedure die 6 tot 9 maanden duurt. Gedurende deze periode is de verkoop van alcohol wettelijk opgeschort."
+       data-en="The alcohol licence is currently in the name of the deceased owner. Its transfer to the new owners is a Moroccan administrative procedure taking 6 to 9 months. During this period, the sale of alcohol is legally suspended.">
       La licence alcool est au nom du propriétaire décédé. Transfert : 6 à 9 mois de procédure.
     </p>
     <div class="ab">
       <div class="sl" data-fr="Pourquoi l'impact est nul" data-nl="Waarom de impact nul is" data-en="Why the Impact is Zero">Pourquoi l'impact est nul</div>
-      <p class="bs" data-fr="La procédure de transfert est initiée dès la signature de l'acte d'acquisition. L'hôtel ferme ensuite 12 mois pour rénovation complète - pendant lesquels aucun client n'est accueilli et aucun revenu bar n'est attendu. La licence sera transférée et opérationnelle avant l'ouverture de Toile Blanche Marrakech. Il n'y a aucune période de perte de revenus bar pour les investisseurs." data-nl="De overdrachtsprocedure wordt gestart bij de ondertekening van de aankoopakte. Het hotel sluit vervolgens 12 maanden voor volledige renovatie - waarbij geen gasten worden ontvangen en geen barinkomsten worden verwacht. De vergunning zal worden overgedragen en operationeel zijn vóór de opening van Toile Blanche Marrakech. Er is geen periode van verlies van barinkomsten voor de investeerders." data-en="The transfer procedure is initiated upon signing the acquisition deed. The hotel then closes for 12 months of full renovation - during which no guests are hosted and no bar revenue is expected. The licence will be transferred and operational before the opening of Toile Blanche Marrakech. There is no period of lost bar revenue for investors.">
+      <p class="bs" data-fr="La procédure de transfert est initiée dès la signature de l'acte d'acquisition. L'hôtel ferme ensuite 12 mois pour rénovation complète - pendant lesquels aucun client n'est accueilli et aucun revenu bar n'est attendu. La licence sera transférée et opérationnelle avant l'ouverture de Toile Blanche Marrakech. Il n'y a aucune période de perte de revenus bar pour les investisseurs."
+                data-nl="De overdrachtsprocedure wordt gestart bij de ondertekening van de aankoopakte. Het hotel sluit vervolgens 12 maanden voor volledige renovatie. De vergunning zal worden overgedragen en operationeel zijn vóór de opening van Toile Blanche Marrakech. Er is geen periode van verlies van barinkomsten voor de investeerders."
+                data-en="The transfer procedure is initiated upon signing the acquisition deed. The hotel then closes for 12 months of full renovation - during which no guests are hosted and no bar revenue is expected. The licence will be transferred and operational before the opening of Toile Blanche Marrakech. There is no period of lost bar revenue for investors.">
         Procédure initiée à la signature. Hôtel fermé 12 mois pendant le transfert. Licence opérationnelle avant l'ouverture. Aucune perte de revenus bar pour les investisseurs.
       </p>
     </div>
     <div class="ab2">
       <div class="sl" data-fr="Provision dans le budget" data-nl="Provisie in het budget" data-en="Budget Provision">Provision dans le budget</div>
-      <p class="bs" data-fr="40 000€ provisionnés dans le budget d'acquisition pour couvrir les honoraires notariaux, les frais administratifs et l'éventuel accompagnement juridique du transfert de licence. Ce montant est intégré dans l'enveloppe totale de 3 268 000€." data-nl="40 000€ voorzien in het acquisitiebudget voor notariskosten, administratiekosten en eventuele juridische begeleiding van de vergunningsoverdracht. Dit bedrag is opgenomen in het totale budget van 3 268 000€." data-en="€40,000 provisioned in the acquisition budget to cover notarial fees, administrative costs and potential legal assistance for the licence transfer. This amount is included in the total €3,268,000 envelope.">
-        40 000€ provisionnés dans le budget - intégré dans 3 268 000€. Frais notariaux et administratifs couverts.
+      <!-- CHANGE 7: budget reference updated to 3 448 000 -->
+      <p class="bs"
+         data-fr="40 000€ provisionnés dans le budget d'acquisition pour couvrir les honoraires notariaux, les frais administratifs et l'éventuel accompagnement juridique du transfert de licence. Ce montant est intégré dans l'enveloppe totale de 3 448 000€."
+         data-nl="40 000€ voorzien in het acquisitiebudget voor notariskosten, administratiekosten en eventuele juridische begeleiding van de vergunningsoverdracht. Dit bedrag is opgenomen in het totale budget van 3 448 000€."
+         data-en="€40,000 provisioned in the acquisition budget to cover notarial fees, administrative costs and potential legal assistance for the licence transfer. This amount is included in the total €3,448,000 envelope.">
+        40 000€ provisionnés dans le budget - intégré dans 3 448 000€. Frais notariaux et administratifs couverts.
       </p>
     </div>
   </div>
   <div>
     <div class="ab2">
       <div class="sl" data-fr="Le bar - Un levier de revenu important" data-nl="De bar - Een belangrijke inkomstenhendel" data-en="The Bar - A Key Revenue Driver">Le bar - Un levier de revenu important</div>
-      <p class="bs" data-fr="Le bar à cocktails avec cheminée est l'un des espaces à plus haute marge de l'hôtel. La clientèle Toile Blanche - européenne, habituée au vin naturel, sensible à la qualité du service - génère un revenu bar significatif. La carte proposera des vins naturels marocains (cépages locaux du Haouz et de Meknès), des spiritueux sélectionnés et une carte cocktails courte mais précise. Le bar ouvre dès la première nuit d'exploitation." data-nl="De cocktailbar met open haard is een van de hoogste margeruimtes van het hotel. De Toile Blanche-clientèle - Europees, gewend aan natuurwijn, gevoelig voor servicekwaliteit - genereert een significante baromzet. De kaart biedt Marokkaanse natuurwijnen, geselecteerde sterke dranken en een korte maar precieze cocktailkaart. De bar opent op de eerste exploitatienacht." data-en="The fireplace cocktail bar is one of the hotel's highest-margin spaces. Toile Blanche's clientele - European, accustomed to natural wine, attentive to service quality - generates significant bar revenue. The menu will offer Moroccan natural wines (local varietals from the Haouz and Meknès), selected spirits and a short but precise cocktail list. The bar opens from the first night of operation.">
-        Bar cocktails haute marge. Vins naturels marocains, carte courte et précise. Opérationnel dès la première nuit.
+      <p class="bs" data-fr="Le bar à cocktails avec cheminée est l'un des espaces à plus haute marge de l'hôtel. La clientèle Toile Blanche - européenne, habituée au vin naturel, sensible à la qualité du service - génère un revenu bar significatif. La carte proposera des vins naturels marocains (cépages locaux du Haouz et de Meknès), des spiritueux sélectionnés et une carte cocktails courte mais précise. Les repas (petit-déjeuner, déjeuner et dîner) sont inclus dans le tarif chambre. Bar et vins sont facturés séparément, à la carte."
+                data-nl="De cocktailbar met open haard is een van de hoogste margeruimtes van het hotel. De kaart biedt Marokkaanse natuurwijnen, geselecteerde sterke dranken en een korte maar precieze cocktailkaart. Maaltijden (ontbijt, lunch en diner) zijn inbegrepen in de kamerprijs. Bar en wijnen worden apart, à la carte, aangerekend."
+                data-en="The fireplace cocktail bar is one of the hotel's highest-margin spaces. Toile Blanche's clientele generates significant bar revenue. The menu offers Moroccan natural wines, selected spirits and a short but precise cocktail list. Meals (breakfast, lunch and dinner) are included in the room rate. Bar and wines are charged separately, à la carte.">
+        Bar cocktails haute marge. Vins naturels marocains, carte courte et précise. Repas inclus dans le tarif chambre. Bar et vins à la carte.
       </p>
     </div>
   </div>
@@ -513,20 +429,20 @@
 <!-- ══════ 4. CNSS ══════ -->
 <div class="rule" style="margin-top:40px;"></div>
 <div class="sl" data-fr="4. L'audit CNSS - Passif social de l'ancienne gestion" data-nl="4. De CNSS-audit - Sociaal passief van het vroegere beheer" data-en="4. CNSS Audit - Social Liability from Previous Management">4. L'audit CNSS - Passif social de l'ancienne gestion</div>
-<h2 data-fr="30 000€ provisionnés.<br>Un risque connu, chiffré, couvert."
-    data-nl="30 000€ voorzien.<br>Een gekend, gekwantificeerd en gedekt risico."
-    data-en="€30,000 provisioned.<br>A known, quantified and covered risk.">30 000€ provisionnés.<br>Un risque connu, chiffré, couvert.</h2>
+<h2 data-fr="30 000€ provisionnés.<br>Un risque connu, chiffré, couvert." data-nl="30 000€ voorzien.<br>Een gekend, gekwantificeerd en gedekt risico." data-en="€30,000 provisioned.<br>A known, quantified and covered risk.">30 000€ provisionnés.<br>Un risque connu, chiffré, couvert.</h2>
 
 <div class="two">
   <div>
-    <p data-fr="La CNSS est la Caisse Nationale de Sécurité Sociale marocaine. Tout employeur est légalement tenu de déclarer et de cotiser pour l'ensemble de ses salariés. Dans les petits hôtels marocains gérés de façon informelle - ce qui est le cas de Tigmi sous son ancienne direction - il est fréquent que des salariés aient été partiellement ou totalement non déclarés, ou que des cotisations aient été payées en dessous des bases légales."
-       data-nl="De CNSS is de Marokkaanse Nationale Sociale Zekerheidskas. Elke werkgever is wettelijk verplicht om al zijn werknemers aan te geven en bij te dragen. In kleine Marokkaanse hotels met informeel beheer - zoals Tigmi onder zijn vroegere directie - komt het vaak voor dat werknemers gedeeltelijk of volledig niet zijn aangegeven, of dat bijdragen onder de wettelijke basis zijn betaald." data-en="CNSS is the Moroccan National Social Security Fund. Every employer is legally required to register and contribute for all their employees. In small Moroccan hotels managed informally - as was the case with Tigmi under its previous management - it is common for some employees to not have been correctly registered, or for contributions to have been paid below the legal base.">
+    <p data-fr="La CNSS est la Caisse Nationale de Sécurité Sociale marocaine. Dans les petits hôtels marocains gérés de façon informelle - ce qui est le cas de Tigmi sous son ancienne direction - il est fréquent que des salariés aient été partiellement ou totalement non déclarés, ou que des cotisations aient été payées en dessous des bases légales."
+       data-nl="De CNSS is de Marokkaanse Nationale Sociale Zekerheidskas. In kleine Marokkaanse hotels met informeel beheer - zoals Tigmi onder zijn vroegere directie - komt het vaak voor dat werknemers niet correct zijn aangegeven."
+       data-en="CNSS is the Moroccan National Social Security Fund. In small Moroccan hotels managed informally - as was the case with Tigmi - it is common for some employees to not have been correctly registered.">
       La CNSS est la sécurité sociale marocaine. Risque courant dans les petits hôtels à gestion informelle.
     </p>
     <div class="ab2">
       <div class="sl" data-fr="Ce que nous faisons" data-nl="Wat wij doen" data-en="What We Do">Ce que nous faisons</div>
-      <p class="bs" data-fr="Un audit CNSS indépendant est commandé simultanément à la due diligence, avant la signature de l'acte définitif. Il porte sur les 5 derniers exercices de la SARL. Si un passif est identifié, il est défalqué du prix d'acquisition ou réglé directement par les vendeurs avant closing. La provision de 30 000€ dans notre budget est le tampon pour les cas résiduels post-closing que l'audit n'aurait pas détectés. Dans notre expérience des acquisitions hôtelières marocaines, ce montant couvre 95% des situations."
-                data-nl="Een onafhankelijke CNSS-audit wordt gelijktijdig met de due diligence besteld, vóór de ondertekening van de definitieve akte. Ze heeft betrekking op de laatste 5 boekjaren van de SARL. Als een passief wordt vastgesteld, wordt het afgetrokken van de aankoopprijs of rechtstreeks door de verkopers vóór de afsluiting geregeld. De provisie van 30 000€ in ons budget is de buffer voor residuele gevallen na de afsluiting die de audit niet heeft gedetecteerd." data-en="An independent CNSS audit is commissioned simultaneously with the due diligence, before signing the final deed. It covers the last 5 financial years of the SARL. If a liability is identified, it is deducted from the acquisition price or settled directly by the sellers before closing. Based on experience with Moroccan hotel acquisitions, this provision covers 95% of situations.">
+      <p class="bs" data-fr="Un audit CNSS indépendant est commandé simultanément à la due diligence, avant la signature de l'acte définitif. Il porte sur les 5 derniers exercices de la SARL. Si un passif est identifié, il est défalqué du prix d'acquisition ou réglé directement par les vendeurs avant closing. La provision de 30 000€ dans notre budget est le tampon pour les cas résiduels post-closing."
+                data-nl="Een onafhankelijke CNSS-audit wordt gelijktijdig met de due diligence besteld, vóór de ondertekening van de definitieve akte. Ze heeft betrekking op de laatste 5 boekjaren van de SARL. Als een passief wordt vastgesteld, wordt het afgetrokken van de aankoopprijs of rechtstreeks door de verkopers vóór de afsluiting geregeld."
+                data-en="An independent CNSS audit is commissioned simultaneously with the due diligence, before signing the final deed. It covers the last 5 financial years of the SARL. If a liability is identified, it is deducted from the acquisition price or settled directly by the sellers before closing.">
         Audit CNSS commandé en due diligence. Passif identifié = défalqué du prix ou réglé par vendeurs. 30 000€ = buffer résiduel post-closing.
       </p>
     </div>
@@ -534,8 +450,9 @@
   <div>
     <div class="alert-box">
       <div class="sl" data-fr="L'opportunité de l'audit" data-nl="De opportuniteit van de audit" data-en="The Audit Opportunity">L'opportunité de l'audit</div>
-      <p class="bs" data-fr="L'audit CNSS est aussi une protection pour nous. En achetant les parts de la SARL (et non les actifs), nous reprenons théoriquement les obligations passées. L'audit nous permet de nettoyer le passif avant le closing - après quoi la SARL repart sur des bases conformes, avec des contrats CNSS corrects pour tous les employés de Toile Blanche Marrakech. C'est une protection à long terme, pas seulement une précaution d'achat."
-                data-nl="De CNSS-audit is ook een bescherming voor ons. Door de aandelen van de SARL te kopen (en niet de activa), nemen we theoretisch de vroegere verplichtingen over. De audit stelt ons in staat het passief vóór de afsluiting op te ruimen - waarna de SARL opnieuw op conforme basis werkt, met correcte CNSS-contracten voor alle medewerkers van Toile Blanche Marrakech. Dit is een bescherming op lange termijn." data-en="The CNSS audit is also a protection for us. By buying the SARL shares (rather than the assets), we theoretically assume past obligations. The audit allows us to clean up liabilities before closing - after which the SARL restarts on a compliant basis, with correct CNSS contracts from the first employee. This is long-term protection, not just a purchase precaution.">
+      <p class="bs" data-fr="L'audit CNSS est aussi une protection pour nous. En achetant les parts de la SARL, nous reprenons théoriquement les obligations passées. L'audit nous permet de nettoyer le passif avant le closing - après quoi la SARL repart sur des bases conformes, avec des contrats CNSS corrects pour tous les employés de Toile Blanche Marrakech."
+                data-nl="De CNSS-audit is ook een bescherming voor ons. Door de aandelen van de SARL te kopen nemen we theoretisch de vroegere verplichtingen over. De audit stelt ons in staat het passief vóór de afsluiting op te ruimen."
+                data-en="The CNSS audit is also a protection for us. By buying the SARL shares, we theoretically assume past obligations. The audit allows us to clean up liabilities before closing - after which the SARL restarts on a compliant basis with correct CNSS contracts for all employees.">
         En achetant les parts SARL, on reprend le passif historique. L'audit le nettoie avant closing. Toile Blanche repart sur des bases 100% conformes.
       </p>
     </div>
@@ -545,23 +462,25 @@
 <!-- ══════ 5. ASSURANCE CHANTIER ══════ -->
 <div class="rule" style="margin-top:40px;"></div>
 <div class="sl" data-fr="5. L'assurance pendant la rénovation" data-nl="5. De verzekering tijdens de renovatie" data-en="5. Insurance During Renovation">5. L'assurance pendant la rénovation</div>
-<h2 data-fr="12 mois de chantier.<br>3 268 000€ d'actif.<br>Couvert."
-    data-nl="12 maanden werf.<br>3 268 000€ aan activa.<br>Gedekt."
-    data-en="12 months of works.<br>€3,268,000 in assets.<br>Covered.">12 mois de chantier.<br>3 268 000€ d'actif.<br>Couvert.</h2>
+
+<!-- CHANGE 8: headline updated to 3 448 000 -->
+<h2 data-fr="12 mois de chantier.<br>3 448 000€ d'actif.<br>Couvert."
+    data-nl="12 maanden werf.<br>3 448 000€ aan activa.<br>Gedekt."
+    data-en="12 months of works.<br>€3,448,000 in assets.<br>Covered.">12 mois de chantier.<br>3 448 000€ d'actif.<br>Couvert.</h2>
 
 <div class="two-eq">
   <div>
     <div class="data-row">
       <div class="data-label" data-fr="Police CAR" data-nl="CAR-polis" data-en="CAR Policy">Police CAR</div>
-      <div class="data-val" data-fr="Contractors All Risk - police tous risques chantier couvrant l'ensemble des travaux de rénovation. Valeur assurée : coût total du chantier (1 500 000€ rénovation). Souscrite auprès d'un assureur marocain agréé, exigible avant tout démarrage des travaux." data-nl="Contractors All Risk - alrisicobeleid werf dat alle renovatiewerken dekt. Verzekerde waarde : totale kosten van de werf (1 500 000€ renovatie). Afgesloten bij een erkende Marokkaanse verzekeraar, vereist vóór de start van de werken." data-en="Contractors All Risk - all-risk construction policy covering all renovation works. Insured value: total construction cost (€1,500,000 renovation). Taken out with an approved Moroccan insurer, required before any work begins.">Police tous risques chantier. 1 500 000€. Avant tout démarrage des travaux.</div>
+      <div class="data-val" data-fr="Contractors All Risk - police tous risques chantier couvrant l'ensemble des travaux de rénovation. Souscrite auprès d'un assureur marocain agréé, exigible avant tout démarrage des travaux." data-nl="Contractors All Risk - alrisicobeleid werf dat alle renovatiewerken dekt. Afgesloten bij een erkende Marokkaanse verzekeraar, vereist vóór de start van de werken." data-en="Contractors All Risk - all-risk construction policy covering all renovation works. Taken out with an approved Moroccan insurer, required before any work begins.">Police tous risques chantier. Avant tout démarrage des travaux.</div>
     </div>
     <div class="data-row">
       <div class="data-label" data-fr="Assurance immeuble" data-nl="Gebouwverzekering" data-en="Building Insurance">Assurance immeuble</div>
-      <div class="data-val" data-fr="Police multirisque immeuble couvrant le bâtiment existant pendant les travaux - incendie, dommages aux tiers, catastrophe naturelle (y compris risque sismique post-2023). Valeur assurée : valeur de remplacement du bâtiment." data-nl="Multirisico gebouwenpolis die het bestaande gebouw tijdens de werken dekt - brand, schade aan derden, natuurramp (inclusief seismisch risico na 2023). Verzekerde waarde : vervangingswaarde van het gebouw." data-en="Multi-risk property policy covering the existing building during works - fire, third-party damage, natural disaster (including post-2023 seismic risk). Insured value: building replacement value.">Incendie, tiers, séisme. Valeur de remplacement.</div>
+      <div class="data-val" data-fr="Police multirisque immeuble couvrant le bâtiment existant pendant les travaux - incendie, dommages aux tiers, catastrophe naturelle (y compris risque sismique post-2023)." data-nl="Multirisico gebouwenpolis die het bestaande gebouw tijdens de werken dekt - brand, schade aan derden, natuurramp (inclusief seismisch risico na 2023)." data-en="Multi-risk property policy covering the existing building during works - fire, third-party damage, natural disaster (including post-2023 seismic risk).">Incendie, tiers, séisme. Valeur de remplacement.</div>
     </div>
     <div class="data-row">
       <div class="data-label" data-fr="RC maître d'ouvrage" data-nl="RC bouwheer" data-en="Client Civil Liability">RC maître d'ouvrage</div>
-      <div class="data-val" data-fr="Responsabilité civile du maître d'ouvrage couvrant les accidents et dommages aux tiers survenant sur le chantier. Obligatoire en droit marocain. Souscrite par la SARL marocaine." data-nl="Burgerlijke aansprakelijkheid van de bouwheer voor ongevallen en schade aan derden op de werf. Verplicht in Marokkaans recht. Afgesloten door de Marokkaanse SARL." data-en="Client civil liability covering accidents and third-party damage occurring on the construction site. Mandatory under Moroccan law. Taken out by the Moroccan SARL.">Obligatoire en droit marocain. Souscrite par la SARL.</div>
+      <div class="data-val" data-fr="Responsabilité civile du maître d'ouvrage couvrant les accidents et dommages aux tiers survenant sur le chantier. Obligatoire en droit marocain." data-nl="Burgerlijke aansprakelijkheid van de bouwheer voor ongevallen en schade aan derden op de werf. Verplicht in Marokkaans recht." data-en="Client civil liability covering accidents and third-party damage occurring on the construction site. Mandatory under Moroccan law.">Obligatoire en droit marocain. Souscrite par la SARL.</div>
     </div>
     <div class="data-row" style="border-bottom:none;">
       <div class="data-label" data-fr="Coût estimé" data-nl="Geschatte kost" data-en="Estimated Cost">Coût estimé</div>
@@ -571,8 +490,9 @@
   <div>
     <div class="ab">
       <div class="sl" data-fr="Après l'ouverture" data-nl="Na de opening" data-en="After Opening">Après l'ouverture</div>
-      <p class="bs" data-fr="À l'ouverture, les polices chantier sont remplacées par une assurance hôtelière multirisque permanente couvrant : bâtiment et contenu (valeur assurée totale ~3M€), responsabilité civile exploitation, perte d'exploitation (180 jours minimum), protection juridique. Cette assurance est une charge d'exploitation intégrée dans le compte de résultat prévisionnel."
-                data-nl="Bij de opening worden de werfpolissen vervangen door een permanente multirisico-hotelverzekering die dekt : gebouw en inhoud (totaal verzekerde waarde ~3M€), operationele aansprakelijkheid, bedrijfsonderbreking (minimum 180 dagen), rechtsbescherming. Deze verzekering is een exploitatievergoeding opgenomen in de voorlopige resultatenrekening." data-en="At opening, construction policies are replaced by a permanent multi-risk hotel insurance covering: building and contents (total insured value ~€3M), operational civil liability, business interruption (minimum 180 days), legal protection. This insurance is an operating cost included in the projected profit and loss account.">
+      <p class="bs" data-fr="À l'ouverture, les polices chantier sont remplacées par une assurance hôtelière multirisque permanente couvrant : bâtiment et contenu (valeur assurée totale ~3M€), responsabilité civile exploitation, perte d'exploitation (180 jours minimum), protection juridique."
+                data-nl="Bij de opening worden de werfpolissen vervangen door een permanente multirisico-hotelverzekering die dekt : gebouw en inhoud (~3M€), operationele aansprakelijkheid, bedrijfsonderbreking (minimum 180 dagen), rechtsbescherming."
+                data-en="At opening, construction policies are replaced by a permanent multi-risk hotel insurance covering: building and contents (~€3M), operational civil liability, business interruption (minimum 180 days), legal protection.">
         Après ouverture : multirisque hôtelière permanente. Bâtiment + contenu ~3M€, RC exploitation, perte d'exploitation 180j.
       </p>
     </div>
@@ -582,40 +502,38 @@
 <!-- ══════ 6. AUDIT SISMIQUE ══════ -->
 <div class="rule" style="margin-top:40px;"></div>
 <div class="sl" data-fr="6. L'audit sismique - Condition non négociable" data-nl="6. De seismische audit - Niet-onderhandelbare voorwaarde" data-en="6. Seismic Audit - Non-Negotiable Condition">6. L'audit sismique - Condition non négociable</div>
-<h2 data-fr="Pas signé avant les résultats.<br>Sans exception."
-    data-nl="Niet getekend vóór de resultaten.<br>Zonder uitzondering."
-    data-en="Not Signed Before Results.<br>Without Exception.">Pas signé avant les résultats.<br>Sans exception.</h2>
+<h2 data-fr="Pas signé avant les résultats.<br>Sans exception." data-nl="Niet getekend vóór de resultaten.<br>Zonder uitzondering." data-en="Not Signed Before Results.<br>Without Exception.">Pas signé avant les résultats.<br>Sans exception.</h2>
 
 <div class="two">
   <div>
     <p data-fr="Le séisme Al Haouz du 8 septembre 2023 (magnitude 6,8) a eu son épicentre à proximité directe de Tagadirt. Le Certificat de Conformité de Tigmi confirme que le bâtiment est conforme à ses plans d'origine - il ne confirme pas sa résistance parasismique selon les codes post-2023, plus stricts."
-       data-nl="De aardbeving Al Haouz van 8 september 2023 (magnitude 6,8) had zijn epicentrum in de directe nabijheid van Tagadirt. Het Conformiteitscertificaat van Tigmi bevestigt dat het gebouw conform zijn oorspronkelijke plannen is - het bevestigt niet zijn seismische weerstand volgens de strengere post-2023 codes." data-en="The Al Haouz earthquake of 8 September 2023 (magnitude 6.8) had its epicentre in close proximity to Tagadirt. Tigmi's Certificate of Conformity confirms that the building complies with its original plans - it does not confirm its seismic resistance according to post-2023 codes, which are stricter.">
+       data-nl="De aardbeving Al Haouz van 8 september 2023 (magnitude 6,8) had zijn epicentrum in de directe nabijheid van Tagadirt. Het Conformiteitscertificaat van Tigmi bevestigt dat het gebouw conform zijn oorspronkelijke plannen is - niet zijn seismische weerstand."
+       data-en="The Al Haouz earthquake of 8 September 2023 (magnitude 6.8) had its epicentre in close proximity to Tagadirt. Tigmi's Certificate of Conformity confirms compliance with its original plans - not seismic resistance under post-2023 codes.">
       Le CC confirme la conformité aux plans, pas la résistance parasismique post-2023.
     </p>
     <div class="ab">
       <div class="sl" data-fr="Le processus" data-nl="Het proces" data-en="The Process">Le processus</div>
       <div class="data-row"><div class="data-label" data-fr="Qui commande" data-nl="Wie bestelt" data-en="Who commissions">Qui commande</div>
         <div class="data-val" data-fr="Nous, acheteurs - et non les vendeurs. L'audit est indépendant et ne peut pas être fourni par les héritiers." data-nl="Wij, kopers - en niet de verkopers. De audit is onafhankelijk en kan niet worden geleverd door de erfgenamen." data-en="We, the buyers - not the sellers. The audit is independent and cannot be provided by the heirs.">Nous, acheteurs. Indépendant des vendeurs.</div></div>
-      <div class="data-row"><div class="data-label" data-fr="Qui paie" data-nl="Wie betaalt" data-en="Who pays">Qui paie</div>
-        <div class="data-val" data-fr="Les acheteurs - coût estimé 3 000 à 6 000€, intégré dans les frais de due diligence." data-nl="De kopers - geschatte kost 3 000 tot 6 000€, opgenomen in de due diligence-kosten." data-en="The buyers - estimated cost €3,000 to €6,000, included in the due diligence fees.">Les acheteurs. ~3 000 à 6 000€ en due diligence.</div></div>
       <div class="data-row"><div class="data-label" data-fr="Qui réalise" data-nl="Wie voert uit" data-en="Who carries it out">Qui réalise</div>
         <div class="data-val" data-fr="Bureau d'Études certifié marocain, spécialisé en génie parasismique. Rapport en 4 à 6 semaines." data-nl="Gecertificeerd Marokkaans ingenieursbureau, gespecialiseerd in seismische techniek. Rapport in 4 tot 6 weken." data-en="Certified Moroccan engineering firm, specialised in seismic engineering. Report within 4 to 6 weeks.">Bureau d'Études certifié. Rapport 4 à 6 semaines.</div></div>
       <div class="data-row" style="border-bottom:none;"><div class="data-label" data-fr="Résultat si insuffisant" data-nl="Resultaat indien onvoldoende" data-en="Result if Insufficient">Résultat si insuffisant</div>
-        <div class="data-val" data-fr="Nous ne signons pas. Ou nous déduisons le coût de mise aux normes du prix d'acquisition - levier de négociation supplémentaire avec les héritiers." data-nl="We tekenen niet. Of we trekken de kosten van de normstelling af van de aankoopprijs - bijkomende onderhandelshendel met de erfgenamen." data-en="We do not sign. Or we deduct the cost of compliance from the acquisition price - an additional negotiation lever with the heirs.">Nous ne signons pas - ou déduction du prix. Levier de négociation.</div></div>
+        <div class="data-val" data-fr="Nous ne signons pas. Ou nous déduisons le coût de mise aux normes du prix d'acquisition - levier de négociation supplémentaire avec les héritiers." data-nl="We tekenen niet. Of we trekken de kosten van de normstelling af van de aankoopprijs." data-en="We do not sign. Or we deduct the cost of compliance from the acquisition price - an additional negotiation lever with the heirs.">Nous ne signons pas - ou déduction du prix. Levier de négociation.</div></div>
     </div>
   </div>
   <div>
     <div class="ab2">
       <div class="sl" data-fr="Ce que l'audit couvre" data-nl="Wat de audit dekt" data-en="What the Audit Covers">Ce que l'audit couvre</div>
       <ul class="ul">
-        <li data-fr="Résistance structurelle des bâtiments principaux (fondations, murs porteurs, toiture)" data-nl="Structurele weerstand van de hoofdgebouwen (funderingen, draagmuren, dak)" data-en="Structural resistance of the main buildings (foundations, load-bearing walls, roof)">Résistance structurelle des bâtiments principaux</li>
-        <li data-fr="État des murs périmétriques et annexes (constructions légères, staff quarters)" data-nl="Staat van de omheiningsmuren en bijgebouwen" data-en="Condition of perimeter walls and outbuildings (light constructions, staff quarters)">État des murs périmétriques et annexes</li>
+        <li data-fr="Résistance structurelle des bâtiments principaux (fondations, murs porteurs, toiture)" data-nl="Structurele weerstand van de hoofdgebouwen" data-en="Structural resistance of the main buildings (foundations, load-bearing walls, roof)">Résistance structurelle des bâtiments principaux</li>
+        <li data-fr="État des murs périmétriques et annexes" data-nl="Staat van de omheiningsmuren en bijgebouwen" data-en="Condition of perimeter walls and outbuildings">État des murs périmétriques et annexes</li>
         <li data-fr="Conformité aux nouveaux codes parasismiques marocains post-2023" data-nl="Conformiteit met de nieuwe Marokkaanse seismische codes na 2023" data-en="Compliance with new post-2023 Moroccan seismic codes">Conformité aux nouveaux codes parasismiques post-2023</li>
-        <li data-fr="Recommandations de renforcement si nécessaire - coût intégré dans le budget rénovation" data-nl="Versterkingsaanbevelingen indien nodig - kost opgenomen in renovatiebudget" data-en="Reinforcement recommendations if necessary - cost included in renovation budget">Recommandations de renforcement - coût intégré dans rénovation</li>
+        <li data-fr="Recommandations de renforcement si nécessaire - coût intégré dans le budget rénovation" data-nl="Versterkingsaanbevelingen indien nodig" data-en="Reinforcement recommendations if necessary - cost included in renovation budget">Recommandations de renforcement - coût intégré dans rénovation</li>
       </ul>
       <div class="qb" style="margin-top:12px;">
         <p data-fr="Le budget rénovation intègre déjà 50 000€ pour la mise aux normes sismique des murs périmétriques et annexes - sur la base d'une estimation prudente avant audit. Si l'audit révèle un besoin supérieur, c'est un motif de renégociation du prix avec les héritiers."
-           data-nl="Het renovatiebudget omvat al 50 000€ voor de seismische normstelling van de omheiningsmuren en bijgebouwen - op basis van een voorzichtige schatting vóór de audit. Als de audit een hogere behoefte onthult, is dit een reden om de prijs met de erfgenamen te heronderhandelen." data-en="The renovation budget already includes €50,000 for seismic compliance of perimeter walls and outbuildings - based on a prudent estimate ahead of the audit. If the audit reveals a greater need, this is grounds for renegotiating the price with the heirs.">
+           data-nl="Het renovatiebudget omvat al 50 000€ voor de seismische normstelling. Als de audit een hogere behoefte onthult, is dit een reden om de prijs met de erfgenamen te heronderhandelen."
+           data-en="The renovation budget already includes €50,000 for seismic compliance. If the audit reveals a greater need, this is grounds for renegotiating the price with the heirs.">
           50 000€ déjà provisionnés dans le budget rénovation. Si besoin supérieur : renégociation du prix.
         </p>
         <div class="qs" data-fr="Budget rénovation, poste infrastructure" data-nl="Renovatiebudget, post infrastructuur" data-en="Renovation Budget - Infrastructure Line">Budget rénovation, poste infrastructure</div>
@@ -624,8 +542,7 @@
   </div>
 </div>
 
-<!-- ══════ 8. BREAK-EVEN ══════ -->
-<!-- ══════ ASSET VALUE SECTION ══════ -->
+<!-- ══════ ASSET VALUE ══════ -->
 <div class="rule" style="margin-top:40px;"></div>
 <div class="sl" data-fr="L'actif sous-jacent, Ce que vous possédez réellement" data-nl="Het onderliggende actief, Wat u werkelijk bezit" data-en="Underlying Asset, What You Actually Own">L'actif sous-jacent, Ce que vous possédez réellement</div>
 <h2 data-fr="Un actif réel. Une valeur mesurable.<br>Une logique qui protège votre investissement."
@@ -634,23 +551,24 @@
 
 <div class="two">
   <div>
-    <p data-fr="Ce Club Deal n'est pas un produit financier. C'est une participation dans un actif immobilier réel. L'hôtel acquis pour 1 400 000€ et rénové pour 1 590 000€ représente un investissement total de 2 990 000€. Ce que vous possédez collectivement à l'issue de la transformation : 30 clés rénovées aux standards Toile Blanche, deux piscines, un hammam, un restaurant, une galerie, 7 000m² de terrain au pied de l'Atlas."
-       data-nl="Deze Club Deal is geen financieel product. Het is een deelneming in een reëel onroerend actief. Het hotel verworven voor 1 400 000€ en gerenoveerd voor 1 590 000€ vertegenwoordigt een totale investering van 2 990 000€. Wat u collectief bezit na de transformatie : 30 gerenoveerde kamers volgens Toile Blanche-standaarden, twee zwembaden, een hammam, een restaurant, een galerie, 7 000m² grond aan de voet van de Atlas."
-       data-en="This Club Deal is not a financial product. It is a participation in a real estate asset. The hotel acquired for €1,400,000 and renovated for €1,590,000 represents a total investment of €2,990,000. What you collectively own after transformation: 30 renovated keys to Toile Blanche standards, two pools, a hammam, a restaurant, a gallery, and 7,000m² of land at the foot of the Atlas.">
-      Ce Club Deal est une participation dans un actif immobilier réel. L'hôtel acquis pour 1 400 000€ et rénové pour 1 590 000€ représente un investissement total de 2 990 000€. Ce que vous possédez collectivement : 30 clés rénovées aux standards Toile Blanche, deux piscines, un hammam, un restaurant, une galerie, 7 000m² de terrain au pied de l'Atlas.
+    <!-- CHANGE 9: asset value section — total updated to 3 448 000, investor equity to 3 000 000 max -->
+    <p data-fr="Ce Club Deal n'est pas un produit financier. C'est une participation dans un actif immobilier réel. L'hôtel acquis pour 1 400 000€ et transformé pour 2 048 000€ (rénovation, infrastructure, FF&E, contingence, lancement) représente un investissement total de 3 448 000€. Ce que vous possédez collectivement à l'issue de la transformation : 30 clés rénovées aux standards Toile Blanche, deux piscines, un hammam, un restaurant, une galerie, 7 000m² de terrain au pied de l'Atlas."
+       data-nl="Deze Club Deal is geen financieel product. Het is een deelneming in een reëel onroerend actief. Het hotel verworven voor 1 400 000€ en getransformeerd voor 2 048 000€ vertegenwoordigt een totale investering van 3 448 000€. Wat u collectief bezit na de transformatie : 30 gerenoveerde kamers, twee zwembaden, een hammam, een restaurant, een galerie, 7 000m² grond."
+       data-en="This Club Deal is not a financial product. It is a participation in a real estate asset. The hotel acquired for €1,400,000 and transformed for €2,048,000 (renovation, infrastructure, FF&E, contingency, launch) represents a total investment of €3,448,000. What you collectively own after transformation: 30 renovated keys, two pools, a hammam, a restaurant, a gallery, and 7,000m² of land at the foot of the Atlas.">
+      Ce Club Deal est une participation dans un actif immobilier réel. L'hôtel acquis pour 1 400 000€ et transformé pour 2 048 000€ représente un investissement total de 3 448 000€. Ce que vous possédez collectivement : 30 clés rénovées aux standards Toile Blanche, deux piscines, un hammam, un restaurant, une galerie, 7 000m² de terrain au pied de l'Atlas.
     </p>
-    <p data-fr="Nous avons acquis cet actif en dessous de son coût de remplacement. La rénovation crée une valeur supérieure à l'investissement. Ce n'est pas une promesse commerciale, c'est la logique fondamentale du projet."
-       data-nl="Wij hebben dit actief verworven onder zijn vervangingswaarde. De renovatie creëert een waarde die de investering overtreft. Dit is geen commerciële belofte, het is de fundamentele logica van het project."
-       data-en="We acquired this asset below replacement cost. Renovation creates value above the investment. This is not a marketing promise; it is the core logic of the project.">
+    <p data-fr="Nous avons acquis cet actif en dessous de son coût de remplacement. La rénovation crée une valeur supérieure à l'investissement."
+       data-nl="Wij hebben dit actief verworven onder zijn vervangingswaarde. De renovatie creëert een waarde die de investering overtreft."
+       data-en="We acquired this asset below replacement cost. Renovation creates value above the investment.">
       Wij hebben dit actief verworven onder zijn vervangingswaarde. De renovatie creëert een waarde die de investering overtreft.
     </p>
 
     <div class="ab2" style="margin-top:16px;">
-      <div class="sl" data-fr="L'ancrage, Ce que nous payons vs ce que ça vaut" data-nl="Het anker, Wat wij betalen vs wat het waard is" data-en="The Anchor, What We Pay vs What It Is Worth">L'ancrage</div>
-      <p class="bs" data-fr="Nous payons 1 400 000€ pour un hôtel existant avec deux piscines, un hammam et 7 000m² de terrain dans le couloir luxe Al Haouz. La Kasbah Dif, propriété comparable ouverte à 300 mètres en 2025, représente un investissement de 4 à 5 millions d'euros. Nous entrons sur ce marché à un tiers du coût de nos voisins immédiats. La rénovation à 1 590 000€ porte le total à 2 990 000€ pour un actif qui se négocie entre 4 500 000€ et 9 000 000€ à la valeur de marché actuelle."
-                data-nl="Wij betalen 1 400 000€ voor een bestaand hotel met twee zwembaden, een hammam en 7 000m² grond in de luxecorridor Al Haouz. De Kasbah Dif, een vergelijkbaar eigendom geopend op 300 meter in 2025, vertegenwoordigt een investering van 4 tot 5 miljoen euro. Wij betreden deze markt aan een derde van de kosten van onze directe buren. De renovatie van 1 590 000€ brengt het totaal op 2 990 000€ voor een actief dat op de huidige marktwaarde tussen 4 500 000€ en 9 000 000€ wordt verhandeld."
-                data-en="We pay €1,400,000 for an existing hotel with two pools, a hammam, and 7,000m² of land in the Al Haouz luxury corridor. Kasbah Dif, a comparable property opened 300 meters away in 2025, represents a €4 to €5 million investment.">
-        Wij betalen 1 400 000€ voor een bestaand hotel met twee zwembaden, een hammam en 7 000m² grond. De Kasbah Dif op 300 meter opende in 2025 met een investering van 4 tot 5 miljoen euro. Wij betreden dezelfde markt aan een derde van de kosten.
+      <div class="sl" data-fr="L'ancrage, Ce que nous payons vs ce que ça vaut" data-nl="Het anker" data-en="The Anchor">L'ancrage</div>
+      <p class="bs" data-fr="Nous payons 1 400 000€ pour un hôtel existant avec deux piscines, un hammam et 7 000m² de terrain dans le couloir luxe Al Haouz. La Kasbah Dif, propriété comparable ouverte à 300 mètres en 2025, représente un investissement de 4 à 5 millions d'euros. Nous entrons sur ce marché à moins d'un tiers du coût de nos voisins immédiats. L'investissement total à 3 448 000€ représente un actif qui se négocie entre 4 500 000€ et 9 000 000€ à la valeur de marché actuelle."
+                data-nl="Wij betalen 1 400 000€ voor een bestaand hotel met twee zwembaden, een hammam en 7 000m² grond in de luxecorridor Al Haouz. De Kasbah Dif op 300 meter vertegenwoordigt een investering van 4 tot 5 miljoen euro. Het totaal van 3 448 000€ vertegenwoordigt een actief met een marktwaarde van 4 500 000€ tot 9 000 000€."
+                data-en="We pay €1,400,000 for an existing hotel with two pools, a hammam and 7,000m² of land in the Al Haouz luxury corridor. Kasbah Dif, 300 metres away, represents a €4 to €5 million investment. Our total investment of €3,448,000 represents an asset trading between €4,500,000 and €9,000,000 at current market values.">
+        1 400 000€ pour un hôtel avec piscines, hammam, 7 000m². La Kasbah Dif à 300m : 4 à 5M€ d'investissement. Total 3 448 000€ pour un actif de marché 4,5M€ à 9M€.
       </p>
     </div>
   </div>
@@ -660,22 +578,30 @@
       <div class="sl" data-fr="Valeur de marché, Trois méthodes" data-nl="Marktwaarde, Drie methoden" data-en="Market Value, Three Methods">Valeur de marché, Trois méthodes</div>
       <div class="data-row" style="border-top:1px solid var(--cedar);">
         <div class="data-label" data-fr="Coût de remplacement" data-nl="Vervangingskosten" data-en="Replacement Cost">Coût de remplacement</div>
-        <div class="data-val" data-fr="2 990 000€ investis × 1,35 (prime actif opérationnel fini) = 4 037 000€ minimum." data-nl="2 990 000€ geïnvesteerd × 1,35 (premie afgewerkt operationeel actief) = 4 037 000€ minimum." data-en="€2,990,000 invested × 1.35 (completed operating asset premium) = €4,037,000 minimum.">2 990 000€ × 1,35 = 4 037 000€ minimum</div>
+        <!-- CHANGE 10: replacement cost updated -->
+        <div class="data-val"
+             data-fr="3 448 000€ investis × 1,35 (prime actif opérationnel fini) = 4 655 000€ minimum."
+             data-nl="3 448 000€ geïnvesteerd × 1,35 = 4 655 000€ minimum."
+             data-en="€3,448,000 invested × 1.35 (completed operating asset premium) = €4,655,000 minimum.">3 448 000€ × 1,35 = 4 655 000€ minimum</div>
       </div>
       <div class="data-row">
         <div class="data-label" data-fr="Par clé (marché Al Haouz)" data-nl="Per kamer (markt Al Haouz)" data-en="Per Key (Al Haouz Market)">Par clé (marché Al Haouz)</div>
-        <div class="data-val" data-fr="150 000€ à 300 000€ par clé × 30 clés = 4 500 000€ à 9 000 000€. Référence : Kasbah Dif à 300m = 300 000€+/clé." data-nl="150 000€ tot 300 000€ per kamer × 30 kamers = 4 500 000€ tot 9 000 000€. Referentie : Kasbah Dif op 300m = 300 000€+/kamer." data-en="€150,000 per key × 30 keys = €4,500,000. Reference: Kasbah Dif at 300m = €300,000+/key.">150 000€ à 300 000€/clé × 30 = 4 500 000€ à 9 000 000€</div>
+        <div class="data-val" data-fr="150 000€ à 300 000€ par clé × 30 clés = 4 500 000€ à 9 000 000€. Référence : Kasbah Dif à 300m = 300 000€+/clé." data-nl="150 000€ tot 300 000€ per kamer × 30 kamers = 4 500 000€ tot 9 000 000€." data-en="€150,000 to €300,000 per key × 30 keys = €4,500,000 to €9,000,000.">150 000€ à 300 000€/clé × 30 = 4 500 000€ à 9 000 000€</div>
       </div>
       <div class="data-row" style="border-bottom:none;">
+        <!-- CHANGE 11: equity vs asset updated for max 12 slots = 3 000 000 -->
         <div class="data-label" data-fr="Votre equity vs valeur actif" data-nl="Uw equity vs activawaarde" data-en="Your Equity vs Asset Value">Votre equity vs valeur</div>
-        <div class="data-val" style="color:var(--cedar);font-weight:400;" data-fr="Votre equity combinée de 2 500 000€ est adossée à un actif valant entre 1,8× et 3,6× ce montant aux valeurs de marché conservatives." data-nl="Uw gecombineerde equity van 2 500 000€ is gedekt door een actief met een waarde van 1,8× tot 3,6× dit bedrag tegen conservatieve marktwaarden." data-en="Your combined €2,500,000 equity is backed by an asset worth between 1.8× and 3.6× that amount at conservative market values.">2 500 000€ equity adossée à un actif valant 1,8× à 3,6×</div>
+        <div class="data-val" style="color:var(--cedar);font-weight:400;"
+             data-fr="Votre equity combinée (jusqu'à 3 000 000€ pour 12 parts) est adossée à un actif valant entre 1,5× et 3,0× ce montant aux valeurs de marché conservatives."
+             data-nl="Uw gecombineerde equity (tot 3 000 000€ voor 12 aandelen) is gedekt door een actief met een waarde van 1,5× tot 3,0× dit bedrag."
+             data-en="Your combined equity (up to €3,000,000 for 12 slots) is backed by an asset worth between 1.5× and 3.0× that amount at conservative market values.">Jusqu'à 3 000 000€ equity adossée à un actif valant 1,5× à 3,0×</div>
       </div>
     </div>
 
     <div style="background:var(--pise);padding:24px 28px;margin-top:16px;">
       <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;line-height:1.65;color:var(--sky);"
          data-fr="« Ce n'est pas une garantie formelle. C'est la logique sous-jacente : nous achetons un actif réel en dessous de sa valeur de marché, nous le rénovons avec les standards d'une marque reconnue, et nous l'exploitons. La valeur de l'actif dépasse l'investissement avant même d'ouvrir la porte. »"
-         data-nl="« Dit is geen formele garantie. Het is de onderliggende logica : wij kopen een reëel actief onder zijn marktwaarde, wij renoveren het met de standaarden van een erkend merk, en wij exploiteren het. De activawaarde overtreft de investering nog voor de deur wordt geopend. »"
+         data-nl="« Dit is geen formele garantie. Het is de onderliggende logica : wij kopen een reëel actief onder zijn marktwaarde, wij renoveren het met de standaarden van een erkend merk, en wij exploiteren het. »"
          data-en="« This is not a formal guarantee. It is the underlying logic: we acquire a real asset below market value, renovate it to recognized brand standards, and operate it. The asset value exceeds the investment before the door even opens. »">
         « Ce n'est pas une garantie formelle. C'est la logique sous-jacente : nous achetons un actif réel en dessous de sa valeur de marché, nous le rénovons avec les standards d'une marque reconnue, et nous l'exploitons. La valeur de l'actif dépasse l'investissement avant même d'ouvrir la porte. »
       </p>
@@ -683,35 +609,31 @@
   </div>
 </div>
 
-<!-- ══════ WORKING CAPITAL SECTION ══════ -->
+<!-- ══════ WORKING CAPITAL ══════ -->
 <div class="rule" style="margin-top:40px;"></div>
 <div class="sl" data-fr="La réserve de trésorerie opérationnelle" data-nl="De operationele kasreserve" data-en="Operational Cash Reserve">La réserve de trésorerie opérationnelle</div>
-<h2 data-fr="Comment l'hôtel se protège sans banque<br>derrière lui."
-    data-nl="Hoe het hotel zich beschermt<br>zonder bank achter zich."
-    data-en="How the hotel protects itself<br>without a bank behind it.">Comment l'hôtel se protège sans banque derrière lui.</h2>
+<h2 data-fr="Comment l'hôtel se protège sans banque derrière lui." data-nl="Hoe het hotel zich beschermt zonder bank achter zich." data-en="How the hotel protects itself without a bank behind it.">Comment l'hôtel se protège sans banque derrière lui.</h2>
 
 <div class="two">
   <div>
-    <p data-fr="Sans ligne de crédit bancaire, la réserve de trésorerie opérationnelle est le seul filet de sécurité en cas d'aléa en année 1 : une réplique sismique, un creux de réservations inattendu, un délai de démarrage. Cette question est légitime et nous y avons répondu structurellement."
-       data-nl="Zonder bankkredietlijn is de operationele kasreserve het enige vangnet bij onvoorziene omstandigheden in jaar 1 : een naschok, een onverwachte reserveringsdip, een opstartvertraging. Deze vraag is legitiem en wij hebben er structureel op geantwoord."
-       data-en="Without a bank credit line, the operational cash reserve is the only safety net in Year 1 in case of disruption: an aftershock, an unexpected booking dip, or a delayed ramp-up. This is a legitimate question, and we have addressed it structurally.">
-      Sans ligne de crédit bancaire, la réserve de trésorerie est le seul filet de sécurité en cas d'aléa en année 1. Nous y avons répondu structurellement.
+    <p data-fr="Sans ligne de crédit bancaire, la réserve de trésorerie opérationnelle est le seul filet de sécurité en cas d'aléa en année 1. Cette question est légitime et nous y avons répondu structurellement."
+       data-nl="Zonder bankkredietlijn is de operationele kasreserve het enige vangnet bij onvoorziene omstandigheden in jaar 1. Deze vraag is legitiem en wij hebben er structureel op geantwoord."
+       data-en="Without a bank credit line, the operational cash reserve is the only safety net in Year 1 in case of disruption. This is a legitimate question, and we have addressed it structurally.">
+      Sans ligne de crédit bancaire, la réserve de trésorerie est le seul filet de sécurité en cas d'aléa en année 1.
     </p>
-
     <div class="ab">
       <div class="sl" data-fr="La politique de rétention des premiers revenus" data-nl="Het beleid voor retentie van eerste inkomsten" data-en="Early Revenue Retention Policy">La politique de rétention</div>
-      <p class="bs" data-fr="L'hôtel retient l'intégralité de ses revenus opérationnels pendant les deux premiers trimestres d'exploitation. Aucun dividende, aucun preferred n'est versé pendant cette période. Ces fonds constituent la réserve de trésorerie opérationnelle de l'établissement. À partir du troisième trimestre d'exploitation, si la réserve dépasse 250 000€, les distributions normales reprennent, preferred en premier conformément au waterfall."
-                data-nl="Het hotel houdt alle operationele inkomsten in gedurende de eerste twee exploitatiekwartalen. Geen dividend, geen preferred wordt in deze periode uitgekeerd. Deze middelen vormen de operationele kasreserve van het etablissement. Vanaf het derde exploitatiekwartaal, als de reserve 250 000€ overschrijdt, worden de normale uitkeringen hervat, preferred eerst conform de waterval."
-                data-en="The hotel retains all operating revenue during its first two quarters of operation. No dividends and no preferred are paid during this period. These funds constitute the property's operational cash reserve. From the third operating quarter onward, if the reserve exceeds €250,000, normal distributions resume, with preferred first according to the waterfall.">
-        L'hôtel retient l'intégralité de ses revenus les deux premiers trimestres. Aucun dividende versé pendant cette période. Dès que la réserve dépasse 250 000€, les distributions reprennent, preferred en premier.
+      <p class="bs" data-fr="L'hôtel retient l'intégralité de ses revenus opérationnels pendant les deux premiers trimestres d'exploitation. Aucun dividende, aucun preferred n'est versé pendant cette période. Ces fonds constituent la réserve de trésorerie opérationnelle. À partir du troisième trimestre d'exploitation, si la réserve dépasse 250 000€, les distributions normales reprennent, preferred en premier conformément au waterfall."
+                data-nl="Het hotel houdt alle operationele inkomsten in gedurende de eerste twee exploitatiekwartalen. Geen dividend, geen preferred wordt in deze periode uitgekeerd. Vanaf het derde exploitatiekwartaal, als de reserve 250 000€ overschrijdt, worden de normale uitkeringen hervat, preferred eerst."
+                data-en="The hotel retains all operating revenue during its first two quarters of operation. No dividends and no preferred are paid during this period. From the third operating quarter onward, if the reserve exceeds €250,000, normal distributions resume, with preferred first according to the waterfall.">
+        L'hôtel retient l'intégralité de ses revenus les deux premiers trimestres. Dès que la réserve dépasse 250 000€, les distributions reprennent, preferred en premier.
       </p>
     </div>
-
     <div class="ab2">
       <div class="sl" data-fr="Pourquoi 250 000€ est suffisant" data-nl="Waarom 250 000€ voldoende is" data-en="Why €250,000 Is Sufficient">Pourquoi 250 000€ est suffisant</div>
-      <p class="bs" data-fr="Six mois de charges fixes totales représentent environ 533 000€. Nous ciblons 250 000€ pour trois raisons. Premièrement, l'hôtel génère des revenus dès le premier jour d'exploitation, ce n'est pas une réserve pour une structure sans revenu. Deuxièmement, le tronc de service s'ajuste automatiquement avec l'occupation : en cas de creux, les charges salariales effectives baissent proportionnellement. Troisièmement, si la réserve s'avérait insuffisante face à un événement exceptionnel, le prêt opérationnel de 300 000€ (non hypothécaire, confirmé accessible par notre fiscaliste marocain) constitue le dernier recours."
-                data-nl="Zes maanden volledige vaste kosten vertegenwoordigen ongeveer 533 000€. Wij mikken op 250 000€ om drie redenen. Ten eerste genereert het hotel inkomsten vanaf de eerste exploitatiedag. Ten tweede past de servicecharge zich automatisch aan met de bezetting. Ten derde vormt de operationele lening van 300 000€ het laatste redmiddel indien de reserve ontoereikend blijkt."
-                data-en="Six months of total fixed costs represent roughly €533,000. We target €250,000 for three reasons. First, the hotel generates revenue from day one of operations; this is not a no-revenue reserve. Second, the service charge adjusts automatically with occupancy: in a downturn, effective payroll pressure falls proportionally. Third, if the reserve proved insufficient in an exceptional event, the €300,000 operational loan (non-mortgage, confirmed accessible by our Moroccan tax advisor) is the final fallback.">
+      <p class="bs" data-fr="L'hôtel génère des revenus dès le premier jour d'exploitation. Le tronc de service s'ajuste automatiquement avec l'occupation : en cas de creux, les charges salariales effectives baissent proportionnellement. Si la réserve s'avérait insuffisante face à un événement exceptionnel, le prêt opérationnel de 300 000€ (non hypothécaire, confirmé accessible par notre fiscaliste marocain) constitue le dernier recours."
+                data-nl="Het hotel genereert inkomsten vanaf de eerste exploitatiedag. De servicecharge past zich automatisch aan met de bezetting. De operationele lening van 300 000€ vormt het laatste redmiddel indien de reserve ontoereikend blijkt."
+                data-en="The hotel generates revenue from day one of operations. The service charge adjusts automatically with occupancy. If the reserve proved insufficient in an exceptional event, the €300,000 operational loan (non-mortgage, confirmed accessible by our Moroccan tax advisor) is the final fallback.">
         L'hôtel génère des revenus dès J1. Le tronc s'ajuste avec l'occupation. La réserve de 250 000€ couvre les scénarios réalistes. Le prêt opérationnel de 300 000€ reste disponible en dernier recours.
       </p>
     </div>
@@ -722,89 +644,88 @@
       <div class="sl" data-fr="Ce que la réserve couvre" data-nl="Wat de reserve dekt" data-en="What the Reserve Covers">Ce que la réserve couvre</div>
       <div class="data-row" style="border-top:1px solid var(--cedar);">
         <div class="data-label" data-fr="Scénario 1, Creux de réservations" data-nl="Scenario 1, Reserveringsdip" data-en="Scenario 1, Booking Dip">Scénario 1, Creux</div>
-        <div class="data-val" data-fr="Mois à 30% d'occupation au lieu de 60% cible. Perte de revenu mensuelle : ~55 000€. Réserve couvre 4 mois de ce scénario sans décision d'urgence."
-             data-nl="Maand op 30% bezetting in plaats van 60% doel. Maandelijks inkomstenverlies : ~55 000€. Reserve dekt 4 maanden van dit scenario zonder noodbeslissing."
-             data-en="A month at 30% occupancy instead of the 60% target. Monthly revenue shortfall: ~€55,000. The reserve covers 4 months of this scenario without emergency measures.">30% TO au lieu de 60%. Manque à gagner : ~55 000€/mois. Réserve couvre 4 mois.</div>
+        <div class="data-val" data-fr="Mois à 30% d'occupation au lieu de 60% cible. Perte de revenu mensuelle : ~55 000€. Réserve couvre 4 mois de ce scénario sans décision d'urgence." data-nl="Maand op 30% bezetting in plaats van 60% doel. Maandelijks inkomstenverlies : ~55 000€. Reserve dekt 4 maanden." data-en="A month at 30% occupancy instead of the 60% target. Monthly revenue shortfall: ~€55,000. The reserve covers 4 months of this scenario without emergency measures.">30% TO au lieu de 60%. Manque à gagner : ~55 000€/mois. Réserve couvre 4 mois.</div>
       </div>
       <div class="data-row">
         <div class="data-label" data-fr="Scénario 2, Réplique sismique" data-nl="Scenario 2, Naschok" data-en="Scenario 2, Aftershock">Scénario 2, Réplique</div>
-        <div class="data-val" data-fr="Fermeture partielle 4 à 6 semaines pour inspection. Réserve couvre la masse salariale et les charges fixes pendant l'arrêt. L'assurance CAR/exploitation prend le relais au-delà."
-             data-nl="Gedeeltelijke sluiting 4 tot 6 weken voor inspectie. Reserve dekt loonmassa en vaste kosten tijdens stilstand. De CAR-verzekering neemt het daarna over."
-             data-en="Partial closure for 4 to 6 weeks for inspection. The reserve covers payroll and fixed costs during the stoppage. Construction/operating insurance takes over beyond that.">Fermeture 4 à 6 semaines. Réserve couvre la masse salariale. Assurance exploitation prend le relais.</div>
+        <div class="data-val" data-fr="Fermeture partielle 4 à 6 semaines pour inspection. Réserve couvre la masse salariale et les charges fixes pendant l'arrêt." data-nl="Gedeeltelijke sluiting 4 tot 6 weken voor inspectie. Reserve dekt loonmassa en vaste kosten tijdens stilstand." data-en="Partial closure for 4 to 6 weeks for inspection. The reserve covers payroll and fixed costs during the stoppage.">Fermeture 4 à 6 semaines. Réserve couvre la masse salariale.</div>
       </div>
       <div class="data-row" style="border-bottom:none;">
         <div class="data-label" data-fr="Scénario 3, Délai de démarrage" data-nl="Scenario 3, Opstartvertraging" data-en="Scenario 3, Delayed Ramp-Up">Scénario 3, Délai</div>
-        <div class="data-val" data-fr="Ouverture décalée de 4 à 8 semaines par rapport au plan. Réserve absorbe les charges fixes sans appel de fonds supplémentaire auprès des investisseurs."
-             data-nl="Opening 4 tot 8 weken vertraagd ten opzichte van plan. Reserve absorbeert vaste kosten zonder bijkomende kapitaaloproep bij investeerders."
-             data-en="Opening delayed by 4 to 8 weeks versus plan. The reserve absorbs fixed costs without any additional capital call to investors.">Ouverture décalée 4 à 8 semaines. Aucun appel de fonds supplémentaire aux investisseurs.</div>
+        <div class="data-val" data-fr="Ouverture décalée de 4 à 8 semaines par rapport au plan. Réserve absorbe les charges fixes sans appel de fonds supplémentaire auprès des investisseurs." data-nl="Opening 4 tot 8 weken vertraagd. Reserve absorbeert vaste kosten zonder bijkomende kapitaaloproep bij investeerders." data-en="Opening delayed by 4 to 8 weeks versus plan. The reserve absorbs fixed costs without any additional capital call to investors.">Ouverture décalée 4 à 8 semaines. Aucun appel de fonds supplémentaire aux investisseurs.</div>
       </div>
     </div>
 
     <div style="background:var(--pise);padding:22px 26px;margin-top:16px;">
       <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;line-height:1.65;color:var(--sky);"
          data-fr="« Les deux premiers trimestres d'exploitation ne distribuent rien. L'hôtel constitue sa propre réserve avec ses propres revenus. À partir du troisième trimestre, si les 250 000€ sont en caisse, votre preferred reprend. Ce n'est pas un retard de paiement. C'est de la prudence opérationnelle. »"
-         data-nl="« De eerste twee exploitatiekwartalen keren niets uit. Het hotel bouwt zijn eigen reserve op met zijn eigen inkomsten. Vanaf het derde kwartaal, als de 250 000€ in kas zijn, hervat uw preferred. Dit is geen betalingsvertraging. Het is operationele voorzichtigheid. »"
-         data-en="“The first two operating quarters distribute nothing. The hotel builds its own reserve with its own revenue. From the third quarter onward, if €250,000 is in cash, your preferred resumes. This is not a payment delay. It is operational prudence.”">
+         data-nl="« De eerste twee exploitatiekwartalen keren niets uit. Het hotel bouwt zijn eigen reserve op. Vanaf het derde kwartaal, als de 250 000€ in kas zijn, hervat uw preferred. Dit is geen betalingsvertraging. Het is operationele voorzichtigheid. »"
+         data-en=""The first two operating quarters distribute nothing. The hotel builds its own reserve with its own revenue. From the third quarter onward, if €250,000 is in cash, your preferred resumes. This is not a payment delay. It is operational prudence."">
         « Les deux premiers trimestres d'exploitation ne distribuent rien. L'hôtel constitue sa propre réserve avec ses propres revenus. À partir du troisième trimestre, si les 250 000€ sont en caisse, votre preferred reprend. Ce n'est pas un retard de paiement. C'est de la prudence opérationnelle. »
       </p>
     </div>
   </div>
 </div>
 
+<!-- ══════ 8. BREAK-EVEN ══════ -->
 <div class="rule" style="margin-top:40px;"></div>
 <div class="sl" data-fr="8. Le point mort - La solidité du preferred" data-nl="8. Het break-evenpunt - De stevigheid van het preferred" data-en="8. Break-Even - The Resilience of the Preferred Return">8. Le point mort - La solidité du preferred</div>
-<h2 data-fr="À 60% d'occupation, le break-even est à 161€ d'ADR.<br>Notre cible est 350€."
-    data-nl="Bij 60% bezetting ligt het break-even op 161€ ADR.<br>Onze doelstelling is 350€."
-    data-en="At 60% occupancy, break-even is at €161 ADR.<br>Our target is €350.">À 60% d'occupation, le break-even est à 161€ d'ADR.<br>Notre cible est 350€.</h2>
+
+<!-- CHANGE 12: break-even headline updated — ADR 170€ at 60%, target 400€ -->
+<h2 data-fr="À 60% d'occupation, le break-even est à 170€ d'ADR.<br>Notre cible est 400€."
+    data-nl="Bij 60% bezetting ligt het break-even op 170€ ADR.<br>Onze doelstelling is 400€."
+    data-en="At 60% occupancy, break-even is at €170 ADR.<br>Our target is €400.">À 60% d'occupation, le break-even est à 170€ d'ADR.<br>Notre cible est 400€.</h2>
 
 <div class="two">
   <div>
     <p data-fr="Le point mort est le niveau minimum de chiffre d'affaires en dessous duquel l'hôtel ne couvre plus ses charges fixes - y compris votre retour préférentiel de 10%. Cette analyse répond à la question que tout investisseur doit poser : dans quel scénario catastrophe mon preferred ne serait-il pas payé ?"
-       data-nl="Het break-evenpunt is het minimale omzetniveau waaronder het hotel zijn vaste kosten niet meer dekt - inclusief uw preferentieel rendement van 10%. Deze analyse beantwoordt de vraag die elke investeerder moet stellen : in welk rampscenario zou mijn preferred niet worden betaald?"
-       data-en="The break-even point is the minimum revenue level below which the hotel no longer covers its fixed costs - including your 10% preferred return. This analysis answers the question every investor must ask: in what worst-case scenario would my preferred not be paid?">
+       data-nl="Het break-evenpunt is het minimale omzetniveau waaronder het hotel zijn vaste kosten niet meer dekt - inclusief uw preferentieel rendement van 10%."
+       data-en="The break-even point is the minimum revenue level below which the hotel no longer covers its fixed costs - including your 10% preferred return.">
       Le point mort répond à la question : dans quel scénario catastrophe le preferred de 10% ne serait-il pas payé ?
     </p>
-    <p data-fr="Les charges fixes incluses dans le calcul : ressources humaines (458 000€), charges opérationnelles (350 000€), et votre retour préférentiel total (250 000€ = 10 × 25 000€). Total des charges fixes : 1 058 000€ par an. Aucun service de dette - l'hôtel est acquis sans emprunt bancaire."
-       data-nl="De vaste lasten opgenomen in de berekening : personeelskosten (458 000€), operationele lasten (350 000€), en uw totaal preferentieel rendement (250 000€ = 10 × 25 000€). Totaal vaste lasten : 1 058 000€ per jaar. Geen schuldendienst - het hotel wordt schuldvrij verworven."
-       data-en="Fixed costs included in the calculation: human resources (€458,000), operating costs (€350,000), and your total preferred return (€250,000 = 10 × €25,000). Total fixed costs: €1,058,000 per year. No debt service - the hotel is acquired without bank debt.">
-      Charges fixes totales : 1 058 000€/an (RH + charges op + preferred 10%). Aucun service de dette bancaire.
+    <!-- CHANGE 13: fixed costs updated — HR 468K, preferred 300K (12 parts), total 1 118 000 -->
+    <p data-fr="Les charges fixes incluses dans le calcul : ressources humaines (468 000€), charges opérationnelles (350 000€), et votre retour préférentiel total (300 000€ = 12 parts × 25 000€). Total des charges fixes : 1 118 000€ par an. Aucun service de dette - l'hôtel est acquis sans emprunt bancaire."
+       data-nl="De vaste lasten opgenomen in de berekening : personeelskosten (468 000€), operationele lasten (350 000€), en uw totaal preferentieel rendement (300 000€ = 12 aandelen × 25 000€). Totaal vaste lasten : 1 118 000€ per jaar. Geen schuldendienst."
+       data-en="Fixed costs included in the calculation: human resources (€468,000), operating costs (€350,000), and your total preferred return (€300,000 = 12 slots × €25,000). Total fixed costs: €1,118,000 per year. No debt service - the hotel is acquired without bank debt.">
+      Charges fixes totales : 1 118 000€/an (RH 468K + charges op 350K + preferred 300K). Aucun service de dette bancaire.
     </p>
 
     <div class="ab">
       <div class="sl" data-fr="Les résultats" data-nl="De resultaten" data-en="The Results">Les résultats</div>
+      <!-- CHANGE 14: break-even table updated — new ADR target 400€, new break-even figures -->
       <table style="width:100%;border-collapse:collapse;margin:12px 0;">
         <thead>
           <tr style="border-bottom:2px solid var(--cedar);">
             <th style="padding:8px 10px;text-align:left;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;" data-fr="Taux d'occupation" data-nl="Bezettingsgraad" data-en="Occupancy Rate">Taux d'occupation</th>
             <th style="padding:8px 10px;text-align:right;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;" data-fr="ADR minimum" data-nl="Minimum ADR" data-en="Minimum ADR">ADR minimum</th>
-            <th style="padding:8px 10px;text-align:right;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;" data-fr="Marge de sécurité vs 350€" data-nl="Veiligheidsmarge vs 350€" data-en="Safety Margin vs €350">Marge vs 350€</th>
+            <th style="padding:8px 10px;text-align:right;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;" data-fr="Marge de sécurité vs 400€" data-nl="Veiligheidsmarge vs 400€" data-en="Safety Margin vs €400">Marge vs 400€</th>
           </tr>
         </thead>
         <tbody>
           <tr style="border-bottom:1px solid var(--pise-light);">
-            <td style="padding:8px 10px;font-size:14px;" data-fr="30% occupancy" data-nl="30% bezetting" data-en="30% occupancy">30%</td>
-            <td style="padding:8px 10px;font-size:14px;text-align:right;">322€</td>
-            <td style="padding:8px 10px;font-size:14px;text-align:right;color:var(--cedar);">+28€ (+9%)</td>
+            <td style="padding:8px 10px;font-size:14px;">30%</td>
+            <td style="padding:8px 10px;font-size:14px;text-align:right;">340€</td>
+            <td style="padding:8px 10px;font-size:14px;text-align:right;color:var(--cedar);">+60€ (+18%)</td>
           </tr>
           <tr style="border-bottom:1px solid var(--pise-light);">
             <td style="padding:8px 10px;font-size:14px;">40%</td>
-            <td style="padding:8px 10px;font-size:14px;text-align:right;">242€</td>
-            <td style="padding:8px 10px;font-size:14px;text-align:right;color:var(--cedar);">+108€ (+45%)</td>
+            <td style="padding:8px 10px;font-size:14px;text-align:right;">255€</td>
+            <td style="padding:8px 10px;font-size:14px;text-align:right;color:var(--cedar);">+145€ (+57%)</td>
           </tr>
           <tr style="border-bottom:1px solid var(--pise-light);background:var(--sky);">
             <td style="padding:8px 10px;font-size:14px;font-weight:400;" data-fr="50% - plancher réaliste" data-nl="50% - realistisch minimum" data-en="50% - Realistic Floor">50% - plancher réaliste</td>
-            <td style="padding:8px 10px;font-size:14px;text-align:right;font-weight:400;">193€</td>
-            <td style="padding:8px 10px;font-size:14px;text-align:right;color:var(--cedar);font-weight:400;">+157€ (+81%)</td>
+            <td style="padding:8px 10px;font-size:14px;text-align:right;font-weight:400;">204€</td>
+            <td style="padding:8px 10px;font-size:14px;text-align:right;color:var(--cedar);font-weight:400;">+196€ (+96%)</td>
           </tr>
           <tr style="border-bottom:2px solid var(--cedar);background:var(--sky);">
             <td style="padding:8px 10px;font-size:14px;font-weight:400;" data-fr="60% - cible année 1" data-nl="60% - doelstelling jaar 1" data-en="60% - Year 1 Target">60% - cible année 1</td>
-            <td style="padding:8px 10px;font-size:14px;text-align:right;font-weight:400;">161€</td>
-            <td style="padding:8px 10px;font-size:15px;text-align:right;color:var(--cedar);font-weight:400;">+189€ (+117%)</td>
+            <td style="padding:8px 10px;font-size:14px;text-align:right;font-weight:400;">170€</td>
+            <td style="padding:8px 10px;font-size:15px;text-align:right;color:var(--cedar);font-weight:400;">+230€ (+135%)</td>
           </tr>
           <tr style="border-bottom:1px solid var(--pise-light);">
             <td style="padding:8px 10px;font-size:14px;" data-fr="75% - stabilisé" data-nl="75% - gestabiliseerd" data-en="75% - Stabilised">75% - stabilisé</td>
-            <td style="padding:8px 10px;font-size:14px;text-align:right;">129€</td>
-            <td style="padding:8px 10px;font-size:14px;text-align:right;color:var(--cedar);">+221€ (+171%)</td>
+            <td style="padding:8px 10px;font-size:14px;text-align:right;">136€</td>
+            <td style="padding:8px 10px;font-size:14px;text-align:right;color:var(--cedar);">+264€ (+194%)</td>
           </tr>
         </tbody>
       </table>
@@ -814,34 +735,35 @@
   <div>
     <div class="ab">
       <div class="sl" data-fr="Ce que ça signifie concrètement" data-nl="Wat dit concreet betekent" data-en="What This Means in Practice">Ce que ça signifie concrètement</div>
-      <p class="bs" data-fr="À notre cible de 60% de taux d'occupation en année 1, l'hôtel couvre l'ensemble de ses charges fixes et votre preferred de 10% dès lors qu'il atteint 161€ d'ADR. Notre ADR cible est 350€. Nous disposons donc d'une marge de sécurité de 189€ - l'ADR devrait chuter de 54% par rapport à notre projection pour que le preferred soit menacé."
-                data-nl="Bij onze doelstelling van 60% bezettingsgraad in jaar 1 dekt het hotel al zijn vaste kosten en uw preferred van 10% zodra het een ADR van 161€ bereikt. Onze beoogde ADR is 350€. We hebben dus een veiligheidsmarge van 189€ - de ADR zou met 54% moeten dalen ten opzichte van onze projectie om het preferred in gevaar te brengen."
-                data-en="At our Year 1 target of 60% occupancy, the hotel covers all its fixed costs and your 10% preferred as soon as it reaches €161 ADR. Our target ADR is €350. We therefore have a safety margin of €189 - the ADR would need to drop by 54% from our projection for the preferred to be threatened.">
-        À 60% d'occupation, le preferred est couvert dès 161€ d'ADR. Notre cible est 350€. L'ADR doit chuter de 54% pour menacer le preferred.
+      <!-- CHANGE 15: break-even commentary updated -->
+      <p class="bs" data-fr="À notre cible de 60% de taux d'occupation en année 1, l'hôtel couvre l'ensemble de ses charges fixes et votre preferred de 10% dès lors qu'il atteint 170€ d'ADR. Notre ADR cible est 400€. Nous disposons donc d'une marge de sécurité de 230€ - l'ADR devrait chuter de 57% par rapport à notre projection pour que le preferred soit menacé."
+                data-nl="Bij onze doelstelling van 60% bezettingsgraad in jaar 1 dekt het hotel al zijn vaste kosten en uw preferred van 10% zodra het een ADR van 170€ bereikt. Onze beoogde ADR is 400€. We hebben dus een veiligheidsmarge van 230€ - de ADR zou met 57% moeten dalen om het preferred in gevaar te brengen."
+                data-en="At our Year 1 target of 60% occupancy, the hotel covers all its fixed costs and your 10% preferred as soon as it reaches €170 ADR. Our target ADR is €400. We therefore have a safety margin of €230 - the ADR would need to drop by 57% from our projection for the preferred to be threatened.">
+        À 60% d'occupation, le preferred est couvert dès 170€ d'ADR. Notre cible est 400€. L'ADR doit chuter de 57% pour menacer le preferred.
       </p>
-      <p class="bs" data-fr="Pour contexte : l'ADR actuel de Tigmi sous son ancienne gestion désastreuse est de 150€. Nous sommes déjà au-dessus du break-even à 30% d'occupation. La Kasbah Dif, à 300 mètres, affiche un plancher à 520€. Le risque d'un ADR inférieur à 161€ post-transformation Toile Blanche est théorique, pas réel."
-                data-nl="Ter context : de huidige ADR van Tigmi onder zijn rampzalig vroeger beheer is 150€. We zitten al boven het break-even bij 30% bezetting. De Kasbah Dif, op 300 meter, toont een minimum van 520€. Het risico van een ADR onder 161€ na de Toile Blanche transformatie is theoretisch, niet reëel."
-                data-en="For context: Tigmi's current ADR under its disastrous former management is €150. We are already above break-even at 30% occupancy. The Kasbah Dif, 300 metres away, shows a floor of €520. The risk of an ADR below €161 post-Toile Blanche transformation is theoretical, not real.">
-        L'ADR actuel de Tigmi sous sa gestion actuelle est 150€ - déjà presque au break-even. Post-TB à 350€, le risque est théorique.
+      <p class="bs" data-fr="Pour contexte : l'ADR actuel de Tigmi sous son ancienne gestion désastreuse est de 150€. Nous sommes déjà au-dessus du break-even à 30% d'occupation. La Kasbah Dif, à 300 mètres, affiche un plancher à 520€. Le risque d'un ADR inférieur à 170€ post-transformation Toile Blanche est théorique, pas réel."
+                data-nl="Ter context : de huidige ADR van Tigmi is 150€. We zitten al boven het break-even bij 30% bezetting. De Kasbah Dif op 300 meter toont een minimum van 520€. Het risico van een ADR onder 170€ na de Toile Blanche transformatie is theoretisch."
+                data-en="For context: Tigmi's current ADR under its disastrous former management is €150. We are already above break-even at 30% occupancy. The Kasbah Dif, 300 metres away, shows a floor of €520. The risk of an ADR below €170 post-Toile Blanche transformation is theoretical, not real.">
+        L'ADR actuel de Tigmi sous sa gestion actuelle est 150€ - déjà presque au break-even. Post-TB à 400€, le risque est théorique.
       </p>
     </div>
 
     <div class="ab2">
       <div class="sl" data-fr="Test de résistance - ADR à 300€" data-nl="Stresstest - ADR op 300€" data-en="Stress Test - ADR at €300">Test de résistance - ADR à 300€</div>
-      <p class="bs" data-fr="Que se passe-t-il si l'ADR n'atteint que 300€ - soit 14% en dessous de notre cible ? Même dans ce scénario défavorable, le résultat net reste largement positif :"
-                data-nl="Wat gebeurt er als de ADR slechts 300€ bereikt - 14% onder onze doelstelling ? Zelfs in dit ongunstige scenario blijft het nettoresultaat ruim positief :"
-                data-en="What happens if ADR only reaches €300 - 14% below our target? Even in this unfavourable scenario, net profit remains strongly positive:">
-        Si ADR = 300€ seulement (14% sous cible) :
+      <p class="bs" data-fr="Que se passe-t-il si l'ADR n'atteint que 300€ - soit 25% en dessous de notre cible ?"
+                data-nl="Wat gebeurt er als de ADR slechts 300€ bereikt - 25% onder onze doelstelling ?"
+                data-en="What happens if ADR only reaches €300 - 25% below our target?">
+        Si ADR = 300€ seulement (25% sous cible) :
       </p>
       <ul class="ul">
-        <li data-fr="À 50% d'occupation : résultat net +459 000€" data-nl="Bij 50% bezetting : nettoresultaat +459 000€" data-en="At 50% occupancy: net profit +€459,000">À 50% : résultat net <strong>+459 000€</strong></li>
-        <li data-fr="À 60% d'occupation : résultat net +771 000€" data-nl="Bij 60% bezetting : nettoresultaat +771 000€" data-en="At 60% occupancy: net profit +€771,000">À 60% : résultat net <strong>+771 000€</strong></li>
-        <li data-fr="À 75% d'occupation : résultat net +1 240 000€" data-nl="Bij 75% bezetting : nettoresultaat +1 240 000€" data-en="At 75% occupancy: net profit +€1,240,000">À 75% : résultat net <strong>+1 240 000€</strong></li>
+        <li data-fr="À 50% d'occupation : résultat net +354 000€" data-nl="Bij 50% bezetting : nettoresultaat +354 000€" data-en="At 50% occupancy: net profit +€354,000">À 50% : résultat net <strong>+354 000€</strong></li>
+        <li data-fr="À 60% d'occupation : résultat net +628 000€" data-nl="Bij 60% bezetting : nettoresultaat +628 000€" data-en="At 60% occupancy: net profit +€628,000">À 60% : résultat net <strong>+628 000€</strong></li>
+        <li data-fr="À 75% d'occupation : résultat net +1 072 000€" data-nl="Bij 75% bezetting : nettoresultaat +1 072 000€" data-en="At 75% occupancy: net profit +€1,072,000">À 75% : résultat net <strong>+1 072 000€</strong></li>
       </ul>
-      <p class="bs" data-fr="Dans tous ces scénarios, votre preferred de 10% (25 000€/an) est servi en priorité et intégralement. Il faudrait un ADR de 161€ ou moins, combiné à 60% d'occupation, pour que le preferred soit en risque."
-                data-nl="In al deze scenario's wordt uw preferred van 10% (25 000€/jaar) als prioriteit en volledig bediend. Een ADR van 161€ of minder, gecombineerd met 60% bezetting, zou nodig zijn om het preferred in gevaar te brengen."
-                data-en="In all these scenarios, your 10% preferred (€25,000/year) is served as priority in full. An ADR of €161 or less, combined with 60% occupancy, would be needed for the preferred to be at risk.">
-        Dans tous ces scénarios, votre preferred 10% est servi intégralement. Il faudrait descendre à 161€ d'ADR pour qu'il soit en risque.
+      <p class="bs" data-fr="Dans tous ces scénarios, votre preferred de 10% (25 000€/part/an) est servi en priorité et intégralement."
+                data-nl="In al deze scenario's wordt uw preferred van 10% (25 000€/aandeel/jaar) als prioriteit en volledig bediend."
+                data-en="In all these scenarios, your 10% preferred (€25,000/slot/year) is served as priority in full.">
+        Dans tous ces scénarios, votre preferred 10% est servi intégralement.
       </p>
     </div>
 
@@ -856,37 +778,50 @@
   </div>
 </div>
 
+<!-- ══════ CE QUE LE RIAD EST ══════ -->
 <div class="rule" style="margin-top:40px;"></div>
-<div class="sl" data-fr="Ce que le Riad est, et ce qu'il n'est pas">Ce que le Riad est, et ce qu'il n'est pas</div>
-<h2 data-fr="Vous ne recevez pas une maison.<br>Vous recevez 10 ans de revenus d'une maison, plus 60 nuits par an pour y vivre.">Vous ne recevez pas une maison.<br>Vous recevez 10 ans de revenus d'une maison, plus 60 nuits par an pour y vivre.</h2>
+<div class="sl" data-fr="Ce que le Riad est, et ce qu'il n'est pas" data-nl="Wat de Riad is, en wat het niet is" data-en="What the Riad Is, and What It Is Not">Ce que le Riad est, et ce qu'il n'est pas</div>
+<h2 data-fr="Vous ne recevez pas une maison.<br>Vous recevez 10 ans de revenus d'une maison, plus 60 nuits par an pour y vivre."
+    data-nl="U ontvangt geen huis.<br>U ontvangt 10 jaar inkomsten van een huis, plus 60 nachten per jaar om er te leven."
+    data-en="You don't receive a house.<br>You receive 10 years of income from a house, plus 60 nights per year to live in it.">Vous ne recevez pas une maison.<br>Vous recevez 10 ans de revenus d'une maison, plus 60 nuits par an pour y vivre.</h2>
 
 <div class="two">
   <div>
-    <p data-fr="Il est important d'être précis. Le bail emphytéotique ne vous confère pas la propriété d'un bien immobilier. Il vous confère le droit de jouissance et les revenus locatifs d'un riad rénové pour une durée de 10 ans. C'est une distinction légale importante. C'est aussi, financièrement, une distinction qui joue en votre faveur.">
-      Il est important d'être précis. Le bail emphytéotique ne vous confère pas la propriété d'un bien immobilier. Il vous confère le droit de jouissance et les revenus locatifs d'un riad rénové pour une durée de 10 ans. C'est une distinction légale importante. C'est aussi, financièrement, une distinction qui joue en votre faveur.
+    <p data-fr="Il est important d'être précis. Le bail emphytéotique ne vous confère pas la propriété d'un bien immobilier. Il vous confère le droit de jouissance et les revenus locatifs d'un riad rénové pour une durée de 10 ans, transmissible à vos héritiers directs. C'est une distinction légale importante. C'est aussi, financièrement, une distinction qui joue en votre faveur."
+       data-nl="Het is belangrijk om precies te zijn. De erfpacht geeft u geen eigendom van een onroerend goed. Ze geeft u het recht van genot en de huurinkomsten van een gerenoveerde riad voor een periode van 10 jaar, overdraagbaar aan uw directe erfgenamen."
+       data-en="It is important to be precise. The emphyteutic lease does not confer ownership of a property. It confers the right of enjoyment and the rental income of a renovated riad for a 10-year period, transmissible to your direct heirs. This is an important legal distinction. It is also, financially, a distinction that works in your favour.">
+      Il est important d'être précis. Le bail emphytéotique ne vous confère pas la propriété d'un bien immobilier. Il vous confère le droit de jouissance et les revenus locatifs d'un riad rénové pour une durée de 10 ans, transmissible à vos héritiers directs.
     </p>
-    <p data-fr="À l'année 5, vous avez reçu entre 125 000€ et 225 000€ en dividendes, entre 50% et 90% de votre mise initiale en cash. Votre capital est largement récupéré. C'est à ce moment que le riad vous est proposé.">
-      À l'année 5, vous avez reçu entre 125 000€ et 225 000€ en dividendes, entre 50% et 90% de votre mise initiale en cash. Votre capital est largement récupéré. C'est à ce moment que le riad vous est proposé.
-    </p>
-    <p data-fr="Pensez-y ainsi : vous avez récupéré votre capital en dividendes. Ce capital récupéré est maintenant réinvesti automatiquement dans un flux de revenus à 15% par an (37 800€ sur 250 000€ investis à l'origine) pendant 10 ans, assorti de 60 nuits de vacances par an dans un bien que vous n'auriez jamais pu acquérir en propriété directe au Maroc en tant qu'étranger. Ce n'est pas une maison. C'est un compte d'épargne à haut rendement avec une maison de vacances.">
-      Pensez-y ainsi : vous avez récupéré votre capital en dividendes. Ce capital récupéré est maintenant réinvesti automatiquement dans un flux de revenus à 15% par an (37 800€ sur 250 000€ investis à l'origine) pendant 10 ans, assorti de 60 nuits de vacances par an dans un bien que vous n'auriez jamais pu acquérir en propriété directe au Maroc en tant qu'étranger. Ce n'est pas une maison. C'est un compte d'épargne à haut rendement avec une maison de vacances.
+    <p data-fr="Pensez-y ainsi : vous avez récupéré votre capital en dividendes sur 5 ans. Ce capital récupéré est maintenant réinvesti automatiquement dans un flux de revenus à 15% par an (37 800€ sur 250 000€ investis à l'origine) pendant 10 ans, assorti de 60 nuits de vacances par an. Ce n'est pas une maison. C'est un compte d'épargne à haut rendement avec une maison de vacances."
+       data-nl="Denk er zo aan : u heeft uw kapitaal terugverdiend in dividenden over 5 jaar. Dit terugverdiende kapitaal wordt nu automatisch herbelegd in een inkomstenstroom van 15% per jaar (37 800€ op 250 000€ oorspronkelijk geïnvesteerd) gedurende 10 jaar, plus 60 vakantienaachten per jaar."
+       data-en="Think of it this way: you have recovered your capital in dividends over 5 years. That recovered capital is now automatically reinvested in a revenue stream at 15% per year (€37,800 on the original €250,000 invested) for 10 years, along with 60 holiday nights per year. This is not a house. It is a high-yield savings account with a holiday home.">
+      Pensez-y ainsi : vous avez récupéré votre capital en dividendes. Ce capital est maintenant réinvesti dans un flux de revenus à 15% par an pendant 10 ans, assorti de 60 nuits/an. Ce n'est pas une maison. C'est un compte d'épargne à haut rendement avec une maison de vacances.
     </p>
   </div>
 
   <div>
     <div class="ab">
-      <div class="sl" data-fr="Le choix à l'année 5">Le choix à l'année 5</div>
+      <!-- CHANGE 16: exit choice section updated to reflect genuine choice model -->
+      <div class="sl" data-fr="Le choix à l'année 5" data-nl="De keuze in jaar 5" data-en="Your Choice at Year 5">Le choix à l'année 5</div>
       <div style="display:grid;grid-template-columns:1fr;gap:10px;">
         <div style="border:1px solid var(--pise-light);background:var(--sky);padding:14px 16px;">
-          <div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;" data-fr="Option A : Cash 250 000€">Option A : Cash 250 000€</div>
-          <p class="bs" style="margin-bottom:0;" data-fr="Vous récupérez 250 000€ cash. Combiné à vos dividendes, vous repartez avec 375 000€ à 475 000€ selon les années. Retour net positif, propre, sans actif résiduel.">
-            Vous récupérez 250 000€ cash. Combiné à vos dividendes, vous repartez avec 375 000€ à 475 000€ selon les années. Retour net positif, propre, sans actif résiduel.
+          <div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;"
+               data-fr="Option A : Le Riad (recommandé)" data-nl="Optie A : De Riad (aanbevolen)" data-en="Option A: The Riad (recommended)">Option A : Le Riad (recommandé)</div>
+          <p class="bs" style="margin-bottom:0;"
+             data-fr="Bail emphytéotique 10 ans. 37 800€/an de revenus locatifs projetés + 60 nuits/an usage personnel. Sur 10 ans : 378 000€ revenus + 300 000€ valeur d'usage. Transmissible à vos héritiers directs. Construit sur les surplus de l'hôtel, sans coût supplémentaire pour vous."
+             data-nl="Erfpacht 10 jaar. 37 800€/jaar geprojecteerde huurinkomsten + 60 nachten/jaar persoonlijk gebruik. Over 10 jaar : 378 000€ inkomsten + 300 000€ gebruikswaarde. Overdraagbaar aan uw directe erfgenamen."
+             data-en="10-year emphyteutic lease. €37,800/year projected rental income + 60 nights/year personal use. Over 10 years: €378,000 revenue + €300,000 personal use value. Transmissible to your direct heirs. Built from hotel surplus, at no additional cost to you.">
+            Bail emphytéotique 10 ans. 37 800€/an de revenus locatifs projetés + 60 nuits/an usage personnel. Sur 10 ans : 378 000€ revenus + 300 000€ valeur d'usage. Transmissible à vos héritiers directs. Construit sur les surplus de l'hôtel, sans coût supplémentaire pour vous.
           </p>
         </div>
         <div style="border:1px solid var(--cedar);background:var(--sky);padding:14px 16px;">
-          <div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;" data-fr="Option B : Le Riad (recommandé)">Option B : Le Riad (recommandé)</div>
-          <p class="bs" style="margin-bottom:0;" data-fr="Votre capital récupéré en dividendes est transformé en flux de revenus. 37 800€/an pendant 10 ans = 378 000€. Plus 60 nuits/an dans un riad à 500€/nuit = 300 000€ de valeur d'usage. Total : 678 000€ de valeur générée par le riad seul, sur un capital que vous aviez déjà récupéré.">
-            Votre capital récupéré en dividendes est transformé en flux de revenus. 37 800€/an pendant 10 ans = 378 000€. Plus 60 nuits/an dans un riad à 500€/nuit = 300 000€ de valeur d'usage. Total : 678 000€ de valeur générée par le riad seul, sur un capital que vous aviez déjà récupéré.
+          <div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;"
+               data-fr="Option B : Remboursement cash 250 000€ (garanti)" data-nl="Optie B : Cash-terugbetaling 250 000€ (gegarandeerd)" data-en="Option B: Cash Refund €250,000 (guaranteed)">Option B : Remboursement cash 250 000€ (garanti)</div>
+          <p class="bs" style="margin-bottom:0;"
+             data-fr="250 000€ garanti dans le pacte d'associés. Notification requise avant la fin de l'année 4. Limité à 3 investisseurs maximum par année civile. Rachat au niveau de TB Invest SAS (droit français). Combiné aux dividendes, vous repartez avec 375 000€ à 475 000€ en cash."
+             data-nl="250 000€ gegarandeerd in de aandeelhoudersovereenkomst. Melding vereist voor het einde van jaar 4. Beperkt tot maximaal 3 investeerders per kalenderjaar. Terugkoop op niveau van TB Invest SAS (Frans recht)."
+             data-en="€250,000 guaranteed in the shareholders' pact. Notification required before end of Year 4. Limited to a maximum of 3 investors per calendar year. Buyback at TB Invest SAS level (French law). Combined with dividends, you exit with €375,000 to €475,000 in cash.">
+            250 000€ garanti dans le pacte d'associés. Notification avant la fin de l'année 4. Limité à 3 investisseurs maximum par année civile. Rachat TB Invest SAS, droit français. Combiné aux dividendes, vous repartez avec 375 000€ à 475 000€ en cash.
           </p>
         </div>
       </div>
@@ -896,11 +831,14 @@
 
 <div style="background:var(--pise);padding:24px 28px;margin-top:16px;">
   <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.65;color:var(--sky);"
-     data-fr="À l'année 5, vous n'avez plus vraiment de capital à risque. Vous avez déjà récupéré l'essentiel en cash. Le riad n'est pas un pari. C'est un bonus structuré.">
-    À l'année 5, vous n'avez plus vraiment de capital à risque. Vous avez déjà récupéré l'essentiel en cash. Le riad n'est pas un pari. C'est un bonus structuré.
+     data-fr="A l'année 5, vous n'avez plus vraiment de capital à risque. Vous avez déjà récupéré l'essentiel en cash. Le riad n'est pas un pari. C'est un bonus structuré. Et si votre vie a changé, 250 000€ cash vous attend dans le pacte."
+     data-nl="In jaar 5 heeft u nauwelijks nog kapitaal at risk. U heeft het grootste deel al terugverdiend in cash. De riad is geen gok. Het is een gestructureerde bonus. En als uw leven is veranderd, wacht 250 000€ cash op u in het pact."
+     data-en="At Year 5, you have little capital truly at risk. You have already recovered the bulk in cash. The riad is not a bet. It is a structured bonus. And if your life has changed, €250,000 cash awaits you in the pact.">
+    A l'année 5, vous n'avez plus vraiment de capital à risque. Vous avez déjà récupéré l'essentiel en cash. Le riad n'est pas un pari. C'est un bonus structuré. Et si votre vie a changé, 250 000€ cash vous attend dans le pacte.
   </p>
 </div>
 
+<!-- ══════ 9. SORTIE RIAD ══════ -->
 <div class="rule" style="margin-top:40px;"></div>
 <div class="sl" data-fr="9. La sortie Riad - Et si les maisons ne sont pas disponibles ?" data-nl="9. De Riad-uitstap - En als de huizen niet beschikbaar zijn?" data-en="9. The Riad Exit - What If the Houses Are Not Available?">9. La sortie Riad - Et si les maisons ne sont pas disponibles ?</div>
 <h2 data-fr="C'est la question que vous devez poser.<br>Voici la réponse honnête."
@@ -911,19 +849,18 @@
   <div>
     <div class="ab">
       <div class="sl" data-fr="1. L'offre est réelle et documentée" data-nl="1. Het aanbod is reëel en gedocumenteerd" data-en="1. The Supply Is Real and Documented">1. L'offre est réelle et documentée</div>
-      <p class="bs" data-fr="Le séisme du 8 septembre 2023 a détruit une partie significative du parc résidentiel traditionnel de Tagadirt. En 2026, de nombreux terrains et structures partiellement détruites sont disponibles à l'acquisition à des coûts très bas - le programme de reconstruction gouvernemental a laissé de nombreuses familles dans l'incapacité de rebâtir sans capital externe. En tant qu'employeur principal et ancre économique du douar, l'hôtel a un accès privilégié à ces familles et à ces propriétés. La contrainte n'est pas l'offre - c'est la capacité d'exécution."
-                data-nl="De aardbeving van 8 september 2023 heeft een significant deel van het traditionele woningbestand van Tagadirt vernietigd. In 2026 zijn er tal van percelen en gedeeltelijk vernielde structuren beschikbaar voor verwerving tegen zeer lage kosten. Als belangrijkste werkgever en economisch anker van het dorp heeft het hotel bevoorrechte toegang tot deze families en eigendommen. De beperking is niet het aanbod - het is de uitvoeringscapaciteit."
-                data-en="The earthquake of 8 September 2023 destroyed a significant portion of Tagadirt's traditional residential stock. In 2026, numerous plots and partially destroyed structures are available for acquisition at very low cost - the government reconstruction programme has left many families unable to rebuild without external capital. As the douar's primary employer and economic anchor, the hotel has privileged access to these families and properties. The constraint is not supply - it is execution capacity.">
+      <p class="bs" data-fr="Le séisme du 8 septembre 2023 a détruit une partie significative du parc résidentiel traditionnel de Tagadirt. En 2026, de nombreux terrains et structures partiellement détruites sont disponibles à l'acquisition à des coûts très bas. En tant qu'employeur principal et ancre économique du douar, l'hôtel a un accès privilégié à ces familles et à ces propriétés. La contrainte n'est pas l'offre - c'est la capacité d'exécution."
+                data-nl="De aardbeving van 8 september 2023 heeft een significant deel van het traditionele woningbestand van Tagadirt vernietigd. In 2026 zijn er tal van percelen en gedeeltelijk vernielde structuren beschikbaar voor verwerving tegen zeer lage kosten. De beperking is niet het aanbod - het is de uitvoeringscapaciteit."
+                data-en="The earthquake of 8 September 2023 destroyed a significant portion of Tagadirt's traditional residential stock. In 2026, numerous plots and partially destroyed structures are available for acquisition at very low cost. As the douar's primary employer and economic anchor, the hotel has privileged access to these families and properties. The constraint is not supply - it is execution capacity.">
         Le séisme a laissé de nombreuses familles dans l'incapacité de rebâtir. L'hôtel, en tant qu'employeur principal du douar, a un accès privilégié à ces propriétés. La contrainte n'est pas l'offre.
       </p>
     </div>
-
     <div class="ab2">
       <div class="sl" data-fr="2. La fenêtre de sortie est large" data-nl="2. Het uitstapvenster is breed" data-en="2. The Exit Window Is Wide">2. La fenêtre de sortie est large</div>
-      <p class="bs" data-fr="Le bail est livrable entre l'année 5 et l'année 10 depuis l'ouverture. Cela nous donne 5 ans pour identifier, négocier, obtenir les permis et construire 10 riads. À un rythme de 2 riads par an - ce qui est conservateur au regard des coûts et des délais de construction locaux - les 10 riads sont livrés confortablement avant l'année 10. Les premières acquisitions foncières commenceront dès l'année 2 d'exploitation, quand l'hôtel est établi dans le douar et que les relations avec les familles sont construites."
-                data-nl="De erfpacht is leverbaar tussen jaar 5 en jaar 10 vanaf de opening. Dat geeft ons 5 jaar om 10 riads te identificeren, onderhandelen, vergunningen te verkrijgen en te bouwen. Op een tempo van 2 riads per jaar worden alle 10 riads comfortabel vóór jaar 10 geleverd. De eerste grondverwervingen beginnen al in jaar 2 van de exploitatie."
-                data-en="The lease is deliverable between Year 5 and Year 10 from opening. That gives us 5 years to identify, negotiate, obtain permits and build 10 riads. At a pace of 2 riads per year - conservative given local construction costs and timelines - all 10 riads are delivered comfortably before Year 10. First land acquisitions will begin as early as Year 2 of operations, when the hotel is established in the douar and family relationships are built.">
-        Fenêtre de 5 ans (années 5 à 10). Rythme : 2 riads/an, conservateur au regard des délais locaux. Premières acquisitions dès l'année 2 d'exploitation.
+      <p class="bs" data-fr="Le bail est livrable entre l'année 5 et l'année 10 depuis l'ouverture. La livraison est organisée en deux phases : 8 riads livrés à partir de l'année 5 à mesure que le Riad Fund atteint son niveau cible, 2 riads livrés en année 6 ou 7 selon la disponibilité foncière à Tagadirt - disponibilité que le contexte post-séisme rend structurellement favorable. Les investisseurs qui notifient leur sortie en premier sont servis en premier dans la première phase."
+                data-nl="De erfpacht is leverbaar tussen jaar 5 en jaar 10 vanaf de opening. De levering is georganiseerd in twee fasen : 8 riads geleverd vanaf jaar 5 naarmate het Riad Fund zijn doelniveau bereikt, 2 riads geleverd in jaar 6 of 7. Investeerders die hun uitstap het eerst melden worden het eerst bediend in de eerste fase."
+                data-en="The lease is deliverable between Year 5 and Year 10 from opening. Delivery is organised in two phases: 8 riads delivered from Year 5 as the Riad Fund reaches its target, 2 riads delivered in Year 6 or 7 subject to land availability. Investors who notify their exit first are served first in phase one.">
+        Livraison en deux phases : 8 riads à partir de l'année 5, 2 riads en année 6-7 selon disponibilité foncière. Ordre de priorité selon date de notification de sortie. Premières acquisitions foncières dès l'année 2 d'exploitation.
       </p>
     </div>
   </div>
@@ -932,7 +869,7 @@
     <div class="ab">
       <div class="sl" data-fr="3. La garantie contractuelle de sortie" data-nl="3. De contractuele uitstapgarantie" data-en="3. The Contractual Exit Guarantee">3. La garantie contractuelle de sortie</div>
       <p class="bs" data-fr="Si, pour un investisseur spécifique, le riad n'est pas livrable avant la fin de l'année 10 - scénario que nous considérons très improbable - le pacte d'associés prévoit deux alternatives au choix de l'investisseur :"
-                data-nl="Als voor een specifieke investeerder de riad niet leverbaar is voor het einde van jaar 10 - een scenario dat wij als zeer onwaarschijnlijk beschouwen - voorziet de aandeelhoudersovereenkomst in twee alternatieven naar keuze van de investeerder :"
+                data-nl="Als voor een specifieke investeerder de riad niet leverbaar is voor het einde van jaar 10 - een scenario dat wij als zeer onwaarschijnlijk beschouwen - voorziet de aandeelhoudersovereenkomst in twee alternatieven :"
                 data-en="If, for a specific investor, the riad cannot be delivered before the end of Year 10 - a scenario we consider very unlikely - the shareholders' agreement provides two alternatives at the investor's choice:">
         Si le riad n'est pas livrable avant l'année 10, le pacte prévoit deux alternatives au choix de l'investisseur :
       </p>
@@ -941,11 +878,8 @@
           <div class="wf-num">A</div>
           <div>
             <div class="wf-title" data-fr="Extension de la fenêtre de sortie - 2 ans supplémentaires" data-nl="Verlenging van het uitstapvenster - 2 extra jaren" data-en="Exit Window Extension - 2 Additional Years">Extension - 2 ans supplémentaires</div>
-            <div class="wf-desc" data-fr="La livraison des riads est organisée en deux phases. La première phase couvre 8 riads, livrés à partir de l'année 5 à mesure que le Riad Fund atteint son niveau cible. La seconde phase couvre les 2 riads restants, livrés en année 6 ou 7 selon la disponibilité foncière à Tagadirt - disponibilité que le contexte post-séisme rend structurellement favorable. Les investisseurs qui notifient leur sortie en premier sont servis en premier dans la première phase."
-                                  data-nl="De levering van de riads is georganiseerd in twee fasen. De eerste fase omvat 8 riads, geleverd vanaf jaar 5 naarmate het Riad Fund zijn doelniveau bereikt. De tweede fase omvat de 2 resterende riads, geleverd in jaar 6 of 7 naargelang de beschikbaarheid van gronden in Tagadirt - een beschikbaarheid die de post-aardbevingscontext structureel gunstig maakt. Investeerders die hun uitstap het eerst melden, worden het eerst bediend in de eerste fase."
-                                  data-en="Riad delivery is organised in two phases. Phase one covers 8 riads, delivered from Year 5 as the Riad Fund reaches its target level. Phase two covers the remaining 2 riads, delivered in Year 6 or 7 subject to land availability in Tagadirt - availability that the post-earthquake context makes structurally favourable. Investors who notify their exit first are served first in phase one.">La livraison des riads est organisée en deux phases. La première phase couvre 8 riads, livrés à partir de l'année 5 à mesure que le Riad Fund atteint son niveau cible. La seconde phase couvre les 2 riads restants, livrés en année 6 ou 7 selon la disponibilité foncière à Tagadirt - disponibilité que le contexte post-séisme rend structurellement favorable. Les investisseurs qui notifient leur sortie en premier sont servis en premier dans la première phase.</div>
             <div class="wf-desc" data-fr="La fenêtre de sortie est prolongée jusqu'à l'année 12. Le riad est livré dès qu'un bien adapté est disponible. Durant cette période, l'investisseur continue de percevoir ses revenus locatifs normaux de la SARL."
-                                  data-nl="Het uitstapvenster wordt verlengd tot jaar 12. De riad wordt geleverd zodra een geschikt goed beschikbaar is. Gedurende deze periode blijft de investeerder zijn normale huurinkomsten van de SARL ontvangen."
+                                  data-nl="Het uitstapvenster wordt verlengd tot jaar 12. De riad wordt geleverd zodra een geschikt goed beschikbaar is. De investeerder blijft zijn normale huurinkomsten ontvangen."
                                   data-en="The exit window is extended to Year 12. The riad is delivered as soon as a suitable property is available. During this period, the investor continues to receive their normal rental income from the SARL.">Fenêtre étendue à l'année 12. Revenus SARL maintenus pendant l'attente.</div>
           </div>
           <div class="wf-amount" data-fr="Préféré" data-nl="Voorkeur" data-en="Preferred">Préféré</div>
@@ -954,12 +888,13 @@
           <div class="wf-num">B</div>
           <div>
             <div class="wf-title" data-fr="Cash de substitution - 250 000€ garanti" data-nl="Vervangend cash - 250 000€ gegarandeerd" data-en="Cash Substitute - €250,000 Guaranteed">Cash de substitution - 250 000€</div>
-            <div class="wf-desc" data-fr="Si l'investisseur ne souhaite pas attendre au-delà de l'année 10, la SARL verse 250 000€ en cash comme sortie contractuellement garantie. Combiné aux 225 000€ déjà perçus en dividendes, l'investisseur repart avec 475 000€ en cash sur un investissement de 250 000€, soit un retour de 90% sur la période, sans jamais avoir reçu de riad."
-                                  data-nl="Als de investeerder niet langer wil wachten dan jaar 10, betaalt de SARL 250 000€ in cash als contractueel gegarandeerde uitstap. Gecombineerd met de 225 000€ reeds ontvangen aan dividenden, stapt de investeerder weg met 475 000€ in cash op een investering van 250 000€, een rendement van 90% over de periode, zonder ooit een riad te hebben ontvangen."
-                                  data-en="If the investor does not wish to wait beyond Year 10, the SARL pays €250,000 in cash as a contractually guaranteed exit. Combined with the €225,000 already received in dividends, the investor exits with €475,000 in cash on a €250,000 investment, a 90% return over the period, without ever receiving a riad.">Si l'investisseur ne souhaite pas attendre au-delà de l'année 10, la SARL verse 250 000€ en cash comme sortie contractuellement garantie. Combiné aux 225 000€ déjà perçus en dividendes, l'investisseur repart avec 475 000€ en cash sur un investissement de 250 000€, soit un retour de 90% sur la période, sans jamais avoir reçu de riad.</div>
-            <div class="wf-desc" style="margin-top:8px;" data-fr="Le rachat s'effectue au niveau de TB Invest SAS, la holding française, et non au niveau de la SARL marocaine. C'est une cession de parts sociales françaises, régie par le droit français. TB Invest SAS peut financer ce rachat via un crédit bancaire français : la société détient 70% d'un hôtel marocain sans dette, valorisé entre 4 500 000€ et 9 000 000€ selon les méthodes de marché. Un prêt de 250 000€ à 750 000€ contre un actif net de cette valeur représente un LTV de 6 à 17% - une opération que toute banque française traitera sans difficulté. L'investisseur reçoit des euros, depuis une entité française, sous droit français."
-                                  data-nl="De terugkoop vindt plaats op het niveau van TB Invest SAS, de Franse holding, niet op het niveau van de Marokkaanse SARL. Het is een overdracht van Franse vennootschapsaandelen, beheerst door Frans recht. TB Invest SAS kan deze terugkoop financieren via een Frans bankkrediet : de vennootschap bezit 70% van een schuldenvrij Marokkaans hotel, gewaardeerd tussen 4 500 000€ en 9 000 000€ volgens marktmethoden. Een lening van 250 000€ tot 750 000€ tegen een netto actief van deze waarde vertegenwoordigt een LTV van 6 tot 17% - een operatie die elke Franse bank zonder moeite zal behandelen. De investeerder ontvangt euro's, van een Franse entiteit, onder Frans recht."
-                                  data-en="The buyback is executed at the TB Invest SAS level (French law), not at SARL level. TB Invest SAS can finance it through French bank credit, secured by its participation in a debt-free Moroccan hotel valued between €4.5M and €9M. A €250,000 to €750,000 facility implies a 6% to 17% LTV. The investor receives euros from a French entity under French law.">Le rachat s'effectue au niveau de TB Invest SAS, la holding française, et non au niveau de la SARL marocaine. C'est une cession de parts sociales françaises, régie par le droit français. TB Invest SAS peut financer ce rachat via un crédit bancaire français : la société détient 70% d'un hôtel marocain sans dette, valorisé entre 4 500 000€ et 9 000 000€ selon les méthodes de marché. Un prêt de 250 000€ à 750 000€ contre un actif net de cette valeur représente un LTV de 6 à 17% - une opération que toute banque française traitera sans difficulté. L'investisseur reçoit des euros, depuis une entité française, sous droit français.</div>
+            <div class="wf-desc" data-fr="Si l'investisseur ne souhaite pas attendre au-delà de l'année 10, la SARL verse 250 000€ en cash comme sortie contractuellement garantie. Combiné aux dividendes déjà perçus, l'investisseur repart avec 375 000€ à 475 000€ en cash sur un investissement de 250 000€, soit un retour de 50 à 90% sur la période, sans jamais avoir reçu de riad."
+                                  data-nl="Als de investeerder niet langer wil wachten dan jaar 10, betaalt de SARL 250 000€ in cash als contractueel gegarandeerde uitstap. Gecombineerd met de reeds ontvangen dividenden, stapt de investeerder weg met 375 000€ tot 475 000€ in cash."
+                                  data-en="If the investor does not wish to wait beyond Year 10, the SARL pays €250,000 in cash as a contractually guaranteed exit. Combined with the dividends already received, the investor exits with €375,000 to €475,000 in cash on a €250,000 investment.">Si l'investisseur ne souhaite pas attendre au-delà de l'année 10, la SARL verse 250 000€ en cash comme sortie contractuellement garantie. Combiné aux dividendes déjà perçus, l'investisseur repart avec 375 000€ à 475 000€ en cash sur un investissement de 250 000€.</div>
+            <div class="wf-desc" style="margin-top:8px;"
+                 data-fr="Le rachat s'effectue au niveau de TB Invest SAS (droit français). TB Invest SAS détient 70% d'un hôtel marocain sans dette, valorisé entre 4 500 000€ et 9 000 000€ selon les méthodes de marché. Un prêt de 250 000€ à 750 000€ contre un actif net de cette valeur représente un LTV de 6 à 17% - une opération que toute banque française traitera sans difficulté. L'investisseur reçoit des euros, depuis une entité française, sous droit français."
+                 data-nl="De terugkoop vindt plaats op het niveau van TB Invest SAS (Frans recht). TB Invest SAS bezit 70% van een schuldenvrij Marokkaans hotel gewaardeerd tussen 4 500 000€ en 9 000 000€. LTV 6 tot 17%. De investeerder ontvangt euro's vanuit een Franse entiteit."
+                 data-en="The buyback is executed at TB Invest SAS level (French law). TB Invest SAS holds 70% of a debt-free Moroccan hotel valued between €4.5M and €9M. LTV 6% to 17%. The investor receives euros from a French entity under French law.">Le rachat s'effectue au niveau de TB Invest SAS (droit français). LTV 6 à 17% sur un actif net 4,5M€ à 9M€. L'investisseur reçoit des euros, depuis une entité française, sous droit français.</div>
           </div>
           <div class="wf-amount" data-fr="Garanti" data-nl="Gegarandeerd" data-en="Guaranteed">Garanti</div>
         </div>
@@ -968,18 +903,18 @@
       <div class="ab2" style="margin-top:16px;">
         <div class="sl" data-fr="L'opt-out - Si votre vie change" data-nl="De opt-out - Als uw leven verandert" data-en="The Opt-Out - If Your Life Changes">L'opt-out - Si votre vie change</div>
         <p class="bs" data-fr="Un investisseur peut également décider, à partir de l'année 5, qu'il ne souhaite plus un riad - changement de situation personnelle, déménagement, priorités différentes. Il suffit de notifier la SARL avant la fin de l'année 4. La SARL verse alors 250 000€ cash en échange de la cession des parts - garanti dans le pacte d'associés. Pour préserver la trésorerie de l'hôtel, ce rachat cash est limité à 3 investisseurs maximum par année civile. Au-delà, les sorties sont décalées à l'année suivante selon ordre de notification. Personne n'est jamais contraint de prendre un riad qu'il ne veut pas."
-                  data-nl="Een investeerder kan ook beslissen, vanaf jaar 5, dat hij geen riad meer wenst - veranderde persoonlijke situatie, verhuis, andere prioriteiten. U hoeft de SARL enkel te melden vóór het einde van jaar 4. De SARL betaalt dan 250 000€ cash in ruil voor de overdracht van de aandelen - gegarandeerd in de aandeelhoudersovereenkomst. Om de liquiditeit van het hotel te beschermen, is deze cash-terugkoop beperkt tot maximaal 3 investeerders per kalenderjaar. Daarboven worden uitstappen verschoven naar het volgende jaar in volgorde van melding. Niemand wordt ooit gedwongen een riad te aanvaarden die hij niet wil."
-                  data-en="An investor may also decide, from Year 5, that they no longer want a riad - changed personal situation, relocation, different priorities. Simply notify the SARL before the end of Year 4. The SARL then pays €250,000 cash in exchange for the transfer of shares - guaranteed in the shareholders' pact. To preserve hotel liquidity, this cash buyback is limited to a maximum of 3 investors per calendar year. Beyond this, exits are deferred to the following year in order of notification. No one is ever forced to take a riad they don't want.">
-          À partir de l'année 5, si un investisseur ne souhaite plus de riad, il notifie la SARL avant la fin de l'année 4 et reçoit 250 000€ cash. Rachat garanti au pacte, limité à 3 investisseurs par an, puis report selon ordre de notification.
+                  data-nl="Een investeerder kan ook beslissen, vanaf jaar 5, dat hij geen riad meer wenst. U hoeft de SARL enkel te melden vóór het einde van jaar 4. De SARL betaalt dan 250 000€ cash in ruil voor de overdracht van de aandelen - gegarandeerd in de aandeelhoudersovereenkomst. Om de liquiditeit van het hotel te beschermen, is deze cash-terugkoop beperkt tot maximaal 3 investeerders per kalenderjaar. Niemand wordt ooit gedwongen een riad te aanvaarden die hij niet wil."
+                  data-en="An investor may also decide, from Year 5, that they no longer want a riad. Simply notify the SARL before the end of Year 4. The SARL then pays €250,000 cash in exchange for the transfer of shares - guaranteed in the shareholders' pact. To preserve hotel liquidity, this cash buyback is limited to a maximum of 3 investors per calendar year. No one is ever forced to take a riad they don't want.">
+          A partir de l'année 5, si un investisseur ne souhaite plus de riad, il notifie la SARL avant la fin de l'année 4 et reçoit 250 000€ cash. Rachat garanti au pacte, limité à 3 investisseurs par an, puis report selon ordre de notification.
         </p>
       </div>
 
       <div class="ab" style="margin-top:16px;">
         <div class="sl" data-fr="Que se passe-t-il si l'hôtel est vendu ?" data-nl="Wat gebeurt er als het hotel wordt verkocht?" data-en="What happens if the hotel is sold?">Que se passe-t-il si l'hôtel est vendu ?</div>
         <p class="bs" data-fr="Le contrat de gestion locative de votre riad est une obligation de la SARL, pas de Leroy Brothers à titre personnel. En cas de vente de la SARL, trois protections s'appliquent, inscrites dans le pacte d'associés. Premièrement, une clause de novation obligatoire : toute cession de la SARL ou de ses actifs hôteliers impose à l'acheteur de reprendre formellement l'ensemble des contrats de gestion locative des riads comme condition préalable au closing. Deuxièmement, un standard de service minimum contractuellement défini et opposable à tout opérateur futur. Troisièmement, un droit de veto collectif des investisseurs titulaires de baux actifs sur toute vente ne reprenant pas intégralement leurs contrats. Vous ne dépendez pas de la bonne volonté du futur propriétaire. Vous avez des droits opposables."
-                  data-nl="Het verhuurbeheerscontract van uw riad is een verplichting van de SARL, niet van Leroy Brothers persoonlijk. Bij verkoop van de SARL gelden drie beschermingen, opgenomen in de aandeelhoudersovereenkomst. Ten eerste een verplichte novatieclausule : elke overdracht van de SARL of haar hotelactiva verplicht de koper alle verhuurbeheerscontracten van de riads formeel over te nemen als voorwaarde vóór de afsluiting. Ten tweede een contractueel gedefinieerde minimale servicenorm die afdwingbaar is voor elke toekomstige exploitant. Ten derde een collectief vetorecht van investeerders met actieve erfpachten op elke verkoop die hun contracten niet volledig overneemt."
-                  data-en="Your riad rental management contract is an obligation of the SARL, not of Leroy Brothers personally. If the SARL is sold, three protections apply under the shareholders' agreement: mandatory novation clause, enforceable minimum service standard, and a collective veto right for investors with active leases on any sale that does not fully assume their contracts. You do not depend on a future owner's goodwill. You have enforceable rights.">
-          Le contrat de gestion locative de votre riad est une obligation de la SARL, pas de Leroy Brothers à titre personnel. En cas de vente de la SARL, trois protections s'appliquent, inscrites dans le pacte d'associés. Premièrement, une clause de novation obligatoire : toute cession de la SARL ou de ses actifs hôteliers impose à l'acheteur de reprendre formellement l'ensemble des contrats de gestion locative des riads comme condition préalable au closing. Deuxièmement, un standard de service minimum contractuellement défini et opposable à tout opérateur futur. Troisièmement, un droit de veto collectif des investisseurs titulaires de baux actifs sur toute vente ne reprenant pas intégralement leurs contrats. Vous ne dépendez pas de la bonne volonté du futur propriétaire. Vous avez des droits opposables.
+                  data-nl="Het verhuurbeheerscontract van uw riad is een verplichting van de SARL, niet van Leroy Brothers persoonlijk. Bij verkoop van de SARL gelden drie beschermingen : verplichte novatieclausule, contractueel gedefinieerde minimale servicenorm, en collectief vetorecht van investeerders op elke verkoop die hun contracten niet volledig overneemt."
+                  data-en="Your riad rental management contract is an obligation of the SARL, not of Leroy Brothers personally. If the SARL is sold, three protections apply: mandatory novation clause, enforceable minimum service standard, and a collective veto right for investors with active leases on any sale that does not fully assume their contracts. You do not depend on a future owner's goodwill. You have enforceable rights.">
+          Le contrat de gestion locative de votre riad est une obligation de la SARL, pas de Leroy Brothers à titre personnel. En cas de vente de la SARL, trois protections s'appliquent : clause de novation obligatoire, standard de service minimum contractuellement défini, et veto collectif des investisseurs sur toute vente ne reprenant pas leurs contrats.
         </p>
       </div>
     </div>
@@ -1009,8 +944,9 @@ function setLang(lang) {
   localStorage.setItem(LANG_KEY, lang);
   document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
   document.getElementById('btn-nl').classList.toggle('active', lang === 'nl');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
   document.querySelectorAll('[data-fr]').forEach(el => {
-    const val = el.getAttribute('data-' + lang);
+    const val = el.getAttribute('data-' + lang) || el.getAttribute('data-fr');
     if (val) el.innerHTML = val;
   });
 }
