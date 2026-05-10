@@ -7,49 +7,20 @@
 <meta name="referrer" content="no-referrer">
 <title>Toile Blanche Marrakech - Le Financement</title>
 <style>
-
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap');
   :root{--sand:#F5F0E6;--pise:#111008;--pise-mid:#4F4336;--cedar:#A78661;--sky:#FDFAF5;--pise-light:#D8CCB8;--alert:#8B3A2A;}
   *{margin:0;padding:0;box-sizing:border-box;}
   html,body{width:100%;max-width:100%;overflow-x:hidden;}
   body{background:var(--sand);color:var(--pise);font-family:'Montserrat',sans-serif;font-weight:300;font-size:16px;line-height:1.75;}
-
-  /* LOGIN */
-  #login-screen{width:100%;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;background:var(--sand);}
-  .login-logo{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:0.5em;text-transform:uppercase;color:var(--pise);margin-bottom:6px;text-align:center;}
-  .login-sub{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--cedar);margin-bottom:56px;text-align:center;}
-  .login-box{width:100%;max-width:340px;text-align:center;}
-  .login-rule{width:28px;height:1px;background:var(--cedar);margin:0 auto 36px;}
-  .login-label{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--pise-mid);display:block;margin-bottom:10px;}
-  .login-input{width:100%;background:var(--sky);border:1px solid var(--pise-light);padding:13px 18px;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:300;color:var(--pise);text-align:center;letter-spacing:0.12em;outline:none;}
-  .login-input:focus{border-color:var(--cedar);}
-  .login-btn{width:100%;margin-top:10px;background:var(--pise);color:var(--sky);border:none;padding:13px 18px;font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;cursor:pointer;}
-  .login-btn:hover{background:var(--cedar);}
-  .login-error{font-size:10px;letter-spacing:0.15em;color:var(--alert);text-align:center;margin-top:10px;opacity:0;transition:opacity 0.2s;}
-  .login-error.show{opacity:1;}
-  .login-conf{font-size:9px;letter-spacing:0.15em;color:var(--pise-mid);text-align:center;margin-top:44px;text-transform:uppercase;}
-
-  /* SITE SHELL */
-  #site{display:none;}
-
-  /* NAV */
   nav{width:100%;background:var(--sand);border-bottom:1px solid var(--pise-light);position:sticky;top:0;z-index:100;}
   .nav-top{padding:12px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--pise-light);}
-  .nav-brand{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:0.28em;text-transform:uppercase;color:var(--pise);cursor:pointer;}
+  .nav-brand{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:0.28em;text-transform:uppercase;color:var(--pise);text-decoration:none;}
   .nav-brand span{color:var(--cedar);}
-  .nav-right{display:flex;align-items:center;gap:16px;}
-  .lang-toggle{display:flex;gap:0;}
-  .lang-btn{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:5px 10px;background:none;border:1px solid var(--pise-light);font-family:'Montserrat',sans-serif;font-weight:300;cursor:pointer;color:var(--pise-mid);transition:all 0.15s;}
-  .lang-btn.active{background:var(--pise);color:var(--sky);border-color:var(--pise);}
-  .nav-logout{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--pise-mid);cursor:pointer;background:none;border:none;font-family:'Montserrat',sans-serif;}
   .nav-links{padding:9px 40px;display:flex;gap:4px;flex-wrap:wrap;}
-  .nav-link{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--pise-mid);cursor:pointer;padding:6px 10px;border:1px solid transparent;background:none;font-family:'Montserrat',sans-serif;font-weight:300;transition:all 0.15s;}
+  .nav-link{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--pise-mid);padding:6px 10px;border:1px solid transparent;font-family:'Montserrat',sans-serif;font-weight:300;transition:all 0.15s;}
   .nav-link:hover{color:var(--pise);}
   .nav-link.active{color:var(--pise);border-color:var(--cedar);}
-
-  /* PAGES */
   .page{max-width:960px;margin:0 auto;padding:56px 52px;border-bottom:1px solid var(--pise-light);}
-  .page.visible{display:block;}
   .ph{display:flex;justify-content:space-between;margin-bottom:40px;padding-bottom:10px;border-bottom:1px solid var(--cedar);}
   .ph span{font-size:14px;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;}
   .ph span:last-child{color:var(--pise-mid);}
@@ -59,51 +30,18 @@
   h3{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--pise-mid);margin-bottom:10px;margin-top:20px;font-weight:400;}
   p{font-size:16px;line-height:1.9;margin-bottom:12px;}
   .bs{font-size:14px;line-height:1.8;color:var(--pise-mid);margin-bottom:7px;}
-  .two{display:grid;grid-template-columns:1.15fr 0.85fr;gap:44px;margin:20px 0;}
   .two-eq{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin:20px 0;}
-  .three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--pise-light);margin:24px 0;}
-  .ul{list-style:none;margin:0 0 14px;padding:0;}
-  .ul li{font-size:15px;line-height:1.75;padding-left:14px;position:relative;margin-bottom:3px;}
-  .ul li::before{content:'·';position:absolute;left:0;color:var(--cedar);}
   .ab{border-left:2px solid var(--cedar);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
   .ab2{border-left:2px solid var(--pise-light);padding:18px 22px;background:var(--sky);margin-bottom:16px;}
-  .ab-dark{padding:32px 36px;background:var(--cedar);margin:24px 0;border-left:3px solid var(--pise-mid);}
-  .ab-dark p{color:var(--sky);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.65;}
-  .ab-dark .sl{color:var(--cedar);}
-  .alert-box{border-left:2px solid var(--alert);padding:18px 22px;background:#FDF5F3;margin-bottom:16px;}
-  .qb{border-left:1px solid var(--cedar);padding:14px 20px;background:var(--sky);margin:16px 0;}
-  .qb p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;line-height:1.75;}
-  .qs{font-size:10px;letter-spacing:0.16em;color:var(--cedar);text-transform:uppercase;margin-top:7px;}
+  .ab-dark{padding:32px 36px;background:var(--pise);margin:24px 0;}
+  .ab-dark p{color:var(--sky);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.65;}
   .rule{width:36px;height:1px;background:var(--cedar);margin:22px 0;}
   .pf{margin-top:40px;padding-top:12px;border-top:1px solid var(--pise-light);display:flex;justify-content:space-between;}
   .pf span{font-size:10px;letter-spacing:0.13em;color:var(--pise-mid);text-transform:uppercase;}
-
-  /* IMAGE PLACEHOLDERS */
-  .img-full{width:100%;height:480px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9px;letter-spacing:0.12em;text-align:center;padding:24px;font-style:italic;margin:24px 0;}
-  .img-h{width:100%;height:340px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9px;text-align:center;padding:16px;font-style:italic;}
-  .img-sq{width:100%;height:400px;background:var(--pise-light);display:flex;align-items:center;justify-content:center;color:var(--pise-mid);font-size:9px;text-align:center;padding:16px;font-style:italic;}
-
-  /* KPI STRIPS */
-  .kpi-cover{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--pise-light);margin:28px 0;}
-  .kc{background:var(--sky);padding:20px 18px;}
-  .kc-v{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--pise);line-height:1;margin-bottom:5px;}
-  .kc-l{font-size:9px;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;margin-bottom:2px;}
-  .kc-s{font-size:11px;color:var(--pise-mid);}
-  .kpi-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--pise-light);margin:24px 0;}
-  .ks-box{background:var(--sky);padding:20px 18px;}
-  .ks-val{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300;color:var(--pise);line-height:1;margin-bottom:5px;}
-  .ks-lbl{font-size:9px;letter-spacing:0.18em;color:var(--cedar);text-transform:uppercase;}
-  .ks-sub{font-size:12px;color:var(--pise-mid);margin-top:3px;}
-
-  /* BLOCK GRIDS */
-  .block-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--pise-light);margin:24px 0;}
-  .bc{background:var(--sky);padding:22px 20px;}
-  .bl{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;}
-  .bt{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--pise);margin-bottom:8px;line-height:1.2;}
-  .bd{font-size:13px;line-height:1.7;color:var(--pise-mid);}
-  .bp{font-size:11px;color:var(--pise-mid);margin-top:8px;padding-top:8px;border-top:1px solid var(--pise-light);font-style:italic;}
-
-  /* WATERFALL TABLE */
+  .data-row{display:grid;grid-template-columns:220px 1fr;gap:16px;padding:10px 0;border-bottom:1px solid var(--pise-light);font-size:14px;}
+  .data-row:last-child{border-bottom:none;}
+  .data-label{color:var(--cedar);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;padding-top:2px;}
+  .data-val{color:var(--pise);line-height:1.7;}
   .waterfall{margin:24px 0;}
   .wf-row{display:grid;grid-template-columns:28px 1fr 1fr;gap:0;border-bottom:1px solid var(--pise-light);padding:12px 0;align-items:start;}
   .wf-row:first-child{border-top:2px solid var(--cedar);}
@@ -113,8 +51,6 @@
   .wf-amount{font-size:13px;color:var(--cedar);text-align:right;padding-top:3px;}
   .wf-highlight .wf-num{color:var(--cedar);}
   .wf-highlight .wf-title{color:var(--cedar);}
-
-  /* RETURN TABLE */
   table.ret{width:100%;border-collapse:collapse;margin:20px 0;}
   table.ret thead tr{border-bottom:2px solid var(--cedar);}
   table.ret thead th{padding:8px 10px;text-align:left;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
@@ -126,78 +62,6 @@
   table.ret .row-sub td{background:var(--sand);font-weight:400;}
   table.ret .row-tot td{border-top:2px solid var(--cedar);font-weight:400;font-size:15px;padding:10px;}
   table.ret .row-pref td{background:var(--sky);}
-
-  /* DATA ROWS */
-  .data-row{display:grid;grid-template-columns:180px 1fr;gap:16px;padding:10px 0;border-bottom:1px solid var(--pise-light);font-size:14px;}
-  .data-row:last-child{border-bottom:none;}
-  .data-label{color:var(--cedar);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;padding-top:2px;}
-  .data-val{color:var(--pise);line-height:1.7;}
-
-  /* ECO GRID */
-  .eco-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--pise-light);margin:24px 0;}
-  .eco-cell{background:var(--sky);padding:20px 18px;}
-  .eco-icon{font-size:24px;margin-bottom:8px;}
-  .eco-title{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;font-weight:400;}
-  .eco-body{font-size:13px;line-height:1.7;color:var(--pise-mid);}
-  .eco-premium{font-size:12px;color:var(--pise);margin-top:8px;padding-top:8px;border-top:1px solid var(--pise-light);}
-
-  /* ART GRID */
-  .art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--pise-light);margin:24px 0;}
-  .art-cell{background:var(--sky);padding:20px 16px;}
-  .art-label{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cedar);margin-bottom:6px;}
-  .art-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--pise);margin-bottom:8px;line-height:1.2;}
-  .art-body{font-size:12px;line-height:1.7;color:var(--pise-mid);}
-
-  /* OVERRIDES */
-  table{font-size:15px !important;}
-  table thead th{font-size:11px !important;padding:10px !important;}
-  table tbody td{font-size:14px !important;padding:9px 10px !important;line-height:1.7 !important;}
-  .bd{font-size:13px !important;}
-  .bs{font-size:14px !important;}
-
-  @media(max-width:720px){
-    .page{padding:40px 20px;}
-    .nav-links{padding:8px 16px;}
-    .two,.two-eq,.block-grid,.eco-grid{grid-template-columns:1fr;}
-    .kpi-cover{grid-template-columns:1fr 1fr;}
-    .art-grid{grid-template-columns:1fr;}
-    .three{grid-template-columns:1fr;}
-    h1{font-size:36px;}
-    .nav-top{padding:12px 20px;}
-    .data-row{grid-template-columns:1fr;}
-  }
-
-  /* Multi-page specific */
-  a.nav-link{text-decoration:none;display:inline-block;}
-  nav{width:100%;background:var(--sand);border-bottom:1px solid var(--pise-light);position:sticky;top:0;z-index:100;}
-  .nav-top{padding:12px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--pise-light);}
-  .nav-brand{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:0.28em;text-transform:uppercase;color:var(--pise);text-decoration:none;}
-  .nav-brand span{color:var(--cedar);}
-  .nav-right{display:flex;align-items:center;gap:16px;}
-  .lang-toggle{display:flex;gap:0;}
-  .lang-btn{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:5px 10px;background:none;border:1px solid var(--pise-light);font-family:'Montserrat',sans-serif;font-weight:300;cursor:pointer;color:var(--pise-mid);transition:all 0.15s;}
-  .lang-btn.active{background:var(--pise);color:var(--sky);border-color:var(--pise);}
-  .nav-links{padding:9px 40px;display:flex;gap:4px;flex-wrap:wrap;}
-  .nav-link{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--pise-mid);padding:6px 10px;border:1px solid transparent;font-family:'Montserrat',sans-serif;font-weight:300;transition:all 0.15s;}
-  .nav-link:hover{color:var(--pise);}
-  .nav-link.active{color:var(--pise);border-color:var(--cedar);}
-  .page{max-width:960px;margin:0 auto;padding:56px 52px;}
-  @media(max-width:720px){
-    .page{padding:40px 20px;}
-    .nav-links{padding:8px 16px;}
-    .two,.two-eq,.block-grid,.eco-grid{grid-template-columns:1fr;}
-    .kpi-cover{grid-template-columns:1fr 1fr;}
-    .art-grid,.three{grid-template-columns:1fr;}
-    h1{font-size:36px;}
-    .nav-top{padding:12px 20px;}
-    .data-row{grid-template-columns:1fr;}
-  }
-
-  #lang-bar{position:fixed;top:14px;right:20px;z-index:999;display:flex;gap:0;background:var(--sand);border:1px solid var(--pise-light);}
-  .lang-btn{font-family:'Montserrat',sans-serif;font-weight:400;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--pise-mid);background:transparent;border:none;padding:7px 12px;cursor:pointer;transition:color 0.15s,background 0.15s;}
-  .lang-btn.active{background:var(--cedar);color:var(--sky);}
-  .lang-btn:hover:not(.active){color:var(--cedar);}
-
   table.prev{width:100%;border-collapse:collapse;margin:20px 0;}
   table.prev thead tr{border-bottom:2px solid var(--cedar);}
   table.prev thead th{padding:9px 10px;text-align:left;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
@@ -209,19 +73,28 @@
   table.prev .row-sub td{background:var(--sand);font-weight:400;}
   table.prev .row-tot td{border-top:2px solid var(--cedar);border-bottom:none;font-weight:400;font-size:15px !important;padding:10px !important;}
   table.prev .row-gop td{background:var(--sky);font-style:italic;color:var(--pise-mid);}
-  table.prev .row-alert td{background:#FDF5F3;color:var(--alert);}
+  table.prev .row-pref td{background:var(--sky);}
   table.budget{width:100%;border-collapse:collapse;margin:20px 0;}
   table.budget thead tr{border-bottom:2px solid var(--cedar);}
   table.budget thead th{padding:8px 10px;text-align:left;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--pise-mid);font-weight:400;}
   table.budget thead th.r{text-align:right;}
-table.budget thead th:nth-child(2){width:170px;}
   table.budget tbody tr{border-bottom:1px solid var(--pise-light);}
   table.budget tbody td{padding:7px 10px;color:var(--pise);font-size:14px;vertical-align:top;}
-table.budget tbody td.r{text-align:right;white-space:nowrap;}
-  table.budget tbody td.note{font-size:10.5px;color:var(--pise-mid);}
+  table.budget tbody td.r{text-align:right;white-space:nowrap;}
+  table.budget tbody td.note{font-size:11px;color:var(--pise-mid);}
   table.budget .row-sec td{background:var(--sand);color:var(--cedar);font-size:9px;letter-spacing:0.2em;text-transform:uppercase;padding:5px 10px;}
   table.budget .row-sub td{background:var(--sand);font-weight:400;}
   table.budget .row-tot td{border-top:2px solid var(--cedar);border-bottom:none;font-weight:400;padding:10px;}
+  #lang-bar{position:fixed;top:14px;right:20px;z-index:999;display:flex;background:var(--sand);border:1px solid var(--pise-light);}
+  .lang-btn{font-family:'Montserrat',sans-serif;font-weight:400;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--pise-mid);background:transparent;border:none;padding:7px 12px;cursor:pointer;transition:color 0.15s,background 0.15s;}
+  .lang-btn.active{background:var(--cedar);color:var(--sky);}
+  .lang-btn:hover:not(.active){color:var(--cedar);}
+  @media(max-width:720px){
+    .page{padding:40px 20px;}
+    .two-eq{grid-template-columns:1fr;}
+    h1{font-size:36px;}
+    .data-row{grid-template-columns:1fr;}
+  }
 </style>
 <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
@@ -232,154 +105,241 @@ table.budget tbody td.r{text-align:right;white-space:nowrap;}
   <button class="lang-btn" id="btn-nl" onclick="setLang('nl')">NL</button>
   <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
 </div>
+
 <div class="page">
 
-  <div class="ph">
-    <span data-fr="Le financement" data-nl="De financiering" data-en="Financing">Le financement</span>
-    <span data-fr="Structure et retour" data-nl="Structuur en rendement" data-en="Structure and Return">Structure et retour</span>
-  </div>
-  <div class="sl" data-fr="L'investissement" data-nl="De investering" data-en="The Investment">L'investissement</div>
-  <h1 data-fr="250 000€.<br>6 ans.<br>Ce que ça produit." data-nl="250 000€.<br>6 jaar.<br>Wat het oplevert." data-en="€250,000.<br>6 Years.<br>What It Produces.">250 000€.<br>6 ans.<br>Ce que ça produit.</h1>
+<!-- PAGE HEADER -->
+<div class="ph">
+  <span data-fr="Le financement" data-nl="De financiering" data-en="Financing">Le financement</span>
+  <span data-fr="Structure et retour" data-nl="Structuur en rendement" data-en="Structure and Return">Structure et retour</span></div>
 
-  <div class="ab-dark" style="margin-bottom:28px;">
-    <p data-fr="« Vous investissez 250 000€. L'année zéro est le chantier, aucun dividende. En année 1 vous percevez 25 000€ (votre 10% garanti). De l'année 2 à l'année 5 vous percevez 50 000€ par an, dont 25 000€ garantis et 25 000€ de performance. En 5 ans vous avez reçu 225 000€ en dividendes, soit 90% de votre mise en cash, avant la sortie. À la sortie, votre quote-part est échangée. L'hôtel récupère vos parts et vous remet les clés d'un riad rénové à Tagadirt, construit sans coût supplémentaire pour vous. Dès ce moment, le riad génère un revenu locatif projeté de 37 800€ par an pour vous, plus 60 nuits par an à usage personnel. Sur 10 ans : 225 000€ de dividendes + 378 000€ de revenus locatifs projetés. IRR : 14,2% par an en cash pur. 19,4% en incluant la valeur de vos nuits personnelles. »"
-       data-nl="« U investeert 250 000€. Jaar nul is de werf, geen dividend. In jaar 1 ontvangt u 25 000€ (uw gegarandeerde 10%). Van jaar 2 tot jaar 5 ontvangt u 50 000€ per jaar, waarvan 25 000€ gegarandeerd en 25 000€ prestatie. In 5 jaar heeft u 225 000€ aan dividenden ontvangen, ofwel 90% van uw inleg in cash, vóór de uitstap. Bij de uitstap wordt uw aandeel ingeruild. Het hotel recupereert uw aandelen en overhandigt u de sleutels van een gerenoveerde riad in Tagadirt, gebouwd zonder extra kosten voor u. Vanaf dat moment genereert de riad een geprojecteerd huurinkomen van 37 800€ per jaar voor u, plus 60 nachten per jaar voor persoonlijk gebruik. Over 10 jaar : 225 000€ aan dividenden + 378 000€ geprojecteerde huurinkomsten. IRR : 14,2% per jaar in puur cash. 19,4% inclusief de waarde van uw persoonlijke nachten. »"
-       data-en="« You invest €250,000. Year zero is construction - no dividend. In Year 1 you receive €25,000 (your guaranteed 10%). From Year 2 to Year 5 you receive €50,000 per year, of which €25,000 guaranteed and €25,000 performance. Over 5 years you have received €225,000 in dividends - 90% of your investment in cash, before the exit. At exit, your stake is exchanged. The hotel takes back your shares and hands you the keys to a renovated riad in Tagadirt, built at no additional cost to you. From that moment, the riad generates projected rental income of €37,800 per year for you, plus 60 nights per year for personal use. Over 10 years: €225,000 in dividends + €378,000 in projected rental income. IRR: 14.2% per year in pure cash. 19.4% including the value of your personal nights. »">
-      « Vous investissez 250 000€. L'année zéro est le chantier, aucun dividende. En année 1 vous percevez 25 000€ (votre 10% garanti). De l'année 2 à l'année 5 vous percevez 50 000€ par an, dont 25 000€ garantis et 25 000€ de performance. En 5 ans vous avez reçu 225 000€ en dividendes, soit 90% de votre mise en cash, avant la sortie. À la sortie, votre quote-part est échangée. L'hôtel récupère vos parts et vous remet les clés d'un riad rénové à Tagadirt, construit sans coût supplémentaire pour vous. Dès ce moment, le riad génère un revenu locatif projeté de 37 800€ par an pour vous, plus 60 nuits par an à usage personnel. Sur 10 ans : 225 000€ de dividendes + 378 000€ de revenus locatifs projetés. IRR : 14,2% par an en cash pur. 19,4% en incluant la valeur de vos nuits personnelles. »
-    </p>
-  </div>
+<div class="sl" data-fr="L'investissement" data-nl="De investering" data-en="The Investment">L'investissement</div>
+<h1 data-fr="250 000€ par part.<br>6 ans.<br>Ce que ça produit."
+    data-nl="250 000€ per aandeel.<br>6 jaar.<br>Wat het oplevert."
+    data-en="€250,000 per slot.<br>6 Years.<br>What It Produces.">250 000€ par part.<br>6 ans.<br>Ce que ça produit.</h1>
 
-  <div class="two-eq">
-    <div>
-      <h3 data-fr="Budget - 3 268 000€ total" data-nl="Budget - 3 268 000€ totaal" data-en="Budget - €3,268,000 Total">Budget - 3 268 000€ total</h3>
-      <div class="data-row"><div class="data-label" data-fr="Acquisition" data-nl="Acquisitie" data-en="Acquisition">Acquisition</div><div class="data-val">1 400 000€</div></div>
-      <div class="data-row"><div class="data-label" data-fr="Rénovation 30 clés" data-nl="Renovatie 30 kamers" data-en="Renovation - 30 Keys">Rénovation 30 clés</div><div class="data-val">1 250 000€</div></div>
-      <div class="data-row"><div class="data-label" data-fr="FF&E mobilier" data-nl="FF&E meubilair" data-en="FF&amp;E Furniture">FF&E mobilier</div><div class="data-val">120 000€</div></div>
-      <div class="data-row"><div class="data-label" data-fr="Contingence 15% (zone sismique)" data-nl="Contingentie 15% (seismische zone)" data-en="15% Contingency (Seismic Zone)">Contingence 15% (zone sismique)</div><div class="data-val">228 000€</div></div>
-      <div class="data-row"><div class="data-label" data-fr="Lancement (LB)" data-nl="Lancering (LB)" data-en="Launch (LB)">Lancement (LB)</div><div class="data-val">50 000€</div></div>
-      <div class="data-row"><div class="data-label" data-fr="Fonds de roulement" data-nl="Bedrijfskapitaal" data-en="Working Capital">Fonds de roulement</div><div class="data-val">70 000€</div></div>
-
-      <h3 style="margin-top:24px;" data-fr="Financement" data-nl="Financiering" data-en="Financing">Financement</h3>
-      <div class="data-row"><div class="data-label" data-fr="Fonds propres investisseurs" data-nl="Eigen vermogen" data-en="Investor equity">Fonds propres investisseurs</div><div class="data-val" data-fr="10 parts × 250 000€ = 2 500 000€ (70% du capital)" data-nl="10 aandelen × 250 000€ = 2 500 000€ (70% van het kapitaal)" data-en="10 slots × €250,000 = €2,500,000 (70% of equity)">10 parts × 250 000€ = 2 500 000€ (70% du capital)</div></div>
-      <div class="data-row"><div class="data-label" data-fr="Apport Leroy Brothers" data-nl="Inbreng Leroy Brothers" data-en="Leroy Brothers">Apport Leroy Brothers</div><div class="data-val" data-fr="200 000€ cash — 30% du capital (valorisé avec apport nature)" data-nl="200 000€ cash — 30% van het kapitaal (gewaardeerd met natura-inbreng)" data-en="€200,000 cash — 30% of equity (valued with in-kind contribution)">200 000€ cash — 30% du capital (valorisé avec apport nature)</div></div>
-      <div class="data-row"><div class="data-label" data-fr="Prêt bancaire (conditionnel)" data-nl="Banklening (voorwaardelijk)" data-en="Bank Loan (conditional)">Prêt bancaire (conditionnel)</div><div class="data-val" data-fr="300 000€" data-nl="300 000€" data-en="€300,000">300 000€</div></div>
-      <div class="data-row"><div class="data-label" data-fr="GO SIYAHA (conditionnel)" data-nl="GO SIYAHA (voorwaardelijk)" data-en="GO SIYAHA (conditional)">GO SIYAHA (conditionnel)</div><div class="data-val" data-fr="300 000€" data-nl="300 000€" data-en="€300,000">300 000€</div></div>
-      <div class="data-row"><div class="data-label" data-fr="Total" data-nl="Total" data-en="Total">Total</div><div class="data-val" data-fr="2 500 000 + 200 000 + 300 000 + 300 000 = 3 300 000€ ✓" data-nl="2 500 000 + 200 000 + 300 000 + 300 000 = 3 300 000€ ✓" data-en="€2,500,000 + €200,000 + €300,000 + €300,000 = €3,300,000 ✓">2 500 000 + 200 000 + 300 000 + 300 000 = 3 300 000€ ✓</div></div>
-    </div>
-
-    <div>
-      <h3 data-fr="Retour par investisseur - 250 000€" data-nl="Rendement per investeerder - 250 000€" data-en="Return per Investor - €250,000">Retour par investisseur - 250 000€</h3>
-      <table class="ret">
-        <thead>
-          <tr>
-            <th data-fr="Période" data-nl="Periode" data-en="Period">Période</th>
-            <th class="r" data-fr="Vous percevez" data-nl="U ontvangt" data-en="You Receive">Vous percevez</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td data-fr="Y0 - Chantier (12 mois)" data-nl="J0 - Werf (12 maanden)" data-en="Y0 - Construction (12 months)">Y0 - Chantier (12 mois)</td><td class="r muted">0€</td></tr>
-          <tr class="row-pref"><td data-fr="Y1 - Preferred 10% garanti" data-nl="J1 - Preferred 10% gegarandeerd" data-en="Y1 - Guaranteed 10% Preferred">Y1 - Preferred 10% garanti</td><td class="r">25 000€</td></tr>
-          <tr class="row-pref"><td data-fr="Y2 - Preferred 10% + Performance 10%" data-nl="J2 - Preferred 10% + Prestatie 10%" data-en="Y2 - Preferred 10% + Performance 10%">Y2 - 10% + 10%</td><td class="r">50 000€</td></tr>
-          <tr class="row-pref"><td data-fr="Y3 - Preferred 10% + Performance 10%" data-nl="J3 - Preferred 10% + Prestatie 10%" data-en="Y3 - Preferred 10% + Performance 10%">Y3 - 10% + 10%</td><td class="r">50 000€</td></tr>
-          <tr class="row-pref"><td data-fr="Y4 - Preferred 10% + Performance 10%" data-nl="J4 - Preferred 10% + Prestatie 10%" data-en="Y4 - Preferred 10% + Performance 10%">Y4 - 10% + 10%</td><td class="r">50 000€</td></tr>
-          <tr class="row-pref"><td data-fr="Y5 - Preferred 10% + Performance 10%" data-nl="J5 - Preferred 10% + Prestatie 10%" data-en="Y5 - Preferred 10% + Performance 10%">Y5 - 10% + 10%</td><td class="r">50 000€</td></tr>
-          <tr class="row-sub"><td data-fr="Total dividendes cash Y1-Y5" data-nl="Totaal cash dividenden J1-J5" data-en="Total Cash Dividends Y1-Y5">Total dividendes cash Y1-Y5</td><td class="r">225 000€</td></tr>
-          <tr style="background:var(--sky);"><td data-fr="Sortie Y5-Y10 : Swap equity → Riad Tagadirt" data-nl="Uitstap J5-J10 : Swap equity → Riad Tagadirt" data-en="Exit Y5-Y10: Equity Swap → Riad Tagadirt">Sortie Y5-Y10 : Swap equity → Riad Tagadirt</td><td class="r" style="color:var(--cedar);" data-fr="10 ans usage + revenus" data-nl="10 jaar gebruik + inkomsten" data-en="10 years use + revenue">10 ans usage + revenus</td></tr>
-          <tr><td data-fr="Revenus riad/an (net après 20% charges)" data-nl="Riadinkomsten/jaar (na 20% kosten)" data-en="Riad Revenue/Year (net after 20% costs)">Revenus riad/an</td><td class="r">37 800€/an</td></tr>
-          <tr><td data-fr="Revenus riad sur 10 ans" data-nl="Riadinkomsten over 10 jaar" data-en="Riad Revenue over 10 Years">Revenus riad 10 ans</td><td class="r">378 000€</td></tr>
-          <tr><td data-fr="Usage personnel (60 nuits/an × 500€ × 10 ans)" data-nl="Persoonlijk gebruik (60 nachten/jaar × 500€ × 10 jaar)" data-en="Personal Use (60 nights/year × €500 × 10 years)">Usage personnel 10 ans</td><td class="r" style="color:var(--pise-mid);">300 000€ valeur</td></tr>
-          <tr class="row-tot"><td data-fr="IRR annuel (cash uniquement)" data-nl="Jaarlijks IRR (alleen cash)" data-en="Annual IRR (cash only)">IRR cash</td><td class="r" style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--cedar);">14,2%/an</td></tr>
-        </tbody>
-      </table>
-
-      <p style="font-size:13px;color:var(--cedar);letter-spacing:0.05em;margin-top:8px;padding:10px 0;border-top:1px solid var(--pise-light);"
-         data-fr="90% de votre mise récupérée en dividendes avant la sortie. Le principal n'est pas remboursé en cash - il est échangé contre votre riad."
-         data-nl="90% van uw inleg teruggekregen in dividenden vóór de uitstap. Het kapitaal wordt niet terugbetaald in cash - het wordt ingeruild voor uw riad."
-         data-en="90% of your investment recovered in dividends before exit. The principal is not repaid in cash - it is exchanged for your riad.">
-        90% de votre mise récupérée en dividendes avant la sortie. Le principal n'est pas remboursé en cash - il est échangé contre votre riad.
-      </p>
-
-      <div class="ab2" style="margin-top:16px;">
-        <p style="font-size:13px;color:var(--pise-mid);line-height:1.8;" data-fr="Note fiscale : les 20% retenus (Fondation 10% + Growth Fund TB Maroc 10%) correspondent exactement au taux IS dont bénéficie la SARL marocaine sur ses 5 premières années d'exploitation. Ces fonds restent dans le territoire et dans la marque. L'exonération finance le développement - pas la distribution."
-                                                                           data-nl="Fiscale noot : de 20% ingehouden (Stichting 10% + Growth Fund TB Maroc 10%) komen exact overeen met het vennootschapsbelastingtarief waarvan de Marokkaanse SARL profiteert gedurende de eerste 5 exploitatiejaren. Deze fondsen blijven in het grondgebied en het merk. De vrijstelling financiert de ontwikkeling - niet de uitkering." data-en="Tax note: the 20% retained (Foundation 10% + TB Morocco Growth Fund 10%) corresponds exactly to the corporate tax rate from which the Moroccan SARL benefits for its first 5 years of operation. These funds remain in the territory and the brand. The exemption finances development - not distribution.">
-          Note fiscale : les 20% retenus (Fondation 10% + Growth Fund TB Maroc 10%) correspondent exactement au taux IS dont bénéficie la SARL sur ses 5 premières années. Ces fonds restent dans le territoire et dans la marque.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- WATERFALL -->
-  <div class="rule"></div>
-  <h3 data-fr="L'ordre de distribution - contractuel et irrévocable" data-nl="De uitkeringsvolgorde - contractueel en onherroepelijk" data-en="Distribution Order - Contractual and Irrevocable">L'ordre de distribution - contractuel et irrévocable</h3>
-  <div class="waterfall">
-    <div class="wf-row">
-      <div class="wf-num">1</div>
-      <div>
-        <div class="wf-title" data-fr="Fondation Tagadirt - 10% du résultat net" data-nl="Stichting Tagadirt - 10% van het nettoresultaat" data-en="Tagadirt Foundation - 10% of Net Result">Fondation Tagadirt - 10% du résultat net</div>
-        <div class="wf-desc" data-fr="Prélevé en premier sur le résultat net, avant toute distribution. Engagement social contractuel inscrit dans le pacte d'associés." data-nl="Eerst afgehouden van het nettoresultaat, vóór enige uitkering. Contractuele sociale verbintenis opgenomen in de aandeelhoudersovereenkomst." data-en="Taken first from net profit, before any distribution. Contractual social commitment inscribed in the partnership agreement.">Prélevé en premier. Engagement social contractuel.</div>
-      </div>
-      <div class="wf-amount">~162K€/an (Y1)</div>
-    </div>
-    <div class="wf-row wf-highlight">
-      <div class="wf-num">2</div>
-      <div>
-        <div class="wf-title" data-fr="Preferred return 10% - INVESTISSEURS EN PRIORITÉ" data-nl="Preferred return 10% - INVESTEERDERS ALS PRIORITEIT" data-en="Preferred Return 10% - INVESTORS FIRST">Preferred return 10% - INVESTISSEURS EN PRIORITÉ</div>
-        <div class="wf-desc" data-fr="25 000€ par investisseur et par an, versés en priorité absolue. AVANT le Growth Fund. AVANT tout dividende Leroy Brothers. En aucun cas LB perçoit un dividende si ce preferred n'est pas intégralement servi. Cumulatif : tout arrêré est payé en priorité l'exercice suivant." data-nl="25 000€ per investeerder per jaar, als absolute prioriteit uitbetaald. VÓÓR het Growth Fund. VÓÓR elk dividend Leroy Brothers. LB ontvangt in geen geval een dividend als dit preferred niet volledig is voldaan. Cumulatief : elke achterstand wordt het volgende boekjaar als prioriteit betaald." data-en="€25,000 per investor per year, paid with absolute priority. BEFORE the Growth Fund. BEFORE any Leroy Brothers dividend. Under no circumstances does LB receive a dividend if this preferred return is not fully served. Cumulative: any arrears are paid as first priority the following year.">25 000€/invest./an (10% de la mise). AVANT LB. Jamais dérogeable. Cumulatif si non servi.</div>
-      </div>
-      <div class="wf-amount">25 000€/invest./an</div>
-    </div>
-    <div class="wf-row">
-      <div class="wf-num">3</div>
-      <div>
-        <div class="wf-title" data-fr="Growth Fund TB Maroc - 10% du résiduel" data-nl="Growth Fund TB Maroc - 10% van het saldo" data-en="TB Morocco Growth Fund - 10% of Residual">Growth Fund TB Maroc - 10% du résiduel</div>
-        <div class="wf-desc" data-fr="10% du résiduel après preferred, affecté au développement de Toile Blanche au Maroc. Mini-riads Tagadirt, nouvelles unités, extension du territoire. Géré par Leroy Brothers." data-nl="10% van het saldo na preferred, bestemd voor de ontwikkeling van Toile Blanche in Marokko. Mini-riads Tagadirt, nieuwe eenheden, uitbreiding van het grondgebied. Beheerd door Leroy Brothers." data-en="10% of the residual after preferred return, allocated to the development of Toile Blanche in Morocco. Mini-riads Tagadirt, new units, territory expansion. Managed by Leroy Brothers.">10% du résiduel post-preferred. Développement TB Maroc.</div>
-      </div>
-      <div class="wf-amount">~130K€/an (Y1)</div>
-    </div>
-    <div class="wf-row">
-      <div class="wf-num">4</div>
-      <div>
-        <div class="wf-title" data-fr="Split résiduel - 70% investisseurs / 30% LB" data-nl="Resterende verdeling - 70% investeerders / 30% LB" data-en="Residual Split - 70% Investors / 30% LB">Split résiduel - 70% investisseurs / 30% LB</div>
-        <div class="wf-desc" data-fr="Le résiduel après les étapes 1, 2 et 3 est partagé entre les investisseurs et Leroy Brothers. C'est de ce partage que provient votre tranche de performance, les 25 000€ additionnels qui s'ajoutent à votre preferred pour atteindre 50 000€ par an." data-nl="Het saldo na stappen 1, 2 en 3 wordt verdeeld tussen de investeerders en Leroy Brothers. Uit deze verdeling komt uw prestatietranche voort, de 25 000€ extra die bij uw preferred worden gevoegd om 50 000€ per jaar te bereiken." data-en="The residual after steps 1, 2 and 3 is shared between investors and Leroy Brothers. This is where your performance tranche comes from - the additional €25,000 that adds to your preferred to reach €50,000 per year.">Le résiduel après les étapes 1, 2 et 3 est partagé entre les investisseurs et Leroy Brothers. C'est de ce partage que provient votre tranche de performance, les 25 000€ additionnels qui s'ajoutent à votre preferred pour atteindre 50 000€ par an.</div>
-      </div>
-      <div class="wf-amount">Surplus → Riad Fund (Y1-Y5)</div>
-    </div>
-  </div>
-
-<img src="images/img_tigmi_art_cage_studio.png" alt="[ Image : atelier Tigmi - installation sculpturale métal et fibres, jarres terre cuite, lumière zénithale ]" style="width:100%;height:auto;display:block;margin:32px 0;">
-<div class="rule" style="margin-top:40px;"></div>
-<div class="sl" data-fr="La sortie - Le Riad Tagadirt" data-nl="De uitstap - De Riad Tagadirt" data-en="The Exit - The Riad Tagadirt">La sortie - Le Riad Tagadirt</div>
-<h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:36px;line-height:1.1;margin-bottom:16px;"
-    data-fr="Vous ne sortez pas avec un virement.<br>Vous sortez avec une maison au Maroc."
-    data-nl="U stapt niet uit met een overschrijving.<br>U stapt uit met een huis in Marokko."
-    data-en="You don't exit with a bank transfer.<br>You exit with a house in Morocco.">
-  Vous ne sortez pas avec un virement.<br>Vous sortez avec une maison au Maroc.
-</h2>
-
-<div>
-    <p data-fr="À la sortie - entre l'année 5 et l'année 10 - votre quote-part dans la société (7%) est échangée contre le bail emphytéotique d'un riad rénové aux standards Toile Blanche dans le douar Tagadirt, à 5 minutes de l'hôtel. Vous ne sortez pas un euro supplémentaire de votre poche. Le riad est le fruit de ce que l'hôtel a produit."
-       data-nl="Bij de uitstap - tussen jaar 5 en jaar 10 - wordt uw aandeel (7%) ingeruild voor de erfpacht van een gerenoveerde riad volgens Toile Blanche-standaarden in douar Tagadirt, op 5 minuten van het hotel. U haalt geen extra euro uit uw zak. De riad is de vrucht van wat het hotel heeft geproduceerd."
-       data-en="At exit - between Year 5 and Year 10 - your stake in the company (7%) is exchanged for the emphyteutic lease on a Toile Blanche-standard renovated riad in Douar Tagadirt, 5 minutes from the hotel. You don't put in a single extra euro. The riad is the fruit of what the hotel produced.">
-      À la sortie, votre quote-part est échangée contre un bail sur un riad rénové TB à Tagadirt. Aucun euro supplémentaire de votre poche.
-    </p>
-
-    <div style="display:grid;grid-template-columns:1fr;gap:1px;background:var(--pise-light);margin:20px 0;">
-      <div style="background:var(--sky);padding:20px 18px;">
-        <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cedar);margin-bottom:8px;" data-fr="Ce que le riad vous donne" data-nl="Wat de riad u geeft" data-en="What the Riad Gives You">Ce que le riad vous donne</div>
-        <div style="font-size:13px;color:var(--pise-mid);line-height:1.8;">
-          <div data-fr="37 800€/an - revenus hébergement (50%)" data-nl="37 800€/jaar - verblijfsinkomsten (50%)" data-en="€37,800/year - accommodation revenue (50%)">37 800€/an - revenus (50%)</div>
-          <div data-fr="60 nuits/an - usage personnel à vie" data-nl="60 nachten/jaar - persoonlijk gebruik voor altijd" data-en="60 nights/year - personal use for life">60 nuits/an - usage personnel à vie</div>
-          <div style="border-top:1px solid var(--pise-light);margin-top:8px;padding-top:8px;color:var(--cedar);font-size:13px;">
-            <div data-fr="Sur 10 ans : ~378 000€ de revenus" data-nl="Over 10 jaar : ~378 000€ inkomsten" data-en="Over 10 years: ~€378,000 in revenue">Sur 10 ans : ~378 000€</div>
-            <div data-fr="Sur 20 ans : ~756 000€ de revenus" data-nl="Over 20 jaar : ~756 000€ inkomsten" data-en="Over 20 years: ~€756,000 in revenue">Sur 20 ans : ~756 000€</div>
-          </div>
-        </div>
-      </div>
-    </div>
+<!-- PITCH PARAGRAPH -->
+<div class="ab-dark" style="margin-bottom:28px;">
+  <p data-fr="« Vous investissez 250 000€. La première année est le chantier : aucun dividende, aucun bruit. Puis cinq années d'exploitation. Année 1 : 25 000€, votre retour préférentiel prioritaire. Années 2 à 5 : 50 000€ par an, dont 25 000€ preferred garanti et 25 000€ de performance. Six ans plus tard, vous avez perçu 225 000€ en cash, soit 90% de votre mise initiale, avant même d'aborder la sortie. À la sortie, vous choisissez. Option A : un bail emphytéotique de 10 ans sur un riad entièrement rénové à Tagadirt, votre droit exclusif d'occuper, de louer et de transmettre à vos héritiers directs. Le riad génère un revenu locatif projeté de 37 800€ par an, plus 60 nuits à votre usage personnel. Construit entièrement sur les surplus de l'hôtel, sans coût supplémentaire pour vous. Option B : 250 000€ cash, garantis dans le pacte d'associés. Sur l'ensemble de l'arc : 6 ans de dividendes, 10 ans de revenus riad, le total projeté atteint 603 000€ sur un investissement de 250 000€. IRR : 14,2% par an en cash pur. 19,4% en incluant la valeur de vos nuits personnelles. »"
+     data-nl="« U investeert 250 000€. Het eerste jaar is de bouwplaats : geen dividend, geen ruis. Dan vijf exploitatiejaren. Jaar 1 : 25 000€, uw prioritair preferred rendement. Jaren 2 tot 5 : 50 000€ per jaar, waarvan 25 000€ gegarandeerd preferred en 25 000€ prestatie. Zes jaar later heeft u 225 000€ in cash ontvangen, ofwel 90% van uw oorspronkelijke inleg, nog voor de uitstap. Bij de uitstap kiest u. Optie A : een erfpacht van 10 jaar op een volledig gerenoveerde riad in Tagadirt. De riad genereert een geprojecteerd huurinkomen van 37 800€ per jaar, plus 60 nachten voor persoonlijk gebruik. Volledig gebouwd uit hotelüberschot, zonder extra kosten voor u. Optie B : 250 000€ cash, gegarandeerd in het aandeelhouderspact. Over de volledige boog : 6 jaar dividenden, 10 jaar riadinkomsten, het geprojecteerde totaal bereikt 603 000€ op een investering van 250 000€. IRR : 14,2% per jaar in puur cash. 19,4% inclusief uw persoonlijke nachten. »"
+     data-en="« You invest €250,000. The first year is construction: no dividend, no noise. Then five operating years. Year 1: €25,000, your priority preferred return. Years 2 to 5: €50,000 per year, of which €25,000 guaranteed preferred and €25,000 performance. Six years in, you have received €225,000 in cash, 90% of your original investment, before touching the exit. At exit, you choose. Option A: a 10-year emphyteutic lease on a fully renovated riad in Tagadirt, your exclusive right to occupy, rent, and transmit to your direct heirs. The riad generates projected rental income of €37,800 per year, plus 60 nights for your personal use. Built entirely from hotel surplus, at no additional cost to you. Option B: €250,000 cash, guaranteed in the shareholders' pact. Over the full arc: 6 years of dividends, 10 years of riad income, the projected total reaches €603,000 on a €250,000 investment. IRR: 14.2% per year in pure cash. 19.4% including the value of your personal nights. »">
+    « Vous investissez 250 000€. La première année est le chantier : aucun dividende, aucun bruit. Puis cinq années d'exploitation. Année 1 : 25 000€, votre retour préférentiel prioritaire. Années 2 à 5 : 50 000€ par an, dont 25 000€ preferred garanti et 25 000€ de performance. Six ans plus tard, vous avez perçu 225 000€ en cash, soit 90% de votre mise initiale, avant même d'aborder la sortie. À la sortie, vous choisissez. Option A : un bail emphytéotique de 10 ans sur un riad entièrement rénové à Tagadirt, votre droit exclusif d'occuper, de louer et de transmettre à vos héritiers directs. Le riad génère un revenu locatif projeté de 37 800€ par an, plus 60 nuits à votre usage personnel. Construit entièrement sur les surplus de l'hôtel, sans coût supplémentaire pour vous. Option B : 250 000€ cash, garantis dans le pacte d'associés. Sur l'ensemble de l'arc : 6 ans de dividendes, 10 ans de revenus riad, le total projeté atteint 603 000€ sur un investissement de 250 000€. IRR : 14,2% par an en cash pur. 19,4% en incluant la valeur de vos nuits personnelles. »
+  </p>
 </div>
 
+<!-- BUDGET + RETURN TABLE -->
+<div class="two-eq">
+  <div>
+    <h3 data-fr="Budget — 3 300 000€ total" data-nl="Budget — 3 300 000€ totaal" data-en="Budget — €3,300,000 Total">Budget — 3 300 000€ total</h3>
+    <div class="data-row">
+      <div class="data-label" data-fr="Acquisition fonds de commerce" data-nl="Acquisitie handelsfonds" data-en="Acquisition fonds de commerce">Acquisition fonds de commerce</div>
+      <div class="data-val">1 400 000€</div>
+    </div>
+    <div class="data-row">
+      <div class="data-label" data-fr="Rénovation, infrastructure, FF&amp;E, lancement" data-nl="Renovatie, infrastructuur, FF&amp;E, lancering" data-en="Renovation, Infrastructure, FF&amp;E, Launch">Rénovation, infrastructure, FF&amp;E, lancement</div>
+      <div class="data-val" data-fr="1 900 000€ — détail ci-dessous" data-nl="1 900 000€ — detail hieronder" data-en="€1,900,000 — detail below">1 900 000€ — détail ci-dessous</div>
+    </div>
+
+    <h3 style="margin-top:24px;" data-fr="Financement" data-nl="Financiering" data-en="Financing">Financement</h3>
+    <div class="data-row">
+      <div class="data-label" data-fr="8 parts publiques (250 000€/part)" data-nl="8 publieke aandelen (250 000€/aandeel)" data-en="8 Public Slots (€250,000/slot)">8 parts publiques (250 000€/part)</div>
+      <div class="data-val" data-fr="2 000 000€ — 70% du capital" data-nl="2 000 000€ — 70% van het kapitaal" data-en="€2,000,000 — 70% of equity">2 000 000€ — 70% du capital</div>
+    </div>
+    <div class="data-row">
+      <div class="data-label" data-fr="Quote-part par part" data-nl="Aandeel per part" data-en="Equity per Slot">Quote-part par part</div>
+      <div class="data-val" data-fr="70% divisés entre les parts souscrites à la clôture (8,75% à 8 parts / 7% à 10 parts)" data-nl="70% gedeeld tussen ingeschreven aandelen bij sluiting (8,75% bij 8 / 7% bij 10)" data-en="70% divided among slots at closing (8.75% at 8 slots / 7% at 10 slots)">70% divisés entre les parts souscrites à la clôture</div>
+    </div>
+    <div class="data-row">
+      <div class="data-label" data-fr="Leroy Brothers" data-nl="Leroy Brothers" data-en="Leroy Brothers">Leroy Brothers</div>
+      <div class="data-val" data-fr="800 000€ (200K cash + 600K nature) — 30%" data-nl="800 000€ (200K cash + 600K natura) — 30%" data-en="€800,000 (€200K cash + €600K in-kind) — 30%">800 000€ (200K cash + 600K nature) — 30%</div>
+    </div>
+    <div class="data-row">
+      <div class="data-label" data-fr="Prêt bancaire (cible)" data-nl="Banklening (doel)" data-en="Bank Loan (target)">Prêt bancaire (cible)</div>
+      <div class="data-val" data-fr="500 000€ — conditionnel. Permet la clôture à 8 parts." data-nl="500 000€ — voorwaardelijk. Maakt sluiting bij 8 aandelen mogelijk." data-en="€500,000 — conditional. Enables closing at 8 slots.">500 000€ — conditionnel. Clôture à 8 parts.</div>
+    </div>
+    <div class="data-row">
+      <div class="data-label" data-fr="GO SIYAHA (conditionnel)" data-nl="GO SIYAHA (voorwaardelijk)" data-en="GO SIYAHA (conditional)">GO SIYAHA (conditionnel)</div>
+      <div class="data-val" data-fr="300 000€ — conditionnel. Permet la clôture à 9 parts." data-nl="300 000€ — voorwaardelijk. Maakt sluiting bij 9 aandelen mogelijk." data-en="€300,000 — conditional. Enables closing at 9 slots.">300 000€ — conditionnel. Clôture à 9 parts.</div>
+    </div>
+
+    <div class="ab2" style="margin-top:16px;">
+      <p style="font-size:12px;color:var(--pise-mid);line-height:1.8;"
+         data-fr="Stratégie de souscription : 8 parts publiques + 2 parts de réserve = 10 parts maximum. Prêt bancaire (500K) : clôture à 8 parts. GO SIYAHA confirmé : clôture à 9 parts. Sans financement externe : clôture à 10 parts, aucun prêt nécessaire. Un investisseur peut souscrire 2 parts (500 000€) : sortie naturelle avec 1 riad + 1 remboursement cash garanti."
+         data-nl="Inschrijvingsstrategie : 8 publieke aandelen + 2 reserveaandelen = 10 maximum. Banklening (500K) : sluiting bij 8. GO SIYAHA : sluiting bij 9. Zonder externe financiering : sluiting bij 10. Een investeerder kan 2 aandelen inschrijven (500 000€) : natuurlijke uitstap met 1 riad + 1 gegarandeerde cash-terugbetaling."
+         data-en="Subscription strategy: 8 public slots + 2 reserve slots = 10 maximum. Bank loan (€500K): close at 8. GO SIYAHA confirmed: close at 9. No external financing: close at 10, no loan required. An investor may subscribe 2 slots (€500,000): natural exit with 1 riad + 1 guaranteed cash refund.">
+        Stratégie de souscription : 8 parts publiques + 2 parts de réserve = 10 parts maximum. Prêt bancaire (500K) : clôture à 8 parts. GO SIYAHA confirmé : clôture à 9 parts. Sans financement externe : clôture à 10 parts, aucun prêt nécessaire. Un investisseur peut souscrire 2 parts (500 000€) : sortie naturelle avec 1 riad + 1 remboursement cash garanti.
+      </p>
+    </div>
+
+    <!-- GARANTIE DE PASSIF -->
+    <div class="data-row" style="margin-top:16px;border-top:1px solid var(--pise-light);">
+      <div class="data-label" data-fr="Garantie de passif vendeurs — 200 000€ en deux tranches" data-nl="Passiefgarantie verkopers — 200 000€ in twee schijven" data-en="Sellers' Liability Guarantee — €200,000 in Two Tranches">Garantie de passif vendeurs — 200 000€</div>
+      <div class="data-val" style="font-size:13px;"
+           data-fr="La garantie de passif de 200 000€ est un paiement d'acquisition différé effectué par TB Invest SAS aux vendeurs, entièrement distinct des opérations hôtelières. Ce n'est pas une charge d'exploitation. Elle est versée en deux tranches de 100 000€ : la première à 24 mois après l'acte définitif, la seconde à 48 mois, chacune sous condition qu'aucune réclamation couverte n'ait été notifiée contre les actifs acquis durant la période précédente. Les réclamations couvertes incluent les arriérés fiscaux, les passifs sociaux, les créanciers cachés et toute revendication de tiers. Cette structure offre une fenêtre de protection de quatre ans sans nécessiter de séquestre. Elle n'a aucune interaction avec votre retour préférentiel. Financée par LB sur leur apport en numéraire."
+           data-nl="De passiefgarantie van 200 000€ is een uitgestelde acquisitiebetaling door TB Invest SAS aan de verkopers, volledig los van de hoteloperaties. Ze wordt betaald in twee schijven van 100 000€ : de eerste 24 maanden na de definitieve akte, de tweede 48 maanden, elk onder voorwaarde van geen gedekte vordering in de voorafgaande periode. Ze heeft geen interactie met het preferentieel rendement. Gefinancierd door LB vanuit hun cash-inbreng."
+           data-en="The €200,000 sellers' liability guarantee is a deferred acquisition payment by TB Invest SAS to the sellers, entirely separate from hotel operations. It is not an operating expense. Paid in two tranches of €100,000: first at 24 months post closing, second at 48 months, each conditional on no covered claim having been notified against the acquired assets. Covered claims include tax arrears, social liabilities, hidden creditors, and any third-party assertion. Four-year protection window, no escrow required. No interaction with the preferred return. Funded by LB from their cash contribution.">
+        La garantie de passif de 200 000€ est un paiement d'acquisition différé effectué par TB Invest SAS aux vendeurs, entièrement distinct des opérations hôtelières. Ce n'est pas une charge d'exploitation. Elle est versée en deux tranches de 100 000€ : la première à 24 mois après l'acte définitif, la seconde à 48 mois, chacune sous condition qu'aucune réclamation couverte n'ait été notifiée contre les actifs acquis durant la période précédente. Aucune interaction avec votre retour préférentiel. Financée par LB sur leur apport en numéraire.
+      </div>
+    </div>
+  </div>
+
+  <!-- RETURN TABLE -->
+  <div>
+    <h3 data-fr="Retour par part — 250 000€" data-nl="Rendement per aandeel — 250 000€" data-en="Return per Slot — €250,000">Retour par part — 250 000€</h3>
+    <table class="ret">
+      <thead>
+        <tr>
+          <th data-fr="Période" data-nl="Periode" data-en="Period">Période</th>
+          <th class="r" data-fr="Vous percevez" data-nl="U ontvangt" data-en="You Receive">Vous percevez</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td data-fr="Y0 — Chantier (12 mois)" data-nl="J0 — Werf (12 maanden)" data-en="Y0 — Construction (12 months)">Y0 — Chantier (12 mois)</td><td class="r muted">0€</td></tr>
+        <tr class="row-pref"><td data-fr="Y1 — Preferred 10% prioritaire" data-nl="J1 — Preferred 10% prioritair" data-en="Y1 — Priority Preferred 10%">Y1 — Preferred 10% prioritaire</td><td class="r">25 000€</td></tr>
+        <tr class="row-pref"><td data-fr="Y2 — Preferred 10% + Performance 10%" data-nl="J2 — Preferred 10% + Prestatie 10%" data-en="Y2 — Preferred 10% + Performance 10%">Y2 — 10% + 10%</td><td class="r">50 000€</td></tr>
+        <tr class="row-pref"><td data-fr="Y3 — Preferred 10% + Performance 10%" data-nl="J3 — Preferred 10% + Prestatie 10%" data-en="Y3 — Preferred 10% + Performance 10%">Y3 — 10% + 10%</td><td class="r">50 000€</td></tr>
+        <tr class="row-pref"><td data-fr="Y4 — Preferred 10% + Performance 10%" data-nl="J4 — Preferred 10% + Prestatie 10%" data-en="Y4 — Preferred 10% + Performance 10%">Y4 — 10% + 10%</td><td class="r">50 000€</td></tr>
+        <tr class="row-pref"><td data-fr="Y5 — Preferred 10% + Performance 10%" data-nl="J5 — Preferred 10% + Prestatie 10%" data-en="Y5 — Preferred 10% + Performance 10%">Y5 — 10% + 10%</td><td class="r">50 000€</td></tr>
+        <tr class="row-sub"><td data-fr="Total dividendes cash Y1-Y5" data-nl="Totaal cash dividenden J1-J5" data-en="Total Cash Dividends Y1-Y5">Total dividendes cash Y1-Y5</td><td class="r">225 000€</td></tr>
+        <tr style="background:var(--sky);"><td data-fr="Sortie Y5-Y10 : votre choix" data-nl="Uitstap J5-J10 : uw keuze" data-en="Exit Y5-Y10: Your Choice">Sortie Y5-Y10 : votre choix</td><td class="r" style="color:var(--cedar);" data-fr="Riad ou remboursement cash" data-nl="Riad of cash-terugbetaling" data-en="Riad or cash refund">Riad ou remboursement cash</td></tr>
+        <tr><td data-fr="Option A — Revenus riad/an (50% net)" data-nl="Optie A — Riadinkomsten/jaar (50% netto)" data-en="Option A — Riad Revenue/Year (50% net)">Option A — Revenus riad/an</td><td class="r">37 800€/an</td></tr>
+        <tr><td data-fr="Option A — Revenus riad sur 10 ans" data-nl="Optie A — Riadinkomsten over 10 jaar" data-en="Option A — Riad Revenue over 10 Years">Option A — Revenus riad 10 ans</td><td class="r">378 000€</td></tr>
+        <tr><td data-fr="Option A — Usage personnel (60 nuits/an × 500€ × 10 ans)" data-nl="Optie A — Persoonlijk gebruik (60 nachten × 500€ × 10 jaar)" data-en="Option A — Personal Use (60 nights/yr × €500 × 10 yrs)">Option A — Usage personnel 10 ans</td><td class="r muted">300 000€ valeur</td></tr>
+        <tr><td data-fr="Option B — Remboursement cash garanti (pacte)" data-nl="Optie B — Gegarandeerde cash-terugbetaling (pact)" data-en="Option B — Guaranteed Cash Refund (pact)">Option B — Remboursement cash garanti</td><td class="r" style="color:var(--cedar);">250 000€</td></tr>
+        <tr class="row-tot"><td data-fr="IRR annuel (cash, Option B)" data-nl="Jaarlijks IRR (cash, Optie B)" data-en="Annual IRR (cash, Option B)">IRR cash</td><td class="r" style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--cedar);">14,2%/an</td></tr>
+      </tbody>
+    </table>
+
+    <p style="font-size:13px;color:var(--cedar);margin-top:8px;padding:10px 0;border-top:1px solid var(--pise-light);"
+       data-fr="90% de votre mise récupérée en dividendes avant la sortie. À la sortie, vous choisissez le riad (meilleur rendement long terme) ou 250 000€ cash garanti dans le pacte."
+       data-nl="90% van uw inleg teruggekregen in dividenden voor de uitstap. Bij de uitstap kiest u de riad (beste langetermijnrendement) of 250 000€ cash gegarandeerd in het pact."
+       data-en="90% of your investment recovered in dividends before exit. At exit, you choose the riad (better long-term return) or €250,000 cash guaranteed in the pact.">
+      90% de votre mise récupérée en dividendes avant la sortie. À la sortie : le riad ou 250 000€ cash garanti dans le pacte.
+    </p>
+
+    <div class="ab2" style="margin-top:16px;">
+      <p style="font-size:13px;color:var(--pise-mid);line-height:1.8;"
+         data-fr="Note fiscale : les 20% retenus (Fondation Tagadirt 10% + Growth Fund TB Maroc 10%) correspondent exactement au taux IS dont bénéficie la SARL marocaine sur ses 5 premières années d'exploitation. Ces fonds restent dans le territoire et dans la marque. L'exonération finance le développement, pas la distribution."
+         data-nl="Fiscale noot : de 20% ingehouden (Stichting Tagadirt 10% + Growth Fund TB Maroc 10%) komen exact overeen met het VPB-tarief waarvan de Marokkaanse SARL profiteert gedurende de eerste 5 exploitatiejaren."
+         data-en="Tax note: the 20% retained (Tagadirt Foundation 10% + TB Morocco Growth Fund 10%) corresponds exactly to the corporate tax rate from which the Moroccan SARL benefits for its first 5 years of operation. These funds remain in the territory and the brand.">
+        Note fiscale : les 20% retenus (Fondation Tagadirt 10% + Growth Fund TB Maroc 10%) correspondent exactement au taux IS dont bénéficie la SARL sur ses 5 premières années. Ces fonds restent dans le territoire et dans la marque.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- WATERFALL -->
+<div class="rule"></div>
+<h3 data-fr="L'ordre de distribution — contractuel et irrévocable"
+    data-nl="De uitkeringsvolgorde — contractueel en onherroepelijk"
+    data-en="Distribution Order — Contractual and Irrevocable">L'ordre de distribution — contractuel et irrévocable</h3>
+<div class="waterfall">
+
+  <!-- 1. PREFERRED FIRST -->
+  <div class="wf-row wf-highlight">
+    <div class="wf-num">1</div>
+    <div>
+      <div class="wf-title" data-fr="Preferred return 10% — INVESTISSEURS EN PRIORITÉ ABSOLUE"
+           data-nl="Preferred return 10% — INVESTEERDERS ALS ABSOLUTE PRIORITEIT"
+           data-en="Preferred Return 10% — INVESTORS FIRST, ABSOLUTE PRIORITY">Preferred return 10% — INVESTISSEURS EN PRIORITÉ ABSOLUE</div>
+      <div class="wf-desc"
+           data-fr="25 000€ par part et par an, versés en priorité absolue avant tout autre distribution. Leroy Brothers perçoit zéro dividende tant que ce preferred n'est pas intégralement servi. Cumulatif : tout arriéré est payé en priorité l'exercice suivant. Non garanti contre une perte d'exploitation. Garanti en priorité sur toutes les distributions issues de tout résultat net positif."
+           data-nl="25 000€ per aandeel per jaar, als absolute prioriteit uitbetaald voor elke andere uitkering. LB ontvangt nul dividend zolang dit preferred niet volledig is voldaan. Cumulatief : elke achterstand wordt het volgende boekjaar als prioriteit betaald."
+           data-en="€25,000 per slot per year, paid with absolute priority before any other distribution. LB receives zero dividend until this preferred is fully served. Cumulative: any arrears are paid first the following year. Not guaranteed against an operating loss. Guaranteed in priority over all distributions from any positive net result.">25 000€/part/an. AVANT LB. Cumulatif si non servi. Non garanti contre perte d'exploitation.</div>
+    </div>
+    <div class="wf-amount" data-fr="200 à 250 000€/an" data-nl="200 tot 250 000€/jaar" data-en="€200,000 to €250,000/year">200 à 250 000€/an</div>
+  </div>
+
+  <!-- 2. FOUNDATION -->
+  <div class="wf-row">
+    <div class="wf-num">2</div>
+    <div>
+      <div class="wf-title" data-fr="Fondation Tagadirt — 10% du résultat net résiduel"
+           data-nl="Stichting Tagadirt — 10% van het residuele nettoresultaat"
+           data-en="Tagadirt Foundation — 10% of Residual Net Result">Fondation Tagadirt — 10% du résultat net résiduel</div>
+      <div class="wf-desc"
+           data-fr="Prélevé en second, après le preferred investisseurs, avant les autres distributions. Engagement social contractuel inscrit dans le pacte d'associés."
+           data-nl="Als tweede afgehouden, na het preferred van investeerders, vóór andere uitkeringen. Contractuele sociale verbintenis in de aandeelhoudersovereenkomst."
+           data-en="Taken second, after investor preferred, before other distributions. Contractual social commitment inscribed in the shareholders' agreement.">Prélevé en second, après preferred. Engagement social contractuel.</div>
+    </div>
+    <div class="wf-amount">~114 000€/an (Y1)</div>
+  </div>
+
+  <!-- 3. GROWTH FUND -->
+  <div class="wf-row">
+    <div class="wf-num">3</div>
+    <div>
+      <div class="wf-title" data-fr="Growth Fund TB Maroc — 10% du résiduel"
+           data-nl="Growth Fund TB Maroc — 10% van het saldo"
+           data-en="TB Morocco Growth Fund — 10% of Residual">Growth Fund TB Maroc — 10% du résiduel</div>
+      <div class="wf-desc"
+           data-fr="10% du résiduel après preferred et Fondation. Développement de Toile Blanche au Maroc : riads Tagadirt, nouvelles unités, extension du territoire. Géré par Leroy Brothers."
+           data-nl="10% van het saldo na preferred en Stichting. Ontwikkeling Toile Blanche Marokko : riads Tagadirt, nieuwe eenheden, gebiedsuitbreiding. Beheerd door Leroy Brothers."
+           data-en="10% of residual after preferred and Foundation. Development of Toile Blanche in Morocco: Tagadirt riads, new units, territory expansion. Managed by Leroy Brothers.">10% du résiduel post-preferred et post-Fondation. Développement TB Maroc.</div>
+    </div>
+    <div class="wf-amount">~102 000€/an (Y1)</div>
+  </div>
+
+  <!-- 4. SPLIT -->
+  <div class="wf-row">
+    <div class="wf-num">4</div>
+    <div>
+      <div class="wf-title" data-fr="Split résiduel — 70% investisseurs / 30% LB"
+           data-nl="Resterende verdeling — 70% investeerders / 30% LB"
+           data-en="Residual Split — 70% Investors / 30% LB">Split résiduel — 70% investisseurs / 30% LB</div>
+      <div class="wf-desc"
+           data-fr="Le résiduel après les étapes 1, 2 et 3 est partagé. C'est de ce partage que provient votre tranche de performance : les 25 000€ additionnels qui portent votre distribution à 50 000€ par an. Le surplus au-delà du plafond de 50 000€/part/an alimente le Riad Fund."
+           data-nl="Het saldo na stappen 1, 2 en 3 wordt verdeeld. Hieruit komt uw prestatietranche : de 25 000€ extra die uw uitkering op 50 000€ per jaar brengen. Het surplus boven 50 000€/aandeel/jaar voedt het Riad Fund."
+           data-en="The residual after steps 1, 2 and 3 is shared. This is where your performance tranche comes from: the additional €25,000 that brings your distribution to €50,000 per year. Surplus above the €50,000/slot/year cap feeds the Riad Fund.">C'est de ce partage que provient votre tranche de performance. Surplus → Riad Fund.</div>
+    </div>
+    <div class="wf-amount" data-fr="Surplus → Riad Fund" data-nl="Surplus → Riad Fund" data-en="Surplus → Riad Fund">Surplus → Riad Fund</div>
+  </div>
+
+</div>
+
+<!-- EXIT -->
+<img src="images/img_tigmi_art_cage_studio.png" alt="Atelier Tigmi" style="width:100%;height:auto;display:block;margin:32px 0;">
 <div class="rule" style="margin-top:40px;"></div>
-<div class="sl" data-fr="Prévisionnel d'exploitation - 5 ans" data-nl="Exploitatiebegroting - 5 jaar" data-en="5-Year Operating Forecast">Prévisionnel d'exploitation - 5 ans</div>
+<div class="sl" data-fr="La sortie — Votre choix" data-nl="De uitstap — Uw keuze" data-en="The Exit — Your Choice">La sortie — Votre choix</div>
+<h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:36px;line-height:1.1;margin-bottom:16px;"
+    data-fr="À la sortie, vous choisissez.<br>Le riad ou le cash."
+    data-nl="Bij de uitstap kiest u.<br>De riad of cash."
+    data-en="At exit, you choose.<br>The riad or cash.">À la sortie, vous choisissez.<br>Le riad ou le cash.</h2>
+
+<p data-fr="À la sortie — entre l'année 5 et l'année 10 — vos parts dans TB Invest SAS sont rachetées. Vous choisissez librement entre deux options."
+   data-nl="Bij de uitstap — tussen jaar 5 en jaar 10 — worden uw aandelen in TB Invest SAS ingekocht. U kiest vrij tussen twee opties."
+   data-en="At exit — between Year 5 and Year 10 — your shares in TB Invest SAS are redeemed. You freely choose between two options.">
+  À la sortie, vos parts dans TB Invest SAS sont rachetées. Vous choisissez librement entre deux options.
+</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--pise-light);margin:20px 0;">
+  <div style="background:var(--sky);padding:20px 18px;">
+    <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cedar);margin-bottom:8px;"
+         data-fr="Option A — Le riad (recommandé)" data-nl="Optie A — De riad (aanbevolen)" data-en="Option A — The Riad (recommended)">Option A — Le riad (recommandé)</div>
+    <div style="font-size:13px;color:var(--pise-mid);line-height:1.9;">
+      <div data-fr="Bail emphytéotique 10 ans sur un riad rénové à Tagadirt" data-nl="Erfpacht 10 jaar op een gerenoveerde riad in Tagadirt" data-en="10-year emphyteutic lease on a renovated riad in Tagadirt">Bail emphytéotique 10 ans sur un riad rénové à Tagadirt</div>
+      <div data-fr="Droit exclusif d'occuper, louer, transmettre à vos héritiers directs" data-nl="Exclusief recht om te bewonen, verhuren, overdragen aan directe erfgenamen" data-en="Exclusive right to occupy, rent, transmit to your direct heirs">Droit exclusif d'occuper, louer, transmettre à vos héritiers</div>
+      <div data-fr="37 800€/an de revenus locatifs projetés" data-nl="37 800€/jaar geprojecteerde huurinkomsten" data-en="€37,800/year projected rental income">37 800€/an de revenus locatifs projetés</div>
+      <div data-fr="60 nuits/an d'usage personnel" data-nl="60 nachten/jaar persoonlijk gebruik" data-en="60 nights/year personal use">60 nuits/an d'usage personnel</div>
+      <div data-fr="Construit sur les surplus de l'hôtel — aucun coût supplémentaire" data-nl="Gebouwd uit hotelüberschot — geen extra kosten" data-en="Built from hotel surplus — no additional cost">Construit sur les surplus de l'hôtel — aucun coût supplémentaire</div>
+    </div>
+  </div>
+  <div style="background:var(--sky);padding:20px 18px;">
+    <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cedar);margin-bottom:8px;"
+         data-fr="Option B — Le remboursement cash (garanti)" data-nl="Optie B — De cash-terugbetaling (gegarandeerd)" data-en="Option B — Cash Refund (guaranteed)">Option B — Le remboursement cash (garanti)</div>
+    <div style="font-size:13px;color:var(--pise-mid);line-height:1.9;">
+      <div data-fr="250 000€ garanti dans le pacte d'associés" data-nl="250 000€ gegarandeerd in de aandeelhoudersovereenkomst" data-en="€250,000 guaranteed in the shareholders' pact">250 000€ garanti dans le pacte d'associés</div>
+      <div data-fr="Notification requise avant la fin de l'année 4" data-nl="Melding vereist voor het einde van jaar 4" data-en="Notification required before end of Year 4">Notification requise avant la fin de l'année 4</div>
+      <div data-fr="Maximum 3 remboursements cash par année civile" data-nl="Maximaal 3 cash-terugbetalingen per kalenderjaar" data-en="Maximum 3 cash refunds per calendar year">Maximum 3 remboursements cash par année civile</div>
+      <div data-fr="Rachat au niveau de TB Invest SAS (droit français)" data-nl="Terugkoop op het niveau van TB Invest SAS (Frans recht)" data-en="Buyback at TB Invest SAS level (French law)">Rachat au niveau de TB Invest SAS (droit français)</div>
+      <div data-fr="Paiement en euros depuis une entité française" data-nl="Betaling in euro's vanuit een Franse entiteit" data-en="Payment in euros from a French entity">Paiement en euros depuis une entité française</div>
+    </div>
+  </div>
+</div>
+
+<!-- 5-YEAR P&L -->
+<div class="rule" style="margin-top:40px;"></div>
+<div class="sl" data-fr="Prévisionnel d'exploitation — 5 ans" data-nl="Exploitatiebegroting — 5 jaar" data-en="5-Year Operating Forecast">Prévisionnel d'exploitation — 5 ans</div>
 <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:32px;line-height:1.2;margin-bottom:16px;"
     data-fr="30 clés. 5 ans. Ce que l'hôtel produit réellement."
     data-nl="30 kamers. 5 jaar. Wat het hotel werkelijk oplevert."
@@ -387,10 +347,10 @@ table.budget tbody td.r{text-align:right;white-space:nowrap;}
 
 <div style="border-left:2px solid var(--pise-light);padding:16px 20px;background:var(--sky);margin-bottom:16px;">
   <p style="font-size:13px;color:var(--pise-mid);line-height:1.8;"
-     data-fr="Y0 = 12 mois de chantier, aucun dividende. Les chiffres sont les résultats nets après fees Toile Blanche Group (7,5% base + 15% incentive GOP), avant application du waterfall. Période de rétention Y1 Q1-Q2 : aucune distribution, constitution de la réserve opérationnelle (cible 250 000€). Preferred Y1 cumulatif soldé en priorité au premier trimestre Y2. Exonération IS totale 5 ans sur CA en devises (LF 2026). Taux d'occupation : courbe honnête pour une ouverture en zone Al Haouz post-séisme."
-     data-nl="J0 = 12 maanden bouwplaats, geen dividend. Nettoresultaten na TB Group fees, voor toepassing van de waterval. Retentieperiode J1 K1-K2 : geen uitkeringen, opbouw operationele reserve (doel 250 000€). Cumulatief preferred J1 als prioriteit verrekend in eerste kwartaal J2. Volledige VPB-vrijstelling 5 jaar (LF 2026)."
-     data-en="Y0 = 12 months construction, no dividend. Net results after TB Group fees, before waterfall. Retention period Y1 Q1-Q2: no distributions, building operating reserve (target €250,000). Y1 cumulative preferred cleared as first priority in Y2 Q1. Full 5-year corporate tax exemption on foreign currency revenue (LF 2026). Occupancy curve: honest ramp for a new opening in post-earthquake Al Haouz.">
-    Y0 = 12 mois de chantier, aucun dividende. Résultats nets après fees TB Group, avant waterfall. Période de rétention Y1 Q1-Q2 : aucune distribution. Exonération IS 5 ans.
+     data-fr="Y0 = 12 mois de chantier, aucun dividende. Résultats nets après fees TB Group (7,5% base + 15% incentive GOP), avant waterfall. Période de rétention Y1 Q1-Q2 : aucune distribution, constitution de la réserve opérationnelle (cible 250 000€). Preferred Y1 cumulatif soldé en priorité au premier trimestre Y2. Leroy Brothers perçoit zéro dividende tant que tous les arriérés preferred ne sont pas soldés. Exonération IS 5 ans sur CA en devises (LF 2026). Taux d'occupation : courbe honnête pour une ouverture en zone Al Haouz post-séisme, plafonnée à 75%."
+     data-nl="J0 = 12 maanden bouwplaats, geen dividend. Nettoresultaten na TB Group fees, voor toepassing van de waterval. Retentieperiode J1 K1-K2 : geen uitkeringen, opbouw operationele reserve (doel 250 000€). Preferred J1 cumulatief als prioriteit verrekend in eerste kwartaal J2. LB ontvangt nul dividend zolang alle preferred-achterstanden niet vereffend zijn. Volledige VPB-vrijstelling 5 jaar (LF 2026)."
+     data-en="Y0 = 12 months construction, no dividend. Net results after TB Group fees (7.5% base + 15% incentive on GOP), before waterfall. Retention period Y1 Q1-Q2: no distributions, building operating reserve (target €250,000). Y1 cumulative preferred cleared as first priority in Y2 Q1. LB receives zero dividend until all preferred arrears are settled. Full 5-year IS exemption on foreign currency revenue (LF 2026). Occupancy curve: honest ramp for post-earthquake Al Haouz, capped at 75%.">
+    Y0 = 12 mois de chantier, aucun dividende. Résultats nets après fees TB Group, avant waterfall. Rétention Y1 Q1-Q2. Exonération IS 5 ans. Occupation plafonnée à 75%.
   </p>
 </div>
 
@@ -398,12 +358,12 @@ table.budget tbody td.r{text-align:right;white-space:nowrap;}
   <thead>
     <tr>
       <th data-fr="Indicateur" data-nl="Indicator" data-en="Indicator">Indicateur</th>
-      <th class="r" data-fr="Y0" data-nl="J0" data-en="Y0">Y0</th>
-      <th class="r" data-fr="Y1" data-nl="J1" data-en="Y1">Y1</th>
-      <th class="r" data-fr="Y2" data-nl="J2" data-en="Y2">Y2</th>
-      <th class="r" data-fr="Y3" data-nl="J3" data-en="Y3">Y3</th>
-      <th class="r" data-fr="Y4" data-nl="J4" data-en="Y4">Y4</th>
-      <th class="r" data-fr="Y5" data-nl="J5" data-en="Y5">Y5</th>
+      <th class="r">Y0</th>
+      <th class="r">Y1</th>
+      <th class="r">Y2</th>
+      <th class="r">Y3</th>
+      <th class="r">Y4</th>
+      <th class="r">Y5</th>
     </tr>
   </thead>
   <tbody>
@@ -414,9 +374,8 @@ table.budget tbody td.r{text-align:right;white-space:nowrap;}
       <td class="r">60%</td><td class="r">65%</td><td class="r">70%</td><td class="r">73%</td><td class="r">75%</td>
     </tr>
     <tr>
-      <td data-fr="Prix moyen blended (repas inclus, hors boissons)" data-nl="Gemiddelde blended prijs (maaltijden inbegrepen, excl. dranken)" data-en="Blended ADR (meals included, beverages excluded)">Prix moyen blended (repas inclus)</td>
-      <td class="r" style="color:var(--pise-mid);">-</td>
-      <td class="r">400€</td><td class="r">425€</td><td class="r">440€</td><td class="r">450€</td><td class="r">455€</td>
+      <td data-fr="Prix moyen blended (repas inclus, hors boissons)" data-nl="Gemiddelde blended prijs (maaltijden inbegrepen)" data-en="Blended ADR (meals included, beverages excluded)">Prix moyen blended (repas inclus)</td>
+      <td class="r" style="color:var(--pise-mid);">—</td>      <td class="r">400€</td><td class="r">425€</td><td class="r">440€</td><td class="r">450€</td><td class="r">455€</td>
     </tr>
     <tr>
       <td data-fr="Nuits vendues" data-nl="Verkochte nachten" data-en="Nights Sold">Nuits vendues</td>
@@ -492,10 +451,13 @@ table.budget tbody td.r{text-align:right;white-space:nowrap;}
       <td class="r"><strong>1 261 000€</strong></td><td class="r"><strong>1 557 000€</strong></td><td class="r"><strong>1 816 000€</strong></td><td class="r"><strong>1 983 000€</strong></td><td class="r"><strong>2 087 000€</strong></td>
     </tr>
     <tr class="row-pref">
-      <td data-fr="1. Preferred (priorité absolue)" data-nl="1. Preferred (absolute prioriteit)" data-en="1. Preferred (absolute priority)">1. Preferred (priorité absolue)</td>
-      <td class="r" style="color:var(--pise-mid);">-</td>
-      <td class="r" style="color:var(--cedar);">125 000€*</td><td class="r" style="color:var(--cedar);">375 000€**</td><td class="r" style="color:var(--cedar);">250 000€</td><td class="r" style="color:var(--cedar);">250 000€</td><td class="r" style="color:var(--cedar);">250 000€</td>
-    </tr>
+      <td data-fr="1. Preferred (priorité absolue, cumulatif)" data-nl="1. Preferred (absolute prioriteit, cumulatief)" data-en="1. Preferred (absolute priority, cumulative)">1. Preferred (priorité absolue)</td>
+      <td class="r" style="color:var(--pise-mid);">—</td>
+      <td class="r" style="color:var(--cedar);">125 000€*</td>
+      <td class="r" style="color:var(--cedar);">375 000€**</td>
+      <td class="r" style="color:var(--cedar);">250 000€</td>
+      <td class="r" style="color:var(--cedar);">250 000€</td>
+      <td class="r" style="color:var(--cedar);">250 000€</td>    </tr>
     <tr>
       <td data-fr="2. Fondation Tagadirt (10% résiduel)" data-nl="2. Stichting Tagadirt (10% saldo)" data-en="2. Tagadirt Foundation (10% residual)">2. Fondation Tagadirt (10%)</td>
       <td class="r" style="color:var(--pise-mid);">-</td>
@@ -508,91 +470,107 @@ table.budget tbody td.r{text-align:right;white-space:nowrap;}
     </tr>
     <tr class="row-pref">
       <td data-fr="Dividende / part (plafonné 50 000€/an)" data-nl="Dividend / aandeel (max. 50 000€/jaar)" data-en="Dividend / slot (capped at €50,000/year)">Dividende / part (plafonné 50 000€)</td>
-      <td class="r" style="color:var(--pise-mid);">-</td>
-      <td class="r" style="color:var(--cedar);">50 000€</td><td class="r" style="color:var(--cedar);">50 000€</td><td class="r" style="color:var(--cedar);">50 000€</td><td class="r" style="color:var(--cedar);">50 000€</td><td class="r" style="color:var(--cedar);">50 000€</td>
+      <td class="r" style="color:var(--pise-mid);">—</td>
+      <td class="r" style="color:var(--cedar);">50 000€</td>
+      <td class="r" style="color:var(--cedar);">50 000€</td>
+      <td class="r" style="color:var(--cedar);">50 000€</td>
+      <td class="r" style="color:var(--cedar);">50 000€</td>
+      <td class="r" style="color:var(--cedar);">50 000€</td>
     </tr>
     <tr>
       <td data-fr="Dividende / part cumulé Y1-Y5" data-nl="Cumulatief dividend / aandeel J1-J5" data-en="Cumulative dividend / slot Y1-Y5">Dividende / part cumulé</td>
-      <td class="r" style="color:var(--pise-mid);">-</td>
-      <td class="r">50 000€</td><td class="r">100 000€</td><td class="r">150 000€</td><td class="r">200 000€</td><td class="r"><strong style="color:var(--cedar);">250 000€</strong></td>
+      <td class="r" style="color:var(--pise-mid);">—</td>
+      <td class="r">50 000€</td><td class="r">100 000€</td><td class="r">150 000€</td><td class="r">200 000€</td>
+      <td class="r"><strong style="color:var(--cedar);">250 000€</strong></td>
     </tr>
     <tr>
       <td data-fr="Riad Fund cumulatif" data-nl="Riad Fund cumulatief" data-en="Riad Fund cumulative">Riad Fund cumulatif</td>
-      <td class="r" style="color:var(--pise-mid);">-</td>
-      <td class="r">435 000€</td><td class="r">1 152 000€</td><td class="r">1 942 000€</td><td class="r">2 780 000€</td><td class="r"><strong>3 683 000€</strong></td>
-    </tr>
+      <td class="r" style="color:var(--pise-mid);">—</td>
+      <td class="r">435 000€</td><td class="r">1 152 000€</td><td class="r">1 942 000€</td><td class="r">2 780 000€</td>
+      <td class="r"><strong>3 683 000€</strong></td>    </tr>
   </tbody>
 </table>
 
 <p style="font-size:12px;color:var(--pise-mid);line-height:1.8;margin-top:8px;padding:10px 0;border-top:1px solid var(--pise-light);"
-   data-fr="* Y1 preferred : 125 000€ versés en H2 (post-période de rétention). 125 000€ reportés comme arriérés prioritaires. ** Y2 preferred : 375 000€ = 250 000€ courant + 125 000€ arriérés Y1 soldés en priorité absolue. Leroy Brothers perçoit zéro dividende tant que les arriérés ne sont pas soldés. Le tronc de service (4% du CA hébergement) est collecté auprès des clients et redistribué directement aux collaborateurs, il ne transite pas par le compte de résultat (Y1 : 105 000€, soit 273€/mois/collaborateur). Le Riad Fund est alimenté par la rétention partielle de la part LB et les surplus investisseurs au-delà du plafond de 50 000€/part/an. Phase 1 (8 riads × 350 000€) entièrement financée au plus tard en Y5."
-   data-nl="* J1 preferred : 125 000€ betaald in H2 (na retentieperiode). 125 000€ als prioritaire achterstand doorgerold. ** J2 preferred : 375 000€ = 250 000€ lopend + 125 000€ J1-achterstanden als absolute prioriteit verrekend. LB ontvangt nul dividend zolang achterstanden niet vereffend zijn. De servicecharge (4% verblijfsomzet) wordt bij gasten geïnd en direct herverdeeld aan medewerkers, loopt niet via de resultatenrekening (J1 : 105 000€ = 273€/maand/medewerker). Het Riad Fund wordt gevoed door gedeeltelijke LB-retentie en investeerdersüberschot boven het plafond van 50 000€/aandeel/jaar. Fase 1 (8 riads × 350 000€) volledig gefinancierd uiterlijk in J5."
-   data-en="* Y1 preferred: €125,000 paid in H2 (post-retention period). €125,000 carried as priority arrears. ** Y2 preferred: €375,000 = €250,000 current + €125,000 Y1 arrears cleared as absolute first priority. LB receives zero dividend until all arrears are settled. The service charge (4% of accommodation revenue) is collected from guests and redistributed directly to team members, not through the P&amp;L (Y1: €105,000, or €273/month/person). The Riad Fund is fed by partial LB retention and investor surplus above the €50,000/slot/year cap. Phase 1 (8 riads × €350,000) fully funded by Year 5 at the latest.">
-  * Y1 preferred : 125 000€ versés en H2 (post-rétention). 125 000€ reportés comme arriérés prioritaires. ** Y2 : 375 000€ = 250 000€ courant + 125 000€ arriérés soldés en priorité absolue. LB perçoit zéro dividende tant que les arriérés ne sont pas soldés. Tronc de service (4% CA hébergement) collecté auprès des clients, redistribué directement aux collaborateurs, hors P&L (Y1 : 105 000€ = 273€/mois/collaborateur). Riad Fund alimenté par rétention LB et surplus investisseurs. Phase 1 (8 riads × 350 000€) financée au plus tard en Y5.
-</p>
+   data-fr="* Y1 preferred : 125 000€ versés en H2 (post-période de rétention). 125 000€ reportés comme arriérés prioritaires. ** Y2 preferred : 375 000€ = 250 000€ courant + 125 000€ arriérés Y1 soldés en priorité absolue avant toute autre distribution. Leroy Brothers perçoit zéro dividende tant que tous les arriérés preferred ne sont pas soldés. Le tronc de service (4% du CA hébergement) est collecté auprès des clients et redistribué directement aux collaborateurs, il ne transite pas par le compte de résultat (Y1 : 105 000€ = 273€/mois/collaborateur). Le Riad Fund est alimenté par la rétention partielle de la part LB et les surplus investisseurs au-delà du plafond de 50 000€/part/an. Phase 1 (8 riads × 350 000€ = 2 800 000€) entièrement financée au plus tard en Y5."
+   data-nl="* J1 preferred : 125 000€ betaald in H2. 125 000€ als prioritaire achterstand doorgerold. ** J2 preferred : 375 000€ = 250 000€ lopend + 125 000€ J1-achterstanden als absolute prioriteit verrekend vóór elke andere uitkering. LB ontvangt nul dividend zolang alle achterstanden niet vereffend zijn. Servicecharge (4% verblijfsomzet) hors P&L (J1 : 105 000€ = 273€/maand/medewerker). Riad Fund gevoed door LB-retentie en investeerdersüberschot boven 50 000€/aandeel/jaar. Fase 1 (8 riads × 350 000€) volledig gefinancierd uiterlijk J5."
+   data-en="* Y1 preferred: €125,000 paid in H2 (post-retention period). €125,000 carried as priority arrears. ** Y2 preferred: €375,000 = €250,000 current + €125,000 Y1 arrears cleared as absolute first priority before any other distribution. LB receives zero dividend until all preferred arrears are settled. Service charge (4% of accommodation revenue) is off-P&amp;L, redistributed directly to team members (Y1: €105,000 = €273/month/person). Riad Fund fed by partial LB retention and investor surplus above €50,000/slot/year cap. Phase 1 (8 riads × €350,000 = €2,800,000) fully funded by Year 5 at the latest.">
+  * Y1 preferred : 125 000€ versés en H2 (post-rétention). 125 000€ reportés comme arriérés prioritaires. ** Y2 : 375 000€ = 250 000€ courant + 125 000€ arriérés soldés en priorité absolue avant toute autre distribution. LB perçoit zéro dividende tant que tous les arriérés ne sont pas soldés. Tronc de service (4% CA hébergement) hors P&L (Y1 : 105 000€ = 273€/mois/collaborateur). Riad Fund alimenté par rétention LB et surplus investisseurs. Phase 1 (8 riads × 350 000€ = 2 800 000€) financée au plus tard en Y5.</p>
 
+<!-- DETAILED BUDGET -->
 <div class="rule" style="margin-top:40px;"></div>
-<div class="sl" data-fr="Budget rénovation détaillé - poste par poste" data-nl="Gedetailleerd renovatiebudget - post per post" data-en="Detailed Renovation Budget - Item by Item">Budget rénovation détaillé - poste par poste</div>
-<h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:32px;line-height:1.2;margin-bottom:16px;" data-fr="3 268 000€. Chaque euro justifié." data-nl="3 268 000€. Elke euro verantwoord." data-en="€3,268,000. Every Euro Justified.">3 268 000€. Chaque euro justifié.</h2>
+<div class="sl" data-fr="Budget rénovation détaillé — poste par poste" data-nl="Gedetailleerd renovatiebudget — post per post" data-en="Detailed Renovation Budget — Item by Item">Budget rénovation détaillé — poste par poste</div>
+<h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:32px;line-height:1.2;margin-bottom:16px;"
+    data-fr="3 300 000€. Chaque euro justifié."
+    data-nl="3 300 000€. Elke euro verantwoord."
+    data-en="€3,300,000. Every Euro Justified.">3 300 000€. Chaque euro justifié.</h2>
+
 <table class="budget">
-    <thead>
-      <tr>
-        <th data-fr="Poste" data-nl="Post" data-en="Item">Poste</th>
-        <th class="r" data-fr="Montant" data-nl="Bedrag" data-en="Amount">Montant</th>
-        <th data-fr="Note" data-nl="Nota" data-en="Note">Note</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="row-sec"><td colspan="3" data-fr="Hébergement, 30 unités" data-nl="Logies, 30 eenheden" data-en="Accommodation, 30 units">Hébergement, 30 unités</td></tr>
-      <tr><td data-fr="Rénovation complète 24 chambres standard (~40m²)" data-nl="Volledige renovatie 24 standaardkamers (~40m²)" data-en="Complete renovation of 24 standard rooms (~40m²)">Rénovation complète 24 chambres standard (~40m²)</td><td class="r">480 000€</td><td class="note">~20 000€/ch., finitions, salle de bain, menuiseries, électricité</td></tr>
-      <tr><td data-fr="Rénovation 5 suites (~55m²)" data-nl="Renovatie 5 suites (~55m²)" data-en="Renovation of 5 suites (~55m²)">Rénovation 5 suites (~55m²)</td><td class="r">137 500€</td><td class="note">~27 500€/suite, surface et salle de bain baignoire sur pied</td></tr>
-      <tr><td data-fr="Rénovation suite piscine + bassin zellige privé" data-nl="Renovatie suites met zwembad + privé zellige-bassin" data-en="Renovation of pool suite + private zellige basin">Rénovation suite piscine + bassin zellige privé</td><td class="r">82 500€</td><td class="note">Piscine intégrée 3×4m, tadelakt noir, terrasse fermée</td></tr>
-      <tr class="row-sub"><td data-fr="Sous-total hébergement" data-nl="Subtotaal logies" data-en="Accommodation subtotal"><strong>Sous-total hébergement</strong></td><td class="r"><strong>700 000€</strong></td><td></td></tr>
-      <tr class="row-sec"><td colspan="3" data-fr="Bâtiment principal, espaces communs" data-nl="Hoofdgebouw, gemeenschappelijke ruimtes" data-en="Main Building, Common Areas">Bâtiment principal, espaces communs</td></tr>
-      <tr><td data-fr="Galerie Toile Blanche Contemporary Marrakech" data-nl="Toile Blanche Contemporary Marrakech-galerij" data-en="Toile Blanche Contemporary Marrakech Gallery">Galerie Toile Blanche Contemporary Marrakech</td><td class="r">80 000€</td><td class="note">Murs bruts, éclairage galerie, cimaises invisibles, sol pierre</td></tr>
-      <tr><td data-fr="Restaurant, cuisine ouverte + salle" data-nl="Restaurant, open keuken + zaal" data-en="Restaurant, Open Kitchen + Dining Room">Restaurant, cuisine ouverte + salle</td><td class="r">120 000€</td><td class="note">Équipement cuisine pro, mobilier cèdre, terrasse Atlas</td></tr>
-      <tr><td data-fr="Bar cheminée + salon réception" data-nl="Openhaardbar + ontvangstsalon" data-en="Fireplace Bar + Reception Lounge">Bar cheminée + salon réception</td><td class="r">60 000€</td><td class="note">Cheminée, mobilier, éclairage laiton, pas de comptoir</td></tr>
-      <tr><td data-fr="Hammam complet, zellige, vapeur, soins" data-nl="Volledige hammam, zellige, stoom, behandelingen" data-en="Full Hammam, Zellige, Steam, Treatments">Hammam complet, zellige, vapeur, soins</td><td class="r">90 000€</td><td class="note">Deux cabines massage, sol et murs zellige, table pierre</td></tr>
-      <tr><td data-fr="Rooftop terrasse Atlas" data-nl="Atlas rooftop-terras" data-en="Atlas Rooftop Terrace">Rooftop terrasse Atlas</td><td class="r">30 000€</td><td class="note">Daybeds cèdre, sol pierre, garde-corps sobre</td></tr>
-      <tr class="row-sub"><td data-fr="Sous-total bâtiment principal" data-nl="Subtotaal hoofdgebouw" data-en="Main building subtotal"><strong>Sous-total bâtiment principal</strong></td><td class="r"><strong>380 000€</strong></td><td></td></tr>
-      <tr class="row-sec"><td colspan="3" data-fr="Infrastructure et autonomie" data-nl="Infrastructuur en autonomie" data-en="Infrastructure and Autonomy">Infrastructure et autonomie</td></tr>
-      <tr><td data-fr="Citerne eau 60m³ + station pompage triplex" data-nl="Waterciterne 60m³ + triplex pompsysteem" data-en="60m³ Water Cistern + Triplex Pump Station">Citerne eau 60m³ + station pompage triplex</td><td class="r">45 000€</td><td class="note">Urgence opérationnelle, puits insuffisant seul</td></tr>
-      <tr><td data-fr="Micro-STEP recyclage eaux grises jardins" data-nl="Micro-WZI voor recyclage grijs water voor tuinen" data-en="Micro-WTP Greywater Recycling for Gardens">Micro-STEP recyclage eaux grises jardins</td><td class="r">25 000€</td><td class="note">Irrigation légale, utilisation eau fraîche interdite jardins</td></tr>
-      <tr><td data-fr="Installation solaire photovoltaïque + thermique" data-nl="Zonne-installatie fotovoltaïsch + thermisch" data-en="Solar Photovoltaic + Thermal Installation">Installation solaire photovoltaïque + thermique</td><td class="r">60 000€</td><td class="note">Autonomie énergétique partielle, eau chaude solaire complète</td></tr>
-      <tr><td data-fr="Mise aux normes sismiques, murs périmétriques" data-nl="Seismische conformiteit, perimeterwanden" data-en="Seismic Compliance, Perimeter Walls">Mise aux normes sismiques, murs périmétriques</td><td class="r">50 000€</td><td class="note">Post-séisme Al Haouz 2023, bureaux d'études certifiés</td></tr>
-      <tr><td data-fr="Réseaux et voiries internes" data-nl="Interne netwerken en wegen" data-en="Internal Networks and Pathways">Réseaux et voiries internes</td><td class="r">40 000€</td><td class="note">Éclairage extérieur sol, chemins pierre, irrigation</td></tr>
-      <tr class="row-sub"><td data-fr="Sous-total infrastructure" data-nl="Subtotaal infrastructuur" data-en="Infrastructure subtotal"><strong>Sous-total infrastructure</strong></td><td class="r"><strong>220 000€</strong></td><td></td></tr>
-      <tr class="row-sec"><td colspan="3" data-fr="Jardins et paysagement" data-nl="Tuinen en landschapsaanleg" data-en="Gardens and Landscaping">Jardins et paysagement</td></tr>
-      <tr><td data-fr="Jardin central, plantations, allées pierre, éclairage sol" data-nl="Centrale tuin, beplanting, stenen paden, grondverlichting" data-en="Central Garden, Plantings, Stone Paths, Ground Lighting">Jardin central, plantations, allées pierre, éclairage sol</td><td class="r">60 000€</td><td class="note">Oliviers, grenadiers, lavande, romarin, palette locale</td></tr>
-      <tr><td data-fr="Deux piscines principales, redessin zellige foncé" data-nl="Twee hoofdzwembaden, redesign in donker zellige" data-en="Two Main Pools, Dark Zellige Redesign">Deux piscines principales, redessin zellige foncé</td><td class="r">80 000€</td><td class="note">Rhabillage zellige bleu nuit, margelles pierre, nage à ras bord</td></tr>
-      <tr class="row-sub"><td data-fr="Sous-total jardins" data-nl="Subtotaal tuinen" data-en="Gardens subtotal"><strong>Sous-total jardins</strong></td><td class="r"><strong>140 000€</strong></td><td></td></tr>
-      <tr class="row-sec"><td colspan="3" data-fr="FF&amp;E et provision" data-nl="FF&amp;E en provisie" data-en="FF&amp;E and Contingency">FF&amp;E et provision</td></tr>
-      <tr><td data-fr="Mobilier, chambres, communs (cèdre, lin, laiton)" data-nl="Meubilair, kamers, gemeenschappelijke ruimtes (ceder, linnen, messing)" data-en="Furniture, Rooms, Common Areas (cedar, linen, brass)">Mobilier, chambres, communs (cèdre, lin, laiton)</td><td class="r">120 000€</td><td class="note">4 000€/clé - artisans locaux supervisés par LB</td></tr>
-      <tr><td data-fr="Literie, linge, équipements" data-nl="Beddengoed, linnen, uitrusting" data-en="Bedding, Linen, Equipment">Literie, linge, équipements</td><td class="r">15 000€</td><td class="note">Standard Toile Blanche, lin naturel, non teint</td></tr>
-      <tr><td data-fr="Provision aléas 15% (zone sismique)" data-nl="Onvoorzien reserve 15% (seismische zone)" data-en="15% Contingency Provision (Seismic Zone)">Provision aléas 15% (zone sismique)</td><td class="r">228 000€</td><td class="note">Chantier de rénovation, surprises structurelles possibles</td></tr>
-      <tr class="row-sub"><td data-fr="Sous-total FF&amp;E et provision" data-nl="Subtotaal FF&amp;E en provisie" data-en="FF&amp;E and contingency subtotal"><strong>Sous-total FF&amp;E et provision</strong></td><td class="r"><strong>363 000€</strong></td><td></td></tr>
-      <tr class="row-sec"><td colspan="3" data-fr="Lancement" data-nl="Lancering" data-en="Launch">Lancement</td></tr>
-      <tr><td data-fr="Transfert licence alcool + frais légaux + CNSS" data-nl="Overdracht alcohollicentie + juridische kosten + CNSS" data-en="Alcohol License Transfer + Legal Fees + CNSS">Transfert licence alcool + frais légaux + CNSS</td><td class="r">50 000€</td><td class="note">Buffer social ancienne gestion inclus</td></tr>
-      <tr><td data-fr="Pre-opening marketing, presse, identité visuelle" data-nl="Pre-opening marketing, pers, visuele identiteit" data-en="Pre-opening Marketing, Press, Visual Identity">Pre-opening marketing, presse, identité visuelle</td><td class="r">50 000€</td><td class="note">Apporté par LB - réduction vs budget initial</td></tr>
-      <tr><td data-fr="Fonds de roulement, 6 mois de charges fixes" data-nl="Werkkapitaal, 6 maanden vaste lasten" data-en="Working Capital, 6 months fixed costs">Fonds de roulement, 6 mois de charges fixes</td><td class="r">70 000€</td><td class="note">LB apporte 100 000€ complémentaires à l'ouverture</td></tr>
-      <tr class="row-sub"><td data-fr="Sous-total lancement" data-nl="Subtotaal lancering" data-en="Launch subtotal"><strong>Sous-total lancement</strong></td><td class="r"><strong>170 000€</strong></td><td></td></tr>
-      <tr class="row-tot"><td data-fr="Total rénovation et lancement" data-nl="Totaal renovatie en lancering" data-en="Total renovation and launch"><strong>Total rénovation et lancement</strong></td><td class="r"><strong>1 973 000€</strong></td><td class="note">Budget total projet - détail à affiner après devis définitifs</td></tr>
-      <tr class="row-sec"><td colspan="3" data-fr="Acquisition (rappel)" data-nl="Acquisitie (ter herinnering)" data-en="Acquisition (recap)">Acquisition (rappel)</td></tr>
-      <tr><td data-fr="Achat SCI + SARL (100% parts, cible négociée)" data-nl="Aankoop SCI + SARL (100% aandelen, onderhandeld doel)" data-en="SCI + SARL acquisition (100% shares, negotiated target)">Achat SCI + SARL (100% parts, cible négociée)</td><td class="r">1 400 000€</td><td class="note">Levier liabilities, voir mémo acquisition</td></tr>
-      <tr class="row-tot"><td data-fr="Investissement total" data-nl="Totale investering" data-en="Total investment"><strong>Investissement total</strong></td><td class="r"><strong>3 268 000€</strong></td><td class="note">Budget total projet - détail à affiner après devis définitifs</td></tr>
-    </tbody>
-  </table>
+  <thead>
+    <tr>
+      <th data-fr="Poste" data-nl="Post" data-en="Item">Poste</th>
+      <th class="r" data-fr="Montant" data-nl="Bedrag" data-en="Amount">Montant</th>
+      <th data-fr="Note" data-nl="Nota" data-en="Note">Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="row-sec"><td colspan="3" data-fr="Hébergement — 30 unités" data-nl="Logies — 30 eenheden" data-en="Accommodation — 30 units">Hébergement — 30 unités</td></tr>
+    <tr><td data-fr="Rénovation complète 24 chambres standard (~40m²)" data-nl="Volledige renovatie 24 standaardkamers (~40m²)" data-en="Full renovation of 24 standard rooms (~40m²)">Rénovation complète 24 chambres standard (~40m²)</td><td class="r">480 000€</td><td class="note">~20 000€/ch., finitions, salle de bain, menuiseries, électricité</td></tr>
+    <tr><td data-fr="Rénovation 5 suites (~55m²)" data-nl="Renovatie 5 suites (~55m²)" data-en="Renovation of 5 suites (~55m²)">Rénovation 5 suites (~55m²)</td><td class="r">137 500€</td><td class="note">~27 500€/suite, surface et salle de bain baignoire sur pied</td></tr>
+    <tr><td data-fr="Rénovation suite piscine + bassin zellige privé" data-nl="Renovatie suite met zwembad + privé zellige-bassin" data-en="Renovation of pool suite + private zellige basin">Rénovation suite piscine + bassin zellige privé</td><td class="r">82 500€</td><td class="note">Piscine intégrée 3×4m, tadelakt noir, terrasse fermée</td></tr>
+    <tr class="row-sub"><td><strong data-fr="Sous-total hébergement" data-nl="Subtotaal logies" data-en="Accommodation subtotal">Sous-total hébergement</strong></td><td class="r"><strong>700 000€</strong></td><td></td></tr>
 
+    <tr class="row-sec"><td colspan="3" data-fr="Bâtiment principal — espaces communs" data-nl="Hoofdgebouw — gemeenschappelijke ruimtes" data-en="Main Building — Common Areas">Bâtiment principal — espaces communs</td></tr>
+    <tr><td data-fr="Galerie Toile Blanche Contemporary Marrakech" data-nl="Toile Blanche Contemporary Marrakech-galerij" data-en="Toile Blanche Contemporary Marrakech Gallery">Galerie Toile Blanche Contemporary Marrakech</td><td class="r">80 000€</td><td class="note">Murs bruts, éclairage galerie, cimaises invisibles, sol pierre</td></tr>
+    <tr><td data-fr="Restaurant, cuisine ouverte + salle" data-nl="Restaurant, open keuken + zaal" data-en="Restaurant, Open Kitchen + Dining Room">Restaurant, cuisine ouverte + salle</td><td class="r">120 000€</td><td class="note">Équipement cuisine pro, mobilier cèdre, terrasse Atlas</td></tr>
+    <tr><td data-fr="Bar cheminée + salon réception" data-nl="Openhaardbar + ontvangstsalon" data-en="Fireplace Bar + Reception Lounge">Bar cheminée + salon réception</td><td class="r">60 000€</td><td class="note">Cheminée, mobilier, éclairage laiton, pas de comptoir</td></tr>
+    <tr><td data-fr="Hammam complet, zellige, vapeur, soins" data-nl="Volledige hammam, zellige, stoom, behandelingen" data-en="Full Hammam, Zellige, Steam, Treatments">Hammam complet, zellige, vapeur, soins</td><td class="r">90 000€</td><td class="note">Deux cabines massage, sol et murs zellige, table pierre</td></tr>
+    <tr><td data-fr="Rooftop terrasse Atlas" data-nl="Atlas rooftop-terras" data-en="Atlas Rooftop Terrace">Rooftop terrasse Atlas</td><td class="r">30 000€</td><td class="note">Daybeds cèdre, sol pierre, garde-corps sobre</td></tr>
+    <tr class="row-sub"><td><strong data-fr="Sous-total bâtiment principal" data-nl="Subtotaal hoofdgebouw" data-en="Main building subtotal">Sous-total bâtiment principal</strong></td><td class="r"><strong>380 000€</strong></td><td></td></tr>
+
+    <tr class="row-sec"><td colspan="3" data-fr="Infrastructure et autonomie" data-nl="Infrastructuur en autonomie" data-en="Infrastructure and Autonomy">Infrastructure et autonomie</td></tr>
+    <tr><td data-fr="Citerne eau 60m³ + station pompage triplex" data-nl="Waterciterne 60m³ + triplex pompsysteem" data-en="60m³ Water Cistern + Triplex Pump Station">Citerne eau 60m³ + station pompage triplex</td><td class="r">45 000€</td><td class="note">Urgence opérationnelle, puits insuffisant seul</td></tr>
+    <tr><td data-fr="Micro-STEP recyclage eaux grises jardins" data-nl="Micro-WZI recyclage grijs water" data-en="Micro-WTP Greywater Recycling">Micro-STEP recyclage eaux grises jardins</td><td class="r">25 000€</td><td class="note">Irrigation légale, eau fraîche interdite pour jardins</td></tr>
+    <tr><td data-fr="Installation solaire photovoltaïque + thermique" data-nl="Zonne-installatie fotovoltaïsch + thermisch" data-en="Solar Photovoltaic + Thermal Installation">Installation solaire photovoltaïque + thermique</td><td class="r">60 000€</td><td class="note">Autonomie énergétique partielle, eau chaude solaire complète</td></tr>
+    <tr><td data-fr="Mise aux normes sismiques, murs périmétriques" data-nl="Seismische normstelling, perimeterwanden" data-en="Seismic Compliance, Perimeter Walls">Mise aux normes sismiques, murs périmétriques</td><td class="r">50 000€</td><td class="note">Post-séisme Al Haouz 2023, bureaux d'études certifiés</td></tr>
+    <tr><td data-fr="Réseaux et voiries internes" data-nl="Interne netwerken en wegen" data-en="Internal Networks and Pathways">Réseaux et voiries internes</td><td class="r">12 000€</td><td class="note">Éclairage extérieur sol, chemins pierre, irrigation</td></tr>
+    <tr class="row-sub"><td><strong data-fr="Sous-total infrastructure" data-nl="Subtotaal infrastructuur" data-en="Infrastructure subtotal">Sous-total infrastructure</strong></td><td class="r"><strong>192 000€</strong></td><td></td></tr>
+
+    <tr class="row-sec"><td colspan="3" data-fr="Jardins et paysagement" data-nl="Tuinen en landschapsaanleg" data-en="Gardens and Landscaping">Jardins et paysagement</td></tr>
+    <tr><td data-fr="Jardin central, plantations, allées pierre, éclairage sol" data-nl="Centrale tuin, beplanting, stenen paden, grondverlichting" data-en="Central Garden, Plantings, Stone Paths, Ground Lighting">Jardin central, plantations, allées pierre, éclairage sol</td><td class="r">60 000€</td><td class="note">Oliviers, grenadiers, lavande, romarin, palette locale</td></tr>
+    <tr><td data-fr="Deux piscines principales, redessin zellige foncé" data-nl="Twee hoofdzwembaden, redesign donker zellige" data-en="Two Main Pools, Dark Zellige Redesign">Deux piscines principales, redessin zellige foncé</td><td class="r">80 000€</td><td class="note">Rhabillage zellige bleu nuit, margelles pierre, nage à ras bord</td></tr>
+    <tr class="row-sub"><td><strong data-fr="Sous-total jardins" data-nl="Subtotaal tuinen" data-en="Gardens subtotal">Sous-total jardins</strong></td><td class="r"><strong>140 000€</strong></td><td></td></tr>
+
+    <tr class="row-sec"><td colspan="3" data-fr="FF&amp;E et provision" data-nl="FF&amp;E en provisie" data-en="FF&amp;E and Contingency">FF&amp;E et provision</td></tr>
+    <tr><td data-fr="Mobilier, chambres, communs (cèdre, lin, laiton)" data-nl="Meubilair, kamers, gemeenschappelijke ruimtes" data-en="Furniture, Rooms, Common Areas (cedar, linen, brass)">Mobilier, chambres, communs (cèdre, lin, laiton)</td><td class="r">240 000€</td><td class="note" data-fr="8 000€/clé — artisans locaux supervisés par LB" data-nl="8 000€/kamer — lokale ambachtslieden LB-supervisie" data-en="€8,000/key — local artisans supervised by LB">8 000€/clé — artisans locaux supervisés par LB</td></tr>
+    <tr><td data-fr="Literie, linge, équipements" data-nl="Beddengoed, linnen, uitrusting" data-en="Bedding, Linen, Equipment">Literie, linge, équipements</td><td class="r">15 000€</td><td class="note">Standard Toile Blanche, lin naturel, non teint</td></tr>
+    <tr><td data-fr="Provision aléas (zone sismique)" data-nl="Onvoorzien reserve (seismische zone)" data-en="Contingency Provision (Seismic Zone)">Provision aléas (zone sismique)</td><td class="r">133 000€</td><td class="note">Chantier de rénovation, zone Al Haouz post-séisme</td></tr>
+    <tr class="row-sub"><td><strong data-fr="Sous-total FF&amp;E et provision" data-nl="Subtotaal FF&amp;E en provisie" data-en="FF&amp;E and contingency subtotal">Sous-total FF&amp;E et provision</strong></td><td class="r"><strong>388 000€</strong></td><td></td></tr>
+
+    <tr class="row-sec"><td colspan="3" data-fr="Lancement" data-nl="Lancering" data-en="Launch">Lancement</td></tr>
+    <tr><td data-fr="Nouvelle licence alcool + avocat + frais légaux + CNSS" data-nl="Nieuwe alcoholvergunning + advocaat + juridische kosten + CNSS" data-en="New alcohol licence + lawyer + legal fees + CNSS">Nouvelle licence alcool + avocat + frais légaux + CNSS</td><td class="r">50 000€</td><td class="note" data-fr="Licence nominative gérant, dossier Wilaya, accompagnement juridique" data-nl="Nominatieve vergunning gérant, dossier Wilaya" data-en="Personal gérant licence, Wilaya dossier, legal assistance">Licence nominative gérant, dossier Wilaya</td></tr>
+    <tr><td data-fr="Fonds de roulement" data-nl="Werkkapitaal" data-en="Working Capital">Fonds de roulement</td><td class="r">50 000€</td><td class="note" data-fr="Reconstitué par les revenus opérationnels Q1-Q2" data-nl="Aangevuld door operationele inkomsten K1-K2" data-en="Rebuilt from operating revenue Q1-Q2">Reconstitué par les revenus opérationnels Q1-Q2</td></tr>
+    <tr class="row-sub"><td><strong data-fr="Sous-total lancement" data-nl="Subtotaal lancering" data-en="Launch subtotal">Sous-total lancement</strong></td><td class="r"><strong>100 000€</strong></td><td></td></tr>
+
+    <tr class="row-tot"><td><strong data-fr="Total rénovation et lancement" data-nl="Totaal renovatie en lancering" data-en="Total renovation and launch">Total rénovation et lancement</strong></td><td class="r"><strong>1 900 000€</strong></td><td class="note" data-fr="700+380+192+140+388+100 = 1 900 000€ ✓" data-nl="700+380+192+140+388+100 = 1 900 000€ ✓" data-en="700+380+192+140+388+100 = 1,900,000€ ✓">700+380+192+140+388+100 = 1 900 000€</td></tr>
+
+    <tr class="row-sec"><td colspan="3" data-fr="Acquisition (rappel)" data-nl="Acquisitie (ter herinnering)" data-en="Acquisition (recap)">Acquisition (rappel)</td></tr>
+    <tr><td data-fr="Rachat fonds de commerce (cible négociée, non négociable avec les héritiers)" data-nl="Overname handelsfonds (onderhandeld doel, niet onderhandelbaar met erfgenamen)" data-en="Acquisition of fonds de commerce (negotiated target, non-negotiable with heirs)">Rachat fonds de commerce (cible négociée, non négociable avec les héritiers)</td><td class="r">1 400 000€</td><td class="note" data-fr="Accord verbal du propriétaire original. 200 000€ garantie de passif versée séparément par LB." data-nl="Mondelinge overeenkomst oorspronkelijke eigenaar. 200 000€ passiefgarantie apart betaald door LB." data-en="Verbal agreement from original owner. €200,000 sellers' guarantee paid separately by LB.">Accord verbal. 200 000€ garantie de passif versée séparément par LB.</td></tr>
+    <tr class="row-tot"><td><strong data-fr="Investissement total" data-nl="Totale investering" data-en="Total Investment">Investissement total</strong></td><td class="r"><strong>3 300 000€</strong></td><td class="note" data-fr="1 900 000€ + 1 400 000€ = 3 300 000€ ✓" data-nl="1 900 000€ + 1 400 000€ = 3 300 000€ ✓" data-en="€1,900,000 + €1,400,000 = €3,300,000 ✓">1 900 000€ + 1 400 000€ = 3 300 000€</td></tr>
+  </tbody>
+</table>
+
+<!-- FOOTER -->
 <div class="pf" style="margin-top:40px;">
-  <span data-fr="Toile Blanche Group - Leroy Brothers - Mai 2026" data-nl="Toile Blanche Group - Leroy Brothers - Mei 2026" data-en="Toile Blanche Group - Leroy Brothers - May 2026">Toile Blanche Group - Leroy Brothers - Mai 2026</span>
-  <span data-fr="Document confidentiel - projections à titre indicatif" data-nl="Vertrouwelijk document - indicatieve projecties" data-en="Confidential Document - Indicative Projections">Document confidentiel - projections indicatives</span>
+  <span data-fr="Toile Blanche Group — Leroy Brothers — Mai 2026" data-nl="Toile Blanche Group — Leroy Brothers — Mei 2026" data-en="Toile Blanche Group — Leroy Brothers — May 2026">Toile Blanche Group — Leroy Brothers — Mai 2026</span>
+  <span data-fr="Document confidentiel — projections à titre indicatif" data-nl="Vertrouwelijk document — indicatieve projecties" data-en="Confidential Document — Indicative Projections">Document confidentiel — projections indicatives</span>
 </div>
 
-</div>
+</div><!-- end .page -->
+
 <script>
 const LANG_KEY = 'tbm_lang';
 let currentLang = localStorage.getItem(LANG_KEY) || 'fr';
-
 function setLang(lang) {
   currentLang = lang;
   localStorage.setItem(LANG_KEY, lang);
@@ -603,13 +581,7 @@ function setLang(lang) {
     const val = el.getAttribute('data-' + lang) || el.getAttribute('data-fr');
     if (val) el.innerHTML = val;
   });
-  document.querySelectorAll('a.nav-link[data-fr]').forEach(el => {
-    el.innerHTML = el.getAttribute('data-' + lang) || el.getAttribute('data-fr');
-    if (el.classList.contains('active')) el.innerHTML = el.getAttribute('data-' + lang) || el.getAttribute('data-fr');
-  });
 }
-
-// Apply saved language on load
 setLang(currentLang);
 </script>
 </body>
