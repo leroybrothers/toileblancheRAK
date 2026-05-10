@@ -201,24 +201,22 @@
   .intro-founders-section{width:100%;margin:32px 0 40px;padding-top:28px;border-top:1px solid var(--pise-light);box-sizing:border-box;}
   .intro-founders-section .sl{margin-bottom:10px;}
   .intro-founders-section > h2{margin-bottom:18px;}
-  .founders-kpi-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--pise-light);width:100%;margin:0;}
+  .founders-kpi-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--pise-light);width:100%;margin:0;}
   @media(max-width:720px){
-    .founders-kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .founders-kpi-grid{grid-template-columns:1fr;}
   }
 
   .intro-aerial-block{
-    width:100vw;
-    max-width:100vw;
-    margin-left:calc(50% - 50vw);
-    margin-right:calc(50% - 50vw);
-    margin-bottom:40px;
+    width:100%;
+    max-width:100%;
+    margin:0 0 40px;
     box-sizing:border-box;
   }
   .intro-aerial-img-wrap{position:relative;width:100%;}
-  .intro-aerial-img-wrap img{width:100%;height:clamp(320px,62vw,720px);object-fit:cover;display:block;vertical-align:top;}
+  .intro-aerial-img-wrap img{width:100%;height:clamp(280px,min(48vw,52vh),520px);object-fit:cover;display:block;vertical-align:top;}
   .intro-aerial-copy{
     width:100%;
-    padding:28px clamp(20px,5vw,52px) 0;
+    padding:28px 0 0;
     box-sizing:border-box;
   }
   .intro-aerial-copy .sl{margin-bottom:10px;}
@@ -283,11 +281,6 @@
   <div class="sl" data-fr="Le cercle des fondateurs" data-nl="De oprichterskring" data-en="The Founders Circle">Le cercle des fondateurs</div>
   <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:28px;line-height:1.2;margin-bottom:16px;" data-fr="Le Cercle des Fondateurs. 10 Compressions." data-nl="De oprichterskring. 10 Compressions." data-en="The Founders Circle. 10 Compressions.">Le Cercle des Fondateurs. 10 Compressions.</h2>
   <div class="founders-kpi-grid">
-    <div style="background:var(--sky);padding:18px 16px;">
-      <div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--pise);line-height:1;margin-bottom:4px;">30</div>
-      <div style="font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cedar);margin-bottom:2px;" data-fr="Clés dès l'ouverture" data-nl="Kamers bij opening" data-en="Keys from Day One">Clés dès l'ouverture</div>
-      <div style="font-size:11px;color:var(--pise-mid);" data-fr="Standard Toile Blanche, jour 1" data-nl="Toile Blanche standaard, dag 1" data-en="Toile Blanche standard, day 1">Standard Toile Blanche, jour 1</div>
-    </div>
     <div style="background:var(--sky);padding:18px 16px;">
       <div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--pise);line-height:1;margin-bottom:4px;">10%</div>
       <div style="font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cedar);margin-bottom:2px;" data-fr="Preferred garanti" data-nl="Gegarandeerd preferred" data-en="Guaranteed Preferred">Preferred garanti</div>
