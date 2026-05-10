@@ -197,6 +197,54 @@
   .lang-btn{font-family:'Montserrat',sans-serif;font-weight:400;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--pise-mid);background:transparent;border:none;padding:7px 12px;cursor:pointer;transition:color 0.15s,background 0.15s;}
   .lang-btn.active{background:var(--cedar);color:var(--sky);}
   .lang-btn:hover:not(.active){color:var(--cedar);}
+
+  /* Intro full-bleed hero */
+  .intro-hero{
+    position:relative;
+    width:100vw;
+    max-width:100vw;
+    margin-left:calc(50% - 50vw);
+    margin-right:calc(50% - 50vw);
+    margin-bottom:40px;
+    min-height:100vh;
+    min-height:100dvh;
+    display:flex;
+    align-items:flex-end;
+    padding:clamp(100px,14vh,140px) clamp(24px,5vw,52px) clamp(40px,8vh,72px);
+    box-sizing:border-box;
+  }
+  .intro-hero::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:url('images/img_intro_hero_compression.png') center/cover no-repeat;
+    z-index:0;
+  }
+  .intro-hero::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    z-index:1;
+    background:linear-gradient(180deg, rgba(17,16,8,0.35) 0%, rgba(17,16,8,0.5) 45%, rgba(17,16,8,0.72) 100%);
+    pointer-events:none;
+  }
+  .intro-hero-inner{position:relative;z-index:2;width:100%;max-width:960px;margin:0 auto;}
+  .intro-hero .sl{color:rgba(253,250,245,0.88);margin-bottom:14px;}
+  .intro-hero h1{color:var(--sky);margin-bottom:20px;text-shadow:0 1px 24px rgba(17,16,8,0.35);}
+  .intro-hero-sub{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(20px,2.6vw,26px);
+    font-weight:300;
+    line-height:1.45;
+    color:rgba(253,250,245,0.95);
+    margin:0;
+    max-width:36em;
+    text-shadow:0 1px 16px rgba(17,16,8,0.3);
+  }
+  @media(max-width:720px){
+    .intro-hero{padding-top:88px;}
+    .intro-hero h1{font-size:clamp(28px,9vw,40px)!important;}
+  }
 </style>
 <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
@@ -214,9 +262,15 @@
   <span data-fr="Vue d'ensemble - Toile Blanche Marrakech" data-nl="Overzicht - Toile Blanche Marrakech" data-en="Overview - Toile Blanche Marrakech">Vue d'ensemble - Toile Blanche Marrakech</span>
 </div>
 
-<div style="margin-bottom:40px;">
-  <div class="sl" data-fr="Tagadirt, Al Haouz, Maroc" data-nl="Tagadirt, Al Haouz, Marokko" data-en="Tagadirt, Al Haouz, Morocco">Tagadirt, Al Haouz, Maroc</div>
-  <h1 style="font-size:52px;line-height:1.05;" data-fr="Un territoire déclaré œuvre.<br><br>Dix Compressions.<br><br>Le Cercle des Fondateurs." data-nl="Een grondgebied als kunstwerk verklaard.<br><br>Tien Compressions.<br><br>De oprichterskring." data-en="A territory declared a work of art.<br><br>Ten Compressions.<br><br>The Founders Circle.">Un territoire déclaré œuvre.<br><br>Dix Compressions.<br><br>Le Cercle des Fondateurs.</h1>
+<div class="intro-hero">
+  <div class="intro-hero-inner">
+    <div class="sl" data-fr="Tagadirt, Al Haouz, Maroc" data-nl="Tagadirt, Al Haouz, Marokko" data-en="Tagadirt, Al Haouz, Morocco">Tagadirt, Al Haouz, Maroc</div>
+    <h1 style="font-size:52px;line-height:1.05;" data-fr="Un territoire déclaré œuvre.<br><br>Dix Compressions.<br><br>Le Cercle des Fondateurs." data-nl="Een grondgebied als kunstwerk verklaard.<br><br>Tien Compressions.<br><br>De oprichterskring." data-en="A territory declared a work of art.<br><br>Ten Compressions.<br><br>The Founders Circle.">Un territoire déclaré œuvre.<br><br>Dix Compressions.<br><br>Le Cercle des Fondateurs.</h1>
+    <p class="intro-hero-sub"
+       data-fr="L'acquisition d'un artefact.<br><br>La fondation d'un lieu."
+       data-nl="De verwerving van een artefact.<br><br>De stichting van een plek."
+       data-en="The acquisition of an artifact.<br><br>The founding of a place.">L'acquisition d'un artefact.<br><br>La fondation d'un lieu.</p>
+  </div>
 </div>
 
 <div style="position:relative;margin-bottom:40px;">
